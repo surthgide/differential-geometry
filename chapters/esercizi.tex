@@ -1,0 +1,840 @@
+\chapter{Geometria differenziale negli spazi euclidei}
+
+\section{}\label{es1-1}
+
+\begin{tcolorbox}
+	Per ogni numero naturale $ k \in \mathbb{N} $ costruire una funzione $ C^{k}(\mathbb{R}) $ ma non $ C^{+1}(\mathbb{R}) $.
+\end{tcolorbox}
+
+qui
+
+\section{}\label{es1-2}
+
+\begin{tcolorbox}
+	Dimostrare che la funzione
+	
+	\begin{align}
+		\begin{split}
+			f : \mathbb{R} & \to \mathbb{R}\\
+			x &\mapsto%
+				\begin{cases}
+					e^{\sfrac{-1}{x^{2}}} & x \neq 0\\
+					0 & x = 0
+				\end{cases}
+		\end{split}
+	\end{align}
+	
+	risulta essere liscia ma non reale analitica.
+\end{tcolorbox}
+
+qui
+
+\section{}\label{es1-3}
+
+\begin{tcolorbox}
+	Siano $ a,b,c,d \in \mathbb{R} $ tale che $ a<b $. Dimostrare che i seguenti intervalli sono tutti diffeomorfi tra loro e diffeomorfi a $ \mathbb{R} $:
+	
+	\begin{equation}
+		\begin{cases}
+			(a,b)\\
+			(c,+\infty)\\
+			(-\infty,d)
+		\end{cases}
+	\end{equation}
+\end{tcolorbox}
+
+qui
+
+\section{}\label{es1-4}
+
+\begin{tcolorbox}
+	Dimostrare che l'applicazione
+	
+	\begin{align}
+		\begin{split}
+			h : B_{1} (0) &\to \mathbb{R}^{n}\\
+			x &\mapsto \left( \dfrac{x^{1}}{\sqrt{1 - \norm{x}^{2}}}, \cdots, \dfrac{x^{n}}{\sqrt{1 - \norm{x}^{2}}} \right)
+		\end{split}	
+	\end{align}
+	
+	definisce un diffeomorfismo tra la palla aperta unitaria centrata nell'origine di $ \mathbb{R}^{n} $ e $ \mathbb{R}^{n} $. Dedurre che la palla aperta di centro $ c \in \mathbb{R}^{n} $ e raggio $ r>0 $ in $ \mathbb{R}^{n} $ è diffeomorfa a $ \mathbb{R}^{n} $.
+\end{tcolorbox}
+
+qui
+
+\section{}\label{es1-5}
+
+\begin{tcolorbox}
+	Sia $ f \in C^{\infty}(\mathbb{R}^{2}) $. Usando il teorema di Taylor con resto dimostrare che esistono $ g_{11},g_{12},g_{22} \in C^{\infty}(\mathbb{R}^{2}) $ tali che
+	
+	\begin{equation}
+		f(x,y) = f(0,0) + x \, \dfrac{\partial f}{\partial x} ((0,0)) + y \, \dfrac{\partial f}{\partial y} ((0,0)) + x^{2} \, g_{11}(x,y) + xy \, g_{12}(x,y) + y^{2} \, g_{22}(x,y)
+	\end{equation}
+\end{tcolorbox}
+
+qui
+
+\section{}\label{es1-6}
+
+\begin{tcolorbox}
+	Sia $ f \in C^{\infty}(\mathbb{R}^{2}) $ tale che
+	
+	\begin{equation}
+		f(0,0) = \dfrac{\partial f}{\partial x} (0,0) = \dfrac{\partial f}{\partial y} (0,0) = 0
+	\end{equation}
+
+	Sia l'applicazione
+	
+	\begin{align}
+		\begin{split}
+			g : \mathbb{R}^{2} & \to \mathbb{R}\\
+			(t,u) &\mapsto%
+			\begin{cases}
+				\dfrac{f(t,tu)}{t} & t \neq 0\\\\
+				0 & t = 0
+			\end{cases}
+		\end{split}
+	\end{align}
+	
+	Dimostrare che $ g \in C^{\infty}(\mathbb{R}^{2}) $.
+\end{tcolorbox}
+
+qui
+
+\section{}\label{es1-7}
+
+\begin{tcolorbox}
+	Dimostrare che l'insieme $ C_{p}^{\infty}(\mathbb{R}^{n}) $ dei germi delle funzioni lisce intorno a $ p \in \mathbb{R}^{n} $ con le operazioni di somma e di prodotto definite negli appunti è un'algebra commutativa e unitaria.
+\end{tcolorbox}
+
+qui
+
+\section{}\label{es1-8}
+
+\begin{tcolorbox}
+	Dimostrare che l'insieme $ Der_{p}(C_{p}^{\infty}(\mathbb{R}^{n})) $ delle derivazioni puntuali con le operazioni definite negli appunti è uno spazio vettoriale su $ \mathbb{R} $.
+\end{tcolorbox}
+
+qui
+
+\section{}\label{es1-9}
+
+\begin{tcolorbox}
+	Dimostrare che i campi di vettori lisci $ \chi(U) $ su un aperto $ U \subset \mathbb{R}^{n} $ con le operazioni definite negli appunti è uno spazio vettoriale su $ \mathbb{R} $ e un $ C^{\infty} $-modulo.
+\end{tcolorbox}
+
+qui
+
+\section{}\label{es1-10}
+
+\begin{tcolorbox}
+	Sia $ A $ un'algebra su un campo $ \mathbb{K} $- Dimostrare che le operazioni.
+	
+	\begin{equation}
+		\begin{cases}
+			(D_{1}+D_{2})(a) = D_{1}(a) + D_{2}(a)\\
+			(\lambda D)(a) = \lambda D(a)
+		\end{cases}
+	\end{equation}
+	
+	per $ \forall \lambda \in \mathbb{K} $ e $ \forall D_{1},D_{2},D \in Der(A) $ dotano $ Der(A) $ della struttura di spazio vettoriale su $ \mathbb{K} $.
+\end{tcolorbox}
+
+qui
+
+\section{}\label{es1-11}
+
+\begin{tcolorbox}
+	Siano $ D_{1} $ e $ D_{2} $ due derivazioni di un'algebra $ A $ su un campo $ \mathbb{K} $, i.e. $ D_{1},D_{2} \in Der(A) $. Mostrare che $ D_{1} \circ D_{2} $ non è necessariamente una derivazione di $ A $ mentre $ D_{1} \circ D_{2} - D_{2} \circ D_{1} \in Der(A) $.
+\end{tcolorbox}
+
+qui
+
+\chapter{Varietà differenziabili}
+
+\section{}\label{BONUS2-1}
+
+\begin{tcolorbox}
+	Verificare che l'unione disgiunta di spazi topologici
+	
+	\begin{align}
+		\begin{split}
+			A =& \, \coprod_{j \in J} A_{j}\\
+			=& \, \bigcup_{j \in J} A_{j} \times \{j\}
+		\end{split}
+	\end{align}
+	
+	è uno spazio topologico, sapendo che $ U $ è aperto in $ A $ se e solo se $ U \cap A_{j} $ è aperto in $ A_{j} $ per $ \forall j \in J $.
+\end{tcolorbox}
+
+qui
+
+\section{}\label{es2-1}
+
+\begin{tcolorbox}
+	Sia $ \mathbb{S}^{n} $ la sfera unitaria in $ \mathbb{R}^{n+1} $. Trovare un atlante differenziabile di $ \mathbb{S}^{n} $ con $ 2(n+1) $ carte.
+
+\end{tcolorbox}
+
+qui
+
+\section{}\label{es2-2}
+
+\begin{tcolorbox}
+	Dimostrare che la strutture differenziabili su $ \mathbb{S}^{n} $ definite dall’esercizio precedente e dalle proiezioni
+	stereografiche coincidono.
+\end{tcolorbox}
+
+qui
+
+\section{}\label{es2-3}
+
+\begin{tcolorbox}
+	Sia $ S $ uno spazio topologico e $ \sim $ una relazione d'evalenza aperta su $ S $. Dimostrare che lo spazio quoziente $ \sfrac{S}{\sim} $ è $ T_{2} $ se e solo se
+	
+	\begin{equation}
+		R = \{ (x,y) \in S \times S \mid x \sim y \}
+	\end{equation}
+	
+	è un sottoinsieme chiuso di $ S \times S $.
+\end{tcolorbox}
+
+Vedi Dimostrazione \ref{solved-es2-3}.
+
+\section{}\label{es2-4}
+
+\begin{tcolorbox}
+	Sia $ S $ uno spazio topologico $ N_{2} $ e $ \sim $ una relazione d'evalenza aperta su $ S $. Dimostrare che lo spazio quoziente $ \sfrac{S}{\sim} $ è $ N_{2} $.
+\end{tcolorbox}
+
+Vedi Dimostrazione \ref{solved-es2-4}.
+
+\section{}\label{es2-5}
+
+\begin{tcolorbox}
+	Dimostrare che la Grassmanniana $ G(k,n) $ è uno spazio topologico connesso e compatto.
+\end{tcolorbox}
+
+qui
+
+\section{}\label{es2-6}
+
+\begin{tcolorbox}
+	Siano $ M $ e $ N $ due varietà differenziabili e $ q_{0} \in N $. Dimostrare che
+	
+	\begin{align}
+		\begin{split}
+			i_{q_{0}} : N &\to M\\
+			p &\mapsto (p,q_{0})
+		\end{split}
+	\end{align}
+	
+	è un'applicazione liscia.
+\end{tcolorbox}
+
+qui
+
+\section{}\label{es2-7}
+
+\begin{tcolorbox}
+	Sia $ \mathbb{S}^{1} $ il cerchio unitario di $ \mathbb{R}^{2} $. Dimostrare che una funzione liscia $ f : \mathbb{R}^{2} \to \mathbb{R} $ si restringe ad una funzione liscia $ f_{|\mathbb{S}^{1}} : \mathbb{S}^{1} \to \mathbb{R} $.
+\end{tcolorbox}
+
+qui
+
+\section{}\label{BONUS2-2}
+
+\begin{tcolorbox}
+	Verificare che $ Der_{p}(C_{p}^{\infty}(N)) $ sia uno spazio vettoriale su $ \mathbb{R} $.
+\end{tcolorbox}
+
+qui
+
+\section{}\label{es2-8}
+
+\begin{tcolorbox}
+	Sia un'applicazione
+	
+	\begin{align}
+		\begin{split}
+			F : \mathbb{R}^{2} &\to \mathbb{R}^{3}\\
+			(x,y) &\mapsto (x,y,xy)
+		\end{split}
+	\end{align}
+	
+	e $ p = (x,y) \in \mathbb{R}^{2} $. Trovare $ a,b,c \in \mathbb{R} $ tali che:
+	
+	\begin{equation}
+		F_{*p} \left( \left. \dfrac{\partial}{\partial x} \right|_{p} \right) = a \left. \dfrac{\partial}{\partial u} \right|_{F(p)} + b \left. \dfrac{\partial}{\partial v} \right|_{F(p)} + c \left. \dfrac{\partial}{\partial w} \right|_{F(p)}
+	\end{equation}
+\end{tcolorbox}
+
+qui
+
+\section{}\label{es2-9}
+
+\begin{tcolorbox}
+	Siano $ x $ e $ y $ le coordinate standard su $ \mathbb{R}^{2} $ e $ U = \mathbb{R}^{2} \setminus \{(0,0)\} $. In $ U $ le coordinate polari $ (\rho, \theta) $ con $ \rho > 0 $ e $ \theta \in (0,2\pi) $ sono definite come
+	
+	\begin{equation}
+		\begin{cases}
+			x = \rho \cos(\theta)\\
+			y = \rho \sin(\theta)
+		\end{cases}
+	\end{equation}
+	
+	Si scrivano $ \sfrac{\partial}{\partial \rho} $ e $ \sfrac{\partial}{\partial \theta} $ in funzione di $ \sfrac{\partial}{\partial x} $ e $ \sfrac{\partial}{\partial y} $.
+\end{tcolorbox}
+
+qui
+
+\section{}\label{es2-10}
+
+\begin{tcolorbox}
+	Sia $ p = (x,y) $ un punto di $ \mathbb{R}^{2} $. Allora
+	
+	\begin{equation}
+		c_{p}(t) = \begin{pmatrix} \cos(2t) & -\sin(2t) \\\\ \sin(2t) & \cos(2t) \end{pmatrix} \begin{pmatrix} x \\\\ y \end{pmatrix}
+	\end{equation}
+	
+	è una curva liscia in $ \mathbb{R}^{2} $ che inizia in $ p $. Calcolare $ c'(0) $.
+\end{tcolorbox}
+
+qui
+
+\section{}\label{es2-11}
+
+\begin{tcolorbox}
+	Siano $ N $ e $ M $ varietà differenziabili e $ \pi_{N} : N \times M \to N $ e $ \pi_{M} : N \times M \to M $ le proiezioni naturali. Dimostrare che per $ (p,q) \in N \times M $ l'applicazione
+	
+	\begin{equation}
+		(\pi_{N_{*p}},\pi_{M_{*p}}) : T_{(p,q)}(N \times M) \to T_{p}(N) \times T_{q}(M)
+	\end{equation}
+	
+	è un isomorfismo.
+\end{tcolorbox}
+
+qui
+
+% -----------------------
+
+% fine pdf 2.1-2.3
+
+% -----------------------
+
+\section{}\label{es2-12}
+
+\begin{tcolorbox}
+	Siano $ S_{1} $ e $ S_{2} $ due sottovarietà di due varietà differenziabili $ M_{1} $ e $ M_{2} $ rispettivamente. Dimostrare che $ S_{1} \times S_{2} $ è una sottovarietà di $ M_{1} \times M_{2} $.
+\end{tcolorbox}
+
+qui
+
+\section{}\label{es2-13}
+
+\begin{tcolorbox}
+	Sia l'applicazione
+	
+	\begin{align}
+		\begin{split}
+			F : \mathbb{R}^{2} &\to \mathbb{R}\\
+			(x,y) &\mapsto x^{2}-6xy+y^{2}
+		\end{split}
+	\end{align}
+
+	Trovare i $ c \in \mathbb{R} $ tali che $ F^{-1}(c) $ sia una sottovarietà di $ \mathbb{R}^{2} $.
+\end{tcolorbox}
+
+qui
+
+\section{}\label{es2-14}
+
+\begin{tcolorbox}
+	Dire se le soluzione del sistema
+	
+	\begin{equation}
+		\begin{cases}
+			x^{3} + y^{3} + z^{3} = 1\\
+			z = xy
+		\end{cases}
+	\end{equation}
+
+	costituiscono una sottovarietà di $ \mathbb{R}^{3} $.
+\end{tcolorbox}
+
+qui
+
+\section{}\label{BONUS2-3}
+
+\begin{tcolorbox}
+	Sia la sottovarietà di $ \mathbb{R}^{3} $
+	
+	\begin{equation}
+		S = \{ (x,y,z) \in \mathbb{R}^{3} \mid x^{3} + y^{3} + z^{3} = 1 \wedge x+y+z=0 \} \subset \mathbb{R}^{3}
+	\end{equation}
+	
+	Calcolare lo spazio tangente $ T_{p}(S) $ con $ p \in S $.
+\end{tcolorbox}
+
+qui
+
+\section{}\label{es2-15}
+
+\begin{tcolorbox}
+	Un polinomio $ F(x_{0},\dots,x_{n}) \in \mathbb{R}[x_{0},\dots,x_{n}] $ è omogeneo di grado $ k $ se è combinazione lineare di monomi $ x_{0}^{i_{1}} \cdots x_{n}^{i_{m}} $ di grado $ k $ tale che $ \sum_{j=1}^{m} i_{j} = k $. Dimostrare che
+	
+	\begin{equation}
+		\sum_{i=0}^{n} x^{i} \, \dfrac{\partial F}{\partial x^{i}} = k F
+	\end{equation}
+
+	Dedurre che $ F^{-1}(c) $ con $ c \neq 0 $ è una sottovarietà di $ \mathbb{R}^{n} $ di dimensione $ n-1 $. Dimostrare inoltre che per $ c,d>0 $ si ha che $ F^{-1}(c) \simeq F^{-1}(d) $ diffeomorfe e lo stesso vale per $ c,d<0 $.\\\\
+	Suggerimento per la prima parte: usare l'uguaglianza
+	
+	\begin{equation}
+		F(\lambda x_{0},\dots,\lambda x_{n}) = \lambda^{k} F(x_{0},\dots,x_{n})
+	\end{equation}
+	
+	valida per ogni $ \lambda \in \mathbb{R} $.
+\end{tcolorbox}
+
+qui
+
+\section{}\label{es2-16}
+
+\begin{tcolorbox}
+	Dimostrare che
+	
+	\begin{equation}
+		\mathbb{SL}_{n}(\mathbb{C}) = \{ A \in M_{n}(\mathbb{C}) \mid \det(A) \neq 0 \} \subset M_{n}(\mathbb{C})
+	\end{equation}
+
+	è una sottovarietà di $ M_{n}(\mathbb{C}) $ con $ \dim(\mathbb{SL}_{n}(\mathbb{C})) = 2n^{2}-2  $
+\end{tcolorbox}
+
+qui
+
+\section{}\label{es2-17}
+
+\begin{tcolorbox}
+	Sia $ F : N \to M $ un'applicazione liscia tra varietà differenziabili. Dimostrare che l'insieme $ \mathcal{PR}_{F} $ dei punti regolari di $ F $ è un aperto di $ N $.
+\end{tcolorbox}
+
+qui
+
+\section{}\label{es2-18}
+
+\begin{tcolorbox}
+		Sia $ F : N \to M $ un'applicazione liscia tra varietà differenziabili. Dimostrare che se $ F $ è chiusa allora  l'insieme $ \mathcal{VR}_{F} $ dei valori regolari di $ F $ è un aperto in $ M $.
+\end{tcolorbox}
+
+qui
+
+\section{}\label{es2-19}
+
+\begin{tcolorbox}
+	Dimostrare che l'applicazione
+	
+	\begin{align}
+		\begin{split}
+			F : \mathbb{R} &\to \mathbb{R}^{3}\\
+			t &\mapsto (t,t^{2},t^{3})
+		\end{split}
+	\end{align}
+
+	è un embedding liscio e scrivere $ F(\mathbb{R}) $ come zero di funzioni.
+\end{tcolorbox}
+
+qui
+
+\section{}\label{es2-20}
+
+\begin{tcolorbox}
+	Dimostrare che l'applicazione
+	
+	\begin{align}
+		\begin{split}
+			F : \mathbb{R} &\to \mathbb{R}^{3}\\
+			t &\mapsto (\cosh(t),\sinh(t))
+		\end{split}
+	\end{align}
+	
+	è un embedding liscio e che
+	
+	\begin{equation}
+		F(\mathbb{R}) = \{ (x,y) \in \mathbb{R}^{2} \mid x^{2}-y^{2} = 1 \}
+	\end{equation}
+\end{tcolorbox}
+
+qui
+
+\section{}\label{es2-21}
+
+\begin{tcolorbox}
+	Dimostrare che la composizione di immersioni è un’immersione e che il prodotto cartesiano di due immersioni è un’immersione.
+\end{tcolorbox}
+
+
+
+\section{}\label{es2-22}
+
+\begin{tcolorbox}
+	Dimostrare che se $ F : N \to M $ è un'immersione e $ Z \subset N $ è una sottovarietà di $ N $ allora $ F_{|Z} : Z \to M $ è un'immersione.
+\end{tcolorbox}
+
+qui
+
+\section{}\label{es2-23}
+
+\begin{tcolorbox}
+	Dimostrare che l'applicazione
+	
+	\begin{align}
+		\begin{split}
+			F : \mathbb{S}^{2} &\to \mathbb{R}^{4}\\
+			(x,y,z) &\mapsto (x^{2}-y^{2},xy,xz,yz)
+		\end{split}
+	\end{align}
+	
+	induce un embedding liscio da $ \mathcal{RP}^{2} $ a $ \mathbb{R}^{4} $.
+\end{tcolorbox}
+
+qui
+
+\section{}\label{es2-24}
+
+\begin{tcolorbox}
+	Dimostrare che un'immersione iniettiva e propria è un embedding liscio. Mostrare che esistono embedding lisci che non sono applicazione proprie.\\\\
+	Ricordare che un'applicazione continua $ f : X \to Y $ tra spazi topologici è propria se $ f^{-1}(K) $ è compatto in $ X $ per ogni compatto $ K $ di $ Y $.
+\end{tcolorbox}
+
+qui
+
+% -----------------------
+
+% fine pdf 2.4
+
+% -----------------------
+
+\section{}\label{es2-25}
+
+\begin{tcolorbox}
+	Sia $ N $ una sottovarietà di una varietà differenziabile $ M $. Dimostrare che $ T(N) $ è una sottovarietà di $ T(M) $.
+\end{tcolorbox}
+
+qui
+
+\section{}\label{BONUS2-4}
+
+\begin{tcolorbox}
+	Verificare che la sfera $ \mathbb{S}^{1} $ sia parallelizzabile.
+\end{tcolorbox}
+
+qui
+
+\section{}\label{es2-26}
+
+\begin{tcolorbox}
+	Una varietà differenziabile $ N $ è detta \textit{orientabile} se esiste un atlante di $ N $ rispetto al quale il determinante jacobiano dei cambi di carte è positivo. Dimostrare che:
+	
+	\begin{itemize}
+		\item $ \mathcal{RP}^{3} $ è una varietà orientabile;
+		\item il fibrato tangente $ T(N) $ di una varietà differenziabile $ N $ è orientabile.
+	\end{itemize}
+\end{tcolorbox}
+
+qui
+
+\section{}\label{es2-27}
+
+\begin{tcolorbox}
+	Dimostrare che l'applicazione $ \mathcal{F}_{*} $ che associa a ogni varietà differenziabile il suo fibrato tangente e a ogni applicazione $ F : N \to M $ tra varietà differenziabili il suo differenziale $ F_{*} : T(N) \to T(M) $ definita come
+	
+	\begin{equation}
+		\mathcal{F}_{*}((p,v)) = (F(p), F_{*p}(v))
+	\end{equation}
+
+	per $ \forall (p,v) \in T(N) $ definisce un funtore covariante dalla categoria delle varietà differenziabili in sé stessa.
+\end{tcolorbox}
+
+qui
+
+\section{}\label{es2-28}
+
+\begin{tcolorbox}
+	Una \textit{derivazione} di un'algebra di Lie $ (V,[\cdot,\cdot]) $ su un campo $ \mathbb{K} $ è un'applicazione lineare $ D : V \to V $ tale che
+	
+	\begin{equation}
+		D([Y,Z]) = [DY,Z] + [Y,DZ]
+	\end{equation}
+
+	per $ \forall Y,Z \in V $. Dimostrare che, dato $ X \in V $, l'applicazione
+	
+	\begin{align}
+		\begin{split}
+			D_{X} : V &\to V\\
+			Y &\mapsto [X,Y]
+		\end{split}
+	\end{align}
+
+	è una derivazione.
+\end{tcolorbox}
+
+qui
+
+\section{}\label{es2-29}
+
+\begin{tcolorbox}
+	Siano $ M = \mathbb{R} \setminus 0 $ e $ X = \sfrac{\operatorname{d}}{\operatorname{dx}} \in \chi(M) $. Trovare la curva integrale di $ X $ massimale che inizia in un generico punto $ p \in \mathbb{R} $.
+\end{tcolorbox}
+
+qui
+
+\section{}\label{es2-30}
+
+\begin{tcolorbox}
+	Trovare il flusso (locale) dei seguenti campi di vettori in $ \chi(\mathbb{R}^{2}) $:
+	
+	\begin{equation}
+		\begin{cases}
+			X = x \, \dfrac{\partial}{\partial x} - y \, \dfrac{\partial}{\partial y}\\\\
+			Y = x \, \dfrac{\partial}{\partial x} + y \, \dfrac{\partial}{\partial y}\\\\
+			Z = \dfrac{\partial}{\partial x} + y \, \dfrac{\partial}{\partial y}
+		\end{cases}
+	\end{equation}
+
+	Nel caso siano completi, calcolare il loro gruppo di diffeomorfismi ad un parametro.
+\end{tcolorbox}
+
+qui
+
+\section{}\label{es2-31}
+
+\begin{tcolorbox}
+	Dimostrare che il campo di vettori $ X = \sfrac{\partial}{\partial x} \in \chi(\mathbb{R}^{2} \setminus (0,0)) $ non è completo.
+\end{tcolorbox}
+
+qui
+
+\section{}\label{es2-32}
+
+\begin{tcolorbox}
+	Sia $ M $ una varietà differenziabile e $ X \in \chi(M) $ tale che $ X(p) = 0 $ in un punto $ p \in M $. Dimostrare che la curva integrale di $ X $ che inizia in $ p $ è la curva costante $ c(t)=p $.
+\end{tcolorbox}
+
+\textbf{l 26 m 36}
+
+\section{}\label{es2-33}
+
+\begin{tcolorbox}
+	Sia $ M $ una varietà differenziabile e $ X \in \chi(M) $ il campo di vettori nullo, i.e. $ X = 0 $. Descrivere il gruppo dei diffeomorfismi ad un parametro associato a $ X $.
+\end{tcolorbox}
+
+qui
+
+\section{}\label{es2-34}
+
+\begin{tcolorbox}
+	Siano $ F : N \to M $ un diffeomorfismo tra varietà differenziabili, $ X \in \chi(N) $ e $ f \in C^{\infty}(N) $. Dimostrare che
+	
+	\begin{equation}
+		F_{*}(f X) = (f \circ F^{-1}) \, F_{*} X
+	\end{equation}
+\end{tcolorbox}
+
+qui
+
+\chapter{Gruppi e algebre di Lie}
+
+\section{}\label{es3-1}
+
+\begin{tcolorbox}
+	Dimostrare che il prodotto diretto di due gruppi di Lie è un gruppo di Lie.
+\end{tcolorbox}
+
+qui
+
+\section{}\label{es3-2}
+
+\begin{tcolorbox}
+	Siano la proiezione
+	
+	\begin{align}
+		\begin{split}
+			\pi : \mathbb{R}^{2} &\to \mathbb{S}^{1} \times \mathbb{S}^{1}\\
+			(t,s) &\mapsto (e^{2 \pi i t},e^{2 \pi i s})
+		\end{split}
+	\end{align}
+
+	l'insieme
+	
+	\begin{equation}
+		L = \{ (t,\alpha t) \in \mathbb{R}^{2} \mid \alpha \in \mathbb{R} \setminus \mathbb{Q} \}
+	\end{equation}
+
+	e la restrizione di $ \pi $ ad $ L $, i.e. $ f = \pi_{|L} : L \to \mathbb{S}^{1} \times \mathbb{S}^{1} $. Siano
+	
+	\begin{itemize}
+		\item $ \tau_{f} $ la topologia indotta da $ f $ su $ H = \pi(L) $;
+		
+		\item $ \tau_{s} $ la topologia indotta dall'inclusione $ H \subset \mathbb{S}^{1} \times \mathbb{S}^{1} $
+	\end{itemize}
+
+	Dimostrare che $ \tau_{s} \subset \tau_{f} $.
+\end{tcolorbox}
+
+qui
+
+\section{}\label{es3-3}
+
+\begin{tcolorbox}
+	Sia la matrice
+	
+	\begin{equation}
+		X = \begin{pmatrix} 0 & 1 \\\\ 1 & 0 \end{pmatrix}
+	\end{equation}
+
+	Dimostrare che
+	
+	\begin{equation}
+		e^{X} = \begin{pmatrix} \cosh(1) & \sinh(1) \\\\ \sinh(1) & \cosh(1) \end{pmatrix}
+	\end{equation}
+\end{tcolorbox}
+
+qui
+
+\section{}\label{es3-4}
+
+\begin{tcolorbox}
+	Trovare due matrici $ A $ e $ B $ tali che
+	
+	\begin{equation}
+		e^{A+B} \neq e^{A} e^{B}
+	\end{equation}
+\end{tcolorbox}
+
+qui
+
+\section{}\label{es3-5}
+
+\begin{tcolorbox}
+	Dimostrare che il gruppo unitario $ U(n) $ è compatto per ogni $ n \geqslant 1 $.
+\end{tcolorbox}
+
+qui
+
+\section{}\label{es3-6}
+
+\begin{tcolorbox}
+	Siano $ G $ un gruppo di Lie e $ G_{0} $ la componente connessa di $ G $ che contiene $ e $ (elemento neutro di $ G $). Se $ \mu $ e $ i $ denotano rispettivamente la moltiplicazione e l'inversione in $ G $, provare che:
+	
+	\begin{itemize}
+		\item $ \mu(\{x\} \times G_{0}) \subset G_{0} $ per $ \forall x \in G $;
+		
+		\item $ i(G_{0}) \subset G_{0} $;
+		
+		\item $ G_{0} $ è un sottoinsieme aperto di $ G $;
+		
+		\item $ G_{0} $ è un sottogruppo di Lie di $ G $
+	\end{itemize}
+\end{tcolorbox}
+
+qui
+
+\section{}\label{es3-7}
+
+\begin{tcolorbox}
+	Sia $ G $ un gruppo di Lie con moltiplicazione $ \mu : G \times G \to G $. Dimostrare che
+	
+	\begin{equation}
+		\mu_{*(a,b)}(X_{a},Y_{b}) = (R_{b})_{*a}(X_{a}) + (L_{a})_{*b}(Y_{b})
+	\end{equation}
+
+	per $ \forall (a,b) \in G \times G $, $ \forall X_{a} \in T_{a}(G) $ e $ \forall Y_{b} \in T_{b}(G) $, dove $ L_{a} $ (risp. $ R_{a} $) denota la traslazione a sinistra (risp. a destra) associata ad $ a $ (risp. $ b $).
+\end{tcolorbox}
+
+qui
+
+\section{}\label{es3-8}
+
+\begin{tcolorbox}
+		Sia $ G $ un gruppo di Lie con inversione $ i : G \to G $. Dimostrare che
+	
+	\begin{equation}
+		i_{*a}(Y_{a}) = -(R_{a^{-1}})_{*e}(L_{a^{-1}})_{*e} (Y_{a})
+	\end{equation}
+	
+	per $ \forall a \in G $ e $ \forall Y_{a} \in T_{a}(G) $.
+\end{tcolorbox}
+
+qui
+
+\section{}\label{es3-9}
+
+\begin{tcolorbox}
+	Verificare che il commutatore tra matrici
+	
+	\begin{equation}
+		[A,B] = AB - BA
+	\end{equation}
+
+	definisce un'algebra di Lie sullo spazio tangente all'identità dei gruppi:
+	
+	\begin{equation}
+		\begin{cases}
+			O(n)\\
+			SO(n)\\
+			U(n)\\
+			SU(n)\\
+			SL_{n}(\mathbb{R})\\
+			SL_{n}(\mathbb{C})
+		\end{cases}
+	\end{equation}
+\end{tcolorbox}
+
+qui
+
+\section{}\label{es3-10}
+
+\begin{tcolorbox}
+	Verificare che l'esponenziale di una matrice definisce un'applicazione
+	
+	\begin{align}
+		\begin{split}
+			e : T_{I_{n}}(G) &\to G\\
+			A &\mapsto e^{A}
+		\end{split}
+	\end{align}
+
+	per i gruppi di Lie
+	
+	\begin{equation}
+		\begin{cases}
+			GL_{n}(\mathbb{R})\\
+			GL_{n}(\mathbb{C})\\
+			O(n)\\
+			SO(n)\\
+			U(n)\\
+			SU(n)\\
+			SL_{n}(\mathbb{R})\\
+			SL_{n}(\mathbb{C})
+		\end{cases}
+	\end{equation}
+\end{tcolorbox}
+
+qui
+
+\section{}\label{es3-11}
+
+\begin{tcolorbox}
+	Sia $ G = G_{1} \times \cdots \times G_{s} $ il prodotto diretto di gruppi di Lie. Dimostrare che l'algebra di Lie di $ G $ è isomorfa alla somma diretta delle algebre di Lie dei $ G_{i} $ con $ i=1,\dots,n $.
+\end{tcolorbox}
+
+qui
+
+\section{}\label{es1-12}
+
+\begin{tcolorbox}
+	Dimostrare che ogni gruppo di Lie è parallelizzabile.
+\end{tcolorbox}
+
+qui
