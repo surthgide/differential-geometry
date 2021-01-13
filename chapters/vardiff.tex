@@ -8526,17 +8526,109 @@ per $ \forall q \in N $ e $ (F_{*} (X))_{q} \in T_{q}(M) $.
 
 \subsection{Campi di vettori $ F $-related}
 
-Siano $ F : N \to M $ una funzione liscia (non necessariamente un diffeomorfismo) e due campi di vettori $ X \in \chi(N) $ e $ Y \in \chi(M) $, si dice che $ X $ è $ F $\textit{-related a} $ Y $ se
+Siano $ F : N \to M $ una funzione liscia (non necessariamente un diffeomorfismo) e due campi di vettori lisci $ X \in \chi(N) $ e $ Y \in \chi(M) $, si dice che $ X $ è $ F $\textit{-related a} $ Y $ se
 
 \begin{equation}
-	(F_{*p}X)_{p} = Y_{F(p)}, \qquad p \in N
+	F_{*p}(X_{p}) = Y_{F(p)}, \qquad p \in N
 \end{equation}
 
 \begin{remark}
 	Se $ F $ è un diffeomorfismo, allora $ X $ è $ F $-related a $ Y $ se e solo se $ Y $ è il pushforward di $ X $, i.e. $ Y = F_{*}(X) $.
 \end{remark}
 
-\textbf{l 26 m 1.23.00}
+\begin{proof}
+	\begin{equation}
+		Y_{F(p)} = F_{*p}(X_{p}) = (F_{*}(X))_{F(p)}, \quad \forall p \in N %
+		\implies%
+		Y = F_{*}(X)
+	\end{equation}
+\end{proof}
+
+\begin{theorem}
+	Siano $ F : N \to M $ una funzione liscia e due campi di vettori lisci $ X \in \chi(N) $ e $ Y \in \chi(M) $, allora $ X $ è $ F $-related ad $ Y $ se e solo se
+	
+	\begin{equation}
+		X(g \circ F) = (Y g) \circ F, \qquad \forall g \in C^{\infty}(M)
+	\end{equation}
+
+	con $ g : M \to \R $ e quindi $ g \circ F \in C^{\infty}(N) $.
+\end{theorem}
+
+\begin{proof}
+	Per definizione, $ X $ è $ F $-related ad $ Y $ se e solo se
+	
+	\begin{equation}
+		F_{*p}(X_{p}) = Y_{F(p)}, \qquad p \in N
+	\end{equation}
+
+	applicando la definizione a una funzione qualsiasi $ g \in C^{\infty}(M) $ e usando la definizione di differenziale, deve valere
+	
+	\begin{align}
+		\begin{split}
+			(F_{*p}(X_{p}))(g) &= Y_{F(p)}(g)\\
+			X_{p}(g \circ F) &= (Y g)(F(p))\\
+			X(g \circ F)(p) &= ((Y g) \circ F)(p)\\
+			X(g \circ F) = (Y g) \circ F
+		\end{split}
+	\end{align}
+\end{proof}
+
+\begin{theorem}
+	Siano $ F : N \to M $ una funzione liscia e i campi di vettori lisci $ X_{1},X_{2} \in \chi(N) $ e $ Y_{1},Y_{2} \in \chi(M) $ con $ X_{1} $ $ F $-related ad $ Y_{1} $ e $ X_{2} $ $ F $-related ad $ Y_{2} $, i.e.
+	
+	\begin{equation}
+		\begin{cases}
+			Y_{1} = F_{*}(X_{1})\\
+			Y_{2} = F_{*}(X_{2})
+		\end{cases}
+	\end{equation}
+
+	allora il commutatore $ [X_{1},X_{2}] $ è $ F $-related a $ [Y_{1},Y_{2}] $.
+\end{theorem}
+
+Questo teorema asserisce che il commutatore tra due campi viene preservato tramite campi $ F $-related.
+
+\begin{proof}
+	Usando il teorema precedente, $ [X_{1},X_{2}] $ è $ F $-related a $ [Y_{1},Y_{2}] $ se e solo se
+	
+	\begin{equation}
+		[X_{1},X_{2}](g \circ F) = ([Y_{1},Y_{2}] g) \circ F, \qquad \forall g \in C^{\infty}(M)
+	\end{equation}
+
+	Sempre usando il teorema precedente
+	
+	\begin{align}
+		\begin{split}
+			[X_{1},X_{2}](g \circ F) &= (X_{1} X_{2} - X_{2} X_{1})(g \circ F)\\
+			&= (X_{1} X_{2})(g \circ F) - (X_{2} X_{1})(g \circ F)\\
+			&= X_{1}((Y_{2} g) \circ F) - X_{2}((Y_{1} g) \circ F)\\
+			&= Y_{1}(Y_{2} g) \circ F - Y_{1}(Y_{2} g) \circ F\\
+			&= (Y_{1} Y_{2} - Y_{1} Y_{2})(g \circ F)\\
+			&= [Y_{1},Y_{2}](g \circ F)
+		\end{split}
+	\end{align}
+\end{proof}
+
+\begin{corollary}
+	Siano $ F : N \to M $ un diffeomorfismo e i campi di vettori lisci $ X_{1},X_{2} \in \chi(N) $, allora il pushforward del commutatore è uguale al commutatore dei pushforward, i.e.
+	
+	\begin{equation}
+		F_{*} ([X_{1},X_{2}]) = [F_{*} (X_{1}),F_{*} (X_{2})]
+	\end{equation}
+
+	Il pushforward commuta dunque con il commutatore.
+\end{corollary}
+
+\begin{proof}
+	Per l'osservazione precedente, $ X_{i} $ è $ F $-related a $ F_{*}(X_{i}) $ per $ i=1,2 $ (poiché $ F $ è un diffeomorfismo). Per il teorema precedente $ [X_{1},X_{2}] $ è $ F $-related a $ [F_{*} (X_{1}),F_{*} (X_{2})] $ e ancora per l'osservazione precedente
+	
+	\begin{equation}
+		F_{*} ([X_{1},X_{2}]) = [F_{*} (X_{1}),F_{*} (X_{2})]
+	\end{equation}
+\end{proof}
+
+
+
 
 
 
