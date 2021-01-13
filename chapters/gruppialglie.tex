@@ -27,7 +27,110 @@
 
 \section{Gruppi di Lie}
 
-qui
+Un gruppo $ G $ è un \textit{gruppo di Lie} se l'insieme del gruppo è una varietà differenziabile, è un gruppo algebrico e se le sue operazioni
+
+\begin{align}
+	\begin{split}
+		\mu : G \times G &\to G\\
+		(a,b) &\mapsto a b\\\\
+		%
+		i : G &\to G\\
+		a &\mapsto a^{-1}
+	\end{split}
+\end{align}
+
+sono lisce.\\\\
+%
+Le traslazioni possono essere a sinistra e a destra:
+
+\begin{itemize}
+	\item Dato $ a \in G $, la traslazione a sinistra
+	
+	\map{L_{a}}{G}{G}{b}{a b}
+	
+	è un'applicazione liscia, in quanto restrizione di un'applicazione liscia (i.e. $ L_{a} = \mu(a,\cdot) $), ed è inoltre un diffeomorfismo, in quanto $ L_{a}^{-1} = L_{a^{-1}} $ è ancora liscia;
+	
+	\item Dato $ a \in G $, la traslazione a destra
+	
+	\map{R_{a}}{G}{G}{b}{b a}
+	
+	è un'applicazione liscia, in quanto restrizione di un'applicazione liscia (i.e. $ R_{a} = \mu(\cdot,a) $), ed è inoltre un diffeomorfismo, in quanto $ R_{a}^{-1} = R_{a^{-1}} $ è ancora liscia.
+\end{itemize}
+
+\subsubsection{\textit{Esempi}}
+
+\paragraph{1. Gruppo lineare $ GL_{n}(\R) $}
+
+Il gruppo delle matrici invertibili
+
+\begin{equation}
+	GL_{n}(\R) = \{ A \in M_{n}(\R) \, \mid \, \det(A) \neq 0 \} \subset M_{n}(\R) = \R^{n^{2}}
+\end{equation}
+
+con la struttura differenziale ereditata da $ M_{n}(\mathbb{R}) = \mathbb{R}^{n^{2}} $ in quanto $ GL_{n}(\mathbb{R}) $ è aperto in questo spazio, è un gruppo di Lie rispetto alla moltiplicazione e l'inversione:
+
+\begin{align}
+	\begin{split}
+		\mu : GL_{n}(\R) \times GL_{n}(\R) &\to GL_{n}(\R)\\
+		(A,B) &\mapsto A B\\\\
+		%
+		i : GL_{n}(\R) &\to GL_{n}(\R)\\
+		A &\mapsto A^{-1}
+	\end{split}
+\end{align}
+
+le quali sono lisce.
+
+\paragraph{2. Gruppo lineare speciale $ SL_{n}(\R) $}
+
+Il gruppo delle matrici con determinante unitario
+
+\begin{equation}
+	SL_{n}(\R) = \{ A \in M_{n}(\R) \, \mid \, \det(A) = 1 \} \subset M_{n}(\R) = \R^{n^{2}}
+\end{equation}
+
+è un gruppo di Lie rispetto alla moltiplicazione e l'inversione:
+
+\begin{align}
+	\begin{split}
+		\mu : SL_{n}(\R) \times SL_{n}(\R) &\to SL_{n}(\R)\\
+		(A,B) &\mapsto A B\\\\
+		%
+		i : SL_{n}(\R) &\to SL_{n}(\R)\\
+		A &\mapsto A^{-1}
+	\end{split}
+\end{align}
+
+in quanto sottovarietà di $ GL_{n}(\R) $ (e quindi una varietà) di dimensione $ n^{2}-1 $ e gruppo algebrico rispetto alle sue operazioni, le quali sono lisce.\\
+\textbf{l 27 m 34}
+
+\subsection{Omomorfismi e isomorfismi}
+
+Un \textit{omomorfismo} tra gruppi\footnote{%
+	Omomorfismo e omeomorfismo sono due concetti differenti legati a due parti differenti della matematica.%
+} è un'applicazione (non necessariamente liscia) che preserva le moltiplicazioni di un gruppo nell'altro.
+
+\begin{remark}
+Siano $ F $ un omomorfismo, $ e_{H} \in H $ e $ e_{G} \in G $ gli elementi neutri dei rispettivi gruppi, allora $ F(e_{H}) = e_{G} $.
+\end{remark}
+
+Un omomorfismo tra due gruppi di Lie $ H $ e $ G $ è un'applicazione liscia $ F : H \to G $ tale che sia  un omomorfismo tra gruppi, i.e.
+
+\begin{equation}
+	F \circ L_{h} = L_{F(h)} \circ F, \qquad \forall h \in H
+\end{equation}
+
+in quanto, se $ F $ è un omomorfismo tra gruppi
+
+\begin{align}
+	\begin{split}
+		F(h k) &= F(h) \, F(k)\\
+		(F \circ L_{h})(k) &= (L_{F(h)} \circ F)(k)\\
+		F \circ L_{h} &= L_{F(h)} \circ F
+	\end{split}
+\end{align}
+
+Un \textit{isomorfismo di Lie} è un omomorfismo tra gruppi che sia anche un diffeomorfismo.
 
 \section{Sottogruppi di Lie}
 
