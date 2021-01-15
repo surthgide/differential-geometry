@@ -307,6 +307,51 @@ Un \textit{isomorfismo di Lie} è un omomorfismo tra gruppi che sia anche un dif
 
 \subsection{Sottogruppi di Lie}
 
+Siano $ G $ un gruppo di Lie e $ H \neq \{\} $ un suo sottoinsieme, diremo che $ H $ è un \textit{sottogruppo di Lie} (immerso) di $ G $ se:
+
+\begin{enumerate}
+	\item $ H $ è un sottogruppo algebrico di $ G $, in notazione $ H < G $;
+	
+	\item $ H $ è una sottovarietà immersa di $ G $, i.e. è l'immagine di $ G $ tramite un'immersione iniettiva (la topologia di $ H $ non è necessariamente la topologia indotta da $ G $);
+	
+	\item Le operazioni di moltiplicazione e inversione, indotte da $ G $, sono lisce.
+\end{enumerate}
+
+\begin{remark}
+	Se $ H \subset G $ sottogruppo algebrico ed $ H $ è una sottovarietà di $ G $, allora la terza condizione è superflua. Questo perché: consideriamo la moltiplicazione $ f : G \times G \to G $ in $ G $ e l'inclusione $ i : H \to G $, la loro composizione $ g = f \circ (i \times i) : H \times H \to G $ ha come immagine $ g(H \times H) \subset H $ perciò possiamo restringere il codominio di questa al solo insieme $ H $, ottenendo dunque la moltiplicazione $ \tilde{g} = \mu : H \times H \to H $ per $ H $, la quale è liscia per i teoremi sulle sottovarietà; il ragionamento è analogo per l'inversione.
+\end{remark}
+
+Se $ H \subset G $ sottogruppo algebrico ed $ H $ è una sottovarietà di $ G $, diremo che $ H $ un \textit{sottogruppo di Lie embedded}.\\
+Ad esempio, $ SL_{n}(\R) $ e $ O(n) $ sono sottogruppi di Lie embedded di $ GL_{n}(\R) $, perché sottovarietà di quest'ultimo.
+
+\begin{theorem}
+	Siano $ G $ e $ H $ varietà differenziabili, se $ H < G $ sottogruppo algebrico e $ H $ è chiuso in $ G $ (come sottospazio topologico) allora $ H $ è un sottogruppo embedded di $ G $.
+\end{theorem}
+
+Da questo teorema, possiamo ancora derivare che $ SL_{n}(\R) $ e $ O(n) $ siano sottogruppi di Lie embedded di $ GL_{n}(\R) $ (e quindi sottovarietà) in quanto varietà e chiusi:
+
+\begin{itemize}
+	\item $ SL_{n}(\R) $ è un chiuso in $ GL_{n}(\R) $ in quanto controimmagine di 1 (chiuso in $ \R $) tramite l'applicazione continua (porta chiusi in chiusi)
+	
+	\map{f}{GL_{n}(\R)}{\R}{A}{\det(A)}
+	
+	\item $ O(n) $ è un chiuso in $ GL_{n}(\R) $ in quanto controimmagine di $ I $ (chiuso in $ S(n) $) tramite l'applicazione
+	
+	\map{f}{GL_{n}(\R)}{S(n)}{A}{A^{T} A}
+\end{itemize}
+
+\subsubsection{\textit{Esempi}}
+
+\paragraph{1.}
+
+qui
+
+\paragraph{2.}
+
+qui
+
+\paragraph{3.}
+
 qui
 
 \section{Esponenziale di una matrice}
