@@ -139,42 +139,42 @@ e dunque la restrizione del suo codominio a $ SL_{n}(\R) $ (sottovarietà di $ G
 
 funzione che coincide con l'inversione in $ SL_{n}(\R) $, rendendo dunque l'inversione  $ i $ liscia.
 
-\paragraph{3. Gruppo ortogonale $ O_{n} $}
+\paragraph{3. Gruppo ortogonale $ O(n) $}
 
 Il gruppo delle matrici ortogonali
 
 \begin{equation}
-	O_{n} = \{ A \in GL_{n}(\R) \mid A^{T} A = I \} \subset GL_{n}(\R)
+	O(n) = \{ A \in GL_{n}(\R) \mid A^{T} A = I \} \subset GL_{n}(\R)
 \end{equation}
 
 è una sottovarietà di $ GL_{n}(\R) $ (dal teorema della preimmagine di un'applicazione di rango costante).\\
-Il ragionamento per cui $ O_{n} $ sia un gruppo di Lie rispetto alla moltiplicazione e l'inversione
+Il ragionamento per cui $ O(n) $ sia un gruppo di Lie rispetto alla moltiplicazione e l'inversione
 
 \begin{align}
 	\begin{split}
-		\mu : O_{n} \times O_{n} &\to O_{n}\\
+		\mu : O(n) \times O(n) &\to O(n)\\
 		(A,B) &\mapsto A B\\\\
 		%
-		i : O_{n} &\to O_{n}\\
+		i : O(n) &\to O(n)\\
 		A &\mapsto A^{-1}
 	\end{split}
 \end{align}
 
 è analogo a quello fatto per $ SL_{n}(\R) $.\\
-Calcoliamo ora la dimensione di $ O_{n} $ come varietà e il suo spazio tangente nell'identità $ T_{I}(O_{n}) $. Consideriamo l'insieme delle matrici simmetriche di ordine $ n $
+Calcoliamo ora la dimensione di $ O(n) $ come varietà e il suo spazio tangente nell'identità $ T_{I}(O(n)) $. Consideriamo l'insieme delle matrici simmetriche di ordine $ n $
 
 \begin{equation}
-	S(n) = \{ A \in M_{n}(\R) \mid A^{T} = A \}
+	S(n) = \{ B \in M_{n}(\R) \mid B^{T} = B \}
 \end{equation}
 
 e l'applicazione liscia
 
 \map{f}{GL_{n}(\R)}{S(n)}{A}{A^{T} A}
 
-dove $ (A^{T} A)^{T} = A^{T} A $ dunque $ A^{T} A \in S(n) $. Dimostrando che $ I \in \mathcal{VR}_{f} $, per il teorema della preimmagine di un valore regolare, avremmo che $ O_{n} $ è una sottovarietà di $ GL_{n}(\R) $ con dimensione
+dove $ (A^{T} A)^{T} = A^{T} A $ dunque $ A^{T} A \in S(n) $. Dimostrando che $ I \in \mathcal{VR}_{f} $, per il teorema della preimmagine di un valore regolare, avremmo che $ O(n) $ è una sottovarietà di $ GL_{n}(\R) $ con dimensione
 
 \begin{equation}
-	\dim(O_{n}) = \dim(GL_{n}(\R)) - \dim(S(n))
+	\dim(O(n)) = \dim(GL_{n}(\R)) - \dim(S(n))
 \end{equation}
 
 dove $ S(n) $ è uno spazio vettoriale su $ \R $ e anche un sottospazio vettoriale di $ M_{n}(\R) $, la cui dimensione è data dalla quantità di condizioni necessarie al fine di determinare una matrice simmetrica, i.e.
@@ -186,15 +186,96 @@ dove $ S(n) $ è uno spazio vettoriale su $ \R $ e anche un sottospazio vettoria
 Siccome $ \dim(GL_{n}(\R)) = n^{2} $, otteniamo che
 
 \begin{equation}
-	\dim(O_{n}) = n^{2} - \dfrac{n (n+1)}{2} = \dfrac{n (n-1)}{2}
+	\dim(O(n)) = n^{2} - \dfrac{n (n+1)}{2} = \dfrac{n (n-1)}{2}
 \end{equation}
 
-Verifichiamo ora che $ I \in \mathcal{VR}_{f} $: per fare ciò, dobbiamo calcolare...\\
-\textbf{l 27 m 1.00.00}
+Verifichiamo ora che $ I \in \mathcal{VR}_{f} $: per fare ciò, dobbiamo calcolare il differenziale di $ f $ e controllare che tutti i punti che stanno nell'immagine di $ I $ attraverso $ f_{*} $ siano punti regolari
 
 \begin{equation}
-	T_{p}(f^{-1}(I)) = T_{p}(O_{n}) = \ker(f_{*p}), \qquad p \in f^{-1}(I)
+	f_{*A} : T_{A}(GL_{n}(\R)) \to T_{f(A)}(S(n))
 \end{equation}
+
+possiamo identificare $ T_{A}(GL_{n}(\R)) = M_{n}(\R) $ e $ T_{f(A)}(S(n)) = S(n) $ (in quanto $ S(n) $ è uno spazio vettoriale), perciò $ f_{*} $ porta matrici in matrici simmetriche. Calcoliamo dunque il differenziale $ f_{*A}(X) $ prendendo una curva che passi per $ A $ in 0 e il cui vettore tangente sia $ B $
+
+\begin{equation}
+	\begin{cases}
+		c : (-\varepsilon,\varepsilon) \to GL_{n}(\R)\\
+		c(0) = A\\
+		c'(0) = \dot{c}(0) = X
+	\end{cases}
+\end{equation}
+
+dove
+
+\begin{equation}
+	T_{A}(GL_{n}(\R)) = M_{n}(\R) \implies c'(0) = \dot{c}(0)
+\end{equation}
+
+perciò
+
+\begin{align}
+	\begin{split}
+		f_{*A}(X) &= \left. \dfrac{\operatorname{d}}{\operatorname{dt}} f(c(t)) \right|_{t=0}\\
+		&= \left. \dfrac{\operatorname{d}}{\operatorname{dt}} [c(t)^{T} c(t)] \right|_{t=0}\\
+		&= \left. [ \dot{c}(t)^{T} c(t) + c(t)^{T} \dot{c}(t) ] \right|_{t=0}\\
+		&= X^{T} A + X A^{T}
+	\end{split}
+\end{align}
+
+i.e.
+
+\map{f_{*A}}{M_{n}(\R)}{S(n)}{X}{X^{T} A + X A^{T}}
+
+Vale la condizione
+
+\begin{equation}
+	I \in \mathcal{VR}_{f} %
+	\iff%
+	f_{*A} : M_{n}(\R) \to S(n) \text{ suriettiva} \qquad \forall A \in f^{-1}(I) = O_{n}
+\end{equation}
+
+Perché $ f_{*A} $ sia suriettiva
+
+\begin{equation}
+	\forall A \in O(n), \, \forall B \in S(n), \, \exists X \in M_{n}(\R) \mid X^{T} A + X A^{T} = B
+\end{equation}
+
+è sufficiente dunque prendere $ X = \sfrac{1}{2} AB $, i.e.
+
+\begin{align}
+	\begin{split}
+		X^{T} A + X A^{T} &= \left( \dfrac{1}{2} A B \right)^{T} A + \dfrac{1}{2} A^{T} A B\\
+		&= \dfrac{1}{2} B^{T} A^{T} A + \dfrac{1}{2} B\\
+		&= \dfrac{1}{2} B + \dfrac{1}{2} B\\
+		&= B
+	\end{split}
+\end{align}
+
+dunque $ I \in \mathcal{VR}_{f} $ e $ \dim(O(n)) = n(n-1)/2 $. Da questo ragionamento, otteniamo anche lo spazio tangente a $ O(n) $ in $ I $ poiché, per il teorema della preimmagine di un valore regolare, vale la seguente uguaglianza
+
+\begin{equation}
+	T_{A}(f^{-1}(I)) = T_{A}(O(n)) = \ker(f_{*A}), \qquad A \in f^{-1}(I)
+\end{equation}
+
+perciò
+
+\begin{equation}
+	T_{I}(O(n)) = \ker(f_{*I})
+\end{equation}
+
+ma abbiamo che
+
+\begin{equation}
+	f_{*I}(X) = X^{T} + X
+\end{equation}
+
+perciò
+
+\begin{equation}
+	T_{I}(O(n)) = \ker(f_{*I}) = \{ X \in M_{n}(\R) \mid X^{T} = -X \}
+\end{equation}
+
+ovvero lo spazio tangente di $ O(n) $ è formato dalle matrici antisimmetriche (spazio vettoriale), il quale ha dimensione esattamente $ \dim(T_{I}(O(n))) = n(n-1)/2 $.
 
 \subsection{Omomorfismi e isomorfismi}
 
@@ -224,7 +305,7 @@ in quanto, se $ F $ è un omomorfismo tra gruppi
 
 Un \textit{isomorfismo di Lie} è un omomorfismo tra gruppi che sia anche un diffeomorfismo.
 
-\section{Sottogruppi di Lie}
+\subsection{Sottogruppi di Lie}
 
 qui
 
