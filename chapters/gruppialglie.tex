@@ -340,10 +340,9 @@ Da questo teorema, possiamo ancora derivare che $ SL_{n}(\R) $ e $ O(n) $ siano 
 	\map{f}{GL_{n}(\R)}{S(n)}{A}{A^{T} A}
 \end{itemize}
 
-\subsubsection{\textit{Esempi}}
+\subsubsection{\textit{Esempio}}
 
-\paragraph{1. }
-
+Questo esempio è riferito ad un sottogruppo di Lie immerso importante, il resto dei sottogruppi considerati, saranno sottogruppi di Lie embedded.\\
 Consideriamo come gruppo di Lie il toro $ \T^{2} = \S^{1} \times \S^{1} $ ($ \S^{1} $ è un gruppo di Lie, quindi il prodotto diretto di due $ \S^{1} $ è ancora un gruppo di Lie) con le operazioni naturali e l'applicazione
 
 \map{F}{\R}{\T^{2}}{t}{(e^{2 \pi i t},e^{2 \pi i \alpha t})}
@@ -361,17 +360,200 @@ dove $ \alpha \in \R \setminus \Q $, i.e. $ \alpha $ è irrazionale; questa appl
 
 L'immagine di $ \R $ tramite $ F $ è un sottogruppo di $ \T^{2} $, i.e. $ F(\R) < \T^{2} $, è una sottovarietà immersa ($ F $ non è un embedding) di $ \T^{2} $ e le operazioni su $ F(\R) $ sono lisce, dunque $ H \doteq F(\R) $ è un sottogruppo di Lie (immerso) di $ \T^{2} $.
 
-\paragraph{2.}
-
-\textbf{l 28}
-
-\paragraph{3.}
-
-qui
-
 \section{Esponenziale di una matrice}
 
-qui
+Sia una matrice quadrata $ X \in M_{n}(\R) $, definiamo l'\textit{esponenziale di matrice} come
+
+\begin{equation}
+	e^{X} = \sum_{i=0}^{+\infty} \dfrac{X^{i}}{i!}, \qquad X \in M_{n}(\R)
+\end{equation}
+
+dove in particolare $ X^{0} = I $, sulla falsa riga delle serie di potenze
+
+\begin{equation}
+	e^{x} = \sum_{i=0}^{+\infty} \dfrac{x^{i}}{i!}, \qquad x \in \R
+\end{equation}
+
+Non è però chiaro se la serie di matrici considerata sia convergente e dunque che $ e^{X} \in M_{n}(\R) $: questo è facilmente dimostrabile se la matrice all'esponente è
+
+\begin{itemize}
+	\item la matrice nulla $ X = 0_{n} $ da cui $ e^{0_{n}} = I_{n} = I $;
+	
+	\item la matrice è un multiplo della matrice identità $ X = x I_{n} $, i.e. $ X^{i} = x^{i} I_{n} $, da cui $ e^{X} = x I_{n} $.
+\end{itemize}
+
+Per dimostrare questo, facciamo una digressione su concetti di analisi utili alla dimostrazione.
+
+\subsection{Spazi vettoriali e algebre normati}
+
+Uno spazio vettoriale $ V $ sui reali $ \R $ è detto \textit{normato} se esiste un'applicazione
+
+\map{\norm{\cdot}}{V}{\R}{v}{\norm{v}}
+
+chiamata \textit{norma} tale che siano soddisfatte le condizioni:
+
+\begin{equation}
+	\begin{cases}
+		\begin{cases}
+			\norm{v} \geqslant 0\\
+			\norm{v} = 0 \iff v = 0 \in V
+		\end{cases}%
+		 & \text{definita positiva}\\
+		\norm{\lambda v} = \abs{\lambda} \norm{v} & \text{omogeneità}\\
+		\norm{v + w} \leqslant \norm{v} + \norm{w} & \text{subaddittività}
+	\end{cases}
+\end{equation}
+
+per $ \forall \lambda \in \R $ e $ \forall v,w \in V $.\\
+Consideriamo in particolare lo spazio vettoriale delle matrici quadrate sui reali $ M_{n}(\R) $ di dimensione $ n^{2} $ e come norma
+
+\map{\norm{}}%
+	{M_{n}(\R)}%
+	{\R}%
+	{X = [x_{ij}]_{i,j=1,\dots,n}}%
+	{\left( \sum_{i,j=1}^{n} x_{ij}^{2} \right)^{\sfrac{1}{2}}}
+	
+la quale corrisponde alla norma usuale in $ \R^{n^{2}} $: da ciò deriva che questa norma soddisfa le condizioni poste sopra\footnote{%
+	In particolare, la subadditività deriva dalla diseguaglianza di Cauchy-Schwarz (\textit{C-S}):
+	
+	\begin{equation}
+		\norm{v \cdot w} \leqslant \norm{v} \norm{w}, \qquad v,w \in \R^{n},
+	\end{equation}%
+}, rendendo quindi $ M_{n}(\R) $ uno spazio vettoriale normato.\\\\
+%
+Una tripletta $ (V,\cdot,\norm{}) $ è un'\textit{algebra normata} se $ V $ è uno spazio vettoriale su $ \R $, $ (V,\cdot) $ è un'algebra su $ \R $ e $ (V,\norm{\cdot}) $ è uno spazio vettoriale normato tali che valga la proprietà di submoltiplicatività
+
+\begin{equation}
+	\norm{v \cdot w} \leqslant \norm{v} \norm{w}, \qquad v,w \in V,
+\end{equation}
+
+che lega l'operazione dell'algebra $ \cdot $ e la norma $ \norm{} $.\\
+La tripletta $ (M_{n}(\R),\cdot,\norm{}) $ con $ \cdot $ la moltiplicazione tra matrici e $ \norm{} $ la norma sopra definita per $ M_{n}(\R) $ è un'algebra normata: per verificarlo dobbiamo dimostrare che il prodotto tra matrici e la norma soddisfino la proprietà di submoltiplicatività (in quanto le altre condizioni sono già soddisfatte).\\
+Siano le matrici quadrate $ X = [x_{ij}] $ e $ y = [y_{ij}] $, allora utilizzando la diseguaglianza di Cauchy-Schwarz
+
+\begin{equation}
+	(X Y)_{ij}^{2} = \left( \sum_{k=1}^{n} x_{ik} y_{kj} \right)^{2} \leqslant \left( \sum_{k=1}^{n} x_{ik}^{2} \right) \left( \sum_{k=1}^{n} y_{kj}^{2} \right), \qquad i,j=1,\dots,n
+\end{equation}
+
+se consideriamo dunque la somma al quadrato
+
+\begin{align}
+	\begin{split}
+		\norm{X Y}^{2} &= \sum_{i,j=1}^{n} (X Y)_{ij}^{2}\\
+		&= \sum_{i,j=1}^{n} \left( \sum_{k=1}^{n} x_{ik} y_{kj} \right)^{2}\\
+		&\leqslant \sum_{i,j=1}^{n} \left( \sum_{k=1}^{n} x_{ik}^{2} \right) \left( \sum_{k=1}^{n} y_{kj}^{2} \right)\\
+		&= \left( \sum_{i,k=1}^{n} x_{ik}^{2} \right) \left( \sum_{j,k=1}^{n} y_{kj}^{2} \right)\\
+		&= \norm{X}^{2} \norm{Y}^{2}
+	\end{split}
+\end{align}
+
+da cui $ \norm{X Y} \leqslant \norm{X} \norm{Y} $.
+
+\begin{definition}
+	Sia $ (V,\cdot,\norm{}) $ un'algebra normata, allora
+	
+	\begin{itemize}
+		\item Se $ s_{n} \in V $ è una successione convergente, i.e $ s_{n} \to s \in V $, allora
+		
+		\begin{equation}
+			s_{n} \to s \implies a s_{n} \to a s, \qquad \forall a \in V
+		\end{equation}
+	
+		\item Se consideriamo la serie
+		
+		\begin{equation}
+			\sum_{n=0}^{+\infty} s_{n} = s %
+			\implies%
+			\begin{cases}
+				\displaystyle \sum_{n=0}^{+\infty} a s_{n} = a s\\\\
+				\displaystyle \sum_{n=0}^{+\infty} s_{n} a = s a
+			\end{cases}
+			\qquad \forall a \in V
+		\end{equation}
+	
+		dove $ a s $ e $ s a $ implicano la moltiplicazione dell'algebra.
+	\end{itemize}
+\end{definition}
+
+Per definizione, la notazione $ s_{n} \to s $ implica l'equazione
+
+\begin{equation}
+	\lim_{n \to \infty} \norm{s_{n} - s} = 0
+\end{equation}
+
+\begin{proof}
+	Per la prima proprietà
+	
+	\begin{equation}
+		\begin{cases}
+			\norm{a s_{n} - a s} = \norm{a (s_{n} - s)}\\
+			\lim\limits_{n \to \infty} \norm{s_{n} - s} = 0
+		\end{cases}
+		\implies%
+		\begin{cases}
+			\norm{a s_{n} - a s} = \abs{a} \norm{s_{n} - s}\\
+			s_{n} \to s
+		\end{cases}
+		\implies%
+		a s_{n} \to a s
+	\end{equation}
+
+	Per la seconda: per definizione, una serie converge se la successione delle somme parziali converge allo stesso valore, i.e.
+	
+	\begin{equation}
+		\sum_{n=0}^{+\infty} s_{n} = s %
+		\iff%
+		\begin{cases}
+			\displaystyle \tilde{s}_{k} = \sum_{n=0}^{k} s_{n}\\
+			\tilde{s}_{k} \to s
+		\end{cases}
+	\end{equation}
+
+	dunque per la proprietà
+	
+	\begin{equation}
+		\sum_{n=0}^{+\infty} a s_{n} = a s %
+		\iff%
+		\begin{cases}
+			\displaystyle a \tilde{s}_{k} = \sum_{n=0}^{k} a s_{n}\\
+			a \tilde{s}_{k} \to a s
+		\end{cases}
+	\end{equation}
+
+	dove per la prima proprietà
+	
+	\begin{equation}
+		\sum_{n=0}^{+\infty} s_{n} = s %
+		\iff%
+		\tilde{s}_{k} \to s%
+		\implies%
+		a \tilde{s}_{n} \to a \tilde{s} %
+		\iff%
+		\sum_{n=0}^{+\infty} a s_{n} = a s
+	\end{equation}
+
+	Il ragionamento è analogo per la moltiplicazione per $ a $ a destra.
+\end{proof}
+
+Una serie è \textit{assolutamente convergente} se è convergente la stessa serie considerando le norme degli addendi, i.e.
+
+\begin{equation}
+	\sum_{n=0}^{+\infty} s_{n} \text{ assolutamente convergente} \iff \sum_{n=0}^{+\infty} \norm{s_{n}} \text{ convergente}
+\end{equation}
+
+Una successione $ s_{n} $ è una \textit{successione di Cauchy} se
+
+\begin{equation}
+	s_{n} \text{ di Cauchy} \iff \forall \varepsilon > 0, \, \exists N_{\varepsilon} \mid \norm{s_{p} - s_{q}} \leqslant \epsilon, \quad \forall p,q \geqslant N_{\varepsilon}
+\end{equation}
+
+\begin{remark}
+	Una successione convergente è di Cauchy\footnote{%
+		Per dimostrarlo è sufficiente prendere una differenza tra gli addendi arbitrariamente piccola e sfruttare la subadditività.%
+	}, ma non è necessariamente vero che una successione di Cauchy sia convergente.
+\end{remark}
+
+\textbf{l 28 m 33}
 
 \section{Richiami di algebra lineare}
 
