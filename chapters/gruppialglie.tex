@@ -362,13 +362,14 @@ L'immagine di $ \R $ tramite $ F $ è un sottogruppo di $ \T^{2} $, i.e. $ F(\R)
 
 \section{Esponenziale di una matrice}
 
-Sia una matrice quadrata $ X \in M_{n}(\R) $, definiamo l'\textit{esponenziale di matrice} come
+Sia una matrice quadrata $ X \in M_{n}(\R) $, definiamo l'\textit{esponenziale di matrice} come\footnote{%
+In particolare $ X^{0} = I $.}
 
 \begin{equation}
 	e^{X} = \sum_{i=0}^{+\infty} \dfrac{X^{i}}{i!}, \qquad X \in M_{n}(\R)
 \end{equation}
 
-dove in particolare $ X^{0} = I $, sulla falsa riga delle serie di potenze
+sulla falsa riga delle serie di potenze
 
 \begin{equation}
 	e^{x} = \sum_{i=0}^{+\infty} \dfrac{x^{i}}{i!}, \qquad x \in \R
@@ -382,7 +383,7 @@ Non è però chiaro se la serie di matrici considerata sia convergente e dunque 
 	\item la matrice è un multiplo della matrice identità $ X = x I_{n} $, i.e. $ X^{i} = x^{i} I_{n} $, da cui $ e^{X} = x I_{n} $.
 \end{itemize}
 
-Per dimostrare questo, facciamo una digressione su concetti di analisi utili alla dimostrazione.
+Per dimostrarlo in generale, facciamo una digressione su concetti di analisi utili alla dimostrazione.
 
 \subsection{Spazi vettoriali e algebre normati}
 
@@ -544,7 +545,7 @@ Una serie è \textit{assolutamente convergente} se è convergente la stessa seri
 Una successione $ s_{n} $ è una \textit{successione di Cauchy} se
 
 \begin{equation}
-	s_{n} \text{ di Cauchy} \iff \forall \varepsilon > 0, \, \exists N_{\varepsilon} \mid \norm{s_{p} - s_{q}} \leqslant \epsilon, \quad \forall p,q \geqslant N_{\varepsilon}
+	s_{n} \text{ di Cauchy} \iff \forall \varepsilon > 0, \, \exists p,q,N_{\varepsilon} \in \N \mid \norm{s_{p} - s_{q}} \leqslant \epsilon, \quad \forall p,q \geqslant N_{\varepsilon}
 \end{equation}
 
 \begin{remark}
@@ -553,7 +554,62 @@ Una successione $ s_{n} $ è una \textit{successione di Cauchy} se
 	}, ma non è necessariamente vero che una successione di Cauchy sia convergente.
 \end{remark}
 
-\textbf{l 28 m 33}
+\subsection{Spazi vettoriali e algebre completi}
+
+Uno spazio normato $ (V,\norm{}) $ è detto \textit{completo} se ogni sua successione di Cauchy è convergente. Uno spazio normato e completo si chiama \textit{spazio di Banach}.\\
+Analogamente, un'algebra normata $ (V,\cdot,\norm{}) $ è \textit{completa} se $ (V,\norm{}) $ è completo. Un'algebra normata e completa si chiama \textit{algebra di Banach}.\\\\
+%
+Possiamo prendere come esempio di algebra di Banach $ (M_{n}(\R),\cdot,\norm{}) $, in quanto $ (M_{n}(\R),\norm{}) $ è uno spazio completo perché lo è $ \R^{n^{2}} $ e questo si identifica con lo spazio delle matrici quadrate $ M_{n}(\R) = \R^{n^{2}} $.
+
+\begin{definition}
+	Sia $ (V,\norm{}) $ uno spazio completo, se una serie è assolutamente convergente, allora è anche convergente (strettamente), i.e.
+	
+	\begin{equation}
+		\sum_{n=0}^{+\infty} \norm{s_{n}} \text{ convergente} \implies \sum_{n=0}^{+\infty} s_{n} \text{ convergente}
+	\end{equation}
+\end{definition}
+
+Come controesempio dell'implicazione inversa, la serie in $ \R $
+
+\begin{equation}
+	\sum_{n=0}^{+\infty} \dfrac{(-1)^{n}}{n}
+\end{equation}
+
+è convergente ma non assolutamente convergente, se si prende la norma in $ \R $, i.e. il valore assoluto.
+
+\begin{proof}
+	Consideriamo la successione di serie parziali $ \tilde{s}_{k} \in V $ e $ p,q \in \N $ con $ p > q $, per ipotesi la serie è assolutamente convergente perciò
+	
+	\begin{equation}
+		\norm{\tilde{s}_{p} - \tilde{s}_{q}} = \norm{ \sum_{n=q+1}^{p} \tilde{s}_{n} } \leqslant \sum_{n=q+1}^{p} \norm{\tilde{s}_{n}} < \varepsilon, \qquad \forall p,q > N_{\varepsilon} \in \N
+	\end{equation}
+
+	dove nel secondo passaggio abbiamo utilizzato la subadditività, dunque $ \tilde{s}_{k} $ è di Cauchy. Essendo $ V $ completo, la successione $ \tilde{s}_{k} $ è convergente strettamente dunque anche la serie è convergente.
+\end{proof}
+
+\subsection{Definizione di esponenziale di matrice}
+
+Mostriamo ora che la serie
+
+\begin{equation}
+	e^{X} = \sum_{i=0}^{+\infty} \dfrac{X^{i}}{i!}, \qquad X \in M_{n}(\R)
+\end{equation}
+
+sia convergente in $ M_{n}(\R) $.\\
+Essendo lo spazio $ M_{n}(\R) $ completo, è sufficiente verificare la serie sia assolutamente convergente. Utilizzando la submoltiplicatività
+
+\begin{equation}
+	\sum_{i=0}^{+\infty} \norm{ \dfrac{X^{i}}{i!} } = %
+	\sum_{i=0}^{+\infty} \dfrac{1}{i!} \norm{X^{i}} \leqslant %
+	\sum_{i=0}^{+\infty} \dfrac{1}{i!} \norm{X}^{i} = %
+	e^{\norm{X}}
+\end{equation}
+
+dove $ \norm{X} \in \R $, dunque la serie converge.
+
+\subsection{Proprietà dell'esponenziale di matrice}
+
+\textbf{l 28 m 55}
 
 \section{Richiami di algebra lineare}
 
