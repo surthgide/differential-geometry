@@ -1,30 +1,3 @@
-%% map definition
-%
-%\newcommand{\R}{\mathbb{R}}
-%\renewcommand{\S}{\mathbb{S}}
-%
-%\newcommand{\map}[5]{
-%	\begin{align}
-%		\begin{split}
-%			#1 : #2 &\to #3\\
-%			#4 &\mapsto #5
-%		\end{split}
-%	\end{align}
-%}
-%
-%%
-%
-%% image definition
-%
-%\newcommand{\img}[2]{
-%	\begin{figure}[H]
-%		\centering
-%		\includegraphics[width=#1\textwidth,keepaspectratio]{#2}
-%	\end{figure}
-%}
-%
-%%
-
 \section{Gruppi di Lie}
 
 Un gruppo $ G $ è un \textit{gruppo di Lie} se l'insieme del gruppo è una varietà differenziabile, è un gruppo algebrico e se le sue operazioni
@@ -747,7 +720,7 @@ In campo complesso, si parla di \textit{matrici unitarie}, definite come
 	U(n) = \{ A \in M_{n}(\C) \mid  = I \}
 \end{equation}
 
-dove $ A^{*} = \bar{A}^{T} $.\\
+dove $ A ^{-1} = A^{*} = \bar{A}^{T} $.\\
 Analogamente come le matrici ortogonali hanno colonne ortogonali tra loro e di norma unitaria (entrambi rispetto al prodotto scalare), anche le matrici unitarie hanno colonne ortogonali tra loro e di norma unitaria (entrambi rispetto al prodotto hermitiano): svolgendo il prodotto matriciale nella definizione di $ U(n) $
 
 \begin{equation}
@@ -778,9 +751,121 @@ e così per il resto degli elementi nella diagonale, mentre tutti gli altri prod
 	Le colonne di una matrice unitaria sono una base ortonormale per l'algebra $ (\C^{n},\cdot) $, i.e. prese due colonne $ v_{i} $ e $ v_{j} $ di una matrice unitaria, vale la seguente uguaglianza $ v_{i} \cdot v_{j} = \delta_{ij} $.
 \end{definition}
 
+
+\begin{definition}
+	La dimensione di un sottospazio $ W \subset \C^{n} $ in $ \C^{n} $ è doppia rispetto alla dimensione che questo avrebbe sui numeri reali $ \R $, in quanto esiste l'identificazione $ \C^{n} = \R^{2n} $, i.e.
+
+	\begin{equation}
+		\dim(W)_{\C^{n}}(W) = 2 \dim(W)_{\R^{n}}(W)
+	\end{equation}
+\end{definition}
+
+\subsection{Matrici simili}
+
+Siano due matrici $ A,B \in M_{n}(\C) $, diremo che $ A $ è \textit{simile} a $ B $ se esiste una matrice invertibile $ S \in GL_{n}(\C) $ tale che valga la relazione
+
+\begin{equation}
+	B = S^{-1} A S
+\end{equation}
+
+Le stesse due matrici sono \textit{unitariamente simili} se la matrice $ S $ della relazione è unitaria.\\
+\textbf{l 29 m 6.40}
+
+\subsection{Altre proprietà}
+
+\begin{definition}
+	Se $ A $ è simile a $ B $ se e solo se esiste un'applicazione lineare $ T : \C^{n} \to \C^{n} $ tali che $ A $ e $ B $ rappresentano $ T $ rispetto a due basi di $ \C^{n} $.
+\end{definition}
+
+\begin{definition}
+	$ A $ è unitariamente simile a $ B $ se e solo se esiste un'applicazione lineare $ T : \C^{n} \to \C^{n} $ tali che $ A $ e $ B $ rappresentano $ T $ rispetto a due basi ortonormali di $ \C^{n} $.
+\end{definition}
+
+Questi due risultati derivano dal fatto che, prese due basi $ \mathcal{A} $ e $ \mathcal{B}' $ per $ \C^{n} $ con la matrice $ S $ che rappresenta il cambio di base, i.e.
+
+\begin{equation}
+	\begin{cases}
+		x' = S x\\
+		[T(x)]_{\mathcal{B}} = S [T(x)]_{\mathcal{A}}
+	\end{cases}
+\end{equation}
+
+abbiamo che l'applicazione lineare $ T $ applicata ad un vettore $ x $ ha due immagini a seconda della base in cui sono scritte
+
+\begin{align}
+	\begin{split}
+		T : \C^{n} &\to \C^{n}\\
+		x &\stackrel{\mathcal{A}}{\mapsto} [T(x)]_{\mathcal{A}} = A x\\
+		x' &\stackrel{\mathcal{B}}{\mapsto} [T(x)]_{\mathcal{B}} = B x'
+	\end{split}
+\end{align}
+
+le quali sono legate da
+
+\begin{align}
+	\begin{split}
+		[T(x)]_{\mathcal{B}} &= B x'\\
+		S [T(x)]_{\mathcal{A}} &= B S x\\
+		[T(x)]_{\mathcal{A}} &= S^{-1} B S x\\
+		[T(x)]_{\mathcal{A}} &= A x
+	\end{split}
+\end{align}
+
+da cui
+
+\begin{equation}
+	A = S^{-1} B S
+\end{equation}
+
+il quale rende le due matrici simili.
+
+\begin{definition}
+	"$ A $ è (unitariamente) simile a $ B $" è una relazione di equivalenza in $ M_{n}(\C) $, i.e. $ A \sim B $.
+\end{definition}
+
+\begin{definition}
+	Se $ A \sim B $ allora $ A $ e $ B $ hanno stessi traccia, rango, determinante e polinomio caratteristico.
+\end{definition}
+
+
+\begin{proof}
+	\begin{itemize}
+		\item Per quanto riguarda la traccia:
+
+		\begin{equation}
+			\tr(A) = \tr(S^{-1} B S) = \tr(B S^{-1} S) = \tr(B)
+		\end{equation}
+
+		\item Il rango di una matrice non cambia se la si moltiplica per una matrice invertibile
+
+		\item Per quanto riguarda il determinante, per Binet:
+
+		\begin{equation}
+			\det(A) = \det(S^{-1} B S) = \det(S^{-1}) \det(B) \det(S) = \det(B) \det(S^{-1} S) = \det(B)
+		\end{equation}
+
+		\item Per quanto riguarda il polinomio caratteristico, per Binet:
+		
+		\begin{align}
+			\begin{split}
+				P_{\lambda}(A) &= \det(A - \lambda I)\\
+				&= \det(S^{-1} B S - \lambda I)\\
+				&= \det(S^{-1} B S - S^{-1} \lambda I S)\\
+				&= \det(S^{-1}) \det(B - \lambda I) \det(S)\\
+				&= \det(B - \lambda I)\\
+				&= P_{\lambda}(B)
+			\end{split}
+		\end{align}
+		
+	\end{itemize}
+\end{proof}
+
+\textbf{l 29 m 15}
+
 \section{Traccia, determinante ed esponenziale di una matrice}
 
 qui
 
 \section{Algebra di Lie}
 
+qui
