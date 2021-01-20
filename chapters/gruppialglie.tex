@@ -768,8 +768,7 @@ Siano due matrici $ A,B \in M_{n}(\C) $, diremo che $ A $ è \textit{simile} a $
 	B = S^{-1} A S
 \end{equation}
 
-Le stesse due matrici sono \textit{unitariamente simili} se la matrice $ S $ della relazione è unitaria.\\
-\textbf{l 29 m 6.40}
+Le stesse due matrici sono \textit{unitariamente simili} se la matrice $ S $ della relazione è unitaria.
 
 \subsection{Altre proprietà}
 
@@ -827,7 +826,6 @@ il quale rende le due matrici simili.
 	Se $ A \sim B $ allora $ A $ e $ B $ hanno stessi traccia, rango, determinante e polinomio caratteristico.
 \end{definition}
 
-
 \begin{proof}
 	\begin{itemize}
 		\item Per quanto riguarda la traccia:
@@ -860,7 +858,273 @@ il quale rende le due matrici simili.
 	\end{itemize}
 \end{proof}
 
-\textbf{l 29 m 15}
+\subsection{Teorema di Schur e teorema spettrale}
+
+\begin{theorem}(Teorema di Schur)
+	Data una matrice $ A \in M_{n}(\C) $ esiste una matrice $ U \in U(n) $ tale che
+	
+	\begin{equation}
+		U^{*} A U = T = %
+		\smqty(\dmat{\lambda_{1}, & & K \\ & \ddots & \\ 0 & & ,\lambda_{n}})
+	\end{equation}
+
+	con $ T $ matrice triangolare (superiore), i.e. una matrice che ha tutte entrate nulle sotto la diagonale principale.\\
+	In altre parole, $ A $ è unitariamente simile ad una matrice triangolare (superiore), il che rende $ \lambda_{1},\dots,\lambda_{n} $ gli autovalori di $ A $.
+\end{theorem}
+
+\begin{proof}
+	La dimostrazione di questo teorema è fatta per induzione su $ n $.\\
+	Per $ n=1 $, le matrici diventano numeri e il teorema è dimostrato in quanto sono già "diagonali".\\
+	Supponiamo dunque che sia vero per $ n-1 $ e dimostriamo per $ n $: dimostrare che $ A $ è simile a una matrice triangolare superiore è equivalente a trovare una base ortonormale $ \{v_{1},\dots,v_{n}\} $ (rispetto al prodotto hermitiano, i.e. $ v_{i}^{T} \bar{v}_{j} = \delta_{ij} $ con $ i,j=1,\dots,n $) di $ \C^{n} $ tale che $ A v_{k} $ sia combinazione lineare dei vettori di base.\\
+	Siano $ \lambda_{1} \in \C $ un autovalore per $ A $ e $ v_{1} \neq 0 $ il corrispondente autovettore, i.e. $ A v_{1} = \lambda_{1} v_{1} $. Sia lo spazio dei vettori generati da $ v_{1} $
+	
+	\begin{equation}
+		W = \expval{v_{1}}_{\C} = \{ \lambda v_{1} \mid \lambda \in \C \}
+	\end{equation}
+	
+	il quale avrà $ \dim_{\C}(W) = 1 $, consideriamo ora il suo \textit{complemento ortogonale}
+	
+	\begin{equation}
+		W^{\perp} = \{ v\in \C^{n} \mid v \cdot w = 0, \, \forall w \in W \}
+	\end{equation}
+
+	con $ \dim_{\C}(W^{\perp}) = n-1 $ e la proiezione $ \pi_{W^{\perp}} : \C^{n} \to W^{\perp} $. Consideriamo l'applicazione lineare
+	
+	\map{\pi_{W^{\perp}} \circ A}{W^{\perp}}{W^{\perp}}{w}{\pi_{W^{\perp}}(A w)}
+	
+	Per ipotesi induttiva, esiste una base ortonormale $ \{v_{2},\dots,v_{n}\} $ di $ W^{\perp} $ tale che $ (\pi_{W^{\perp}} \circ A)(v_{k}) $ è combinazione lineare di $ v_{2},\dots,v_{k} $ per $ \forall k=2,\dots,n $.\\
+	A questo punto $ \{v_{1},\dots,v_{n}\} $ è una base ortonormale di $ \C^{n} $ tale che $ A v_{k} $ sia combinazione lineare dei vettori di base.\\
+	Essendo la base ortonormale, la matrice $ A $ è dunque unitariamente simile a una matrice triangolare (superiore).
+\end{proof}
+
+La base $ \{v_{1},\dots,v_{n}\} $ che appare nel teorema di Schur viene chiamata \textit{base di Schur}.\\\\
+%
+Una matrice $ A \in M_{n}(\C) $ è detta \textit{normale} se $ A A^{*} = A^{*} A $, i.e. commuta con la sua trasposta coniugata: esempi di matrici normali sono
+
+\begin{itemize}
+	\item Le matrici unitarie, in quanto $ A^{*} A = I $;
+	
+	\item Le matrici ortogonali (le quali hanno entrate reali), perciò $ A^{*} A = A^{T} A = I $;
+	
+	\item Le matrici hermitiane, che coincidono con la loro trasposta coniugata, i.e. $ A = A^{*} $;
+	
+	\item Le matrici simmetriche $ A \in S(n) $ (con entrate reali), in quanto $ A = A^{T} $.
+\end{itemize}
+
+\begin{theorem}(Teorema spettrale)
+	Ogni matrice $ A \in M_{n}(\C) $ normale è unitariamente simile a una matrice diagonale, i.e.
+	
+	\begin{equation}
+		A \in M_{n}(\C) \qq{normale} \implies %
+		\exists U \in U(n) \mid U^{*} A U = %
+		\smqty(\dmat{\lambda_{1}, & & 0 \\ & \ddots & \\ 0 & & ,\lambda_{n}})
+	\end{equation}
+
+	con $ \lambda_{j} $ gli autovalori di $ A $.\\
+	In altre parole, una matrice normale è sempre diagonalizzabile e i suoi autovettori sono una base ortonormale di $ \C^{n} $.\\
+	Ancora, una matrice $ A \in M_{n}(\C) $ è normale se e solo se esiste una base ortonormale di $ \C^{n} $ costituita dagli autovettori di $ A $.
+\end{theorem}
+
+\begin{proof}
+	Se $ A \in M_{n}(\C) $, per il teorema di Schur esiste una matrice unitaria $ U \in U(n) $ tale che
+	
+	\begin{equation}
+		U^{*} A U = T = %
+		\smqty(\dmat{\lambda_{1}, & & K \\ & \ddots & \\ 0 & & ,\lambda_{n}})
+	\end{equation}
+
+	cioè $ A $ sia simile ad una matrice triangolare superiore.\\
+	Essendo $ A $ normale, questo implica che anche $ U^{*} A U $ lo sia perché
+	
+	\begin{align}
+		\begin{split}
+			(U^{*} A U) (U^{*} A U)^{*} &= U^{*} A U U^{*} A^{*} U\\
+			&= U^{*} A A^{*} U\\
+			&= U^{*} A^{*} A U\\
+			&= U^{*} A^{*} U U^{*} A U\\
+			&= (U^{*} A U)^{*} (U^{*} A U)
+		\end{split}
+	\end{align}
+
+	A questo punto, $ T $ è normale ma se una matrice è triangolare superiore e normale allora è diagonale: dimostriamo questo per induzione su $ n $.\\
+	Per $ n=1 $, la matrice è diagonale in quanto numero.\\
+	Supponiamo che sia vero per matrici di ordine $ n-1 $ e mostriamolo per matricidi ordine $ n $: riscriviamo la matrice normale triangolare superiore come
+	
+	\begin {equation}
+		T = \mqty(\lambda_{1} & B \\ 0 & C)
+	\end{equation}
+
+	dove $ \lambda_{1} \in \C $, $ B \in M_{1,n-1}(\C) $, $ 0 \in M_{n-1,1} $ e $ C \in M_{n-1}(\C) $. Imponendo la condizione di matrice normale
+	
+	\begin{align}
+		\begin{split}
+			T T^{*} &= T^{*} T\\
+			\mqty(\lambda_{1} & B \\ 0 & C) \mqty(\bar{\lambda}_{1} & 0 \\ B^{*} & C^{*}) &= \mqty(\bar{\lambda}_{1} & 0 \\ B^{*} & C^{*}) \mqty(\lambda_{1} & B \\ 0 & C)\\
+			\mqty(\abs{\lambda}_{1} + B B^{*} & B C^{*} \\ C B^{*} & C C^{*}) &= \mqty(\abs{\lambda}_{1} & \bar{\lambda}_{1} B \\ \lambda_{1} B^{*} & B^{*} B + C^{*} C)
+		\end{split}
+	\end{align}
+
+	otteniamo che
+	
+	\begin{equation}
+		\begin{cases}
+			B B^{*} = 0 \implies B = 0\\
+			C^{*} C = C C^{*}
+		\end{cases}
+	\end{equation}
+
+	rendendo $ C $ normale oltre che triangolare superiore: per ipotesi induttiva, $ C $ è diagonale quindi lo è anche $ T $.
+\end{proof}
+
+\begin{corollary}[1. Teorema spettrale per matrici simmetriche]
+	Sia $ A \in S(n) $ con entrate reali ($ A \in M_{n}(\R) $), allora esiste una matrice $ P \in O(n) $ tale che
+	
+	\begin{equation}
+		P^{T} A P = D = %
+		\smqty(\dmat{\lambda_{1}, & & 0 \\ & \ddots & \\ 0 & & ,\lambda_{n}})
+	\end{equation}
+\end{corollary}
+
+\begin{proof}
+	Per dimostrare questo corollario, è sufficiente dimostrare che gli autovalori di $ A $ siano reali e dunque anche gli autovettori sono reali: considerando l'uguaglianza
+	
+	\begin{equation}
+		U(n) \cup M_{n}(\R) = O(n)
+	\end{equation}
+
+	il resto della dimostrazione deriva dal teorema spettrale.\\
+	Per dimostrare che gli autovalori di una matrice $ A \in S(n) \subset M_{n}(\C) $  ad entrate reali siano reali, consideriamo la relazione
+	
+	\begin{equation}
+		A v = \lambda v \qcomma \lambda \in \C, \, v \in \C^{n}
+	\end{equation}
+
+	da cui
+
+	\begin{align}
+		\begin{split}
+			\lambda v &= A v\\
+			\bar{v}^{T} \lambda v &= \bar{v}^{T} A v\\
+			\lambda \abs{v}^{2} &= \bar{v}^{T} \bar{A}^{T} v\\
+			&= \overline{A v}^{T} v\\
+			&= \overline{\lambda v}^{T} v\\
+			&= \bar{\lambda} v^{T} v\\
+			&= \bar{\lambda} \abs{v}^{2}
+		\end{split}
+	\end{align}
+
+	perciò $ \bar{\lambda} = \lambda \implies \lambda \in \R $.
+\end{proof}
+
+\begin{corollary}[2]
+	Siano una matrice normale $ A \in M_{n}(\C) $ e un suo autovalore $ \lambda $, allora la molteplicità algebrica di $ \lambda $ coincide con quella geometrica, dove la prima indica il grado della soluzione $ \lambda $ all'interno del polinomio caratteristico mentre la seconda indica la dimensione del autospazio associato a $ \lambda $.
+\end{corollary}
+
+\begin{proof}
+	Per dimostrare il corollario, ricordiamo che una matrice normale è sempre diagonalizzabile e una matrice è diagonalizzabile se e solo se la molteplicità algebrica dei suoi autovalori coincide con quella geometrica.
+\end{proof}
+
+\begin{corollary}[3]
+	Sia $ A \in U(n) $, i.e. $ A^{*} A = I $, allora esiste una matrice unitaria $ U \in U(n) $ tale che
+	
+	\begin{equation}
+		U^{*} A U = %
+		\smqty(\dmat{ e^{i \theta_{n}} & & 0 \\ & \ddots & \\ 0 & & e^{i \theta_{n}} }) \qcomma \theta_{j} \in \R, \, j=1,\dots,n
+	\end{equation}
+
+	In altre parole, una matrice unitaria è simile a una matrice diagonale con entrate di norma unitaria.
+\end{corollary}
+
+\begin{proof}
+	Se $ A \in U(n) $ allora è normale, dunque esiste $ U \in U(n) $ tale che $ U^{*} A U $ sia diagonale, i.e.
+	
+	\begin{equation}
+		U^{T} A U = %
+		\smqty(\dmat{\lambda_{1} & & 0 \\ & \ddots & \\ 0 & & \lambda_{n}})
+	\end{equation}
+
+	quindi è sufficiente dimostrare che $ \abs{\lambda_{j}} = 1 $ per $ \forall j=1,\dots,n $:
+	
+	\begin{align}
+		\begin{split}
+			\lambda v &= A v\\
+			\overline{(A v)}^{T} \lambda v &= \overline{(A v)}^{T} A v\\
+			\overline{(\lambda v)}^{T} \lambda v &= \bar{v}^{T} A^{*} A v\\
+			\bar{\lambda} \lambda \bar{v}^{T} v &= \bar{v}^{T} v\\
+			\abs{\lambda}^{2} \abs{v}^{2} &= \abs{v}^{2}\\
+			\abs{\lambda} &= 1
+		\end{split}
+	\end{align}
+\end{proof}
+
+Consideriamo l'insieme delle \textit{matrici unitarie speciali}:
+
+\begin{equation}
+	SU(n) = \{ X \in U(n) \mid \det(X) = 1 \} = \{ X \in M_{n}(\C) \mid X^{*} X = I \wedge \det(X) = 1 \}
+\end{equation}
+
+\begin{corollary}[4]
+	Sia $ A \in SU(n) $, allora esiste una matrice unitaria $ U $ tale che
+	
+	\begin{equation}
+		U^{*} A U = %
+		\smqty(\dmat{ e^{i \theta_{n}} & & 0 \\ & \ddots & \\ 0 & & e^{i \theta_{n}} }) \qcomma \theta_{j} \in \R, \, j=1,\dots,n
+	\end{equation}
+
+	con
+	
+	\begin{equation}
+		\sum_{j=1}^{n} \theta_{j} = 2 k \pi \qcomma k \in \Z
+	\end{equation}
+\end{corollary}
+
+\begin{proof}
+	\begin{align}
+		\begin{split}
+			1 &= \det(A)\\
+			&= \prod_{j=1}^{n} e^{i \theta_{j}}\\
+			&= e^{i \sum_{j=1}^{n} \theta_{j}}
+		\end{split}
+	\end{align}
+
+	\begin{equation}
+		1 = \det(A) = \det(U^{*} A U) = \prod_{j=1}^{n} e^{i \theta_{j}} = e^{i \sum_{j=1}^{n} \theta_{j}} %
+		\implies%
+		\sum_{j=1}^{n} \theta_{j} = 2 k \pi \qcomma k \in \Z
+	\end{equation}
+\end{proof}
+
+\subsection{Forma canonica}
+
+\begin{theorem}[Forma canonica ortogonale]
+	Sia una matrice $ A \in O(n) $, i.e. $ A^{T} A = I $, allora esistono una matrice ortogonale $ P $, $ p,q \in \R $ e $ \theta_{j} \in (0,\pi) $ con $ j=1,\dots,k $ dove $ k = (n-p-q)/2 $ tali che
+	
+	\begin{equation}
+		P^{T} A P = %
+		\smqty(\dmat{ I_{p} & & & & & \\ & - I_{q} & & & 0 & \\ & & R_{1} & & & \\ & 0 & & \ddots & \\ & & & & R_{n-p-q} })
+	\end{equation}
+
+	sia una matrice a blocchi dove
+	
+	\begin{equation}
+		R_{j} = \mqty(\dmat{ \cos(\theta_{j}) & \sin(\theta_{j}) \\\\ - \sin(\theta_{j}) & \cos(\theta_{j}) })
+	\end{equation}
+
+	in cui $ \det(R_{j}) = 1 $ e
+	
+	\begin{equation}
+		\det(P^{T} A P) = %
+		\begin{cases}
+			1 & q = 2 k\\
+			- 1 & q = 2 k + 1
+		\end{cases}
+	\end{equation}
+
+	con $ k \in \N $.\\
+	Se $ A \in SO(n) $ allora $ q $ è pari.
+\end{theorem}
+
+\textbf{l 30}
 
 \section{Traccia, determinante ed esponenziale di una matrice}
 
