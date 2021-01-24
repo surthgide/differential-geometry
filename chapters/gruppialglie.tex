@@ -297,7 +297,7 @@ Siano $ G $ un gruppo di Lie e $ H \neq \{\} $ un suo sottoinsieme, diremo che $
 Se $ H \subset G $ sottogruppo algebrico ed $ H $ è una sottovarietà di $ G $, diremo che $ H $ un \textit{sottogruppo di Lie embedded}.\\
 Ad esempio, $ SL_{n}(\R) $ e $ O(n) $ sono sottogruppi di Lie embedded di $ GL_{n}(\R) $, perché sottovarietà di quest'ultimo.
 
-\begin{theorem}
+\begin{theorem}\label{th-liesub-var}
 	Siano $ G $ e $ H $ varietà differenziabili, se $ H < G $ sottogruppo algebrico e $ H $ è chiuso in $ G $ (come sottospazio topologico) allora $ H $ è un sottogruppo embedded di $ G $.
 \end{theorem}
 
@@ -1607,7 +1607,7 @@ La traccia di una matrice ad entrare reali è un numero reale, i.e. $ \tr(X) \in
 		{A}{\det(A)}
 		
 	e $ B \in T_{A}(GL_{n}(\R)) = M_{n}(\R) $\footnote{%
-		Si ha anche che $ T_{A}(GL_{n}(\R)) = A T_{I}(GL_{n}(\R)) $, derivato dal differenziale della traslazione a sinistra nell'Esempio \ref{trasl-diff}.%
+		Si ha anche che $ T_{A}(GL_{n}(\R)) = A \, T_{I}(GL_{n}(\R)) $, derivato dal differenziale della traslazione a sinistra nell'Esempio \ref{trasl-diff}.%
 	}. Il differenziale del determinante $ \det_{*A} : T_{A}(GL_{n}(\R)) \to T_{\det(A)}(\R) $, tramite le identificazioni $  T_{A}(GL_{n}(\R)) = M_{n}(\R) $ e $ T_{\det(A)}(\R) = \R $, può essere scritto come
 
 	\map{\operatorname{det}_{*A}}%
@@ -1640,8 +1640,101 @@ La traccia di una matrice ad entrare reali è un numero reale, i.e. $ \tr(X) \in
 
 \subsection{Esempi di sottogruppi di Lie e loro topologia}
 
-\textbf{l 30 m 1.08.00}
+Alcuni gruppi di Lie sono $ GL_{n}(\R) $, $ GL_{n}(\C) $, $ SL_{n}(\R) $, $ SL_{n}(\C) $, $ O(n) $, $ U(n) $ e $ SU(n) $.
 
-\section{Algebra di Lie}
+\subsubsection{$ SL_{n}(\R) $ come sottogruppo di Lie di $ GL_{n}(\R) $}\label{SL-sublie}
+
+Il gruppo di Lie $ SL_{n}(\R) \subset GL_{n}(\R) $ è un sottogruppo di Lie di $ GL_{n}(\R) $ di dimensione $ \dim(SL_{n}(\R)) = n^{2}-1 $ con spazio tangente
+
+\begin{equation}
+	T_{I}(SL_{n}(\R)) = \{ X \in M_{n} (\R) \mid \tr(X) = 0 \}
+\end{equation}
+
+Inoltre, $ SL_{n}(\R) $ è connesso (e quindi connesso per archi in quanto varietà), chiuso in $ GL_{n}(\R) $ ma non compatto.\\\\
+%
+Per dimostrare che sia un sottogruppo di Lie senza usare la proprietà di sottovarietà, dovremmo dimostrare che $ SL_{n}(\R) $ sia un sottogruppo algebrico di $ GL_{n}(\R) $, che sia una sottovarietà immersa e che le sue operazioni siano lisce; usando invece il teorema della preimmagine, possiamo dimostrare che $ SL_{n}(\R) $ è una sottovarietà di $ GL_{n}(\R) $\footnote{%
+	Vedi Esempio \ref{SL-subvar}.%
+} e dunque, per il Teorema \ref{th-liesub-var}, che è un sottogruppo di Lie embedded di $ GL_{n}(\R) $.\\
+Per (ri)dimostrare che $ SL_{n}(\R) $ sia una sottovarietà di $ GL_{n}(\R) $, consideriamo sempre la funzione determinante
+
+\map{f = \det}%
+	{GL_{n}(\R)}{\R}%
+	{A}{\det(A)}
+	
+da cui $ SL_{n}(\R) = f^{-1}(1) $ (il quale rende $ SL_{n}(\R) $ chiuso in quanto immagine di un chiuso tramite una funzione continua). Perché $ SL_{n}(\R) $ sia effettivamente una sottovarietà di $ GL_{n}(\R) $ è necessario che $ 1 \in \mathcal{VR}_{f} $, i.e. il differenziale $ f_{*A} $ è suriettivo per $ \forall A \in SL_{n}(\R) = f^{-1}(1) $: preso il differenziale
+
+\map{f_{*A} = \operatorname{det}_{*A}}%
+	{T_{A}(GL_{n}(\R))}{T_{\det(A)}(\R) = \R}%
+	{B}{\det(A) \tr(A^{-1} B) = \tr(A^{-1} B)}
+
+dove $ \det(A) = 1 $ in quanto $ A \in SL_{n}(\R) $, deve esiste $ B \in T_{A}(GL_{n}(\R)) = M_{n}(\R) $ tale che $ \tr(A^{-1} B) = c $ e questo si verifica per $ B = c A / n $ con $ n = \dim(M_{n}(\R)) $
+
+\begin{equation}
+	\tr(A^{-1} B) = \tr(\dfrac{c A^{-1} A}{n}) = \dfrac{c \tr(I_{n})}{n} = \dfrac{c \, n}{n} = c
+\end{equation}
+
+dunque $ SL_{n}(\R) $ è una sottovarietà di $ GL_{n}(\R) $ con dimensione (usando la funzione determinante)
+
+\begin{equation}
+	\dim(SL_{n}(\R)) = \dim(GL_{n}(\R)) - \dim(\R) = n^{2} - 1
+\end{equation}
+
+Il teorema della preimmagine asserisce inoltre che
+
+\begin{equation}
+	T_{I}(F^{-1}(c)) = \ker(F_{*p})
+\end{equation}
+
+da cui lo spazio tangente ad $ SL_{n}(\R) $
+
+\begin{equation}
+	T_{I}(SL_{n}(\R)) = \ker(\operatorname{det}_{*I}) = \{ X \in M_{n}(\R) = T_{A}(GL_{n}(\R)) \mid \tr(X) = 0 \}
+\end{equation}
+
+il quale ha dimensione $ n^{2} - 1 $ (esattamente come $ SL_{n}(\R) $) in quanto le sue entrate sono vincolate dalla condizione di avere traccia nulla. Nel caso in cui lo spazio tangente fosse calcolato in un altro punto
+
+\begin{equation}
+	T_{A}(SL_{n}(\R)) = A \, T_{I}(SL_{n}(\R))
+\end{equation}
+
+Per quanto riguarda la topologia di $ SL_{n}(\R) $, considerando il teorema di Heine-Borel\footnote{%
+	Il teorema di Heine-Borel asserisce che un insieme è compatto se e solo se è chiuso e limitato nel suo spazio ambiente.%
+} con spazio ambiente lo spazio euclideo $ \R^{n^{2}} $, in quanto $ SL_{n}(\R) \subset GL_{n}(\R) \subset M_{n}(\R) = \R^{n^{2}} $, $ SL_{n}(\R) $ non è compatto (per $ n \geqslant 2 $) in $ GL_{n}(\R) $ in quanto chiuso ma non limitato: prendendo l'insieme di matrici
+
+\begin{equation}
+	\left\{ %
+		\smqty(\dmat{ k & 0 \\ 0 & \sfrac{1}{k}, I_{n-2} }) \qcomma k \in \N \setminus \{0\}
+	\right\} %
+	\subset SL_{n}(\R)
+\end{equation}
+
+questo è illimitato al variare di $ k $ in quanto non esiste una palla in $ GL_{n}(\R) $ che lo contenga.\\
+\textbf{l 30 m 1.28.30}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsubsection{qui}
+
+qui
+
+\section{Algebre di Lie}
 
 qui
