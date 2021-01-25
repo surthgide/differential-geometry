@@ -1709,27 +1709,22 @@ Per quanto riguarda la topologia di $ SL_{n}(\R) $, considerando il teorema di H
 \end{equation}
 
 questo è illimitato al variare di $ k $ in quanto non esiste una palla in $ GL_{n}(\R) $ che lo contenga.\\
-\textbf{l 30 m 1.28.30}
+Per uno spazio localmente euclideo ($ SL_{n}(\R) $ è una varietà quindi lo è), vale che questo è connesso se e solo se è connesso per archi\footnote{%
+	Per uno spazio non localmente euclideo, la connessione per archi implica la connessione ma non viceversa.%
+}. Per dimostrare dunque che $ SL_{n}(\R) $ sia connesso, facciamo vedere che una matrice qualunque $ A \in SL_{n}(\R) $ può essere unita tramite un arco, i.e. un'applicazione continua, all'identità: usando questo procedimento due volte, ogni matrice sarà unità ad ogni altra matrice di $ SL_{n}(\R) $ tramite archi. Le matrici appartenenti a $ SL_{n}(\R) $ possono essere scritte come prodotto finito di matrici elementari
 
+\begin{equation}
+	A = \prod_{k=1}^{s} M_{a_{k}}(i_{k},j_{k}) = \prod_{k=1}^{s} (I + a_{k} E_{i_{k} j_{k}})
+\end{equation}
 
+con $ E_{ij} $ la matrice che ha tutte entrate nulle tranne per quella nella riga $ i $-esima e colonna $ j $-esima dove è presente 1.\\
+Sia la curva
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+\map{c}%
+	{[0,1]}{SL_{n}(\R)}%
+	{t}{\prod_{k=1}^{s} M_{t a_{k}}(i_{k},j_{k}) = \prod_{k=1}^{s} (I + t a_{k} E_{i_{k} j_{k}})}
+	
+un'applicazione continua con $ c(0) = I $ e $ c(1) = A $: questa curva funge da arco che collega la matrice identità ad $ A $, dimostrando dunque che $ SL_{n}(\R) $ è connesso.
 
 \subsubsection{qui}
 
