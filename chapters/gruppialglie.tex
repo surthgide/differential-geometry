@@ -1394,7 +1394,7 @@ ed è ancora una matrice elementare, in quanto
 
 \section{Traccia, determinante ed esponenziale di una matrice}
 
-Consideriamo come campo su cui sono definiti gli spazi i numeri reali o quelli complessi, i.e. $ \K = \R,\C $.
+Le seguenti considerazioni e dimostrazioni valgono indifferentemente se si considera come campo su cui sono definiti gli spazi quello dei numeri reali o quello dei numeri complessi, i.e. $ \K = \R,\C $. Per sintesi, useremo nella trattazione il campo dei reali $ \R $.
 
 \begin{definition}
 	Sia $ X \in M_{n}(\R) $, allora
@@ -1638,16 +1638,18 @@ La traccia di una matrice ad entrare reali è un numero reale, i.e. $ \tr(X) \in
 	\end{align}
 \end{proof}
 
+Come asserito all'inizio della sezione, queste proprietà valgono anche se si considera il campo dei numeri complessi $ \C. $
+
 \subsection{Esempi di sottogruppi di Lie e loro topologia}
 
 Alcuni gruppi di Lie sono $ GL_{n}(\R) $, $ GL_{n}(\C) $, $ SL_{n}(\R) $, $ SL_{n}(\C) $, $ O(n) $, $ U(n) $ e $ SU(n) $.
 
 \subsubsection{$ SL_{n}(\R) $ come sottogruppo di Lie di $ GL_{n}(\R) $}\label{SL-sublie}
 
-Il gruppo di Lie $ SL_{n}(\R) \subset GL_{n}(\R) $ è un sottogruppo di Lie di $ GL_{n}(\R) $ di dimensione $ \dim(SL_{n}(\R)) = n^{2}-1 $ con spazio tangente
+Il gruppo di Lie $ SL_{n}(\R) \subset GL_{n}(\R) $ è un sottogruppo di Lie di $ GL_{n}(\R) $ di dimensione $ \dim(SL_{n}(\R)) = n^{2} - 1 $ con spazio tangente
 
 \begin{equation}
-	T_{I}(SL_{n}(\R)) = \{ X \in M_{n} (\R) \mid \tr(X) = 0 \}
+	T_{I}(SL_{n}(\R)) = \{ X \in M_{n}(\R) \mid \tr(X) = 0 \}
 \end{equation}
 
 Inoltre, $ SL_{n}(\R) $ è connesso (e quindi connesso per archi in quanto varietà), chiuso in $ GL_{n}(\R) $ ma non compatto.\\\\
@@ -1726,7 +1728,42 @@ Sia la curva
 	
 un'applicazione continua con $ c(0) = I $ e $ c(1) = A $: questa curva funge da arco che collega la matrice identità ad $ A $, dimostrando dunque che $ SL_{n}(\R) $ è connesso.
 
-\subsubsection{qui}
+\subsubsection{$ SL_{n}(\C) $ come sottogruppo di Lie di $ GL_{n}(\C) $}
+
+Il gruppo di Lie $ SL_{n}(\C) \subset GL_{n}(\C) $ è un sottogruppo di Lie di $ GL_{n}(\C) $ di dimensione $ \dim_{\R}(SL_{n}(\C)) = 2 n^{2} - 2 $ con spazio tangente
+
+\begin{equation}
+	T_{I}(SL_{n}(\C)) = \{ X \in M_{n}(\C) \mid \tr(X) = 0 \}
+\end{equation}
+
+Inoltre, $ SL_{n}(\C) $ è connesso (e quindi connesso per archi in quanto varietà), chiuso in $ GL_{n}(\C) $ ma non compatto.\\\\
+Analogamente ad $ SL_{n}(\R) $, l'insieme $ SL_{n}(\C) $ è una sottovarietà di $ GL_{n}(\C) $ in quanto preimmagine del valore regolare $ 1 \in \mathcal{VR}_{f} $ tramite da funzione
+
+\map{f = \det}%
+	{GL_{n}(\C)}{\C}%
+	{A}{\det(A)}
+
+da cui la dimensione
+
+\begin{equation}
+	\dim_{\R}(SL_{n}(\C)) = \dim_{\R}(GL_{n}(\C)) - \dim_{\R}(\C) = 2 n^{2} - 2
+\end{equation}
+
+Per quanto riguarda lo spazio tangente, prendendo il nucleo del differenziale
+
+\map{f_{*A} = \operatorname{det}_{*A}}%
+	{T_{A}(GL_{n}(\C))}{\C}%
+	{B}{\tr(A^{-1} B)}
+
+si ottiene
+
+\begin{equation}
+	T_{I}(SL_{n}(\C)) = \ker(\operatorname{det}_{*I}) = \{ X \in M_{n}(\C) \mid \tr(X) = 0 \}
+\end{equation}
+
+il quale ha dimensione $ 2 n^{2} - 2 $ (esattamente come $ SL_{n}(\C) $) in quanto le sue entrate sono vincolate dalla condizione di avere traccia nulla (che vale come due condizioni in quanto le entrate sono complesse).
+
+\subsubsection{$ i $ come sottogruppo di Lie di $ i $}
 
 qui
 
