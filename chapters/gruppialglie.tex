@@ -1885,45 +1885,71 @@ per cui vale
 \end{equation}
 
 Abbiamo dunque costruito un arco che collega qualsiasi matrice di $ SO(n) $ alla matrice identità, dunque lo spazio è connesso (per archi).\\
-L'insieme $ SO(n) $ è anche una componente connessa di $ O(n) $...\\
-\textbf{l 31 m 32.30}
+L'insieme $ SO(n) $ è anche una componente connessa di $ O(n) $ perché se esistesse un insieme connesso $ M $ tale che
 
-%Dimostriamo ora che $ O(n) $ sia formato dalle componenti connesse $ O(n) = SO(n) \sqcup S^{-}(n) $
+\begin{equation}
+	SO(n) \subsetneqq M \subset O(n)
+\end{equation}
 
+un elemento di $ SO(n) $ potrebbe essere unito ad un elemento $ A \in M $ con $ \det(A) = -1 $ e, siccome $ M $ è connesso (per archi), esisterebbe un arco $ c : [0,1] \to M $ tale che
 
+\begin{equation}
+	\begin{cases}
+		c(0) = I\\
+		c(1) = A
+	\end{cases}
+\end{equation}
 
+Questo è assurdo, per il teorema del valor medio, perché il determinante di $ \det(c(t)) \neq 0 $ ma $ c $ è un'applicazione continua che passerebbe da $ \det(c(0)) = 1 $ a $ \det(c(1)) = -1 $.\\
+Analogamente, l'insieme delle matrici con determinante pari a $ -1 $, i.e. $ S^{-}(n) $, è l'altra componente connessa di $ O(n) $, per cui vale
 
+\begin{equation}
+	O(n) = SO(n) \sqcup S^{-}(n)
+\end{equation}
 
+Consideriamo le due seguenti proposizioni:
 
+\begin{definition}
+	Presi uno spazio topologico $ X $ e una sua componente connessa $ C \subset X $, allora $ C $ è chiuso.
+\end{definition}
 
+\begin{proof}
+	La chiusura $ \bar{C} $ di una componente connessa $ C $ è ancora connessa e anche chiusa, dunque $ \bar{C} \equiv C $ perciò $ C $ è chiuso.
+\end{proof}
 
+\begin{definition}
+	Siano $ X $ uno spazio topologico localmente euclideo e $ C \subset X $ una sua componente connessa (per archi, in quanto $ X $ è localmente euclideo), allora $ C $ è aperto in $ X $.
+\end{definition}
 
+\begin{proof}
+	Sia $ p \in C \subset X $: essendo $ X $ localmente euclideo, esiste un intorno aperto $ U \ni p $ che sia connesso (per archi), in quanto la connessione (per archi) si preserva per omeomorfismi.\\
+	Se, per assurdo, $ U \not\subset C $ allora $ U \cup C $ è un connesso tale che $ U \cup C \supsetneqq C $ ma questo non è possibile perché avremmo trovato un connesso che contiene strettamente $ C $, in contrasto con il fatto che $ C $ sia una componente connessa.\\
+	Questo rende il punto (arbitrario) $ p $ interno a $ C $ e dunque $ C $ è aperto.
+\end{proof}
 
+Queste proposizioni insieme asseriscono che uno spazio topologico localmente euclideo, e.g. una varietà differenziabile, ha le sue componenti connesse sia aperte che chiuse: a questo punto, possiamo dire che l'insieme $ SO(n) $ è sia chiuso che aperto in $ O(n) $.\\
+Qualunque aperto di una varietà differenziabile è una sottovarietà\footnote{%
+	Vedi Osservazione \ref{subvar-open}.%
+}, dunque $ SO(n) $ è una sottovarietà di $ O(n) $ e, per questo, è anche un sottogruppo di Lie embedded. La dimensione e lo spazio tangente di un aperto di una varietà sono gli stessi di quelli della varietà\footnote{%
+	Vedi Esercizio \ref{es3-6}.%
+}, perciò $ \dim(SO(n)) = n(n-1)/2 $ e
 
+\begin{equation}
+	T_{I}(SO(n)) = T_{I}(O(n)) = \{ X \in M_{n}(\R) \mid X^{T} = -X \}
+\end{equation}
 
+Essendo chiuso e limitato (o, equivalentemente, chiuso in un compatto, i.e. $ O(n) $), $ SO(n) $ è compatto.\\
+Per piccoli valori di $ n $, abbiamo che
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+\begin{itemize}
+	\item $ SO(1) = \{ 1 \} $;
+	
+	\item $ SO(2) $ è diffeomorfo a $ \S^{1} $\footnote{%
+		Vedi Esercizio \ref{BONUS3-1}.%
+	};
+	
+	\item $ SO(3) $ è diffeomorfo a $ \mathcal{RP}^{3} $.
+\end{itemize}
 
 \section{Algebre di Lie}
 
