@@ -71,6 +71,13 @@
 \renewcommand{\appendixpagename}{Esercizi}
 %\appendixtitletocoff
 
+% remove sections from exercises
+
+\newcommand{\nocontentsline}[3]{}
+\newcommand{\tocless}[2]{\bgroup\let\addcontentsline=\nocontentsline#1{#2}\egroup}
+
+% environments names
+
 \newtheorem{theorem}{Teorema}
 \newtheorem{corollary}{Corollario}[theorem]
 \newtheorem{lemma}[theorem]{Lemma}
@@ -80,11 +87,14 @@
 \renewcommand*{\proofname}{Dimostrazione}
 \renewcommand\qedsymbol{$\square$}
 
+% symbols
+
 \newcommand{\notimplies}{\centernot\implies}
 
 \newcommand{\Abs}[1]{\left\lvert#1\right\rvert}
 
 % \highlight[<colour>]{<stuff>}
+
 \newcommand{\highlight}[2][yellow]{\mathchoice%
 	{\colorbox{#1}{$\displaystyle#2$}}%
 	{\colorbox{#1}{$\textstyle#2$}}%
@@ -103,6 +113,8 @@
 	urlcolor = blue
 }
 
+% page layout
+
 \pagestyle{fancy}
 \renewcommand{\chaptermark}[1]{ \markboth{#1}{} }
 
@@ -115,8 +127,12 @@
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
 
+% bibliography
+
 \usepackage[backend=bibtex,style=nature,natbib=true,sorting=none,autocite=inline]{biblatex} %bibliography is sorted in the same order in which the articles are cited
 \addbibresource{chapters/references}
+
+% table of contents
 
 \setcounter{tocdepth}{3}
 %\setcounter{secnumdepth}{3}
