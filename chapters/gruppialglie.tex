@@ -1394,7 +1394,7 @@ ed è ancora una matrice elementare, in quanto
 	\end{align}
 \end{proof}
 
-\section{Traccia, determinante ed esponenziale di una matrice}
+\subsection{Traccia, determinante ed esponenziale di una matrice}
 
 Le seguenti considerazioni e dimostrazioni valgono indifferentemente se si considera come campo su cui sono definiti gli spazi quello dei numeri reali o quello dei numeri complessi, i.e. $ \K = \R,\C $. Per sintesi, useremo nella trattazione il campo dei reali $ \R $.
 
@@ -1542,7 +1542,7 @@ La traccia di una matrice ad entrare reali è un numero reale, i.e. $ \tr(X) \in
 \end{corollary}
 
 \begin{corollary}
-	Questo corollario è relativo al fatto che l'esponenziale di una matrice sia sempre invertibile.\\
+	L'esponenziale di una matrice sia sempre invertibile.\\
 	Sia $ X \in M_{n}(\R) $, allora la curva
 	
 	\map{c}%
@@ -1642,11 +1642,11 @@ La traccia di una matrice ad entrare reali è un numero reale, i.e. $ \tr(X) \in
 
 Come asserito all'inizio della sezione, queste proprietà valgono anche se si considera il campo dei numeri complessi $ \C. $
 
-\subsection{Esempi di sottogruppi di Lie e loro topologia}
+\section{Esempi di sottogruppi di Lie e loro topologia}
 
 Alcuni gruppi di Lie sono $ GL_{n}(\R) $, $ GL_{n}(\C) $, $ SL_{n}(\R) $, $ SL_{n}(\C) $, $ O(n) $, $ U(n) $ e $ SU(n) $.
 
-\subsubsection{$ SL_{n}(\R) $ come sottogruppo di Lie di $ GL_{n}(\R) $}\label{SL-sublie}
+\subsection{$ SL_{n}(\R) $ come sottogruppo di Lie di $ GL_{n}(\R) $}\label{SL-sublie}
 
 Il gruppo di Lie $ SL_{n}(\R) \subset GL_{n}(\R) $ è un sottogruppo di Lie di $ GL_{n}(\R) $ di dimensione $ \dim(SL_{n}(\R)) = n^{2} - 1 $ con spazio tangente
 
@@ -1730,7 +1730,7 @@ Sia la curva
 	
 un'applicazione continua con $ c(0) = I $ e $ c(1) = A $: questa curva funge da arco che collega la matrice identità ad $ A $, dimostrando dunque che $ SL_{n}(\R) $ è connesso.
 
-\subsubsection{$ SL_{n}(\C) $ come sottogruppo di Lie di $ GL_{n}(\C) $}
+\subsection{$ SL_{n}(\C) $ come sottogruppo di Lie di $ GL_{n}(\C) $}
 
 Il gruppo di Lie $ SL_{n}(\C) \subset GL_{n}(\C) $ è un sottogruppo di Lie di $ GL_{n}(\C) $ di dimensione $ \dim_{\R}(SL_{n}(\C)) = 2 n^{2} - 2 $ con spazio tangente
 
@@ -1765,7 +1765,7 @@ si ottiene
 
 il quale ha dimensione $ 2 n^{2} - 2 $ (esattamente come $ SL_{n}(\C) $) in quanto le sue entrate sono vincolate dalla condizione di avere traccia nulla (che vale come due condizioni in quanto le entrate sono complesse).
 
-\subsubsection{$ O(n) $ come sottogruppo di Lie di $ GL_{n}(\R) $}
+\subsection{$ O(n) $ come sottogruppo di Lie di $ GL_{n}(\R) $}
 
 Il gruppo delle matrici ortogonali
 
@@ -1951,7 +1951,7 @@ Per piccoli valori di $ n $, abbiamo che:
 	\item $ SO(3) $ è diffeomorfo a $ \mathcal{RP}^{3} $.
 \end{itemize}
 
-\subsubsection{$ U(n) $ come sottogruppo di Lie di $ GL_{n}(\C) $}
+\subsection{$ U(n) $ come sottogruppo di Lie di $ GL_{n}(\C) $}
 
 L'insieme delle matrici unitarie
 
@@ -2053,7 +2053,7 @@ dove
 
 Esiste dunque un arco che connette ogni matrice unitaria alla matrice identità perciò $ U(n) $ è connesso.
 
-\subsubsection{$ SU(n) $ come sottogruppo di Lie di $ U(n) $}
+\subsection{$ SU(n) $ come sottogruppo di Lie di $ U(n) $}
 
 L'insieme delle matrici
 
@@ -2188,7 +2188,7 @@ Notiamo anche che
 	SU(1) = U(1) = SO(2) = \S^{1}
 \end{equation}
 
-\subsubsection{Gruppi di Lie diffeomorfi ma non isomorfi}
+\subsubsection{Isomorfismo tra $ GL_{n}(\R) $ e $ SL_{n}(\R) \times \R \setminus \{0\} $}
 
 Un gruppo di Lie è un gruppo algebrico con operazioni lisce che sia anche una varietà differenziabile. Due gruppi di Lie possono essere legati da un diffeomorfismo, in quanto varietà, ma non essere isomorfe: questo succede se il diffeomorfismo non è anche un omomorfismo di gruppi, i.e. non preserva la moltiplicazione tra i gruppi.\\
 Sia l'applicazione
@@ -2372,4 +2372,137 @@ Da cui otteniamo che $ h $ è un isomorfismo di gruppi di Lie tra $ GL_{n}(\R) $
 
 \section{Algebre di Lie}
 
-qui
+Un'\textit{algebra di Lie su un campo} $ \K $ è uno spazio vettoriale\footnote{%
+	Non necessariamente di dimensione finita.%
+} $ V $ dotato di un'applicazione
+
+\map{[,]}%
+	{V \times V}{V}%
+	{(x,y)}{[x,y]}
+
+tale che:
+
+\begin{itemize}
+	\item L'applicazione $ [,] $ sia bilineare, i.e.
+	
+	\begin{equation}
+		\begin{cases}
+			[ax+by,z] = a[x,z] + b[y,z]\\
+			[x,cz+dw] = c[x,z] + d[x,w]
+		\end{cases}
+	\end{equation}
+	
+	per $ \forall a,b,c,d \in \R $ e $ \forall x,y,z,w \in V $;
+	
+	\item L'applicazione sia antisimmetrica, i.e.
+	
+	\begin{equation}
+		[x,y] = -[y,x], \qquad \forall x,y \in V
+	\end{equation}
+	
+	\item Valga l'\textit{identità di Jacobi}
+	
+	\begin{equation}
+		[x,[y,z]] + [y,[z,x]] + [z,[x,y]] = 0, \qquad \forall x,y,z \in V
+	\end{equation}
+\end{itemize}
+
+\subsubsection{\textit{Esempi}}
+
+\paragraph{1. Algebra di Lie abeliana}
+
+Se $ V $ è uno spazio vettoriale su $ \K $, possiamo definire il commutatore nullo
+
+\begin{equation}
+	[x,y] = 0, \qquad \forall x,y \in V
+\end{equation}
+
+che definisce l'algebra di Lie \textit{abeliana} (gli elementi $ x $ e $ y $ commutano).
+
+\paragraph{2. Insieme delle matrici quadrate}
+
+Siano lo spazio vettoriale $ M_{n}(\K) $ delle matrici quadrate\footnote{%
+	Questo spazio vettoriale ha dimensione $ n^{2} $.%
+} su un campo $ \K $ e il commutatore
+
+\begin{equation}
+	[A,B] = AB - BA
+\end{equation}
+
+La verifica delle proprietà è immediata e dunque $ (V,[,]) $ è un'algebra di Lie.
+
+\paragraph{3. Commutatore}
+
+Una qualsiasi algebra $ A $ su un campo $ \K $ con commutatore
+
+\begin{equation}
+	[a,b] = ab - ba
+\end{equation}
+
+è un'algebra di Lie su campo $ \K $.
+
+\subsection{Algebre e gruppi di Lie}
+
+Siano un gruppo di Lie $ G $ e il suo elemento neutro $ e $, possiamo associare lo spazio vettoriale tangente a $ G $ in $ e $, i.e. $ T_{e}(G) $.\\
+Vogliamo definire una struttura di algebra di Lie su $ T_{e}(G) $ che sia legata al gruppo di Lie $ G $: per fare questo, definiamo un commutatore
+
+\map{[,]}%
+	{T_{e}(G) \times T_{e}(G)}{T_{e}(G)}%
+	{(v,w)}{[v,w]}
+
+su $ T_{e}(G) $ che sia bilineare, antisimmetrico e che rispetti l'identità di Jacobi.\\
+L'idea è usare il commutatore dei campi di vettori lisci sul gruppo di Lie $ G $, i.e. considerare l'algebra $ (\chi(G),[,]) $, per indurre un commutatore su $ T_{e}(G) $.
+
+\subsubsection{Campi di vettori invarianti a sinistra}
+
+Sia $ X $ un campo di vettori su $ G $ (non necessariamente liscio), diremo che $ X $ è \textit{invariante a sinistra} se
+
+\begin{equation}
+	L_{g_{*}} X = X \qcomma \forall g \in G
+\end{equation}
+
+cioè il pushforward\footnote{%
+	ia l'applicazione $ F : N \to M $ un diffeomorfismo (quindi sia iniettiva che suriettiva), il pushforward di $ X $ tramite $ F $ è definito come
+
+	\begin{equation*}
+		(F_{*} (X))_{q} = F_{*F^{-1}(q)} (X_{F^{-1}(q)})
+	\end{equation*}
+} di $ X $ tramite la traslazione a sinistra è identico a sé stesso, con la traslazione a sinistra
+
+\map{L_{g}}%
+	{G}{G}%
+	{h}{g h}
+
+la quale è un diffeomorfismo (quindi è possibile definire il pushforward in quanto $ L_{g} $ è sia iniettiva che suriettiva) con inversa $ L_{g}^{-1} = L_{g^{-1}} $.\\
+\textbf{l 32 m 45.30}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

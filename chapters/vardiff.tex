@@ -8403,75 +8403,6 @@ Verifichiamo ora che non sia completamente integrabile: per farlo, è sufficient
 
 Questo prova che $ D $ non è involutoria e quindi, per il teorema di Frobenius, non è completamente integrabile.
 
-\section{Algebre di Lie}
-
-Un'\textit{algebra di Lie su un campo} $ \K $ è uno spazio vettoriale\footnote{%
-	Non necessariamente di dimensione finita.%
-} $ V $ dotato di un'applicazione
-
-\map{[,]}{V \times V}{V}{(x,y)}{[x,y]}
-
-tale che:
-
-\begin{itemize}
-	\item L'applicazione $ [,] $ sia bilineare, i.e.
-	
-	\begin{equation}
-		\begin{cases}
-			[ax+by,z] = a[x,z] + b[y,z]\\
-			[x,cz+dw] = c[x,z] + d[x,w]
-		\end{cases}
-	\end{equation}
-
-	per $ \forall a,b,c,d \in \R $ e $ \forall x,y,z,w \in V $;
-	
-	\item L'applicazione sia antisimmetrica, i.e.
-	
-	\begin{equation}
-		[x,y] = -[y,x], \qquad \forall x,y \in V
-	\end{equation}
-
-	\item Vale l'\textit{identità di Jacobi}
-	
-	\begin{equation}
-		[x,[y,z]] + [y,[z,x]] + [z,[x,y]] = 0, \qquad \forall x,y,z \in V
-	\end{equation}
-\end{itemize}
-
-\subsubsection{\textit{Esempi}}
-
-\paragraph{1. Algebra di Lie abeliana}
-
-Se $ V $ è uno spazio vettoriale su $ \K $, possiamo definire il commutatore nullo
-
-\begin{equation}
-	[x,y] = 0, \qquad \forall x,y \in V
-\end{equation}
-
-che definisce l'algebra di Lie \textit{abeliana} (gli elementi $ x $ e $ y $ commutano).
-
-\paragraph{2. Insieme delle matrici quadrate}
-
-Siano lo spazio vettoriale $ M_{n}(\K) $ delle matrici quadrate\footnote{%
-	Questo spazio vettoriale ha dimensione $ n^{2} $.%
-} su un campo $ \K $ e il commutatore
-
-\begin{equation}
-	[A,B] = AB - BA
-\end{equation}
-
-La verifica delle proprietà è immediata e dunque $ (V,[,]) $ è un'algebra di Lie.
-
-\paragraph{3.}
-
-Una qualsiasi algebra $ A $ su un campo $ \K $ con commutatore
-
-\begin{equation}
-	[a,b] = ab - ba
-\end{equation}
-
-è un'algebra di Lie su campo $ \K $.
-
 \paragraph{4. Campi di vettori}
 
 Siano $ M $ una varietà differenziabile, $ \chi(M) $ l'insieme dei campi di vettori lisci sulla varietà e il commutatore
@@ -8488,7 +8419,7 @@ Siano $ N $ e $ M $ due varietà differenziabili di dimensione rispettivamente $
 
 \map{F_{*p}}{T_{p}(N)}{T_{F(p)}(M)}{X_{p}}{F_{*p}(X_{p})}
 
-ma questo non può essere esteso a tutto il campo di vettori in quanto, se l'applicazione non fosse iniettiva, esisterebbero $ p,q \in N $ tali che $ F(p) = F(q) $. A questo punto si presenta un'assegnazione del vettore in $ F(p) = F(q) $: ci sarebbe ambiguità tra $ F_{*p}(X_{p}) $ e $ F_{*p}(X_{q}) $ e tra $ F_{*q}(X_{p}) $ e $ F_{*q}(X_{q}) $. Anche se fosse iniettiva ma non suriettiva, non esisterebbe un vettore $ X_{p} \in \chi(N) $ in $ p \in N $ la cui immagine attraverso il differenziale $ F_{*p} $ sia un vettore in un punto $ r \in M \setminus F(N) $ (dove $ F(N) \subsetneqq M $ in quanto $ F $ non è suriettiva).\\\\
+ma questo non può essere esteso a tutto il campo di vettori in quanto, se l'applicazione non fosse iniettiva, esisterebbero $ p,q \in N $ tali che $ F(p) = F(q) $: a questo punto si presenta l'assegnazione del vettore in $ F(p) = F(q) $ e ci sarebbe ambiguità tra $ F_{*p}(X_{p}) $ e $ F_{*p}(X_{q}) $ e tra $ F_{*q}(X_{p}) $ e $ F_{*q}(X_{q}) $. Anche se fosse iniettiva ma comunque non suriettiva, non esisterebbe un vettore $ X_{p} \in \chi(N) $ in $ p \in N $ la cui immagine attraverso il differenziale $ F_{*p} $ sia un vettore in un punto $ r \in M \setminus F(N) $ (dove $ F(N) \subsetneqq M $ in quanto $ F $ non è suriettiva).\\\\
 %
 Supponiamo ora che l'applicazione $ F : N \to M $ sia un diffeomorfismo (quindi sia iniettiva che suriettiva) e definiamo
 
@@ -8496,7 +8427,7 @@ Supponiamo ora che l'applicazione $ F : N \to M $ sia un diffeomorfismo (quindi 
 	(F_{*} (X))_{q} = F_{*F^{-1}(q)} (X_{F^{-1}(q)})
 \end{equation}
 
-per $ \forall q \in N $ e $ (F_{*} (X))_{q} \in T_{q}(M) $. 
+per $ \forall q \in N $ e $ (F_{*} (X))_{q} \in T_{q}(M) $; la definizione utilizza $ F^{-1}(q) $ in quanto $ F $ è biettiva e dunque $ F^{-1}(q) $ è l'unico punto che viene mandato in $ q $ tramite $ F $.
 
 \begin{definition}
 	$ F_{*}(X) $, chiamato \textit{pushforward di} $ X $ tramite il diffeomorfismo $ F $, è un campo di vettori liscio su $ M $, i.e. $ F_{*}(X) \in \chi(M) $.
