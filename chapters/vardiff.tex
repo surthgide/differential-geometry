@@ -3427,7 +3427,7 @@ Sia una curva liscia $ c : (a,b) \to N $ che inizi in $ c(0) = p \in N $, allora
 
 \subsection{Differenziale tramite curve}
 
-Siano $ X_{p} \in T_{p}(N) $ e $ f \in c^{\infty}(N) $, la notazione $ X_{p}(f) \in \mathbb{R} $ indica la derivata (direzionale) di $ f $ rispetto al vettore $ X_{p} $.\\
+Siano $ X_{p} \in T_{p}(N) $ e $ f \in C^{\infty}(N) $, la notazione $ X_{p}(f) \in \mathbb{R} $ indica la derivata (direzionale) di $ f $ rispetto al vettore $ X_{p} $.\\
 Siccome lo spazio tangente è costituito da vettori velocità, esisterà una curva $ c : (-\varepsilon,\varepsilon) \to N $ con $ c(0) = p $ tale che $ X_{p} = c'(0) $: da queste premesse, possiamo scrivere la derivata direzionale in funzione della curva considerata
 
 \begin{align}
@@ -3452,7 +3452,7 @@ dove $ f \circ c : (a,b) \to \mathbb{R} $, perciò
 		F_{*p}(X_{p}) = (F \circ c)' (0)
 	\end{equation}
 
-	dove $ c : (-\varepsilon,\varepsilon) \to N $ con $ c(0) = p $ è una curva per il quale vale $ X_{p} = c'(0) $; $ F \circ c : (-\varepsilon,\varepsilon) \to M $ è ancora una curva che passa per $ F(p) $, il cui vettore tangente in 0 equivale al differenziale $ F_{*p}(X_{p}) $.
+	dove $ c : (-\varepsilon,\varepsilon) \to N $ con $ c(0) = p $ è una curva per il quale vale $ X_{p} = c'(0) $; la curva $ F \circ c : (-\varepsilon,\varepsilon) \to M $ è ancora una curva che passa per $ F(p) $, il cui vettore tangente in 0 equivale al differenziale $ F_{*p}(X_{p}) $.
 	
 	\begin{figure}[H]
 		\centering
@@ -8540,7 +8540,7 @@ Questo teorema asserisce che il commutatore tra due campi viene preservato trami
 	\end{align}
 \end{proof}
 
-\begin{corollary}
+\begin{corollary}\label{frel-brack}
 	Siano $ F : N \to M $ un diffeomorfismo e i campi di vettori lisci $ X_{1},X_{2} \in \chi(N) $, allora il pushforward del commutatore è uguale al commutatore dei pushforward, i.e.
 	
 	\begin{equation}

@@ -2462,47 +2462,288 @@ Sia $ X $ un campo di vettori su $ G $ (non necessariamente liscio), diremo che 
 \end{equation}
 
 cioè il pushforward\footnote{%
-	ia l'applicazione $ F : N \to M $ un diffeomorfismo (quindi sia iniettiva che suriettiva), il pushforward di $ X $ tramite $ F $ è definito come
+	Sia un'applicazione $ F : N \to M $ un diffeomorfismo (quindi sia iniettiva che suriettiva), il pushforward di $ X $ tramite $ F $ è definito come
 
 	\begin{equation*}
 		(F_{*} (X))_{q} = F_{*F^{-1}(q)} (X_{F^{-1}(q)})
-	\end{equation*}
-} di $ X $ tramite la traslazione a sinistra è identico a sé stesso, con la traslazione a sinistra
+	\end{equation*}%
+} di $ X $ tramite la traslazione a sinistra è identico a sé stesso, dove la traslazione a sinistra è definita come
 
 \map{L_{g}}%
 	{G}{G}%
 	{h}{g h}
 
-la quale è un diffeomorfismo (quindi è possibile definire il pushforward in quanto $ L_{g} $ è sia iniettiva che suriettiva) con inversa $ L_{g}^{-1} = L_{g^{-1}} $.\\
-\textbf{l 32 m 45.30}
+la quale è un diffeomorfismo (quindi è possibile definire il pushforward in quanto $ L_{g} $ è sia iniettiva che suriettiva) con inversa $ L_{g}^{-1} = L_{g^{-1}} $. Equivalentemente, il campo di vettori $ X $ è invariante per traslazioni a sinistra se
 
+\begin{equation}
+	L_{g_{*h}} (X_{h}) = X_{gh} \qcomma \forall g,h \in G
+\end{equation}
 
+ciò significa che $ X $ è $ L_{g} $-related\footnote{%
+	Sia un diffeomorfismo $ F : N \to M $, un campo di vettori $ X $ è $ F $-related a un altro campo di vettori $ Y $ se
+	
+	\begin{equation*}
+		F_{*p}(X_{p}) = Y_{F(p)} \qcomma \forall p \in N
+	\end{equation*}
 
+	i.e. $ Y $ è il pushforward di $ X $ tramite $ F $.%
+} a sé stesso.
 
+\begin{remark}
+	Un campo di vettori invariante a sinistra $ X $ è determinato dal suo valore nell'elemento neutro $ X_{e} $ in quanto
+	
+	\begin{equation}
+		X_{g} = L_{g_{*e}} (X_{e})
+	\end{equation}
+\end{remark}
 
+I campi di vettori invarianti a sinistra sono importanti perché esiste un isomorfismo (di spazi vettoriali) tra questi e lo spazio tangente ad un gruppo di Lie.
 
+\begin{theorem}[Proprietà dei campi di vettori invarianti a sinistra]
+	Siano $ G $ un gruppo di Lie ed $ e \in G $ il suo elemento neutro. Valgono le seguenti proprietà:
+	
+	\begin{enumerate}
+		\item L'applicazione
+		
+		\map{\hat{}}%
+			{T_{e}(G)}{L(G)}%
+			{A}{\hat{A}}
+			
+		dove $ L(G) $ indica l'insieme dei campi di vettori invarianti a sinistra di $ G $ e
+		
+		\begin{equation}
+			\hat{A}_{g} \doteq L_{g_{*e}}(A)
+		\end{equation}
+	
+		con $ L_{g_{*e}} : T_{e}(G) \to T_{g}(G) $, è un isomorfismo di spazi vettoriali;
+		
+		\item L'insieme dei campi di vettori invarianti a sinistra di $ G $ è contenuto nell'insieme dei campi di vettori lisci su $ G $, i.e. $ L(G) \subset \chi(G) $ quindi un campo di vettori invariante a sinistra è sempre liscio;
+		
+		\item Il commutatore di due campi di vettori invarianti a sinistra è ancora un campo di vettori invariante a sinistra, i.e.
+		
+		\begin{equation}
+			\comm{X}{Y} \in L(G) \qcomma \forall X,Y \in L(G)
+		\end{equation}
+	
+		quindi i campi di vettori invarianti a sinistra sono chiusi rispetto al commutatore.
+	\end{enumerate}
+\end{theorem}
 
+\begin{proof}
+	\begin{enumerate}
+		\item Verifichiamo innanzitutto che $ \hat{A} \in L(G) $:
+		
+		\begin{gather}
+			\hat{A} \in L(G)\nonumber\\%
+			\Updownarrow\nonumber\\%
+			L_{g_{*}}(\hat{A}) = \hat{A} \qcomma \forall g \in G\\%
+			\Updownarrow\nonumber\\%
+			L_{g_{*h}}(\hat{A}_{h}) = \hat{A}_{gh} \qcomma \forall g,h \in G\nonumber
+		\end{gather}
+	
+		Possiamo dimostrare l'ultima equazione tramite la definizione di $ \hat{A}_{g} $
+		
+		\begin{equation}
+			\hat{A}_{g} \doteq L_{g_{*e}}(A)
+		\end{equation}
+	
+		otteniamo dunque che
+		
+		\begin{align}
+			\begin{split}
+				L_{g_{*h}}(\hat{A}_{h}) &= L_{g_{*h}}(L_{h_{*e}}(A)) = \hat{A}_{gh}\\
+				&= (L_{g} \circ L_{h})_{*e} (A)\\
+				&= L_{gh_{*e}} (A)\\
+				&= \hat{A}_{gh}
+			\end{split}
+		\end{align}
+	
+		quindi $ \hat{A} \in L(G) $.\\
+		Per dimostrare che $ \hat{} $ sia un isomorfismo tra spazi vettoriali dobbiamo far vedere che sia un omomorfismo invertibile. Per dimostrare che sia un omomorfismo dobbiamo mostrare che $ \hat{} $ sia un'applicazione lineare, i.e.
+		
+		\begin{equation}
+			\widehat{\lambda A + \mu B} = \lambda \hat{A} + \mu \hat{B}
+		\end{equation}
+	
+		per fare ciò, applichiamo il primo membro ad un qualunque elemento $ g \in G $:
+	
+		\begin{align}
+			\begin{split}
+				(\widehat{\lambda A + \mu B})_{g} &\doteq L_{g_{*e}} (\lambda A + \mu B)\\
+				&= \lambda L_{g_{*e}} (A) + \mu L_{g_{*e}} (B)\\
+				&\doteq \lambda \hat{A}_{g} + \mu \hat{B}_{g}\\
+				&= (\lambda \hat{A} + \mu \hat{B})_{g}
+			\end{split}
+		\end{align}
+	
+		per $ \forall \lambda,\mu \in \R $ e $ \forall A,B \in T_{e}(G) $. L'applicazione inversa (lineare) è la "valutazione in $ e $"
+		
+		\map{\mid_{e}}%
+			{L(G)}{T_{e}(G)}%
+			{X}{X_{e}}
+			
+		in quanto
+		
+		\begin{equation}
+			(\mid_{e} \circ \, \hat{} \,)(A) = \hat{A}_{e} = L_{e_{*e}} (A) = A
+		\end{equation}
+	
+		poiché
+		
+		\begin{equation}
+			L_{e} = \operatorname{id}_{G} \implies L_{e_{*e}} = \operatorname{id}_{T_{e}(G)}
+		\end{equation}
+	
+		e viceversa verifichiamo che
+		
+		\begin{equation}
+			(\, \hat{} \, \circ \mid_{e})(A) = \hat{X_{e}} = X
+		\end{equation}
+	
+		applicando il primo membro ad un qualunque elemento $ g \in G $:
+		
+		\begin{equation}
+			\hat{X_{e}}_{| g} \doteq L_{g_{*e}}(X_{e}) = X_{g} \qcomma \forall g \in G \implies \hat{X_{e}} = X
+		\end{equation}
+		
+		\item Un campo di vettori è liscio se la derivata di una funzione liscia rispetto al campo di vettori è ancora una funzione liscia, i.e.
+		
+		\begin{equation}
+			X \in \chi(G) \iff X f \in C^{\infty}(G) \qcomma \forall f \in C^{\infty}(G)
+		\end{equation}
+	
+		cioè la derivata direzionale $ (X f)(g) = X_{g} f $ varia in modo liscio al variare di $ g \in G $: presa una curva liscia
+		
+		\begin{equation}
+			\begin{cases}
+				\gamma : (-\varepsilon,\varepsilon) \to G\\
+				\gamma(0) = g\\
+				\gamma'(0) = X_{g}
+			\end{cases}
+		\end{equation}
+	
+		abbiamo che
+		
+		\begin{equation}
+			X_{g} f = \eval{ \dv{t} f(\gamma(t)) }_{t=0}
+		\end{equation}
+	
+		Consideriamo dunque la curva $ \gamma = g \cdot c $ dove $ \cdot $ è il prodotto in $ G $ e
+		
+		\begin{equation}
+			\begin{cases}
+				c : (-\varepsilon,\varepsilon) \to G\\
+				c(0) = e\\
+				c'(0) = X_{e}
+			\end{cases}
+		\end{equation}
+	
+		che rispetta le condizioni poste su $ \gamma $:
+		
+		\begin{align}
+			\begin{split}
+				\gamma(0) &= g \, c(0)= g \, e = g\\\\
+				%
+				\gamma'(0) &= \eval{ \dv{t} g \, c(t) }_{t=0}\\
+				&= \eval{ \dv{t} L_{g}(c(t)) }_{t=0}\\
+				&= (L_{g} \circ c)'(0)\\
+				&= L_{g_{*c(0)}} (c'(0))\\
+				&= L_{g_{*e}} (X_{e})\\
+				&= X_{g}
+			\end{split}
+		\end{align}
+	
+		dove nel quarto passaggio abbiamo utilizzato
+		
+		\begin{equation}
+			F_{*p}(X_{p}) = (F \circ c)'(0)
+		\end{equation}
+		
+		e nell'ultimo abbiamo utilizzato il fatto che $ X $ è invariante a sinistra.\\
+		A questo punto, per mostrare che $ X \in \chi(G) $ basta mostrare che
+		
+		\begin{equation}
+			X_{g} f = \eval{ \dv{t} f(\gamma(t)) }_{t=0} = \eval{ \dv{t} f(g \cdot c(t)) }_{t=0}
+		\end{equation}
+	
+		sia liscia in $ G $: questo è vero perché $ f \in C^{\infty}(G) $ per ipotesi, $ c(t) $ è una curva liscia, il prodotto $ \cdot $ è liscio in quanto $ G $ è un gruppo di Lie e $ f(g \cdot c(t)) $ rimane liscia se derivata rispetto a $ t $.
+		
+		\item Siano $ X,Y \in L(G) \subset \chi(G) $, perché il loro commutatore appartenga a $ L(G) $ è necessario che
+		
+		\begin{equation}
+			L_{g_{*}}(\comm{X}{Y}) = \comm{X}{Y} \qcomma \forall g \in G \iff \comm{X}{Y} \in L(G)
+		\end{equation}
+	
+		Sappiamo che $ X $ e $ Y $ sono lisci e inoltre sono $ L_{g} $-related rispettivamente a $ L_{g_{*}}(X) $ e $ L_{g_{*}}(Y) $ dunque, per il Corollario \ref{frel-brack}, abbiamo che
+		
+		\begin{equation}
+			L_{g_{*}}(\comm{X}{Y}) = \comm{L_{g_{*}}(X)}{L_{g_{*}}(Y)}
+		\end{equation}
+	
+		Essendo $ X $ e $ Y $ invarianti a sinistra, i.e.
+		
+		\begin{equation}
+			\begin{cases}
+				L_{g_{*}}(X) = X\\
+				L_{g_{*}}(Y) = Y
+			\end{cases}
+		\end{equation}
+		
+		abbiamo dunque che
+		
+		\begin{equation}
+			L_{g_{*}}(\comm{X}{Y}) = \comm{L_{g_{*}}(X)}{L_{g_{*}}(Y)} = \comm{X}{Y}
+		\end{equation}		
+	\end{enumerate}
+\end{proof}
 
+\begin{corollary}
+	La coppia $ (L(G),\comm{}{}) $ è una sottoalgebra\footnote{%
+		Presi due spazi vettoriali $ V $ e $ W \subset V $ con $ (V,\comm{}{}) $ algebra di Lie, $ (W,\comm{}{}_{| W}) $ è una sottoalgebra di Lie se $ W $ è un sottospazio vettoriale e
+		
+		\begin{equation}
+			\comm{w_{1}}{w_{2}} \in W \qcomma \forall w_{1},w_{2} \in W
+		\end{equation}%
+	} di Lie di $ (\chi(G),\comm{}{}) $ e dunque essa stessa un'algebra di Lie finito-dimensionale, in quanto ha la stessa dimensione dello spazio tangente $ T_{e}(G) $ poiché $ L(G) \stackrel{iso.}{\simeq} T_{e}(G) $.
+\end{corollary}
 
+\subsection{Algebra di Lie su $ T_{e}(G) $}
 
+Siano $ G $ un gruppo di Lie, $ e \in G $ il suo elemento neutro e $ T_{e}(G) $ lo spazio tangente a $ G $ nell'elemento $ e $.\\
+Dati $ A,B \in T_{e}(G) $ definiamo il commutatore tra gli elementi dello spazio tangente mediante il commutatore tra i campi di vettori\footnote{%
+	I due commutatori sono diversi in quanto hanno come entrate oggetti diversi (nel primo elementi dello spazio tangente a $ G $ mentre nel secondo campi di vettori invarianti a sinistra) e appartengono a spazi diversi, i.e. $ \comm{A}{B} \in T_{e}(G) $ mentre $ \comm{\hat{A}}{\hat{B}} \in L(G) $.%
+}
 
+\begin{equation}
+	\comm{A}{B} \doteq \comm{\hat{A}}{\hat{B}}_{e}
+\end{equation}
 
+cioè tramite l'isomorfismo
 
+\map{\hat{}}%
+	{T_{e}(G)}{L(G)}%
+	{A}{\hat{A}}
 
+portiamo gli elementi dello spazio tangente $ A $ e $ B $ nei rispettivi campi di vettori invarianti a sinistra $ \hat{A} $ e $ \hat{B} $, ne facciamo il commutatore (come campi di vettori) e poi lo valutiamo nell'elemento $ e $, i.e. utilizzando l'inversa dell'isomorfismo
 
+\map{\mid_{e}}%
+	{L(G)}{T_{e}(G)}%
+	{X}{X_{e}}
 
+ottenendo dunque il commutatore $ \comm{A}{B} $ come un elemento dello spazio tangente $ T_{e}(G) $.\\
+In questo modo, l'applicazione $ \hat{} $ è un isomorfismo di algebre di Lie tra $ (T_{e}(G),[,]) $ e $ (L(G),[,]) $ con i rispettivi commutatori; le proprietà di algebra di Lie sono rispettate da $ (T_{e}(G),[,]) $ in quanto isomorfo a $ (L(G),[,]) $, che le rispetta.\\
+L'algebra $ (T_{e}(G),[,]) $ è chiamata \textit{algebra di Lie del gruppo} $ G $ e viene indicata con
 
+\begin{equation}
+	\mathfrak{g} = (T_{e}(G),[,])
+\end{equation}
 
+\begin{remark}
+	Siano $ A,B \in T_{e}(G) $, il campo di vettori associato al loro commutatore tramite l'isomorfismo tra $ T_{e}(G) $ e $ L(G) $ è identico al commutatore tra i campi di vettori corrispondenti ad $ A $ e $ B $, i.e.
+	
+	\begin{equation}
+		\widehat{[A,B]} = \widehat{\comm{\hat{A}}{\hat{B}}_{e}} = \comm{\hat{A}}{\hat{B}}
+	\end{equation}
 
-
-
-
-
-
-
-
-
-
-
-
-
+	dove nel primo passaggio abbiamo usato la definizione di commutatore nello spazio tangente e nel secondo abbiamo usato il fatto che l'isomorfismo $ \hat{} $ e la valutazione nell'elemento neutro $ \mid_{e} $ siano i rispettivi inversi.
+\end{remark}
