@@ -2727,7 +2727,7 @@ cioè tramite l'isomorfismo
 dove
 
 \begin{equation}
-	\hat{A}_{g} = L_{g_{*e}}(A)
+	\hat{A}_{g} = L_{g_{*e}}(A) \qcomma \forall g \in G
 \end{equation}
 
 portiamo gli elementi dello spazio tangente $ A $ e $ B $ nei rispettivi campi di vettori invarianti a sinistra $ \hat{A} $ e $ \hat{B} $, ne facciamo il commutatore (come campi di vettori) e poi lo valutiamo nell'elemento $ e $, i.e. utilizzando l'inversa dell'isomorfismo
@@ -2741,11 +2741,11 @@ In questo modo, l'applicazione $ \hat{} $ è un isomorfismo di algebre di Lie tr
 L'algebra $ (T_{e}(G),[,]) $ è chiamata \textit{algebra di Lie del gruppo} $ G $ e viene indicata con
 
 \begin{equation}
-	\mathfrak{g} = (T_{e}(G),[,])
+	\mathfrak{g} \doteq (T_{e}(G),[,])
 \end{equation}
 
 \begin{remark}
-	Siano $ A,B \in T_{e}(G) $, il campo di vettori associato al loro commutatore tramite l'isomorfismo tra $ T_{e}(G) $ e $ L(G) $ è identico al commutatore tra i campi di vettori corrispondenti ad $ A $ e $ B $, i.e.
+	Siano $ A,B \in T_{e}(G) $, allora il campo di vettori associato al loro commutatore tramite l'isomorfismo tra $ T_{e}(G) $ e $ L(G) $ è identico al commutatore tra i campi di vettori corrispondenti ad $ A $ e $ B $, i.e.
 	
 	\begin{equation}
 		\widehat{[A,B]} = \widehat{\comm{\hat{A}}{\hat{B}}_{e}} = \comm{\hat{A}}{\hat{B}}
@@ -3040,6 +3040,190 @@ Tramite questo risultato e l'identificazione $ C = [c_{ij}] = [A,B] $, otteniamo
 \end{equation}
 
 cioè l'usuale commutatore tra matrici.
+
+\subsection{Pushforward di campi di vettori invarianti a sinistra tramite omomorfismi di gruppi di Lie}
+
+Siano $ H $ e $ G $ due gruppi di Lie e $ F : H \to G $ un omomorfismo di gruppi di Lie, i.e. $ F $ è liscio (ma non necessariamente invertibile), preserva le operazioni dei gruppi e vale
+
+\begin{equation}
+	L_{F(h)} \circ F = F \circ L_{h} \qcomma \forall h \in H
+\end{equation}
+
+Per trasportare i campi di vettori invarianti a sinistra su $ H $ in quelli su $ G $, possiamo utilizzare gli isomorfismi tra questi spazi e gli spazi tangenti e comporli con il differenziale dell'omomorfismo: consideriamo le applicazioni\footnote{%
+	Al fine di non appesantire la notazione, il simbolo $ \hat{} $ verrà usato per entrambi gli isomorfismi
+	
+	\begin{equation}
+		\begin{cases}
+			\hat{} : T_{e}(G) \to L_{G}\\
+			\hat{} : T_{e}(H) \to L_{H}
+		\end{cases}
+	\end{equation}
+	
+	e analogamente per il suo inverso; inoltre $ e $ indicherà l'elemento neutro per entrambi i gruppi di Lie, anche perché legati da un omomorfismo, il quale mappa $ e \in H $ in $ e \in G $.%
+}
+
+\begin{equation}
+	\begin{cases}
+		\mid_{e} \, : L(H) \to T_{e}(H)\\
+		F_{*e} : T_{e}(H) \to T_{e}(G)\\
+		\hat{} : T_{e}(G) \to L_{G}
+	\end{cases}
+\end{equation}
+
+%\img{0.5}{img53} m 1.14.00 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Tramite la loro composizione, definiamo il pushforward di $ X \in L(H) $ tramite l'omomorfismo $ F $ come
+
+\begin{equation}
+	F_{*}(X) \doteq \widehat{ F_{*e}(X_{e}) } \in L(G)
+\end{equation}
+
+Esplicitando questa definizione tramite la traslazione a sinistra
+
+\begin{equation}
+	(F_{*}(X))_{g} = (\widehat{ F_{*e}(X_{e}) })_{g} = L_{g*_{e}} (F_{*e}(X_{e})) \qcomma \forall g \in G
+\end{equation}
+
+Analogamente, prendendo un elemento dello spazio tangente $ A \in T_{e}(H) $ e considerando il campo di vettori invariante a sinistra $ \hat{A} \in L(H) $ dato dall'isomorfismo, si può riscrivere il pushforward tramite l'omomorfismo $ F $ come
+
+\begin{equation}
+	F_{*} (\hat{A}) = \widehat{ F_{*e} (\hat{A}_{e}) } = \widehat{ F_{*e} (A) }
+\end{equation}
+
+\begin{definition}[1]
+	Sia $ F : H \to G $ un isomorfismo di gruppi di Lie, allora il pushforward di $ X \in L(H) $ tramite $ F $ visto come diffeomorfismo coincide al pushforward di $ X $ tramite $ F $ visto come omomorfismo.
+\end{definition}
+
+\begin{proof}
+	Per notazione, in questa dimostrazione useremo
+	
+	\begin{itemize}
+		\item $ \tilde{F}_{*}(X) $ per il pushforward di $ X $ tramite $ F $ visto come diffeomorfismo
+		
+		\item $ F_{*}(X) $ per il pushforward di $ X $ tramite $ F $ visto come omomorfismo
+	\end{itemize}
+
+	e dunque vogliamo dimostrare che $ \tilde{F}_{*}(X) = F_{*}(X) $.\\
+	Per definizione, applicando il pushforward tramite il diffeomorfismo ad un elemento $ g \in G $
+	
+	\begin{align}
+		\begin{split}
+			(\tilde{F}_{*}(X))_{g} &= F_{*h}(X_{h})\\
+			&= F_{*h}(L_{h_{*e}}(X_{e}))\\
+			&= (F \circ L_{h})_{*e} (X_{e})\\
+			&= (L_{F(h)} \circ F)_{*e} (X_{e})\\
+			&= L_{F(h)_{*e}} (F_{*e}(X_{e}))\\
+			&= L_{g_{*e}} (F_{*e}(X_{e}))\\
+			&= (\widehat{ F_{*e}(X_{e}) })_{g}\\
+			&= (F_{*}(X))_{g}
+		\end{split}
+	\end{align}
+
+	usando:
+	
+	\begin{itemize}
+		\item $ F(h) = g $ nel primo e nel sesto passaggio
+		
+		\item nel secondo passaggio, il campo di vettori è invariante a sinistra, i.e. $ X \in L(H) $
+		
+		\item la regola della catena nel terzo e nel quinto passaggio
+		
+		\item il fatto che $ F $ è un omomorfismo nel quarto passaggio
+		
+		\item la definizione di $ \hat{} $ nel settimo passaggio
+	\end{itemize}
+
+	dunque
+	
+	\begin{equation}
+		\tilde{F}_{*}(X) = F_{*}(X)
+	\end{equation}
+
+	Essendo equivalenti, d'ora in poi verrà utilizzata la notazione $ F_{*}(X) $ per indicare il pushforward sia tramite diffeomorfismo che tramite omomorfismo.
+\end{proof}
+
+Anche nel contesto di omomorfismi, è possibile definire campi di vettori $ F $-related.
+
+\begin{definition}[2]
+	Siano $ F : H \to G $ un omomorfismo di gruppi di Lie e un campo di vettori su $ H $ invariante a sinistra $ X \in L(H) $, allora $ X $ è $ F $-related\footnote{%
+		Siano un'applicazione liscia $ F : N \to M $ e due campi di vettori lisci $ X \in \chi(N) $ e $ Y \in \chi(M) $, allora $ X $ è $ F $-related ad $ Y $ se
+		
+		\begin{equation}
+			F_{*p} (X_{p}) = Y_{F(p)} \qcomma \forall p \in N
+		\end{equation}
+	
+		Nel caso in cui $ F $ sia un diffeomorfismo, un campo di vettori e il suo pushforward sono sempre $ F $-related tra loro.%
+	} a $ F_{*}(X) $, i.e.
+
+	\begin{equation}
+		F_{*h} (X_{h}) = (F_{*}(X))_{F(h)} \qcomma \forall h \in H
+	\end{equation}
+\end{definition}
+
+\begin{proof}
+	Per dimostrare che $ X $ è $ F $-related ad $ F_{*}(X) $ tramite $ F $ omomorfismo, usiamo la definizione di campo di vettori invarianti a sinistra
+	
+	\begin{align}
+		\begin{split}
+			F_{*h} (X_{h}) &= F_{*h} (L_{h_{*e}}(X_{e}))\\
+			&= (F \circ L_{h*})_{*e} (X_{e})\\
+			&= (L_{F(h)} \circ F)_{*e} (X_{e})\\
+			&= L_{F(h)_{*e}} (F_{*e}(X_{e}))\\
+			&= (\widehat{ F_{*e}(X_{e}) })_{F(h)}\\
+			&= (F_{*}(X))_{F(h)}
+		\end{split}
+	\end{align}
+\end{proof}
+
+\begin{definition}[3]
+	Sia $ F : H \to G $ un omomorfismo di gruppi di Lie, allora il differenziale
+	
+	\begin{equation}
+		F_{*e} : T_{e}(H) \to T_{e}(G)
+	\end{equation}
+
+	scritto anche come
+	
+	\begin{equation}
+		F_{*e} : \mathfrak{h} \to \mathfrak{g}
+	\end{equation}
+
+	è un omomorfismo di algebre di Lie (con il commutatore usuale), i.e.
+	
+	\begin{equation}
+		F_{*e} \comm{A}{B} = \comm{F_{*e} (A)}{F_{*e} (B)} \qcomma \forall A,B \in \mathfrak{h}
+	\end{equation}
+\end{definition}
+
+\begin{proof}
+	Siano i campi di vettori su $ H $ invarianti a sinistra $ \hat{A},\hat{B} \in L(H) $. Per la seconda proposizione
+	
+	\begin{itemize}
+		\item $ \hat{A} $ è $ F $ related a $ F_{*}(\hat{A}) $
+		
+		\item $ \hat{B} $ è $ F $ related a $ F_{*}(\hat{B}) $
+	\end{itemize}
+
+	Per il Corollario \ref{frel-brack} e per l'identificazione tra il pushforward tramite il diffeomorfismo e quello tramite omomorfismo, se $ F $ è un'applicazione liscia allora $ [\hat{A},\hat{B}] $ è $ F $-related a $ [F_{*} (\hat{A}),F_{*} (\hat{B})] $, i.e.
+	
+	\begin{equation}
+		F_{*h} \left( \comm{\hat{A}}{\hat{B}}_{h} \right) = \comm{ F_{*}(\hat{A}) }{ F_{*}(\hat{B}) }_{F(h)} \qcomma \forall h \in H
+	\end{equation}
+
+	Se $ h=e $, abbiamo che $ F(e)=e $, dunque
+	
+	\begin{align}
+		\begin{split}
+			F_{*e} \left( \comm{\hat{A}}{\hat{B}}_{e} \right) &= \comm{ F_{*}(\hat{A}) }{ F_{*}(\hat{B}) }_{e}\\
+			F_{*e} (\comm{A}{B}) &= \comm{ \widehat{ F_{*e}(A) } }{ \widehat{ F_{*e}(B) } }_{e}\\
+			&= \comm{F_{*e} (A)}{F_{*e} (B)}
+		\end{split}
+	\end{align}
+\end{proof}
+
+
+
+
 
 
 
