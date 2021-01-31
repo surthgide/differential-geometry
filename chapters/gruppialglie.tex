@@ -3221,6 +3221,333 @@ Anche nel contesto di omomorfismi, è possibile definire campi di vettori $ F $-
 	\end{align}
 \end{proof}
 
+\begin{corollary}
+	Siano $ H $ un sottogruppo di Lie di un gruppo di Lie $ G $ e $ i : H \to G $ l'inclusione, allora, chiamando le algebre di Lie degli spazi tangenti come
+	
+	\begin{equation}
+		\begin{cases}
+			\mathfrak{h} = (T_{e}(H),[,])\\
+			\mathfrak{g} = (T_{e}(G),[,])
+		\end{cases}
+	\end{equation}
+	
+	abbiamo che il differenziale dell'inclusione $ i_{*e} : \mathfrak{h} \to \mathfrak{g} $ soddisfa
+	
+	\begin{equation}
+		i_{*e} (\comm{A}{B}) = \comm{i_{*e} (A)}{i_{*e} (B)} \qcomma \forall A,B \in T_{e}(H)
+	\end{equation}
+
+	Quindi il commutatore di $ \mathfrak{g} $ induce il commutatore (e dunque l'algebra) di $ \mathfrak{h} $.
+\end{corollary}
+
+In particolare, il commutatore dei sottogruppi (matriciali) di $ GL_{n}(\R) $ o $ GL_{n}(\C) $ è dato dal \textit{commutatore standard}
+
+\begin{equation}
+	[A,B] = A B - B A \qcomma A,B \in T_{I}(GL_{n}(\K)), \, \K = \R \lor \C
+\end{equation}
+
+in quanto questo è il commutatore definito nell'algebra dello spazio tangente all'insieme delle matrici invertibili, i.e. $ (T_{I}(GL_{n}(\R)),[,]) $ con l'identificazione $ T_{I}(GL_{n}(\R)) = M_{n}(\R) $. Tramite questo, l'algebra di Lie dei sottogruppi matriciali è data dalla coppia formata da spazio tangente all'identità del sottoinsieme e commutatore standard.
+
+\subsubsection{\textit{Esempi}}
+
+\paragraph{1.}
+
+Il gruppo di Lie delle matrici ortogonali $ O(n) $ è un sottogruppo di Lie di $ GL_{n}(\R) $ con spazio tangente quello delle matrici antisimmetriche
+
+\begin{equation}
+	T_{I}(O(n)) = \{ X \in M_{n}(\R) \mid X^{T} = -X \}
+\end{equation}
+
+L'algebra di Lie $ (T_{I}(O(n)),[,]) $ ha come commutatore, per il corollario sopraccitato, quello standard
+
+\begin{equation}
+	[X,Y] = X Y - Y X \qcomma X,Y \in T_{I}(O(n))
+\end{equation}
+
+Essendo un elemento dello spazio tangente, per il commutatore vale
+
+\begin{equation}
+	[X,Y]^{T} = - [X,Y]
+\end{equation}
+
+\paragraph{2.}
+
+Il gruppo di Lie delle matrici unitarie speciali $ SU(n) $ è un sottogruppo di Lie di $ GL_{n}(\C) $ con spazio tangente quello delle matrici antihermitiane a traccia nulla
+
+\begin{equation}
+	T_{I}(SU(n)) = \{ X \in M_{n}(\C) \mid X^{*} = -X \wedge \tr(X) = 0 \}
+\end{equation}
+
+L'algebra di Lie dello spazio tangente a $ SU(n) $
+
+\begin{equation}
+	\mathfrak{su}(n) \doteq (T_{I}(SU(n)),[,])
+\end{equation}
+
+ha come commutatore, per il corollario sopraccitato, quello standard
+
+\begin{equation}
+	[X,Y] = X Y - Y X \qcomma X,Y \in T_{I}(SU(n))
+\end{equation}
+
+Essendo un elemento dello spazio tangente, per il commutatore valgono
+
+\begin{equation}
+	\begin{cases}
+		[X,Y]^{*} = - [X,Y]\\
+		\tr([X,Y]) = 0
+	\end{cases}
+\end{equation}
+
+Vedi Esercizio \ref{es3-9}.
+
+\subsection{Applicazione esponenziale di un gruppo di Lie}
+
+Siano $ G $ un gruppo di Lie, $ e \in G $ il suo elemento neutro, $ \g = (T_{e}(G),[,]) $ la sua algebra di Lie e $ \xi,\eta \in \g $ gli elementi di quest'algebra, vogliamo costruire un'applicazione
+
+\begin{equation}
+	f : \g \to G
+\end{equation}
+
+che leghi l'algebra di Lie di $ G $, costruita mediante i campi di vettori invarianti a sinistra, e il gruppo stesso.
+
+\subsubsection{Flusso di un campo di vettori invariante a sinistra}
+
+Sia $ \hat{\xi} \in L(G) $ il campo di vettori invariante a sinistra associato a $ \xi \in \g $ con
+
+\begin{equation}
+	\hat{\xi}_{g} = L_{g_{*e}}(\xi)
+\end{equation}
+
+Possiamo considerare il flusso locale di $ \hat{\xi} $ nel punto $ g \in U $ con $ U \subset G $ aperto, i.e. $ \sigma_{t}^{\xi}(g) $ con $ t \in (-\delta,\delta) $. La condizione per cui questo oggetto sia un flusso è che, considerando $ \sigma_{t}^{\xi}(g) $ come una curva al variare di $ t $ con $ g $ fissato, la curva inizi in $ g $ e il vettore tangente a questa curva in ogni suo punto coincida con il campo di vettori $ \hat{\xi} $ calcolato nello stesso punto, i.e.
+
+\begin{equation}
+	\begin{cases}
+		\sigma_{0}^{\xi}(g) = g\\\\
+		\dv{t} \sigma_{t}^{\xi}(g) = \hat{\xi}_{\sigma_{t}^{\xi}(g)}
+	\end{cases}
+\end{equation}
+
+Equivalentemente, $ \sigma_{t}^{\xi}(g) $ è la curva integrale del campo di vettori $ \hat{\xi} $.\\
+Dai teoremi sulle curve integrali e sui flussi di campi di vettori, $ \sigma_{t}^{\xi}(g) $ dipende in modo liscio da $ t $ e da $ g $; inoltre
+
+\begin{equation}
+	\sigma_{t+s}^{\xi} = \sigma_{t}^{\xi} \circ \sigma_{s}^{\xi}
+\end{equation}
+
+dove sono definite entrambe le funzioni.\\
+Prendendo l'elemento neutro dell'algebra di Lie $ 0 \in \g $, abbiamo che
+
+\begin{equation}
+	\dv{t} \sigma_{t}^{0}(g) = \hat{0}_{\sigma_{t}^{\xi}(g)} = 0
+\end{equation}
+
+dunque $ \sigma_{t}^{0}(g) $ è costante in $ t $, in particolare in $ t=0 $ possiamo usare la condizione
+
+\begin{equation}
+	\sigma_{0}^{\xi}(g) = g
+\end{equation}
+
+ottenendo
+
+\begin{equation}
+	\sigma_{t}^{0}(g) = \sigma_{0}^{0}(g) = g
+\end{equation}
+
+Riassumendo per $ \sigma_{t}^{\xi}(g) $
+
+\begin{equation}
+	\begin{cases}
+		\sigma_{0}^{\xi}(g) = g\\\\
+		\dv{t} \sigma_{t}^{\xi}(g) = \hat{\xi}_{\sigma_{t}^{\xi}(g)}\\\\
+		\sigma_{t+s}^{\xi} = \sigma_{t}^{\xi} \circ \sigma_{s}^{\xi}\\\\
+		\sigma_{t}^{0}(g) = g & \forall t \in (-\delta,\delta)
+	\end{cases}
+\end{equation}
+
+Definiamo ora la curva liscia
+
+\map{\gamma^{\xi}}%
+	{(-\delta,\delta)}{G}%
+	{t}{\sigma_{t}^{\xi}(e)}
+	
+dove $ e \in G $ è l'elemento neutro; abbiamo che la curva inizia nell'elemento neutro del gruppo di Lie $ G $
+
+\begin{equation}
+	\gamma^{\xi}(0) = \sigma_{0}^{\xi}(e) = e
+\end{equation}
+
+mentre il suo vettore tangente è
+
+\begin{align}
+	\begin{split}
+		\dv{t} \gamma^{\xi}(t) &= \dv{t} \sigma_{t}^{\xi}(e)\\
+		&= \hat{\xi}_{\sigma_{t}^{\xi}(e)}\\
+		&= \hat{\xi}_{\gamma^{\xi}(t)}
+	\end{split}
+\end{align}
+
+Dunque $ \gamma^{\xi}(t) $ è la curva integrale di $ \hat{\xi} $ che inizia in $ e $, in particolare
+
+\begin{align}
+	\begin{split}
+		\eval{ \dv{t} \gamma^{\xi}(t) }_{t=0} &= \eval{ \hat{\xi}_{\gamma^{\xi}(t)} }_{t=0}\\
+		&= \hat{\xi}_{\gamma^{\xi}(0)}\\
+		&= \hat{\xi}_{e}\\
+		&= \xi
+	\end{split}
+\end{align}
+
+Inoltre
+
+\begin{align}
+	\begin{split}
+		\gamma^{\xi}(t+s) &= \sigma_{t+s}^{\xi}(e)\\
+		&= (\sigma_{t}^{\xi} \circ \sigma_{s}^{\xi})(e)\\
+		&= \sigma_{t}^{\xi}(\sigma_{s}^{\xi}(e))\\
+		&= \sigma_{t}^{\xi}(\gamma^{\xi}(s))\\
+		&= \gamma^{\xi}(s) \cdot \gamma^{\xi}(t)
+	\end{split}
+\end{align}
+
+Riassumendo per $ \gamma^{\xi}(t) $:
+
+\begin{equation}
+	\begin{cases}
+		\gamma^{\xi}(0) = e\\\\
+		\dv{t} \gamma^{\xi}(t) = \hat{\xi}_{\gamma^{\xi}(t)}\\\\
+		\eval{ \dv{t} \gamma^{\xi}(t) }_{t=0} = \xi\\\\
+		\gamma^{\xi}(t+s) = \gamma^{\xi}(s) \cdot \gamma^{\xi}(t)
+	\end{cases}
+\end{equation}
+	
+\begin{definition}
+	Il flusso locale $ \sigma_{t}^{\xi}(g) $ può essere scritto come
+	
+	\begin{equation}
+		\sigma_{t}^{\xi}(g) = g \cdot \gamma^{\xi}(t)
+	\end{equation}
+
+	dove $ \cdot $ indica il prodotto in $ G $.
+\end{definition}
+
+Ricordiamo che una curva integrale che inizia in un punto è l'unica curva integrale (dove è definita) che inizi nello stesso punto.
+
+\begin{proof}
+	Per definizione
+	
+	\begin{equation}
+		\begin{cases}
+			\sigma_{0}^{\xi}(g) = g\\\\
+			\dv{t} \sigma_{t}^{\xi}(g) = \hat{\xi}_{\sigma_{t}^{\xi}(g)}
+		\end{cases}
+	\end{equation}
+
+	Perché $ \sigma_{t}^{\xi}(g) = g \cdot \gamma^{\xi}(t) $ dobbiamo dimostrare che
+	
+	\begin{equation}
+		\begin{cases}
+			g \cdot \gamma^{\xi}(0) = g\\\\
+			\dv{t} (g \cdot \gamma^{\xi}(t)) = \hat{\xi}_{g \cdot \gamma^{\xi}(t)}
+		\end{cases}
+	\end{equation}
+
+	Per la prima equazione
+	
+	\begin{equation}
+		g \cdot \gamma^{\xi}(0) = g \cdot e = g
+	\end{equation}
+
+	Per la seconda
+	
+	\begin{align}
+		\begin{split}
+			\eval{ \dv{t} (g \cdot \gamma^{\xi}(t)) }_{s} &= \eval{ \dv{t} L_{g}(\gamma^{\xi}(t)) }_{s}\\
+			&= L_{g_{*\gamma^{\xi}(s)}} \left( \dv{t} \gamma^{\xi}(t) \right)\\
+			&= L_{g_{*\gamma^{\xi}(s)}} \left( \hat{\xi}_{\gamma^{\xi}(t)} \right)\\
+			&= \hat{\xi}_{g \cdot \gamma^{\xi}(t)}
+		\end{split}
+	\end{align}
+
+	dove nel secondo passaggio abbiamo usato la definizione di differenziale tramite curve e nel quarto il fatto che $ \hat{\xi} $ sia un campo di vettori invariante a sinistra.\\
+	Per unicità delle curve integrali abbiamo dunque che
+	
+	\begin{equation}
+		\sigma_{t}^{\xi}(g) = g \cdot \gamma^{\xi}(t)
+	\end{equation}
+\end{proof}
+	
+\begin{definition}
+	Il campo di vettori invariante a sinistra $ \hat{\xi} $ è completo, i.e. $ t \in \R $ e $ g \in G $.
+\end{definition}
+
+\begin{proof}
+	Perché $ \hat{\xi} $ sia completo, è necessario che il flusso $ \sigma_{t}^{\xi}(g) $ sia globale: per dimostrare questo, è sufficiente dimostrare che $ g \cdot \gamma^{\xi}(t) $ sia globale in quanto, per la proposizione precedente, abbiamo che $ \sigma_{t}^{\xi}(g) = g \cdot \gamma^{\xi}(t) $.\\
+	Supponiamo, per assurdo, che $ (-\delta,\delta) $ con $ \delta < \infty $ sia il dominio massimale di definizione di $ \gamma^{\xi} $. Definiamo ora la curva
+	
+	\map{\gamma}%
+		{(-\delta,\delta +t_{0})}{G}%
+		{t}{%
+			\begin{cases}
+				\gamma^{\xi}(t) & t \in (-\delta,\delta)\\
+				\gamma^{\xi}(t_{0}) \cdot \gamma^{\xi}(t - t_{0}) & t \in (t_{0},\delta + t_{0})
+			\end{cases}%
+			}
+		
+	dove $ t_{0} \in (0,\delta) $; questa curva è liscia perché liscia nelle due condizioni e queste coincidono nell'intersezione aperta $ (t_{0},\delta) $ in quanto
+	
+	\begin{equation}
+		\gamma^{\xi}(t_{0}) \cdot \gamma^{\xi}(t - t_{0}) = \gamma^{\xi}(t - t_{0} + t_{0}) = \gamma^{\xi}(t) \qcomma \forall t \in (t_{0},\delta)
+	\end{equation}
+
+	Abbiamo che
+	
+	\begin{equation}
+		\gamma(0) = \gamma^{\xi}(0) = e
+	\end{equation}
+	
+	inoltre, per $ t \in (-\delta,\delta) $
+	
+	\begin{equation}
+		\dv{t} \gamma(t) = \dv{t} \gamma^{\xi}(t) = \hat{\xi}_{\gamma^{\xi}(t)} = \hat{\xi}_{\gamma(t)}
+	\end{equation}
+
+	e per $ t \in (\delta,\delta + t_{0}) $
+	
+	\begin{align}
+		\begin{split}
+			\dv{t} \gamma(t) &= \dv{t} ( \gamma^{\xi}(t_{0}) \cdot \gamma^{\xi}(t - t_{0}) )\\
+			&= \dv{t} L_{\gamma^{\xi}(t_{0})} ( \gamma^{\xi}(t - t_{0}) )\\
+			&= L_{\gamma^{\xi}(t_{0})_{*\gamma^{\xi}(t - t_{0})}} \left( \dv{t} \gamma^{\xi}(t - t_{0}) \right)\\
+			&= L_{\gamma^{\xi}(t_{0})_{*\gamma^{\xi}(t - t_{0})}} \left( \hat{\xi}_{\gamma^{\xi}(t - t_{0})} \right)\\
+			&= \hat{\xi}_{\gamma^{\xi}(t_{0}) \cdot \gamma^{\xi}(t - t_{0})}
+		\end{split}
+	\end{align}
+	
+	Da questi risultati otteniamo
+		
+	\begin{equation}
+		\begin{cases}
+			\gamma(0) = e\\\\
+			\dv{t} \gamma(t) = \hat{\xi}_{\gamma(t)}
+		\end{cases}
+	\end{equation}	
+	
+	cioè $ \gamma $ è una curva integrale per $ \hat{\xi} $ che inizia in $ e $, dunque la condizione $ \delta < \infty $ è contraddittoria e quindi il parametro $ t $ può assumere qualsiasi valore reale, i.e. $ t \in \R $.
+\end{proof}
+
+A questo punto, la curva integrale $ \gamma^{\xi}(t) \in G $ può essere scritta come
+
+\map{\gamma^{\xi}}%
+	{\R}{G}%
+	{t}{\sigma_{t}^{\xi}(e)}
+
+
+
+
+
+
+
 
 
 
