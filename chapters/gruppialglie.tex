@@ -3070,7 +3070,7 @@ Per trasportare i campi di vettori invarianti a sinistra su $ H $ in quelli su $
 	\end{cases}
 \end{equation}
 
-%\img{0.5}{img53} m 1.14.00 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\img{0.4}{img53}
 
 Tramite la loro composizione, definiamo il pushforward di $ X \in L(H) $ tramite l'omomorfismo $ F $ come
 
@@ -3541,6 +3541,258 @@ A questo punto, la curva integrale $ \gamma^{\xi}(t) \in G $ può essere scritta
 \map{\gamma^{\xi}}%
 	{\R}{G}%
 	{t}{\sigma_{t}^{\xi}(e)}
+
+\subsubsection{Definizione e proprietà dell'esponenziale di un gruppo di Lie}
+
+Siano $ G $ un gruppo di Lie, $ e \in G $ il suo elemento neutro, $ \xi \in T_{e}(G) $ un elemento dell'algebra di Lie $ \g $ di $ G $ e $ \gamma^{\xi}(t) $ con $ t \in \R $ la curva integrale del campo di vettori invariante a sinistra $ \hat{\xi} $ che inizia in $ e $, definiamo l'applicazione \textit{esponenziale} come
+
+\map{\exp}%
+	{T_{e}(G)}{G}%
+	{\xi}{\gamma^{\xi}(1) = \sigma_{1}^{\xi}(e)}
+
+Questa applicazione è il riassunto di alcuni passaggi intermedi:
+
+\begin{enumerate}
+	\item Prendiamo un campo di vettori $ \xi \in \g $ dell'algebra di Lie di $ G $;
+	
+	\item associamo a questo il campo di vettori invariante a sinistra $ \hat{\xi} \in L(G) $;
+	
+	\item consideriamo il flusso globale di questo $ \sigma_{t}^{\xi}(g) $;
+	
+	\item consideriamo la curva integrale $ \gamma^{\xi}(t) = \sigma_{t}^{\xi}(e) $, ottenuta valutando il flusso nell'elemento neutro $ e \in G $;
+	
+	\item valutiamo questa curva in $ t=1 $.
+\end{enumerate}
+
+A questo punto, possiamo dire che $ \exp(\xi) \in G $ è il valore in $ t=1 $ della curva integrale del campo di vettori invariante a sinistra $ \hat{\xi} $ che inizia nell'elemento neutro $ e \in G $.\\
+Fin'ora sappiamo solo che $ \sigma_{t}^{\xi}(g) $ dipenda in modo liscio da $ t $ e da $ g $ ma non abbiamo informazioni sulla dipendenza da $ \xi $.
+
+\begin{definition}[Proprietà dell'esponenziale di un gruppo di Lie]\hfill\break
+	\begin{enumerate}
+		\item L'esponenziale $ \exp : T_{e}(G) \to G $ è liscio rispetto a $ \xi $;
+		
+		\item $ \exp(0) = e $;
+		
+		\item $ \exp(t \xi) = \gamma^{\xi}(t) $.
+	\end{enumerate}
+\end{definition}
+
+\begin{proof}\hfill\break
+	\begin{enumerate}
+		\item Sia $ \tilde{G} = G \times T_{e}(G) $ il prodotto diretto dei gruppi di Lie $ (G,\cdot) $ e $ (T_{e}(G),+) $, da cui il gruppo di Lie $ (\tilde{G},\cdot) $ con quest'ultima operazione definita come
+		
+		\map{\cdot}%
+			{\tilde{G} \times \tilde{G}}{\tilde{G}}%
+			{((g_{1},\xi_{1}),(g_{2},\xi_{2}))}{(g_{1} \cdot g_{2},\xi_{1} + \xi_{2})}
+
+		Tramite il gruppo di Lie $ \tilde{G} $, consideriamo $ \xi $ non come parametro ma come coordinata di un punto $ (g,\xi) \in \tilde{G} $.\\
+		Lo spazio tangente di $ \tilde{G} $, ricordando che $ T_{e}(G) $ è uno spazio vettoriale quindi coincide con il suo spazio tangente, è pari a
+		
+		\begin{equation}
+			T_{(e,0)}(\tilde{G}) = T_{e}(G) \times T_{0}(T_{e}(G)) = T_{e}(G) \times T_{e}(G)
+		\end{equation}
+	
+		Prendiamo un elemento $ \tilde{\xi} $ di questo spazio tangente definito come
+		
+		\begin{equation}
+			\tilde{\xi}_{(g,\xi)} = (\hat{\xi}_{g},0)
+		\end{equation}
+	
+		dove $ \hat{\xi} \in L(G) $ è il campo di vettori invarianti a sinistra associato a $ \xi $ e $ 0 \in T_{e}(G) $; $ \tilde{\xi} $ è un campo di vettori invariante a sinistra, i.e. $ \tilde{\xi} \in L(\tilde{G}) $, in quanto
+		
+		\begin{align}
+			\begin{split}
+				L_{(g,\xi)_{*}} \left( \tilde{\xi} \right) &= \left( L_{(g,\xi)_{*}} \left( \hat{\xi}_{g} \right), L_{(g,\xi)_{*}} (0) \right)\\
+				&= \left( \hat{\xi}_{g},0 \right)\\
+				&= \tilde{\xi}_{(g,\xi)}
+			\end{split}
+		\end{align}
+	
+		Per $ \tilde{\sigma}(t,g,\xi) $ flusso globale di $ \tilde{\xi} $ valgono
+		
+		\begin{equation}
+			\begin{cases}
+				\tilde{\sigma} : \R \times \tilde{G} \to \tilde{G}\\
+				\dv{t} \tilde{\sigma}(t,g,\xi) = \tilde{\xi}_{\tilde{\sigma}(t,g,\xi)}\\
+				\tilde{\sigma}(0,g,\xi) = (g,\xi)
+			\end{cases}
+		\end{equation}
+	
+		Essendo $ (g,\xi) \in \tilde{G} $, il flusso globale $ \tilde{\sigma}(t,g,\xi) $ dipende in modo liscio da $ \xi $ per il Teorema \ref{flux-var}.\\
+		Considerando la curva $ (\sigma_{t}^{\xi}(g),\xi) \in \tilde{G} $, questa comincia in
+		
+		\begin{equation}
+			(\sigma_{0}^{\xi}(g),\xi) = (g,\xi)
+		\end{equation}
+	
+		e il suo vettore tangente è
+		
+		\begin{equation}
+			\dv{t} (\sigma_{t}^{\xi}(g),\xi) = \left( \hat{\xi}_{\sigma_{t}^{\xi}(g)}, 0 \right) = \tilde{\xi}_{(\sigma_{t}^{\xi}(g),\xi)}
+		\end{equation}
+	
+		Dunque è una curva integrale per $ \tilde{\xi} $ che inizia in $ (g,\xi) $$ \tilde{\sigma}(t,g,\xi) $: per il teorema sull'unicità della curva integrale, otteniamo che
+		
+		\begin{equation}
+			\tilde{\sigma}(t,g,\xi) = (\sigma_{t}^{\xi}(g),\xi) \qcomma \forall t \in \R, \, \forall g \in G, \, \forall \xi \in \g
+		\end{equation}
+	
+		Questo prova che anche $ \sigma_{t}^{\xi}(g) $ è liscia in $ \xi $, da cui $ \gamma^{\xi}(t) = \sigma_{t}^{\xi}(e) $ è liscia in $ \xi $ e infine abbiamo che $ \exp(\xi) = \gamma^{\xi}(1) $ è liscio in $ \xi $.
+		
+		\item Per definizione
+		
+		\begin{equation}
+			\exp(0) \doteq \gamma^{0}(1) = \sigma_{1}^{0}(e) = e
+		\end{equation}
+	
+		in quanto $ \sigma_{t}^{0}(g) = g $ per $ \forall t \in \R $.
+		
+		\item Per definizione
+		
+		\begin{equation}
+			\exp(t \xi) = \gamma^{t \xi}(1)
+		\end{equation}
+	
+		e vorremmo dimostrare che
+		
+		\begin{equation}
+			\exp(t \xi) = \gamma^{\xi}(t)
+		\end{equation}
+	
+		Più in generale, dimostriamo che
+		
+		\begin{equation}
+			\gamma^{t \xi}(s) = \gamma^{\xi}(t s) \qcomma t,s \in \R
+		\end{equation}
+	
+		Questa proprietà è verificata per $ t=0 $
+		
+		\begin{equation}
+			\gamma^{0}(s) = \sigma_{s}^{0}(e) = e = \gamma^{\xi}(0)
+		\end{equation}
+	
+		Supponiamo che $ t \neq 0 $ e sfruttiamo l'unicità delle curve integrali: definendo $ u = t s $, vogliamo che
+		
+		\begin{equation}
+			\gamma^{t \xi} \left( \dfrac{u}{t} \right) = \gamma^{\xi}(u)
+		\end{equation}
+		
+		Calcoliamo dunque il vettore tangente del secondo membro, ottenendo
+		
+		\begin{equation}
+			\begin{cases}
+				\gamma^{\xi}(0) = e\\
+				\dv{u} \gamma^{\xi}(u) = \hat{\xi}_{\gamma^{\xi}(u)}
+			\end{cases}
+		\end{equation}
+	
+		mentre per il primo membro, sapendo che $ \dd{u} = t \dd{s} $ e che l'isomorfismo $ \hat{} $ è lineare
+		
+		\begin{align}
+			\begin{split}
+				\dv{u} \gamma^{t \xi} \left( \dfrac{u}{t} \right) &= \dfrac{1}{t} \dv{s} \gamma^{t \xi}(s)\\
+				&= \dfrac{1}{t} \left( \widehat{t \xi} \right)_{\gamma^{t \xi}(s)}\\
+				&= \dfrac{1}{t} \, t \, \left( \hat{\xi}_{\gamma^{t \xi}(s)} \right)\\
+				&= \hat{\xi}_{\gamma^{t \xi}(s)}\\
+				&= \hat{\xi}_{\gamma^{t \xi}(u/t)}
+			\end{split}
+		\end{align}
+	
+		dunque
+		
+		\begin{equation}
+			\begin{cases}
+				\gamma^{t \xi}(0) = e\\
+				\dv{u} \gamma^{t \xi} \left( \dfrac{u}{t} \right) = \hat{\xi}_{\gamma^{t \xi}(u/t)}
+			\end{cases}
+		\end{equation}
+	
+		perciò, per unicità delle curva integrali
+		
+		\begin{equation}
+			\gamma^{\xi}(u) = \gamma^{t \xi} \left( \dfrac{u}{t} \right)
+		\end{equation}
+	
+		Dato questo, abbiamo dimostrato la proprietà
+		
+		\begin{equation}
+			\gamma^{t \xi}(s) = \gamma^{\xi}(t s)
+		\end{equation}
+	
+		e quindi anche
+		
+		\begin{equation}
+			\exp(t \xi) = \gamma^{t \xi}(1) = \gamma^{\xi}(t)
+		\end{equation}
+	\end{enumerate}
+\end{proof}
+
+\begin{corollary}
+	Valgono le seguenti proprietà:
+	
+	\begin{enumerate}
+		\item Il flusso globale di $ \hat{\xi} $ si può scrivere come
+		
+		\begin{equation}
+			\sigma_{t}^{\xi}(g) = g \cdot \exp(t \xi)
+		\end{equation}
+		
+		\item %
+		\begin{equation}
+			\exp((t+s) \xi) = \exp(t \xi) \cdot \exp(s \xi) \qcomma \forall t,s \in \R, \, \forall \xi \in \g
+		\end{equation}
+		
+		\item L'inversa dell'esponenziale è pari a
+		\begin{equation}
+			\exp(\xi)^{-1} = \exp(-\xi) \qcomma \forall \xi \in \g
+		\end{equation}
+	\end{enumerate}
+\end{corollary}
+
+\begin{proof}\hfill\break
+	\begin{enumerate}
+		\item %
+		\begin{equation}
+			\sigma_{t}^{\xi}(g) = g \cdot \gamma^{\xi}(t) = g \cdot \exp(t \xi)
+		\end{equation}
+		
+		\item %
+		\begin{align}
+			\begin{split}
+				\exp((t+s) \xi) &= \gamma^{\xi}(t+s)\\
+				&= \gamma^{\xi}(t) \cdot \gamma^{\xi}(s)\\
+				&= \exp(t \xi) \cdot \exp(s \xi)
+			\end{split}
+		\end{align}
+		
+		\item Per $ t=1 $ e $ s =-1 $
+		
+		\begin{align}
+			\begin{split}
+				\exp(t \xi) \cdot \exp(s \xi) &= \exp((t+s) \xi)\\
+				\exp(\xi) \cdot \exp(-\xi) &= \exp(0)\\
+				&= e
+			\end{split}
+		\end{align}
+	\end{enumerate}
+\end{proof}
+
+\begin{remark}
+	Si dimostra che, presi $ \forall \xi,\eta \in \g $ con $ [\xi,\eta] = 0 $, vale
+	
+	\begin{equation}
+		\exp(\xi + \eta) = \exp(\xi) \cdot \exp(\eta)
+	\end{equation}
+
+	In generale, l'esponenziale della somma non è uguale al prodotto degli esponenziali\footnote{%
+		Vedi Formula di Baker–Campbell–Hausdorff.%
+	}.
+\end{remark}
+
+\textbf{l 34 p 2 m 1.28.30}
+
+
+
 
 
 
