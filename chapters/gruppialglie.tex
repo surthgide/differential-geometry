@@ -4034,7 +4034,7 @@ Ad esempio, $ \gamma^{\xi}(t) = \exp(t \xi) $ definisce un sottogruppo a un para
 \begin{proof}
 	Consideriamo il seguente diagramma
 	
-	\img{0.5}{img55}
+	\img{0.6}{img55}
 	
 	Mostriamo innanzitutto che $ F $ sia liscio in un intorno dell'origine $ e \in H $: l'esponenziale è un diffeomorfismo locale intorno all'origine, dunque la sua restrizione
 	
@@ -4086,8 +4086,115 @@ Ad esempio, $ \gamma^{\xi}(t) = \exp(t \xi) $ definisce un sottogruppo a un para
 \end{corollary}
 
 \begin{proof}
-	\textbf{l 35 m 53}
+	Siccome l'inclusione $ i : H \to G $ è un omomorfismo di gruppi di Lie (le operazioni sono quelle indotte), il diagramma commutativo
+	
+	\img{0.4}{img56}
+	
+	mostra che
+	
+	\begin{equation}
+		i \circ \exp_{H} = \exp_{G} \circ i_{*e}
+	\end{equation}
+
+	e dunque che
+	
+	\begin{equation}
+		\exp_{H} = \exp_{G_{| T_{e}(H)}}
+	\end{equation}
 \end{proof}
+
+\subsection{Esponenziale di gruppi di Lie matriciali}
+
+Ricordiamo che l'esponenziale per matrici è definito come
+
+\map{e}%
+	{M_{n}(\R)}{GL_{n}(\R)}%
+	{A}{e^{A} = \sum_{k=0}^{+\infty} \dfrac{A^{k}}{k!}}
+
+ma $ M_{n}(\R) = T_{I}(GL_{n}(\R)) $, quindi potremmo definire anche l'esponenziale di gruppi di Lie
+
+\map{\exp}%
+	{T_{I}(GL_{n}(\R))}{GL_{n}(\R)}%
+	{A}{\exp(A)}
+
+\begin{corollary}
+	L'esponenziale di matrici coincide con l'esponenziale di gruppi di Lie per gruppi matriciali.
+\end{corollary}
+
+\begin{proof}
+	Sia $ A \in M_{n}(\R) $, chiamiamo
+	
+	\begin{equation}
+		\begin{cases}
+			\phi_{1}(t) \doteq e^{t A}\\
+			\phi_{2}(t) \doteq \exp(t A)
+		\end{cases}
+	\end{equation}
+
+	dove, tramite l'identificazione $ M_{n}(\R) = T_{I}(GL_{n}(\R)) $
+	
+	\begin{equation}
+		\phi_{j} : T_{I}(GL_{n}(\R)) \to GL_{n}(\R) \qcomma j=1,2
+	\end{equation}
+
+	Le applicazioni $ \phi_{1}(t) $ e $ \phi_{2}(t) $ sono sottogruppi di Lie ad un parametro di $ GL_{n}(\R) $ e il loro vettore tangente nell'origine è la matrice $ A $, i.e.
+	
+	\begin{equation}
+		\phi'_{1}(0) = \phi'_{2}(0) = A
+	\end{equation}
+
+	in quanto valgono
+	
+	\begin{equation}
+		\begin{cases}
+			e^{(t+s) A} = e^{t A} e^{s A}\\
+			\exp((t+s) A) = \exp(t A) \exp(s A)
+		\end{cases}%
+		\qcomma \forall t,s \in \R, \, \forall A \in M_{n}(\R)
+	\end{equation}
+
+	e per i vettori tangenti
+	
+	\begin{equation}
+		\begin{cases}
+			\eval{ \dv{t} e^{t A} }_{t=0} = A\\\\
+			\eval{ \dv{t} \exp(t A) }_{t=0} = A
+		\end{cases}%
+		\qcomma \forall t \in \R, \, \forall A \in M_{n}(\R)
+	\end{equation}
+
+	Due sottogruppi ad un parametro che hanno lo stesso vettore tangente nell'origine (essendo completamente determinanti da questo) coincidono, dunque
+	
+	\begin{equation}
+		e \equiv \exp
+	\end{equation}
+
+	per gruppi di Lie matriciali.
+\end{proof}
+
+\begin{corollary}
+	Sia $ H \subset GL_{n}(\R) $ è un sottogruppo di Lie matriciale di $ GL_{n}(\R) $, allora
+	
+	\begin{equation}
+		\exp_{H} = e_{| T_{I}(H)}
+	\end{equation}
+\end{corollary}
+
+\subsubsection{\textit{Esempio}}
+
+Sia il gruppo delle matrici lineari speciali $ SL_{n}(\R) \subset GL_{n}(\R) $, l'esponenziale in questo spazio è definito come
+
+\map{e}%
+	{T_{I}(SL_{n}(\R))}{SL_{n}(\R)}%
+	{X}{e^{X}}
+
+cioè coincide con l'esponenziale standard ma con $ X \in T_{I}(SL_{n}(\R)) $, i.e. $ \tr(X) = 0 $: se la traccia di $ X $ è nulla, l'esponenziale avrà determinante unitario e quindi apparterrà a $ SL_{n}(\R) $
+
+\begin{equation}
+	\det(e^{X}) = e^{\tr(X)} = 1
+\end{equation}
+
+Vedi Esercizio \ref{es3-10}.
 
 \subsection{Sulla suriettività dell'esponenziale}
 
