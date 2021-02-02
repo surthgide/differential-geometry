@@ -3309,7 +3309,7 @@ Siano $ G $ un gruppo di Lie, $ e \in G $ il suo elemento neutro, $ \g = (T_{e}(
 	f : \g \to G
 \end{equation}
 
-che leghi l'algebra di Lie di $ G $, costruita mediante i campi di vettori invarianti a sinistra, e il gruppo stesso.
+che leghi l'algebra di Lie di $ G $, costruita mediante i campi di vettori invarianti a sinistra, al gruppo stesso.
 
 \subsubsection{Flusso di un campo di vettori invariante a sinistra}
 
@@ -4198,4 +4198,97 @@ Vedi Esercizio \ref{es3-10}.
 
 \subsection{Sulla suriettività dell'esponenziale}
 
-qui
+Dai risultati precedenti, dato un gruppo di Lie $ G $, possiamo costruire un'algebra di Lie $ \g = (T_{e}(G),[,]) $ e da questo possiamo tornare indietro tramite l'esponenziale $ \exp $: questo dimostra che esiste un funtore $ \mathcal{F} $ dalla categoria dei gruppi di Lie $ \mathfrak{G} $ alla categoria delle algebre di Lie $ \mathfrak{A} $ che porta omomorfismi di gruppi di Lie $ F : H \to G $ in omomorfismi di algebre di Lie $ F_{*e} : \h \to \g $
+
+\begin{equation}
+	\begin{cases}
+		\mathcal{F}(G) = T_{e}(G) & \forall G \in Ob(\mathfrak{G}), \, T_{e}(G) \in Ob(\mathfrak{A})\\
+		\mathcal{F}(F) = F_{*p} & \forall F \in Mor(H,G), \, F_{*e} \in Mor(\h,\g)
+	\end{cases}
+\end{equation}
+
+Ci chiediamo ora quali siano le condizioni sotto cui l'esponenziale di gruppi di Lie sia suriettivo, in modo tale da poter legare un gruppo di Lie alla sua algebra di Lie.\\
+In generale, l'esponenziale non è suriettivo, a parte per un intorno dell'origine, per il quale è un diffeomorfismo locale (quindi suriettivo).\\
+Ad esempio, considerando l'insieme
+
+\begin{equation}
+	SL_{2}(\R) = \{ A \in GL_{2}(\R) \mid \det(A) = 1 \}
+\end{equation}
+
+l'esponenziale
+
+\map{\exp}%
+	{T_{I}(SL_{2}(\R))}{SL_{2}(\R)}%
+	{X}{e^{X}}
+
+non è suriettivo, i.e. esistono delle matrici in $ SL_{2}(\R) $ che non hanno controimmagine tramite l'esponenziale in $ T_{I}(SL_{2}(\R)) $. In generale, nemmeno
+
+\map{\exp}%
+	{T_{I}(GL_{2}(\R))}{GL_{2}(\R)}%
+	{X}{e^{X}}
+
+è suriettiva.\\
+Consideriamo la matrice
+
+\begin{equation}
+	A = \mqty( \sfrac{-1}{2} & 0 \\\\ 0 & -2 )
+\end{equation}
+
+per questa matrice non esiste $ B \in T_{I}(SL_{2}(\R)) $ tale che $ e^{B} = A $.\\
+Supponiamo, per assurdo, che questa matrice esista e dividiamo il problema in due casi: la matrice $ B $ è diagonalizzabile oppure no
+
+\begin{itemize}
+	\item La matrice $ B $ è diagonalizzabile: sia $ \lambda \in \R $ un suo autovalore, allora
+	
+	\begin{equation}
+		B v = \lambda v \qcomma v \in \R^{2} \wedge v \neq 0
+	\end{equation}
+
+	e $ e^{\lambda} $ è un autovalore per $ A = e^{B} $ perché
+	
+	\begin{align}
+		\begin{split}
+			A v &= e^{B} v\\
+			&= \left( \sum_{j=0}^{+\infty} \dfrac{B^{j}}{j!} \right) (v)\\
+			&= \sum_{j=0}^{+\infty} \dfrac{B^{j} v}{j!}\\
+			&= \sum_{j=0}^{+\infty} \dfrac{\lambda^{j} v}{j!}\\
+			&= \left( \sum_{j=0}^{+\infty} \dfrac{\lambda^{j}}{j!} \right) (v)\\
+			&= e^{\lambda} v
+		\end{split}
+	\end{align}
+
+	dunque se $ \lambda_{1} $ e $ \lambda_{2} $ sono due autovalori di $ B $ allora $ e^{\lambda_{1}} $ ed $ e^{\lambda_{2}} $ sono due autovalori di $ A = e^{B} $, ma questo è assurdo perché gli autovalori di $ A $ sono negativi mentre $ e^{\lambda} > 0 $ per $ \forall \lambda in \R $;
+	
+	\item La matrice $ B $ non è diagonalizzabile: gli autovalori di $ B $ non sono reali quindi, per il teorema fondamentale dell'algebra, avremmo che la matrice avrà degli autovalori $ \alpha, \bar{\alpha} \in \C $ complessi coniugati (in quanto il polinomio caratteristico ha coefficienti reali); anche in questo caso $ e^{\alpha} $ ed $ e^{\bar{\alpha}} $ sono due autovalori di $ A = e^{B} $ ma
+	
+	\begin{equation}
+		\abs{e^{\alpha}} = \abs{e^{x + i y}} = \abs{e^{x} e^{i y}} = e^{x} %
+		\implies%
+		\abs{e^{\alpha}} = \abs{e^{\bar{\alpha}}}
+	\end{equation}
+
+	invece
+	
+	\begin{equation}
+		\abs{- \dfrac{1}{2}} \neq \abs{2}
+	\end{equation}
+
+	dunque arriviamo ad una contraddizione anche in questo caso, i.e. non esiste $ B $ tale che $ e^{B} = A $.
+\end{itemize}
+
+\begin{theorem}
+	Siano un gruppo di Lie connesso\footnote{%
+		Lo spazio tangente all'identità $ T_{e}(G) $ è connesso e l'esponenziale è continuo quindi l'immagine $ \exp(T_{e}(G)) \subseteq G $ è connessa dunque, se $ G $ non è connesso (e.g. $ O(n) $), l'esponenziale non potrà essere suriettivo.%
+	} $ G $ e l'applicazione esponenziale $ \exp : T_{e}(G) \to G $: questa è suriettiva se $ G $ è anche compatto o anche abeliano.\\
+	Inoltre, ogni elemento del gruppo può essere scritto come prodotto finito di esponenziali, i.e. 
+
+	\begin{equation}
+		g = \prod_{j=1}^{k} \exp(\xi_{j}) \qcomma \forall g \in G, \, \xi_{j} \in T_{e}(G), \, j=1,\dots,k
+	\end{equation}
+
+	Nel caso specifico del gruppo di Lie matriciale $ GL_{n}(\C) $, l'esponenziale $ \exp : M_{n}(\C) \to GL_{n}(\C) $ è suriettivo.
+\end{theorem}
+
+\begin{proof}
+	\textbf{l 35 m 1.22.00}
+\end{proof}
