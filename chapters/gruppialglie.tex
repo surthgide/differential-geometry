@@ -32,7 +32,7 @@ Le traslazioni possono essere a sinistra e a destra:
 
 \subsubsection{\textit{Esempi}}
 
-\paragraph{1. Gruppo lineare $ GL_{n}(\R) $}
+\paragraph{1. Gruppo lineare $ GL_{n}(^{\R}) $}
 
 Il gruppo delle matrici invertibili
 
@@ -4276,19 +4276,138 @@ Supponiamo, per assurdo, che questa matrice esista e dividiamo il problema in du
 	dunque arriviamo ad una contraddizione anche in questo caso, i.e. non esiste $ B $ tale che $ e^{B} = A $.
 \end{itemize}
 
+\subsubsection{Condizioni di suriettività}
+
+Introduciamo i seguenti lemmi:
+
+\begin{lemma}[1]
+	Sia $ S $ un sottogruppo di Lie di $ G $ con $ S $ aperto e $ G $ connesso, allora $ S = G $.
+\end{lemma}
+
+\begin{proof}[Dimostrazione (Lemma 1)]
+	\`{E} sufficiente dimostrare che $ S $ sia chiuso: un insieme aperto e chiuso (diverso dal vuoto) contenuto in un insieme connesso, coincide con quest'ultimo.\\
+	L'insieme $ S $ unito all'unione disgiunta delle classi laterali $ g S $, definite come
+	
+	\begin{equation}
+		g S = L_{g}(S) \qcomma g \notin S
+	\end{equation}
+	
+	quindi aperte, è uguale a $ G $, i.e.
+	
+	\begin{equation}
+		G = S \cup \left( \bigsqcup_{g \notin S} g S \right) \implies S = G \setminus \left( \bigsqcup_{g \notin S} g S \right)
+	\end{equation}
+	
+	dove
+	
+	\begin{equation}
+		g_{1} S \cap g_{2} S = \{\} \qcomma \forall g_{1},g_{2} \in G \setminus S
+	\end{equation}
+	
+	Questo rende $ S $ è il complementare di un aperto e dunque un chiuso, dimostrando che $ S = G $.
+\end{proof}
+
+\begin{lemma}[2]
+	Sia $ G $ un gruppo di Lie ed $ e \in G $ il suo elemento neutro, allora $ G $ è generato da un qualunque intorno di $ e $, i.e.
+	
+	\begin{equation}
+		\exists U \ni e, \, U \subset G \mid g = \prod_{j=1}^{k} g_{j} \qcomma \forall g \in G, \, g_{j} \in U, \, j=1,\dots,k \qq{con} k \in \N
+	\end{equation}
+\end{lemma}
+
+\begin{proof}[Dimostrazione (Lemma 2)]
+	Dato un intorno $ U \ni e $ qualunque, consideriamo l'intersezione di tutti gli elementi $ g $ di $ U $ con l'insieme $ U^{-1} $ dei suoi inversi $ g^{-1} $, i.e. $ U \cap U^{-1} $,  questo è ancora un aperto che contiene l'elemento neutro perché l'inversione
+	
+	\map{i}%
+	{U}{U^{-1}}%
+	{g}{g^{-1}}
+	
+	è un diffeomorfismo; sappiamo inoltre che $ U \cap U^{-1} \subset U $.\\
+	Dimostriamo ora che il seguente insieme coincide con $ G $:
+	
+	\begin{equation}
+		S = \left\{ \prod_{j=1}^{k} g_{j} \in G \, \middle| \, g_{j} \in U \cap U^{-1}, \, j=1,\dots,k \qq{con} k \in \N \right\}
+	\end{equation}
+	
+	Possiamo dedurre che $ S \neq \{\} $ e che sia un sottogruppo di Lie di $ G $, i.e. $ S \leqslant G $, in quanto
+	
+	\begin{equation}
+		\left( \prod_{i=1}^{k} g_{i} \right) \left( \prod_{j=1}^{l} g_{j}^{-1} \right) \in S
+	\end{equation}
+	
+	Inoltre, $ S $ è aperto in $ G $ perché qualunque punto di $ S $ è interno: sia $ g \in S $ e sia l'insieme di tutti gli elementi di $ U \cap U^{-1} $ moltiplicati a sinistra per $ g $, i.e.
+	
+	\begin{equation}
+		g U \cap U^{-1} = L_{g}(U \cap U^{-1})
+	\end{equation}
+	
+	questo insieme è aperto in quanto $ L_{g} $ è un diffeomorfismo (porta aperti in aperti) ed è un sottoinsieme di $ S $ perché ogni elemento di $ g U \cap U^{-1} $ è della forma
+	
+	\begin{equation}
+		g U \cap U^{-1} = \left\{ \prod_{j=1}^{k'} g_{j} \right\} \subset S
+	\end{equation}
+	
+	Dunque $ S $ è aperto e, per il lemma precedente, questo prova che $ S = G $ e dunque che $ G $ è generato da un qualunque intorno di $ e $.
+\end{proof}
+
+Quest'ultimo lemma permette di dimostrare l'ultima parte del seguente teorema:
+
 \begin{theorem}
 	Siano un gruppo di Lie connesso\footnote{%
 		Lo spazio tangente all'identità $ T_{e}(G) $ è connesso e l'esponenziale è continuo quindi l'immagine $ \exp(T_{e}(G)) \subseteq G $ è connessa dunque, se $ G $ non è connesso (e.g. $ O(n) $), l'esponenziale non potrà essere suriettivo.%
 	} $ G $ e l'applicazione esponenziale $ \exp : T_{e}(G) \to G $: questa è suriettiva se $ G $ è anche compatto o anche abeliano.\\
+	Nel caso specifico del gruppo di Lie matriciale $ GL_{n}(\C) $, l'esponenziale $ \exp : M_{n}(\C) \to GL_{n}(\C) $ è suriettivo.\\
 	Inoltre, ogni elemento del gruppo può essere scritto come prodotto finito di esponenziali, i.e. 
 
 	\begin{equation}
-		g = \prod_{j=1}^{k} \exp(\xi_{j}) \qcomma \forall g \in G, \, \xi_{j} \in T_{e}(G), \, j=1,\dots,k
+		g = \prod_{j=1}^{k} \exp(\xi_{j}) \qcomma \forall g \in G, \, \xi_{j} \in T_{e}(G), \, j=1,\dots,k \qq{con} k \in \N
 	\end{equation}
-
-	Nel caso specifico del gruppo di Lie matriciale $ GL_{n}(\C) $, l'esponenziale $ \exp : M_{n}(\C) \to GL_{n}(\C) $ è suriettivo.
 \end{theorem}
 
 \begin{proof}
-	\textbf{l 35 m 1.22.00}
+	Per dimostrare che l'esponenziale sia suriettivo se $ G $ è connesso e compatto si usa la geometria riemanniana.\\
+	Per dimostrare che l'esponenziale sia suriettivo se $ G $ è connesso e abeliano usiamo il fatto che
+	
+	\begin{equation}
+		G \stackrel{iso.}{\simeq} \R^{k} \times \T^{n-k} \qcomma k \in [0,n]
+	\end{equation}
+
+	con $ \dim(G) = n $: abbiamo che $ T_{0}(\R) = \R $ dunque l'esponenziale per $ \R $
+	
+	\begin{equation}
+		\exp = \id_{\R} : \R \to \R
+	\end{equation}
+
+	mentre, siccome $ T_{1}(\S^{1}) = i \R $, l'esponenziale per $ \S^{1} $ (e dunque per $ \T $)
+	
+	\map{\exp}%
+		{i \R}{\R}%
+		{t}{e^{i t}}
+		
+	da cui si ricava immediatamente che sono suriettivi e che rispettano la proprietà dell'esponenziale.\\
+	Per dimostrare che $ \exp : M_{n}(\C) \to GL_{n}(\C) $ sia suriettivo si usa la \textit{forma canonica di Jordan}.\\\\
+	%
+	Per dimostrare che ogni elemento del gruppo può essere scritto come prodotto finito di esponenziali, essendo $ G $ generato da un qualunque intorno di $ e $ ed essendo questo intorno diffeomorfo a $ \g $ tramite l'esponenziale, quest'ultima è suriettiva.
 \end{proof}
+
+\begin{remark}
+	L'ultima parte di questo teorema, implica il fatto che se $ G $ è connesso e abeliano allora l'esponenziale è suriettivo: essendo $ G $ abeliano
+	
+	\begin{equation}
+		[\xi,\eta] = 0 \implies \exp(\xi + \eta) = \exp(\xi) + \exp(\eta) \qcomma \forall \xi,\eta \in \g
+	\end{equation}
+
+	Possiamo dunque scrivere un generico elemento del gruppo come
+	
+	\begin{equation}
+		g = \prod_{j=1}^{k} \exp(\xi_{j}) = \exp( \sum_{j=1}^{k} \xi_{j} ) \qcomma \forall g \in G, \, \xi_{j} \in \g, \, j=1,\dots,k \qq{con} k \in \N
+	\end{equation}
+
+	dove
+	
+	\begin{equation}
+		\exp( \sum_{j=1}^{k} \xi_{j} ) \in \g \qcomma \xi_{j} \in \g, \, j=1,\dots,k \qq{con} k \in \N
+	\end{equation}
+	
+	quindi l'esponenziale è suriettivo.
+\end{remark}
