@@ -4198,12 +4198,12 @@ Vedi Esercizio \ref{es3-10}.
 
 \subsection{Sulla suriettività dell'esponenziale}
 
-Dai risultati precedenti, dato un gruppo di Lie $ G $, possiamo costruire un'algebra di Lie $ \g = (T_{e}(G),[,]) $ e da questo possiamo tornare indietro tramite l'esponenziale $ \exp $: questo dimostra che esiste un funtore $ \mathcal{F} $ dalla categoria dei gruppi di Lie $ \mathfrak{G} $ alla categoria delle algebre di Lie $ \mathfrak{A} $ che porta omomorfismi di gruppi di Lie $ F : H \to G $ in omomorfismi di algebre di Lie $ F_{*e} : \h \to \g $
+Dai risultati precedenti, dato un gruppo di Lie $ G $, possiamo costruire un'algebra di Lie $ \g = (T_{e}(G),[,]) $ e da questo possiamo tornare indietro tramite l'esponenziale $ \exp $: questo dimostra che esiste un funtore, i.e. \textit{il funtore di Lie} $ \mathcal{L} $ dalla categoria dei gruppi di Lie $ \mathfrak{G} $ alla categoria delle algebre di Lie $ \mathfrak{A} $ che porta omomorfismi di gruppi di Lie $ F : H \to G $ in omomorfismi di algebre di Lie $ F_{*e} : \h \to \g $
 
 \begin{equation}
 	\begin{cases}
-		\mathcal{F}(G) = T_{e}(G) & \forall G \in Ob(\mathfrak{G}), \, T_{e}(G) \in Ob(\mathfrak{A})\\
-		\mathcal{F}(F) = F_{*p} & \forall F \in Mor(H,G), \, F_{*e} \in Mor(\h,\g)
+		\mathcal{L}(G) = T_{e}(G) & \forall G \in Ob(\mathfrak{G}), \, T_{e}(G) \in Ob(\mathfrak{A})\\
+		\mathcal{L}(F) = F_{*p} & \forall F \in Mor(H,G), \, F_{*e} \in Mor(\h,\g)
 	\end{cases}
 \end{equation}
 
@@ -4411,3 +4411,45 @@ Quest'ultimo lemma permette di dimostrare l'ultima parte del seguente teorema:
 	
 	quindi l'esponenziale è suriettivo.
 \end{remark}
+
+\subsection{Teorema di corrispondenza di Lie}
+
+Sia $ \g $ un'algebra di Lie (finito-dimensionale) su $ \R $, vogliamo trovare un gruppo di Lie $ G $ tale che la sua algebra di Lie $ (T_{e}(G),[,]) $, che chiameremo $ Lie(G) $, coincida con $ \g $.\\
+Tramite il seguente teorema, otteniamo le condizioni per cui questo sia possibile:
+
+\begin{theorem}[Teorema di corrispondenza di Lie]
+	\begin{enumerate}
+		\item Per ogni $ \g $ un'algebra di Lie (finito-dimensionale) su $ \R $ esiste un unico gruppo di Lie semplicemente connesso\footnote{%
+			Uno spazio topologico è semplicemente connesso se è connesso per archi e se ogni curva chiusa può essere deformata fino a ridursi a un singolo punto.%
+		} tale che l'algebra di Lie associata a $ G $ coincida con $ \g $, i.e.
+		
+		\begin{equation}
+			\forall \g \qq{algebra di Lie} \exists ! G \qq{gruppo di Lie} \mid Lie(G) = \g
+		\end{equation}
+	
+		\item Siano $ G $ e $ H $ due gruppi di Lie con $ H $ semplicemente connesso e $ Lie(G) $ e $ Lie(H) $ le corrispondenti algebre di Lie, se esiste un omomorfismo di algebre di Lie $ \phi : Lie(H) \to Lie(G) $ allora esiste un unico omomorfismo di gruppi di Lie $ F : H \to G $ tale che il suo differenziale sia uguale all'omomorfismo di algebre di Lie, i.e. $ F_{*e} = \phi $;
+		
+		\item Siano $ G $ un gruppo di Lie connesso e $ \h $ una sottoalgebra dell'algebra di Lie $ Lie(G) $, allora esiste un unico sottogruppo di Lie connesso $ H $ di $ G $ tale che la sua algebra di Lie sia $ \h $, i.e. $ Lie(H) = \h $.
+	\end{enumerate}
+\end{theorem}
+
+\begin{remark}
+	In generale, se due gruppi di Lie sono isomorfi, le algebre di Lie relative sono isomorfe. I primi due punti di questo teorema provano l'implicazione opposta.\\
+	Segue dunque che se due gruppi di Lie $ G_{1} $ e $ G_{2} $ sono isomorfi e semplicemente connessi se e solo se le loro algebre di Lie $ Lie(G_{1}) $ e $ Lie(G_{2}) $ sono semplicemente connesse.\\
+	In altre parole, considerando l'insieme dei gruppi di Lie semplicemente connessi quozientato per la relazione di equivalenza relativa all'isomorfismo di gruppi di Lie (due gruppi di Lie sono equivalenti se e solo se isomorfi), questo spazio quoziente è in corrispondenza biunivoca con l'insieme delle algebre di Lie finito-dimensionali sui reali quozientato per la relazione di equivalenza relativa all'isomorfismo di algebre di Lie, i.e.
+	
+	\begin{equation}
+		\dfrac{\text{gruppi di Lie semplicemente connessi}}{\sim_{iso.gr.}} \leftrightarrow \dfrac{\text{algebre di Lie finito-dimensionali su } \R}{\sim_{iso.al.}}
+	\end{equation}
+	
+	quindi si possono usare risultati di natura topologico-geometrico differenziabile (gruppi di Lie) per trarre conclusioni di natura puramente algebrica (algebre di Lie) e viceversa, a meno di isomorfismi.\\
+	In termini di teoria delle categorie, si dimostra che la categoria dei gruppi di Lie semplicemente connessi è equivalente alla categoria delle algebre di Lie finito-dimensionali su $ \R $.
+\end{remark}
+
+\subsubsection{\textit{Esempio}}
+
+\textbf{l 36 m 14.30}
+
+\subsubsection{Connessione tra $ SU(2) $ e $ SO(3) $ e le loro algebre di Lie}
+
+qui
