@@ -4026,7 +4026,7 @@ Ad esempio, $ \gamma^{\xi}(t) = \exp(t \xi) $ definisce un sottogruppo a un para
 	cioè l'esponenziale commuta con gli omomorfismi di gruppi di Lie.
 \end{proof}
 
-\begin{corollary}
+\begin{corollary}\label{om-cont-smooth}
 	Sia $ F : H \to G $ un omomorfismo (algebrico) di gruppi di Lie continuo, allora $ F $ è liscio.\\
 	In particolare, un sottogruppo ad un parametro di $ G $ si può definire come un'applicazione continua $ \phi : \R \to G $, in quanto questa sarà automaticamente liscia.
 \end{corollary}
@@ -4417,14 +4417,14 @@ Quest'ultimo lemma permette di dimostrare l'ultima parte del seguente teorema:
 Sia $ \g $ un'algebra di Lie (finito-dimensionale) su $ \R $, vogliamo trovare un gruppo di Lie $ G $ tale che la sua algebra di Lie $ (T_{e}(G),[,]) $, che chiameremo $ Lie(G) $, coincida con $ \g $.\\
 Tramite il seguente teorema, otteniamo le condizioni per cui questo sia possibile:
 
-\begin{theorem}[Teorema di corrispondenza di Lie]
+\begin{theorem}[Teorema di corrispondenza di Lie]\hfill\break
 	\begin{enumerate}
 		\item Per ogni $ \g $ un'algebra di Lie (finito-dimensionale) su $ \R $ esiste un unico gruppo di Lie semplicemente connesso\footnote{%
 			Uno spazio topologico è semplicemente connesso se è connesso per archi e se ogni curva chiusa può essere deformata fino a ridursi a un singolo punto.%
 		} tale che l'algebra di Lie associata a $ G $ coincida con $ \g $, i.e.
 		
 		\begin{equation}
-			\forall \g \qq{algebra di Lie} \exists ! G \qq{gruppo di Lie} \mid Lie(G) = \g
+			\forall \g \qq{algebra di Lie} \exists ! \, G \qq{gruppo di Lie} \mid Lie(G) = \g
 		\end{equation}
 	
 		\item Siano $ G $ e $ H $ due gruppi di Lie con $ H $ semplicemente connesso e $ Lie(G) $ e $ Lie(H) $ le corrispondenti algebre di Lie, se esiste un omomorfismo di algebre di Lie $ \phi : Lie(H) \to Lie(G) $ allora esiste un unico omomorfismo di gruppi di Lie $ F : H \to G $ tale che il suo differenziale sia uguale all'omomorfismo di algebre di Lie, i.e. $ F_{*e} = \phi $;
@@ -4446,10 +4446,481 @@ Tramite il seguente teorema, otteniamo le condizioni per cui questo sia possibil
 	In termini di teoria delle categorie, si dimostra che la categoria dei gruppi di Lie semplicemente connessi è equivalente alla categoria delle algebre di Lie finito-dimensionali su $ \R $.
 \end{remark}
 
-\subsubsection{\textit{Esempio}}
+Consideriamo un esempio in cui i gruppi di Lie non sono isomorfi ma le loro algebre di Lie lo sono.\\
+Siano i gruppi di Lie
 
-\textbf{l 36 m 14.30}
+\begin{equation}
+	\begin{cases}
+		G_{1} = (\R^{n},+)\\
+		G_{2} = (\T^{n},\cdot)
+	\end{cases}
+\end{equation}
+
+questi non sono isomorfi perché, in particolare, dovrebbero essere diffeomorfi ma quseto non è possibile perché $ \T^{n} $ è compatto mentre $ \R^{n} $ no.\\
+Nonostante non siano isomorfi, le loro algebre sono identiche e dunque isomorfe
+
+\begin{equation}
+	Lie(G_{1}) = Lie(G_{2}) = (\R^{n},[,]_{0}) \implies Lie(G_{1}) \stackrel{iso.}{\simeq} Lie(G_{2})
+\end{equation}
+
+dove $ [,]_{0} $ indica il commutatore nullo (e dunque un'algebra abeliana) e ricordando che $ T_{1}(\S^{1}) = i \R $ è abbinato a $ [,]_{0} $ nell'algebra di $ \S^{1} $.\\
+Questo non è in contraddizione con il teorema di corrispondenza di Lie in quanto $ \R^{n} $ è semplicemente connesso mentre il toro non lo è.
 
 \subsubsection{Connessione tra $ SU(2) $ e $ SO(3) $ e le loro algebre di Lie}
 
-qui
+Anche in questo caso, i gruppi di Lie $ SU(2) $ e $ SO(3) $ non sono isomorfi ma le loro algebre di Lie $ \su(2) $ e $ \so(3) $ lo sono e questo non contraddice il teorema di corrispondenza di Lie in quanto $ SO(3) $ non è semplicemente connesso.\\
+Entrambi sono compatti e connessi e hanno la stessa dimensione
+
+\begin{equation}
+	\begin{cases}
+		\dim(SO(n)) = n^{2} - 1\\
+		\dim(SO(n)) = n(n-1)/2
+	\end{cases}
+	\implies%
+	\dim(SO(3)) = \dim(SU(2)) = 3
+\end{equation}
+
+Analizziamo ora $ SU(2) $: l'insieme è definito come
+
+\begin{equation}
+	SU(2) = \{ A \in GL_{2}(\C) \mid A^{*} A = I_{2} \wedge \det(A) = 1 \}
+\end{equation}
+
+Possiamo ricavare delle condizioni sulle entrate delle matrici del gruppo, esplicitando quest'ultime:
+
+\begin{equation}
+	A = \mqty( a & b \\\\ c & d ) \qcomma a,b,c,d \in \C
+\end{equation}
+
+con le condizioni date nella definizione, dunque
+
+\begin{equation}
+	\begin{cases}
+		\det(A) = a d - b c = 1\\\\
+		A^{*} = \mqty( \bar{a} & \bar{c} \\ \bar{b} & \bar{d} ) = A^{-1} = \cancel{\dfrac{1}{\det(A)}} \mqty( d & -b \\ -c & a )
+	\end{cases}
+	\implies%
+	\begin{cases}
+		a d - b c = 1\\
+		c = - \bar{b}\\
+		d = \bar{a}
+	\end{cases}
+	\implies%
+	\begin{cases}
+		A = \mqty( \bar{a} & b \\ - \bar{b} & \bar{a} )\\\\
+		\abs{a}^{2} + \abs{b}^{2} = 1
+	\end{cases}
+\end{equation}
+
+dunque possiamo riscrivere la definizione
+
+\begin{equation}
+	SU(2) = \{ A = \mqty( \bar{a} & b \\ - \bar{b} & \bar{a} ) \in GL_{2}(\C) \mid \abs{a}^{2} + \abs{b}^{2} = 1 \}
+\end{equation}
+
+Esiste un diffeomorfismo tra $ SU(2) $ e $ \S^{3} \subset \R^{4} = \C^{2} $
+
+\map{\phi}%
+	{SU(2)}{\S^{3}}%
+	{\mqty( \bar{a} & b \\ - \bar{b} & \bar{a} )}{(a,b) \in \C^{2}}
+
+dove
+
+\begin{equation}
+	\begin{cases}
+		a = a_{1} + i a_{2}\\
+		b = b_{1} + i b_{2}
+	\end{cases}
+\end{equation}
+
+e il punto $ (a,b) $ appartiene alla sfera $ \S^{3} $ grazie alla condizione $ \abs{a}^{2} + \abs{b}^{2} = 1 $.\\
+Collateralmente, tramite questo diffeomorfismo, possiamo dotare la sfera della struttura di gruppo di Lie mediante l'operazione associata a $ SU(2) $.\\
+Lo spazio tangente di $ SU(2) $ è composto dalle matrici antihermitiane a traccia nulla
+
+\begin{equation}
+	T_{I}(SU(2)) = \{X \in M_{2}(\C) = X^{*} = -X \wedge \tr(X) = 0 \}
+\end{equation}
+
+Abbinandolo al commutatore $ [,] $, otteniamo l'algebra di Lie associata
+
+\begin{equation}
+	\su(2) = Lie(SU(2)) = (T_{I}(SU(2)),[,])
+\end{equation}
+
+Per lo spazio tangente, le matrici hanno la forma:
+
+\begin{equation}
+	X = \mqty( i u_{1} & u_{2} + i u_{3} \\\\ - u_{2} + i u_{3} & - i u_{1} ) \qcomma u_{1},u_{2},u_{3} \in \R
+\end{equation}
+
+La base standard di $ \su(2) $ è la seguente
+
+\begin{equation}
+	\mathcal{B}_{\su(2)} = \left\{ %
+		\mqty( 0 & 1 \\ -1 & 0 ), %
+		\mqty( i & 0 \\ 0 & -i ), %
+		\mqty( 0 & i \\ i & 0 ) %
+		\right\}
+\end{equation}
+
+Esiste un isomorfismo di spazi vettoriali tra $ T_{I}(SU(2)) $ ed $ \R^{3} $
+
+\map{\psi}%
+	{T_{I}(SU(2))}{\R^{3}}%
+	{\mqty( i u_{1} & u_{2} + i u_{3} \\\\ - u_{2} + i u_{3} & - i u_{1} )}{u = \mqty( u_{1} \\ u_{2} \\ u_{3} )}
+
+L'inversa di questa applicazione associa ad un vettore $ u \in \R^{3} $ una matrice $ M_{u} $ che appartiene a $ T_{I}(SU(2)) $, i.e.
+
+\map{\psi^{-1} = M}%
+	{\R^{3}}{T_{I}(SU(2))}%
+	{u = \mqty( u_{1} \\ u_{2} \\ u_{3} )}{M_{u} = \mqty( i u_{1} & u_{2} + i u_{3} \\\\ - u_{2} + i u_{3} & - i u_{1} )}
+
+Considerando il commutatore di $ \su(2) $ e il prodotto vettoriale $ \times $ di vettori di $ \R^{3} $, otteniamo che
+
+\begin{equation}
+	[M_{u},M_{v}] = M_{u} M_{v} - M_{v} M_{u} = 2 M_{u \times v}
+\end{equation}
+
+questo induce un isomorfismo di algebre di Lie
+
+\begin{equation}
+	(\R^{3}, 2 \times) \stackrel{iso.}{\simeq} \su(2)
+\end{equation}
+
+in quanto il prodotto vettoriale soddisfa l'antisimmetria, la bilinearità e l'identità di Jacobi, i.e.
+
+\begin{equation}
+	(u \times v) \times w + (v \times w) \times u + (w \times u) \times v = 0
+\end{equation}
+
+Inoltre, considerando il prodotto scalare in $ \R^{3} $
+
+\begin{equation}
+	u \cdot v = - \dfrac{1}{2} \tr(M_{u} M_{v})
+\end{equation}
+
+questo induce un isomorfismo di spazi euclidei
+
+\begin{equation}
+	(\R^{3},\cdot) \stackrel{iso.}{\simeq} \left( T_{I}(SU(2)), -\dfrac{1}{2} \tr(\cdot \, \cdot) \right)
+\end{equation}
+
+Per quanto riguarda $ SO(3) $: l'insieme è definito come
+
+\begin{equation}
+	SO(2) = \{ B \in GL_{3}(\R) \mid B^{T} B = I_{3} \wedge \det(B) = 1 \}
+\end{equation}
+
+La condizione di ortogonalità può essere scritta, considerando $ v_{1},v_{2} \in \R^{3} $, come
+
+\begin{equation}
+	B^{T} B = I_{3} \iff (B v_{1}) \cdot (B v_{2}) = v_{1} \cdot v_{2}
+\end{equation}
+
+cioè rispetta il prodotto scalare tra due vettori.
+
+\begin{lemma}
+	Siano $ A \in SU(2) $ e $ M_{v} \in \su(2) $, allora $ A M_{v} A^{-1} \in \su(2) $.
+\end{lemma}
+
+\begin{proof}
+	Siccome
+	
+	\begin{equation}
+		\begin{cases}
+			A \in SU(2) \implies A^{-1} = A^{*}\\
+			M_{v} \in \su(2) \implies M_{v}^{*} = - M_{v}
+		\end{cases}
+	\end{equation}
+
+	possiamo scrivere che
+	
+	\begin{align}
+		\begin{split}
+			(A M_{v} A^{-1})^{*} &= (A M_{v} A^{*})^{*}\\
+			&= A M_{v}^{*} A^{*}\\
+			&= - A M_{v} A^{*}\\
+			&= - A M_{v} A^{-1}
+		\end{split}
+	\end{align}
+
+	e considerando che
+	
+	\begin{equation}
+		M_{v} \in \su(2) \implies \tr(M_{v}) = 0
+	\end{equation}
+	
+	abbiamo che
+	
+	\begin{equation}
+		\tr(A M_{v} A^{-1}) = \tr(M_{v}) = 0
+	\end{equation}
+\end{proof}
+
+Questo lemma implica che
+
+\begin{equation}
+	A M_{v} A^{-1} = M_{w} = M_{R(A) \, v}
+\end{equation}
+
+dove la matrice $ R(A) $ indica una trasformazione lineare e, a priori, $ R(A) \in GL_{3}(\R) $.\\
+Dimostriamo ora che $ R(A) \in O(3) $, i.e.
+
+\begin{equation}
+	(R(A) \, v_{1}) \cdot (R(A) \, v_{2}) = v_{1} \cdot v_{2} \qcomma v_{1},v_{2} \in \R^{3}
+\end{equation}
+
+tramite l'isomorfismo
+
+\begin{equation}
+	(\R^{3},\cdot) \stackrel{iso.}{\simeq} \left( T_{I}(SU(2)), -\dfrac{1}{2} \tr(\cdot \, \cdot) \right)
+\end{equation}
+
+nel seguente modo
+
+\begin{align}
+	\begin{split}
+		(R(A) \, v_{1}) \cdot (R(A) \, v_{2}) &= - \dfrac{1}{2} \tr( (R(A) \, v_{1}) (R(A) \, v_{2}) )\\
+		&= - \dfrac{1}{2} \tr( A M_{v_{1}} A^{-1} A M_{v_{2}} A^{-1} )\\
+		&= - \dfrac{1}{2} \tr( A M_{v_{1}} M_{v_{2}} A^{-1} )\\
+		&= - \dfrac{1}{2} \tr( M_{v_{1}} M_{v_{2}} )\\
+		&= v_{1} \cdot v_{2}
+	\end{split}
+\end{align}
+
+\begin{theorem}
+	L'applicazione
+	
+	\map{R}%
+		{SU(2)}{O(3)}%
+		{A}{R(A)}
+	
+	dove
+	
+	\begin{equation}
+		 M_{R(A) \, v} = A M_{v} A^{-1} \qcomma v \in \R^{3}, \, A \in SU(2), \, M_{v} \in \su(2)
+	\end{equation}
+
+	induce l'omomorfismo di gruppi di Lie suriettivo
+	
+	\begin{equation}
+		R : SU(2) \to SO(3)
+	\end{equation}
+
+	tale che
+	
+	\begin{equation}
+		\ker(R) = \{ \pm I_{2} \}
+	\end{equation}
+
+	Conseguentemente, i seguenti gruppi di Lie sono isomorfi:
+	
+	\begin{equation}
+		\sfrac{SU(2)}{\{ \pm I_{2}\}} \stackrel{iso.}{\simeq} SO(3)
+	\end{equation}
+
+	Inoltre il differenziale di $ R $ nell'identità 
+	
+	\begin{equation}
+		R_{*I_{2}} : \su(2) \to \so(3)
+	\end{equation}
+
+	è un isomorfismo di algebre di Lie
+	
+	\begin{equation}
+		\su(2) \stackrel{iso.}{\simeq} \so(3)
+	\end{equation}
+\end{theorem}
+
+\begin{proof}
+	Dimostriamo innanzitutto che $ R(A) \in SO(3) $: l'applicazione $ R $ è continua (per costruzione) e $ SU(2) = \S^{3} $ è connesso dunque la sua immagine deve essere contenuta in $ SO(3) $
+	
+	\begin{equation}
+		R(SU(2)) \subset SO(3)
+	\end{equation}
+	
+	in quanto $ SO(3) $ è la componente connessa di $ O(3) $ che contiene l'identità ed essendo $ R $ un omomorfismo
+	
+	\begin{equation}
+		R(\id_{SU(2)}) = \id_{O(3)}
+	\end{equation}
+
+	Siccome un omomorfismo continuo è anche liscio\footnote{%
+		Vedi Corollario \ref{om-cont-smooth}.%
+	}, è sufficiente mostrare che $ R $ sia un omomorfismo perché sia anche un omomorfismo di gruppi di Lie.\\
+	Per mostrare che $ R $ sia un omomorfismo è necessario che
+	
+	\begin{equation}
+		R(A B) = R(A) \, R(B) \qcomma \forall A,B \in SU(2)
+	\end{equation}
+
+	Usando la definizione di $ M_{R(A) \, v} $, otteniamo che
+	
+	\begin{align}
+		\begin{split}
+			M_{R(A B) \, v} &= (A B) M_{v} (A B)^{-1}\\
+			&= A B M_{v} B^{-1} A^{-1}\\
+			&= A M_{R(B) \, v} A^{-1}\\
+			&= M_{R(A) \, R(B) \, v}\\
+		\end{split}
+	\end{align}
+
+	essendo $ M $ un isomorfismo, la condizione per cui $ R $ sia un omomorfismo è verificata.\\
+	Il nucleo\footnote{%
+		Ricordiamo che il nucleo dell'applicazione è dato dalle matrici del dominio che hanno come immagine l'elemento neutro del codominio.%
+	} dell'omomorfismo $ R $ è dato da
+	
+	\begin{equation}
+		\ker(R) = \{ A \in SU(2) \mid R(A) = I_{3} \}
+	\end{equation}
+
+	per cui
+	
+	\begin{equation}
+		A \in \ker(R) \implies M_{R(A) \, v} = M_{v} = A M_{v} A^{-1} \implies [M_{v},A] = 0 \qcomma \forall v \in \R^{3}
+	\end{equation}
+
+	Le uniche matrici di $ SU(2) $ che commutano con $ M_{v} $ sono $ \{ \pm I_{2} \} $.\\
+	Per dimostrare che $ R_{*I_{2}} : \su(2) \to \so(3) $ è un isomorfismo di algebre di Lie, scriviamo il differenziale di una matrice $ M_{u} \in \su(2) $ con $ u \in \R^{3} $ tramite la curva $ \exp(t M_{u}) $
+	
+	\begin{equation}
+			R_{*I_{2}}(M_{u}) = \eval{ \dv{t} R( \exp(t M_{u}) ) }_{t=0}
+	\end{equation}
+	
+	Tramite la definizione di $ M_{R(A) \, v} $, otteniamo che
+	
+	\begin{equation}
+		M_{R(\exp(t M_{u})) \, v} = \exp(t M_{u}) \, M_{v} \, \exp(-t M_{u})
+	\end{equation}
+	
+	facendone la derivata rispetto a $ t $ e ricordando che $ M_{v} $ non dipende da $ t $
+	
+	\begin{align}
+		\begin{split}
+			\eval{ \dv{t} M_{R(\exp(t M_{u})) \, v} }_{t=0} &= M_{R_{*I_{2}}(M_{u}) (v)}\\
+			&= \eval{ \dv{t} \exp(t M_{u}) \, M_{v} \, \exp(-t M_{u}) }_{t=0}\\
+			&= \left( \eval{ \dv{t} \exp(t M_{u}) }_{t=0} \right) M_{v} \cancelto{1}{ \left( \eval{ \exp(-t M_{u}) }_{t=0} \right) } +\\
+			& \hspace{13px} + \cancelto{-1}{ \left( \eval{ \exp(t M_{u}) }_{t=0} \right) } M_{v} \left( \eval{ \dv{t} \exp(-t M_{u}) }_{t=0} \right)\\
+			%
+			&= M_{u} M_{v} - M_{v} M_{u}\\
+			&= [M_{u},M_{v}]\\
+			&= 2 M_{u \times v}
+		\end{split}
+	\end{align}
+	
+	essendo $ M $ un isomorfismo, possiamo scrivere
+	
+	\begin{equation}
+		R_{*I_{2}}(M_{u}) (v) = 2 \, u \times v
+	\end{equation}
+	
+	Il prodotto vettoriale tra due vettori $ u,v \in \R^{3} $ può essere scritto come
+	
+	\begin{equation}
+		u \times v = %
+		\mqty( 0 & - u_{3} & u_{2} \\ u_{3} & 0 & - u_{1} \\ - u_{2} & u_{1} & 0 ) %
+		\mqty( v_{1} \\ v_{2} \\ v_{3} )
+	\end{equation}
+	
+	dunque
+	
+	\begin{equation}
+		R_{*I_{2}}(M_{u}) = %
+		R_{*I_{2}} \left( \mqty( i u_{1} & u_{2} + i u_{3} \\\\ - u_{2} + i u_{3} & - i u_{1} ) \right) = %
+		2 \mqty( 0 & - u_{3} & u_{2} \\ u_{3} & 0 & - u_{1} \\ - u_{2} & u_{1} & 0 ) \in \so(3)
+	\end{equation}
+	
+	il che rende il differenziale
+	
+	\map{R_{*I_{2}}}%
+		{\su(2)}{\so(3)}%
+		{M_{u} = \mqty( i u_{1} & u_{2} + i u_{3} \\\\ - u_{2} + i u_{3} & - i u_{1} )}{2 \mqty( 0 & - u_{3} & u_{2} \\ u_{3} & 0 & - u_{1} \\ - u_{2} & u_{1} & 0 )}
+	
+	lineare e invertibile, dunque $ R_{*I_{2}} $ è un isomorfismo di algebre di Lie.\\
+	Avendo calcolato il nucleo dell'applicazione (il quale non possiede solo l'elemento neutro del dominio), sappiamo che $ R $ non è iniettiva, però possiamo dimostrare che sia suriettiva: consideriamo il fatto che $ R $ sia un omomorfismo, i.e.
+	
+	\begin{equation}
+		R \circ L_{A} = L_{R(A)} \circ R \qcomma \forall A \in SU(2)
+	\end{equation}
+
+	se differenziamo entrambi i membri in $ I_{2} $ e applichiamo la regola della catena
+	
+	\begin{align}
+		\begin{split}
+			(R \circ L_{A})_{*I_{2}} &= (L_{R(A)} \circ R)_{*I_{2}}\\
+			R_{*A} \circ L_{A_{*I_{2}}} &= L_{R(A)_{*I_{2}}} \circ R_{*I_{2}}\\
+			R_{*A} &= L_{R(A)_{*I_{2}}} \circ R_{*I_{2}} \circ L_{A_{*I_{2}}}^{-1}
+		\end{split}
+	\end{align}
+	
+	Questo rende il differenziale in un punto qualsiasi $ A \in SU(2) $ un isomorfismo in quanto composizione di isomorfismi: per il teorema della funzione inversa\footnote{%
+		Vedi Teorema \ref{ift}.%
+	}, $ R $ sarà un diffeomorfismo locale e dunque una sommersione (in quanto il suo differenziale è suriettivo poiché isomorfismo) da cui, per il corollario del teorema di sommersione locale\footnote{%
+		Vedi Corollario \ref{th-somm-loc-cor}.%
+	}, abbiamo che $ R $ è un'applicazione aperta. Questa applicazione però è anche chiusa per il lemma dell'applicazione chiusa\footnote{%
+		Vedi Lemma \ref{lemma-clos-app}.%
+	} in quanto $ SU(2) $ è compatto e $ SO(3) $ è di Hausdorff: l'immagine di $ SU(2) $ tramite un'applicazione sia aperta che chiusa è sia aperta che chiusa e, siccome $ SO(3) $ è connesso, l'immagine del dominio deve coincidere con il codominio, i.e.
+
+	\begin{equation}
+		R(SU(2)) = SO(3)
+	\end{equation}
+	
+	dunque $ R : SU(2) \to SO(3) $ è suriettiva.
+\end{proof}
+
+\begin{remark}
+	Questo teorema prova l'esistenza di un isomorfismo tra le algebre di Lie dei gruppi di Lie $ SU(2) $ e $ SO(3) $, nonostante questi non siano essi stessi isomorfi tra loro in quanto $ SO(3) $ non è semplicemente connesso (per il teorema di corrispondenza di Lie) e anche perché il loro centro\footnote{%
+		Il centro $ Z(G) $ di un gruppo $ G $ è l'insieme degli elementi del gruppo che commutano con tutti gli altri elementi.%
+	} ha un numero diverso di elementi
+	
+	\begin{equation}
+		Z(SU(2)) = \{ \pm I_{2} \} \neq \{ I_{3} \} = Z(SO(3))
+	\end{equation}
+\end{remark}
+
+\subsubsection{Il toro e sua algebra di Lie}
+
+L'ultimo punto del teorema di corrispondenza di Lie asseriva che, presi un gruppo di Lie  connesso $ G $ e la sua algebra di Lie $ \g = Lie(G) $, allora per ogni sottoalgebra di Lie $ \h < \g $ di $ \g $ esiste un sottogruppo di Lie connesso $ H \subset G $ di $ G $ tale che $ Lie(H) = \h $. Segue che, dati un gruppo di Lie connesso $ G $ e la sua algebra di Lie $ \g $, esiste una corrispondenza biunivoca tra sottoalgebre di Lie di $ \g $ e i sottogruppi connessi di $ G $: sappiamo che un sottogruppo di Lie $ H $ di $ G $ induce una sottoalgebra $ \h $ di $ \g $ tramite il suo spazio tangente, i.e.
+
+\begin{equation}
+	H \subset G \implies T_{e}(H) \subset T_{e}(G) \implies \h < \g
+\end{equation}
+
+in quanto l'inclusione è un omomorfismo di gruppi di Lie, ma il teorema di corrispondenza di Lie asserisce il viceversa (con la condizione che i gruppi di siano connessi).\\\\
+%
+Consideriamo ora il gruppo di Lie $ \T^{2} = \S^{1} \times \S^{1} $ e la sua algebra di Lie $ (\R^{2},[,]) $: le sottoalgebre di $ (\R^{2},[,]) $ hanno come insieme dei sottospazi vettoriali di $ \R^{2} $, dunque tutte le rette passanti per l'origine (oltre $ \R^{2} $ stesso, di dimensione 2, e l'origine, di dimensione 0).\\
+Prendiamo l'esponenziale
+
+\map{\exp}%
+	{\R^{2}}{\T^{2}}%
+	{(t,s)}{(e^{i t}, e^{i s})}
+
+La retta identificata dai punti $ (0,s) \simeq \R $ viene mappata in $ (0,e^{i s}) \in \S^{1} \subset \T^{2} $: tutte le altre rette possono essere descritte dai punti $ (t,\alpha t) $ con $ \alpha \in \R $, la cui immagine
+
+\begin{equation}
+	\exp(t,\alpha t) = (e^{i t}, e^{i \alpha t}) = S_{\alpha}
+\end{equation}
+
+dipende da $ \alpha $ nel seguente modo
+
+\begin{equation}
+	\begin{cases}
+		S_{\alpha} = \S^{1} & \qq*{se} \alpha \in \Q\\
+		S_{\alpha} = \R & \qq*{se} \alpha \in \R \setminus \Q
+	\end{cases}
+\end{equation}
+
+cioè se $ \alpha $ è razionale allora $ S_{\alpha} $ torna al punto di partenza e si chiude, mentre se è irrazionale $ S_{\alpha} $ non si chiude e sarà isomorfa ad una retta.\\
+Questi sottoinsiemi del toro sono sottovarietà immerse in quanto l'esponenziale è un'immersione: quando si definiscono i sottogruppi di Lie, si richiede che questi siano solo sottovarietà immerse (e non embedded) del gruppo di Lie associato in modo tale da non escludere sottogruppi di Lie (e.g. quelli isomorfi ad $ \R $) di alcuni gruppi di Lie, come il toro.\\\\
+%
+L'ultima parte della dimostrazione del teorema di corrispondenza di Lie utilizza il seguente teorema:
+
+\begin{theorem}[Teorema di Ado]
+	Una qualunque algebra di Lie è isomorfa ad una sottoalgebra delle matrici quadrate ad entrate reali, i.e.
+	
+	\begin{equation}
+		\forall \g \, \exists\,  \g' \mid \g \simeq \g' \subset M_{n}(\R)
+	\end{equation}
+\end{theorem}
+
+In linea teorica, studiare l'algebra di Lie delle matrici è dunque sufficiente per ottenere risultati su ogni algebra di Lie, a patto di conoscere l'isomorfismo tra l'algebra considerata e una sottoalgebra di $ M_{n}(\R) $.

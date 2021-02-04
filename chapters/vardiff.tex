@@ -888,7 +888,7 @@ L'applicazione $ \tilde{f} $ è anche iniettiva e suriettiva: perché sia identi
 dove $ \sfrac{I}{\{0,1\}} $ è uno spazio compatto perché quoziente dello spazio compatto $ I $, cioè immagine di un compatto tramite un'applicazione continua e $ \mathbb{S}^{1} $ è $ T_{2} $ o di Hausdorff perché incluso in $ \mathbb{R}^{2} $.
 
 \begin{proof}[Dimostrazione (Lemma dell'applicazione chiusa)]
-	Basta far vedere che l'applicazione sia chiusa: lo è perché un chiuso in un compatto è compatto, l'immagine di un compatto tramite un'applicazione continua è un compatto e un sottoinsieme compatto di uno spazio di Hausdorff è chiuso.
+	\`{E} sufficiente far vedere che l'applicazione sia chiusa: lo è perché un chiuso in un compatto è compatto, l'immagine di un compatto tramite un'applicazione continua è un compatto e un sottoinsieme compatto di uno spazio di Hausdorff è chiuso.
 \end{proof}
 
 \paragraph{3.}
@@ -2204,7 +2204,7 @@ con $ p \in U $ e $ r^{j} $ le coordinate standard di $ \mathbb{R}^{n} $, siccom
 
 \subsection{Jacobiano per applicazioni tra varietà}
 
-Sia un'applicazione $ F : N \to M $ liscia con $ N $ e $ M $ varietà differenziabili con dimensioni $ n $ e $ m $ rispettivamente e fissiamo due carte $ (U,\phi) \in N $ e $ (V\,psi) \in M $, dove $ F(U) \subset V $ (è sempre possibile e inoltre non restrittivo in quanto è possibile prendere l'aperto $ U $ arbitrariamente piccolo affinché si verifichi questa condizione\footnote{%
+Sia un'applicazione $ F : N \to M $ liscia con $ N $ e $ M $ varietà differenziabili con dimensioni $ n $ e $ m $ rispettivamente e fissiamo due carte $ (U,\phi) \in N $ e $ (V,\psi) \in M $, dove $ F(U) \subset V $ (è sempre possibile e inoltre non restrittivo in quanto è possibile prendere l'aperto $ U $ arbitrariamente piccolo affinché si verifichi questa condizione\footnote{%
 	Qualunque aperto contenuto in una carta definisce ancora una carta nella struttura differenziabile: se $ U \subset U_{\alpha} $ dove $ (U_{\alpha},\phi_{\alpha}) $ è una carta della varietà differenziabile, allora $ (U, \phi_{\alpha \mid U}) $ è ancora una carta della stessa varietà.%
 }).\\
 Sia $ F^{i} = y^{i} \circ F = r^{i} \circ \psi \circ F $ con $ i=1,\dots,m $, dove $ \psi = (y^{1},\dots,y^{m}) $, la componente $ i $-esima di $ F $ rispetto alle coordinate $ (y^{1},\dots,y^{m}) $. L'applicazione $ F^{i} : U \to \mathbb{R} $ è $ C^{\infty}(U) $, quindi possiamo definire le sue derivate parziali
@@ -2213,7 +2213,7 @@ Sia $ F^{i} = y^{i} \circ F = r^{i} \circ \psi \circ F $ con $ i=1,\dots,m $, do
 	\dfrac{\partial F^{i}}{\partial x^{j}} : U \to \mathbb{R}
 \end{equation}
 
-le quali possono essere organizzate nella \textit{matrice jacobiana} $ J $ \textit{di} $ F $ rispetto alle carte $ (U,\phi) $ e $ (V\,psi) $ nel punto $ p \in U $
+le quali possono essere organizzate nella \textit{matrice jacobiana} $ J $ \textit{di} $ F $ rispetto alle carte $ (U,\phi) $ e $ (V,\psi) $ nel punto $ p \in U $
 
 \begin{align}
 	\begin{split}
@@ -2228,7 +2228,7 @@ Quindi, per definizione di derivata parziale
 	\dfrac{\partial F^{i}}{\partial x^{j}} (p) = \dfrac{\partial (F^{i} \circ \phi^{-1})}{\partial r^{j}} (\phi(p))
 \end{equation}
 
-Nel caso in cui $ N = \mathbb{R}^{n} \, \wedge \,  M = \mathbb{R}^{m} $
+Nel caso in cui $ N = \mathbb{R}^{n} $ e $ M = \mathbb{R}^{m} $
 
 \begin{equation}
 	\dfrac{\partial F}{\partial x^{i}} = \dfrac{\partial F}{\partial r^{i}}
@@ -5493,7 +5493,7 @@ Combinando questo corollario con il teorema del rango costante si ottengono i te
 	dove nell'immagine ci sono le prime $ m $ coordinate del punto del dominio.
 \end{theorem}
 
-\begin{corollary}[1]
+\begin{corollary}[1]\label{th-somm-loc-cor}
 	Sia $ F : N \to M $ una sommersione, allora $ F $ è un'applicazione aperta.
 \end{corollary}
 
