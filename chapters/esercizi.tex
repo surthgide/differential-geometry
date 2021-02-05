@@ -3,10 +3,16 @@
 \tocless\section{}\label{es1-1}
 
 \begin{tcolorbox}
-	Per ogni numero naturale $ k \in \mathbb{N} $ costruire una funzione $ C^{k}(\mathbb{R}) $ ma non $ C^{+1}(\mathbb{R}) $.
+	Per ogni numero naturale $ k \in \mathbb{N} $ costruire una funzione $ C^{k}(\mathbb{R}) $ ma non $ C^{k+1}(\mathbb{R}) $.
 \end{tcolorbox}
 
-qui
+Per la funzione
+
+\map{f_{k}}%
+	{\R \times \N}{\R}%
+	{(x,k)}{\alpha x^{k(k+2)/(k+1)} + \beta}
+	
+per $ \forall \alpha,\beta \in \R $, vale $ f_{k} \in C^{k}(\R) $ ma $ f_{k} \notin C^{k+1}(\R) $.
 
 \tocless\section{}\label{es1-2}
 
@@ -27,7 +33,25 @@ qui
 	risulta essere liscia ma non reale analitica.
 \end{tcolorbox}
 
-qui
+La funzione $ f $ è liscia in quanto, perché lo sia, è necessario che
+
+\begin{equation}
+	\pdv[k]{f}{x} = \pdv[k]{x} (0) = 0 \qcomma \forall k \in \N
+\end{equation}
+
+e questo è vero poiché
+
+\begin{equation}
+	\lim_{x \to 0} \left( \dfrac{e^{\sfrac{-1}{x^{2}}}}{x^{p}} \right) = 0 \qcomma \forall p \in \N %
+	\implies%
+	\lim_{x \to 0} \left( \pdv[k]{x} \left( e^{\sfrac{-1}{x^{2}}} \right) \right) = 0 \qcomma \forall k \in \N
+\end{equation}
+
+La funzione non è però reale analitica perché, in un intervallo aperto qualsiasi di 0 non coincide con il suo sviluppo di Taylor: lo sviluppo di Taylor per la parte dei reali positivi è diversa da 0 per qualsiasi valore di $ x $ non nullo mentre la parte per i reali negativi è identicamente nulla, i.e. preso $ U $ un qualsiasi intorno di 0
+
+\begin{equation}
+	\sum_{k=0}^{+\infty} \left( \pdv[k]{x} \left( e^{\sfrac{-1}{x^{2}}} \right) \right) \dfrac{x^{k}}{k!} \neq 0 \qcomma \forall x \in U \setminus \{0\}
+\end{equation}
 
 \tocless\section{}\label{es1-3}
 
