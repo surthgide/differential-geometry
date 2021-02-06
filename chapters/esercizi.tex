@@ -67,7 +67,36 @@ La funzione non è però reale analitica perché, in un intervallo aperto qualsi
 	\end{equation}
 \end{tcolorbox}
 
-qui
+Consideriamo le applicazioni:
+
+\map{f}%
+	{(a,b)}{(0,1)}%
+	{x}{\dfrac{x-a}{b-a}}
+
+\map{g}%
+	{(0,1)}{(c,+\infty)}%
+	{x}{\dfrac{c}{x}}
+	
+\map{h}%
+	{(0,1)}{(-\infty,d)}%
+	{x}{\ln(x)-d}
+	
+\map{i}%
+	{(c,+\infty)}{\R}%
+	{x}{\ln(x-c)}
+
+queste sono diffeomorfismi in quanto bigezioni lisce con inversa liscia, dunque le loro composizioni sono ancora diffeomorfismi. Le seguenti composizioni delle applicazioni sopraccitate inducono i seguenti diffeomorfismi:
+
+\begin{equation}
+	\begin{cases}
+		g \circ f \implies (a,b) \simeq (c,+\infty)\\
+		h \circ f \implies (a,b) \simeq (-\infty,d)\\
+		i \circ g \circ f \implies (a,b) \simeq \R\\
+		h \circ g^{-1} \implies (c,+\infty) \simeq (-\infty,d)\\
+		i \implies (c,+\infty) \simeq \R\\
+		i \circ g \circ h^{-1} \implies (-\infty,d) \simeq \R
+	\end{cases}
+\end{equation}
 
 \tocless\section{}\label{es1-4}
 
