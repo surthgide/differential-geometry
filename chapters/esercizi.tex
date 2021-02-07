@@ -103,29 +103,59 @@ queste sono diffeomorfismi in quanto bigezioni lisce con inversa liscia, dunque 
 \begin{tcolorbox}
 	Dimostrare che l'applicazione
 	
-	\begin{align}
-		\begin{split}
-			h : B_{1} (0) &\to \mathbb{R}^{n}\\
-			x &\mapsto \left( \dfrac{x^{1}}{\sqrt{1 - \norm{x}^{2}}}, \cdots, \dfrac{x^{n}}{\sqrt{1 - \norm{x}^{2}}} \right)
-		\end{split}	
-	\end{align}
+	\map{h}%
+		{B_{1}(0)}{\R^{n}}%
+		{x}{\left( \dfrac{x^{1}}{\sqrt{1 - \norm{x}^{2}}}, \cdots, \dfrac{x^{n}}{\sqrt{1 - \norm{x}^{2}}} \right)}
 	
-	definisce un diffeomorfismo tra la palla aperta unitaria centrata nell'origine di $ \mathbb{R}^{n} $ e $ \mathbb{R}^{n} $. Dedurre che la palla aperta di centro $ c \in \mathbb{R}^{n} $ e raggio $ r>0 $ in $ \mathbb{R}^{n} $ è diffeomorfa a $ \mathbb{R}^{n} $.
+	definisce un diffeomorfismo tra la palla aperta unitaria centrata nell'origine di $ \R^{n} $ e $ \R^{n} $. Dedurre che la palla aperta di centro $ c \in \R^{n} $ e raggio $ r > 0 $ in $ \mathbb{R}^{n} $ è diffeomorfa a $ \R^{n} $.
 \end{tcolorbox}
 
-qui
+L'applicazione $ h $ è una bigezione liscia in quanto ogni sua componente è liscia poiché
+
+\begin{equation}
+	\pdv[k]{(x^{i})} \left( \dfrac{x^{i}}{\sqrt{ 1-\norm{x}^{2} }} \right) < \infty \qcomma \forall k \in \N, \, \forall x \in B_{1}(0), \, \forall i=1,\dots,n
+\end{equation}
+
+La sua inversa
+
+\map{h^{-1}}%
+	{\R^{n}}{B_{1}(0)}%
+	{x}{\left( \dfrac{x^{1}}{\sqrt{1 + \norm{x}^{2}}}, \cdots, \dfrac{x^{n}}{\sqrt{1 + \norm{x}^{2}}} \right)}
+	
+è ancora liscia per lo stesso motivo, dunque $ h $ induce il diffeomorfismo $ B_{1}(0) \simeq \R^{n} $.\\
+Se consideriamo l'applicazione lineare (dunque liscia con inversa liscia e perciò diffeomorfismo)
+
+\map{g}%
+	{B_{r}(c)}{B_{1}(0)}%
+	{x}{\dfrac{x-c}{r}}
+	
+con $ c = (c^{1},\dots,c^{n}) $, e la componiamo con $ h $, otteniamo
+
+\map{f = h \circ g}%
+	{B_{r}(c)}{\R^{n}}%
+	{x}{\left( \dfrac{\dfrac{x^{1} - c^{1}}{r}}{\sqrt{1 + \norm{\dfrac{x-c}{r}}^{2}}}, \cdots, \dfrac{\dfrac{x^{n} - c^{n}}{r}}{\sqrt{1 + \norm{\dfrac{x-c}{r}}^{2}}} \right)}
+
+L'applicazione $ f $ è un diffeomorfismo in quanto composizione di diffeomorfismo, dunque $ f $ induce il diffeomorfismo $ B_{r}(c) \simeq \R^{n} $.
 
 \tocless\section{}\label{es1-5}
 
 \begin{tcolorbox}
-	Sia $ f \in C^{\infty}(\mathbb{R}^{2}) $. Usando il teorema di Taylor con resto dimostrare che esistono $ g_{11},g_{12},g_{22} \in C^{\infty}(\mathbb{R}^{2}) $ tali che
+	Sia $ f \in C^{\infty}(\mathbb{R}^{2}) $. Usando il teorema di Taylor con resto, dimostrare che esistono $ g_{11},g_{12},g_{22} \in C^{\infty}(\mathbb{R}^{2}) $ tali che
 	
 	\begin{equation}
-		f(x,y) = f(0,0) + x \, \dfrac{\partial f}{\partial x} ((0,0)) + y \, \dfrac{\partial f}{\partial y} ((0,0)) + x^{2} \, g_{11}(x,y) + xy \, g_{12}(x,y) + y^{2} \, g_{22}(x,y)
+		f(x,y) = f(0,0) + x \, \dfrac{\partial f}{\partial x} ((0,0)) + y \, \dfrac{\partial f}{\partial y} ((0,0)) + x^{2} \, g_{11}(x,y) + x y \, g_{12}(x,y) + y^{2} \, g_{22}(x,y)
 	\end{equation}
 \end{tcolorbox}
 
-qui
+\begin{equation}
+	\begin{cases}
+		g_{11}(x,y) = \pdv[2]{f}{x} (0,0)\\\\
+		g_{12}(x,y) = \pdv{f}{x}{y} (0,0)\\\\
+		g_{22}(x,y) = \pdv[2]{f}{y} (0,0)
+	\end{cases}
+\end{equation}
+
+???
 
 \tocless\section{}\label{es1-6}
 
@@ -157,10 +187,50 @@ qui
 \tocless\section{}\label{es1-7}
 
 \begin{tcolorbox}
-	Dimostrare che l'insieme $ C_{p}^{\infty}(\mathbb{R}^{n}) $ dei germi delle funzioni lisce intorno a $ p \in \mathbb{R}^{n} $ con le operazioni di somma e di prodotto definite negli appunti è un'algebra commutativa e unitaria.
+	Dimostrare che l'insieme $ C_{p}^{\infty}(\R^{n}) $ dei germi delle funzioni lisce intorno a $ p \in \mathbb{R}^{n} $ con le operazioni di somma e di prodotto definite negli appunti è un'algebra commutativa e unitaria.
 \end{tcolorbox}
 
-qui
+L'algebra $ A = (C_{p}^{\infty}(\R^{n}),+,\cdot) $ ha le operazioni definite come segue:
+
+\map{+}%
+	{A \times A}{A}%
+	{([(f,U)],[(g,V)])}{[(f+g,U \cap V)]}
+	
+\map{\cdot}%
+	{A \times A}{A}%
+	{([(f,U)],[(g,V)])}{[(f g,U \cap V)]}
+	
+per $ \forall [(f,U)],[(g,V)] \in C_{p}^{\infty}(\R^{n}) $.\\
+La commutatività può essere verificata tramite i seguenti passaggi:
+
+\begin{align}
+	\begin{split}
+		[(f,U)] + [(g,V)] &= [(f+g,U \cap V)]\\
+		&= [(g+f,V \cap U)]\\
+		&= [(g,V)] + [(f,U)]\\\\
+		%
+		[(f,U)] \cdot [(g,V)] &= [(f \cdot g,U \cap V)]\\
+		&= [(g \cdot f,V \cap U)]\\
+		&= [(g,V)] \cdot [(f,U)]
+	\end{split}
+\end{align}
+
+L'unitarietà, i.e.
+
+\begin{equation}
+	\exists \, e = [(1,U)] \in C_{p}^{\infty}(\R^{n}) \mid [(f,U)] \cdot e = e \cdot [(f,U)] = [(f,U)] \qcomma \forall [(f,U)] \in C_{p}^{\infty}(\R^{n})
+\end{equation}
+
+può essere verificata tramite i seguenti passaggi:
+
+\begin{align}
+	\begin{split}
+		[(f,U)] \cdot [(1,U)] &= [(f \cdot 1,U \cap U)]\\
+		&= [(1 \cdot f,U \cap U)]\\
+		&= [(1,U)] \cdot [(f,U)]\\
+		&= [(f,U)]
+	\end{split}
+\end{align}
 
 \tocless\section{}\label{es1-8}
 

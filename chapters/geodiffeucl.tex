@@ -166,7 +166,7 @@ Quando esiste un diffeomorfismo tra due aperti, si dice che questi sono diffeomo
 I seguenti sottoinsiemi di $ \mathbb{R} $
 
 \begin{itemize}
-	\item $ (a,b) $ con $ a<b $
+	\item $ (a,b) $ con $ a < b $
 	
 	\item $ \mathbb{R} $
 	
@@ -184,7 +184,7 @@ per  $ \forall a,b,c,d \in \mathbb{R} $ sono aperti di $ \mathbb{R} $ diffeomorf
 Con $ B_{1} (0) $ si indica la \textit{palla} di centro l'origine e raggio unitario. In simboli
 
 \begin{equation}
-	B_{1} (0) = \left\{ x \in \mathbb{R}^{n} \, \middle| \, \norm{x} \doteq \sqrt{\sum_{i=1}^{\infty} (x^{i})^{2}} < 1 \right\}
+	B_{1} (0) = \left\{ x \in \mathbb{R}^{n} \, \middle| \, \norm{x} \doteq \sqrt{\sum_{i=1}^{n} (x^{i})^{2}} < 1 \right\}
 \end{equation}
 
 Per $ n=1 $, $ B_{1} (0) \equiv (-1,1) \simeq \mathbb{R} $.\\
@@ -214,7 +214,7 @@ Perché $ f, f^{-1} \in C^{\infty} $ dobbiamo verificare che ogni loro component
 	La palla di centro $ c $ e raggio $ \delta $ con $ c \in \mathbb{R}^{n} $ e $ \delta \geqslant 0 $ è diffeomorfa a $ \mathbb{R}^{n} $, i.e. $ B_{\delta} (c) \simeq \mathbb{R}^{n} $.
 \end{corollary}
 
-Per dimostrare questo è necessario dimostrare che siano diffeomorfismi le traslazioni (le quali sono lineare e affini) e le omotetie (scala di un fattore $ \delta $); questa dimostrazione mostra anche che $ B_{1} (0) \simeq B_{\delta} (c) $.\\
+Per dimostrare questo è necessario dimostrare che siano diffeomorfismi le traslazioni (le quali sono lineari e affini) e le omotetie (scala di un fattore $ \delta $); questa dimostrazione mostra anche che $ B_{1} (0) \simeq B_{\delta} (c) $.\\
 Vedi Esercizio \ref{es1-4}.\\
 Per praticità di notazione, chiamiamo $ h $ il diffeomorfismo $ B_{\delta} (c) \to \mathbb{R}^{n} $ definito sopra. Per far vedere come nasce questo diffeomorfismo, si può usare la seguente costruzione geometrica
 
@@ -432,7 +432,7 @@ dove la prima parte coincide con lo sviluppo in serie di Taylor mentre l'ultimo 
 \section{Vettori tangenti in $ \mathbb{R}^{n} $}
 
 Preso un punto $ p \in \mathbb{R}^{n} $, lo \textit{spazio tangente} in quel punto viene scritto $ T_{p}(\mathbb{R}^{n}) $. In sostanza, lo spazio tangente ad un punto $ p $ è l'insieme\footnote{%
-	Sarebbe uno spazio vettoriale con origine il punto $ p $%
+	Sarebbe uno spazio vettoriale con origine il punto $ p $.%
 } di tutti i vettori che escono dal punto stesso. Essendo $ T_{p}(\mathbb{R}^{n}) \simeq \mathbb{R}^{n} $, un elemento $ v \in T_{p}(\mathbb{R}^{n}) $ è dunque un \textit{vettore riga o colonna}
 
 \begin{equation}
@@ -480,10 +480,10 @@ Definisco ora l'insieme di coppie
 
 Diciamo che\footnote{%
 	Il simbolo $ \sim $ indica una relazione di equivalenza.%
-}. per $ p \in W $
+} per $ p \in W $
 
 \begin{equation}
-	(f,U) \sim (g,V) \iff \exists W \subseteq U \cap V \mid f \equiv g \, \text{in} \, W
+	(f,U) \sim (g,V) \iff \exists W \subseteq U \cap V \mid f \equiv g \qq{in} W
 \end{equation}
 
 o equivalentemente
@@ -504,7 +504,13 @@ dove un elemento $ [(f,U)] $ di questo spazio è chiamato \textit{germe} intorno
 	C_{p}^{\infty}(\mathbb{R}^{n}) = \left\{ [(f,U)] \right\}
 \end{equation} 
 
-Possiamo definire un'applicazione $ \mathfrak{D}_{v} : C_{p}^{\infty}(\mathbb{R}^{n}) \to \mathbb{R} $ con $ [(f,U)] \mapsto D_{v} f $. Questa applicazione è ben definita in quanto l'associazione di un germe di funzioni ad un numero reale non dipende dal rappresentante scelto perché
+Possiamo definire un'applicazione
+
+\map{\mathfrak{D}_{v}}%
+	{C_{p}^{\infty}(\R^{n})}{\R}%
+	{[(f,U)]}{D_{v} f}
+
+Questa applicazione è ben definita in quanto l'associazione di un germe di funzioni ad un numero reale non dipende dal rappresentante scelto perché
 
 \begin{equation}
 	(f,U) \simeq (g,V) \implies D_{v} g = D_{v} f
@@ -517,7 +523,7 @@ Siano $ f $ e $ g $
 \begin{equation}
 	\begin{cases}
 		f(x) = \dfrac{1}{1-x}, & x \in \mathbb{R} \setminus \{1\}\\\\
-		g(x) = \sum_{j=1}^{+\infty} x^{j}, & x \in (-1,1)
+		g(x) = \displaystyle\sum_{j=1}^{+\infty} x^{j}, & x \in (-1,1)
 	\end{cases}
 \end{equation}
 
@@ -535,7 +541,13 @@ in altre parole, le classi di equivalenza
 
 \subsubsection{Algebra su campo $ \mathbb{K} $}
 
-Un'algebra $ A $ su un campo $ \mathbb{K} $ è uno spazio vettoriale su $ \mathbb{K} $ (dunque con operazioni $ a+b \in A $ con $ a,b \in A $ e $ \lambda a $ con $ \lambda \in \mathbb{K} $) e un'operazione binaria $ \cdot : A \times A \to A $ con $ (a,b) \mapsto a \cdot b $ tale che soddisfi le condizioni\footnote{%
+Un'algebra $ A $ su un campo $ \mathbb{K} $ è una coppia $ (v,\cdot) $ con $ V $ spazio vettoriale su $ \mathbb{K} $ (dunque con operazioni $ a+b \in A $ con $ a,b \in A $ e $ \lambda a $ con $ \lambda \in \mathbb{K} $) e un'operazione binaria
+
+\map{\cdot}%
+	{A \times A}{A}%
+	{(a,b)}{a \cdot b}
+
+tale che soddisfi le condizioni\footnote{%
 	In generale, non è necessaria l'associatività per definire un'algebra.}
 
 \begin{equation}
