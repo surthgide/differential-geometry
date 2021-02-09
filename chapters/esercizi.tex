@@ -1,4 +1,4 @@
-\chapter{Esercizi Capitolo "Geometria differenziale negli spazi euclidei"}
+\chapter{Esercizi "Geometria differenziale negli spazi euclidei"}
 
 \tocless\section{}\label{es1-1}
 
@@ -238,7 +238,36 @@ può essere verificata tramite i seguenti passaggi:
 	Dimostrare che l'insieme $ Der_{p}(C_{p}^{\infty}(\mathbb{R}^{n})) $ delle derivazioni puntuali con le operazioni definite negli appunti è uno spazio vettoriale su $ \mathbb{R} $.
 \end{tcolorbox}
 
-qui
+Per dimostrare che $ Der_{p}(C_{p}^{\infty}(\mathbb{R}^{n})) $ sia uno spazio vettoriale sui reali è necessaio che vengano rispettate le seguenti relazioni:
+
+\begin{align}
+	\begin{split}
+		(D_{1} + D_{2}) ([(f,U)]) &= D_{1}([(f,U)]) + D_{2}([(f,U)])\\
+		(\lambda D) ([(f,U)]) &= \lambda D ([(f,U)])
+	\end{split}
+\end{align}
+
+Per la prima:
+
+\begin{align}
+	\begin{split}
+		(D_{v} + D_{w}) ([(f,U)]) &= (D_{v} + D_{w}) (f)\\
+		&= \left( \sum_{i=1}^{n} \eval{ \pdv{x^{i}} }_{p} v^{i} + \sum_{i=1}^{n} \eval{ \pdv{x^{i}} }_{p} w^{i} \right) (f)\\
+		&= \sum_{i=1}^{n} \pdv{f}{x^{i}} (p) \, v^{i} + \sum_{i=1}^{n} \pdv{f}{x^{i}} (p) \, w^{i}\\
+		&= D_{v}([(f,U)]) + D_{w}([(f,U)])
+	\end{split}
+\end{align}
+
+Per la seconda:
+
+\begin{align}
+	\begin{split}
+		(\lambda D) ([(f,U)])  &= (\lambda D) (f)\\
+		&= \left( \lambda \sum_{i=1}^{n} \eval{ \pdv{x^{i}} }_{p} v^{i} \right) (f)\\
+		&= \lambda \left( \sum_{i=1}^{n} \pdv{f}{x^{i}} (p) \, v^{i} \right)\\
+		&= \lambda D ([(f,U)])
+	\end{split}
+\end{align}
 
 \tocless\section{}\label{es1-9}
 
@@ -277,7 +306,7 @@ qui
 
 qui
 
-\chapter{Esercizi Capitolo "Varietà differenziabili"}
+\chapter{Esercizi "Varietà differenziabili"}
 
 \tocless\section{}\label{BONUS2-1}
 
@@ -770,7 +799,7 @@ qui
 
 qui
 
-\chapter{Esercizi Capitolo "Gruppi e algebre di Lie"}
+\chapter{Esercizi "Gruppi e algebre di Lie"}
 
 \tocless\section{}\label{es3-1}
 

@@ -506,7 +506,7 @@ dove un elemento $ [(f,U)] $ di questo spazio è chiamato \textit{germe} intorno
 
 Possiamo definire un'applicazione
 
-\map{\mathfrak{D}_{v}}%
+\map{D_{v}}%
 	{C_{p}^{\infty}(\R^{n})}{\R}%
 	{[(f,U)]}{D_{v} f}
 
@@ -597,12 +597,9 @@ Nonostante non sia necessario per un'algebra, $ C_{p}^{\infty}(\mathbb{R}^{n}) $
 
 A questo punto, un'applicazione del tipo
 
-\begin{align}
-	\begin{split}
-		D : C_{p}^{\infty}(\mathbb{R}^{n}) \to& \, \mathbb{R}\\
-		[(f,U)] \mapsto& \, D_{v} f
-	\end{split}
-\end{align}
+\map{D}%
+	{C_{p}^{\infty}(\R^{n})}{\R}%
+	{[(f,U)]}{D_{v} f = \sum_{i=1}^{n} \pdv{f}{x^{i}} (p) \, v^{i}}
 
 tale che:
 
@@ -790,7 +787,7 @@ A questo punto, bisogna dimostrare che $ \phi $ sia $ \mathbb{R} $-lineare, inie
 		\end{split}
 	\end{align}
 
-	per $ \forall j=1,\dots,n $, la quale è una proiezione $ C^{\infty} $ liscia dunque $ x^{j} \in C_{p}^{\infty}(\mathbb{R}^{n}) $. A questo punto
+	per $ \forall j=1,\dots,n $, la quale è una proiezione liscia dunque $ x^{j} \in C_{p}^{\infty}(\mathbb{R}^{n}) $. A questo punto
 	
 	\begin{align}
 		\begin{split}
@@ -813,7 +810,7 @@ La suriettività implica che se si fissa una qualunque derivazione puntuale esis
 
 dove $ \phi = D_{v} $.\\
 Dobbiamo quindi trovare un $ v $ tale che faccia coincidere $ D \equiv D_{v} $.\\
-Prima di farlo, enunciamo il seguente lemma
+Prima di farlo, enunciamo il seguente lemma:
 
 \begin{lemma}[Derivata di costante]
 	Sia la funzione
@@ -845,7 +842,7 @@ Prima di farlo, enunciamo il seguente lemma
 	\end{align}
 \end{proof}
 
-A questo punto possiamo dimostrare la suriettività di $ \phi $
+A questo punto possiamo dimostrare la suriettività di $ \phi $:
 
 \begin{proof}[Dimostrazione (suriettività)]
 	Due funzioni sono uguali se e solo se coincidono per ogni punto del dominio, i.e.
@@ -871,24 +868,28 @@ A questo punto possiamo dimostrare la suriettività di $ \phi $
 	
 	\begin{align}
 		\begin{split}
-			D ([(f,U)]) =& \, D ([(f(p),\mathbb{R}^{n})]) + D \left(\left[\left( \sum_{i=1}^{n} (x^{i}-p^{i}) \, g_{i}(x) , U \right)\right]\right)\\
-			=& \, D \left(\left[\left( \sum_{i=1}^{n} (x^{i}-p^{i}) \, g_{i}(x) , U \right)\right]\right)\\
-			=& \, \sum_{i=1}^{n} D ([( (x^{i}-p^{i}) \, g_{i}(x) , U )])\\
-			=& \, \sum_{i=1}^{n} \left\{ D ([( (x^{i}-p^{i}), U )]) \, g_{i}(p) + (p^{i}-p^{i}) \, D ([( g_{i}(x), U )]) \right\}\\
-			=& \, \sum_{i=1}^{n} D ([( (x^{i}-p^{i}), U )]) \, g_{i}(p)\\
-			=& \, \sum_{i=1}^{n} \left\{ D ([( x^{i}, U )]) - D ([( p^{i}, U )]) \right\} g_{i}(p)\\
-			=& \, \sum_{i=1}^{n} D ([( x^{i}, U )]) \, g_{i}(p)\\
-			=& \, \sum_{i=1}^{n} D ([( x^{i}, U )]) \, \dfrac{\partial f}{\partial x^{i}} (p)\\
-			=& \, \sum_{i=1}^{n} \dfrac{\partial f}{\partial x^{i}} (p) \, v^{i}\\
-			=& \, D_{v} f\\
-			=& \, D_{v} ([(f,U)])
+			D ([(f,U)]) &= D ([(f(p),\mathbb{R}^{n})]) + D \left(\left[\left( \sum_{i=1}^{n} (x^{i}-p^{i}) \, g_{i}(x) , U \right)\right]\right)\\
+			&= D \left(\left[\left( \sum_{i=1}^{n} (x^{i}-p^{i}) \, g_{i}(x) , U \right)\right]\right)\\
+			&= \sum_{i=1}^{n} D ([( (x^{i}-p^{i}) \, g_{i}(x) , U )])\\
+			&= \sum_{i=1}^{n} \left\{ D ([( (x^{i}-p^{i}), U )]) \, g_{i}(p) + (p^{i}-p^{i}) \, D ([( g_{i}(x), U )]) \right\}\\
+			&= \sum_{i=1}^{n} D ([( (x^{i}-p^{i}), U )]) \, g_{i}(p)\\
+			&= \sum_{i=1}^{n} \left\{ D ([( x^{i}, U )]) - D ([( p^{i}, U )]) \right\} g_{i}(p)\\
+			&= \sum_{i=1}^{n} D ([( x^{i}, U )]) \, g_{i}(p)\\
+			&= \sum_{i=1}^{n} D ([( x^{i}, U )]) \, \dfrac{\partial f}{\partial x^{i}} (p)\\
+			&= \sum_{i=1}^{n} \dfrac{\partial f}{\partial x^{i}} (p) \, v^{i}\\
+			&= D_{v} f\\
+			&= D_{v} ([(f,U)])
 		\end{split}
 	\end{align}
 
 	per $ \forall [(f,U)] \in C_{p}^{\infty}(\mathbb{R}^{n}) $.
 \end{proof}
 
-Date queste proprietà di $ \phi $, questa applicazione è un omeomorfismo tra $ T_{p}(\mathbb{R}^{n}) $ e $ Der_{p}(C_{p}^{\infty}(\mathbb{R}^{n})) $, in simboli $ T_{p}(\mathbb{R}^{n}) \simeq Der_{p}(C_{p}^{\infty}(\mathbb{R}^{n})) $.
+Date queste proprietà di $ \phi $, questa applicazione è un omeomorfismo tra $ T_{p}(\mathbb{R}^{n}) $ e $ Der_{p}(C_{p}^{\infty}(\mathbb{R}^{n})) $, i.e.
+
+\begin{equation}
+	T_{p}(\mathbb{R}^{n}) \simeq Der_{p}(C_{p}^{\infty}(\mathbb{R}^{n}))
+\end{equation}
 
 \begin{corollary}
 	\begin{equation}
@@ -898,7 +899,7 @@ Date queste proprietà di $ \phi $, questa applicazione è un omeomorfismo tra $
 
 \subsection{Base canonica per $ Der_{p}(C_{p}^{\infty}(\mathbb{R}^{n})) $}
 
-Inoltre, l'insieme delle $ n $-uple
+L'insieme delle $ n $-uple
 
 \begin{equation}
 	\left( \left. \dfrac{\partial}{\partial x^{1}} \right|_{p},\dots,\left. \dfrac{\partial}{\partial x^{n}} \right|_{p} \right)
@@ -912,7 +913,7 @@ i cui elementi sono definiti come
 
 forma una base per lo spazio $ Der_{p}(C_{p}^{\infty}(\mathbb{R}^{n})) $.
 
-\begin{proof}[Dimostrazione (base)]
+\begin{proof}
 	Essendo $ T_{p}(\mathbb{R}^{n}) \simeq Der_{p}(C_{p}^{\infty}(\mathbb{R}^{n})) $, da cui
 	
 	\begin{equation}
