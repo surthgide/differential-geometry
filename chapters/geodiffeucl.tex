@@ -179,7 +179,7 @@ per  $ \forall a,b,c,d \in \mathbb{R} $ sono aperti di $ \mathbb{R} $ diffeomorf
 	Vedi Esercizio \ref{es1-3}.%
 }.
 
-\subsection{$ B_{\delta} (c) \simeq \mathbb{R}^{n} $}
+\subsection{Diffeomorfismo tra $ B_{\delta} (c) $ e $ \R^{n} $}
 
 Con $ B_{1} (0) $ si indica la \textit{palla} di centro l'origine e raggio unitario. In simboli
 
@@ -449,7 +449,7 @@ Per generalizzare questo concetto, consideriamo gli elementi degli spazi tangent
 
 \subsection{Derivate direzionali}
 
-Sia $ f : U \to \mathbb{R} $ con $ f \in C^{\infty}(\mathbb{R}) $ e $ p\in U $, prendo $ v \in T_{p}(\mathbb{R}^{n}) $. Consideriamo la retta $ c(t) $ che passa per $ p $ con direzione $ v $, parametrizzata come $ c(t)=p+tv $ con $ t \in \mathbb{R} $. Definisco la \textit{derivata direzionale} di $ f $ rispetto a $ v $ come
+Siano $ f : U \to \mathbb{R} $ con $ f \in C^{\infty}(\mathbb{R}) $, $ p\in U $ e $ v \in T_{p}(\mathbb{R}^{n}) $. Consideriamo la retta $ c(t) $ che passa per $ p $ con direzione $ v $, parametrizzata come $ c(t)=p+tv $ con $ t \in \mathbb{R} $. Definisco la \textit{derivata direzionale} di $ f $ rispetto a $ v $ come
 
 \begin{align}
 	\begin{split}
@@ -472,7 +472,7 @@ dove $ D_{v} f \in \mathbb{R} $ e $ v = [v^{1},\dots,v^{n}] $.
 	\includegraphics[width=0.4\textwidth,keepaspectratio]{img1}
 \end{figure}
 
-Definisco ora l'insieme di coppie
+Definiamo ora l'insieme di coppie
 
 \begin{equation}
 	X \doteq \left\{ (f,U) \middle| f \in C^{\infty}(U), \, \text{$ U $ intorno di $ p $} \right\}
@@ -492,7 +492,8 @@ o equivalentemente
 	(f,U) \sim (g,V) \iff \exists W \subseteq U \cap V \mid f(q) \equiv g(q), \forall q \in W
 \end{equation}
 
-Perché questa sia effettivamente una relazione di equivalenza devo verificare che sia riflessiva, simmetrica e transitiva. Prendiamo dunque lo spazio quoziente
+Questa è effettivamente una relazione di equivalenza in quanto riflessiva, simmetrica e transitiva.\\
+Prendiamo dunque lo spazio quoziente
 
 \begin{equation}
 	\sfrac{X}{\sim} \doteq C_{p}^{\infty}(\mathbb{R}^{n})
@@ -513,7 +514,7 @@ Possiamo definire un'applicazione
 Questa applicazione è ben definita in quanto l'associazione di un germe di funzioni ad un numero reale non dipende dal rappresentante scelto perché
 
 \begin{equation}
-	(f,U) \simeq (g,V) \implies D_{v} g = D_{v} f
+	(f,U) \sim (g,V) \implies D_{v} g = D_{v} f
 \end{equation}
 
 \subsubsection{\textit{Esempio}}
@@ -541,7 +542,7 @@ in altre parole, le classi di equivalenza
 
 \subsubsection{Algebra su campo $ \mathbb{K} $}
 
-Un'algebra $ A $ su un campo $ \mathbb{K} $ è una coppia $ (v,\cdot) $ con $ V $ spazio vettoriale su $ \mathbb{K} $ (dunque con operazioni $ a+b \in A $ con $ a,b \in A $ e $ \lambda a $ con $ \lambda \in \mathbb{K} $) e un'operazione binaria
+Un'algebra $ A $ su un campo $ \mathbb{K} $ è una coppia $ (V,\cdot) $ con $ V $ spazio vettoriale su $ \mathbb{K} $ (dunque con operazioni $ a+b \in A $ con $ a,b \in A $ e $ \lambda a \in A $ con $ \lambda \in \mathbb{K} $) e un'operazione binaria
 
 \map{\cdot}%
 	{A \times A}{A}%
@@ -566,7 +567,7 @@ Equivalentemente, un algebra su un campo $ \mathbb{K} $ può essere pensata come
 	Le proprietà di associatività e distributività sono sufficienti per renderla un anello.%
 } $ (A,+,\cdot) $ il quale sia anche uno spazio vettoriale tale che sia soddisfatta la proprietà di omogeneità.
 
-\subsection{$ C_{p}^{\infty}(\mathbb{R}^{n}) $ come algebra su $ \mathbb{R} $}
+\subsection{$ C_{p}^{\infty}(\R^{n}) $ come algebra su $ \R $}
 
 Definiamo la somma
 
@@ -575,7 +576,6 @@ Definiamo la somma
 \end{equation}
 
 con $ [(f,U)], [(g,V)] \in C_{p}^{\infty}(\mathbb{R}^{n}) $. Questa somma è ben definita in quanto, prendendo altri due rappresentanti di $ [(f,U)] $ e $ [(g,V)] $, esiste sempre un intorno in cui questa somma sia definita.\\
-Vedi Esercizio \ref{es1-7}. \textbf{lez 2 m 1.21.15}\\
 Allo stesso modo, definiamo il prodotto
 
 \begin{equation}
@@ -591,11 +591,13 @@ e la moltiplicazione per scalari
 con $ \lambda \in \mathbb{R} $.\\
 Tutte queste operazioni sono ben definite e soddisfano tutte le proprietà di un'algebra perché la somma, il prodotto e la moltiplicazione per uno scalare di funzioni $ C^{\infty} $ soddisfano queste stesse proprietà.\\
 A questo punto si può dire che $ C_{p}^{\infty}(\mathbb{R}^{n}) $ sia un'algebra su $ \mathbb{R} $.\\
-Nonostante non sia necessario per un'algebra, $ C_{p}^{\infty}(\mathbb{R}^{n}) $ è anche commutativa e unitaria su $ \mathbb{R}^{n} $.
+Nonostante non sia necessario per un'algebra, $ C_{p}^{\infty}(\mathbb{R}^{n}) $ è anche commutativa e unitaria\footnote{%
+	Vedi Esercizio \ref{es1-7}.%
+} su $ \mathbb{R}^{n} $.
 
-\subsection{Derivazione puntuale di $ C_{p}^{\infty}(\mathbb{R}^{n}) $}
+\subsection{Derivazione puntuale di $ C_{p}^{\infty}(\R^{n}) $}
 
-A questo punto, un'applicazione del tipo
+A questo punto, l'immagine dell'applicazione
 
 \map{D}%
 	{C_{p}^{\infty}(\R^{n})}{\R}%
@@ -603,8 +605,8 @@ A questo punto, un'applicazione del tipo
 
 tale che:
 
-\begin{itemize}
-	\item Sia $ \mathbb{R} $-lineare\footnote{%
+\begin{enumerate}
+	\item sia $ \mathbb{R} $-lineare\footnote{%
 		Rispetto alla struttura di spazio vettoriale di $ C_{p}^{\infty}(\mathbb{R}^{n}) $.%
 	}, cioè
 		\begin{align}
@@ -614,11 +616,11 @@ tale che:
 			\end{split}
 		\end{align}
 	
-	\item Soddisfi la \textit{regola di Leibniz}, cioè
+	\item soddisfi la \textit{regola di Leibniz}, cioè
 		\begin{equation}
 			D ([(f,U)] \cdot [(g,V)]) = D ([(f,U)]) \, g(p) + f(p) \, D ([(g,V)])
 		\end{equation}
-\end{itemize}
+\end{enumerate}
 
 è chiamata \textit{derivazione puntuale} dell'algebra $ C_{p}^{\infty}(\mathbb{R}^{n}) $.
 
@@ -662,9 +664,9 @@ tale che:
 Una derivazione è quindi un modo per associare ad un germe di funzioni un numero reale, soddisfacendo le proprietà definite sopra.\\
 Indichiamo dunque l'insieme delle derivazioni di $ C_{p}^{\infty}(\mathbb{R}^{n}) $ come $ Der_{p}(C_{p}^{\infty}(\mathbb{R}^{n})) $.
 
-\subsection{$ T_{p}(\mathbb{R}^{n}) \simeq Der_{p}(C_{p}^{\infty}(\mathbb{R}^{n})) $}
+\subsection{Isomorfismo tra $ T_{p}(\mathbb{R}^{n}) $ e $ Der_{p}(C_{p}^{\infty}(\mathbb{R}^{n})) $}
 
-Definisco l'applicazione
+Definiamo l'applicazione
 
 \begin{align}
 	\begin{split}
@@ -679,7 +681,7 @@ questa associa $ v \in T_{p}(\mathbb{R}^{n}) $ con $ p \in \mathbb{R}^{n} $ a $ 
 	D_{v} f = \sum_{j=1}^{n} \dfrac{\partial f}{\partial x^{j}} (p) \, v^{j}
 \end{align}
 
-con $ v = [v^{1},\dots,v^{n}] $, dove $ D_{v} f $ è la derivata direzionale di $ f $ rispetto a $ v $; posso usare lo stesso simbolo per $ D_{v} ([(f,U)]) = D_{v} f $ perché questa relazione vale per qualsiasi rappresentante della classe.\\
+con $ v = [v^{1},\dots,v^{n}] $, dove $ D_{v} f $ è la derivata direzionale di $ f $ rispetto a $ v $; possiamo usare lo stesso simbolo per $ D_{v} ([(f,U)]) = D_{v} f $ perché questa relazione vale per qualsiasi rappresentante della classe.\\
 L'applicazione $ \phi $ permette di considerare le derivazioni puntuali dell'algebra dei germi delle funzioni $ C_{p}^{\infty}(\mathbb{R}^{n}) $ al posto dell'insieme dei vettori che partono da un punto, in quanto questi due insiemi sono isomorfi tra loro. Utilizzare le derivazioni è utile perché, in termini di varietà differenziabile, non esiste una visualizzazione di uno spazio tangente.
 
 \begin{theorem}
