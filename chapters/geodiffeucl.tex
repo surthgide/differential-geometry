@@ -934,9 +934,9 @@ forma una base per lo spazio $ Der_{p}(C_{p}^{\infty}(\mathbb{R}^{n})) $.
 	
 	\begin{align}
 		\begin{split}
-			D_{e_{i}} (f) =& \, \sum_{j=1}^{n} \dfrac{\partial f}{\partial x^{j}} (p) \, (e_{i})_{j}\\
-			=& \, \sum_{j=1}^{n} \dfrac{\partial f}{\partial x^{j}} (p) \, \delta_{ij}\\
-			=& \, \dfrac{\partial f}{\partial x^{i}} (p)
+			D_{e_{i}} (f) &= \sum_{j=1}^{n} \dfrac{\partial f}{\partial x^{j}} (p) \, (e_{i})_{j}\\
+			&= \sum_{j=1}^{n} \dfrac{\partial f}{\partial x^{j}} (p) \, \delta_{ij}\\
+			&= \dfrac{\partial f}{\partial x^{i}} (p)
 		\end{split}
 	\end{align}
 \end{proof}
@@ -952,15 +952,15 @@ Prendiamo un aperto $ U \in \mathbb{R}^{n} $ con $ n \geqslant 1 $, un \textit{c
 	\end{split}
 \end{align}
 
-dove il codominio è l'\textit{unione disgiunta} degli spazi di vettori tangenti in ogni punto di $ \mathbb{R}^{n} $; inoltre $ T_{p}(\mathbb{R}^{n}) = T_{p}(U) $ in quanto le due algebre seguenti coincidono $ C_{p}^{\infty}(\mathbb{R}^{n}) = C_{p}^{\infty}(U) $ perché i germi delle funzioni sono infiniti localmente, quindi non dipendono dall'aperto considerato.\\
-Un elemento del campo di vettori può essere scritto in funzione della base canonica di $ T_{p}(\mathbb{R}^{n}) $
+dove il codominio è l'\textit{unione disgiunta} degli spazi di vettori tangenti in ogni punto di $ \R^{n} $; inoltre $ T_{p}(\R^{n}) = T_{p}(U) $ in quanto le due algebre seguenti coincidono $ C_{p}^{\infty}(\R^{n}) = C_{p}^{\infty}(U) $ perché i germi delle funzioni sono definiti localmente, quindi non dipendono dall'aperto considerato.\\
+Un elemento del campo di vettori può essere scritto in funzione della base canonica di $ T_{p}(\R^{n}) $
 
 \begin{equation}
 	X_{p} = \sum_{i=1}^{n} a^{i}(p) \, \left. \dfrac{\partial}{\partial x^{i}} \right|_{p}
 \end{equation}
 
-dove $ a^{i}(p) \in \mathbb{R} $ con $ i=1,\dots,n $. In modo naturale, l'elemento $ X_{p} $ si identifica con l'$ n $-upla $ X_{p} = [a^{1}(p),\dots,a^{n}(p)] $.\\
-Se volessimo scrivere il campo di vettori $ X $ si scrive come
+dove $ a^{i}(p) \in \R $ con $ i=1,\dots,n $. In modo naturale, l'elemento $ X_{p} $ si identifica con l'$ n $-upla $ X_{p} = [a^{1}(p),\dots,a^{n}(p)] $.\\
+Il campo di vettori $ X $ (senza la valutazione in un punto $ p $) si scrive come
 
 \begin{equation}
 	X = \sum_{i=1}^{n} a^{i} \, \dfrac{\partial}{\partial x^{i}}
@@ -970,13 +970,13 @@ dove ora $ a^{i} $ è una funzione $ a^{i} : U \to \mathbb{R} $.
 
 \subsection{Campi di vettori lisci}
 
-Un campo di vettori $ X $ è $ C^{\infty} $ (liscio o differenziabile) se scritto nella forma
+Un campo di vettori $ X $ è $ C^{\infty} $ (liscio o differenziabile) se, scritto nella forma
 
 \begin{equation}
 	X = \sum_{i=1}^{n} a^{i} \, \dfrac{\partial}{\partial x^{i}}
 \end{equation}
 
-le $ a^{i} \in C^{\infty}(U) $ con $ \forall i=1,\dots,n $.\\
+le funzioni $ a^{i} $ sono lisce, i.e. $ a^{i} \in C^{\infty}(U) $ con $ \forall i=1,\dots,n $.\\
 L'insieme dei campi di vettori che rispettano questa prescrizione è chiamato $ \chi(U) $.
 
 \subsubsection{\textit{Esempi}}
@@ -1076,7 +1076,7 @@ Osserviamo che $ C^{\infty}(U) $ è un anello commutativo unitario.
 
 \subsubsection{$ \mathbb{R} $-modulo sinistro}
 
-Sia $ R $ un anello commutativo unitario, un gruppo abeliano $ (A,+) $ è detto $ \mathbb{R} $\textit{-modulo sinistro} se esiste un'applicazione
+Sia $ R $ un anello commutativo unitario, un gruppo abeliano $ (A,+) $ è detto $ R $\textit{-modulo sinistro} se esiste un'applicazione
 
 \begin{align}
 	\begin{split}
@@ -1100,7 +1100,7 @@ per $ \forall r,s \in R $ e $ \forall a,b \in A $. Queste proprietà valgono sol
 
 \subsubsection{$ \mathbb{R} $-modulo destro}
 
-Sia $ R $ un anello commutativo unitario, un gruppo abeliano $ (A,+) $ è detto $ \mathbb{R} $\textit{-modulo destro} se esiste un'applicazione
+Sia $ R $ un anello commutativo unitario, un gruppo abeliano $ (A,+) $ è detto $ R $\textit{-modulo destro} se esiste un'applicazione
 
 \begin{align}
 	\begin{split}
@@ -1120,8 +1120,8 @@ tale che
 	\end{cases}
 \end{equation}
 
-per $ \forall r,s \in R $ e $ \forall a,b \in A $. Queste proprietà valgono solo da \textit{destra}, potrebbero non valere se calcolate da sinistra.\\
-Da queste definizioni, si dice che $ (A,+) $ è un $ \mathbb{R} $-modulo se è un $ \mathbb{R} $-modulo sinistro e destro, con $ \cdot \equiv * $.
+per $ \forall r,s \in R $ e $ \forall a,b \in A $. Queste proprietà valgono solo da \textit{destra}, potrebbero non valere se calcolate da sinistra.\\\\
+Da queste definizioni, si dice che $ (A,+) $ è un $ R $-modulo se è un $ R $-modulo sinistro e destro, con $ \cdot \equiv * $.
 
 \begin{remark}
 	Se un gruppo $ A $ è un $ R $-modulo e $ R $ è un campo $ \mathbb{K} $, allora $ A $ è uno spazio vettoriale in $ \mathbb{K} $.
@@ -1134,23 +1134,20 @@ Da queste definizioni, si dice che $ (A,+) $ è un $ \mathbb{R} $-modulo se è u
 \begin{proof}
 	Per dimostrare che $ (\chi(U),+) $ sia un $ C^{\infty}(U) $-modulo, è necessario dimostrare che la seguente applicazione (commutativa)
 	
-	\begin{align}
-		\begin{split}
-			K : C^{\infty}(U) \times \chi(U) \to& \, \chi(U)\\
-			(f,X) \mapsto& \, f X
-		\end{split}
-	\end{align}
+	\map{K}%
+		{C^{\infty}(U) \times \chi(U)}{\chi(U)}%
+		{(f,X)}{f X}
 
-	sia $ C^{\infty} $.\\
+	sia liscia.\\
 	Vedi Esercizio \ref{es1-9}.\\
 	Devono dunque essere verificate queste proprietà\footnote{%
 		Nonostante l'applicazione sia commutativa, scriveremo la funzione sempre a sinistra dei campi, per notazione.%
 	}:
-	
+
 	\begin{equation}
 		\begin{cases}
 			1_{C^{\infty}(U)} \cdot X = X\\
-			f (g \cdot X) = (f g) \cdot X\\
+			f \cdot (g \cdot X) = (f g) \cdot X\\
 			f \cdot (X+Y) = f \cdot X + f \cdot Y\\
 			(f+g) \cdot X = f \cdot X + g \cdot X
 		\end{cases}
@@ -1159,10 +1156,9 @@ Da queste definizioni, si dice che $ (A,+) $ è un $ \mathbb{R} $-modulo se è u
 	per $ \forall f,g \in C^{\infty}(U) $ e $ \forall X,Y \in \chi(U) $.
 \end{proof}
 
-I campi di vettori permettono di derivare funzioni, così come è possibile fare la derivata direzionale di una funzione rispetto ad un vettore e dunque rispetto ad un campo di vettori.
-
 \subsection{Derivata di funzione rispetto ad un campo di vettori} 
 
+I campi di vettori permettono di derivare funzioni, così come è possibile fare la derivata direzionale di una funzione rispetto ad un vettore e dunque rispetto ad un campo di vettori.\\
 Prendiamo $ X \in \chi(U) $ con $ U \subset \mathbb{R}^{n} $ aperto e $ f \in C^{\infty}(U) $. Definisco la derivata di $ f $ rispetto ad $ X $ come $ X f \in C^{\infty}(U) $. La derivata puntuale è definita come $ (X f) (p) = X_{p} f $ con $ p \in U $: se il campo è
 
 \begin{equation}
@@ -1197,7 +1193,7 @@ Posso considerare l'applicazione
 	\end{split}
 \end{align}
 
-ricordando che $ C^{\infty}(U) $, oltre ad essere un anello commutativo unitario, è un'algebra sui reali, perciò l'applicazione $ X $ è $ \mathbb{R} $-lineare. Inoltre, siccome $ X_{p} \in Der_{p}(C_{p}^{\infty}(\mathbb{R}^{n})) $ soddisfa la regola di Leibniz
+ricordando che $ C^{\infty}(U) $, oltre ad essere un anello commutativo unitario, è un'algebra sui reali, perciò l'applicazione $ X $ è $ \mathbb{R} $-lineare. Inoltre, siccome $ X_{p} \in Der_{p}(C_{p}^{\infty}(\mathbb{R}^{n})) $, soddisfa la regola di Leibniz
 
 \begin{align}
 	\begin{split}
@@ -1233,15 +1229,15 @@ Sia $ A $ un'algebra\footnote{%
 			\lambda (a \cdot b) = (\lambda a) \cdot b = a \cdot (\lambda b) & \text{omogeneità}
 		\end{cases}
 	\end{equation}
-	per $ \forall a,b,c \in A $ e $ \forall \lambda \in \mathbb{R} $.%
-} su un campo $ \mathbb{K} $, un'applicazione $ D : A \to A $ che sia $ \mathbb{R} $-lineare e tale che soddisfi la regola di Leibniz
+	per $ \forall a,b,c \in A $ e $ \forall \lambda \in \R $.%
+} su un campo $ \mathbb{K} $, un'applicazione $ D : A \to A $ che sia $ \K $-lineare e tale che soddisfi la regola di Leibniz
 
 \begin{equation}
 	D (a \cdot b) = (D a) \cdot b + a \cdot (D b)
 \end{equation}
 
 per $ \forall a,b \in A $, è chiamata \textit{derivazione dell'algebra} $ A $. L'insieme di tutte le derivazioni di un'algebra $ A $ viene indicato come $ Der(A) $.\\
-Vedi Esercizi \ref{es1-10} e \ref{es1-11}. \textbf{l 4 p 2 m 18}
+Vedi Esercizi \ref{es1-10} e \ref{es1-11}.
 
 \subsection{Campo di vettori liscio come derivazione dell'algebra $ C^{\infty}(U) $}
 
@@ -1260,7 +1256,7 @@ in cui
 	\phi(X) (f) \doteq X f
 \end{equation}
 
-Sia $ \chi(U) $ che $ Der(C^{\infty}(U)) $ sono $ C^{\infty}(U) $-modulo, in quanto l'applicazione
+Sia $ \chi(U) $ che $ Der(C^{\infty}(U)) $ sono $ C^{\infty}(U) $-modulo, dall'applicazione
 
 \begin{align}
 	\begin{split}
@@ -1275,7 +1271,7 @@ da cui
 	(f D) (g) = f (D g)
 \end{equation}
 
-Inoltre. $ \phi $ è anche $ C^{\infty}(U) $-lineare, i.e
+Inoltre $ \phi $ è anche $ C^{\infty}(U) $-lineare, i.e
 
 \begin{equation}
 	\phi(f X + g Y) = f \, \phi(X) + g \, \phi(Y)
@@ -1283,4 +1279,4 @@ Inoltre. $ \phi $ è anche $ C^{\infty}(U) $-lineare, i.e
 
 per $ \forall f,g \in C^{\infty}(U) $ e $ \forall X,Y \in \chi(U) $.\\
 Dimostreremo per le varietà differenziabili che $ \phi $ è un isomorfismo di $ C^{\infty}(U) $-moduli, i.e. $ \chi(U) \simeq Der(C^{\infty}(U)) $.\\
-Tramite questo isomorfismo, si possono identificare i campi di vettori lisci con le derivazioni dell'algebra delle funzioni $ C^{\infty} $, analogamente a come lo spazio tangente ad un punto di $ \mathbb{R}^{n} $ si può identificare con le derivazioni puntuali dell'algebra dei germi delle funzioni in quel punto, i.e. $ T_{p}(\mathbb{R}^{n}) \simeq Der_{p}(C_{p}^{\infty}(\mathbb{R}^{n})) $.
+Tramite questo isomorfismo, si possono identificare i campi di vettori lisci con le derivazioni dell'algebra delle funzioni lisce, analogamente a come lo spazio tangente ad un punto di $ \mathbb{R}^{n} $ si può identificare con le derivazioni puntuali dell'algebra dei germi delle funzioni in quel punto, i.e. $ T_{p}(\mathbb{R}^{n}) \simeq Der_{p}(C_{p}^{\infty}(\mathbb{R}^{n})) $.
