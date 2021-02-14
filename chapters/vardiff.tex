@@ -18,12 +18,13 @@ La coppia $ (U,\phi) $ è chiamata \textit{carta} intorno a $ p $; nel caso in c
 Diremo che, se lo spazio topologico è localmente omeomorfo a $ \mathbb{R}^{n} $, la sua dimensione è pari a $ \dim (X) = n $.
 
 \begin{remark}
-	Possiamo sempre assumere che $ \phi(U) \equiv \mathbb{R}^{n} $. Questo perché all'interno dell'immagine di $ U $ in $ \mathbb{R}^{n} $ (i.e. $ \phi(U) $) è sempre possibile trovare una palla centrata nell'origine con raggio $ \delta $ opportuno $ B_{\delta}(0) $ per la quale esista sempre un diffeomorfismo (e quindi un omeomorfismo) $ h : B_{\delta}(0) \to \mathbb{R}^{n} $; sia la carta $ (V,\psi) $ con $ V = \phi^{-1}(B_{\delta}(0)) $ aperto e $ \psi = h \circ \left. \phi \right|_{V} $ in cui $ \psi : V \to \mathbb{R}^{n} $ è un omeomorfismo: da questo si ottiene che, cambiando $ U $ e $ \phi $ se necessario, si può sempre assumere che l'immagine della carta sia $ \mathbb{R}^{n} $, dunque $ \psi(V) = \mathbb{R}^{n} $.
+	Possiamo sempre assumere che $ \phi(U) \equiv \mathbb{R}^{n} $. Questo perché all'interno dell'immagine di $ U $ in $ \mathbb{R}^{n} $ (i.e. $ \phi(U) $) è sempre possibile trovare una palla $ B_{\delta}(0) $ centrata nell'origine con raggio $ \delta $ opportuno per la quale esista sempre un diffeomorfismo (e quindi un omeomorfismo) $ h : B_{\delta}(0) \to \mathbb{R}^{n} $.\\
+	Sia la carta $ (V,\psi) $ con $ V = \phi^{-1}(B_{\delta}(0)) $ aperto e $ \psi = h \circ \left. \phi \right|_{V} $ in cui $ \psi : V \to \mathbb{R}^{n} $ è un omeomorfismo: da questo si ottiene che, cambiando $ U $ e $ \phi $ se necessario, si può sempre assumere che l'immagine della carta sia $ \mathbb{R}^{n} $, dunque $ \psi(V) = \mathbb{R}^{n} $.
 	
 	\img{0.4}{img4}
 \end{remark}
 
-Il vantaggio di avere una carta su uno spazio topologico è quello di poterlo ricondurre, almeno localmente, ad $ \mathbb{R} $.
+Il vantaggio di avere una carta su uno spazio topologico è quello di poterlo ricondurre, almeno localmente, ad $ \R^{n} $.
 
 \begin{remark}
 	Se $ (U,\phi) $ è una carta su $ X $
@@ -133,8 +134,8 @@ L'intersezione tra intervalli di tipo $ (a,b) $ produce intervalli dello stesso 
 		\end{cases}
 \end{equation}
 
-il risultato è l'unione di elementi di $ \mathfrak{B} $ e si ha lo stesso risultato per $ I_{A}(c,d) \cap I_{B}(c^{\prime},d^{\prime}) $.\\
-Vogliamo dunque mostrare che lo spazio e la sua topologia $ (S,\tau_{\mathfrak{B}}) $ sia $ N_{2} $ e localmente euclideo ma non $ T_{2} $.\\
+e analogamente per $ I_{A}(c,d) \cap I_{B}(c',d') $, il risultato è l'unione di elementi di $ \mathfrak{B} $.\\
+Vogliamo dunque mostrare che lo spazio, insieme alla sua topologia, $ (S,\tau_{\mathfrak{B}}) $ sia $ N_{2} $ e localmente euclideo ma non $ T_{2} $.\\
 Se consideriamo la topologia di $ S $ ristretta\footnote{%
 	$ \mathbb{R} \setminus \{0\} \subset S $ perché una base per $ \tau_{eucl.} $ è $ \mathfrak{B}_{\mathbb{R} \setminus \{0\}} = \left\{ (a,b) \, \middle| \, a<b, \, 0 \notin (a,b) \right\} \subset \mathfrak{B} $.%
 } a $ \mathbb{R} \setminus \{0\} \subset S $ otteniamo che $ \tau_{\left. \mathfrak{B} \right|_{\mathbb{R} \setminus \{0\}}} = \tau_{euclidea} $, possiamo quindi trovare una famiglia numerabile tale che ogni intervallo della forma $ (a,b) $ possa essere scritto come unione di questa famiglia numerabile proprio perché $ \mathbb{R} \setminus \{0\} $ è $ N_{2} $, i.e.
@@ -163,13 +164,13 @@ Mostriamo che $ (S,\tau_{\mathfrak{B}}) $ sia localmente euclideo, costruendo un
 
 \begin{align}
 	\begin{split}
-		\phi : I_{A}(c,d) \to& \, (-c,d) \in \mathbb{R}\\
-		x \mapsto& \, x\\
-		A \mapsto& \, 0
+		\phi : I_{A}(c,d) &\to (-c,d) \subset \mathbb{R}\\
+		x &\mapsto x\\
+		A &\mapsto 0
 	\end{split}
 \end{align}
 
-la quale è un omeomorfismo, perché è una bigezione continua. Per la continuità, prendiamo un intervallo di $ (e,f) \in (-c,d) $ con $ 0 \notin (e,f) $ la cui controimmagine è sé stesso, i.e. $ \phi^{-1}((e,f)) = (e,f) \in \tau_{\mathfrak{B}} $; se invece $ (-e,f) $ con $ e,f>0 $, la sua controimmagine sarà $ \phi^{-1}((-e,f)) = I_{A}(e,f) \in \tau_{\mathfrak{B}} $ il quale è un aperto. Per mostrare che $ \phi $ sia effettivamente continua dobbiamo verificare che la sua inversa $ \phi^{-1} $ si anch'essa continua, ma è equivalente a mostrare che $ \phi $ sia aperta\footnote{%
+la quale è un omeomorfismo, perché è una bigezione continua. Per la continuità, prendiamo un intervallo $ (e,f) \subset (-c,d) $ con $ 0 \notin (e,f) $ la cui controimmagine è sé stesso, i.e. $ \phi^{-1}((e,f)) = (e,f) \in \tau_{\mathfrak{B}} $; se invece $ (-e,f) $ con $ e,f>0 $, la sua controimmagine sarà $ \phi^{-1}((-e,f)) = I_{A}(e,f) \in \tau_{\mathfrak{B}} $ il quale è un aperto. Per mostrare che $ \phi $ sia effettivamente continua dobbiamo verificare che la sua inversa $ \phi^{-1} $ sia anch'essa continua, ma è equivalente a mostrare che $ \phi $ sia aperta\footnote{%
 	Un'applicazione aperta associa aperti ad aperti.%
 }: sia che si prenda un intervallo $ (e,f) $ oppure $ I_{A}(e,f) $, si ottiene come immagine comunque un aperto, perciò è continua e lo spazio è localmente euclideo.\\
 Infine troviamo che $ (S,\tau_{\mathfrak{B}}) $ non è $ T_{2} $ perché due aperti di questo spazio che contengono $ A $ e $ B $ rispettivamente si devono necessariamente intersecare, i.e. vale sempre $ I_{A}(c,d) \cap I_{B}(e,f) \neq \{\} $.
@@ -178,15 +179,13 @@ Infine troviamo che $ (S,\tau_{\mathfrak{B}}) $ non è $ T_{2} $ perché due ape
 
 \subsubsection{Atlanti topologici}
 
-Sia $ M $ uno spazio topologico, un \textit{atlante topologico su } $ M $ è una famiglia di carte $ \{(U_{\alpha},\phi_{\alpha})\}_{\alpha \in A} $ tali che
+Sia $ M $ uno spazio topologico, un \textit{atlante topologico su} $ M $ è una famiglia di carte $ \{(U_{\alpha},\phi_{\alpha})\}_{\alpha \in A} $ tali che
 
 \begin{equation}
 	\bigcup_{\alpha \in A} U_{\alpha} = M
 \end{equation}
 
-i.e. la famiglia delle carte è un \textit{ricoprimento}\footnote{%
-	???.%
-} dello spazio topologico, il quale è localmente euclideo.
+i.e. la famiglia delle carte è un \textit{ricoprimento} dello spazio topologico, il quale è localmente euclideo.
 
 \subsubsection{Compatibilità tra carte}
 
@@ -199,7 +198,7 @@ Due carte $ (U,\phi) $ e $ (V,\psi) $ di uno spazio topologico $ M $ sono $ C^{\
 	\end{split}
 \end{align}
 
-sono $ C^{\infty} $.
+sono lisce.
 
 \begin{figure}[H]
 	\centering
@@ -251,7 +250,7 @@ scrivendo
 	\end{split}
 \end{align}
 
-l'applicazione $ \phi_{3} \circ \phi_{2}^{-1} $ è $ C^{\infty}(\phi_{2}(U_{23})) $ e $ \phi_{2} \circ \phi_{1}^{-1} $ è $ C^{\infty}(\phi_{1}(U_{12})) $ dunque $ \phi_{3} \circ \phi_{1}^{-1} $ è sicuramente $ C^{\infty}(\phi_{1}(U_{123})) $ ma non sappiamo a priori il suo comportamento in $ \phi_{1}(U_{13 \setminus U_{123}}) $, dunque non possiamo dire che $ \phi_{3} \circ \phi_{1}^{-1} $ sia $ C^{\infty} $ e perciò la $ C^{\infty} $-compatibilità non è transitiva.\\\\
+l'applicazione $ \phi_{3} \circ \phi_{2}^{-1} $ è $ C^{\infty}(\phi_{2}(U_{23})) $ e $ \phi_{2} \circ \phi_{1}^{-1} $ è $ C^{\infty}(\phi_{1}(U_{12})) $ dunque $ \phi_{3} \circ \phi_{1}^{-1} $ è sicuramente $ C^{\infty}(\phi_{1}(U_{123})) $ ma non sappiamo a priori il suo comportamento in $ \phi_{1}(U_{13} \setminus U_{123}) $, dunque non possiamo dire che $ \phi_{3} \circ \phi_{1}^{-1} $ sia $ C^{\infty} $ e perciò la $ C^{\infty} $-compatibilità non è transitiva.\\\\
 %
 Sia $ \mathfrak{U} = \{(U_{\alpha},\phi_{\alpha})\} $ un atlante topologico di uno spazio $ M $, diremo che $ (V,\psi) $ carta di $ M $ è $ C^{\infty} $-compatibile con $ \mathfrak{U} $ se $ (V,\psi) $ è $ C^{\infty} $-compatibile con $ (U_{\alpha},\phi_{\alpha}) $ per $ \forall \alpha \in A $.\\\\
 %
@@ -267,10 +266,10 @@ Sia $ \mathfrak{U} $ un atlante topologico su $ M $, se due carte $ (V,\psi) $ e
 		\end{split}
 	\end{align}
 
-	siano $ C^{\infty} $.\\
-	Prendiamo $ \phi \circ \psi^{-1} $: questa è $ C^{\infty} $ se per $ \forall p \in V \cap W $, $ \phi \circ \psi^{-1} $ è $ C^{\infty} $ in $ \psi(p) \in V \cap W $.\\
-	Essendo l'atlante $ \mathfrak{U} $ un ricoprimento di $ M $, esisterà una carta $ (U_{\alpha},\phi_{\alpha}) \ni p $ dunque $ p \in U_{\alpha} \cap V \cap W $: potendo scrivere $ \phi \circ \psi^{-1} = \phi \circ \phi_{\alpha}^{-1} \circ \phi_{\alpha} \circ \psi^{-1} $ questa è $ C^{\infty} $ in $ \psi(U_{\alpha} \cap V \cap W) $.\\
-	Questo conclude la dimostrazione perché abbiamo trovato un aperto che contiene il punto, i.e. $ p \in U_{\alpha} \cap V \cap W $ per $ p $ arbitrario, in cui l'applicazione sia $ C^{\infty} $, la quale è una proprietà locale.
+	siano lisce.\\
+	Prendiamo $ \phi \circ \psi^{-1} $: questa è liscia se, per $ \forall p \in V \cap W $, $ \phi \circ \psi^{-1} $ è liscia in $ \psi(p) \in V \cap W $.\\
+	Essendo l'atlante $ \mathfrak{U} $ un ricoprimento di $ M $, esisterà una carta $ (U_{\alpha},\phi_{\alpha}) \ni p $ dunque $ p \in U_{\alpha} \cap V \cap W $: potendo scrivere $ \phi \circ \psi^{-1} = \phi \circ \phi_{\alpha}^{-1} \circ \phi_{\alpha} \circ \psi^{-1} $ questa è liscia in $ \psi(U_{\alpha} \cap V \cap W) $.\\
+	Questo conclude la dimostrazione perché abbiamo trovato un aperto che contiene il punto, i.e. $ p \in U_{\alpha} \cap V \cap W $ per $ p $ arbitrario, in cui l'applicazione sia liscia, la quale è una proprietà locale.
 	
 \end{proof}
 
