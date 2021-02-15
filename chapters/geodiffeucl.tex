@@ -2,29 +2,29 @@
 
 \subsection{Funzioni $ C^{\infty} $}
 
-Prendiamo $ \mathbb{R}^{n} $ con $ n \geq 1 $ e $ U \subset \mathbb{R}^{n} $ aperto e prendiamo una funzione $ f : U \to \mathbb{R} $; prendo $ p \in U $, diremo che $ f \in C^{k} $ o \textit{liscia} in $ p $ con $ k \in \mathbb{N} $ se le derivate $ k $-esime di $ f $, definite come
+Prendiamo $ \R^{n} $ con $ n \geq 1 $ e $ U \subset \R^{n} $ aperto e prendiamo una funzione $ f : U \to \R $; prendo $ p \in U $, diremo che $ f \in C^{k} $ o \textit{liscia} in $ p $ con $ k \in \N $ se le derivate $ k $-esime di $ f $, definite come
 
 \begin{equation}
-	\dfrac{\partial^{k} f}{\partial x^{1} \cdots \partial x^{k}}, \quad k \in \mathbb{N}
+	\dfrac{\partial^{k} f}{\partial x^{1} \cdots \partial x^{k}}, \quad k \in \N
 \end{equation}
 
 esistono e sono continue in $ p $.\\
 Prendendo $ k = 0 $, $ f \in C^{0} \iff $ $ f $ è continua.\\
 Diremo che $ f \in C^{k} $ in $ U $ se $ f \in C^{k} $ in $ p $, $ \forall p \in U $.\\
-Diremo che $ f \in C^{\infty} $ o liscia in $ p $ se $ f \in C^{k} $ in $ p $, $ \forall k \in \mathbb{N} $.\\
+Diremo che $ f \in C^{\infty} $ o liscia in $ p $ se $ f \in C^{k} $ in $ p $, $ \forall k \in \N $.\\
 Diremo che $ f \in C^{\infty} $ o liscia in $ U $ se $ f \in C^{\infty} $, $ \forall p \in U $, perciò una funzione è $ C^{\infty} $ se esistono e sono finite le sue derivate di qualunque ordine. Queste funzioni sono quelle su cui si basa il concetti di varietà differenziabile.\\
 
-Per generalizzare, consideriamo le funzioni definite non in $ \mathbb{R} $ ma in $ \mathbb{R}^{n} $.\\
-Una funzione $ f : U \to \mathbb{R}^{m} $ con $ m \geq 1 $ e $ U \subset \mathbb{R}^{m} $ aperto è $ C^{k} $ in $ p $ se tutte le sue componenti $ f^{j} : U \to \mathbb{R} $ sono $ f^{j} \in C^{k} $ in $ p $ con $ k \geq 0 $. Nello specifico, $ f = (f^{1}, \dots, f^{m}) $ oppure $ f^{j} = \pi_{j} \circ f $ dove $ \pi_{j} $ è la proiezione $ \pi_{j} : \mathbb{R}^{m} \to \mathbb{R} $ con $ (x^{1}, \dots, x^{m}) \mapsto x^{j} $, $ j = 1, \dots, m $.\\
-Una funzione $ f : U \to \mathbb{R}^{m} $ è $ C^{k} $ in $ U $ se $ f^{j} \in C^{k} $ in $ U $.\\
-Una funzione $ f : U \to \mathbb{R}^{m} $ è $ C^{\infty} $ in $ p \in U $ se $ f^{j} \in C^{\infty} $ in $ p $, $ \forall j = 1, \dots, m $.\\
-Una funzione $ f : U \to \mathbb{R}^{m} $ è $ C^{\infty} $ in $ U $ se $ f^{j} \in C^{\infty} $ in $ U $, $ \forall j = 1, \dots, m $.
+Per generalizzare, consideriamo le funzioni definite non in $ \R $ ma in $ \R^{n} $.\\
+Una funzione $ f : U \to \R^{m} $ con $ m \geq 1 $ e $ U \subset \R^{m} $ aperto è $ C^{k} $ in $ p $ se tutte le sue componenti $ f^{j} : U \to \R $ sono $ f^{j} \in C^{k} $ in $ p $ con $ k \geq 0 $. Nello specifico, $ f = (f^{1}, \dots, f^{m}) $ oppure $ f^{j} = \pi_{j} \circ f $ dove $ \pi_{j} $ è la proiezione $ \pi_{j} : \R^{m} \to \R $ con $ (x^{1}, \dots, x^{m}) \mapsto x^{j} $, $ j = 1, \dots, m $.\\
+Una funzione $ f : U \to \R^{m} $ è $ C^{k} $ in $ U $ se $ f^{j} \in C^{k} $ in $ U $.\\
+Una funzione $ f : U \to \R^{m} $ è $ C^{\infty} $ in $ p \in U $ se $ f^{j} \in C^{\infty} $ in $ p $, $ \forall j = 1, \dots, m $.\\
+Una funzione $ f : U \to \R^{m} $ è $ C^{\infty} $ in $ U $ se $ f^{j} \in C^{\infty} $ in $ U $, $ \forall j = 1, \dots, m $.
 
 \subsubsection{\textit{Esempi}}
 
 \paragraph{1.}
 
-Sia $ f : \mathbb{R} \to \mathbb{R} $ con $ x \mapsto x^{1/3} $. La funzione è continua ($ f \in C^{0} $) ed è un omeomorfismo\footnote{%
+Sia $ f : \R \to \R $ con $ x \mapsto x^{1/3} $. La funzione è continua ($ f \in C^{0} $) ed è un omeomorfismo\footnote{%
 	Sia la funzione che la sua inversa sono continue.%
 } ma $ f \notin C^{1} $ nell'origine $ p = 0 $ perché
 
@@ -32,21 +32,21 @@ Sia $ f : \mathbb{R} \to \mathbb{R} $ con $ x \mapsto x^{1/3} $. La funzione è 
 	f^{\prime} = \dfrac{x^{-2/3}}{3}
 \end{equation}
 
-la quale non è definita nell'origine e dunque $ f \notin C^{1} (\mathbb{R}) $.
+la quale non è definita nell'origine e dunque $ f \notin C^{1} (\R) $.
 
 \paragraph{2.}
 
 Se volessi costruire una funzione che sia $ C^{1} $ ma non $ C^{2} $, potrei integrare la $ f $ del punto precedente.\\
-Sia $ g : \mathbb{R} \to \mathbb{R} $ con
+Sia $ g : \R \to \R $ con
 
 \begin{align}
 	\begin{split}
-		g (x) =& \, \int_{0}^{x} f (t) \operatorname{dt}\\
-		=& \, \dfrac{3 x^{2/3}}{4}
+		g (x) &= \int_{0}^{x} f (t) \operatorname{dt}\\
+		&= \dfrac{3 x^{2/3}}{4}
 	\end{split} 
 \end{align}
 
-da cui si ottiene che $ g \in C^{1} (\mathbb{R}) $ ma $ g \notin C^{2} (\mathbb{R}) $.
+da cui si ottiene che $ g \in C^{1} (\R) $ ma $ g \notin C^{2} (\R) $.
 
 \paragraph{3.}
 
@@ -54,12 +54,12 @@ Vedi Esercizio \ref{es1-1}.
 
 \subsection{Funzioni reali analitiche}
 
-Dato $ p \in \mathbb{R}^{n} $, un intorno $ U $ di $ p $ è un aperto di $ \mathbb{R}^{n} $ che contiene $ p $.\\
-Sia $ f : U \to \mathbb{R} $ con $ U \subset \mathbb{R}^{n} $ aperto, diremo che $ f $ è \textit{reale analitica} in $ p \in U $ se $ f $ coincide con il suo sviluppo di Taylor intorno a $ p $. Questo significa che se prendo una funzione $ f (x) $ con $ x = (x^{1}, \dots, x^{n}) $ e $ p = (p^{1}, \dots, p^{n}) $ ho che
+Dato $ p \in \R^{n} $, un intorno $ U $ di $ p $ è un aperto di $ \R^{n} $ che contiene $ p $.\\
+Sia $ f : U \to \R $ con $ U \subset \R^{n} $ aperto, diremo che $ f $ è \textit{reale analitica} in $ p \in U $ se $ f $ coincide con il suo sviluppo di Taylor intorno a $ p $. Questo significa che se prendo una funzione $ f (x) $ con $ x = (x^{1}, \dots, x^{n}) $ e $ p = (p^{1}, \dots, p^{n}) $ ho che
 
 \begin{align}
 	\begin{split}
-		f (x) =& \, f (p) + \sum_{i=1}^{n} \dfrac{\partial f}{\partial x^{i}} (p) (x^{i} - p^{i}) + \dfrac{1}{2} \sum_{i,j=1}^{n} \dfrac{\partial^{2} f}{\partial x^{i} \partial x^{j}} (p) (x^{i} - p^{i}) (x^{j} - p^{j}) +\\
+		f (x) &= f (p) + \sum_{i=1}^{n} \dfrac{\partial f}{\partial x^{i}} (p) (x^{i} - p^{i}) + \dfrac{1}{2} \sum_{i,j=1}^{n} \dfrac{\partial^{2} f}{\partial x^{i} \partial x^{j}} (p) (x^{i} - p^{i}) (x^{j} - p^{j}) +\\
 		& \, + \cdots + \sum_{i_{1},\dots,i_{k}=1}^{n} \dfrac{\partial^{k} f}{\partial x^{i_{1}} \cdots \partial x^{i_{k}}} (p) (x^{i_{1}} - p^{i_{1}}) \cdots (x^{i_{k}} - p^{i_{k}}) + \cdots
 	\end{split}
 \end{align}
@@ -74,8 +74,8 @@ La funzione $ f (x) = \sin x $ è $ C^{\infty} $ reale analitica e ha sviluppo d
 
 \begin{align}
 	\begin{split}
-		\sin x =& \, x - \dfrac{x^{3}}{3!} + \dfrac{x^{5}}{5!} - \dots\\
-		=& \, \sum_{j=0}^{\infty} (-1)^{j} \dfrac{x^{2j+1}}{(2j+1)!}
+		\sin x &= x - \dfrac{x^{3}}{3!} + \dfrac{x^{5}}{5!} - \dots\\
+		&= \sum_{j=0}^{\infty} (-1)^{j} \dfrac{x^{2j+1}}{(2j+1)!}
 	\end{split}
 \end{align}
 
@@ -83,10 +83,10 @@ Per calcolare la derivata posso derivare termine a termine lo sviluppo di Taylor
 
 \begin{align}
 	\begin{split}
-		\dfrac{\operatorname{d}}{\operatorname{dx}} \sin x =& \, \dfrac{\operatorname{d}}{\operatorname{dx}} \sum_{j=0}^{\infty} (-1)^{j} \dfrac{x^{2j+1}}{(2j+1)!}\\
-		=& \, \sum_{j=0}^{\infty} (-1)^{j} (2j+1) \dfrac{x^{2j}}{(2j+1)!}\\
-		=& \, \sum_{j=0}^{\infty} (-1)^{j} \dfrac{x^{2j}}{(2j)!}\\
-		=& \, \cos x
+		\dfrac{\operatorname{d}}{\operatorname{dx}} \sin x &= \dfrac{\operatorname{d}}{\operatorname{dx}} \sum_{j=0}^{\infty} (-1)^{j} \dfrac{x^{2j+1}}{(2j+1)!}\\
+		&= \sum_{j=0}^{\infty} (-1)^{j} (2j+1) \dfrac{x^{2j}}{(2j+1)!}\\
+		&= \sum_{j=0}^{\infty} (-1)^{j} \dfrac{x^{2j}}{(2j)!}\\
+		&= \cos x
 	\end{split}
 \end{align}
 
@@ -96,18 +96,18 @@ Per trovare la derivata di $ f(x) = e^{x} $ ripeto lo stesso procedimento
 
 \begin{align}
 	\begin{split}
-		\dfrac{\operatorname{d}}{\operatorname{dx}} e^{x} =& \, \dfrac{\operatorname{d}}{\operatorname{dx}} \sum_{j=0}^{\infty}\dfrac{x^{j}}{j!}\\
-		=& \, \sum_{j=0}^{\infty} j \, \dfrac{x^{j-1}}{j!}\\
-		=& \, \sum_{j=0}^{\infty} \dfrac{x^{j-1}}{(j-1)!}\\
-		=& \, \sum_{n=-1}^{\infty} \dfrac{x^{n}}{n!}\\
-		=& \, \sum_{n=0}^{\infty} \dfrac{x^{n}}{n!}\\
-		=& \, e^{x}
+		\dfrac{\operatorname{d}}{\operatorname{dx}} e^{x} &= \dfrac{\operatorname{d}}{\operatorname{dx}} \sum_{j=0}^{\infty}\dfrac{x^{j}}{j!}\\
+		&= \sum_{j=0}^{\infty} j \, \dfrac{x^{j-1}}{j!}\\
+		&= \sum_{j=0}^{\infty} \dfrac{x^{j-1}}{(j-1)!}\\
+		&= \sum_{n=-1}^{\infty} \dfrac{x^{n}}{n!}\\
+		&= \sum_{n=0}^{\infty} \dfrac{x^{n}}{n!}\\
+		&= e^{x}
 	\end{split}
 \end{align}
 
 \paragraph{3.}
 
-Un esempio di funzione $ C^{\infty} $ ma non reale analitica è $ f : \mathbb{R} \to \mathbb{R} $ con
+Un esempio di funzione $ C^{\infty} $ ma non reale analitica è $ f : \R \to \R $ con
 
 \begin{equation}
 	f(x) = \begin{cases}
@@ -133,7 +133,7 @@ Per controllare che sia $ C^{\infty} $ dovrei verificare che
 
 Vedi Esercizio \ref{es1-2}.
 
-Tutto questo ci dice che $ f \in C^{\infty}(\mathbb{R}) $. Se fosse anche reale analitica, dovrebbe coincidere con il suo sviluppo in serie di Taylor anche nell'origine, dunque
+Tutto questo ci dice che $ f \in C^{\infty}(\R) $. Se fosse anche reale analitica, dovrebbe coincidere con il suo sviluppo in serie di Taylor anche nell'origine, dunque
 
 \begin{align}
 	\begin{split}
@@ -141,41 +141,41 @@ Tutto questo ci dice che $ f \in C^{\infty}(\mathbb{R}) $. Se fosse anche reale 
 	\end{split}
 \end{align}
 
-ma $ f(x) $ nell'intorno di 0 è nulla solo per $ x \leqslant 0 $ mentre lo sviluppo di Taylor è sempre nullo: questa contraddizione porta a dire che, nonostante $ f \in C^{\infty}(\mathbb{R}) $, questa non è reale analitica, scritto anche come $ f \notin C^{\omega}(\mathbb{R}) $.\\
-Un altro motivo per il quale $ f \notin C^{\omega}(\mathbb{R}) $ segue dal fatto che se $ f : U \to \mathbb{R} $ con $ U \in \mathbb{R} $ aperto è reale analitica e $ f = 0 $ in un aperto, allora $ f \equiv 0 $ ovunque\footnote{%
+ma $ f(x) $ nell'intorno di 0 è nulla solo per $ x \leqslant 0 $ mentre lo sviluppo di Taylor è sempre nullo: questa contraddizione porta a dire che, nonostante $ f \in C^{\infty}(\R) $, questa non è reale analitica, scritto anche come $ f \notin C^{\omega}(\R) $.\\
+Un altro motivo per il quale $ f \notin C^{\omega}(\R) $ segue dal fatto che se $ f : U \to \R $ con $ U \in \R $ aperto è reale analitica e $ f = 0 $ in un aperto, allora $ f \equiv 0 $ ovunque\footnote{%
 	Vale anche se è uguale ad una costante diversa da 0.}.
 
-\section{Diffeomorfismi tra aperti di $ \mathbb{R}^{n} $}
+\section{Diffeomorfismi tra aperti di $ \R^{n} $}
 
-Prendiamo $ U, V \in \mathbb{R}^{n} $ aperti, diremo che $ f : U \to V $ è un \textit{diffeomorfismo} se è una bigezione\footnote{%
+Prendiamo $ U, V \in \R^{n} $ aperti, diremo che $ f : U \to V $ è un \textit{diffeomorfismo} se è una bigezione\footnote{%
 	Perciò è invertibile.%
 }, $ f \in C^{\infty} $ e la sua inversa $ g : V \to U $ è  $ g \in C^{\infty} $.\\
-Ad esempio, la funzione $ f : \mathbb{R} \to \mathbb{R} $ con $ x \mapsto x^{3} $ è una bigezione, è $ C^{\infty} $ ma la sua inversa non lo è, dunque $ f $ non è un diffeomorfismo.\\
+Ad esempio, la funzione $ f : \R \to \R $ con $ x \mapsto x^{3} $ è una bigezione, è $ C^{\infty} $ ma la sua inversa non lo è, dunque $ f $ non è un diffeomorfismo.\\
 Quando esiste un diffeomorfismo tra due aperti, si dice che questi sono diffeomorfi: $ U $ e $ V $ sono diffeomorfi se $ \exists f : U \to V $ diffeomorfismo, i.e. $ U \simeq V $.\\
 
 \begin{theorem}[Invarianza topologica della dimensione]
-	Se $ U \subset \mathbb{R}^{n} $ e $ V \subset \mathbb{R}^{m} $ sono aperti omeomorfi allora $ n = m $.
+	Se $ U \subset \R^{n} $ e $ V \subset \R^{m} $ sono aperti omeomorfi allora $ n = m $.
 \end{theorem}
 
 \begin{theorem}[Invarianza differenziabile della dimensione]
-	Se $ U \subset \mathbb{R}^{n} $ e $ V \subset \mathbb{R}^{m} $ sono aperti diffeomorfi allora $ n = m $\footnote{%
+	Se $ U \subset \R^{n} $ e $ V \subset \R^{m} $ sono aperti diffeomorfi allora $ n = m $\footnote{%
 		Questo teorema implica quello di "Invarianza topologia della dimensione" in quanto la condizione di diffeomorfismo implica quella di omeomorfismo.}.
 \end{theorem}
 
 \`{E} naturale verificare se gli spazi legati da omeomorfismi siano legati anche da diffeomorfismi.\\
-I seguenti sottoinsiemi di $ \mathbb{R} $
+I seguenti sottoinsiemi di $ \R $
 
 \begin{itemize}
 	\item $ (a,b) $ con $ a < b $
 	
-	\item $ \mathbb{R} $
+	\item $ \R $
 	
 	\item $ (c, + \infty) $
 	
 	\item $ (- \infty, d) $
 \end{itemize}
 
-per  $ \forall a,b,c,d \in \mathbb{R} $ sono aperti di $ \mathbb{R} $ diffeomorfi\footnote{%
+per  $ \forall a,b,c,d \in \R $ sono aperti di $ \R $ diffeomorfi\footnote{%
 	Vedi Esercizio \ref{es1-3}.%
 }.
 
@@ -184,15 +184,15 @@ per  $ \forall a,b,c,d \in \mathbb{R} $ sono aperti di $ \mathbb{R} $ diffeomorf
 Con $ B_{1} (0) $ si indica la \textit{palla} di centro l'origine e raggio unitario. In simboli
 
 \begin{equation}
-	B_{1} (0) = \left\{ x \in \mathbb{R}^{n} \, \middle| \, \norm{x} \doteq \sqrt{\sum_{i=1}^{n} (x^{i})^{2}} < 1 \right\}
+	B_{1} (0) = \left\{ x \in \R^{n} \, \middle| \, \norm{x} \doteq \sqrt{\sum_{i=1}^{n} (x^{i})^{2}} < 1 \right\}
 \end{equation}
 
-Per $ n=1 $, $ B_{1} (0) \equiv (-1,1) \simeq \mathbb{R} $.\\
+Per $ n=1 $, $ B_{1} (0) \equiv (-1,1) \simeq \R $.\\
 Definisco
 
 \begin{align}
 	\begin{split}
-		f : B_{1} (0) &\to \mathbb{R}^{n}\\
+		f : B_{1} (0) &\to \R^{n}\\
 		x &\mapsto \left( \dfrac{x^{1}}{\sqrt{1 - \norm{x}^{2}}}, \cdots, \dfrac{x^{n}}{\sqrt{1 - \norm{x}^{2}}} \right)
 	\end{split}	
 \end{align}
@@ -202,21 +202,21 @@ L'inversa è
 
 \begin{align}
 	\begin{split}
-		f^{-1} : \mathbb{R}^{n} \to& \, B_{1} (0)\\
-		x \mapsto& \, \left( \dfrac{x^{1}}{\sqrt{1 + \norm{x}^{2}}}, \cdots, \dfrac{x^{n}}{\sqrt{1 + \norm{x}^{2}}} \right)
+		f^{-1} : \R^{n} &\to B_{1} (0)\\
+		x &\mapsto \left( \dfrac{x^{1}}{\sqrt{1 + \norm{x}^{2}}}, \cdots, \dfrac{x^{n}}{\sqrt{1 + \norm{x}^{2}}} \right)
 	\end{split}
 \end{align}
 
-perché $ f \circ g = \operatorname{id}_{\mathbb{R}^{n}} \, \wedge \, g \circ f = \operatorname{id}_{B_{1} (0)} $.\\
-Perché $ f, f^{-1} \in C^{\infty} $ dobbiamo verificare che ogni loro componente lo sia, il quale è verificato perché la derivata di una delle componenti di $ f $ ha al denominatore sempre $ \sqrt{1 - \norm{x}^{2}} \in B_{1} (0) $ e lo stesso vale per la sua inversa $ \sqrt{1 + \norm{x}^{2}} \in \mathbb{R}^{n} $.
+perché $ f \circ g = \id_{\R^{n}} \, \wedge \, g \circ f = \id_{B_{1} (0)} $.\\
+Perché $ f, f^{-1} \in C^{\infty} $ dobbiamo verificare che ogni loro componente lo sia, il quale è verificato perché la derivata di una delle componenti di $ f $ ha al denominatore sempre $ \sqrt{1 - \norm{x}^{2}} \in B_{1} (0) $ e lo stesso vale per la sua inversa $ \sqrt{1 + \norm{x}^{2}} \in \R^{n} $.
 
 \begin{corollary}
-	La palla di centro $ c $ e raggio $ \delta $ con $ c \in \mathbb{R}^{n} $ e $ \delta \geqslant 0 $ è diffeomorfa a $ \mathbb{R}^{n} $, i.e. $ B_{\delta} (c) \simeq \mathbb{R}^{n} $.
+	La palla di centro $ c $ e raggio $ \delta $ con $ c \in \R^{n} $ e $ \delta \geqslant 0 $ è diffeomorfa a $ \R^{n} $, i.e. $ B_{\delta} (c) \simeq \R^{n} $.
 \end{corollary}
 
 Per dimostrare questo è necessario dimostrare che siano diffeomorfismi le traslazioni (le quali sono lineari e affini) e le omotetie (scala di un fattore $ \delta $); questa dimostrazione mostra anche che $ B_{1} (0) \simeq B_{\delta} (c) $.\\
 Vedi Esercizio \ref{es1-4}.\\
-Per praticità di notazione, chiamiamo $ h $ il diffeomorfismo $ B_{\delta} (c) \to \mathbb{R}^{n} $ definito sopra. Per far vedere come nasce questo diffeomorfismo, si può usare la seguente costruzione geometrica
+Per praticità di notazione, chiamiamo $ h $ il diffeomorfismo $ B_{\delta} (c) \to \R^{n} $ definito sopra. Per far vedere come nasce questo diffeomorfismo, si può usare la seguente costruzione geometrica
 
 \begin{figure}[H]
 	\centering
@@ -296,19 +296,19 @@ Per praticità di notazione, chiamiamo $ h $ il diffeomorfismo $ B_{\delta} (c) 
 
 \end{figure}
 
-Consideriamo la semicalotta aperta in $ \mathbb{R}^{n+1} $ centrata in $ (0,0,1) $ di raggio $ 1 $:
+Consideriamo la semicalotta aperta in $ \R^{n+1} $ centrata in $ (0,0,1) $ di raggio $ 1 $:
 
 \begin{equation}
-	S = \left\{ (x^{1}, \dots, x^{n+1}) \in \mathbb{R}^{n+1} \middle| (x^{n+1})^{2} + \sum_{i=1}^{n} (x^{i})^{2} = 1 \, \wedge \, x^{n+1} < 1 \right\}
+	S = \left\{ (x^{1}, \dots, x^{n+1}) \in \R^{n+1} \middle| (x^{n+1})^{2} + \sum_{i=1}^{n} (x^{i})^{2} = 1 \, \wedge \, x^{n+1} < 1 \right\}
 \end{equation}
 
 La palla $ B_{1}(0) $ vive nella proiezione della semicalotta sull'iperpiano $ (x^{1}, \dots, x^{n}) $, definita come
 
 \begin{equation}
-	B_{1}(0) = \left\{ x \in \mathbb{R}^{n} \middle| \norm{x} < 1 \right\}
+	B_{1}(0) = \left\{ x \in \R^{n} \middle| \norm{x} < 1 \right\}
 \end{equation}
 
-Questa proiezione permette di costruire l'applicazione $ h $ in due passaggi: prima prendiamo un punto in $ B_{1}(0) $, lo proiettiamo su $ S $ e, con una proiezione stereografica, lo portiamo su $ \mathbb{R}^{n} $. La prima applicazione è $ f : B_{1}(0) \to S $ mentre la seconda $ g : S \to \mathbb{R}^{n} $, cioè la proiezione stereografica dal punto $ (0,0,1) $. Dico dunque che $ g \circ f = h $. Le mappe sono
+Questa proiezione permette di costruire l'applicazione $ h $ in due passaggi: prima prendiamo un punto in $ B_{1}(0) $, lo proiettiamo su $ S $ e, con una proiezione stereografica, lo portiamo su $ \R^{n} $. La prima applicazione è $ f : B_{1}(0) \to S $ mentre la seconda $ g : S \to \R^{n} $, cioè la proiezione stereografica dal punto $ (0,0,1) $. Dico dunque che $ g \circ f = h $. Le mappe sono
 
 \begin{equation}
 	f (x^{1},\dots,x^{n+1}) = \left( x^{1},\dots,x^{n},1-\sqrt{1-\norm{x}^{2}} \right)
@@ -322,19 +322,19 @@ da cui
 
 \begin{align}
 	\begin{split}
-		h (x^{1},\dots,x^{n+1}) =& \, (g \circ f) (x^{1},\dots,x^{n+1})\\
-		=& \, g \left( x^{1},\dots,x^{n},1-\sqrt{1-\norm{x}^{2}} \right)\\
-		=& \, \left( \dfrac{x^{1}}{\sqrt{1 - \norm{x}^{2}}}, \cdots, \dfrac{x^{n}}{\sqrt{1 - \norm{x}^{2}}} \right)
+		h (x^{1},\dots,x^{n+1}) &= (g \circ f) (x^{1},\dots,x^{n+1})\\
+		&= g \left( x^{1},\dots,x^{n},1-\sqrt{1-\norm{x}^{2}} \right)\\
+		&= \left( \dfrac{x^{1}}{\sqrt{1 - \norm{x}^{2}}}, \cdots, \dfrac{x^{n}}{\sqrt{1 - \norm{x}^{2}}} \right)
 	\end{split}
 \end{align}
 
-A questo punto $ B_{1} (0) \simeq \mathbb{R}^{n} $: dal punto di vista della geometria differenziale, due oggetti diffeomorfi vengono considerati equivalenti\footnote{%
+A questo punto $ B_{1} (0) \simeq \R^{n} $: dal punto di vista della geometria differenziale, due oggetti diffeomorfi vengono considerati equivalenti\footnote{%
 	In topologia, vale lo stesso ragionamento per oggetti omeomorfi.}.
 
 \subsection{Teorema di Taylor con resto}
 
 Una funzione reale analitica coincide con il suo sviluppo di Taylor. Per una funzione $ C^{\infty} $ questo non è necessario, ma queste funzioni coincidono con il loro sviluppo di Taylor con l'aggiunta di un \textit{resto}.\\
-Un sottoinsieme aperto $ U \subset \mathbb{R}^{n} $ è \textit{stellato} rispetto ad un punto $ p \in U $ se il segmento di retta che unisce $ p $ ad $ x \in U $ è interamente contenuto in $ U $.
+Un sottoinsieme aperto $ U \subset \R^{n} $ è \textit{stellato} rispetto ad un punto $ p \in U $ se il segmento di retta che unisce $ p $ ad $ x \in U $ è interamente contenuto in $ U $.
 
 \begin{remark}
 	Un insieme convesso è stellato rispetto ad ogni suo punto.
@@ -343,7 +343,7 @@ Un sottoinsieme aperto $ U \subset \mathbb{R}^{n} $ è \textit{stellato} rispett
 L'ipotesi che un sottoinsieme sia stellato è forte a livello globale ma sempre rispettata a livello locale, in quanto è sempre possibile trovare un aperto stellato rispetto ad un punto all'interno di un insieme.
 
 \begin{theorem}[Taylor con resto]
-	Sia $ f : U \to \mathbb{R} $ con $ U \subset \mathbb{R}^{n} $ stellato rispetto ad un punto $ p \in U $ e supponiamo $ f \in C^{\infty}(\mathbb{R}) $, allora esistono $ n $ funzioni $ g_{j} \in C^{\infty}(U), \forall j = 1,\dots,n $ tali che
+	Sia $ f : U \to \R $ con $ U \subset \R^{n} $ stellato rispetto ad un punto $ p \in U $ e supponiamo $ f \in C^{\infty}(\R) $, allora esistono $ n $ funzioni $ g_{j} \in C^{\infty}(U), \forall j = 1,\dots,n $ tali che
 	
 	\begin{equation}
 		f(x) = f(p) + \sum_{i=1}^{n} (x^{i}-p^{i}) \, g_{i}(x), \quad \forall x \in U
@@ -374,8 +374,8 @@ L'ipotesi che un sottoinsieme sia stellato è forte a livello globale ma sempre 
 	
 	\begin{align}
 		\begin{split}
-			\int_{0}^{1} \dfrac{\operatorname{d}}{\operatorname{dt}} f(p+t(x-p)) \operatorname{dt} =& \, \int_{0}^{1} \sum_{i=1}^{n} \dfrac{\partial f}{\partial x^{i}} (p+t(x-p)) (x^{i}-p^{i}) \operatorname{dt}\\
-			f(x) - f(p)=& \, \sum_{i=1}^{n} (x^{i}-p^{i}) \int_{0}^{1} \dfrac{\partial f}{\partial x^{i}} (p+t(x-p)) \operatorname{dt}
+			\int_{0}^{1} \dfrac{\operatorname{d}}{\operatorname{dt}} f(p+t(x-p)) \operatorname{dt} &= \int_{0}^{1} \sum_{i=1}^{n} \dfrac{\partial f}{\partial x^{i}} (p+t(x-p)) (x^{i}-p^{i}) \operatorname{dt}\\
+			f(x) - f(p)&= \sum_{i=1}^{n} (x^{i}-p^{i}) \int_{0}^{1} \dfrac{\partial f}{\partial x^{i}} (p+t(x-p)) \operatorname{dt}
 		\end{split}
 	\end{align}
 	
@@ -396,22 +396,22 @@ L'ipotesi che un sottoinsieme sia stellato è forte a livello globale ma sempre 
 	
 	\begin{align}
 		\begin{split}
-			g_{i}(p) =& \, \int_{0}^{1} \dfrac{\partial f}{\partial x^{i}} (p) \operatorname{dt}\\\\
-			=& \, \dfrac{\partial f}{\partial x^{i}} (p), \quad \forall i=1,\dots,n
+			g_{i}(p) &= \int_{0}^{1} \dfrac{\partial f}{\partial x^{i}} (p) \operatorname{dt}\\\\
+			&= \dfrac{\partial f}{\partial x^{i}} (p), \quad \forall i=1,\dots,n
 		\end{split}
 	\end{align}
 \end{proof}
 
 Vedi Esercizi \ref{es1-5} e \ref{es1-6}.\\
-Prendiamo $ f : U \to \mathbb{R} $ con $ p $ corrispondente all'origine. Per il teorema di Taylor con resto, sappiamo che esiste una funzione $ g_{1} \in C^{\infty}(U) $ tale che $ f(x) = f(0) + x \, g_{1}(x) $ con $ g_{1}(0) = f^{\prime}(0) $. Riapplicando il teorema a $ g_{1} $ (siccome è $ C^{\infty} $), si ottiene che $ g_{1}(x) = g_{1}(0) + x g_{2}(x) $ con $ g_{2} \in C^{\infty}(U) $ e $ g_{2}(0) = g_{1}^{\prime}(0) $. Per induzione $ g_{i}(x) = g_{i}(0) + x g_{i+1}(x) $ dove $ g_{i+1} \in C^{\infty} $ e $ g_{i+1}(0) = g_{i}^{\prime}(0) $, $ \forall i \geqslant 1 $. Sostituendo in $ f $ tutte queste funzioni, si ottiene
+Prendiamo $ f : U \to \R $ con $ p $ corrispondente all'origine. Per il teorema di Taylor con resto, sappiamo che esiste una funzione $ g_{1} \in C^{\infty}(U) $ tale che $ f(x) = f(0) + x \, g_{1}(x) $ con $ g_{1}(0) = f^{\prime}(0) $. Riapplicando il teorema a $ g_{1} $ (siccome è $ C^{\infty} $), si ottiene che $ g_{1}(x) = g_{1}(0) + x g_{2}(x) $ con $ g_{2} \in C^{\infty}(U) $ e $ g_{2}(0) = g_{1}^{\prime}(0) $. Per induzione $ g_{i}(x) = g_{i}(0) + x g_{i+1}(x) $ dove $ g_{i+1} \in C^{\infty} $ e $ g_{i+1}(0) = g_{i}^{\prime}(0) $, $ \forall i \geqslant 1 $. Sostituendo in $ f $ tutte queste funzioni, si ottiene
 
 \begin{align}
 	\begin{split}
-			f(x) =& \, f(0) + x g_{1}(x)\\
-			=& \, f(0) + x g_{1}(0) + x^{2} g_{2}(x)\\
-			=& \, f(0) + x g_{1}(0) + x^{2} g_{2}(0) + x^{3} g_{3}(x)\\
+			f(x) &= f(0) + x g_{1}(x)\\
+			&= f(0) + x g_{1}(0) + x^{2} g_{2}(x)\\
+			&= f(0) + x g_{1}(0) + x^{2} g_{2}(0) + x^{3} g_{3}(x)\\
 			& \, \vdots\\
-			=& \, f(0) + x g_{1}(0) + \dots + x^{k} g_{k}(0) + x^{k+1} g_{k+1}(x)
+			&= f(0) + x g_{1}(0) + \dots + x^{k} g_{k}(0) + x^{k+1} g_{k+1}(x)
 	\end{split}
 \end{align}
 
@@ -429,11 +429,11 @@ da cui
 
 dove la prima parte coincide con lo sviluppo in serie di Taylor mentre l'ultimo termine indica il \textit{resto}.
 
-\section{Vettori tangenti in $ \mathbb{R}^{n} $}
+\section{Vettori tangenti in $ \R^{n} $}
 
-Preso un punto $ p \in \mathbb{R}^{n} $, lo \textit{spazio tangente} in quel punto viene scritto $ T_{p}(\mathbb{R}^{n}) $. In sostanza, lo spazio tangente ad un punto $ p $ è l'insieme\footnote{%
+Preso un punto $ p \in \R^{n} $, lo \textit{spazio tangente} in quel punto viene scritto $ T_{p}(\R^{n}) $. In sostanza, lo spazio tangente ad un punto $ p $ è l'insieme\footnote{%
 	Sarebbe uno spazio vettoriale con origine il punto $ p $.%
-} di tutti i vettori che escono dal punto stesso. Essendo $ T_{p}(\mathbb{R}^{n}) \simeq \mathbb{R}^{n} $, un elemento $ v \in T_{p}(\mathbb{R}^{n}) $ è dunque un \textit{vettore riga o colonna}
+} di tutti i vettori che escono dal punto stesso. Essendo $ T_{p}(\R^{n}) \simeq \R^{n} $, un elemento $ v \in T_{p}(\R^{n}) $ è dunque un \textit{vettore riga o colonna}
 
 \begin{equation}
 	\begin{bmatrix} v^{1} \\ \vdots \\ v^{n} \end{bmatrix} \qquad \lor \qquad \begin{bmatrix} v^{1} & \cdots & v^{n} \end{bmatrix}
@@ -449,20 +449,20 @@ Per generalizzare questo concetto, consideriamo gli elementi degli spazi tangent
 
 \subsection{Derivate direzionali}
 
-Siano $ f : U \to \mathbb{R} $ con $ f \in C^{\infty}(\mathbb{R}) $, $ p\in U $ e $ v \in T_{p}(\mathbb{R}^{n}) $. Consideriamo la retta $ c(t) $ che passa per $ p $ con direzione $ v $, parametrizzata come $ c(t)=p+tv $ con $ t \in \mathbb{R} $. Definisco la \textit{derivata direzionale} di $ f $ rispetto a $ v $ come
+Siano $ f : U \to \R $ con $ f \in C^{\infty}(\R) $, $ p\in U $ e $ v \in T_{p}(\R^{n}) $. Consideriamo la retta $ c(t) $ che passa per $ p $ con direzione $ v $, parametrizzata come $ c(t)=p+tv $ con $ t \in \R $. Definisco la \textit{derivata direzionale} di $ f $ rispetto a $ v $ come
 
 \begin{align}
 	\begin{split}
 		D_{v} f \doteq& \, \lim_{t \to 0} \dfrac{f(c(t)) - f(p)}{t}\\\\
-		=& \, \left. \dfrac{\operatorname{d}}{\operatorname{dt}} f(c(t)) \right|_{t=0}\\\\
-		=& \, \sum_{i=1}^{n} \dfrac{\partial f}{\partial x^{i}} (p) \, v^{i}
+		&= \left. \dfrac{\operatorname{d}}{\operatorname{dt}} f(c(t)) \right|_{t=0}\\\\
+		&= \sum_{i=1}^{n} \dfrac{\partial f}{\partial x^{i}} (p) \, v^{i}
 	\end{split}
 \end{align}
 
-dove $ D_{v} f \in \mathbb{R} $ e $ v = [v^{1},\dots,v^{n}] $.
+dove $ D_{v} f \in \R $ e $ v = [v^{1},\dots,v^{n}] $.
 
 \begin{remark}
-	Se $ g \equiv f $ con $ g : V \subset \mathbb{R} $ con $ V \subset \mathbb{R} $ in un intorno del punto $ p $, la loro derivata direzionale è la stessa\footnote{%
+	Se $ g \equiv f $ con $ g : V \subset \R $ con $ V \subset \R $ in un intorno del punto $ p $, la loro derivata direzionale è la stessa\footnote{%
 		Questo perché il limite del rapporto incrementale nella definizione di $ D_{v} f $ dipende da un intorno arbitrariamente piccolo.%
 	}, i.e. $ D_{v} g = D_{v} f $.
 \end{remark}
@@ -496,13 +496,13 @@ Questa è effettivamente una relazione di equivalenza in quanto riflessiva, simm
 Prendiamo dunque lo spazio quoziente
 
 \begin{equation}
-	\sfrac{X}{\sim} \doteq C_{p}^{\infty}(\mathbb{R}^{n})
+	\sfrac{X}{\sim} \doteq C_{p}^{\infty}(\R^{n})
 \end{equation}
 
-dove un elemento $ [(f,U)] $ di questo spazio è chiamato \textit{germe} intorno al punto $ p $ ed è una \textit{classe di equivalenza} di coppie. A questo punto, $ C_{p}^{\infty}(\mathbb{R}^{n}) $ è l'insieme dei germi di funzioni $ C^{\infty} $ intorno a $ p $, i.e.
+dove un elemento $ [(f,U)] $ di questo spazio è chiamato \textit{germe} intorno al punto $ p $ ed è una \textit{classe di equivalenza} di coppie. A questo punto, $ C_{p}^{\infty}(\R^{n}) $ è l'insieme dei germi di funzioni $ C^{\infty} $ intorno a $ p $, i.e.
 
 \begin{equation}
-	C_{p}^{\infty}(\mathbb{R}^{n}) = \left\{ [(f,U)] \right\}
+	C_{p}^{\infty}(\R^{n}) = \left\{ [(f,U)] \right\}
 \end{equation} 
 
 Possiamo definire un'applicazione
@@ -523,7 +523,7 @@ Siano $ f $ e $ g $
 
 \begin{equation}
 	\begin{cases}
-		f(x) = \dfrac{1}{1-x}, & x \in \mathbb{R} \setminus \{1\}\\\\
+		f(x) = \dfrac{1}{1-x}, & x \in \R \setminus \{1\}\\\\
 		g(x) = \displaystyle\sum_{j=1}^{+\infty} x^{j}, & x \in (-1,1)
 	\end{cases}
 \end{equation}
@@ -531,18 +531,18 @@ Siano $ f $ e $ g $
 Nonostante $ f\neq g $, nell'intorno $ (-1,1) $ di $ p=0 $ vale l'equivalenza per i germi
 
 \begin{equation}
-	(f,\mathbb{R} \setminus \{1\}) \sim (g,(-1,1))
+	(f,\R \setminus \{1\}) \sim (g,(-1,1))
 \end{equation}
 
 in altre parole, le classi di equivalenza
 
 \begin{equation}
-	[(f,\mathbb{R} \setminus \{1\})] = [(g,(-1,1))] \in C_{0}^{\infty}(\mathbb{R})
+	[(f,\R \setminus \{1\})] = [(g,(-1,1))] \in C_{0}^{\infty}(\R)
 \end{equation}
 
-\subsubsection{Algebra su campo $ \mathbb{K} $}
+\subsubsection{Algebra su campo $ \K $}
 
-Un'algebra $ A $ su un campo $ \mathbb{K} $ è una coppia $ (V,\cdot) $ con $ V $ spazio vettoriale su $ \mathbb{K} $ (dunque con operazioni $ a+b \in A $ con $ a,b \in A $ e $ \lambda a \in A $ con $ \lambda \in \mathbb{K} $) e un'operazione binaria
+Un'algebra $ A $ su un campo $ \K $ è una coppia $ (V,\cdot) $ con $ V $ spazio vettoriale su $ \K $ (dunque con operazioni $ a+b \in A $ con $ a,b \in A $ e $ \lambda a \in A $ con $ \lambda \in \K $) e un'operazione binaria
 
 \map{\cdot}%
 	{A \times A}{A}%
@@ -562,8 +562,8 @@ tale che soddisfi le condizioni\footnote{%
 	\end{cases}
 \end{equation}
 
-per $ \forall a,b,c \in A $ e $ \forall \lambda \in \mathbb{K} $.\\
-Equivalentemente, un algebra su un campo $ \mathbb{K} $ può essere pensata come un anello\footnote{%
+per $ \forall a,b,c \in A $ e $ \forall \lambda \in \K $.\\
+Equivalentemente, un algebra su un campo $ \K $ può essere pensata come un anello\footnote{%
 	Le proprietà di associatività e distributività sono sufficienti per renderla un anello.%
 } $ (A,+,\cdot) $ il quale sia anche uno spazio vettoriale tale che sia soddisfatta la proprietà di omogeneità.
 
@@ -575,7 +575,7 @@ Definiamo la somma
 	[(f,U)] + [(g,V)] = [(f + g,U \cap V)]
 \end{equation}
 
-con $ [(f,U)], [(g,V)] \in C_{p}^{\infty}(\mathbb{R}^{n}) $. Questa somma è ben definita in quanto, prendendo altri due rappresentanti di $ [(f,U)] $ e $ [(g,V)] $, esiste sempre un intorno in cui questa somma sia definita.\\
+con $ [(f,U)], [(g,V)] \in C_{p}^{\infty}(\R^{n}) $. Questa somma è ben definita in quanto, prendendo altri due rappresentanti di $ [(f,U)] $ e $ [(g,V)] $, esiste sempre un intorno in cui questa somma sia definita.\\
 Allo stesso modo, definiamo il prodotto
 
 \begin{equation}
@@ -588,12 +588,12 @@ e la moltiplicazione per scalari
 	\lambda [(f,U)] = [(\lambda f,U)]
 \end{equation}
 
-con $ \lambda \in \mathbb{R} $.\\
+con $ \lambda \in \R $.\\
 Tutte queste operazioni sono ben definite e soddisfano tutte le proprietà di un'algebra perché la somma, il prodotto e la moltiplicazione per uno scalare di funzioni $ C^{\infty} $ soddisfano queste stesse proprietà.\\
-A questo punto si può dire che $ C_{p}^{\infty}(\mathbb{R}^{n}) $ sia un'algebra su $ \mathbb{R} $.\\
-Nonostante non sia necessario per un'algebra, $ C_{p}^{\infty}(\mathbb{R}^{n}) $ è anche commutativa e unitaria\footnote{%
+A questo punto si può dire che $ C_{p}^{\infty}(\R^{n}) $ sia un'algebra su $ \R $.\\
+Nonostante non sia necessario per un'algebra, $ C_{p}^{\infty}(\R^{n}) $ è anche commutativa e unitaria\footnote{%
 	Vedi Esercizio \ref{es1-7}.%
-} su $ \mathbb{R}^{n} $.
+} su $ \R^{n} $.
 
 \subsection{Derivazione puntuale di $ C_{p}^{\infty}(\R^{n}) $}
 
@@ -606,13 +606,13 @@ A questo punto, l'immagine dell'applicazione
 tale che:
 
 \begin{enumerate}
-	\item sia $ \mathbb{R} $-lineare\footnote{%
-		Rispetto alla struttura di spazio vettoriale di $ C_{p}^{\infty}(\mathbb{R}^{n}) $.%
+	\item sia $ \R $-lineare\footnote{%
+		Rispetto alla struttura di spazio vettoriale di $ C_{p}^{\infty}(\R^{n}) $.%
 	}, cioè
 		\begin{align}
 			\begin{split}
-				D ([(f,U)] + [(g,V)]) =& \, D ([(f,U)]) + D ([(g,V)])\\
-				D (\lambda [(f,U)]) =& \, \lambda D ([(f,U)])
+				D ([(f,U)] + [(g,V)]) &= D ([(f,U)]) + D ([(g,V)])\\
+				D (\lambda [(f,U)]) &= \lambda D ([(f,U)])
 			\end{split}
 		\end{align}
 	
@@ -622,28 +622,28 @@ tale che:
 		\end{equation}
 \end{enumerate}
 
-è chiamata \textit{derivazione puntuale} dell'algebra $ C_{p}^{\infty}(\mathbb{R}^{n}) $.
+è chiamata \textit{derivazione puntuale} dell'algebra $ C_{p}^{\infty}(\R^{n}) $.
 
-\begin{proof}[Dimostrazione ($ \mathbb{R} $-linearità)]
+\begin{proof}[Dimostrazione ($ \R $-linearità)]
 	\begin{align}
 		\begin{split}
-			D ([(f,U)] + [(g,V)]) =& \, D ([(f+g,U \cap V)])\\
-			=& \, D_{v} (f+g)\\
-			=& \, \sum_{j=1}^{n} \dfrac{\partial (f+g)}{\partial x^{j}} (p) \, v^{j}\\
-			=& \, \sum_{j=1}^{n} \dfrac{\partial f}{\partial x^{j}} (p) \, v^{j} + \sum_{j=1}^{n} \dfrac{\partial g}{\partial x^{j}} (p) \, v^{j}\\
-			=& \, D ([(f,U)]) + D ([(g,V)])
+			D ([(f,U)] + [(g,V)]) &= D ([(f+g,U \cap V)])\\
+			&= D_{v} (f+g)\\
+			&= \sum_{j=1}^{n} \dfrac{\partial (f+g)}{\partial x^{j}} (p) \, v^{j}\\
+			&= \sum_{j=1}^{n} \dfrac{\partial f}{\partial x^{j}} (p) \, v^{j} + \sum_{j=1}^{n} \dfrac{\partial g}{\partial x^{j}} (p) \, v^{j}\\
+			&= D ([(f,U)]) + D ([(g,V)])
 		\end{split}
 	\end{align}
 \end{proof}
 
-\begin{proof}[Dimostrazione ($ \mathbb{R} $-linearità)]
+\begin{proof}[Dimostrazione ($ \R $-linearità)]
 	\begin{align}
 		\begin{split}
-			\lambda D ([(f,U)]) =& \, D ([(\lambda f,U)])\\
-			=& \, D_{v} (\lambda f)\\
-			=& \, \sum_{j=1}^{n} \dfrac{\partial (\lambda f)}{\partial x^{j}} (p) \, v^{j}\\
-			=& \, \lambda \sum_{j=1}^{n} \dfrac{\partial f}{\partial x^{j}} (p) \, v^{j}\\
-			=& \, \lambda D ([(f,U)])
+			\lambda D ([(f,U)]) &= D ([(\lambda f,U)])\\
+			&= D_{v} (\lambda f)\\
+			&= \sum_{j=1}^{n} \dfrac{\partial (\lambda f)}{\partial x^{j}} (p) \, v^{j}\\
+			&= \lambda \sum_{j=1}^{n} \dfrac{\partial f}{\partial x^{j}} (p) \, v^{j}\\
+			&= \lambda D ([(f,U)])
 		\end{split}
 	\end{align}
 \end{proof}
@@ -651,81 +651,81 @@ tale che:
 \begin{proof}[Dimostrazione (Regola di Leibniz)]
 	\begin{align}
 		\begin{split}
-			D ([(f,U)] \cdot [(g,V)]) =& \, D ([(f g,U \cap V)])\\
-			=& \, D_{v} (f g)\\
-			=& \, \sum_{j=1}^{n} \dfrac{\partial (f g)}{\partial x^{j}} (p) \, v^{j}\\
-			=& \, \left( \sum_{j=1}^{n} \dfrac{\partial f}{\partial x^{j}} (p) \, v^{j} \right) \, g(p) + f(p) \left( \, \sum_{j=1}^{n} \dfrac{\partial g}{\partial x^{j}} (p) \, v^{j} \right)\\
-			=& \, (D_{v} f) g(p) + f(p) (D_{v} g)\\
-			=& \, D ([(f,U)]) \, g(p) + f(p) \, D ([(g,V)])
+			D ([(f,U)] \cdot [(g,V)]) &= D ([(f g,U \cap V)])\\
+			&= D_{v} (f g)\\
+			&= \sum_{j=1}^{n} \dfrac{\partial (f g)}{\partial x^{j}} (p) \, v^{j}\\
+			&= \left( \sum_{j=1}^{n} \dfrac{\partial f}{\partial x^{j}} (p) \, v^{j} \right) \, g(p) + f(p) \left( \, \sum_{j=1}^{n} \dfrac{\partial g}{\partial x^{j}} (p) \, v^{j} \right)\\
+			&= (D_{v} f) g(p) + f(p) (D_{v} g)\\
+			&= D ([(f,U)]) \, g(p) + f(p) \, D ([(g,V)])
 		\end{split}
 	\end{align}
 \end{proof}
 
 Una derivazione è quindi un modo per associare ad un germe di funzioni un numero reale, soddisfacendo le proprietà definite sopra.\\
-Indichiamo dunque l'insieme delle derivazioni di $ C_{p}^{\infty}(\mathbb{R}^{n}) $ come $ Der_{p}(C_{p}^{\infty}(\mathbb{R}^{n})) $.
+Indichiamo dunque l'insieme delle derivazioni di $ C_{p}^{\infty}(\R^{n}) $ come $ Der_{p}(C_{p}^{\infty}(\R^{n})) $.
 
-\subsection{Isomorfismo tra $ T_{p}(\mathbb{R}^{n}) $ e $ Der_{p}(C_{p}^{\infty}(\mathbb{R}^{n})) $}
+\subsection{Isomorfismo tra $ T_{p}(\R^{n}) $ e $ Der_{p}(C_{p}^{\infty}(\R^{n})) $}
 
 Definiamo l'applicazione
 
 \begin{align}
 	\begin{split}
-		\phi : T_{p}(\mathbb{R}^{n}) \to& \, Der_{p}(C_{p}^{\infty}(\mathbb{R}^{n}))\\
-		v \mapsto& \, D_{v}
+		\phi : T_{p}(\R^{n}) &\to Der_{p}(C_{p}^{\infty}(\R^{n}))\\
+		v &\mapsto D_{v}
 	\end{split}
 \end{align}
 
-questa associa $ v \in T_{p}(\mathbb{R}^{n}) $ con $ p \in \mathbb{R}^{n} $ a $ D_{v} $, la quale è a sua volta un'applicazione che associa la classe di equivalenza di germi di funzioni $ [(f,U)] $ allo scalare
+questa associa $ v \in T_{p}(\R^{n}) $ con $ p \in \R^{n} $ a $ D_{v} $, la quale è a sua volta un'applicazione che associa la classe di equivalenza di germi di funzioni $ [(f,U)] $ allo scalare
 
 \begin{align}
 	D_{v} f = \sum_{j=1}^{n} \dfrac{\partial f}{\partial x^{j}} (p) \, v^{j}
 \end{align}
 
 con $ v = [v^{1},\dots,v^{n}] $, dove $ D_{v} f $ è la derivata direzionale di $ f $ rispetto a $ v $; possiamo usare lo stesso simbolo per $ D_{v} ([(f,U)]) = D_{v} f $ perché questa relazione vale per qualsiasi rappresentante della classe.\\
-L'applicazione $ \phi $ permette di considerare le derivazioni puntuali dell'algebra dei germi delle funzioni $ C_{p}^{\infty}(\mathbb{R}^{n}) $ al posto dell'insieme dei vettori che partono da un punto, in quanto questi due insiemi sono isomorfi tra loro. Utilizzare le derivazioni è utile perché, in termini di varietà differenziabile, non esiste una visualizzazione di uno spazio tangente.
+L'applicazione $ \phi $ permette di considerare le derivazioni puntuali dell'algebra dei germi delle funzioni $ C_{p}^{\infty}(\R^{n}) $ al posto dell'insieme dei vettori che partono da un punto, in quanto questi due insiemi sono isomorfi tra loro. Utilizzare le derivazioni è utile perché, in termini di varietà differenziabile, non esiste una visualizzazione di uno spazio tangente.
 
 \begin{theorem}
-	L'applicazione $ \phi $ è un isomorfismo di spazi vettoriali, nello specifico tra $ T_{p}(\mathbb{R}^{n}) $ e $ Der_{p}(C_{p}^{\infty}(\mathbb{R}^{n})) $.
+	L'applicazione $ \phi $ è un isomorfismo di spazi vettoriali, nello specifico tra $ T_{p}(\R^{n}) $ e $ Der_{p}(C_{p}^{\infty}(\R^{n})) $.
 \end{theorem}
 
-Per dimostrare questo teorema è necessario dimostrare innanzitutto che gli elementi $ D_{i} \in Der_{p}(C_{p}^{\infty}(\mathbb{R}^{n})) $ costituiscano uno spazio vettoriale, cioè devono valere
+Per dimostrare questo teorema è necessario dimostrare innanzitutto che gli elementi $ D_{i} \in Der_{p}(C_{p}^{\infty}(\R^{n})) $ costituiscano uno spazio vettoriale, cioè devono valere
 
 \begin{align}
 	\begin{split}
-		(D_{1} + D_{2}) ([(f,U)]) =& \, D_{1}([(f,U)]) + D_{2}([(f,U)])\\
-		(\lambda D) ([(f,U)]) =& \, \lambda D ([(f,U)])
+		(D_{1} + D_{2}) ([(f,U)]) &= D_{1}([(f,U)]) + D_{2}([(f,U)])\\
+		(\lambda D) ([(f,U)]) &= \lambda D ([(f,U)])
 	\end{split}
 \end{align}
 
-per $ \forall D,D_{1},D_{2} \in Der_{p}(C_{p}^{\infty}(\mathbb{R}^{n})) $ e $ \forall \lambda \in \mathbb{R} $.\\
+per $ \forall D,D_{1},D_{2} \in Der_{p}(C_{p}^{\infty}(\R^{n})) $ e $ \forall \lambda \in \R $.\\
 Vedi Esercizio \ref{es1-8}.
 
-\begin{proof}[Dimostrazione ($ \mathbb{R} $-linearità)]
+\begin{proof}[Dimostrazione ($ \R $-linearità)]
 	\begin{align}
 		\begin{split}
-			(D_{1} + D_{2}) (\alpha [(f,U)] + \beta [(g,V)]) =& \, D_{1} (\alpha [(f,U)] + \beta [(g,V)]) +\\
+			(D_{1} + D_{2}) (\alpha [(f,U)] + \beta [(g,V)]) &= D_{1} (\alpha [(f,U)] + \beta [(g,V)]) +\\
 			&+ \, D_{2} (\alpha [(f,U)] + \beta [(g,V)])\\
-			=& \, \alpha D_{1} ([(f,U)]) + \beta D_{1} ([(g,V)]) +\\
+			&= \alpha D_{1} ([(f,U)]) + \beta D_{1} ([(g,V)]) +\\
 			&+ \,\alpha D_{2} ([(f,U)]) + \beta D_{2} ([(g,V)])\\
-			=& \, \alpha (D_{1} + D_{2}) ([(f,U)]) + \beta (D_{1} + D_{2}) ([(g,V)])
+			&= \alpha (D_{1} + D_{2}) ([(f,U)]) + \beta (D_{1} + D_{2}) ([(g,V)])
 		\end{split}
 	\end{align}
 
-	per $ \alpha,\beta \in \mathbb{R} $.
+	per $ \alpha,\beta \in \R $.
 \end{proof}
 
 \begin{proof}[Dimostrazione (Regola di Leibniz)]
 	\begin{align}
 		\begin{split}
-			(D_{1} + D_{2}) ([(f,U)] [(g,V)]) =& \, D_{1} ([(f,U)] [(g,V)]) + D_{2} ([(f,U)] [(g,V)])\\
-			=& \, D_{1} ([(f,U)]) \, g(p) + f(p) \, D_{1} ([(g,V)]) +\\
+			(D_{1} + D_{2}) ([(f,U)] [(g,V)]) &= D_{1} ([(f,U)] [(g,V)]) + D_{2} ([(f,U)] [(g,V)])\\
+			&= D_{1} ([(f,U)]) \, g(p) + f(p) \, D_{1} ([(g,V)]) +\\
 			&+ \, D_{2} ([(f,U)]) \, g(p) + f(p) \, D_{2} ([(g,V)])\\
-			=& \, (D_{1} + D_{2}) \{ ([(f,U)]) \, g(p) + f(p) \, ([(g,V)]) \}
+			&= (D_{1} + D_{2}) \{ ([(f,U)]) \, g(p) + f(p) \, ([(g,V)]) \}
 		\end{split}
 	\end{align}
 \end{proof}
 
-A questo punto, bisogna dimostrare che $ \phi $ sia $ \mathbb{R} $-lineare, iniettiva\footnote{%
+A questo punto, bisogna dimostrare che $ \phi $ sia $ \R $-lineare, iniettiva\footnote{%
 	Un'applicazione $ f $ tra due insiemi $ A $ e $ B $ è \textit{iniettiva} se
 	\begin{equation}
 		\forall a_{1},a_{2} \in A \mid a_{1} \neq a_{2} \implies f(a_{1}) \neq f(a_{2})
@@ -737,27 +737,27 @@ A questo punto, bisogna dimostrare che $ \phi $ sia $ \mathbb{R} $-lineare, inie
 	\end{equation}%
 } perché venga considerata un isomorfismo.
 
-\begin{proof}[Dimostrazione ($ \mathbb{R} $-linearità)]
-	Sia $ [(f,U)] \in C_{p}^{\infty}(\mathbb{R}^{n}) $, possiamo scrivere
+\begin{proof}[Dimostrazione ($ \R $-linearità)]
+	Sia $ [(f,U)] \in C_{p}^{\infty}(\R^{n}) $, possiamo scrivere
 	
 	\begin{align}
 		\begin{split}
-			D_{\alpha v + \beta w} ([(f,U)]) =& \, D_{\alpha v + \beta w} (f)\\
-			=& \, \sum_{j=1}^{n} \dfrac{\partial f}{\partial x^{j}} (p) \, (\alpha v^{j} + \beta w^{j})\\
-			=& \, \alpha \sum_{j=1}^{n} \dfrac{\partial f}{\partial x^{j}} (p) \, v^{j} + \beta \sum_{j=1}^{n} \dfrac{\partial f}{\partial x^{j}} (p) \, w^{j}\\
-			=& \, \alpha D_{v} f + \beta D_{w} f\\
-			=& \, \alpha D_{v} ([(f,U)]) + \beta D_{w} ([(f,U)])
+			D_{\alpha v + \beta w} ([(f,U)]) &= D_{\alpha v + \beta w} (f)\\
+			&= \sum_{j=1}^{n} \dfrac{\partial f}{\partial x^{j}} (p) \, (\alpha v^{j} + \beta w^{j})\\
+			&= \alpha \sum_{j=1}^{n} \dfrac{\partial f}{\partial x^{j}} (p) \, v^{j} + \beta \sum_{j=1}^{n} \dfrac{\partial f}{\partial x^{j}} (p) \, w^{j}\\
+			&= \alpha D_{v} f + \beta D_{w} f\\
+			&= \alpha D_{v} ([(f,U)]) + \beta D_{w} ([(f,U)])
 		\end{split}
 	\end{align}
 
-	con $ \alpha,\beta \in \mathbb{R} $ e $ v,w \in T_{p}(\mathbb{R}^{n}) $.\\
+	con $ \alpha,\beta \in \R $ e $ v,w \in T_{p}(\R^{n}) $.\\
 	Da questo si ottiene
 	
 	\begin{align}
 		\begin{split}
-			\phi (\alpha v + \beta w) =& \, D_{\alpha v + \beta w}\\
-			=& \, \alpha D_{v} + \beta D_{w}\\
-			=& \, \alpha \phi (v) + \beta \phi (w)
+			\phi (\alpha v + \beta w) &= D_{\alpha v + \beta w}\\
+			&= \alpha D_{v} + \beta D_{w}\\
+			&= \alpha \phi (v) + \beta \phi (w)
 		\end{split}
 	\end{align}
 \end{proof}
@@ -767,47 +767,47 @@ A questo punto, bisogna dimostrare che $ \phi $ sia $ \mathbb{R} $-lineare, inie
 	Il \textit{kernel} o nucleo di un'applicazione, indicato con $ \ker $, è l'insieme di tutti e soli gli elementi del dominio che hanno come immagine lo $ 0 $ del codominio, i.e. nel caso considerato
 	
 	\begin{equation}
-		\ker \phi = \left\{ v \in T_{p}(\mathbb{R}^{n}) \, \middle| \, \phi(v) \equiv D_{v} = 0 \right\}
+		\ker \phi = \left\{ v \in T_{p}(\R^{n}) \, \middle| \, \phi(v) \equiv D_{v} = 0 \right\}
 	\end{equation}%
 	} di $ \phi $: se questo contiene solo l'elemento $ 0 $, inteso come
 	
 	\begin{align}
 		\begin{split}
-			0 : C_{p}^{\infty}(\mathbb{R}^{n}) \to& \, \mathbb{R}\\
-			[(f,U)] \mapsto& \, 0
+			0 : C_{p}^{\infty}(\R^{n}) &\to \R\\
+			[(f,U)] &\mapsto 0
 		\end{split}
 	\end{align}
 
-	per $ \forall [(f,U)] \in C_{p}^{\infty}(\mathbb{R}^{n}) $.\\
+	per $ \forall [(f,U)] \in C_{p}^{\infty}(\R^{n}) $.\\
 	Se quindi $ \ker \phi = \{\} $ allora $ \phi $ è iniettiva.\\
-	Siccome $ 0 $ associa un qualunque rappresentante della classe $ [(f,U)] $ sempre a $ 0 \in \mathbb{R} $, possiamo scegliere il germe $ [(x^{j},\mathbb{R})] $, i.e.
+	Siccome $ 0 $ associa un qualunque rappresentante della classe $ [(f,U)] $ sempre a $ 0 \in \R $, possiamo scegliere il germe $ [(x^{j},\R)] $, i.e.
 	
 	\begin{align}
 		\begin{split}
-			x^{j} : \mathbb{R}^{n} \to& \, \mathbb{R}\\
-			(x^{1},\dots,x^{n}) \mapsto& \, x^{j}
+			x^{j} : \R^{n} &\to \R\\
+			(x^{1},\dots,x^{n}) &\mapsto x^{j}
 		\end{split}
 	\end{align}
 
-	per $ \forall j=1,\dots,n $, la quale è una proiezione liscia dunque $ x^{j} \in C_{p}^{\infty}(\mathbb{R}^{n}) $. A questo punto
+	per $ \forall j=1,\dots,n $, la quale è una proiezione liscia dunque $ x^{j} \in C_{p}^{\infty}(\R^{n}) $. A questo punto
 	
 	\begin{align}
 		\begin{split}
-			0([(x^{j},\mathbb{R})]) =& \, D_{v} ([(x^{j},\mathbb{R})])\\
-			=& \, D_{v} (x^{j})\\
-			=& \, \sum_{i=1}^{n} \dfrac{\partial x^{j}}{\partial x^{i}} (p) \, v^{i}\\
-			=& \, \sum_{i=1}^{n} \delta^{ij} \, v^{i}\\
-			=& \, v^{j}
+			0([(x^{j},\R)]) &= D_{v} ([(x^{j},\R)])\\
+			&= D_{v} (x^{j})\\
+			&= \sum_{i=1}^{n} \dfrac{\partial x^{j}}{\partial x^{i}} (p) \, v^{i}\\
+			&= \sum_{i=1}^{n} \delta^{ij} \, v^{i}\\
+			&= v^{j}
 		\end{split}
 	\end{align}
 
-	perciò $ v^{j} = 0 $ per $ \forall j=1,\dots,n $ dunque se $ v \in \ker \phi \implies v = 0 \in T_{p}(\mathbb{R}^{n}) $.
+	perciò $ v^{j} = 0 $ per $ \forall j=1,\dots,n $ dunque se $ v \in \ker \phi \implies v = 0 \in T_{p}(\R^{n}) $.
 \end{proof}
 
 La suriettività implica che se si fissa una qualunque derivazione puntuale esiste uno spazio tangente che mandato tramite $ \phi $ dà quella derivazione. In simboli
 
 \begin{equation}
-	\forall D \in Der_{p} (C_{p}^{\infty}(\mathbb{R}^{n})), \, \exists v \in T_{p}(\mathbb{R}^{n}) \, \mid \, \phi(v) = D
+	\forall D \in Der_{p} (C_{p}^{\infty}(\R^{n})), \, \exists v \in T_{p}(\R^{n}) \, \mid \, \phi(v) = D
 \end{equation}
 
 dove $ \phi = D_{v} $.\\
@@ -819,27 +819,27 @@ Prima di farlo, enunciamo il seguente lemma:
 	
 	\begin{align}
 		\begin{split}
-			c : \mathbb{R}^{n} \to& \, \mathbb{R}^{n}\\
-			x \mapsto& \, c
+			c : \R^{n} &\to \R^{n}\\
+			x &\mapsto c
 		\end{split}
 	\end{align}
 
-	e sia $ D \in Der_{p} (C_{p}^{\infty}(\mathbb{R}^{n})) $. Allora
+	e sia $ D \in Der_{p} (C_{p}^{\infty}(\R^{n})) $. Allora
 	
 	\begin{equation}
-		D([(c,\mathbb{R}^{n})]) = 0
+		D([(c,\R^{n})]) = 0
 	\end{equation}
 \end{lemma}
 
 \begin{proof}[Dimostrazione (lemma)]
 	\begin{align}
 		\begin{split}
-			D([(c,\mathbb{R}^{n})]) =& \, D([(1 c,\mathbb{R}^{n})])\\
-			=& \, c \, D([(1,\mathbb{R}^{n})])\\
-			=& \, c \, D([(1 \cdot 1,\mathbb{R}^{n})])\\
-			=& \, c \, \{D([(1,\mathbb{R}^{n})]) \, 1 + 1 \, D([(1,\mathbb{R}^{n})])\}\\
-			=& \, 2 c \, D([(1,\mathbb{R}^{n})])\\
-			=& \, \, 0
+			D([(c,\R^{n})]) &= D([(1 c,\R^{n})])\\
+			&= c \, D([(1,\R^{n})])\\
+			&= c \, D([(1 \cdot 1,\R^{n})])\\
+			&= c \, \{D([(1,\R^{n})]) \, 1 + 1 \, D([(1,\R^{n})])\}\\
+			&= 2 c \, D([(1,\R^{n})])\\
+			&= \, 0
 		\end{split}
 	\end{align}
 \end{proof}
@@ -850,7 +850,7 @@ A questo punto possiamo dimostrare la suriettività di $ \phi $:
 	Due funzioni sono uguali se e solo se coincidono per ogni punto del dominio, i.e.
 	
 	\begin{equation}
-		D_{v} = D \iff D_{v}([(f,U)]) = D([(f,U)]), \quad \forall ([(f,U)]) \in (C_{p}^{\infty}(\mathbb{R}^{n}))
+		D_{v} = D \iff D_{v}([(f,U)]) = D([(f,U)]), \quad \forall ([(f,U)]) \in (C_{p}^{\infty}(\R^{n}))
 	\end{equation}
 
 	Per dimostrarlo, possiamo scegliere un rappresentante arbitrario della classe $ [(f,U)] $ in quanto $ D_{v}([(f,U)]) = D_{v} f $ e possiamo prendere il dominio $ U $ stellato rispetto a $ p $, perciò per il teorema di Taylor con resto
@@ -865,12 +865,12 @@ A questo punto possiamo dimostrare la suriettività di $ \phi $:
 		g_{i}(p) = \dfrac{\partial f}{\partial x^{i}} (p), \quad i=1,\dots,n
 	\end{equation}
 
-	Sia $ v = [v^{1},\dots,v^{n}] $ definito come $ v^{j} = D([(x^{j},\mathbb{R})]) $ per $ \forall j=1,\dots,n $.\\
+	Sia $ v = [v^{1},\dots,v^{n}] $ definito come $ v^{j} = D([(x^{j},\R)]) $ per $ \forall j=1,\dots,n $.\\
 	Ora applichiamo $ D $ a $ f $
 	
 	\begin{align}
 		\begin{split}
-			D ([(f,U)]) &= D ([(f(p),\mathbb{R}^{n})]) + D \left(\left[\left( \sum_{i=1}^{n} (x^{i}-p^{i}) \, g_{i}(x) , U \right)\right]\right)\\
+			D ([(f,U)]) &= D ([(f(p),\R^{n})]) + D \left(\left[\left( \sum_{i=1}^{n} (x^{i}-p^{i}) \, g_{i}(x) , U \right)\right]\right)\\
 			&= D \left(\left[\left( \sum_{i=1}^{n} (x^{i}-p^{i}) \, g_{i}(x) , U \right)\right]\right)\\
 			&= \sum_{i=1}^{n} D ([( (x^{i}-p^{i}) \, g_{i}(x) , U )])\\
 			&= \sum_{i=1}^{n} \left\{ D ([( (x^{i}-p^{i}), U )]) \, g_{i}(p) + (p^{i}-p^{i}) \, D ([( g_{i}(x), U )]) \right\}\\
@@ -884,22 +884,22 @@ A questo punto possiamo dimostrare la suriettività di $ \phi $:
 		\end{split}
 	\end{align}
 
-	per $ \forall [(f,U)] \in C_{p}^{\infty}(\mathbb{R}^{n}) $.
+	per $ \forall [(f,U)] \in C_{p}^{\infty}(\R^{n}) $.
 \end{proof}
 
-Date queste proprietà di $ \phi $, questa applicazione è un omeomorfismo tra $ T_{p}(\mathbb{R}^{n}) $ e $ Der_{p}(C_{p}^{\infty}(\mathbb{R}^{n})) $, i.e.
+Date queste proprietà di $ \phi $, questa applicazione è un omeomorfismo tra $ T_{p}(\R^{n}) $ e $ Der_{p}(C_{p}^{\infty}(\R^{n})) $, i.e.
 
 \begin{equation}
-	T_{p}(\mathbb{R}^{n}) \simeq Der_{p}(C_{p}^{\infty}(\mathbb{R}^{n}))
+	T_{p}(\R^{n}) \simeq Der_{p}(C_{p}^{\infty}(\R^{n}))
 \end{equation}
 
 \begin{corollary}
 	\begin{equation}
-		\dim ( T_{p}(\mathbb{R}^{n}) ) = n = \dim ( Der_{p}(C_{p}^{\infty}(\mathbb{R}^{n})) )
+		\dim ( T_{p}(\R^{n}) ) = n = \dim ( Der_{p}(C_{p}^{\infty}(\R^{n})) )
 	\end{equation}
 \end{corollary}
 
-\subsection{Base canonica per $ Der_{p}(C_{p}^{\infty}(\mathbb{R}^{n})) $}
+\subsection{Base canonica per $ Der_{p}(C_{p}^{\infty}(\R^{n})) $}
 
 L'insieme delle $ n $-uple
 
@@ -913,18 +913,18 @@ i cui elementi sono definiti come
 	\left. \dfrac{\partial}{\partial x^{j}} \right|_{p} ([(f,U)]) = \dfrac{\partial f}{\partial x^{j}} (p), \quad \forall p \in U
 \end{equation}
 
-forma una base per lo spazio $ Der_{p}(C_{p}^{\infty}(\mathbb{R}^{n})) $.
+forma una base per lo spazio $ Der_{p}(C_{p}^{\infty}(\R^{n})) $.
 
 \begin{proof}
-	Essendo $ T_{p}(\mathbb{R}^{n}) \simeq Der_{p}(C_{p}^{\infty}(\mathbb{R}^{n})) $, da cui
+	Essendo $ T_{p}(\R^{n}) \simeq Der_{p}(C_{p}^{\infty}(\R^{n})) $, da cui
 	
 	\begin{equation}
-		\dim ( Der_{p}(C_{p}^{\infty}(\mathbb{R}^{n})) ) = n
+		\dim ( Der_{p}(C_{p}^{\infty}(\R^{n})) ) = n
 	\end{equation}
 		
 	se $ e_{1},\dots,e_{n} $ è la base canonica\footnote{%
 		Con $ (e_{j})_{k} = \delta_{jk} $, e.g. $ e_{3} = (0,0,1,0,\dots,0) $.%
-	} di $ T_{p}(\mathbb{R}^{n}) $, si ha che
+	} di $ T_{p}(\R^{n}) $, si ha che
 
 	\begin{equation}
 		\phi(e_{i}) = D_{e_{i}}, \quad \forall i=1,\dots,n
@@ -941,14 +941,14 @@ forma una base per lo spazio $ Der_{p}(C_{p}^{\infty}(\mathbb{R}^{n})) $.
 	\end{align}
 \end{proof}
 
-\section{Campi di vettori su aperti di $ \mathbb{R}^{n} $}
+\section{Campi di vettori su aperti di $ \R^{n} $}
 
-Prendiamo un aperto $ U \in \mathbb{R}^{n} $ con $ n \geqslant 1 $, un \textit{campo di vettori} su $ U $ è un'applicazione
+Prendiamo un aperto $ U \in \R^{n} $ con $ n \geqslant 1 $, un \textit{campo di vettori} su $ U $ è un'applicazione
 
 \begin{align}
 	\begin{split}
-		X : U \to& \, \bigsqcup_{p \in U} T_{p}(\mathbb{R}^{n})\\
-		p \mapsto& \, X_{p}
+		X : U &\to \bigsqcup_{p \in U} T_{p}(\R^{n})\\
+		p &\mapsto X_{p}
 	\end{split}
 \end{align}
 
@@ -966,7 +966,7 @@ Il campo di vettori $ X $ (senza la valutazione in un punto $ p $) si scrive com
 	X = \sum_{i=1}^{n} a^{i} \, \dfrac{\partial}{\partial x^{i}}
 \end{equation}
 
-dove ora $ a^{i} $ è una funzione $ a^{i} : U \to \mathbb{R} $.
+dove ora $ a^{i} $ è una funzione $ a^{i} : U \to \R $.
 
 \subsection{Campi di vettori lisci}
 
@@ -985,8 +985,8 @@ L'insieme dei campi di vettori che rispettano questa prescrizione è chiamato $ 
 
 \begin{align}
 	\begin{split}
-		X : U = \mathbb{R}^{2} \setminus \{(0,0)\} \to& \, T_{(x,y)}(\mathbb{R}^{2})\\
-		(x,y) \mapsto& \, X = - \dfrac{x}{\sqrt{x^{2}+y^{2}}} \dfrac{\partial}{\partial x} - \dfrac{y}{\sqrt{x^{2}+y^{2}}} \dfrac{\partial}{\partial y}
+		X : U = \R^{2} \setminus \{(0,0)\} &\to T_{(x,y)}(\R^{2})\\
+		(x,y) &\mapsto X = - \dfrac{x}{\sqrt{x^{2}+y^{2}}} \dfrac{\partial}{\partial x} - \dfrac{y}{\sqrt{x^{2}+y^{2}}} \dfrac{\partial}{\partial y}
 	\end{split}
 \end{align}
 
@@ -1001,8 +1001,8 @@ Questo campo è liscio perché qualsiasi derivata non annulla mai il denominator
 
 \begin{align}
 	\begin{split}
-		X : U = \mathbb{R}^{2} \setminus \{(0,0)\} \to& \, T_{(x,y)}(\mathbb{R}^{2})\\
-		(x,y) \mapsto& \, X = - \dfrac{y}{\sqrt{x^{2}+y^{2}}} \dfrac{\partial}{\partial x} - \dfrac{x}{\sqrt{x^{2}+y^{2}}} \dfrac{\partial}{\partial y}
+		X : U = \R^{2} \setminus \{(0,0)\} &\to T_{(x,y)}(\R^{2})\\
+		(x,y) &\mapsto X = - \dfrac{y}{\sqrt{x^{2}+y^{2}}} \dfrac{\partial}{\partial x} - \dfrac{x}{\sqrt{x^{2}+y^{2}}} \dfrac{\partial}{\partial y}
 	\end{split}
 \end{align}
 
@@ -1025,8 +1025,8 @@ con $ X,Y \in \chi(U) $, questo significa che se
 
 \begin{align}
 	\begin{split}
-		X =& \, \sum_{i=1}^{n} a^{i} \, \dfrac{\partial}{\partial x^{i}}\\\\
-		Y =& \, \sum_{i=1}^{n} b^{i} \, \dfrac{\partial}{\partial x^{i}}
+		X &= \sum_{i=1}^{n} a^{i} \, \dfrac{\partial}{\partial x^{i}}\\\\
+		Y &= \sum_{i=1}^{n} b^{i} \, \dfrac{\partial}{\partial x^{i}}
 	\end{split}
 \end{align}
 
@@ -1043,7 +1043,7 @@ Si può definire anche la moltiplicazione per scalari come
 	(\lambda X)_{p} \doteq \lambda X_{p}
 \end{equation}
 
-con $ X \in \chi(U) $ e $ \lambda \in \mathbb{R} $, questo significa che se
+con $ X \in \chi(U) $ e $ \lambda \in \R $, questo significa che se
 
 \begin{equation}
 	X = \sum_{i=1}^{n} a^{i} \, \dfrac{\partial}{\partial x^{i}}
@@ -1074,14 +1074,14 @@ Osserviamo che $ C^{\infty}(U) $ è un anello commutativo unitario.
 
 \subsection{$ \chi(U) $ come $ C^{\infty}(U) $-modulo}
 
-\subsubsection{$ \mathbb{R} $-modulo sinistro}
+\subsubsection{$ \R $-modulo sinistro}
 
 Sia $ R $ un anello commutativo unitario, un gruppo abeliano $ (A,+) $ è detto $ R $\textit{-modulo sinistro} se esiste un'applicazione
 
 \begin{align}
 	\begin{split}
-		\cdot : R \times A \to& \, A\\
-		(r,a) \mapsto& \, r \cdot a
+		\cdot : R \times A &\to A\\
+		(r,a) &\mapsto r \cdot a
 	\end{split}
 \end{align}
 
@@ -1098,14 +1098,14 @@ tale che
 
 per $ \forall r,s \in R $ e $ \forall a,b \in A $. Queste proprietà valgono solo da \textit{sinistra}, potrebbero non valere se calcolate da destra.
 
-\subsubsection{$ \mathbb{R} $-modulo destro}
+\subsubsection{$ \R $-modulo destro}
 
 Sia $ R $ un anello commutativo unitario, un gruppo abeliano $ (A,+) $ è detto $ R $\textit{-modulo destro} se esiste un'applicazione
 
 \begin{align}
 	\begin{split}
-		* : A \times R \to& \, A\\
-		(a,r) \mapsto& \, a * r
+		* : A \times R &\to A\\
+		(a,r) &\mapsto a * r
 	\end{split}
 \end{align}
 
@@ -1124,7 +1124,7 @@ per $ \forall r,s \in R $ e $ \forall a,b \in A $. Queste proprietà valgono sol
 Da queste definizioni, si dice che $ (A,+) $ è un $ R $-modulo se è un $ R $-modulo sinistro e destro, con $ \cdot \equiv * $.
 
 \begin{remark}
-	Se un gruppo $ A $ è un $ R $-modulo e $ R $ è un campo $ \mathbb{K} $, allora $ A $ è uno spazio vettoriale in $ \mathbb{K} $.
+	Se un gruppo $ A $ è un $ R $-modulo e $ R $ è un campo $ \K $, allora $ A $ è uno spazio vettoriale in $ \K $.
 \end{remark}
 
 \begin{theorem}\label{chi-mod}
@@ -1159,7 +1159,7 @@ Da queste definizioni, si dice che $ (A,+) $ è un $ R $-modulo se è un $ R $-m
 \subsection{Derivata di funzione rispetto ad un campo di vettori} 
 
 I campi di vettori permettono di derivare funzioni, così come è possibile fare la derivata direzionale di una funzione rispetto ad un vettore e dunque rispetto ad un campo di vettori.\\
-Prendiamo $ X \in \chi(U) $ con $ U \subset \mathbb{R}^{n} $ aperto e $ f \in C^{\infty}(U) $. Definisco la derivata di $ f $ rispetto ad $ X $ come $ X f \in C^{\infty}(U) $. La derivata puntuale è definita come $ (X f) (p) = X_{p} f $ con $ p \in U $: se il campo è
+Prendiamo $ X \in \chi(U) $ con $ U \subset \R^{n} $ aperto e $ f \in C^{\infty}(U) $. Definisco la derivata di $ f $ rispetto ad $ X $ come $ X f \in C^{\infty}(U) $. La derivata puntuale è definita come $ (X f) (p) = X_{p} f $ con $ p \in U $: se il campo è
 
 \begin{equation}
 	X = \sum_{i=1}^{n} a^{i} \dfrac{\partial}{\partial x^{i}}
@@ -1169,8 +1169,8 @@ allora
 
 \begin{align}
 	\begin{split}
-		(X f) (p) =& \, \left( \sum_{i=1}^{n} a^{i}(p) \, \dfrac{\partial}{\partial x^{i}} \right) (f)\\
-		=& \, \sum_{i=1}^{n} a^{i}(p) \, \dfrac{\partial f}{\partial x^{i}} (p)
+		(X f) (p) &= \left( \sum_{i=1}^{n} a^{i}(p) \, \dfrac{\partial}{\partial x^{i}} \right) (f)\\
+		&= \sum_{i=1}^{n} a^{i}(p) \, \dfrac{\partial f}{\partial x^{i}} (p)
 	\end{split}
 \end{align}
 
@@ -1178,7 +1178,7 @@ perciò
 
 \begin{align}
 	\begin{split}
-		X f : U \to& \mathbb{R}\\
+		X f : U \to& \R\\
 		p \mapsto& \sum_{i=1}^{n} a^{i}(p) \, \dfrac{\partial f}{\partial x^{i}} (p)
 	\end{split}
 \end{align}
@@ -1188,17 +1188,17 @@ Posso considerare l'applicazione
 
 \begin{align}
 	\begin{split}
-		X : C^{\infty}(U) \to& \, C^{\infty}(U)\\
-		f \mapsto& \, X f
+		X : C^{\infty}(U) &\to C^{\infty}(U)\\
+		f &\mapsto X f
 	\end{split}
 \end{align}
 
-ricordando che $ C^{\infty}(U) $, oltre ad essere un anello commutativo unitario, è un'algebra sui reali, perciò l'applicazione $ X $ è $ \mathbb{R} $-lineare. Inoltre, siccome $ X_{p} \in Der_{p}(C_{p}^{\infty}(\mathbb{R}^{n})) $, soddisfa la regola di Leibniz
+ricordando che $ C^{\infty}(U) $, oltre ad essere un anello commutativo unitario, è un'algebra sui reali, perciò l'applicazione $ X $ è $ \R $-lineare. Inoltre, siccome $ X_{p} \in Der_{p}(C_{p}^{\infty}(\R^{n})) $, soddisfa la regola di Leibniz
 
 \begin{align}
 	\begin{split}
-		X (f g) (p) =& \, X_{p} (f g)\\
-		=& \, (X_{p} f) \, g(p) + f(p) \, (X_{p} g) 
+		X (f g) (p) &= X_{p} (f g)\\
+		&= (X_{p} f) \, g(p) + f(p) \, (X_{p} g) 
 	\end{split}
 \end{align}
 
@@ -1214,8 +1214,8 @@ Sia $ A $ un'algebra\footnote{%
 	Un'algebra è costituita da $ (\text{spazio vettoriale},\cdot) $, dove l'operazione
 		\begin{align}
 			\begin{split}
-				\cdot : A \times A \to& \, A\\
-				(a,b) \mapsto& \, a \cdot b
+				\cdot : A \times A &\to A\\
+				(a,b) &\mapsto a \cdot b
 			\end{split}
 		\end{align}
 	soddisfa le proprietà
@@ -1230,7 +1230,7 @@ Sia $ A $ un'algebra\footnote{%
 		\end{cases}
 	\end{equation}
 	per $ \forall a,b,c \in A $ e $ \forall \lambda \in \R $.%
-} su un campo $ \mathbb{K} $, un'applicazione $ D : A \to A $ che sia $ \K $-lineare e tale che soddisfi la regola di Leibniz
+} su un campo $ \K $, un'applicazione $ D : A \to A $ che sia $ \K $-lineare e tale che soddisfi la regola di Leibniz
 
 \begin{equation}
 	D (a \cdot b) = (D a) \cdot b + a \cdot (D b)
@@ -1245,8 +1245,8 @@ Possiamo vedere un campo di vettori come una derivazione di un'algebra, quindi d
 
 \begin{align}
 	\begin{split}
-		\phi : \chi(U) \to& \, Der(C^{\infty}(U))\\
-		X \mapsto& \, \phi(X)
+		\phi : \chi(U) &\to Der(C^{\infty}(U))\\
+		X &\mapsto \phi(X)
 	\end{split}
 \end{align}
 
@@ -1260,8 +1260,8 @@ Sia $ \chi(U) $ che $ Der(C^{\infty}(U)) $ sono $ C^{\infty}(U) $-modulo, dall'a
 
 \begin{align}
 	\begin{split}
-		K : C^{\infty}(U) \times Der(C^{\infty}(U)) \to& \, Der(C^{\infty}(U))\\
-		(f,D) \mapsto& \, f D
+		K : C^{\infty}(U) \times Der(C^{\infty}(U)) &\to Der(C^{\infty}(U))\\
+		(f,D) &\mapsto f D
 	\end{split}
 \end{align}
 
@@ -1279,4 +1279,4 @@ Inoltre $ \phi $ è anche $ C^{\infty}(U) $-lineare, i.e
 
 per $ \forall f,g \in C^{\infty}(U) $ e $ \forall X,Y \in \chi(U) $.\\
 Dimostreremo per le varietà differenziabili che $ \phi $ è un isomorfismo di $ C^{\infty}(U) $-moduli, i.e. $ \chi(U) \simeq Der(C^{\infty}(U)) $.\\
-Tramite questo isomorfismo, si possono identificare i campi di vettori lisci con le derivazioni dell'algebra delle funzioni lisce, analogamente a come lo spazio tangente ad un punto di $ \mathbb{R}^{n} $ si può identificare con le derivazioni puntuali dell'algebra dei germi delle funzioni in quel punto, i.e. $ T_{p}(\mathbb{R}^{n}) \simeq Der_{p}(C_{p}^{\infty}(\mathbb{R}^{n})) $.
+Tramite questo isomorfismo, si possono identificare i campi di vettori lisci con le derivazioni dell'algebra delle funzioni lisce, analogamente a come lo spazio tangente ad un punto di $ \R^{n} $ si può identificare con le derivazioni puntuali dell'algebra dei germi delle funzioni in quel punto, i.e. $ T_{p}(\R^{n}) \simeq Der_{p}(C_{p}^{\infty}(\R^{n})) $.

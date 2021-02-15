@@ -40,7 +40,7 @@ Il gruppo delle matrici invertibili
 	GL_{n}(\R) = \{ A \in M_{n}(\R) \mid \det(A) \neq 0 \} \subset M_{n}(\R) = \R^{n^{2}}
 \end{equation}
 
-con la struttura differenziale ereditata da $ M_{n}(\mathbb{R}) = \mathbb{R}^{n^{2}} $ in quanto $ GL_{n}(\mathbb{R}) $ è aperto in questo spazio, è un gruppo di Lie rispetto alla moltiplicazione e l'inversione:
+con la struttura differenziale ereditata da $ M_{n}(\R) = \R^{n^{2}} $ in quanto $ GL_{n}(\R) $ è aperto in questo spazio, è un gruppo di Lie rispetto alla moltiplicazione e l'inversione:
 
 \begin{align}
 	\begin{split}
@@ -2591,7 +2591,7 @@ I campi di vettori invarianti a sinistra sono importanti perché esiste un isomo
 		poiché
 		
 		\begin{equation}
-			L_{e} = \operatorname{id}_{G} \implies L_{e_{*e}} = \operatorname{id}_{T_{e}(G)}
+			L_{e} = \id_{G} \implies L_{e_{*e}} = \id_{T_{e}(G)}
 		\end{equation}
 	
 		e viceversa verifichiamo che
@@ -2741,7 +2741,7 @@ In questo modo, l'applicazione $ \hat{} $ è un isomorfismo di algebre di Lie tr
 L'algebra $ (T_{e}(G),[,]) $ è chiamata \textit{algebra di Lie del gruppo} $ G $ e viene indicata con
 
 \begin{equation}
-	\mathfrak{g} \doteq (T_{e}(G),[,])
+	\g \doteq (T_{e}(G),[,])
 \end{equation}
 
 \begin{remark}
@@ -3185,13 +3185,13 @@ Anche nel contesto di omomorfismi, è possibile definire campi di vettori $ F $-
 	scritto anche come
 	
 	\begin{equation}
-		F_{*e} : \mathfrak{h} \to \mathfrak{g}
+		F_{*e} : \h \to \g
 	\end{equation}
 
 	è un omomorfismo di algebre di Lie (con il commutatore usuale), i.e.
 	
 	\begin{equation}
-		F_{*e} \comm{A}{B} = \comm{F_{*e} (A)}{F_{*e} (B)} \qcomma \forall A,B \in \mathfrak{h}
+		F_{*e} \comm{A}{B} = \comm{F_{*e} (A)}{F_{*e} (B)} \qcomma \forall A,B \in \h
 	\end{equation}
 \end{definition}
 
@@ -3226,18 +3226,18 @@ Anche nel contesto di omomorfismi, è possibile definire campi di vettori $ F $-
 	
 	\begin{equation}
 		\begin{cases}
-			\mathfrak{h} = (T_{e}(H),[,])\\
-			\mathfrak{g} = (T_{e}(G),[,])
+			\h = (T_{e}(H),[,])\\
+			\g = (T_{e}(G),[,])
 		\end{cases}
 	\end{equation}
 	
-	abbiamo che il differenziale dell'inclusione $ i_{*e} : \mathfrak{h} \to \mathfrak{g} $ soddisfa
+	abbiamo che il differenziale dell'inclusione $ i_{*e} : \h \to \g $ soddisfa
 	
 	\begin{equation}
 		i_{*e} (\comm{A}{B}) = \comm{i_{*e} (A)}{i_{*e} (B)} \qcomma \forall A,B \in T_{e}(H)
 	\end{equation}
 
-	Quindi il commutatore di $ \mathfrak{g} $ induce il commutatore (e dunque l'algebra) di $ \mathfrak{h} $.
+	Quindi il commutatore di $ \g $ induce il commutatore (e dunque l'algebra) di $ \h $.
 \end{corollary}
 
 In particolare, il commutatore dei sottogruppi (matriciali) di $ GL_{n}(\R) $ o $ GL_{n}(\C) $ è dato dal \textit{commutatore standard}
@@ -4198,11 +4198,11 @@ Vedi Esercizio \ref{es3-10}.
 
 \subsection{Sulla suriettività dell'esponenziale}
 
-Dai risultati precedenti, dato un gruppo di Lie $ G $, possiamo costruire un'algebra di Lie $ \g = (T_{e}(G),[,]) $ e da questo possiamo tornare indietro tramite l'esponenziale $ \exp $: questo dimostra che esiste un funtore, i.e. \textit{il funtore di Lie} $ \mathcal{L} $ dalla categoria dei gruppi di Lie $ \mathfrak{G} $ alla categoria delle algebre di Lie $ \mathfrak{A} $ che porta omomorfismi di gruppi di Lie $ F : H \to G $ in omomorfismi di algebre di Lie $ F_{*e} : \h \to \g $
+Dai risultati precedenti, dato un gruppo di Lie $ G $, possiamo costruire un'algebra di Lie $ \g = (T_{e}(G),[,]) $ e da questo possiamo tornare indietro tramite l'esponenziale $ \exp $: questo dimostra che esiste un funtore, i.e. \textit{il funtore di Lie} $ \mathcal{L} $ dalla categoria dei gruppi di Lie $ \g $ alla categoria delle algebre di Lie $ \mathfrak{A} $ che porta omomorfismi di gruppi di Lie $ F : H \to G $ in omomorfismi di algebre di Lie $ F_{*e} : \h \to \g $
 
 \begin{equation}
 	\begin{cases}
-		\mathcal{L}(G) = T_{e}(G) & \forall G \in Ob(\mathfrak{G}), \, T_{e}(G) \in Ob(\mathfrak{A})\\
+		\mathcal{L}(G) = T_{e}(G) & \forall G \in Ob(\g), \, T_{e}(G) \in Ob(\mathfrak{A})\\
 		\mathcal{L}(F) = F_{*p} & \forall F \in Mor(H,G), \, F_{*e} \in Mor(\h,\g)
 	\end{cases}
 \end{equation}

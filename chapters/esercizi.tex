@@ -3,7 +3,7 @@
 \tocless\section{}\label{es1-1}
 
 \begin{tcolorbox}
-	Per ogni numero naturale $ k \in \mathbb{N} $ costruire una funzione $ C^{k}(\mathbb{R}) $ ma non $ C^{k+1}(\mathbb{R}) $.
+	Per ogni numero naturale $ k \in \N $ costruire una funzione $ C^{k}(\R) $ ma non $ C^{k+1}(\R) $.
 \end{tcolorbox}
 
 Per la funzione
@@ -21,7 +21,7 @@ per $ \forall \alpha,\beta \in \R $, vale $ f_{k} \in C^{k}(\R) $ ma $ f_{k} \no
 	
 	\begin{align}
 		\begin{split}
-			f : \mathbb{R} & \to \mathbb{R}\\
+			f : \R & \to \R\\
 			x &\mapsto%
 				\begin{cases}
 					e^{\sfrac{-1}{x^{2}}} & x \neq 0\\
@@ -56,7 +56,7 @@ La funzione non è però reale analitica perché, in un intervallo aperto qualsi
 \tocless\section{}\label{es1-3}
 
 \begin{tcolorbox}
-	Siano $ a,b,c,d \in \mathbb{R} $ tale che $ a<b $. Dimostrare che i seguenti intervalli sono tutti diffeomorfi tra loro e diffeomorfi a $ \mathbb{R} $:
+	Siano $ a,b,c,d \in \R $ tale che $ a<b $. Dimostrare che i seguenti intervalli sono tutti diffeomorfi tra loro e diffeomorfi a $ \R $:
 	
 	\begin{equation}
 		\begin{cases}
@@ -107,7 +107,7 @@ queste sono diffeomorfismi in quanto bigezioni lisce con inversa liscia, dunque 
 		{B_{1}(0)}{\R^{n}}%
 		{x}{\left( \dfrac{x^{1}}{\sqrt{1 - \norm{x}^{2}}}, \cdots, \dfrac{x^{n}}{\sqrt{1 - \norm{x}^{2}}} \right)}
 	
-	definisce un diffeomorfismo tra la palla aperta unitaria centrata nell'origine di $ \R^{n} $ e $ \R^{n} $. Dedurre che la palla aperta di centro $ c \in \R^{n} $ e raggio $ r > 0 $ in $ \mathbb{R}^{n} $ è diffeomorfa a $ \R^{n} $.
+	definisce un diffeomorfismo tra la palla aperta unitaria centrata nell'origine di $ \R^{n} $ e $ \R^{n} $. Dedurre che la palla aperta di centro $ c \in \R^{n} $ e raggio $ r > 0 $ in $ \R^{n} $ è diffeomorfa a $ \R^{n} $.
 \end{tcolorbox}
 
 L'applicazione $ h $ è una bigezione liscia in quanto ogni sua componente è liscia poiché
@@ -140,7 +140,7 @@ L'applicazione $ f $ è un diffeomorfismo in quanto composizione di diffeomorfis
 \tocless\section{}\label{es1-5}
 
 \begin{tcolorbox}
-	Sia $ f \in C^{\infty}(\mathbb{R}^{2}) $. Usando il teorema di Taylor con resto, dimostrare che esistono $ g_{11},g_{12},g_{22} \in C^{\infty}(\mathbb{R}^{2}) $ tali che
+	Sia $ f \in C^{\infty}(\R^{2}) $. Usando il teorema di Taylor con resto, dimostrare che esistono $ g_{11},g_{12},g_{22} \in C^{\infty}(\R^{2}) $ tali che
 	
 	\begin{equation}
 		f(x,y) = f(0,0) + x \, \dfrac{\partial f}{\partial x} ((0,0)) + y \, \dfrac{\partial f}{\partial y} ((0,0)) + x^{2} \, g_{11}(x,y) + x y \, g_{12}(x,y) + y^{2} \, g_{22}(x,y)
@@ -160,7 +160,7 @@ L'applicazione $ f $ è un diffeomorfismo in quanto composizione di diffeomorfis
 \tocless\section{}\label{es1-6}
 
 \begin{tcolorbox}
-	Sia $ f \in C^{\infty}(\mathbb{R}^{2}) $ tale che
+	Sia $ f \in C^{\infty}(\R^{2}) $ tale che
 	
 	\begin{equation}
 		f(0,0) = \dfrac{\partial f}{\partial x} (0,0) = \dfrac{\partial f}{\partial y} (0,0) = 0
@@ -170,7 +170,7 @@ L'applicazione $ f $ è un diffeomorfismo in quanto composizione di diffeomorfis
 	
 	\begin{align}
 		\begin{split}
-			g : \mathbb{R}^{2} & \to \mathbb{R}\\
+			g : \R^{2} & \to \R\\
 			(t,u) &\mapsto%
 			\begin{cases}
 				\dfrac{f(t,tu)}{t} & t \neq 0\\\\
@@ -179,7 +179,7 @@ L'applicazione $ f $ è un diffeomorfismo in quanto composizione di diffeomorfis
 		\end{split}
 	\end{align}
 	
-	Dimostrare che $ g \in C^{\infty}(\mathbb{R}^{2}) $.
+	Dimostrare che $ g \in C^{\infty}(\R^{2}) $.
 \end{tcolorbox}
 
 qui
@@ -187,7 +187,7 @@ qui
 \tocless\section{}\label{es1-7}
 
 \begin{tcolorbox}
-	Dimostrare che l'insieme $ C_{p}^{\infty}(\R^{n}) $ dei germi delle funzioni lisce intorno a $ p \in \mathbb{R}^{n} $ con le operazioni di somma e di prodotto definite negli appunti è un'algebra commutativa e unitaria.
+	Dimostrare che l'insieme $ C_{p}^{\infty}(\R^{n}) $ dei germi delle funzioni lisce intorno a $ p \in \R^{n} $ con le operazioni di somma e di prodotto definite negli appunti è un'algebra commutativa e unitaria.
 \end{tcolorbox}
 
 L'algebra $ A = (C_{p}^{\infty}(\R^{n}),+,\cdot) $ ha le operazioni definite come segue:
@@ -235,10 +235,10 @@ può essere verificata tramite i seguenti passaggi:
 \tocless\section{}\label{es1-8}
 
 \begin{tcolorbox}
-	Dimostrare che l'insieme $ Der_{p}(C_{p}^{\infty}(\mathbb{R}^{n})) $ delle derivazioni puntuali con le operazioni definite negli appunti è uno spazio vettoriale su $ \mathbb{R} $.
+	Dimostrare che l'insieme $ Der_{p}(C_{p}^{\infty}(\R^{n})) $ delle derivazioni puntuali con le operazioni definite negli appunti è uno spazio vettoriale su $ \R $.
 \end{tcolorbox}
 
-Per dimostrare che $ Der_{p}(C_{p}^{\infty}(\mathbb{R}^{n})) $ sia uno spazio vettoriale sui reali è necessario che vengano rispettate le seguenti relazioni:
+Per dimostrare che $ Der_{p}(C_{p}^{\infty}(\R^{n})) $ sia uno spazio vettoriale sui reali è necessario che vengano rispettate le seguenti relazioni:
 
 \begin{align}
 	\begin{split}
@@ -272,7 +272,7 @@ Per la seconda:
 \tocless\section{}\label{es1-9}
 
 \begin{tcolorbox}
-	Dimostrare che l'insieme dei campi di vettori lisci $ \chi(U) $ su un aperto $ U \subset \mathbb{R}^{n} $ con le operazioni definite negli appunti è uno spazio vettoriale su $ \mathbb{R} $ e un $ C^{\infty} $-modulo.
+	Dimostrare che l'insieme dei campi di vettori lisci $ \chi(U) $ su un aperto $ U \subset \R^{n} $ con le operazioni definite negli appunti è uno spazio vettoriale su $ \R $ e un $ C^{\infty} $-modulo.
 \end{tcolorbox}
 
 Per dimostrare che $ \chi(U) $ sia uno spazio vettoriale:
@@ -291,7 +291,7 @@ qui
 \tocless\section{}\label{es1-10}
 
 \begin{tcolorbox}
-	Sia $ A $ un'algebra su un campo $ \mathbb{K} $. Dimostrare che le operazioni
+	Sia $ A $ un'algebra su un campo $ \K $. Dimostrare che le operazioni
 	
 	\begin{equation}
 		\begin{cases}
@@ -300,7 +300,7 @@ qui
 		\end{cases}
 	\end{equation}
 	
-	per $ \forall \lambda \in \mathbb{K} $ e $ \forall D_{1},D_{2},D \in Der(A) $ dotano $ Der(A) $ della struttura di spazio vettoriale su $ \mathbb{K} $.
+	per $ \forall \lambda \in \K $ e $ \forall D_{1},D_{2},D \in Der(A) $ dotano $ Der(A) $ della struttura di spazio vettoriale su $ \K $.
 \end{tcolorbox}
 
 qui
@@ -308,7 +308,7 @@ qui
 \tocless\section{}\label{es1-11}
 
 \begin{tcolorbox}
-	Siano $ D_{1} $ e $ D_{2} $ due derivazioni di un'algebra $ A $ su un campo $ \mathbb{K} $, i.e. $ D_{1},D_{2} \in Der(A) $. Mostrare che $ D_{1} \circ D_{2} $ non è necessariamente una derivazione di $ A $ mentre
+	Siano $ D_{1} $ e $ D_{2} $ due derivazioni di un'algebra $ A $ su un campo $ \K $, i.e. $ D_{1},D_{2} \in Der(A) $. Mostrare che $ D_{1} \circ D_{2} $ non è necessariamente una derivazione di $ A $ mentre
 	
 	\begin{equation}
 		D_{1} \circ D_{2} - D_{2} \circ D_{1} \in Der(A)
@@ -366,16 +366,57 @@ qui
 \tocless\section{}\label{es2-1}
 
 \begin{tcolorbox}
-	Sia $ \mathbb{S}^{n} $ la sfera unitaria in $ \mathbb{R}^{n+1} $. Trovare un atlante differenziabile di $ \mathbb{S}^{n} $ con $ 2(n+1) $ carte.
+	Sia $ \S^{n} $ la sfera unitaria in $ \R^{n+1} $. Trovare un atlante differenziabile di $ \S^{n} $ con $ 2(n+1) $ carte.
 
 \end{tcolorbox}
 
-qui
+Definiamo i $ 2(n+1) $ aperti
+
+\begin{equation}
+	U_{i} = %
+	\begin{cases}
+		\{ (x^{1},\dots,x^{n+1}) \in \R^{n+1} \mid x^{i} > 0 \} & i = 2k\\\\
+		\{ (x^{1},\dots,x^{n+1}) \in \R^{n+1} \mid x^{i} < 0 \} & i = 2k+1
+	\end{cases}%
+	\quad k \in \N, \, i = 1,\dots,2(n+1)
+\end{equation}
+
+per i quali vale $ U_{i} \subset \R^{n+1} $ e che formano un ricoprimento per $ \S^{n} $, i.e.
+
+\begin{equation}
+	\S^{n} = \bigcup_{i=1}^{2(n+1)} U_{i}
+\end{equation}
+
+Definiamo anche gli aperti
+
+\begin{equation}
+	D_{i} = \{ (x^{1},\dots,x^{i},\dots,x^{n+1}) \in \R^{n+1} \mid \norm{x} < 1 \} = B_{1}(0) \simeq \R^{n} \qcomma i = 1,\dots,2(n+1)
+\end{equation}
+
+i quali, in sostanza, sono palle di raggio unitario centrate nell'origine nel piano $ \R^{n} \times \{0\}_{\R^{i}} $, dove
+
+\begin{equation}
+	\norm{x} = \sqrt{ \sum_{p=1}^{n} (x^{p})^{2} }
+\end{equation}
+
+Infine definiamo le applicazioni lisce
+
+\map{\phi_{i}}%
+	{U_{i}}{D_{i}}%
+	{(x^{1},\dots,x^{i-1},x^{i},x^{i+1},\dots,x^{n+1})}{(x^{1},\dots,x^{i-1},x^{i+1},\dots,x^{n+1})}
+
+con inverse
+
+\map{\phi_{i}^{-1}}%
+	{D_{i}}{U_{i}}%
+	{(x^{1},\dots,x^{i-1},x^{i},\dots,x^{n+1})}{\left( x^{1},\dots,x^{i-1},\sqrt{1-\norm{x}^{2}},x^{i},\dots,x^{n+1} \right)}
+
+La famiglia di coppie $ \mathfrak{U} = \{ (U_{i},\phi_{i}) \}_{i=1,\dots,2(n+1)} $ definisce un atlante differenziabile per $ \S^{n} $ in quanto i cambi di carte sono lisci (la dimostrazione è analoga a quelle fatta negli appunti per $ \S^{2} $).
 
 \tocless\section{}\label{es2-2}
 
 \begin{tcolorbox}
-	Dimostrare che la strutture differenziabili su $ \mathbb{S}^{n} $ definite dall’esercizio precedente e dalle proiezioni
+	Dimostrare che la struttura differenziabile su $ \S^{n} $ definita dall’esercizio precedente e quella definita dalle proiezioni
 	stereografiche coincidono.
 \end{tcolorbox}
 
@@ -431,7 +472,7 @@ qui
 \tocless\section{}\label{es2-7}
 
 \begin{tcolorbox}
-	Sia $ \mathbb{S}^{1} $ il cerchio unitario di $ \mathbb{R}^{2} $. Dimostrare che una funzione liscia $ f : \mathbb{R}^{2} \to \mathbb{R} $ si restringe ad una funzione liscia $ f_{|\mathbb{S}^{1}} : \mathbb{S}^{1} \to \mathbb{R} $.
+	Sia $ \S^{1} $ il cerchio unitario di $ \R^{2} $. Dimostrare che una funzione liscia $ f : \R^{2} \to \R $ si restringe ad una funzione liscia $ f_{|\S^{1}} : \S^{1} \to \R $.
 \end{tcolorbox}
 
 qui
@@ -439,7 +480,7 @@ qui
 \tocless\section{}\label{BONUS2-2}
 
 \begin{tcolorbox}
-	Verificare che $ Der_{p}(C_{p}^{\infty}(N)) $ sia uno spazio vettoriale su $ \mathbb{R} $.
+	Verificare che $ Der_{p}(C_{p}^{\infty}(N)) $ sia uno spazio vettoriale su $ \R $.
 \end{tcolorbox}
 
 qui
@@ -451,12 +492,12 @@ qui
 	
 	\begin{align}
 		\begin{split}
-			F : \mathbb{R}^{2} &\to \mathbb{R}^{3}\\
+			F : \R^{2} &\to \R^{3}\\
 			(x,y) &\mapsto (x,y,xy)
 		\end{split}
 	\end{align}
 	
-	e $ p = (x,y) \in \mathbb{R}^{2} $. Trovare $ a,b,c \in \mathbb{R} $ tali che:
+	e $ p = (x,y) \in \R^{2} $. Trovare $ a,b,c \in \R $ tali che:
 	
 	\begin{equation}
 		F_{*p} \left( \left. \dfrac{\partial}{\partial x} \right|_{p} \right) = a \left. \dfrac{\partial}{\partial u} \right|_{F(p)} + b \left. \dfrac{\partial}{\partial v} \right|_{F(p)} + c \left. \dfrac{\partial}{\partial w} \right|_{F(p)}
@@ -468,7 +509,7 @@ qui
 \tocless\section{}\label{es2-9}
 
 \begin{tcolorbox}
-	Siano $ x $ e $ y $ le coordinate standard su $ \mathbb{R}^{2} $ e $ U = \mathbb{R}^{2} \setminus \{(0,0)\} $. In $ U $ le coordinate polari $ (\rho, \theta) $ con $ \rho > 0 $ e $ \theta \in (0,2\pi) $ sono definite come
+	Siano $ x $ e $ y $ le coordinate standard su $ \R^{2} $ e $ U = \R^{2} \setminus \{(0,0)\} $. In $ U $ le coordinate polari $ (\rho, \theta) $ con $ \rho > 0 $ e $ \theta \in (0,2\pi) $ sono definite come
 	
 	\begin{equation}
 		\begin{cases}
@@ -485,13 +526,13 @@ qui
 \tocless\section{}\label{es2-10}
 
 \begin{tcolorbox}
-	Sia $ p = (x,y) $ un punto di $ \mathbb{R}^{2} $. Allora
+	Sia $ p = (x,y) $ un punto di $ \R^{2} $. Allora
 	
 	\begin{equation}
 		c_{p}(t) = \begin{pmatrix} \cos(2t) & -\sin(2t) \\\\ \sin(2t) & \cos(2t) \end{pmatrix} \begin{pmatrix} x \\\\ y \end{pmatrix}
 	\end{equation}
 	
-	è una curva liscia in $ \mathbb{R}^{2} $ che inizia in $ p $. Calcolare $ c'(0) $.
+	è una curva liscia in $ \R^{2} $ che inizia in $ p $. Calcolare $ c'(0) $.
 \end{tcolorbox}
 
 qui
@@ -531,12 +572,12 @@ qui
 	
 	\begin{align}
 		\begin{split}
-			F : \mathbb{R}^{2} &\to \mathbb{R}\\
+			F : \R^{2} &\to \R\\
 			(x,y) &\mapsto x^{2}-6xy+y^{2}
 		\end{split}
 	\end{align}
 
-	Trovare i $ c \in \mathbb{R} $ tali che $ F^{-1}(c) $ sia una sottovarietà di $ \mathbb{R}^{2} $.
+	Trovare i $ c \in \R $ tali che $ F^{-1}(c) $ sia una sottovarietà di $ \R^{2} $.
 \end{tcolorbox}
 
 qui
@@ -553,7 +594,7 @@ qui
 		\end{cases}
 	\end{equation}
 
-	costituiscono una sottovarietà di $ \mathbb{R}^{3} $.
+	costituiscono una sottovarietà di $ \R^{3} $.
 \end{tcolorbox}
 
 qui
@@ -561,10 +602,10 @@ qui
 \tocless\section{}\label{BONUS2-3}
 
 \begin{tcolorbox}
-	Sia la sottovarietà di $ \mathbb{R}^{3} $
+	Sia la sottovarietà di $ \R^{3} $
 	
 	\begin{equation}
-		S = \{ (x,y,z) \in \mathbb{R}^{3} \mid x^{3} + y^{3} + z^{3} = 1 \wedge x+y+z=0 \} \subset \mathbb{R}^{3}
+		S = \{ (x,y,z) \in \R^{3} \mid x^{3} + y^{3} + z^{3} = 1 \wedge x+y+z=0 \} \subset \R^{3}
 	\end{equation}
 	
 	Calcolare lo spazio tangente $ T_{p}(S) $ con $ p \in S $.
@@ -575,20 +616,20 @@ qui
 \tocless\section{}\label{es2-15}
 
 \begin{tcolorbox}
-	Un polinomio $ F(x_{0},\dots,x_{n}) \in \mathbb{R}[x_{0},\dots,x_{n}] $ è omogeneo di grado $ k $ se è combinazione lineare di monomi $ x_{0}^{i_{1}} \cdots x_{n}^{i_{m}} $ di grado $ k $ tale che $ \sum_{j=1}^{m} i_{j} = k $. Dimostrare che
+	Un polinomio $ F(x_{0},\dots,x_{n}) \in \R[x_{0},\dots,x_{n}] $ è omogeneo di grado $ k $ se è combinazione lineare di monomi $ x_{0}^{i_{1}} \cdots x_{n}^{i_{m}} $ di grado $ k $ tale che $ \sum_{j=1}^{m} i_{j} = k $. Dimostrare che
 	
 	\begin{equation}
 		\sum_{i=0}^{n} x^{i} \, \dfrac{\partial F}{\partial x^{i}} = k F
 	\end{equation}
 
-	Dedurre che $ F^{-1}(c) $ con $ c \neq 0 $ è una sottovarietà di $ \mathbb{R}^{n} $ di dimensione $ n-1 $. Dimostrare inoltre che per $ c,d>0 $ si ha che $ F^{-1}(c) \simeq F^{-1}(d) $ diffeomorfe e lo stesso vale per $ c,d<0 $.\\\\
+	Dedurre che $ F^{-1}(c) $ con $ c \neq 0 $ è una sottovarietà di $ \R^{n} $ di dimensione $ n-1 $. Dimostrare inoltre che per $ c,d>0 $ si ha che $ F^{-1}(c) \simeq F^{-1}(d) $ diffeomorfe e lo stesso vale per $ c,d<0 $.\\\\
 	Suggerimento per la prima parte: usare l'uguaglianza
 	
 	\begin{equation}
 		F(\lambda x_{0},\dots,\lambda x_{n}) = \lambda^{k} F(x_{0},\dots,x_{n})
 	\end{equation}
 	
-	valida per ogni $ \lambda \in \mathbb{R} $.
+	valida per ogni $ \lambda \in \R $.
 \end{tcolorbox}
 
 qui
@@ -599,10 +640,10 @@ qui
 	Dimostrare che
 	
 	\begin{equation}
-		\mathbb{SL}_{n}(\mathbb{C}) = \{ A \in M_{n}(\mathbb{C}) \mid \det(A) \neq 0 \} \subset M_{n}(\mathbb{C})
+		\mathbb{SL}_{n}(\C) = \{ A \in M_{n}(\C) \mid \det(A) \neq 0 \} \subset M_{n}(\C)
 	\end{equation}
 
-	è una sottovarietà di $ M_{n}(\mathbb{C}) $ con $ \dim(\mathbb{SL}_{n}(\mathbb{C})) = 2n^{2}-2  $
+	è una sottovarietà di $ M_{n}(\C) $ con $ \dim(\mathbb{SL}_{n}(\C)) = 2n^{2}-2  $
 \end{tcolorbox}
 
 qui
@@ -630,12 +671,12 @@ qui
 	
 	\begin{align}
 		\begin{split}
-			F : \mathbb{R} &\to \mathbb{R}^{3}\\
+			F : \R &\to \R^{3}\\
 			t &\mapsto (t,t^{2},t^{3})
 		\end{split}
 	\end{align}
 
-	è un embedding liscio e scrivere $ F(\mathbb{R}) $ come zero di funzioni.
+	è un embedding liscio e scrivere $ F(\R) $ come zero di funzioni.
 \end{tcolorbox}
 
 qui
@@ -647,7 +688,7 @@ qui
 	
 	\begin{align}
 		\begin{split}
-			F : \mathbb{R} &\to \mathbb{R}^{3}\\
+			F : \R &\to \R^{3}\\
 			t &\mapsto (\cosh(t),\sinh(t))
 		\end{split}
 	\end{align}
@@ -655,7 +696,7 @@ qui
 	è un embedding liscio e che
 	
 	\begin{equation}
-		F(\mathbb{R}) = \{ (x,y) \in \mathbb{R}^{2} \mid x^{2}-y^{2} = 1 \}
+		F(\R) = \{ (x,y) \in \R^{2} \mid x^{2}-y^{2} = 1 \}
 	\end{equation}
 \end{tcolorbox}
 
@@ -684,12 +725,12 @@ qui
 	
 	\begin{align}
 		\begin{split}
-			F : \mathbb{S}^{2} &\to \mathbb{R}^{4}\\
+			F : \S^{2} &\to \R^{4}\\
 			(x,y,z) &\mapsto (x^{2}-y^{2},xy,xz,yz)
 		\end{split}
 	\end{align}
 	
-	induce un embedding liscio da $ \mathcal{RP}^{2} $ a $ \mathbb{R}^{4} $.
+	induce un embedding liscio da $ \mathcal{RP}^{2} $ a $ \R^{4} $.
 \end{tcolorbox}
 
 qui
@@ -720,7 +761,7 @@ qui
 \tocless\section{}\label{BONUS2-4}
 
 \begin{tcolorbox}
-	Verificare che la sfera $ \mathbb{S}^{1} $ sia parallelizzabile.
+	Verificare che la sfera $ \S^{1} $ sia parallelizzabile.
 \end{tcolorbox}
 
 qui
@@ -755,7 +796,7 @@ qui
 \tocless\section{}\label{es2-28}
 
 \begin{tcolorbox}
-	Una \textit{derivazione} di un'algebra di Lie $ (V,[\cdot,\cdot]) $ su un campo $ \mathbb{K} $ è un'applicazione lineare $ D : V \to V $ tale che
+	Una \textit{derivazione} di un'algebra di Lie $ (V,[\cdot,\cdot]) $ su un campo $ \K $ è un'applicazione lineare $ D : V \to V $ tale che
 	
 	\begin{equation}
 		D([Y,Z]) = [DY,Z] + [Y,DZ]
@@ -778,7 +819,7 @@ qui
 \tocless\section{}\label{es2-29}
 
 \begin{tcolorbox}
-	Siano $ M = \mathbb{R} \setminus 0 $ e $ X = \sfrac{\operatorname{d}}{\operatorname{dx}} \in \chi(M) $. Trovare la curva integrale di $ X $ massimale che inizia in un generico punto $ p \in \mathbb{R} $.
+	Siano $ M = \R \setminus 0 $ e $ X = \sfrac{\operatorname{d}}{\operatorname{dx}} \in \chi(M) $. Trovare la curva integrale di $ X $ massimale che inizia in un generico punto $ p \in \R $.
 \end{tcolorbox}
 
 qui
@@ -786,7 +827,7 @@ qui
 \tocless\section{}\label{es2-30}
 
 \begin{tcolorbox}
-	Trovare il flusso (locale) dei seguenti campi di vettori in $ \chi(\mathbb{R}^{2}) $:
+	Trovare il flusso (locale) dei seguenti campi di vettori in $ \chi(\R^{2}) $:
 	
 	\begin{equation}
 		\begin{cases}
@@ -804,7 +845,7 @@ qui
 \tocless\section{}\label{es2-31}
 
 \begin{tcolorbox}
-	Dimostrare che il campo di vettori $ X = \sfrac{\partial}{\partial x} \in \chi(\mathbb{R}^{2} \setminus (0,0)) $ non è completo.
+	Dimostrare che il campo di vettori $ X = \sfrac{\partial}{\partial x} \in \chi(\R^{2} \setminus (0,0)) $ non è completo.
 \end{tcolorbox}
 
 qui
@@ -854,7 +895,7 @@ qui
 	
 	\begin{align}
 		\begin{split}
-			\pi : \mathbb{R}^{2} &\to \mathbb{S}^{1} \times \mathbb{S}^{1}\\
+			\pi : \R^{2} &\to \S^{1} \times \S^{1}\\
 			(t,s) &\mapsto (e^{2 \pi i t},e^{2 \pi i s})
 		\end{split}
 	\end{align}
@@ -862,15 +903,15 @@ qui
 	l'insieme
 	
 	\begin{equation}
-		L = \{ (t,\alpha t) \in \mathbb{R}^{2} \mid \alpha \in \mathbb{R} \setminus \mathbb{Q} \}
+		L = \{ (t,\alpha t) \in \R^{2} \mid \alpha \in \R \setminus \Q \}
 	\end{equation}
 
-	e la restrizione di $ \pi $ ad $ L $, i.e. $ f = \pi_{|L} : L \to \mathbb{S}^{1} \times \mathbb{S}^{1} $. Siano
+	e la restrizione di $ \pi $ ad $ L $, i.e. $ f = \pi_{|L} : L \to \S^{1} \times \S^{1} $. Siano
 	
 	\begin{itemize}
 		\item $ \tau_{f} $ la topologia indotta da $ f $ su $ H = \pi(L) $;
 		
-		\item $ \tau_{s} $ la topologia indotta dall'inclusione $ H \subset \mathbb{S}^{1} \times \mathbb{S}^{1} $
+		\item $ \tau_{s} $ la topologia indotta dall'inclusione $ H \subset \S^{1} \times \S^{1} $
 	\end{itemize}
 
 	Dimostrare che $ \tau_{s} \subset \tau_{f} $.
@@ -993,8 +1034,8 @@ qui
 			SO(n)\\
 			U(n)\\
 			SU(n)\\
-			SL_{n}(\mathbb{R})\\
-			SL_{n}(\mathbb{C})
+			SL_{n}(\R)\\
+			SL_{n}(\C)
 		\end{cases}
 	\end{equation}
 \end{tcolorbox}
@@ -1017,14 +1058,14 @@ qui
 	
 	\begin{equation}
 		\begin{cases}
-			GL_{n}(\mathbb{R})\\
-			GL_{n}(\mathbb{C})\\
+			GL_{n}(\R)\\
+			GL_{n}(\C)\\
 			O(n)\\
 			SO(n)\\
 			U(n)\\
 			SU(n)\\
-			SL_{n}(\mathbb{R})\\
-			SL_{n}(\mathbb{C})
+			SL_{n}(\R)\\
+			SL_{n}(\C)
 		\end{cases}
 	\end{equation}
 \end{tcolorbox}
