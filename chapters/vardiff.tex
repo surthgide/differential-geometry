@@ -689,7 +689,7 @@ dove $ U_{S} \cap U_{N} = \S^{n} \setminus \{N,S\} $ e quindi $ \pi_{S}(U_{S} \c
 \end{align}
 
 e la sua inversa è identica a sé stessa $ \pi_{S} \circ \pi_{N}^{-1} \equiv \pi_{N} \circ \pi_{S}^{-1} $; queste composizioni sono $ C^{\infty} $ dunque le carte $ (U_{N},\pi_{N}) $ e $ (U_{S},\pi_{S}) $ sono $ C^{\infty} $-compatibili perciò $ \{(U_{N},\pi_{N}),(U_{S},\pi_{S})\} $ è un atlante differenziabile su $ \S^{n} $, il quale diventa una varietà differenziabile.\\
-Vedi Esercizio \ref{es2-2}. \textbf{l 6 m 1.7.45}
+Vedi Esercizio \ref{es2-2}.
 
 \paragraph{10. Prodotto di varietà differenziabili}
 
@@ -704,7 +704,7 @@ Sia un atlante per $ M \times N $
 dove al variare di $ \alpha $ e $ \beta $ per l'aperto $ U_{\alpha} \times V_{\beta} \in M \times N $ si ottiene un ricoprimento per lo spazio prodotto, i.e.
 
 \begin{equation}
-	M \times N = \bigcup_{\alpha,\beta} \{(U_{\alpha} \times V_{\beta})\}
+	M \times N = \bigcup_{\alpha,\beta} (U_{\alpha} \times V_{\beta})
 \end{equation}
 
 Le applicazioni
@@ -716,7 +716,7 @@ Le applicazioni
 	\end{split}
 \end{align}
 
-dove $ \dim M = m $ e $ \dim N = n $, sono omeomorfismi perché continue (il prodotto di applicazioni continue è continuo) e le inverse sono il prodotto delle inverse
+dove $ \dim M = m $ e $ \dim N = n $, sono continue (il prodotto di applicazioni continue è continuo) perché omeomorfismi e le inverse sono il prodotto delle inverse
 
 \begin{equation}
 	(\phi_{\alpha} \times \psi_{\beta})^{-1} = \phi_{\alpha}^{-1} \times \psi_{\beta}^{-1} : \phi_{\alpha}(U_{\alpha}) \times \psi_{\beta}(V_{\beta}) \to U_{\alpha} \times V_{\beta}
@@ -737,13 +737,13 @@ alternativamente
 
 le composizioni $ \phi_{\alpha} \circ \phi_{\rho}^{-1} $ e $ \psi_{\beta} \circ \psi_{\sigma} $ sono $ C^{\infty} $ perché ognuna di queste prova la compatibilità delle carte in $ M $ e in $ N $ rispettivamente e dunque il loro prodotto è ancora $ C^{\infty} $. Questi ragionamenti portano all'esistenza di una struttura differenziale per $ M \times N $ il quale diventa una varietà differenziabile.\\
 La dimensione del prodotto di varietà è $ \dim (M \times N) = \dim M + \dim N $.\\
-Il toro $ \T^{2} = \S^{1} \times \S^{1} $ e il cilindro infinito $ \C = \S^{1} \times \R $ sono superfici differenziabili; anche il toro $ n $-dimensionale è una varietà differenziabile
+Il toro bidimensionale $ \T^{2} = \S^{1} \times \S^{1} $ e il cilindro infinito $ \mathcal{C} = \S^{1} \times \R $ sono superfici differenziabili; anche il toro $ n $-dimensionale è una varietà differenziabile
 
 \begin{align}
 	\T^{n} = \prod^{n} \S^{1}
 \end{align}
 
-dove $ \prod $ implica la topologia prodotto $ \times $.
+dove la produttoria implica la topologia prodotto $ \times $.
 
 \subsection{Spazi quoziente dal punto di vista topologico}
 
@@ -780,7 +780,7 @@ Questa topologia è chiamata \textit{topologia quoziente} su $ \sfrac{S}{\sim} $
 	}.
 \end{remark}
 
-Definiamo l'applicazione $ f : S \to Y $ con $ S $ e $ Y $ spazi topologici: questa applicazione è \textit{costante sulle classi di equivalenza} cioè, presi due elementi $ s_{1},s_{2} \in S $
+Definiamo l'applicazione $ f : S \to Y $ con $ S $ e $ Y $ spazi topologici: questa applicazione è \textit{costante sulle classi di equivalenza} se, presi due elementi $ s_{1},s_{2} \in S $, si ha che
 
 \begin{equation}
 	s_{1} \sim s_{2} \implies f(s_{1}) = f(s_{2})
@@ -801,6 +801,8 @@ Una proprietà di queste applicazioni è la seguente
 \begin{equation}
 	f = \tilde{f} \circ \pi
 \end{equation}
+
+come si può evincere dal seguente diagramma
 
 \begin{figure}[H]
 	\centering
@@ -836,8 +838,8 @@ Sia $ S $ uno spazio topologico e $ A $ un suo qualsiasi sottoinsieme. Definiamo
 
 \begin{equation}
 	\begin{cases}
-		x \sim x & \text{se } x \in S\\
-		x \sim y & \text{se } x,y \in A
+		x \sim x & \qq*{se} x \in S \setminus A\\
+		x \sim y & \qq*{se} x,y \in A
 	\end{cases}
 \end{equation}
 
@@ -848,7 +850,7 @@ Scriviamo lo spazio quoziente rispetto a questa relazione di equivalenza come $ 
 
 \paragraph{2.}
 
-Sia $ S = I = [0,1] $ e $ A = \{0,1\} $ e consideriamo $ \sfrac{S}{A} = \sfrac{I}{\{0,1\}} $: utilizzando la stessa relazione di equivalenza $ \sim $ dell'esempio precedente si può identificare lo spazio quoziente $ \sfrac{I}{\{0,1\}} $ come un cerchio, in quanto tutti i punti di $ I $ vengono identificati con sé stessi mentre gli estremi $ A = \{0,1\} $si identificano uno con l'altro.\\
+Sia $ S = I = [0,1] $ e $ A = \{0,1\} $ e consideriamo $ \sfrac{S}{A} = \sfrac{I}{\{0,1\}} $: utilizzando la stessa relazione di equivalenza $ \sim $ dell'esempio precedente si può identificare lo spazio quoziente $ \sfrac{I}{\{0,1\}} $ come un cerchio, in quanto tutti i punti di $ I $ vengono identificati con sé stessi mentre gli estremi $ A = \{0,1\} $ si identificano uno con l'altro.\\
 Si dimostra l'omeomorfismo $ \sfrac{I}{\{0,1\}} \simeq \S^{1} $.
 
 \begin{figure}[H]
@@ -858,12 +860,9 @@ Si dimostra l'omeomorfismo $ \sfrac{I}{\{0,1\}} \simeq \S^{1} $.
 
 Sia l'applicazione
 
-\begin{align}
-	\begin{split}
-		f : I &\to \S^{1}\\
-		x &\mapsto e^{2 \pi x} = (\cos 2 \pi x, \sin 2 \pi x)
-	\end{split}
-\end{align}
+\map{f}%
+	{I}{\S^{1}}%
+	{x}{e^{2 i \pi x} = (\cos(2 \pi x), \sin(2 \pi x))}
 
 questa è continua e costante sulle classi di equivalenza di $ \sfrac{I}{\{0,1\}} $. A questo punto è possibile costruire il diagramma
 
@@ -904,14 +903,18 @@ Sia $ S = \R $ e $ A = \Q $. Si dimostra che $ \sfrac{\R}{\Q} $ non è $ N_{2} $
 
 \subsubsection{Relazione di equivalenza aperta}
 
-Sia $ S $ uno spazio topologico e $ \sim $ una relazione di equivalenza su $ S $. Diremo che $ \sim $ è aperta se l'applicazione sul quoziente $ \pi : S \to \dfrac{S}{\sim} $ è aperta.
+Sia $ S $ uno spazio topologico e $ \sim $ una relazione di equivalenza su $ S $. Diremo che $ \sim $ è aperta se l'applicazione sul quoziente $ \pi : S \to \sfrac{S}{\sim} $ è aperta.
 
-\subsubsection{\textit{Esempi}}
-
-\paragraph{5.}
+\subsubsection{\textit{Esempio}}
 
 Sia $ S = \R $ e $ A = \{-1,1\} $ e consideriamo $ \sfrac{S}{A} = \sfrac{\R}{\{-1,1\}} $.\\
-L'applicazione $ \pi : \R \to \sfrac{\R}{\{-1,1\}} $ non è aperta perché, per esempio $ \pi((0,2)) $ non è aperto in $ \sfrac{\R}{\{-1,1\}} $ perché la sua controimmagine $ \pi^{-1}(\pi((0,2))) = (0,2) \cup \{-1\} $ in quanto i punti $ \{-1,1\} $ sono equivalenti, ma questa controimmagine non è aperta in $ \R $.
+L'applicazione $ \pi : \R \to \sfrac{\R}{\{-1,1\}} $ non è aperta perché, per esempio $ \pi(0,2) $ non è aperto in $ \sfrac{\R}{\{-1,1\}} $ perché la sua controimmagine è pari a
+
+\begin{equation}
+	\pi^{-1}(\pi(0,2)) = (0,2) \cup \{-1\}
+\end{equation}
+
+in quanto i punti $ \{-1,1\} $ sono equivalenti, ma questo insieme non è aperta in $ \R $.
 
 \subsubsection{Quozienti $ N_{2} $ e $ T_{2} $}
 
@@ -943,7 +946,13 @@ L'applicazione $ \pi : \R \to \sfrac{\R}{\{-1,1\}} $ non è aperta perché, per 
 	è chiuso rispetto alla topologia prodotto in $ S \times S $ se e solo se il quoziente $ \sfrac{S}{\sim} $ è $ T_{2} $.
 \end{definition}
 
-Prendendo la proposizione riportata sopra, nel caso in cui la relazione di equivalenza $ \sim $ sia l'uguaglianza $ = $ (da cui $ \sfrac{S}{\sim} = S $) otteniamo il seguente corollario
+\begin{proof}\label{solved-es2-3}
+	Supponiamo che il quoziente $ \sfrac{S}{\sim} $ sia $ T_{2} $ e dimostriamo che $ R $ sia chiuso in $ S\times S $.\\
+	Prendiamo il punto del complementare $ (x,y) \in S \times S \setminus R $ per cui si ha che $ x \nsim y $, dunque $ \pi(x) \neq \pi(y) $ o alternativamente $ [x] \neq [y] $. A questo punto abbiamo due punti diversi dello spazio quoziente $ \sfrac{S}{\sim} $, il quale è $ T_{2} $, dunque esisteranno due aperti $ U $ e $ V $ di $ \sfrac{S}{\sim} $ tali che $ U \ni [x] $, $ V \ni [y] $ e $ U \cap V = \{\} $. Utilizzando l'inversa della proiezione, $ \pi^{-1}(U) \ni x $ e $ \pi^{-1}(V) \ni y $ sono aperti. Considerando la topologia prodotto, $ \pi^{-1}(U) \times \pi^{-1}(V) \ni (x,y) $ questo è aperto in $ S \times S $ perché prodotto di due aperti e, siccome $ U $ e $ V $ sono disgiunti, $ \pi^{-1}(U) \times \pi^{-1}(V) \subset S \times S \setminus R $, altrimenti ci sarebbero dei punti di $  $ che andrebbero a finire in punti equivalenti.\\
+	L'implicazione opposta della proposizione si ottiene invertendo le implicazioni di questa dimostrazione.
+\end{proof}
+
+Considerando la proposizione riportata sopra, nel caso in cui la relazione di equivalenza $ \sim $ sia l'uguaglianza "$ = $" (da cui $ \sfrac{S}{\sim} = S $), otteniamo il seguente corollario
 
 \begin{corollary}
 	Uno spazio topologico $ S $ è $ T_{2} $ se e solo se l'\textit{insieme diagonale}
@@ -951,15 +960,9 @@ Prendendo la proposizione riportata sopra, nel caso in cui la relazione di equiv
 	\begin{equation}
 		\Delta = \left\{ (x,x) \, \middle| \, x \in S \right\}
 	\end{equation}
-
+	
 	è chiuso in $ S \times S $.
 \end{corollary}
-
-\begin{proof}[Dimostrazione (Proposizione quoziente $ T_{2} $)]\label{solved-es2-3}
-	Supponiamo che il quoziente $ \sfrac{S}{\sim} $ sia $ T_{2} $ e dimostriamo che $ R $ sia chiuso in $ S\times S $.\\
-	Prendiamo il punto del complementare $ (x,y) \in S \times S \setminus R $ per cui si ha che $ x \nsim y $, dunque $ \pi(x) \neq \pi(y) $ o alternativamente $ [x] \neq [y] $. A questo punto abbiamo due punti diversi dello spazio quoziente $ \sfrac{S}{\sim} $, il quale è $ T_{2} $, dunque esisteranno due aperti $ U $ e $ V $ di $ \sfrac{S}{\sim} $ tali che $ U \ni [x] $, $ V \ni [y] $ e $ U \cap V = \{\} $. Utilizzando l'inversa della proiezione, $ \pi^{-1}(U) \ni x $ e $ \pi^{-1}(V) \ni y $ sono aperti. Considerando la topologia prodotto, $ \pi^{-1}(U) \times \pi^{-1}(V) \ni (x,y) $ questo è aperto in $ S \times S $ perché prodotto di due aperti e, siccome $ U $ e $ V $ sono disgiunti, $ \pi^{-1}(U) \times \pi^{-1}(V) \subset S \times S \setminus R $, altrimenti ci sarebbero dei punti di $  $ che andrebbero a finire in punti equivalenti.\\
-	L'implicazione opposta della proposizione si ottiene invertendo le implicazioni di questa dimostrazione.
-\end{proof}
 
 \subsection{Proiettivo reale come varietà differenziabile}
 
