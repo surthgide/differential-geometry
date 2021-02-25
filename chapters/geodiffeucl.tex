@@ -1,6 +1,6 @@
-\section{Funzioni $ C^{\infty} $ reali analitiche}
+\section{Funzioni liscia reali analitiche}
 
-\subsection{Funzioni $ C^{\infty} $}
+\subsection{Funzioni liscia}
 
 Prendiamo $ \R^{n} $ con $ n \geq 1 $ e $ U \subset \R^{n} $ aperto e prendiamo una funzione $ f : U \to \R $; prendo $ p \in U $, diremo che $ f \in C^{k} $ o \textit{liscia} in $ p $ con $ k \in \N $ se le derivate $ k $-esime di $ f $, definite come
 
@@ -12,13 +12,13 @@ esistono e sono continue in $ p $.\\
 Prendendo $ k = 0 $, $ f \in C^{0} \iff $ $ f $ è continua.\\
 Diremo che $ f \in C^{k} $ in $ U $ se $ f \in C^{k} $ in $ p $, $ \forall p \in U $.\\
 Diremo che $ f \in C^{\infty} $ o liscia in $ p $ se $ f \in C^{k} $ in $ p $, $ \forall k \in \N $.\\
-Diremo che $ f \in C^{\infty} $ o liscia in $ U $ se $ f \in C^{\infty} $, $ \forall p \in U $, perciò una funzione è $ C^{\infty} $ se esistono e sono finite le sue derivate di qualunque ordine. Queste funzioni sono quelle su cui si basa il concetti di varietà differenziabile.\\
+Diremo che $ f \in C^{\infty} $ o liscia in $ U $ se $ f \in C^{\infty} $, $ \forall p \in U $, perciò una funzione è liscia se esistono e sono finite le sue derivate di qualunque ordine. Queste funzioni sono quelle su cui si basa il concetti di varietà differenziabile.\\
 
 Per generalizzare, consideriamo le funzioni definite non in $ \R $ ma in $ \R^{n} $.\\
 Una funzione $ f : U \to \R^{m} $ con $ m \geq 1 $ e $ U \subset \R^{m} $ aperto è $ C^{k} $ in $ p $ se tutte le sue componenti $ f^{j} : U \to \R $ sono $ f^{j} \in C^{k} $ in $ p $ con $ k \geq 0 $. Nello specifico, $ f = (f^{1}, \dots, f^{m}) $ oppure $ f^{j} = \pi_{j} \circ f $ dove $ \pi_{j} $ è la proiezione $ \pi_{j} : \R^{m} \to \R $ con $ (x^{1}, \dots, x^{m}) \mapsto x^{j} $, $ j = 1, \dots, m $.\\
 Una funzione $ f : U \to \R^{m} $ è $ C^{k} $ in $ U $ se $ f^{j} \in C^{k} $ in $ U $.\\
-Una funzione $ f : U \to \R^{m} $ è $ C^{\infty} $ in $ p \in U $ se $ f^{j} \in C^{\infty} $ in $ p $, $ \forall j = 1, \dots, m $.\\
-Una funzione $ f : U \to \R^{m} $ è $ C^{\infty} $ in $ U $ se $ f^{j} \in C^{\infty} $ in $ U $, $ \forall j = 1, \dots, m $.
+Una funzione $ f : U \to \R^{m} $ è liscia in $ p \in U $ se $ f^{j} \in C^{\infty} $ in $ p $, $ \forall j = 1, \dots, m $.\\
+Una funzione $ f : U \to \R^{m} $ è liscia in $ U $ se $ f^{j} \in C^{\infty} $ in $ U $, $ \forall j = 1, \dots, m $.
 
 \subsubsection{\textit{Esempi}}
 
@@ -70,7 +70,7 @@ Se ho una serie di potenze, posso derivarla termine a termine dunque, siccome un
 
 \paragraph{1.}
 
-La funzione $ f (x) = \sin x $ è $ C^{\infty} $ reale analitica e ha sviluppo di Taylor
+La funzione $ f (x) = \sin x $ è liscia reale analitica e ha sviluppo di Taylor
 
 \begin{align}
 	\begin{split}
@@ -107,7 +107,7 @@ Per trovare la derivata di $ f(x) = e^{x} $ ripeto lo stesso procedimento
 
 \paragraph{3.}
 
-Un esempio di funzione $ C^{\infty} $ ma non reale analitica è $ f : \R \to \R $ con
+Un esempio di funzione liscia ma non reale analitica è $ f : \R \to \R $ con
 
 \begin{equation}
 	f(x) = \begin{cases}
@@ -122,7 +122,7 @@ Per controllare che sia $ C^{0} $ dovrei verificare che
 	\lim_{x \to 0} e^{-1/x^{2}} = 0
 \end{equation}
 
-Per controllare che sia $ C^{\infty} $ dovrei verificare che
+Per controllare che sia liscia dovrei verificare che
 
 \begin{align}
 	\begin{split}
@@ -150,7 +150,7 @@ Un altro motivo per il quale $ f \notin C^{\omega}(\R) $ segue dal fatto che se 
 Prendiamo $ U, V \in \R^{n} $ aperti, diremo che $ f : U \to V $ è un \textit{diffeomorfismo} se è una bigezione\footnote{%
 	Perciò è invertibile.%
 }, $ f \in C^{\infty} $ e la sua inversa $ g : V \to U $ è  $ g \in C^{\infty} $.\\
-Ad esempio, la funzione $ f : \R \to \R $ con $ x \mapsto x^{3} $ è una bigezione, è $ C^{\infty} $ ma la sua inversa non lo è, dunque $ f $ non è un diffeomorfismo.\\
+Ad esempio, la funzione $ f : \R \to \R $ con $ x \mapsto x^{3} $ è una bigezione, è liscia ma la sua inversa non lo è, dunque $ f $ non è un diffeomorfismo.\\
 Quando esiste un diffeomorfismo tra due aperti, si dice che questi sono diffeomorfi: $ U $ e $ V $ sono diffeomorfi se $ \exists f : U \to V $ diffeomorfismo, i.e. $ U \simeq V $.\\
 
 \begin{theorem}[Invarianza topologica della dimensione]
@@ -333,7 +333,7 @@ A questo punto $ B_{1} (0) \simeq \R^{n} $: dal punto di vista della geometria d
 
 \subsection{Teorema di Taylor con resto}
 
-Una funzione reale analitica coincide con il suo sviluppo di Taylor. Per una funzione $ C^{\infty} $ questo non è necessario, ma queste funzioni coincidono con il loro sviluppo di Taylor con l'aggiunta di un \textit{resto}.\\
+Una funzione reale analitica coincide con il suo sviluppo di Taylor. Per una funzione liscia questo non è necessario, ma queste funzioni coincidono con il loro sviluppo di Taylor con l'aggiunta di un \textit{resto}.\\
 Un sottoinsieme aperto $ U \subset \R^{n} $ è \textit{stellato} rispetto ad un punto $ p \in U $ se il segmento di retta che unisce $ p $ ad $ x \in U $ è interamente contenuto in $ U $.
 
 \begin{remark}
@@ -391,7 +391,7 @@ L'ipotesi che un sottoinsieme sia stellato è forte a livello globale ma sempre 
 		f(x)= f(p) + \sum_{i=1}^{n} (x^{i}-p^{i}) g_{i}(x)
 	\end{equation}
 	
-	dove $ g_{i}(x) \in C^{\infty}(U) $ perché derivata parziale di una funzione $ C^{\infty} $.\\
+	dove $ g_{i}(x) \in C^{\infty}(U) $ perché derivata parziale di una funzione liscia.\\
 	Inoltre
 	
 	\begin{align}
@@ -403,7 +403,7 @@ L'ipotesi che un sottoinsieme sia stellato è forte a livello globale ma sempre 
 \end{proof}
 
 Vedi Esercizi \ref{es1-5} e \ref{es1-6}.\\
-Prendiamo $ f : U \to \R $ con $ p $ corrispondente all'origine. Per il teorema di Taylor con resto, sappiamo che esiste una funzione $ g_{1} \in C^{\infty}(U) $ tale che $ f(x) = f(0) + x \, g_{1}(x) $ con $ g_{1}(0) = f^{\prime}(0) $. Riapplicando il teorema a $ g_{1} $ (siccome è $ C^{\infty} $), si ottiene che $ g_{1}(x) = g_{1}(0) + x g_{2}(x) $ con $ g_{2} \in C^{\infty}(U) $ e $ g_{2}(0) = g_{1}^{\prime}(0) $. Per induzione $ g_{i}(x) = g_{i}(0) + x g_{i+1}(x) $ dove $ g_{i+1} \in C^{\infty} $ e $ g_{i+1}(0) = g_{i}^{\prime}(0) $, $ \forall i \geqslant 1 $. Sostituendo in $ f $ tutte queste funzioni, si ottiene
+Prendiamo $ f : U \to \R $ con $ p $ corrispondente all'origine. Per il teorema di Taylor con resto, sappiamo che esiste una funzione $ g_{1} \in C^{\infty}(U) $ tale che $ f(x) = f(0) + x \, g_{1}(x) $ con $ g_{1}(0) = f^{\prime}(0) $. Riapplicando il teorema a $ g_{1} $ (siccome è liscia), si ottiene che $ g_{1}(x) = g_{1}(0) + x g_{2}(x) $ con $ g_{2} \in C^{\infty}(U) $ e $ g_{2}(0) = g_{1}^{\prime}(0) $. Per induzione $ g_{i}(x) = g_{i}(0) + x g_{i+1}(x) $ dove $ g_{i+1} \in C^{\infty} $ e $ g_{i+1}(0) = g_{i}^{\prime}(0) $, $ \forall i \geqslant 1 $. Sostituendo in $ f $ tutte queste funzioni, si ottiene
 
 \begin{align}
 	\begin{split}
@@ -499,7 +499,7 @@ Prendiamo dunque lo spazio quoziente
 	\sfrac{X}{\sim} \doteq C_{p}^{\infty}(\R^{n})
 \end{equation}
 
-dove un elemento $ [(f,U)] $ di questo spazio è chiamato \textit{germe} intorno al punto $ p $ ed è una \textit{classe di equivalenza} di coppie. A questo punto, $ C_{p}^{\infty}(\R^{n}) $ è l'insieme dei germi di funzioni $ C^{\infty} $ intorno a $ p $, i.e.
+dove un elemento $ [(f,U)] $ di questo spazio è chiamato \textit{germe} intorno al punto $ p $ ed è una \textit{classe di equivalenza} di coppie. A questo punto, $ C_{p}^{\infty}(\R^{n}) $ è l'insieme dei germi di funzioni liscia intorno a $ p $, i.e.
 
 \begin{equation}
 	C_{p}^{\infty}(\R^{n}) = \left\{ [(f,U)] \right\}
@@ -589,7 +589,7 @@ e la moltiplicazione per scalari
 \end{equation}
 
 con $ \lambda \in \R $.\\
-Tutte queste operazioni sono ben definite e soddisfano tutte le proprietà di un'algebra perché la somma, il prodotto e la moltiplicazione per uno scalare di funzioni $ C^{\infty} $ soddisfano queste stesse proprietà.\\
+Tutte queste operazioni sono ben definite e soddisfano tutte le proprietà di un'algebra perché la somma, il prodotto e la moltiplicazione per uno scalare di funzioni liscia soddisfano queste stesse proprietà.\\
 A questo punto si può dire che $ C_{p}^{\infty}(\R^{n}) $ sia un'algebra su $ \R $.\\
 Nonostante non sia necessario per un'algebra, $ C_{p}^{\infty}(\R^{n}) $ è anche commutativa e unitaria\footnote{%
 	Vedi Esercizio \ref{es1-7}.%
@@ -970,7 +970,7 @@ dove ora $ a^{i} $ è una funzione $ a^{i} : U \to \R $.
 
 \subsection{Campi di vettori lisci}
 
-Un campo di vettori $ X $ è $ C^{\infty} $ (liscio o differenziabile) se, scritto nella forma
+Un campo di vettori $ X $ è liscia (liscio o differenziabile) se, scritto nella forma
 
 \begin{equation}
 	X = \sum_{i=1}^{n} a^{i} \, \dfrac{\partial}{\partial x^{i}}
