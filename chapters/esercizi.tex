@@ -481,7 +481,7 @@ Vedi Dimostrazione \ref{solved-es2-3}.
 \tocless\section{}\label{es2-4}
 
 \begin{tcolorbox}
-	Sia $ S $ uno spazio topologico $ N_{2} $ e $ \sim $ una relazione d'evalenza aperta su $ S $. Dimostrare che lo spazio quoziente $ \sfrac{S}{\sim} $ è $ N_{2} $.
+	Sia $ S $ uno spazio topologico $ N_{2} $ e $ \sim $ una relazione d'equivalenza aperta su $ S $. Dimostrare che lo spazio quoziente $ \sfrac{S}{\sim} $ è $ N_{2} $.
 \end{tcolorbox}
 
 Vedi Dimostrazione \ref{solved-es2-4}.
@@ -499,17 +499,37 @@ qui
 \begin{tcolorbox}
 	Siano $ M $ e $ N $ due varietà differenziabili e $ q_{0} \in N $. Dimostrare che
 	
-	\begin{align}
-		\begin{split}
-			i_{q_{0}} : N &\to M\\
-			p &\mapsto (p,q_{0})
-		\end{split}
-	\end{align}
+	\map{i_{q_{0}}}%
+		{M}{M \times N}%
+		{p}{(p,q_{0})}
 	
 	è un'applicazione liscia.
 \end{tcolorbox}
 
-qui
+Prendiamo gli atlanti differenziabili $ \{(U,\phi)\} \in M $ e $ \{(U \times V,\phi \times \psi)\} \in M \times N $: perché $ i_{q_{0}} $ sia liscia questa deve essere continua (lo è in quanto inclusione) e la composizione
+
+\map{(\phi \times \psi) \circ i_{q_{0}} \circ \phi^{-1}}%
+	{\phi( i_{q_{0}}^{-1}(U \times V) \cap U )}{\R^{m+n}}%
+	{\phi(p)}{(p^{1},\dots,p^{m},q_{0}^{1},\dots,q_{0}^{n})}
+
+deve essere liscia. Per dimostrare che lo sia, dalla Proposizione \ref{map-comp}, basta dimostrare che le sue componenti siano lisce: presa la proiezione sulla $ k $-esima componente
+
+\map{r^{k}}%
+	{\R^{n}}{\R}%
+	{(x^{1},\dots,x^{n})}{x^{k}}
+	
+le componenti della composizione sono date dalla seguente applicazione
+
+\map{r^{k} \circ (\phi \times \psi) \circ i_{q_{0}} \circ \phi^{-1}}%
+	{\phi( i_{q_{0}}^{-1}(U \times V) \cap U )}{\R}%
+	{\phi(p)}{%
+		\begin{cases}
+			p^{k} & k \leqslant m\\
+			q_{0}^{k} & k > m
+		\end{cases}%
+	}
+
+le quali sono tutte lisce.
 
 \tocless\section{}\label{es2-7}
 

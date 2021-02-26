@@ -1563,7 +1563,7 @@ la quale ha ogni componente liscia, proprio perché $ c_{12} \neq 0 $. Il ragion
 
 \subsection{Funzioni lisce su varietà}
 
-Sia $ M $ una varietà differenziabile di dimensione $ m $ e sia la funzione $ f : M \to \R $, diremo che $ f $ è $ C^{\infty} $ (liscia o differenziabile) in un punto $ p \in M $ se esiste una carta $ (U,\phi) $ intorno a $ p $ tale che la funzione $ f \circ \phi^{-1} : \phi(U) \to \R $, con $ \phi(U) \subset \R^{n} $, sia liscia.
+Sia $ M $ una varietà differenziabile di dimensione $ n $ e sia la funzione $ f : M \to \R $, diremo che $ f $ è $ C^{\infty} $ (liscia o differenziabile) in un punto $ p \in M $ se esiste una carta $ (U,\phi) $ intorno a $ p $ tale che la funzione $ f \circ \phi^{-1} : \phi(U) \to \R $, con $ \phi(U) \subset \R^{n} $, sia liscia.
 
 \begin{figure}[H]
 	\centering
@@ -1584,21 +1584,21 @@ dove $ \phi \circ \psi^{-1} \in C^{\infty} $ perché le carte a cui appartengono
 Una funzione $ f : M \to \R $ è liscia se lo per ogni punto $ p \in M $.
 
 \begin{remark}
-	Se $ f : M \to \R \in C^{\infty} $ allora $ f $ è continua. Infatti $ f_{|\phi(U)} = f \circ \phi^{-1} \circ \phi $ dove $ \phi $ è continua perché omeomorfismo e $ f \circ \phi^{-1} $ è continua in quanto liscia.
+	Se $ f : M \to \R $ è una funzione liscia allora $ f $ è continua. Infatti $ f_{|\phi(U)} = f \circ \phi^{-1} \circ \phi $ dove $ \phi $ è continua perché omeomorfismo e $ f \circ \phi^{-1} $ è continua in quanto liscia.
 \end{remark}
 
-Indicheremo con $ C^{\infty}(M) $ l'insieme delle funzioni $ f : M \to \R \in C^{\infty} $ su $ M $ mentre $ C^{0}(M) $ sono le funzioni continue.
+Indicheremo con $ C^{\infty}(M) $ l'insieme delle funzioni $ f : M \to \R $ lisce su $ M $ mentre $ C^{0}(M) $ sono le funzioni continue.
 
 \begin{definition}
-	Sia $ M $ una varietà differenziabile con atlante massimale $ \mathfrak{M} $ e sia un atlante differenziabile $ \mathfrak{U} \subset \mathfrak{M} $, allora $ f : M \to \R $ è liscia se e solo se per qualunque carta $ (V,\psi) \in \mathfrak{U} $ si ha che $ f \circ \psi^{-1} : \psi(V) \to \R $ sia liscia.
+	Sia $ M $ una varietà differenziabile con atlante massimale $ \mathfrak{M} $ e sia un atlante differenziabile $ \mathfrak{U} \subset \mathfrak{M} $, allora $ f : M \to \R $ è liscia se e solo se per qualunque carta $ (U,\phi) \in \mathfrak{U} $ si ha che $ f \circ \phi^{-1} : \phi(U) \to \R $ sia liscia.
 \end{definition}
 
 \begin{proof}[Dimostrazione ($ \implies $)]
-	Se $ f \in C^{\infty}(M) $ allora esiste una carta $ (V,\psi) $ dell'atlante massimale tale che $ f \circ \psi : \psi(V) \to \R $ sia liscia in $ p $ allora lo è anche in $ \psi(V) $ in quanto la scelta non dipende dall'atlante, quindi possiamo prendere la carta dell'atlante $ \mathfrak{U} $.
+	Se $ f \in C^{\infty}(M) $ allora esiste una carta $ (V,\psi) \in \mathfrak{M} $ dell'atlante massimale tale che $ f \circ \psi^{-1} : \psi(V) \to \R $ sia liscia in $ p $: siccome la definizione di funzione liscia non dipende dalla carta scelta all'interno della struttura differenziabile, possiamo prendere anche la carta $ (U,\phi) \in \mathfrak{U} $ e dunque $ f \circ \phi^{-1} : \phi(U) \to \R $ è ancora liscia.
 \end{proof}
 
 \begin{proof}[Dimostrazione ($ \impliedby $)]
-	Sia $ p \in M $, allora esiste una carta $ (V,\psi) \ni p $ tale che, per ipotesi, $ f \circ \psi : \psi(V) \to \R $ sia liscia, dunque abbiamo trovato una carta in cui è liscia perciò $ f \in C^{\infty} $ in $ p $.
+	Siccome gli insiemi delle carte dell'atlante $ \mathfrak{U} $ sono un ricoprimento di $ M $, prendendo il punto $ p \in M $, esisterà una carta $ (U,\phi) \ni p $ dell'atlante tale che, per ipotesi, $ f \circ \phi^{-1} : \phi(U) \to \R $ sia liscia, dunque abbiamo trovato una carta in cui è liscia perciò $ f $ è liscia in $ p $.
 \end{proof}
 
 Riassumendo, presa una varietà differenziabile $ M $ e un atlante differenziabile arbitrario $ \mathfrak{U} \subset \mathfrak{M} $ contenuto nella struttura differenziabile, allora $ f : M \to \R $ è liscia se e solo se per ogni carta $ (U,\phi) \in \mathfrak{U} $ abbiamo che $ f \circ \phi^{-1} : \phi(U) \to \R $ sia liscia.
@@ -1611,7 +1611,7 @@ Sia $ F : N \to M $ una funzione tra varietà differenziabili $ N $ e $ M $ di d
 	\psi \circ F_{|U} \circ \phi^{-1} : \phi(F^{-1}(V) \cap U) \to \R^{m}
 \end{equation}
 
-con $ \phi(F^{-1}(V) \cap U) \in \R^{n} $, sia liscia in $ \phi(p) $\footnote{%
+con $ \phi(F^{-1}(V) \cap U) \subset \R^{n} $, sia liscia in $ \phi(p) $\footnote{%
 	$ F_{|U} \equiv F $ in quanto agisce prima $ \phi^{-1} $ che restringe già il dominio all'aperto $ U $.%
 }.\\
 Siccome non possiamo sapere se $ F(U) \subset V $, consideriamo l'aperto (in quanto $ F $ è continua) $ F^{-1}(V) \cap U \subset U $
@@ -1642,13 +1642,13 @@ Una funzione $ F : N \to M $ è liscia se lo è in ogni punto $ p \in N $.
 \end{remark}
 
 \begin{definition}
-	Siano $ N $ e $ M $ varietà differenziabili, di dimensione rispettivamente $ n $ e $ m $, con strutture differenziabili $ \mathfrak{N} $ e $ \mathfrak{M} $ rispettivamente e siano $ \mathfrak{U} \subset \mathfrak{M} $ e $ \mathfrak{V} \subset \mathfrak{N} $ due strutture differenziali in N e M. Sia $ F : N \to M $ un'applicazione, allora $ F \in C^{\infty} $ in $ p $ se e solo se $ F $ è continua e per ogni $ (U',\phi') \in \mathfrak{U} $ e $ (V',\psi') \in \mathfrak{V} $ si ha che
+	Siano $ N $ e $ M $ varietà differenziabili, di dimensione rispettivamente $ n $ e $ m $, con strutture differenziabili $ \mathfrak{N} $ e $ \mathfrak{M} $ rispettivamente e siano $ \mathfrak{U} \subset \mathfrak{M} $ e $ \mathfrak{V} \subset \mathfrak{N} $ due strutture differenziali in N e M. Sia $ F : N \to M $ un'applicazione, allora $ F \in C^{\infty} $ in $ p $ se e solo se $ F $ è continua e si ha che
 	
 	\begin{equation}
-		\psi' \circ F \circ (\phi')^{-1} : \phi'(F^{-1}(V) \cap U') \to \R^{m}
+		\psi' \circ F \circ (\phi')^{-1} : \phi'(F^{-1}(V') \cap U') \to \R^{m} \qcomma \forall (U',\phi') \in \mathfrak{U}, \forall (V',\psi') \in \mathfrak{V}
 	\end{equation}
 
-	sia liscia.
+	sia liscia in $ \phi'(p) \in \phi'(F^{-1}(V') \cap U') $.
 \end{definition}
 
 \begin{proof}[Dimostrazione ($ \implies $)]
@@ -1660,21 +1660,26 @@ Una funzione $ F : N \to M $ è liscia se lo è in ogni punto $ p \in N $.
 \end{proof}
 
 \begin{definition}[Composizione di funzioni lisce tra varietà]
-	Siano $ F : N \to M $ e $ G : M \to P $ due funzioni continue e lisce e $ M $, $ N $ e $ P $ varietà differenziabili. La composizione continua $ G \circ F $ è liscia.
+	Siano $ M $, $ N $ e $ P $ varietà differenziabili ed $ F : N \to M $ e $ G : M \to P $ due funzioni continue e lisce, allora la composizione continua $ G \circ F $ è liscia.
 \end{definition}
 
 \begin{proof}
-	Siano $ (U,\phi) $ una carta di $ N $ intorno a $ p \in N $ e $ (W,\sigma) $ una carta di $ P $ intorno a $ G(F(p)) $. Dobbiamo dimostrare che la funzione $ \sigma \circ G \circ F \circ \phi^{-1} $ sia liscia nel punto $ \phi(p) \in (G \circ F)^{-1}(W) \cap U = F^{-1}(G(W)) \cap U $.\\
+	Siano $ (U,\phi) $ una carta di $ N $ intorno a $ p \in N $ e $ (W,\sigma) $ una carta di $ P $ intorno a $ G(F(p)) $. Dobbiamo dimostrare che la funzione $ \sigma \circ G \circ F \circ \phi^{-1} $ sia liscia nel punto
+	
+	\begin{equation}
+		\phi(p) \in \phi((G \circ F)^{-1}(W) \cap U) = \phi(F^{-1}(G^{-1}(W)) \cap U)
+	\end{equation}
+	
 	Sia $ (V,\psi) $ una carta intorno a $ F(p) $, allora consideriamo la funzione
 	
 	\begin{equation}
 		(\sigma \circ G \circ \psi) \circ (\psi^{-1} \circ F \circ \phi^{-1}) = \sigma \circ G \circ F \circ \phi^{-1}
 	\end{equation}
 
-	la quale è liscia, in quanto composizione di applicazioni lisce (i.e. $ \sigma \circ G \circ \psi $ e $ \psi^{-1} \circ F \circ \phi^{-1} $), in $ \phi(F^{-1}(G(W) \cap V) \cap U) \ni \phi(p) $.
+	la quale è liscia, in quanto composizione di applicazioni lisce (i.e. $ \sigma \circ G \circ \psi $ e $ \psi^{-1} \circ F \circ \phi^{-1} $), in $ \phi(F^{-1}(G^{-1}(W) \cap V) \cap U) \ni \phi(p) $.
 \end{proof}
 
-\begin{definition}[Componenti]
+\begin{definition}[Componenti]\label{map-comp}
 	Sia un'applicazione $ F : N \to \R^{n} $ e sia la proiezione
 	
 	\begin{align}
@@ -1719,31 +1724,31 @@ Consideriamo l'applicazione continua
 \end{align}
 
 dove con $ \R $ e $ \S^{1} $ si intendono gli spazi con le loro strutture differenziabili fissate.\\
-Fissiamo gli atlanti $ (\R,\id_{\R}) $ e $ (U_{i},\phi_{i}) $ con $ i=1,\dots,4 $ dove gli $ U_{i} $ sono le varie semicirconferenze di $ \S^{1} $ e le $ \phi_{i} $ sono le proiezioni di queste sugli assi\footnote{%
+Fissiamo gli atlanti $ (\R,\id_{\R}) $ e $ \{(U_{i},\phi_{i})\}_{i=1,\dots,4} $ dove gli $ U_{i} $ sono le varie semicirconferenze di $ \S^{1} $ e le $ \phi_{i} $ sono le proiezioni di queste sugli assi\footnote{%
 	Vedi Esempio \ref{ex-s1} per dettagli.%
 }, i.e.
 
 \begin{align}
 	\begin{split}
-		U_{1} &= \left\{ (x,y) \in \S^{1} \, \middle| \, y>0 \right\}\\
-		U_{2} &= \left\{ (x,y) \in \S^{1} \, \middle| \, y<0 \right\}\\
-		U_{3} &= \left\{ (x,y) \in \S^{1} \, \middle| \, x>0 \right\}\\
-		U_{4} &= \left\{ (x,y) \in \S^{1} \, \middle| \, x<0 \right\}
+		U_{1} &= \{ (x,y) \in \S^{1} \mid y>0 \}\\
+		U_{2} &= \{ (x,y) \in \S^{1} \mid y<0 \}\\
+		U_{3} &= \{ (x,y) \in \S^{1} \mid x>0 \}\\
+		U_{4} &= \{ (x,y) \in \S^{1} \mid x<0 \}
 	\end{split}	
 \end{align}
 
 \begin{align}
 	\begin{split}
-		\phi_{1} : U_{1} &\to (-1,1)_{x} \in \R^{2}\\
+		\phi_{1} : U_{1} &\to (-1,1)_{x} \subset \R^{2}\\
 		(x,y) &\mapsto x\\\\
 		%
-		\phi_{2} : U_{2} &\to (-1,1)_{x} \in \R^{2}\\
+		\phi_{2} : U_{2} &\to (-1,1)_{x} \subset \R^{2}\\
 		(x,y) &\mapsto x\\\\
 		%
-		\phi_{3} : U_{3} &\to (-1,1)_{y} \in \R^{2}\\
+		\phi_{3} : U_{3} &\to (-1,1)_{y} \subset \R^{2}\\
 		(x,y) &\mapsto y\\\\
 		%
-		\phi_{4} : U_{4} &\to (-1,1)_{y} \in \R^{2}\\
+		\phi_{4} : U_{4} &\to (-1,1)_{y} \subset \R^{2}\\
 		(x,y) &\mapsto y
 	\end{split}
 \end{align}
