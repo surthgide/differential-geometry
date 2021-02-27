@@ -1795,7 +1795,7 @@ Sia $ V $ la classe di tutte le varietà differenziabili, allora
 definisce una relazione di equivalenza su $ V $.
 
 \begin{theorem}
-	Una varietà differenziabile di dimensione 1 connessa (curva differenziabili) è diffeomorfa o a $ \S^{1} $ (compatta) o a $ \R $ (non compatta).
+	Una varietà differenziabile di dimensione 1 connessa (curva differenziabili) è diffeomorfa ad $ \S^{1} $ (compatta) oppure ad $ \R $ (non compatta).
 \end{theorem}
 
 \begin{theorem}
@@ -1910,12 +1910,12 @@ Lo stesso discorso vale se consideriamo la proprietà di varietà differenziale.
 	abbiamo che $ \phi $ è un diffeomorfismo tra $ U $ e $ \phi(U) $.
 \end{proof}
 
-\begin{definition}
+\begin{definition}\label{diffeo-map}
 	Sia $ U \subset N $ un aperto di una varietà differenziabile $ N $ di dimensione $ n $ e sia $ F : U \to F(U) \subset \R^{n} $ (aperto) un diffeomorfismo, allora $ (U,F) $ è una carta di $ N $ (nella struttura differenziabile di $ N $).
 \end{definition}
 
 \begin{proof}
-	\`{E} sufficiente verificare che $ (U,F) $ è compatibile con ogni carta $ (U_{\alpha},\phi_{\alpha}) $ dell'atlante massimale $ \mathfrak{N} $ di $ N $ che definisce la sua struttura differenziabile, cioè appartiene all'atlante stesso.\\
+	\`{E} sufficiente verificare che $ (U,F) $ sia compatibile con ogni carta $ (U_{\alpha},\phi_{\alpha}) $ dell'atlante massimale $ \mathfrak{N} $ di $ N $ che definisce la sua struttura differenziabile, cioè appartiene all'atlante stesso.\\
 	Prendiamo i cambi di carte
 	
 	\begin{align}
@@ -1963,7 +1963,7 @@ dove $ \phi_{\alpha}(U_{\alpha}) \subset \R^{n} $ e $ \psi_{\beta}(V_{\beta}) \s
 
 \begin{align}
 	\begin{split}
-		\phi_{\alpha} \circ \pi_{N} \circ (\phi_{\alpha} \times \psi_{\beta})^{-1} : \phi_{\alpha}(U_{\alpha}) \times \psi_{\beta}(V_{\beta}) &\to \R^{m}\\
+		\phi_{\alpha} \circ \pi_{N} \circ (\phi_{\alpha} \times \psi_{\beta})^{-1} : \phi_{\alpha}(U_{\alpha}) \times \psi_{\beta}(V_{\beta}) &\to \R^{n}\\
 		(a^{1},\dots,a^{n},b^{1},\dots,b^{m}) &\mapsto \phi_{\alpha} (\pi_{N} ((\phi_{\alpha}^{-1} \times \psi_{\beta}^{-1}) ((a^{1},\dots,a^{n},b^{1},\dots,b^{m}))))\\
 		&\mapsto \phi_{\alpha} (\pi_{N} ((\phi_{\alpha}^{-1}((a^{1},\dots,a^{n})),\psi_{\beta}^{-1}((b^{1},\dots,b^{m}))))\\
 		&\mapsto \phi_{\alpha} (\phi_{\alpha}^{-1}((a^{1},\dots,a^{n})))\\
@@ -1971,7 +1971,7 @@ dove $ \phi_{\alpha}(U_{\alpha}) \subset \R^{n} $ e $ \psi_{\beta}(V_{\beta}) \s
 	\end{split}	
 \end{align}
 
-i.e. $ \phi_{\alpha} \circ \pi_{N} \circ (\phi_{\alpha} \times \psi_{\beta})^{-1} \equiv \pi_{M} $, la quale è liscia.\\\\
+i.e. $ \phi_{\alpha} \circ \pi_{N} \circ (\phi_{\alpha} \times \psi_{\beta})^{-1} \equiv \pi_{N} $, la quale è liscia.\\\\
 %
 Siano $ N $, $ M_{1} $ e $ M_{2} $ tre varietà differenziabili e sia l'applicazione
 
@@ -1983,14 +1983,14 @@ Siano $ N $, $ M_{1} $ e $ M_{2} $ tre varietà differenziabili e sia l'applicaz
 \end{align}
 
 dove $ F_{1} : N \to M_{1} $ e $ F_{1} : N \to M_{2} $, allora $ F $ è liscia se e solo se lo sono $ F_{1} $ e $ F_{2} $.\\
-Infatti, se $ F $ è liscia allora $ F_{i} = \pi_{i} \circ F $ dove $ \pi_{i} : M_{1} \times M_{2} \to M_{i} $, ma $ \pi_{i} \in C^{\infty} $ per $ i=1,2 $, dunque la composizione che risulta in $ F_{i} $ è liscia.\\
+Infatti, se $ F $ è liscia allora le sue componenti $ F_{i} = \pi_{i} \circ F $ (con $ \pi_{i} : M_{1} \times M_{2} \to M_{i} $) devono essere lisce: questo è verificato perché $ \pi_{i} \in C^{\infty} $ per $ i=1,2 $, dunque la composizione che risulta in $ F_{i} $ è liscia.\\
 Viceversa, se $ F_{1} $ e $ F_{2} $ sono lisce allora $ \phi_{1} \circ F_{1} \circ \phi^{-1} $ e $ \phi_{2} \circ F_{2} \circ \phi^{-1} $ sono lisce, dove $ (U_{1},\phi_{1}) $ è una carta in $ M_{1} $, $ (U_{2},\phi_{2}) $ è una carta in $ M_{2} $ e $ (U,\phi) $ è una carta in $ N $. A questo punto
 
 \begin{equation}
 	(\phi_{1} \circ F_{1} \circ \phi^{-1}, \phi_{2} \circ F_{2} \circ \phi^{-1}) = (\phi_{1} \times \phi_{2}) \circ F \circ \phi^{-1}
 \end{equation}
 
-è liscia per definizione di applicazione liscia.
+è liscia e, per definizione di applicazione liscia, lo è anche $ F $.
 
 \subsection{Gruppi di Lie}
 

@@ -537,7 +537,38 @@ le quali sono tutte lisce.
 	Sia $ \S^{1} $ il cerchio unitario di $ \R^{2} $. Dimostrare che una funzione liscia $ f : \R^{2} \to \R $ si restringe ad una funzione liscia $ f_{|\S^{1}} : \S^{1} \to \R $.
 \end{tcolorbox}
 
-qui
+Presa una carta $ (U,\phi) $ della struttura differenziabile di $ \R^{2} $, perché $ f $ sia liscia è necessario che sia liscia la composizione
+
+\begin{equation}
+	f \circ \phi^{-1} : \phi(U) \to \R
+\end{equation}
+
+con $ U \subset \R^{2} $ aperto.\\
+Siccome la definizione non dipende dalla carta scelta e dal fatto che un diffeomorfismo
+
+\begin{equation}
+	g : U \to g(U) \subset \R^{2}
+\end{equation}
+
+definisce una carta della struttura differenziale $ (U,g) $\footnote{%
+	Vedi Proposizione \ref{diffeo-map}.%
+}, possiamo prendere il diffeomorfismo
+
+\map{g}%
+	{\R^{2}}{\S^{1}}%
+	{(x,y)}{\left( \dfrac{x}{\sqrt{x^{2} + y^{2}}},\dfrac{y}{\sqrt{x^{2} + y^{2}}} \right)}
+	
+e dunque la carta $ (\S^{1},g) $ della struttura differenziale di $ \R^{2} $ per riscrivere la definizione di funzione liscia, dunque
+
+\begin{equation}
+	f \circ g^{-1} : g(\R^{2}) = \S^{1} \to \R
+\end{equation}
+
+la quale può essere riscritta come
+
+\begin{equation}
+	f_{|\S^{1}} : \S^{1} \to \R
+\end{equation}
 
 \tocless\section{}\label{BONUS2-2}
 
