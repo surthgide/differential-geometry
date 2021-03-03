@@ -2028,7 +2028,7 @@ sono lisce dunque è un gruppo di Lie.
 
 \paragraph{2. $ \R \setminus \{0\} $ e prodotto}
 
-Il gruppo $ (\R \setminus \{0\},\cdot) $ è una varietà differenziabile e gruppo di Lie in quanto
+Il gruppo $ (\R \setminus \{0\},\cdot) $ è una varietà differenziabile e dunque gruppo di Lie in quanto
 
 \begin{align}
 	\begin{split}
@@ -2066,7 +2066,7 @@ sono lisce.
 
 \paragraph{4. Prodotto diretto}
 
-Il prodotto diretto di gruppi di Lie è ancora un gruppo di Lie, con il prodotto tra varietà differenziabile e con l'operazione componente per componente.\\
+Il prodotto diretto di gruppi di Lie è ancora un gruppo di Lie, con il prodotto tra varietà differenziabili e con l'operazione componente per componente.\\
 Vedi Esercizio \ref{es3-1}.
 
 \paragraph{5. $ GL_{n}(\R) $}
@@ -2077,8 +2077,8 @@ Il gruppo delle matrici invertibili
 	GL_{n}(\R) = \{ A \in M_{n}(\R) \, \mid \, \det(A) \neq 0 \} \subset M_{n}(\R) = \R^{n^{2}}
 \end{equation}
 
-con la struttura differenziale è ereditata da $ M_{n}(\R) = \R^{n^{2}} $ in quanto $ GL_{n}(\R) $ è aperto in questo spazio, è un gruppo di Lie rispetto alla moltiplicazione. La carta $ (GL_{n}(\R),\id) $ corrisponde ad un atlante per $ GL_{n}(\R) $.\\
-Per dimostrare che sia un gruppo di Lie, dobbiamo verificare che le operazioni di moltiplicazione e di inversione siano lisce: il prodotto tra matrici
+con la struttura differenziale è ereditata da $ M_{n}(\R) = \R^{n^{2}} $, in quanto $ GL_{n}(\R) $ è aperto in questo spazio, è un gruppo di Lie rispetto alla moltiplicazione. La carta $ (GL_{n}(\R),\id) $ corrisponde ad un atlante per $ GL_{n}(\R) $.\\
+Per dimostrare che sia un gruppo di Lie, dobbiamo verificare che le operazioni di moltiplicazione e di inversione siano lisce: consideriamo il prodotto tra matrici
 
 \begin{align}
 	\begin{split}
@@ -2105,7 +2105,7 @@ dunque $ \mu \in C^{\infty} $ in quanto somma e prodotto di funzioni lisce; l'in
 considerando la matrice dei cofattori $ \mathcal{C} $
 
 \begin{equation}
-	(\mathcal{C})_{ij} = (-1)^{i+j} m_{ij} = (-1)^{i+j} \det(A_{ij})
+	\mathcal{C}_{ij} \doteq (-1)^{i+j} m_{ij} = (-1)^{i+j} \det(A_{ij})
 \end{equation}
 
 dove gli $ A_{i,j} $ sono le sottomatrici di $ A $ (le matrici a cui sono state tolte la riga $ i $ e la colonna $ j $), si ha che l'inverso di una matrice $ A $ è dato da
@@ -2172,10 +2172,10 @@ La dipendenza dalle carte scelte per la varietà è analoga alla scelta delle co
 	a questo punto
 	
 	\begin{equation}
-		\dfrac{\partial f}{\partial x^{i}} \circ \phi^{-1} = \dfrac{\partial (f \circ \phi^{-1})}{\partial r^{i}}
+		\pdv{f}{x^{i}} \circ \phi^{-1} = \pdv{(f \circ \phi^{-1})}{r^{i}} \qcomma \forall i=1,\dots,n
 	\end{equation}
 
-	per $ \forall i=1,\dots,n $, la quale è la derivata di una composizione di funzioni lisce, i.e. $ f \circ \phi^{-1} $. Deduciamo dunque che la derivata è liscia in quanto l'equazione sopra corrisponde alla definizione di funzione liscia su varietà.
+	la quale è la derivata di una composizione di funzioni lisce, i.e. $ f \circ \phi^{-1} $. Deduciamo dunque che la derivata è liscia in quanto l'equazione sopra corrisponde alla definizione di funzione liscia su varietà.
 \end{proof}
 
 \subsubsection{\textit{Esempio}}
@@ -2207,7 +2207,13 @@ con $ p \in U $ e $ r^{j} $ le coordinate standard di $ \R^{n} $, siccome $ x^{i
 Sia un'applicazione $ F : N \to M $ liscia con $ N $ e $ M $ varietà differenziabili con dimensioni $ n $ e $ m $ rispettivamente e fissiamo due carte $ (U,\phi) \in N $ e $ (V,\psi) \in M $, dove $ F(U) \subset V $ (è sempre possibile e inoltre non restrittivo in quanto è possibile prendere l'aperto $ U $ arbitrariamente piccolo affinché si verifichi questa condizione\footnote{%
 	Qualunque aperto contenuto in una carta definisce ancora una carta nella struttura differenziabile: se $ U \subset U_{\alpha} $ dove $ (U_{\alpha},\phi_{\alpha}) $ è una carta della varietà differenziabile, allora $ (U, \phi_{\alpha \mid U}) $ è ancora una carta della stessa varietà.%
 }).\\
-Sia $ F^{i} = y^{i} \circ F = r^{i} \circ \psi \circ F $ con $ i=1,\dots,m $, dove $ \psi = (y^{1},\dots,y^{m}) $, la componente $ i $-esima di $ F $ rispetto alle coordinate $ (y^{1},\dots,y^{m}) $. L'applicazione $ F^{i} : U \to \R $ è $ C^{\infty}(U) $, quindi possiamo definire le sue derivate parziali
+Sia la componente $ i $-esima di $ F $ rispetto alle coordinate $ (y^{1},\dots,y^{m}) $
+
+\begin{equation}
+	F^{i} = y^{i} \circ F = r^{i} \circ \psi \circ F \qcomma i=1,\dots,m
+\end{equation}
+
+dove $ \psi = (y^{1},\dots,y^{m}) $. L'applicazione $ F^{i} : U \to \R $ è $ C^{\infty}(U) $, quindi possiamo definire le sue derivate parziali
 
 \begin{equation}
 	\dfrac{\partial F^{i}}{\partial x^{j}} : U \to \R
@@ -2239,7 +2245,7 @@ Se la dimensione della varietà di partenza è uguale alla dimensione della vari
 
 \subsubsection{Matrice jacobiana del cambio di coordinate}
 
-Sia $ N $ una varietà differenziabile e siano $ (U,\phi) $ e $ (V\,psi) $ due carte di $ N $ con $ \phi = (x^{1},\dots,x^{n}) $ e $ \psi = (y^{1},\dots,y^{n}) $. Consideriamo il diffeomorfismo tra aperti di $ \R^{n} $
+Sia $ N $ una varietà differenziabile e siano $ (U,\phi) $ e $ (V,\psi) $ due carte di $ N $ con $ \phi = (x^{1},\dots,x^{n}) $ e $ \psi = (y^{1},\dots,y^{n}) $. Consideriamo il diffeomorfismo tra aperti di $ \R^{n} $
 
 \begin{equation}
 	\psi \circ \phi^{-1} : \phi(U \cap V) \to \psi(U \cap V)
@@ -2250,7 +2256,7 @@ Possiamo quindi calcolare la sua matrice jacobiana, sapendo che le $ y^{i} : U \
 \begin{align}
 	\begin{split}
 		J(\psi \circ \phi^{-1})(\phi(p)) &= \left[ \dfrac{\partial (\psi \circ \phi^{-1})^{i}}{\partial r^{j}} (\phi(p)) \right] \in M_{n}(\R)\\
-		&= \left[ \dfrac{\partial y^{i}}{\partial x^{j}} (\phi(p)) \right]
+		&= \left[ \dfrac{\partial y^{i}}{\partial x^{j}} (p) \right]
 	\end{split}
 \end{align}
 
@@ -2267,13 +2273,13 @@ perché, scrivendo esplicitamente le componenti, otteniamo
 
 \subsection{Teorema della funzione inversa}
 
-Sia $ F : N \to M $ un'applicazione liscia, diremo che $ F $ è un \textit{diffeomorfismo locale} in un punto $ P \in N $ se esiste un intorno $ U $ di $ p $ in $ N $ tale che $ F(U) \subset M $ sia aperto e $ F : U \to F(U) $ sia un diffeomorfismo.
+Sia $ F : N \to M $ un'applicazione liscia, diremo che $ F $ è un \textit{diffeomorfismo locale} in un punto $ p \in N $ se esiste un intorno $ U $ di $ p $ in $ N $ tale che $ F(U) \subset M $ sia aperto e $ F : U \to F(U) $ sia un diffeomorfismo.
 
 \begin{theorem}[Teorema della funzione inversa (IFT) in analisi]
 	Sia $ F : W \to \R^{n} $ con $ W \subset \R^{n} $ aperto e $ F \in C^{\infty} $, allora $ F $ è un diffeomorfismo locale in $ p \in W $ se e solo se lo jacobiano associato è invertibile, i.e.
 	
 	\begin{equation}
-		\det(J(F)) = \det( \left[ \dfrac{\partial F}{\partial r^{j}} (p) \right] ) \neq 0
+		\det(J(F)(p)) = \det( \left[ \pdv{F}{x^{j}} \hspace{0px} (p) \right] ) \neq 0
 	\end{equation}
 \end{theorem}
 
@@ -2284,7 +2290,7 @@ Questo teorema implica un altro teorema
 	Sia $ F : N \to M $ un'applicazione liscia dove $ \dim(N) = \dim(M) $ e sia un punto $ p \in N $, allora $ F $ è un diffeomorfismo locale in $ p $ se e solo se la matrice jacobiana per varietà è invertibile, i.e.
 	
 	\begin{equation}
-		\det(J(F)) = \det( \left[ \dfrac{\partial F}{\partial x^{j}} (p) \right] ) \neq 0
+		\det(J(F)(p)) = \det( \left[ \pdv{F}{x^{j}} \hspace{0px} (p) \right] ) \neq 0
 	\end{equation}
 	
 	per carte $ (U,\phi) \in N $ e $ (V,\psi) \in M $ tale che $ F(U) \subseteq V $, dove $ p \in U $ e $ F(p) \in V $.
@@ -2318,7 +2324,13 @@ Questa estensione alle varietà è naturale in quanto possiamo scrivere l'applic
 	\end{equation}
 
 	ma dominio e codominio della funzione $ \psi \circ F \circ \phi^{-1} $ sono $ \phi(U) \to \R^{n} $ e il suo determinante jacobiano è diverso da zero, dunque $ \psi \circ F \circ \phi^{-1} $ è un diffeomorfismo locale in $ \phi(p) $, il quale è equivalente a dire che $ F $ sia un diffeomorfismo locale in $ p $, in quanto sia $ \psi $ che $ \phi $ sono diffeomorfismi.\\
-	Il fatto che $ \psi \circ F \circ \phi^{-1} $ sia un diffeomorfismo locale in $ \phi(p) $ significa che esiste un aperto $ W \ni p $ tale che $ \psi \circ F \circ \phi^{-1} : W \to \psi(F(\phi^{-1}(W))) $ sia un diffeomorfismo, in cui sia $ W $ che $ \psi(F(\phi^{-1}(W))) $ sono aperti di $ \R^{n} $. Se questo è un diffeomorfismo, allora lo è anche $ \psi^{-1} \circ \psi \circ F \circ \phi^{-1} \circ \phi = F $ in un intorno di $ p $, i.e. $ \phi^{-1}(W) $.
+	Il fatto che $ \psi \circ F \circ \phi^{-1} $ sia un diffeomorfismo locale in $ \phi(p) $ significa che esiste un aperto $ W \ni p $ tale che
+	
+	\begin{equation}
+		\psi \circ F \circ \phi^{-1} : W \to \psi(F(\phi^{-1}(W)))
+	\end{equation}
+
+	sia un diffeomorfismo, in cui sia $ W $ che $ \psi(F(\phi^{-1}(W))) $ sono aperti di $ \R^{n} $. Se questo è un diffeomorfismo, allora lo è anche $ \psi^{-1} \circ \psi \circ F \circ \phi^{-1} \circ \phi = F $ in un intorno di $ p $, i.e. $ \phi^{-1}(W) $.
 \end{proof}
 
 \begin{corollary}[IFT]\label{ift-cor}
@@ -2330,7 +2342,7 @@ Questa estensione alle varietà è naturale in quanto possiamo scrivere l'applic
 \end{corollary}
 
 \begin{proof}[Dimostrazione ($ \implies $)]
-	Supponiamo che $ F^{1},\dots,F^{n} $ siano un sistema di coordinate intorno a $ p $: questo è equivalente a dire che $ (U,\phi) $ è una carta intorno a $ p $. Se abbiamo una carta, $ F $ è un diffeomorfismo il che implica che sia un diffeomorfismo locale in $ p $ e dunque, per IFT
+	Supponiamo che $ F^{1},\dots,F^{n} $ siano un sistema di coordinate intorno al punto $ p $: questo è equivalente a dire che $ (U,\phi) $ è una carta intorno a $ p $. Se abbiamo una carta, $ F $ è un diffeomorfismo il che implica che sia un diffeomorfismo locale in $ p $ e dunque, per IFT
 	
 	\begin{equation}
 		\det( \left[ \dfrac{\partial F^{i}}{\partial x^{j}} (p) \right] ) \neq 0
@@ -2359,9 +2371,9 @@ Sia $ N $ è una varietà differenziabile e $ p \in N $ un suo punto, definiamo 
 	T_{p}(N) \doteq Der_{p}(C_{p}^{\infty}(N))
 \end{equation}
 
-dove $ C_{p}^{\infty}(N) $ è l'insieme dei germi\footnote{%
+dove $ C_{p}^{\infty}(N) $ è l'insieme dei germi di funzioni\footnote{%
 	Un germe di funzioni $ [(f,U)] $ è una classe di equivalenza di coppie $ (f,U) $.%
-} di funzioni lisce in un intorno di $ p $: un suo elemento è una classe di equivalenza $ [(f,U)] $ dove $ p \in U $ aperto per il quale vale la seguente relazione di equivalenza, i.e. due germi di funzioni appartengono alla stessa classe
+} lisce in un intorno di $ p $: un suo elemento è una classe di equivalenza $ [(f,U)] $ dove $ p \in U $ aperto per il quale vale la seguente relazione di equivalenza, i.e. due germi di funzioni appartengono alla stessa classe
 
 \begin{gather}
 	(f,U) \sim (g,V), \, \mid \, f \in C^{\infty}(U) \, \wedge \, g \in C^{\infty}(V)\nonumber\\
