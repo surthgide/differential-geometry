@@ -662,15 +662,15 @@ tale che:
 \end{proof}
 
 Una derivazione è quindi un modo per associare ad un germe di funzioni un numero reale, soddisfacendo le proprietà definite sopra.\\
-Indichiamo dunque l'insieme delle derivazioni di $ C_{p}^{\infty}(\R^{n}) $ come $ Der_{p}(C_{p}^{\infty}(\R^{n})) $.
+Indichiamo dunque l'insieme delle derivazioni di $ C_{p}^{\infty}(\R^{n}) $ come $ \der_{p}(C_{p}^{\infty}(\R^{n})) $.
 
-\subsection{Isomorfismo tra $ T_{p}(\R^{n}) $ e $ Der_{p}(C_{p}^{\infty}(\R^{n})) $}
+\subsection{Isomorfismo tra $ T_{p}(\R^{n}) $ e $ \der_{p}(C_{p}^{\infty}(\R^{n})) $}
 
 Definiamo l'applicazione
 
 \begin{align}
 	\begin{split}
-		\phi : T_{p}(\R^{n}) &\to Der_{p}(C_{p}^{\infty}(\R^{n}))\\
+		\phi : T_{p}(\R^{n}) &\to \der_{p}(C_{p}^{\infty}(\R^{n}))\\
 		v &\mapsto D_{v}
 	\end{split}
 \end{align}
@@ -685,10 +685,10 @@ con $ v = [v^{1},\dots,v^{n}] $, dove $ D_{v} f $ è la derivata direzionale di 
 L'applicazione $ \phi $ permette di considerare le derivazioni puntuali dell'algebra dei germi delle funzioni $ C_{p}^{\infty}(\R^{n}) $ al posto dell'insieme dei vettori che partono da un punto, in quanto questi due insiemi sono isomorfi tra loro. Utilizzare le derivazioni è utile perché, in termini di varietà differenziabile, non esiste una visualizzazione di uno spazio tangente.
 
 \begin{theorem}
-	L'applicazione $ \phi $ è un isomorfismo di spazi vettoriali, nello specifico tra $ T_{p}(\R^{n}) $ e $ Der_{p}(C_{p}^{\infty}(\R^{n})) $.
+	L'applicazione $ \phi $ è un isomorfismo di spazi vettoriali, nello specifico tra $ T_{p}(\R^{n}) $ e $ \der_{p}(C_{p}^{\infty}(\R^{n})) $.
 \end{theorem}
 
-Per dimostrare questo teorema è necessario dimostrare innanzitutto che gli elementi $ D_{i} \in Der_{p}(C_{p}^{\infty}(\R^{n})) $ costituiscano uno spazio vettoriale, cioè devono valere
+Per dimostrare questo teorema è necessario dimostrare innanzitutto che gli elementi $ D_{i} \in \der_{p}(C_{p}^{\infty}(\R^{n})) $ costituiscano uno spazio vettoriale, cioè devono valere
 
 \begin{align}
 	\begin{split}
@@ -697,7 +697,7 @@ Per dimostrare questo teorema è necessario dimostrare innanzitutto che gli elem
 	\end{split}
 \end{align}
 
-per $ \forall D,D_{1},D_{2} \in Der_{p}(C_{p}^{\infty}(\R^{n})) $ e $ \forall \lambda \in \R $.\\
+per $ \forall D,D_{1},D_{2} \in \der_{p}(C_{p}^{\infty}(\R^{n})) $ e $ \forall \lambda \in \R $.\\
 Vedi Esercizio \ref{es1-8}.
 
 \begin{proof}[Dimostrazione ($ \R $-linearità)]
@@ -807,7 +807,7 @@ A questo punto, bisogna dimostrare che $ \phi $ sia $ \R $-lineare, iniettiva\fo
 La suriettività implica che se si fissa una qualunque derivazione puntuale esiste uno spazio tangente che mandato tramite $ \phi $ dà quella derivazione. In simboli
 
 \begin{equation}
-	\forall D \in Der_{p} (C_{p}^{\infty}(\R^{n})), \, \exists v \in T_{p}(\R^{n}) \, \mid \, \phi(v) = D
+	\forall D \in \der_{p} (C_{p}^{\infty}(\R^{n})), \, \exists v \in T_{p}(\R^{n}) \, \mid \, \phi(v) = D
 \end{equation}
 
 dove $ \phi = D_{v} $.\\
@@ -824,7 +824,7 @@ Prima di farlo, enunciamo il seguente lemma:
 		\end{split}
 	\end{align}
 
-	e sia $ D \in Der_{p} (C_{p}^{\infty}(\R^{n})) $. Allora
+	e sia $ D \in \der_{p} (C_{p}^{\infty}(\R^{n})) $. Allora
 	
 	\begin{equation}
 		D([(c,\R^{n})]) = 0
@@ -887,19 +887,19 @@ A questo punto possiamo dimostrare la suriettività di $ \phi $:
 	per $ \forall [(f,U)] \in C_{p}^{\infty}(\R^{n}) $.
 \end{proof}
 
-Date queste proprietà di $ \phi $, questa applicazione è un omeomorfismo tra $ T_{p}(\R^{n}) $ e $ Der_{p}(C_{p}^{\infty}(\R^{n})) $, i.e.
+Date queste proprietà di $ \phi $, questa applicazione è un omeomorfismo tra $ T_{p}(\R^{n}) $ e $ \der_{p}(C_{p}^{\infty}(\R^{n})) $, i.e.
 
 \begin{equation}
-	T_{p}(\R^{n}) \simeq Der_{p}(C_{p}^{\infty}(\R^{n}))
+	T_{p}(\R^{n}) \simeq \der_{p}(C_{p}^{\infty}(\R^{n}))
 \end{equation}
 
 \begin{corollary}
 	\begin{equation}
-		\dim ( T_{p}(\R^{n}) ) = n = \dim ( Der_{p}(C_{p}^{\infty}(\R^{n})) )
+		\dim ( T_{p}(\R^{n}) ) = n = \dim ( \der_{p}(C_{p}^{\infty}(\R^{n})) )
 	\end{equation}
 \end{corollary}
 
-\subsection{Base canonica per $ Der_{p}(C_{p}^{\infty}(\R^{n})) $}
+\subsection{Base canonica per $ \der_{p}(C_{p}^{\infty}(\R^{n})) $}
 
 L'insieme delle $ n $-uple
 
@@ -913,13 +913,13 @@ i cui elementi sono definiti come
 	\left. \dfrac{\partial}{\partial x^{j}} \right|_{p} ([(f,U)]) = \dfrac{\partial f}{\partial x^{j}} (p), \quad \forall p \in U
 \end{equation}
 
-forma una base per lo spazio $ Der_{p}(C_{p}^{\infty}(\R^{n})) $.
+forma una base per lo spazio $ \der_{p}(C_{p}^{\infty}(\R^{n})) $.
 
 \begin{proof}
-	Essendo $ T_{p}(\R^{n}) \simeq Der_{p}(C_{p}^{\infty}(\R^{n})) $, da cui
+	Essendo $ T_{p}(\R^{n}) \simeq \der_{p}(C_{p}^{\infty}(\R^{n})) $, da cui
 	
 	\begin{equation}
-		\dim ( Der_{p}(C_{p}^{\infty}(\R^{n})) ) = n
+		\dim ( \der_{p}(C_{p}^{\infty}(\R^{n})) ) = n
 	\end{equation}
 		
 	se $ e_{1},\dots,e_{n} $ è la base canonica\footnote{%
@@ -1193,7 +1193,7 @@ Posso considerare l'applicazione
 	\end{split}
 \end{align}
 
-ricordando che $ C^{\infty}(U) $, oltre ad essere un anello commutativo unitario, è un'algebra sui reali, perciò l'applicazione $ X $ è $ \R $-lineare. Inoltre, siccome $ X_{p} \in Der_{p}(C_{p}^{\infty}(\R^{n})) $, soddisfa la regola di Leibniz
+ricordando che $ C^{\infty}(U) $, oltre ad essere un anello commutativo unitario, è un'algebra sui reali, perciò l'applicazione $ X $ è $ \R $-lineare. Inoltre, siccome $ X_{p} \in \der_{p}(C_{p}^{\infty}(\R^{n})) $, soddisfa la regola di Leibniz
 
 \begin{align}
 	\begin{split}
@@ -1279,4 +1279,4 @@ Inoltre $ \phi $ è anche $ C^{\infty}(U) $-lineare, i.e
 
 per $ \forall f,g \in C^{\infty}(U) $ e $ \forall X,Y \in \chi(U) $.\\
 Dimostreremo per le varietà differenziabili che $ \phi $ è un isomorfismo di $ C^{\infty}(U) $-moduli, i.e. $ \chi(U) \simeq Der(C^{\infty}(U)) $.\\
-Tramite questo isomorfismo, si possono identificare i campi di vettori lisci con le derivazioni dell'algebra delle funzioni lisce, analogamente a come lo spazio tangente ad un punto di $ \R^{n} $ si può identificare con le derivazioni puntuali dell'algebra dei germi delle funzioni in quel punto, i.e. $ T_{p}(\R^{n}) \simeq Der_{p}(C_{p}^{\infty}(\R^{n})) $.
+Tramite questo isomorfismo, si possono identificare i campi di vettori lisci con le derivazioni dell'algebra delle funzioni lisce, analogamente a come lo spazio tangente ad un punto di $ \R^{n} $ si può identificare con le derivazioni puntuali dell'algebra dei germi delle funzioni in quel punto, i.e. $ T_{p}(\R^{n}) \simeq \der_{p}(C_{p}^{\infty}(\R^{n})) $.

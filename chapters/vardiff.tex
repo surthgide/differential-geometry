@@ -2313,14 +2313,14 @@ Questa estensione alle varietà è naturale in quanto possiamo scrivere l'applic
 			&= \left[ \dfrac{\partial (r^{i} \circ \psi \circ F \circ \phi^{-1})}{\partial r^{j}} (\phi(p)) \right]\\
 			&= \left[ \dfrac{\partial (y^{i} \circ F \circ \phi^{-1})}{\partial r^{j}} (\phi(p)) \right]\\
 			&= \left[ \dfrac{\partial (F^{i} \circ \phi^{-1})}{\partial r^{j}} (\phi(p)) \right]\\
-			&= \left[ \dfrac{\partial F^{i}}{\partial r^{j}} (p) \right]
+			&= \left[ \dfrac{\partial F^{i}}{\partial x^{j}} (p) \right]
 		\end{split}
 	\end{align}
 
 	Quindi
 	
 	\begin{equation}
-		\det( J(\psi \circ F \circ \phi^{-1})(\phi(p)) ) \neq 0 \, \iff \, \det( \left[ \dfrac{\partial F^{i}}{\partial r^{j}} (p) \right] ) \neq 0
+		\det( J(\psi \circ F \circ \phi^{-1})(\phi(p)) ) \neq 0 \, \iff \, \det( \left[ \dfrac{\partial F^{i}}{\partial x^{j}} (p) \right] ) \neq 0
 	\end{equation}
 
 	ma dominio e codominio della funzione $ \psi \circ F \circ \phi^{-1} $ sono $ \phi(U) \to \R^{n} $ e il suo determinante jacobiano è diverso da zero, dunque $ \psi \circ F \circ \phi^{-1} $ è un diffeomorfismo locale in $ \phi(p) $, il quale è equivalente a dire che $ F $ sia un diffeomorfismo locale in $ p $, in quanto sia $ \psi $ che $ \phi $ sono diffeomorfismi.\\
@@ -2364,24 +2364,31 @@ Questa estensione alle varietà è naturale in quanto possiamo scrivere l'applic
 
 \section{Lo spazio tangente ad una varietà differenziale in un suo punto}
 
-Negli aperti di $ \R^{n} $ possiamo definire lo spazio tangente in un punto come vettore di $ n $ componenti uscente in quel punto oppure se $ U \subset \R^{n} $ allora lo spazio tangente $ T_{p}(U) = T_{p}(\R^{n}) \simeq Der_{p}(C_{p}^{\infty}(\R^{n})) $ dunque può essere pensato come lo spazio delle derivazioni puntuali dell'algebra dei germi delle funzioni $ C^{\infty} $, dove $ C_{p}^{\infty}(U) \equiv C_{p}^{\infty}(\R^{n}) $ in quanto due funzioni sono equivalenti in un punto se coincidono in un aperto, anche piccolo, che contiene il punto stesso. Quest'ultimo approccio, siccome non è possibile avere una visualizzazione nelle varietà, si presta maggiormente per definire lo spazio tangente su una varietà.\\
+Negli aperti di $ \R^{n} $ possiamo definire lo spazio tangente in un punto come l'insieme dei vettori di $ n $ componenti uscenti da quel punto; considerando un aperto $ U \subset \R^{n} $, per lo spazio tangente vale
+
+\begin{equation}
+	T_{p}(U) = T_{p}(\R^{n}) \simeq \der_{p}(C_{p}^{\infty}(\R^{n}))
+\end{equation}
+
+dunque questo può essere pensato come lo spazio delle derivazioni puntuali dell'algebra dei germi delle funzioni $ C^{\infty} $, dove $ C_{p}^{\infty}(U) \equiv C_{p}^{\infty}(\R^{n}) $ in quanto due funzioni sono equivalenti in un punto se coincidono in un aperto, arbitrariamente piccolo, che contiene il punto stesso. Quest'ultimo approccio (siccome non è possibile avere una visualizzazione dello spazio tangente nelle varietà come quello in $ \R^{n} $) si presta maggiormente per definire lo spazio tangente su una varietà.\\
 Sia $ N $ è una varietà differenziabile e $ p \in N $ un suo punto, definiamo ora lo \textit{spazio tangente ad una varietà in un suo punto} come
 
 \begin{equation}
-	T_{p}(N) \doteq Der_{p}(C_{p}^{\infty}(N))
+	T_{p}(N) \doteq \der_{p}(C_{p}^{\infty}(N))
 \end{equation}
 
 dove $ C_{p}^{\infty}(N) $ è l'insieme dei germi di funzioni\footnote{%
 	Un germe di funzioni $ [(f,U)] $ è una classe di equivalenza di coppie $ (f,U) $.%
-} lisce in un intorno di $ p $: un suo elemento è una classe di equivalenza $ [(f,U)] $ dove $ p \in U $ aperto per il quale vale la seguente relazione di equivalenza, i.e. due germi di funzioni appartengono alla stessa classe
+} lisce in un intorno di $ p $: un elemento di $ C_{p}^{\infty}(N) $ è una classe di equivalenza di coppie $ [(f,U)] $, dove $ p \in U \subset N $ aperto, secondo la seguente relazione di equivalenza
 
 \begin{gather}
-	(f,U) \sim (g,V), \, \mid \, f \in C^{\infty}(U) \, \wedge \, g \in C^{\infty}(V)\nonumber\\
+	(f,U) \sim (g,V) \mid f \in C^{\infty}(U) \wedge g \in C^{\infty}(V)\nonumber\\
 	\Updownarrow\\
-	\exists W \text{ intorno di } p \, \mid \, f(q) \equiv g(q), \, \forall q \in W\nonumber
+	\exists W \text{ intorno di } p \mid f(q) \equiv g(q) , \, \forall q \in W\nonumber
 \end{gather}
 
-Come per $ \R^{n} $, $ C_{p}^{\infty}(N) $ è ancora un'algebra su $ \R $ con operazioni di somma e prodotto per scalare (per far sì che sia uno spazio vettoriale) e tra funzioni
+i.e. due germi di funzioni appartengono alla stessa classe equivalenza se e solo se le funzioni coincidono in un intorno di $ W \ni p $.\\
+Come nel caso euclideo, $ C_{p}^{\infty}(N) $ è ancora un'algebra su $ \R $ con operazioni di somma e prodotto per scalare (per far sì che sia uno spazio vettoriale) e tra funzioni
 
 \begin{align}
 	\begin{split}
@@ -2391,20 +2398,21 @@ Come per $ \R^{n} $, $ C_{p}^{\infty}(N) $ è ancora un'algebra su $ \R $ con op
 	\end{split}
 \end{align}
 
-per $ \forall [(f,U)], [(g,V)] \in C_{p}^{\infty}(N) $ e $ \forall \lambda \in \R $.\\
-Le derivazioni puntuali $ Der_{p}(C_{p}^{\infty}(N)) $ sono un'insieme di applicazioni
+per $ \forall [(f,U)], [(g,V)] \in C_{p}^{\infty}(N) $ e $ \forall \lambda \in \R $.\\\\
+%
+Le derivazioni puntuali $ \der_{p}(C_{p}^{\infty}(N)) $, per definizione, sono l'insieme di applicazioni del tipo
 
 \begin{equation}
 	D : C_{p}^{\infty}(N) \to \R
 \end{equation}
 
-che siano $ \R $-lineari rispetto alla struttura di spazio vettoriale in $ C_{p}^{\infty}(N) $ e che rispettino la regola di Leibniz
+che siano $ \R $-lineari rispetto alla struttura di spazio vettoriale in $ C_{p}^{\infty}(N) $ e che rispettino la regola di Leibniz:
 
 \begin{equation}
 	D([(f,U)] [(g,V)]) = D([(f,U)]) \, g(p) + f(p) \, D([(g,V)])
 \end{equation}
 
-L'insieme $ Der_{p}(C_{p}^{\infty}(N)) $ è uno spazio vettoriale su $ \R $ rispetto alle operazioni
+L'insieme $ \der_{p}(C_{p}^{\infty}(N)) $ è uno spazio vettoriale su $ \R $ rispetto alle operazioni
 
 \begin{align}
 	\begin{split}
@@ -2413,22 +2421,22 @@ L'insieme $ Der_{p}(C_{p}^{\infty}(N)) $ è uno spazio vettoriale su $ \R $ risp
 	\end{split}
 \end{align}
 
-per $ \forall D,D_{1},D_{2} \in Der_{p}(C_{p}^{\infty}(N)) $, per $ \forall [(f,U)] \in C_{p}^{\infty}(N) $ e per $ \forall \lambda \in \R $.\\
+per $ \forall D,D_{1},D_{2} \in \der_{p}(C_{p}^{\infty}(N)) $, per $ \forall [(f,U)] \in C_{p}^{\infty}(N) $ e per $ \forall \lambda \in \R $.\\
 Vedi Esercizio \ref{BONUS2-2}.
 
 \subsection{Derivazioni e derivate parziali}
 
-Siano una varietà differenziabile $ N $ di dimensione $ n $, una funzione $ f \in C^{\infty}(N) $, un punto $ p \in N $ e una carta $ (U, \phi) \in N $ intorno a $ p $ con $ \phi = (x^{1},\dots,x^{n}) $; la derivata parziale di $ f $ rispetto alle componenti di $ \phi $ nel punto $ p $ è definita come
+Siano una varietà differenziabile $ N $ di dimensione $ n $, una funzione $ f \in C^{\infty}(N) $, un punto $ p \in N $ e una carta $ (U, \phi) \in N $ intorno a $ p $ con $ \phi = (x^{1},\dots,x^{n}) $: la derivata parziale di $ f $ rispetto alle componenti di $ \phi $ nel punto $ p $ è definita come
 
 \begin{equation}
 	\dfrac{\partial f}{\partial x^{i}} (p) \doteq \left. \dfrac{\partial}{\partial x^{i}} \right|_{p} f = \dfrac{\partial (f \circ \phi^{-1})}{\partial r^{i}} (\phi(p))
 \end{equation}
 
 per $ i=\,\dots,n $.\\
-Possiamo pensare alla derivata parziale come elemento delle derivazioni puntuali
+Possiamo pensare alla derivata parziale come elemento delle derivazioni puntuali, i.e.
 
 \begin{equation}
-	\left. \dfrac{\partial}{\partial x^{i}} \right|_{p} \in Der_{p}(C_{p}^{\infty}(N))
+	\left. \dfrac{\partial}{\partial x^{i}} \right|_{p} \in \der_{p}(C_{p}^{\infty}(N))
 \end{equation}
 
 in quanto
@@ -2437,7 +2445,7 @@ in quanto
 	\left. \dfrac{\partial}{\partial x^{i}} \right|_{p} : C_{p}^{\infty}(N) \to \R
 \end{equation}
 
-inoltre è $ \R $-lineare e soddisfa la regola di Leibniz.\\
+inoltre questa è $ \R $-lineare e soddisfa la regola di Leibniz.\\
 La definizione di questa derivazione con dominio l'insieme dei germi di funzione è
 
 \begin{equation}
@@ -2450,13 +2458,13 @@ la quale è ben definita perché
 	f \sim g \iff f \circ \phi^{-1} \sim g \circ \phi^{-1}
 \end{equation}
 
-cioè se $ f \equiv g $ in un aperto $ W \ni p $
+cioè
 
 \begin{equation}
 	 f \equiv g \text{ in un aperto } W \ni p \iff f \circ \phi^{-1} = g \circ \phi^{-1} \text{ in un aperto } \phi(W) \ni \phi(p)
 \end{equation}
 
-Verifichiamo ora che la derivata parziale sia $ \R $-lineare e soddisfi la regola di Leibniz, in modo tale da dimostrare che sia un elemento di $ Der_{p}(C_{p}^{\infty}(N)) $.\\
+Verifichiamo ora che la derivata parziale sia $ \R $-lineare e soddisfi la regola di Leibniz, in modo tale da dimostrare che sia un elemento di $ \der_{p}(C_{p}^{\infty}(N)) $.\\
 Siano due classi $ [(f,U)],[(g,V)] \in C_{p}^{\infty}(N) $, consideriamo la derivata parziale di una loro combinazione lineare
 
 \begin{align}
@@ -2503,7 +2511,7 @@ Siano due varietà differenziabili $ N $ e $ M $ con dimensione $ n $ e $ m $ ri
 \end{equation}
 
 chiamata \textit{differenziale di} $ F $ \textit{nel punto} $ p $.\\
-Sia $ X_{p} \in T_{p}(N) = Der_{p}(C_{p}^{\infty}(N)) $, vogliamo definire dunque $ F_{*p}(X_{p}) \in T_{F(p)}(M) = Der_{F(p)}(C_{F(p)}^{\infty}(M)) $. Sia $ [(f,U)] \in C_{F(p)}^{\infty}(M) $ e definiamo
+Sia $ X_{p} \in T_{p}(N) = \der_{p}(C_{p}^{\infty}(N)) $, vogliamo definire dunque $ F_{*p}(X_{p}) \in T_{F(p)}(M) = \der_{F(p)}(C_{F(p)}^{\infty}(M)) $. Sia $ [(f,U)] \in C_{F(p)}^{\infty}(M) $ e definiamo
 
 \begin{equation}
 	 F_{*p}(X_{p})([(f,U)]) \doteq X_{p}([(f \circ F_{\mid F^{-1}(U)},F^{-1}(U))]) \equiv X_{p}(f \circ F_{\mid F^{-1}(U)}) \equiv X_{p}(f \circ F)
@@ -2533,7 +2541,7 @@ dove l'applicazione $ F_{*p}(X_{p}) : C_{F(p)}^{\infty}(M) \to \R $ rispetta la 
 	\end{split}
 \end{align}
 
-in quanto $ X_{p} \in Der_{p}(C_{p}^{\infty}(N)) $ è $ \R $-lineare, e rispetta anche la regola di Leibniz
+in quanto $ X_{p} \in \der_{p}(C_{p}^{\infty}(N)) $ è $ \R $-lineare, e rispetta anche la regola di Leibniz
 
 \begin{align}
 	\begin{split}
@@ -2544,7 +2552,7 @@ in quanto $ X_{p} \in Der_{p}(C_{p}^{\infty}(N)) $ è $ \R $-lineare, e rispetta
 	\end{split}
 \end{align}
 
-in quanto $ X_{p}$ rispetta la regola di Leibniz, dunque $ F_{*p}(X_{p}) \in Der_{F(p)}(C_{F(p)}^{\infty}(M)) $.
+in quanto $ X_{p}$ rispetta la regola di Leibniz, dunque $ F_{*p}(X_{p}) \in \der_{F(p)}(C_{F(p)}^{\infty}(M)) $.
 
 \subsubsection{Proprietà del differenziale di un'applicazione}
 
@@ -2743,7 +2751,7 @@ Sia $ N $ una varietà differenziabile, $ (U,\phi) \in N $ una sua carta con $ \
 	\mathcal{B}_{T_{p}(N)} = \left( \left. \dfrac{\partial}{\partial x^{1}} \right|_{p} , \dots , \left. \dfrac{\partial}{\partial x^{n}} \right|_{p} \right)
 \end{equation}
 
-è una base per $ T_{p}(N) = Der_{p}(C_{p}^{\infty}(N)) $ in quanto
+è una base per $ T_{p}(N) = \der_{p}(C_{p}^{\infty}(N)) $ in quanto
 
 \begin{equation}
 	\left. \dfrac{\partial}{\partial x^{i}} \right|_{p} \in T_{p}(N), \, \forall i=1,\dots,n
@@ -3378,7 +3386,7 @@ Sia una curva liscia $ c : (a,b) \to N $ che inizi in $ c(0) = p \in N $, allora
 		T_{p}(N) = \{ c'(0) \, \mid \, c : (-\varepsilon,\varepsilon) \ni 0 \to N \text{ curva liscia}, c(0) = p \}
 	\end{equation}
 
-	Questo insieme è più intuitivo, nonostante equivalente, dell'insieme delle derivazioni puntali dell'algebra dei germi delle funzioni lisce in un punto $ p $, i.e. $ T_{p}(N) = Der_{p}(C_{p}^{\infty}(N)) $.
+	Questo insieme è più intuitivo, nonostante equivalente, dell'insieme delle derivazioni puntali dell'algebra dei germi delle funzioni lisce in un punto $ p $, i.e. $ T_{p}(N) = \der_{p}(C_{p}^{\infty}(N)) $.
 \end{definition}
 
 \begin{proof}
@@ -6149,10 +6157,10 @@ Siano $ U \subset M $ un aperto coordinato, i.e. abbiamo fissato una carta $ (U,
 	T(U) = \bigsqcup_{p \in M} T_{p}(U) = \bigsqcup_{p \in M} T_{p}(M)
 \end{equation}
 
-questo perché $ T_{p}(U) = Der_{p}(C_{p}^{\infty}(U)) $ ma siccome il concetto di germe di funzione è locale
+questo perché $ T_{p}(U) = \der_{p}(C_{p}^{\infty}(U)) $ ma siccome il concetto di germe di funzione è locale
 
 \begin{equation}
-	T_{p}(U) = Der_{p}(C_{p}^{\infty}(U)) = Der_{p}(C_{p}^{\infty}(M)) = T_{p}(M)
+	T_{p}(U) = \der_{p}(C_{p}^{\infty}(U)) = \der_{p}(C_{p}^{\infty}(M)) = T_{p}(M)
 \end{equation}
 
 Esiste una bigezione naturale tra $ T(U) $ a $ \R^{2n} $: prendendo $ v \in T_{p}(M) $ e sapendo che $ \langle \sfrac{\partial}{\partial x^{i}} |_{p} \rangle = T_{p}(M) $, possiamo scrivere
@@ -7338,7 +7346,7 @@ sia $ \R $-lineare, i.e.
 		\end{split}
 	\end{align}
 
-	in quanto $ X_{p} \in T_{p}(M) = Der_{p}(C_{p}^{\infty}(M)) $ e quindi $ \R $-lineare.
+	in quanto $ X_{p} \in T_{p}(M) = \der_{p}(C_{p}^{\infty}(M)) $ e quindi $ \R $-lineare.
 \end{proof}
 
 \paragraph{Regola di Leibniz}
@@ -7361,7 +7369,7 @@ I campi di vettori lisci rispettano la regola di Leibniz:
 		\end{split}
 	\end{align}
 	
-	in quanto $ X_{p} \in T_{p}(M) = Der_{p}(C_{p}^{\infty}(M)) $ (i.e. si possono omettere le classi e considerare direttamente i rappresentanti di esse) e quindi rispetta la regola di Leibniz.
+	in quanto $ X_{p} \in T_{p}(M) = \der_{p}(C_{p}^{\infty}(M)) $ (i.e. si possono omettere le classi e considerare direttamente i rappresentanti di esse) e quindi rispetta la regola di Leibniz.
 \end{proof}
 
 \subsubsection{Derivazioni dell'algebra}
@@ -7532,7 +7540,7 @@ Per la dimostrazione, è necessario il seguente lemma:
 		
 		e dunque $ X_{p} $ è ben definito.
 		
-		\item Verifichiamo prima che $ X $ sia un campo di vettori, i.e. $ X_{p} \in Der_{p}(C_{p}^{\infty}(M)) = T_{p}(M) $ per $ \forall p \in M $, e poi che $ X \in \chi(M) $. Perché sia un campo di vettori, è necessario che sia $ \R $-lineare, i.e. considerata la classe $ [\lambda f + \mu g] $ ne consideriamo un'estensione da un aperto in cui entrambe le funzioni sono definite, scriviamo
+		\item Verifichiamo prima che $ X $ sia un campo di vettori, i.e. $ X_{p} \in \der_{p}(C_{p}^{\infty}(M)) = T_{p}(M) $ per $ \forall p \in M $, e poi che $ X \in \chi(M) $. Perché sia un campo di vettori, è necessario che sia $ \R $-lineare, i.e. considerata la classe $ [\lambda f + \mu g] $ ne consideriamo un'estensione da un aperto in cui entrambe le funzioni sono definite, scriviamo
 		
 		\begin{align}
 			\begin{split}
