@@ -2432,7 +2432,7 @@ Siano una varietà differenziabile $ N $ di dimensione $ n $, una funzione $ f \
 	\dfrac{\partial f}{\partial x^{i}} (p) \doteq \left. \dfrac{\partial}{\partial x^{i}} \right|_{p} f = \dfrac{\partial (f \circ \phi^{-1})}{\partial r^{i}} (\phi(p))
 \end{equation}
 
-per $ i=\,\dots,n $.\\
+per $ i=1,\dots,n $.\\
 Possiamo pensare alla derivata parziale come elemento delle derivazioni puntuali, i.e.
 
 \begin{equation}
@@ -2446,7 +2446,7 @@ in quanto
 \end{equation}
 
 inoltre questa è $ \R $-lineare e soddisfa la regola di Leibniz.\\
-La definizione di questa derivazione con dominio l'insieme dei germi di funzione è
+La definizione di questa derivazione, con dominio l'insieme dei germi di funzione, è la seguente
 
 \begin{equation}
 	\left. \dfrac{\partial}{\partial x^{i}} \right|_{p} ([(f,U)]) \doteq \dfrac{\partial f}{\partial x^{i}} (p)
@@ -2517,7 +2517,7 @@ Sia $ X_{p} \in T_{p}(N) = \der_{p}(C_{p}^{\infty}(N)) $, vogliamo definire dunq
 	 F_{*p}(X_{p})([(f,U)]) \doteq X_{p}([(f \circ F_{\mid F^{-1}(U)},F^{-1}(U))]) \equiv X_{p}(f \circ F_{\mid F^{-1}(U)}) \equiv X_{p}(f \circ F)
 \end{equation}
 
-in quanto questa definizione non dipende dal rappresentante di $ (f \circ F_{\mid F^{-1}(U)},F^{-1}(U))] $ scelto e sottintenderemo la restrizione a $ F^{-1}(U) $.
+in quanto questa definizione non dipende dal rappresentante di $ [(f \circ F_{\mid F^{-1}(U)},F^{-1}(U))] $ scelto e sottintenderemo la restrizione a $ F^{-1}(U) $.
 
 \begin{figure}[H]
 	\centering
@@ -2558,7 +2558,7 @@ in quanto $ X_{p}$ rispetta la regola di Leibniz, dunque $ F_{*p}(X_{p}) \in \de
 
 \paragraph{1. Linearità}
 
-Per mostrare che $ F_{*p} : T_{p}(N) \to T_{F(p)}(M) $ sia un'applicazione lineare, prendiamo due vettori $ X_{p},Y_{p} \in T_{p}(N) $,due numeri reali $ \alpha,\beta \in \R $ e $ f \in [(f,U)] \in C_{F(p)}^{\infty}(M) $
+Per mostrare che $ F_{*p} : T_{p}(N) \to T_{F(p)}(M) $ sia un'applicazione lineare, prendiamo due vettori $ X_{p},Y_{p} \in T_{p}(N) $, due numeri reali $ \alpha,\beta \in \R $ e $ f \in [(f,U)] \in C_{F(p)}^{\infty}(M) $
 
 \begin{align}
 	\begin{split}
@@ -2589,13 +2589,13 @@ Siano
 	\mathcal{B}_{T_{p}(U)} = \left( \left. \dfrac{\partial}{\partial r^{1}} \right|_{p} , \dots , \left. \dfrac{\partial}{\partial r^{n}} \right|_{p} \right)
 \end{equation}
 
-una base per $ T_{F(p)}(U) $ e
+una base per $ T_{p}(U) $ e
 
 \begin{equation}
 	\mathcal{B}_{T_{F(p)}(V)} = \left( \left. \dfrac{\partial}{\partial r^{1}} \right|_{F(p)} , \dots , \left. \dfrac{\partial}{\partial r^{m}} \right|_{F(p)} \right)
 \end{equation}
 
-una base per $ T_{p}(V) $, allora gli elementi della matrice dell'applicazione $ F_{*p} $ sono dati da
+una base per $ T_{F(p)}(V) $, allora gli elementi della matrice dell'applicazione $ F_{*p} $ sono dati da
 
 \begin{equation}
 	F_{*p} \left( \left. \dfrac{\partial}{\partial r^{j}} \right|_{p} \right) = \sum_{k=1}^{m} a_{kj} \left( \left. \dfrac{\partial}{\partial r^{k}} \right|_{F(p)} \right)
@@ -2713,7 +2713,13 @@ in quanto
 	\end{split}
 \end{align}
 
-Sia un diffeomorfismo $ F : N \to M $, allora $ F_{*p} : T_{p}(N) \to T_{F(p)}(M) $ è un isomorfismo tra spazi vettoriali: essendo $ F $ un diffeomorfismo, esiste una funzione $ G : M \to N $ per cui $ G \circ F = \id_{N} \, \wedge \, F \circ G = \id_{M} $ dunque
+Sia un diffeomorfismo $ F : N \to M $, allora $ F_{*p} : T_{p}(N) \to T_{F(p)}(M) $ è un isomorfismo tra spazi vettoriali: essendo $ F $ un diffeomorfismo, esiste una funzione $ G : M \to N $ per cui
+
+\begin{equation}
+	G \circ F = \id_{N} \wedge F \circ G = \id_{M}
+\end{equation}
+
+dunque
 	
 \begin{align}
 	\begin{split}
@@ -2738,7 +2744,17 @@ perciò $ (F_{*p})^{-1} = G_{*F(p)} $ (inversa destra e sinistra).
 Conseguentemente, la definizione di varietà differenziabile è ben posta in quanto un diffeomorfismo non può legare un aperto ad un altro aperto di dimensione diversa dal primo.
 
 \begin{proof}
-	Essendo $ F : U \to V $ un diffeomorfismo, sappiamo che $ F_{*p} : T_{p}(U) = T_{p}(\R^{n}) \to T_{F(p)}(V) = T_{F(p)}(\R^{m}) $ è un isomorfismo, ma un isomorfismo tra due spazi di dimensione finita può esistere solo se i due spazi hanno la stessa dimensione, il che implica $ \dim(T_{p}(\R^{n})) = \dim(T_{F(p)}(\R^{m})) $ per cui $ n=m $.
+	Essendo $ F : U \to V $ un diffeomorfismo, sappiamo che
+	
+	\begin{equation}
+		F_{*p} : T_{p}(U) = T_{p}(\R^{n}) \to T_{F(p)}(V) = T_{F(p)}(\R^{m})
+	\end{equation}
+
+	è un isomorfismo, ma un isomorfismo tra due spazi di dimensione finita può esistere solo se i due spazi hanno la stessa dimensione, il che implica
+	
+	\begin{equation}
+		\dim(T_{p}(\R^{n})) = \dim(T_{F(p)}(\R^{m})) \implies n = m
+	\end{equation}
 \end{proof}
 
 Nel caso topologico non si può utilizzare questo procedimento in quanto ha senso calcolare il differenziale solo per funzioni che siano lisce, condizione non necessaria per le funzioni in topologia.
