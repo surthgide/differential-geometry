@@ -151,7 +151,7 @@ Prendiamo $ U, V \in \R^{n} $ aperti, diremo che $ f : U \to V $ è un \textit{d
 	Perciò è invertibile.%
 }, $ f \in C^{\infty} $ e la sua inversa $ g : V \to U $ è  $ g \in C^{\infty} $.\\
 Ad esempio, la funzione $ f : \R \to \R $ con $ x \mapsto x^{3} $ è una bigezione, è liscia ma la sua inversa non lo è, dunque $ f $ non è un diffeomorfismo.\\
-Quando esiste un diffeomorfismo tra due aperti, si dice che questi sono diffeomorfi: $ U $ e $ V $ sono diffeomorfi se $ \exists f : U \to V $ diffeomorfismo, i.e. $ U \simeq V $.\\
+Quando esiste un diffeomorfismo tra due aperti, si dice che questi sono diffeomorfi: $ U $ e $ V $ sono diffeomorfi se $ \E f : U \to V $ diffeomorfismo, i.e. $ U \simeq V $.\\
 
 \begin{theorem}[Invarianza topologica della dimensione]
 	Se $ U \subset \R^{n} $ e $ V \subset \R^{m} $ sono aperti omeomorfi allora $ n = m $.
@@ -483,13 +483,13 @@ Diciamo che\footnote{%
 } per $ p \in W $
 
 \begin{equation}
-	(f,U) \sim (g,V) \iff \exists W \subseteq U \cap V \mid f \equiv g \qq{in} W
+	(f,U) \sim (g,V) \iff \E W \subseteq U \cap V \mid f \equiv g \qq{in} W
 \end{equation}
 
 o equivalentemente
 
 \begin{equation}
-	(f,U) \sim (g,V) \iff \exists W \subseteq U \cap V \mid f(q) \equiv g(q), \forall q \in W
+	(f,U) \sim (g,V) \iff \E W \subseteq U \cap V \mid f(q) \equiv g(q), \forall q \in W
 \end{equation}
 
 Questa è effettivamente una relazione di equivalenza in quanto riflessiva, simmetrica e transitiva.\\
@@ -733,7 +733,7 @@ A questo punto, bisogna dimostrare che $ \phi $ sia $ \R $-lineare, iniettiva\fo
 } e suriettiva\footnote{%
 	Un'applicazione $ f $ tra due insiemi $ A $ e $ B $ è \textit{suriettiva} se
 	\begin{equation}
-		\forall b \in B, \, \exists a \in A \mid f(a) = b
+		\forall b \in B, \, \E a \in A \mid f(a) = b
 	\end{equation}%
 } perché venga considerata un isomorfismo.
 
@@ -807,7 +807,7 @@ A questo punto, bisogna dimostrare che $ \phi $ sia $ \R $-lineare, iniettiva\fo
 La suriettività implica che se si fissa una qualunque derivazione puntuale esiste uno spazio tangente che mandato tramite $ \phi $ dà quella derivazione. In simboli
 
 \begin{equation}
-	\forall D \in \der_{p} (C_{p}^{\infty}(\R^{n})), \, \exists v \in T_{p}(\R^{n}) \, \mid \, \phi(v) = D
+	\forall D \in \der_{p} (C_{p}^{\infty}(\R^{n})), \, \E v \in T_{p}(\R^{n}) \, \mid \, \phi(v) = D
 \end{equation}
 
 dove $ \phi = D_{v} $.\\

@@ -971,7 +971,7 @@ Consideriamo lo spazio $ S = \R^{n+1} \setminus \{0\} $ con $ n \geqslant 0 $ e 
 Una retta passante per l'origine è determinata da un suo punto $ x $ (l'altro è l'origine), i cui multipli daranno tutti i punti della retta stessa. La condizione di equivalenza, presi due punti $ x,y \in S $, si può scrivere nel seguente modo
 
 \begin{equation}
-	x \sim y \, \iff \, \exists \lambda \in \R \setminus \{0\} \, \mid \, y = \lambda x
+	x \sim y \, \iff \, \E \lambda \in \R \setminus \{0\} \, \mid \, y = \lambda x
 \end{equation}
 
 cioè se i due punti appartengono alla stessa retta.\\
@@ -1316,7 +1316,7 @@ Consideriamo la relazione di equivalenza $ \sim $ sull'insieme
 definita come
 
 \begin{equation}
-	A \sim B \, \iff \, \exists g \in GL_{k}(\R) \, \mid \, B = A g
+	A \sim B \, \iff \, \E g \in GL_{k}(\R) \, \mid \, B = A g
 \end{equation}
 
 Possiamo dunque affermare che
@@ -2384,7 +2384,7 @@ dove $ C_{p}^{\infty}(N) $ è l'insieme dei germi di funzioni\footnote{%
 \begin{gather}
 	(f,U) \sim (g,V) \mid f \in C^{\infty}(U) \wedge g \in C^{\infty}(V)\nonumber\\
 	\Updownarrow\\
-	\exists W \text{ intorno di } p \mid f(q) \equiv g(q) , \, \forall q \in W\nonumber
+	\E W \text{ intorno di } p \mid f(q) \equiv g(q) , \, \forall q \in W\nonumber
 \end{gather}
 
 i.e. due germi di funzioni appartengono alla stessa classe equivalenza se e solo se le funzioni coincidono in un intorno di $ W \ni p $.\\
@@ -2504,7 +2504,7 @@ Nel caso in cui la dimensione della varietà sia unitaria, scriveremo
 
 \subsection{Differenziale di un'applicazione liscia tra varietà}
 
-Siano due varietà differenziabili $ N $ e $ M $ con dimensione $ n $ e $ m $ rispettivamente e sia un'applicazione liscia $ F : N \to M $. Preso un punto $ p \in N $, definiamo un'applicazione lineare
+Siano due varietà differenziabili $ N $ e $ M $ con dimensione $ n $ e $ m $ rispettivamente e sia un'applicazione liscia $ F : N \to M $. Preso un punto $ p \in N $, definiamo l'applicazione lineare
 
 \begin{equation}
 	F_{*p} : T_{p}(N) \to T_{F(p)}(M)
@@ -2558,7 +2558,7 @@ in quanto $ X_{p}$ rispetta la regola di Leibniz, dunque $ F_{*p}(X_{p}) \in \de
 
 \paragraph{1. Linearità}
 
-Per mostrare che $ F_{*p} : T_{p}(N) \to T_{F(p)}(M) $ sia un'applicazione lineare, prendiamo due vettori $ X_{p},Y_{p} \in T_{p}(N) $, due numeri reali $ \alpha,\beta \in \R $ e $ f \in [(f,U)] \in C_{F(p)}^{\infty}(M) $
+Per mostrare che $ F_{*p} : T_{p}(N) \to T_{F(p)}(M) $ sia un'applicazione lineare, prendiamo due vettori $ X_{p},Y_{p} \in T_{p}(N) $, due numeri reali $ \alpha,\beta \in \R $ e una funzione $ f \in [(f,U)] \in C_{F(p)}^{\infty}(M) $
 
 \begin{align}
 	\begin{split}
@@ -2574,7 +2574,148 @@ da cui
 	F_{*p}(\alpha X_{p} + \beta Y_{p}) = \alpha F_{*p}(X_{p}) + \beta F_{*p}(Y_{p})
 \end{equation}
 
-\paragraph{2. Matrice dell'applicazione differenziale}
+\paragraph{2. Regola della catena}
+
+Siano $ N $, $ M $ e $ P $ tre varietà differenziabili e $ F : N \to M $ e $ G : M \to P $ due applicazioni lisce, il differenziale della composizione delle due applicazioni in un punto $ p \in N $ vale
+
+\begin{equation}
+	(G \circ F)_{*p} = G_{*F(p)} \circ F_{*p}
+\end{equation}
+
+in quanto
+
+\begin{align}
+	\begin{split}
+		F_{*p} : T_{p}(N) &\to T_{F(p)}(M)\\
+		G_{*F(p)} : T_{F(p)}(M) &\to T_{G(F(p))}(P)
+	\end{split}
+\end{align}
+
+La dimostrazione di questa relazione si ottiene applicando la composizione a $ X_{p} \in T_{p}(N) $ a sua volta applicato a $ f \in [(f,U)] \in C_{G(F(p))}^{\infty}(P) $
+
+\begin{align}
+	\begin{split}
+		(G \circ F)_{*p} (X_{p})(f) &= X_{p} (f \circ G \circ F)\\
+		&= F_{*p} (X_{p}) (f \circ G)\\
+		&= G_{*F(p)} (F_{*p} (X_{p})(f))\\
+		&= (G_{*F(p)} \circ F_{*p})(X_{p})(f)
+	\end{split}
+\end{align}
+
+\paragraph{3. Proprietà funtoriali}
+
+Il differenziale dell'identità $ \id_{N} : N \to N $ in punto $ p \in N $ è l'identità dello spazio tangente, i.e.
+	
+\begin{equation}
+	(\id_{N})_{*p} = \id_{T_{p}(N)}
+\end{equation}
+
+in quanto
+
+\begin{align}
+	\begin{split}
+		(\id_{N})_{*p} (X_{p})(f) &= X_{p} (f \circ \id_{N})\\
+		&= X_{p}(f)
+	\end{split}
+\end{align}
+
+Sia un diffeomorfismo $ F : N \to M $, allora $ F_{*p} : T_{p}(N) \to T_{F(p)}(M) $ è un isomorfismo tra spazi vettoriali: essendo $ F $ un diffeomorfismo, esiste una funzione $ G : M \to N $ per cui
+
+\begin{equation}
+	\begin{cases}
+		G \circ F = \id_{N}\\
+		F \circ G = \id_{M}
+	\end{cases}
+\end{equation}
+
+dunque
+	
+\begin{align}
+	\begin{split}
+		(G \circ F)_{*p} &= G_{*F(p)} \circ F_{*p}\\
+		&= (\id_{N})_{*p}\\
+		&= \id_{T_{p}(N)}\\\\
+		%
+		(F \circ G)_{*F(p)} &= F_{*p} \circ G_{*F(p)}\\
+		&= (\id_{M})_{*F(p)}\\
+		&= \id_{T_{F(p)}(M)}
+	\end{split}
+\end{align}
+
+perciò $ (F_{*p})^{-1} = G_{*F(p)} $ (inversa destra e sinistra).
+
+\paragraph{4. Invarianza differenziabile della dimensione}
+
+\begin{theorem}
+	Sia $ F : U \to V $ un diffeomorfismo tra gli aperti $ U \subset \R^{n} $ e $ V \subset \R^{m} $, allora $ n = m $.
+\end{theorem}
+
+Conseguentemente, la definizione di varietà differenziabile è ben posta in quanto un diffeomorfismo non può legare un aperto ad un altro aperto di dimensione diversa dal primo.
+
+\begin{proof}
+	Essendo $ F : U \to V $ un diffeomorfismo, sappiamo che
+	
+	\begin{equation}
+		F_{*p} : T_{p}(U) = T_{p}(\R^{n}) \to T_{F(p)}(V) = T_{F(p)}(\R^{m})
+	\end{equation}
+
+	è un isomorfismo, ma un isomorfismo tra due spazi di dimensione finita può esistere solo se i due spazi hanno la stessa dimensione, il che implica
+	
+	\begin{equation}
+		\dim(T_{p}(\R^{n})) = \dim(T_{F(p)}(\R^{m})) \implies n = m
+	\end{equation}
+\end{proof}
+
+Nel caso topologico non si può utilizzare questo procedimento in quanto ha senso calcolare il differenziale solo per funzioni che siano lisce, condizione non necessaria per le funzioni in topologia.
+
+\paragraph{5. Base per $ T_{p}(N) $}
+
+Sia $ N $ una varietà differenziabile, $ (U,\phi) \in N $ una sua carta con $ \phi = (x^{1},\dots,x^{n}) $ e $ p \in (U,\phi) $ un punto della varietà: l'insieme
+
+\begin{equation}
+	\mathcal{B}_{T_{p}(N)} = \left( \left. \dfrac{\partial}{\partial x^{1}} \right|_{p} , \dots , \left. \dfrac{\partial}{\partial x^{n}} \right|_{p} \right)
+\end{equation}
+
+è una base per $ T_{p}(N) = \der_{p}(C_{p}^{\infty}(N)) $ in quanto
+
+\begin{equation}
+	\left. \dfrac{\partial}{\partial x^{i}} \right|_{p} \in T_{p}(N) \qcomma \forall i=1,\dots,n
+\end{equation}
+
+conseguentemente
+
+\begin{equation}
+	\dim(T_{p}(N)) = \dim(N)
+\end{equation}
+
+\begin{proof}
+	Sappiamo che l'applicazione $ \phi : U \to \phi(U) \subset \R^{n} $ appartenente alla carta $ (U,\phi) $ non è solo un omeomorfismo ma anche un diffeomorfismo dunque il suo differenziale
+	
+	\begin{equation}
+		\phi_{*p} : T_{p}(U) = T_{p}(N) \to T_{\phi(p)}(\phi(U)) = T_{\phi(p)}(\R^{n})
+	\end{equation}
+
+	è un isomorfismo tra spazi vettoriali.\\
+	Calcoliamo ora l'azione di $ \phi_{*p} $ in un vettore generico della base $ \mathcal{B}_{T_{p}(N)} $:
+	
+	\begin{align}
+		\begin{split}
+			\phi_{*p} \left( \left. \dfrac{\partial}{\partial x^{i}} \right|_{p} \right) (f) &= \left. \dfrac{\partial}{\partial x^{i}} \right|_{p} (f \circ \phi)\\
+			&= \left. \dfrac{\partial}{\partial r^{i}} \right|_{\phi(p)} (f \circ \phi \circ \phi^{-1})\\
+			&= \left. \dfrac{\partial}{\partial r^{i}} \right|_{\phi(p)} f
+		\end{split}
+	\end{align}
+
+	per $ \forall f \in [(f,U)] \in C_{\phi(p)}^{\infty}(N) $, perciò
+	
+	\begin{equation}
+		\phi_{*p} \left( \left. \dfrac{\partial}{\partial x^{i}} \right|_{p} \right) = \left. \dfrac{\partial}{\partial r^{i}} \right|_{\phi(p)} \qcomma \forall i=1,\dots,n
+	\end{equation}
+
+	Essendo la derivata parziale in $ r^{i} $ un elemento di base e $ \phi_{*p} $ un isomorfismo che, in quanto tale, porta basi in basi, le derivate parziali in $ x^{i} $ sono quindi una base per $ T_{p}(N) $.
+\end{proof}
+
+\paragraph{6. Matrice dell'applicazione differenziale}
 
 Siano $ U = N \subset \R^{n} $ e $ V = M \subset \R^{m} $ aperti, sia $ F : U \to V $ un'applicazione liscia e sia $ p \in U $, il differenziale sarà
 
@@ -2598,10 +2739,10 @@ una base per $ T_{p}(U) $ e
 una base per $ T_{F(p)}(V) $, allora gli elementi della matrice dell'applicazione $ F_{*p} $ sono dati da
 
 \begin{equation}
-	F_{*p} \left( \left. \dfrac{\partial}{\partial r^{j}} \right|_{p} \right) = \sum_{k=1}^{m} a_{kj} \left( \left. \dfrac{\partial}{\partial r^{k}} \right|_{F(p)} \right)
+	F_{*p} \left( \left. \dfrac{\partial}{\partial r^{j}} \right|_{p} \right) = \sum_{k=1}^{m} a_{kj} \left( \left. \dfrac{\partial}{\partial r^{k}} \right|_{F(p)} \right) \qcomma j=1,\dots,n
 \end{equation}
 
-per $ j=1,\dots,n $, in quanto $ F_{*p} $ è lineare. Le incognite sono le $ a_{kj} $ e, per trovarle, applichiamo entrambi i membri dell'equazione allo stesso oggetto, i.e. la proiezione naturale in $ \R^{m} $
+in quanto $ F_{*p} $ è lineare. Le incognite sono le $ a_{kj} $ e, per trovarle, applichiamo entrambi i membri dell'equazione allo stesso oggetto, i.e. la proiezione naturale in $ \R^{m} $
 
 \begin{align}
 	\begin{split}
@@ -2656,7 +2797,7 @@ perciò
 	a_{ij} = \dfrac{\partial F^{i}}{\partial r^{j}} (p)
 \end{equation}
 
-dunque le incognite corrispondono alle entrate della matrice jacobiana della funzione $ F $, i.e. $ [a_{ij}] = J(F(p)) $.\\
+dunque le incognite corrispondono alle entrate della matrice jacobiana della funzione $ F $, i.e. $ [a_{ij}] = J(F)(p) $.\\
 In generale, sia un'applicazione lineare
 
 \begin{align}
@@ -2666,146 +2807,7 @@ In generale, sia un'applicazione lineare
 	\end{split}
 \end{align}
 
-dove $ v = [r^{1},\dots,r^{n}]^{T} $ e $ A = [A_{ij}] \in M_{m,n}(\R) $, allora il suo jacobiano coincide proprio con la matrice della rappresentazione, i.e. $ J(L(p)) \equiv A $. Dato questo, possiamo scrivere che se un'applicazione è lineare allora $ L_{*p} \equiv L $.
-
-\paragraph{3. Regola della catena}
-
-Siano $ N $, $ M $ e $ P $ tre varietà differenziabili e $ F : N \to M $ e $ G : M \to P $ due applicazioni lisce, il differenziale della composizione delle due applicazioni in un punto $ p \in N $ vale
-
-\begin{equation}
-	(G \circ F)_{*p} = G_{*F(p)} \circ F_{*p}
-\end{equation}
-
-in quanto
-
-\begin{align}
-	\begin{split}
-		F_{*p} : T_{p}(N) &\to T_{F(p)}(M)\\
-		G_{*F(p)} : T_{F(p)}(M) &\to T_{G(F(p))}(P)
-	\end{split}
-\end{align}
-
-La dimostrazione di questa relazione si ottiene applicando la composizione a $ X_{p} \in T_{p}(N) $ a sua volta applicato a $ f \in [(f,U)] \in C_{G(F(p))}^{\infty}(N) $
-
-\begin{align}
-	\begin{split}
-		(G \circ F)_{*p} (X_{p})(f) &= X_{p} (f \circ G \circ F)\\
-		&= F_{*p} (X_{p}) (f \circ G)\\
-		&= G_{*F(p)} (F_{*p} (X_{p})(f))\\
-		&= (G_{*F(p)} \circ F_{*p})(X_{p})(f)
-	\end{split}
-\end{align}
-
-\paragraph{4. Proprietà funtoriali}
-
-Il differenziale dell'identità $ \id_{N} : N \to N $ in punto $ p \in N $ è l'identità dello spazio tangente, i.e.
-	
-\begin{equation}
-	(\id_{N})_{*p} = \id_{T_{p}(N)}
-\end{equation}
-
-in quanto
-
-\begin{align}
-	\begin{split}
-		(\id_{N})_{*p} (X_{p})(f) &= X_{p} (f \circ \id_{N})\\
-		&= X_{p}(f)
-	\end{split}
-\end{align}
-
-Sia un diffeomorfismo $ F : N \to M $, allora $ F_{*p} : T_{p}(N) \to T_{F(p)}(M) $ è un isomorfismo tra spazi vettoriali: essendo $ F $ un diffeomorfismo, esiste una funzione $ G : M \to N $ per cui
-
-\begin{equation}
-	G \circ F = \id_{N} \wedge F \circ G = \id_{M}
-\end{equation}
-
-dunque
-	
-\begin{align}
-	\begin{split}
-		(G \circ F)_{*p} &= G_{*F(p)} \circ F_{*p}\\
-		&= (\id_{N})_{*p}\\
-		&= \id_{T_{p}(N)}\\\\
-		%
-		(F \circ G)_{*F(p)} &= F_{*p} \circ G_{*F(p)}\\
-		&= (\id_{M})_{*F(p)}\\
-		&= \id_{T_{F(p)}(M)}
-	\end{split}
-\end{align}
-
-perciò $ (F_{*p})^{-1} = G_{*F(p)} $ (inversa destra e sinistra).
-
-\paragraph{5. Invarianza differenziabile della dimensione}
-
-\begin{theorem}
-	Sia $ F : U \to V $ un diffeomorfismo dove $ U \subset \R^{n} $ e $ V \subset \R^{m} $ sono aperti con $ \dim(N)=n $ e $ \dim(M)=m $, allora $ n=m $.
-\end{theorem}
-
-Conseguentemente, la definizione di varietà differenziabile è ben posta in quanto un diffeomorfismo non può legare un aperto ad un altro aperto di dimensione diversa dal primo.
-
-\begin{proof}
-	Essendo $ F : U \to V $ un diffeomorfismo, sappiamo che
-	
-	\begin{equation}
-		F_{*p} : T_{p}(U) = T_{p}(\R^{n}) \to T_{F(p)}(V) = T_{F(p)}(\R^{m})
-	\end{equation}
-
-	è un isomorfismo, ma un isomorfismo tra due spazi di dimensione finita può esistere solo se i due spazi hanno la stessa dimensione, il che implica
-	
-	\begin{equation}
-		\dim(T_{p}(\R^{n})) = \dim(T_{F(p)}(\R^{m})) \implies n = m
-	\end{equation}
-\end{proof}
-
-Nel caso topologico non si può utilizzare questo procedimento in quanto ha senso calcolare il differenziale solo per funzioni che siano lisce, condizione non necessaria per le funzioni in topologia.
-
-\paragraph{6. Base per $ T_{p}(N) $}
-
-Sia $ N $ una varietà differenziabile, $ (U,\phi) \in N $ una sua carta con $ \phi = (x^{1}\,dots,x^{n}) $ e $ p \in (U,\phi) $ un punto della varietà: l'insieme
-
-\begin{equation}
-	\mathcal{B}_{T_{p}(N)} = \left( \left. \dfrac{\partial}{\partial x^{1}} \right|_{p} , \dots , \left. \dfrac{\partial}{\partial x^{n}} \right|_{p} \right)
-\end{equation}
-
-è una base per $ T_{p}(N) = \der_{p}(C_{p}^{\infty}(N)) $ in quanto
-
-\begin{equation}
-	\left. \dfrac{\partial}{\partial x^{i}} \right|_{p} \in T_{p}(N), \, \forall i=1,\dots,n
-\end{equation}
-
-conseguentemente
-
-\begin{equation}
-	\dim(T_{p}(N)) = \dim(N)
-\end{equation}
-
-\begin{proof}
-	Sappiamo che l'applicazione $ \phi : U \to \phi(U) \subset \R^{n} $ appartenente alla carta $ (U,\phi) $ non è solo un omeomorfismo ma anche un diffeomorfismo dunque il suo differenziale
-	
-	\begin{equation}
-		\phi_{*p} : T_{p}(U) = T_{p}(N) \to T_{\phi(p)}(\phi(U)) = T_{\phi(p)}(\R^{n})
-	\end{equation}
-
-	è un isomorfismo tra spazi vettoriali.\\
-	Calcoliamo ora l'azione di $ \phi_{*p} $ in un vettore generico della base $ \mathcal{B}_{T_{p}(N)} $
-	
-	\begin{align}
-		\begin{split}
-			\phi_{*p} \left( \left. \dfrac{\partial}{\partial x^{i}} \right|_{p} \right) (f) &= \left. \dfrac{\partial}{\partial x^{i}} \right|_{p} (f \circ \phi)\\
-			&= \left. \dfrac{\partial}{\partial r^{i}} \right|_{\phi(p)} (f \circ \phi \circ \phi^{-1})\\
-			&= \left. \dfrac{\partial}{\partial r^{i}} \right|_{\phi(p)} f
-		\end{split}
-	\end{align}
-
-	per $ \forall f \in [(f,U)] \in C_{\phi(p)}^{\infty}(N) $, perciò
-	
-	\begin{equation}
-		\phi_{*p} \left( \left. \dfrac{\partial}{\partial x^{i}} \right|_{p} \right) = \left. \dfrac{\partial}{\partial r^{i}} \right|_{\phi(p)}
-	\end{equation}
-
-	per $ \forall i=1,\dots,n $.\\
-	Essendo la derivata parziale in $ r^{i} $ un elemento di base e $ \phi_{*p} $ un isomorfismo che, in quanto tale, porta basi in basi, allora le derivate parziali in $ x^{i} $ sono una base per $ T_{p}(N) $.
-\end{proof}
+dove $ v = [r^{1},\dots,r^{n}]^{T} $ e $ A = [A_{ij}] \in M_{m,n}(\R) $, allora il suo jacobiano coincide proprio con la matrice della rappresentazione, i.e. $ J(L)(p) \equiv A $. Dato questo, possiamo scrivere che se un'applicazione è lineare allora $ L_{*p} \equiv L $.
 
 \paragraph{7. Cambio di base}
 
@@ -2846,7 +2848,7 @@ Siano $ N $ una varietà differenziabile, un suo punto $ p \in N $ e due sue car
 	\end{equation}
 \end{proof}
 
-\paragraph{8. }
+\paragraph{8. Matrice del cambio di base}
 
 Siano $ F : N \to M $ un'applicazione liscia, un punto $ p \in N $ e due carte $ (U,\phi) \in N $ e $ (V,\psi) \in M $ con $ \phi = (x^{1},\dots,x^{n}) $ e $ \psi = (y^{1},\dots,y^{n}) $ e con $ F(U) \subset V $. Siano inoltre
 
@@ -2911,16 +2913,16 @@ perciò
 \subsection{Categorie}
 
 Una \textit{categoria} $ \mathfrak{C} $ consiste di una collezione\footnote{%
-	Utilizzeremo il termine "collezione" al posto di "insieme" per evitare contraddizioni logiche, e.g. in situazioni dove potrebbe essere presente "insiemi di insiemi".%
+	Utilizzeremo il termine "collezione" al posto di "insieme" per evitare contraddizioni logiche, e.g. in situazioni dove potrebbe essere presente la locuzione "insiemi di insiemi".%
 } di oggetti $ Ob(\mathfrak{C}) $ e per ogni coppia di elementi appartenenti alla categoria $ A,B \in Ob(\mathfrak{C}) $ esiste un insieme non vuoto $ Mor(A,B) $ dei morfismi\footnote{%
 	Un morfismo è una mappa tra due oggetti che conserva la struttura dell'oggetto sorgente nell'oggetto obbiettivo; ad esempio, è la generalizzazione nella teoria delle categorie delle funzioni nella teoria degli insiemi o delle funzioni continue in topologia.%
 } da $ A $ a $ B $ tale che siano soddisfatte le seguenti condizioni:
 
 \begin{equation}
 	\begin{cases}
-		\exists g \circ f \in Mor(A,C)\footnotemark, & \forall f \in Mor(A,B), \, \forall g \in Mor(B,C)\\
-		\exists \mathbbm{1}_{A} \in Mor(A,A) \, \mid \, f \circ \mathbbm{1}_{A} = f, & \forall f \in Mor(A,B)\\
-		\exists \mathbbm{1}_{B} \in Mor(B,B) \, \mid \, \mathbbm{1}_{A} \circ g = g, & \forall g \in Mor(B,A)\\
+		\E g \circ f \in Mor(A,C)\footnotemark, & \forall f \in Mor(A,B), \, \forall g \in Mor(B,C)\\
+		\E \mathbbm{1}_{A} \in Mor(A,A) \, \mid \, f \circ \mathbbm{1}_{A} = f, & \forall f \in Mor(A,B)\\
+		\E \mathbbm{1}_{B} \in Mor(B,B) \, \mid \, \mathbbm{1}_{A} \circ g = g, & \forall g \in Mor(B,A)\\
 		(f \circ g) \circ h = f \circ (g \circ h), & \forall f \in Mor(A,B), \forall g \in Mor(B,C), \forall h \in Mor(C,D)
 	\end{cases}
 \footnotetext{Il simbolo $ \circ $ indica la composizione ma, nella teoria delle categorie, non è necessariamente la composizione come si intende per le funzioni in teoria degli insiemi; nonostante ciò, vedremo solo esempi in cui le due composizioni sopraccitate coincidono.}
@@ -3019,7 +3021,7 @@ Tutte le proprietà delle categorie sono soddisfatte e la composizione $ \circ $
 Data una categoria $ \mathfrak{C} $, la definizione di oggetti isomorfi è la seguente:
 
 \begin{equation}
-	A \simeq B \text{ isomorfi} \iff \exists f \in Mor(A,B) \wedge g \in Mor(B,A) \, \mid \, g \circ f = \mathbbm{1}_{A} \wedge f \circ g = \mathbbm{1}_{B}
+	A \simeq B \text{ isomorfi} \iff \E f \in Mor(A,B) \wedge g \in Mor(B,A) \, \mid \, g \circ f = \mathbbm{1}_{A} \wedge f \circ g = \mathbbm{1}_{B}
 \end{equation}
 
 dove $ A,B \in Ob(\mathfrak{C}) $, $ \mathbbm{1}_{A} \in Mor(A,A) $ e $ \mathbbm{1}_{B} \in Mor(B,B) $.\\
@@ -3060,7 +3062,7 @@ Due oggetti nella categoria delle varietà differenziabili sono isomorfi quando 
 Due oggetti nella categoria delle varietà differenziabili puntate sono isomorfi quando sono diffeomorfi, i.e.
 
 \begin{equation}
-	(N,p) \simeq (M,q) \iff \exists F : N \to M \text{ diffeomorfismo} \, \mid \, N \stackrel{diff.}{\simeq} M \wedge F(p)=q
+	(N,p) \simeq (M,q) \iff \E F : N \to M \text{ diffeomorfismo} \, \mid \, N \stackrel{diff.}{\simeq} M \wedge F(p)=q
 \end{equation}
 
 \subsection{Funtori}
@@ -3147,7 +3149,7 @@ rispettando l'identità e la composizione, i.e.
 	Per funtori covarianti, la definizione di isomorfismo asserisce che
 	
 	\begin{equation}
-		A \simeq B \implies \exists f \in Mor(A,B), g \in Mor(B,A) \, \mid \, g \circ f = \mathbbm{1}_{A} \wedge f \circ g = \mathbbm{1}_{B}
+		A \simeq B \implies \E f \in Mor(A,B), g \in Mor(B,A) \, \mid \, g \circ f = \mathbbm{1}_{A} \wedge f \circ g = \mathbbm{1}_{B}
 	\end{equation}
 	
 	Applicando il funtore a entrambi i membri
@@ -3393,7 +3395,7 @@ Sia una curva liscia $ c : (a,b) \to N $ che inizi in $ c(0) = p \in N $, allora
 	Siano $ N $ una varietà differenziabile, un suo punto $ p \in N $ e un vettore $ X_{p} \in T_{p}(N) $, allora
 	
 	\begin{equation}
-		\exists c : (-\varepsilon,\varepsilon) \ni 0 \to N \text{ curva liscia}, c(0) = p \, \mid \, c'(0) = X_{p}
+		\E c : (-\varepsilon,\varepsilon) \ni 0 \to N \text{ curva liscia}, c(0) = p \, \mid \, c'(0) = X_{p}
 	\end{equation}
 
 	Questo mostra che
@@ -3884,7 +3886,7 @@ Perciò possiamo scrivere che
 \begin{align}
 	\begin{split}
 		q \in \mathcal{VR}_{F} &\iff p \in \mathcal{PR}_{F}, \, \forall p \in F^{-1}(q)\\
-		q \in \mathcal{VC}_{F} &\iff \exists p \in F^{-1}(q) \mid p \in \mathcal{PC}_{F}
+		q \in \mathcal{VC}_{F} &\iff \E p \in F^{-1}(q) \mid p \in \mathcal{PC}_{F}
 	\end{split}
 \end{align}
 
@@ -4188,7 +4190,7 @@ Siano $ N $ una varietà differenziabile con $ \dim(N)=n $ e $ S \subset N $ sot
 \begin{gather}
 	S \text{ sottovarietà}\nonumber\\
 	\Downarrow\\
-	\forall p \in S, \, \exists (U,\phi) \in N \mid (U,\phi) \ni p \wedge U \cap S = \{ q \in U \mid x^{k+1}(q) = \dots = x^{n}(q) = 0 \}\nonumber
+	\forall p \in S, \, \E (U,\phi) \in N \mid (U,\phi) \ni p \wedge U \cap S = \{ q \in U \mid x^{k+1}(q) = \dots = x^{n}(q) = 0 \}\nonumber
 \end{gather}
 
 Ad esempio, se consideriamo $ N = \R^{2} $ con carta $ (x,y) $ e $ S = \R \times \{0\} $ allora
@@ -5537,7 +5539,7 @@ Combinando questo corollario con il teorema del rango costante si ottengono i te
 	La sommersione è localmente aperta in quanto la sommersione canonica è un'applicazione aperta, ma un'applicazione localmente aperta è anche aperta. Infatti, se $ U \subset N $ è aperto e $ F $ è localmente aperta, allora
 	
 	\begin{equation}
-		\forall p \in U, \, \exists U_{p} \text{ intorno} \mid F_{|U_{p}} \text{ aperta}
+		\forall p \in U, \, \E U_{p} \text{ intorno} \mid F_{|U_{p}} \text{ aperta}
 	\end{equation}
 
 	ma $ U $ si può scrivere come
@@ -5931,7 +5933,7 @@ Dimostriamo questo fatto mediante il seguente lemma
 	Cioè qualunque intorno di $ (1,1) \in \T^{2} $ include almeno un punto di $ F(\Z) $ o equivalentemente
 	
 	\begin{equation}
-		\forall \varepsilon > 0, \, \exists k \in \Z \setminus 0 \mid \left| (e^{2 \pi i k}, e^{2 \pi i \alpha k}) - (1,1) \right| < \varepsilon
+		\forall \varepsilon > 0, \, \E k \in \Z \setminus 0 \mid \left| (e^{2 \pi i k}, e^{2 \pi i \alpha k}) - (1,1) \right| < \varepsilon
 	\end{equation}
 \end{lemma}
 
@@ -6342,13 +6344,13 @@ Siano $ (p,v) \in T_{p}(M) $ e $ (q,w) \in T_{q}(M) $ due punti distinti di $ T(
 	\item se $ p = q $ allora $ T_{p}(M) = T_{q}(M) \subset T(U) $ dove $ U $ è un aperto coordinato di $ (U,\phi) \ni p=q $, ma $ T(U) \simeq \phi(U) \times \R^{n} $ dunque $ T(U) $ eredita la proprietà $ T_{2} $ da $ \phi(U) \times \R^{n} $ e a sua volta $ T_{p}(M) = T_{q}(M) $ la eredita da $ T(U) $, i.e.
 	
 	\begin{equation}
-		\exists A,B \in T(U) = T(M) \text{ aperti}, \, A \ni (p,v) \wedge B \ni (q,w) \mid A \cap B = \{\}
+		\E A,B \in T(U) = T(M) \text{ aperti}, \, A \ni (p,v) \wedge B \ni (q,w) \mid A \cap B = \{\}
 	\end{equation}
 	
 	\item se $ p \neq q $, siccome $ M $ è $ T_{2} $ esisteranno due aperti disgiunti coordinati che contengono $ p $ e $ q $, i.e.
 	
 	\begin{equation}
-		\exists U,V \in M, \, U \ni p \wedge V \ni q, \, (U,\phi),(V,\psi) \in M \mid U \cap V = \{\}
+		\E U,V \in M, \, U \ni p \wedge V \ni q, \, (U,\phi),(V,\psi) \in M \mid U \cap V = \{\}
 	\end{equation}
 
 	per cui, siccome $ T(U) \ni (p,v) $ e $ T(V) \ni (q,w) $ e

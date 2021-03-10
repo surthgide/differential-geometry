@@ -212,7 +212,7 @@ Vale la condizione
 Perché $ f_{*A} $ sia suriettiva
 
 \begin{equation}
-	\forall A \in O(n), \, \forall B \in S(n), \, \exists X \in M_{n}(\R) \mid X^{T} A + X A^{T} = B
+	\forall A \in O(n), \, \forall B \in S(n), \, \E X \in M_{n}(\R) \mid X^{T} A + X A^{T} = B
 \end{equation}
 
 è sufficiente dunque prendere $ X = \sfrac{1}{2} AB $, i.e.
@@ -520,7 +520,7 @@ Una serie è \textit{assolutamente convergente} se è convergente la stessa seri
 Una successione $ s_{n} $ è una \textit{successione di Cauchy} se
 
 \begin{equation}
-	s_{n} \text{ di Cauchy} \iff \forall \varepsilon > 0, \, \exists p,q,N_{\varepsilon} \in \N \mid \norm{s_{p} - s_{q}} \leqslant \epsilon, \quad \forall p,q \geqslant N_{\varepsilon}
+	s_{n} \text{ di Cauchy} \iff \forall \varepsilon > 0, \, \E p,q,N_{\varepsilon} \in \N \mid \norm{s_{p} - s_{q}} \leqslant \epsilon, \quad \forall p,q \geqslant N_{\varepsilon}
 \end{equation}
 
 \begin{remark}
@@ -918,7 +918,7 @@ Una matrice $ A \in M_{n}(\C) $ è detta \textit{normale} se $ A A^{*} = A^{*} A
 	
 	\begin{equation}
 		A \in M_{n}(\C) \qq{normale} \implies %
-		\exists U \in U(n) \mid U^{*} A U = %
+		\E U \in U(n) \mid U^{*} A U = %
 		\smqty(\dmat{\lambda_{1}, & & 0 \\ & \ddots & \\ 0 & & ,\lambda_{n}})
 	\end{equation}
 
@@ -1177,7 +1177,7 @@ ed è ancora una matrice elementare, in quanto
 	allora $ SL_{n}(\K) $ è generato da matrici elementari, i.e.
 	
 	\begin{equation}
-		\forall A \in SL_{n}(\K) \qcomma \exists M_{a_{1}}(i_{1},j_{1}), \dots, M_{a_{t}}(i_{t},j_{t}) \mid A = \prod_{p=1}^{t} M_{a_{p}}(i_{p},j_{p})
+		\forall A \in SL_{n}(\K) \qcomma \E M_{a_{1}}(i_{1},j_{1}), \dots, M_{a_{t}}(i_{t},j_{t}) \mid A = \prod_{p=1}^{t} M_{a_{p}}(i_{p},j_{p})
 	\end{equation}
 
 	cioè ogni matrice del gruppo lineare speciale può essere scritta come prodotto finito di matrici elementari.
@@ -1838,7 +1838,7 @@ Verifichiamo ora che il sottoinsieme $ SO(n) $ sia connessa (per archi) tramite 
 
 \begin{equation}
 	A \in SO(n) \implies %
-	\exists P \in O(n) \mid P^{T} A P = %
+	\E P \in O(n) \mid P^{T} A P = %
 	\smqty(\dmat{ I_{p}, - I_{q}, R_{1}(\theta_{1}), \ddots, R_{k}(\theta_{k}) })
 \end{equation}
 
@@ -1999,7 +1999,7 @@ da cui, tramite le identificazioni $ T_{A}(GL_{n}(\C)) = M_{n}(\C) $ e $ T_{f(A)
 A questo punto abbiamo che
 
 \begin{equation}
-	I \in \mathcal{VR}_{f} \iff \exists B \in M_{n}(\C) \mid f_{*A}(B) = C \qcomma \forall C \in H(n), \, \forall A \in U(n) = f^{-1}(I)
+	I \in \mathcal{VR}_{f} \iff \E B \in M_{n}(\C) \mid f_{*A}(B) = C \qcomma \forall C \in H(n), \, \forall A \in U(n) = f^{-1}(I)
 \end{equation}
 
 cioè $ f_{*A} $ è suriettiva per $ A \in U(n) $: questo si verifica per $ B = AC/2 $
@@ -2110,7 +2110,7 @@ cioè tutti i vettori paralleli all'asse immaginario che partano in $ 1 $.\\
 A questo punto, perché $ 1 \in \mathcal{VR}_{f} $, è necessario che il differenziale sua suriettivo per $ \forall A \in SU(n) $ o equivalentemente
 
 \begin{equation}
-	1 \in \mathcal{VR}_{f} \iff \exists B \in T_{A}(U(n)) \mid \tr(A^{-1} B) = i a \qcomma A \in SU(n), \, a \in \R
+	1 \in \mathcal{VR}_{f} \iff \E B \in T_{A}(U(n)) \mid \tr(A^{-1} B) = i a \qcomma A \in SU(n), \, a \in \R
 \end{equation}
 
 Abbiamo dimostrato che $ T_{A}(U(n)) = A \, T_{I}(U(n)) $ e $ T_{I}(U(n)) = H^{-}(n) $ cioè le matrici antihermitiane, perciò
@@ -4311,7 +4311,7 @@ Introduciamo i seguenti lemmi:
 	Sia $ G $ un gruppo di Lie ed $ e \in G $ il suo elemento neutro, allora $ G $ è generato da un qualunque intorno di $ e $, i.e.
 	
 	\begin{equation}
-		\exists U \ni e, \, U \subset G \mid g = \prod_{j=1}^{k} g_{j} \qcomma \forall g \in G, \, g_{j} \in U, \, j=1,\dots,k \qq{con} k \in \N
+		\E U \ni e, \, U \subset G \mid g = \prod_{j=1}^{k} g_{j} \qcomma \forall g \in G, \, g_{j} \in U, \, j=1,\dots,k \qq{con} k \in \N
 	\end{equation}
 \end{lemma}
 
@@ -4424,7 +4424,7 @@ Tramite il seguente teorema, otteniamo le condizioni per cui questo sia possibil
 		} tale che l'algebra di Lie associata a $ G $ coincida con $ \g $, i.e.
 		
 		\begin{equation}
-			\forall \g \qq{algebra di Lie} \exists ! \, G \qq{gruppo di Lie} \mid Lie(G) = \g
+			\forall \g \qq{algebra di Lie} \E ! \, G \qq{gruppo di Lie} \mid Lie(G) = \g
 		\end{equation}
 	
 		\item Siano $ G $ e $ H $ due gruppi di Lie con $ H $ semplicemente connesso e $ Lie(G) $ e $ Lie(H) $ le corrispondenti algebre di Lie, se esiste un omomorfismo di algebre di Lie $ \phi : Lie(H) \to Lie(G) $ allora esiste un unico omomorfismo di gruppi di Lie $ F : H \to G $ tale che il suo differenziale sia uguale all'omomorfismo di algebre di Lie, i.e. $ F_{*e} = \phi $;
@@ -4919,7 +4919,7 @@ L'ultima parte della dimostrazione del teorema di corrispondenza di Lie utilizza
 	Una qualunque algebra di Lie è isomorfa ad una sottoalgebra delle matrici quadrate ad entrate reali, i.e.
 	
 	\begin{equation}
-		\forall \g \, \exists\,  \g' \mid \g \simeq \g' \subset M_{n}(\R)
+		\forall \g \, \E\,  \g' \mid \g \simeq \g' \subset M_{n}(\R)
 	\end{equation}
 \end{theorem}
 
