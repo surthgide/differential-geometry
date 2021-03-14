@@ -2673,7 +2673,7 @@ Nel caso topologico non si può utilizzare questo procedimento in quanto ha sens
 Sia $ N $ una varietà differenziabile, $ (U,\phi) \in N $ una sua carta con $ \phi = (x^{1},\dots,x^{n}) $ e $ p \in (U,\phi) $ un punto della varietà: l'insieme
 
 \begin{equation}
-	\mathcal{B}_{T_{p}(N)} = \left( \left. \dfrac{\partial}{\partial x^{1}} \right|_{p} , \dots , \left. \dfrac{\partial}{\partial x^{n}} \right|_{p} \right)
+	\mathcal{B}_{T_{p}(N)} = \left\{ \eval{ \pdv{x^{1}} }_{p}, \dots, \eval{ \pdv{x^{n}} }_{p} \right\}
 \end{equation}
 
 è una base per $ T_{p}(N) = \der_{p}(C_{p}^{\infty}(N)) $ in quanto
@@ -2715,7 +2715,7 @@ conseguentemente
 	Essendo la derivata parziale in $ r^{i} $ un elemento di base e $ \phi_{*p} $ un isomorfismo che, in quanto tale, porta basi in basi, le derivate parziali in $ x^{i} $ sono quindi una base per $ T_{p}(N) $.
 \end{proof}
 
-\paragraph{6. Matrice dell'applicazione differenziale}
+\paragraph{6. Matrice dell'applicazione differenziale (aperti euclidei)}
 
 Siano $ U = N \subset \R^{n} $ e $ V = M \subset \R^{m} $ aperti, sia $ F : U \to V $ un'applicazione liscia e sia $ p \in U $, il differenziale sarà
 
@@ -2727,13 +2727,13 @@ Si possono identificare gli spazi tangenti in $ U $ e $ V $ con i rispettivi in 
 Siano
 
 \begin{equation}
-	\mathcal{B}_{T_{p}(U)} = \left( \left. \dfrac{\partial}{\partial r^{1}} \right|_{p} , \dots , \left. \dfrac{\partial}{\partial r^{n}} \right|_{p} \right)
+	\mathcal{B}_{T_{p}(U)} = \left\{ \eval{ \pdv{r^{1}} }_{p}, \dots, \eval{ \pdv{r^{n}} }_{p} \right\}
 \end{equation}
 
 una base per $ T_{p}(U) $ e
 
 \begin{equation}
-	\mathcal{B}_{T_{F(p)}(V)} = \left( \left. \dfrac{\partial}{\partial r^{1}} \right|_{F(p)} , \dots , \left. \dfrac{\partial}{\partial r^{m}} \right|_{F(p)} \right)
+	\mathcal{B}_{T_{F(p)}(V)} = \left\{ \eval{ \pdv{r^{1}} }_{F(p)}, \dots, \eval{ \pdv{r^{m}} }_{F(p)} \right\}
 \end{equation}
 
 una base per $ T_{F(p)}(V) $, allora gli elementi della matrice dell'applicazione $ F_{*p} $ sono dati da
@@ -2824,7 +2824,7 @@ Siano $ N $ una varietà differenziabile, un suo punto $ p \in N $ e due sue car
 		\left. \dfrac{\partial}{\partial x^{j}} \right|_{p} = \sum_{k=1}^{n} a_{kj} \left( \left. \dfrac{\partial}{\partial y^{k}} \right|_{p} \right)
 	\end{equation}
 
-	Per trovare le $ a_{kj} $ applico entrambi i membri dell'equazione precedente alla funzione $ y^{i} : U \to \R^{n} $. Per il secondo membro
+	Per trovare le $ a_{kj} $ applico entrambi i membri dell'equazione precedente alla funzione $ y^{i} : U \to \R $. Per il secondo membro
 	
 	\begin{align}
 		\begin{split}
@@ -2838,28 +2838,28 @@ Siano $ N $ una varietà differenziabile, un suo punto $ p \in N $ e due sue car
 	per il primo
 	
 	\begin{equation}
-		\left. \dfrac{\partial}{\partial x^{j}} \right|_{p} y^{i} = \left. \dfrac{\partial y^{i}}{\partial x^{j}} \right|_{p}
+		\eval{ \pdv{x^{j}} }_{p} y^{j} = \pdv{y^{i}}{x^{j}} (p)
 	\end{equation}
 
 	perciò
 	
 	\begin{equation}
-		a_{ij} = \left. \dfrac{\partial y^{i}}{\partial x^{j}} \right|_{p}
+		a_{ij} = \pdv{y^{i}}{x^{j}} (p)
 	\end{equation}
 \end{proof}
 
-\paragraph{8. Matrice del cambio di base}
+\paragraph{8. Matrice dell'applicazione differenziale (varietà differenziabili)}
 
 Siano $ F : N \to M $ un'applicazione liscia, un punto $ p \in N $ e due carte $ (U,\phi) \in N $ e $ (V,\psi) \in M $ con $ \phi = (x^{1},\dots,x^{n}) $ e $ \psi = (y^{1},\dots,y^{n}) $ e con $ F(U) \subset V $. Siano inoltre
 
 \begin{align}
 	\begin{split}
-		\mathcal{B}_{T_{p}(N)} &= \left( \left. \dfrac{\partial}{\partial x^{1}} \right|_{p} , \dots , \left. \dfrac{\partial}{\partial x^{n}} \right|_{p} \right)\\
-		\mathcal{B}_{T_{F(p)}(M)} &= \left( \left. \dfrac{\partial}{\partial y^{1}} \right|_{F(p)} , \dots , \left. \dfrac{\partial}{\partial y^{m}} \right|_{F(p)} \right)
+		\mathcal{B}_{T_{p}(N)} &= \left\{ \eval{ \pdv{x^{1}} }_{p}, \dots, \eval{ \pdv{x^{n}} }_{p} \right\}\\
+		\mathcal{B}_{T_{F(p)}(M)} &= \left\{ \eval{ \pdv{y^{1}} }_{F(p)}, \dots, \eval{ \pdv{y^{m}} }_{F(p)} \right\}
 	\end{split}
 \end{align}
 
-La matrice associata al differenziale $ F_{*p} : T_{p}(N) \to T_{F(p)}(M) $ rispetto alle basi $ \mathcal{B}_{T_{p}(N)} $ e $ \mathcal{B}_{T_{F(p)}(M)} $ è la matrice jacobiana
+La matrice associata al differenziale $ F_{*p} : T_{p}(N) \to T_{F(p)}(M) $ rispetto alla base $ \mathcal{B}_{T_{p}(N)} $ è la matrice jacobiana
 
 \begin{equation}
 	J(F)(p) = \left[ \dfrac{\partial F^{i}}{\partial x^{j}} (p) \right]
