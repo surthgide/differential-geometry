@@ -597,7 +597,62 @@ qui
 	\end{equation}
 \end{tcolorbox}
 
-qui
+Per trovare i coefficienti dell'immagine del differenziale ricordiamo che, per una funzione tra varietà differenziabili $ F : N \to M $ con carte
+
+\begin{equation}
+	\begin{cases}
+		(U,\phi) \in N, & \phi = (x^{1},\dots,x^{n})\\
+		(V,\psi) \in N, & \psi = (y^{1},\dots,y^{m})
+	\end{cases}
+\end{equation}
+
+vale
+
+\begin{equation}
+	F_{*p} \left( \eval{\pdv{x^{j}}}_{p} \right) = \sum_{k=1}^{m} \left( \pdv{F^{k}}{x^{j}}\ (p) \right) \left( \eval{\pdv{y^{k}}}_{F(p)} \right)
+\end{equation}
+
+dove $ F^{k} = y^{k} \circ F $.\\
+Essendo  il differenziale un'applicazione lineare, possiamo anche scrivere
+
+\begin{equation}
+	F_{*p} (X_{p}) = A(p) X_{p} = Y_{F(p)} \in T_{F(p)}(M)
+\end{equation}
+
+dove
+
+\begin{equation}
+	A(p) = \left[ \pdv{F^{k}}{x^{j}}\ (p) \right]
+\end{equation}
+
+Per la funzione considerata, abbiamo che
+
+\begin{equation}
+	A(x,y) = \mqty( 1 & 0 \\ 0 & 1 \\ y & x )
+\end{equation}
+
+Possiamo identificare $ T_{p}(\R^{k}) = \R^{k} $ dunque
+
+\begin{align}
+	\begin{split}
+		\left( \mu \eval{\pdv{x}}_{p}, \nu \eval{\pdv{y}}_{p} \right) &\to (\mu,\nu)\\
+		\left( a \eval{\pdv{u}}_{F(p)}, b \eval{\pdv{v}}_{F(p)}, c \eval{\pdv{w}}_{F(p)} \right) &\to (a,b,c)
+	\end{split}
+\end{align}
+
+dunque
+
+\begin{equation}
+	F_{*p} \left( \mqty( \mu \\ \nu ) \right) = \mqty( 1 & 0 \\ 0 & 1 \\ y & x ) \mqty( \mu \\ \nu ) = \mqty( \mu \\ \nu \\ y \mu + x \nu )
+\end{equation}
+
+perciò abbiamo che
+
+\begin{equation}
+	F_{*p} \left( \mqty( 1 \\ 0 ) \right) = \mqty( 1 & 0 \\ 0 & 1 \\ y & x ) \mqty( 1 \\ 0 ) = \mqty( 1 \\ 0 \\ y ) = \eval{\pdv{u}}_{F(p)} + y \eval{\pdv{w}}_{F(p)}
+\end{equation}
+
+i.e. $ (a,b,c) = (1,0,y) $.
 
 \tocless\section{}\label{es2-9}
 

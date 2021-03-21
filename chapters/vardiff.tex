@@ -2921,18 +2921,18 @@ Una \textit{categoria} $ \mathfrak{C} $ consiste di una collezione\footnote{%
 \begin{equation}
 	\begin{cases}
 		\E g \circ f \in Mor(A,C)\footnotemark, & \forall f \in Mor(A,B), \, \forall g \in Mor(B,C)\\
-		\E \mathbbm{1}_{A} \in Mor(A,A) \, \mid \, f \circ \mathbbm{1}_{A} = f, & \forall f \in Mor(A,B)\\
-		\E \mathbbm{1}_{B} \in Mor(B,B) \, \mid \, \mathbbm{1}_{A} \circ g = g, & \forall g \in Mor(B,A)\\
+		\E \bigone_{A} \in Mor(A,A) \mid f \circ \bigone_{A} = f, & \forall f \in Mor(A,B)\\
+		\E \bigone_{B} \in Mor(B,B) \mid \bigone_{B} \circ f = f, & \forall f \in Mor(A,B)\\
 		(f \circ g) \circ h = f \circ (g \circ h), & \forall f \in Mor(A,B), \forall g \in Mor(B,C), \forall h \in Mor(C,D)
 	\end{cases}
-\footnotetext{Il simbolo $ \circ $ indica la composizione ma, nella teoria delle categorie, non è necessariamente la composizione come si intende per le funzioni in teoria degli insiemi; nonostante ciò, vedremo solo esempi in cui le due composizioni sopraccitate coincidono.}
+\footnotetext{Il simbolo $ \circ $ indica la composizione ma, nella teoria delle categorie, non è necessariamente la composizione come si intende per le funzioni in teoria degli insiemi; nonostante ciò, vedremo solo esempi in cui queste due composizioni coincidono.}
 \end{equation}
 
 \subsubsection{\textit{Esempi}}
 
 \paragraph{0. Insiemi}
 
-Sia $ \mathfrak{C} $ è la categoria degli insiemi, allora
+Sia $ \mathfrak{C} $ la categoria degli insiemi, allora
 
 \begin{equation}
 	Ob(\mathfrak{C}) = \{ \text{collezione di tutti gli insiemi} \}
@@ -3021,11 +3021,11 @@ Tutte le proprietà delle categorie sono soddisfatte e la composizione $ \circ $
 Data una categoria $ \mathfrak{C} $, la definizione di oggetti isomorfi è la seguente:
 
 \begin{equation}
-	A \simeq B \text{ isomorfi} \iff \E f \in Mor(A,B) \wedge g \in Mor(B,A) \, \mid \, g \circ f = \mathbbm{1}_{A} \wedge f \circ g = \mathbbm{1}_{B}
+	A \simeq B \text{ isomorfi} \iff \E f \in Mor(A,B) \wedge g \in Mor(B,A) \, \mid \, g \circ f = \bigone_{A} \wedge f \circ g = \bigone_{B}
 \end{equation}
 
-dove $ A,B \in Ob(\mathfrak{C}) $, $ \mathbbm{1}_{A} \in Mor(A,A) $ e $ \mathbbm{1}_{B} \in Mor(B,B) $.\\
-Per esempio, per la categoria degli insiemi, due oggetti sono isomorfi se esistono due applicazioni l'una inversa dell'altra tali che associno questi due oggetti; dunque, .
+dove $ A,B \in Ob(\mathfrak{C}) $, $ \bigone_{A} \in Mor(A,A) $ e $ \bigone_{B} \in Mor(B,B) $.\\
+Per esempio, per la categoria degli insiemi, due oggetti sono isomorfi se esistono due applicazioni l'una inversa dell'altra tali che associno questi due oggetti tra loro.
 
 \subsubsection{\textit{Esempi}}
 
@@ -3038,7 +3038,7 @@ Due oggetti nella categoria degli insiemi sono isomorfi se hanno la stessa cardi
 Due oggetti nella categoria degli spazi vettoriali sono isomorfi quando lo sono come spazi vettoriali, i.e.
 
 \begin{equation}
-	V \simeq W \iff V \stackrel{sp.vett.}{\simeq} W
+	V \simeq W \iff V \stackrel{\text{sp.vett.}}{\simeq} W
 \end{equation}
 
 \paragraph{2. Spazi topologici}
@@ -3046,7 +3046,7 @@ Due oggetti nella categoria degli spazi vettoriali sono isomorfi quando lo sono 
 Due oggetti nella categoria degli spazi topologico sono isomorfi quando sono omeomorfi, i.e.
 
 \begin{equation}
-	X \simeq Y \iff V \stackrel{hom.}{\simeq} W
+	X \simeq Y \iff V \stackrel{\text{omeo.}}{\simeq} W
 \end{equation}
 
 \paragraph{3. Varietà differenziabili}
@@ -3054,7 +3054,7 @@ Due oggetti nella categoria degli spazi topologico sono isomorfi quando sono ome
 Due oggetti nella categoria delle varietà differenziabili sono isomorfi quando sono diffeomorfi, i.e.
 
 \begin{equation}
-	N \simeq M \iff N \stackrel{diff.}{\simeq} M
+	N \simeq M \iff N \stackrel{\text{diff.}}{\simeq} M
 \end{equation}
 
 \paragraph{4. Varietà differenziabili puntate}
@@ -3062,12 +3062,12 @@ Due oggetti nella categoria delle varietà differenziabili sono isomorfi quando 
 Due oggetti nella categoria delle varietà differenziabili puntate sono isomorfi quando sono diffeomorfi, i.e.
 
 \begin{equation}
-	(N,p) \simeq (M,q) \iff \E F : N \to M \text{ diffeomorfismo} \, \mid \, N \stackrel{diff.}{\simeq} M \wedge F(p)=q
+	(N,p) \simeq (M,q) \iff \E F : N \to M \text{ diffeomorfismo} \, \mid \, N \stackrel{\text{diff.}}{\simeq} M \wedge F(p)=q
 \end{equation}
 
 \subsection{Funtori}
 
-I \textit{funtori} i dividono in funtori \textit{covarianti} e \textit{controvarianti}.\\
+I \textit{funtori} si dividono in funtori \textit{covarianti} e \textit{controvarianti}.\\
 Siano $ \mathfrak{C} $ e $ \mathfrak{D} $ due categorie, un \textit{funtore covariante} è una coppia di applicazioni identificate da $ \mathcal{F} $ tali che
 
 \begin{equation}
@@ -3081,7 +3081,7 @@ rispettando l'identità e la composizione, i.e.
 
 \begin{equation}
 	\begin{cases}
-		\mathcal{F}(\mathbbm{1}_{A}) = \mathbbm{1}_{\mathcal{F}(A)} \in Ob(\mathfrak{D}), & \forall \mathbbm{1}_{A} \in Mor(A,A)\\
+		\mathcal{F}(\bigone_{A}) = \bigone_{\mathcal{F}(A)} \in Mor(\mathcal{F}(A),\mathcal{F}(A)), & \forall \bigone_{A} \in Mor(A,A)\\
 		\mathcal{F}(g \circ f) = \mathcal{F}(g) \circ \mathcal{F}(f) & \forall f \in Mor(A,B), \forall g \in Mor(B,C)
 	\end{cases}
 \end{equation}
@@ -3090,8 +3090,8 @@ Il funtore differenziale covariante, date $ \mathfrak{C} $ la categoria delle va
 
 \begin{equation}
 	\begin{cases}
-		\mathcal{F}((N,p)) = T_{p}(N), & \forall (N,p) \in Ob(\mathfrak{C}), \, T_{p}(N) \in Ob(\mathfrak{D})\\
-		\mathcal{F}(F) = F_{*p} & \forall F \in Mor((N,p),(M,q)), \, F_{*p} \in Mor(T_{p}(N),T_{q=F(p)}(M))
+		\mathcal{F}(N,p) = T_{p}(N), & \forall (N,p) \in Ob(\mathfrak{C}), \, T_{p}(N) \in Ob(\mathfrak{D})\\
+		\mathcal{F}(F) = F_{*p} \in Mor(T_{p}(N),T_{q=F(p)}(M)) & \forall F \in Mor((N,p),(M,q))
 	\end{cases}
 \end{equation}
 
@@ -3099,9 +3099,9 @@ Per dimostrare che sia un funtore covariante, verifichiamo che rispetti l'identi
 
 \begin{align}
 	\begin{split}
-		\mathcal{F}(\mathbbm{1}_{N}) &= (\mathbbm{1}_{N})_{*p}\\
-		&= \mathbbm{1}_{T_{p}(N)}\\
-		&= \mathbbm{1}_{\mathcal{F}((N,p))}
+		\mathcal{F}(\bigone_{N}) &= (\bigone_{N})_{*p}\\
+		&= \bigone_{T_{p}(N)}\\
+		&= \bigone_{\mathcal{F}(N,p)}
 	\end{split}
 \end{align}
 
@@ -3115,7 +3115,16 @@ e la composizione
 	\end{split}
 \end{align}
 
-per qualsiasi applicazione liscia tra varietà $ F : (N,p) \to (M,F(p)) $ e $ G : (M,F(p)) \to (P,G(F(p))) $ e qualsiasi varietà $ N $, $ M $ e $ P $ con $ p \in N $.\\\\
+per qualsiasi applicazione liscia tra varietà
+
+\begin{align}
+	\begin{split}
+		F : (N,p) &\to (M,F(p))\\
+		G : (M,F(p)) &\to (P,G(F(p)))
+	\end{split}
+\end{align}
+
+e qualsiasi varietà $ N $, $ M $ e $ P $ con $ p \in N $.\\\\
 %
 Siano $ \mathfrak{C} $ e $ \mathfrak{D} $ due categorie, un \textit{funtore controvariante} è una coppia di applicazioni identificate da $ \mathcal{F} $ tali che
 
@@ -3130,7 +3139,7 @@ rispettando l'identità e la composizione, i.e.
 
 \begin{equation}
 	\begin{cases}
-		\mathcal{F}(\mathbbm{1}_{A}) = \mathbbm{1}_{\mathcal{F}(A)} \in Ob(\mathfrak{D}), & \forall \mathbbm{1}_{A} \in Mor(A,A)\\
+		\mathcal{F}(\bigone_{A}) = \bigone_{\mathcal{F}(A)} \in Mor(\mathcal{F}(A),\mathcal{F}(A)), & \forall \bigone_{A} \in Mor(A,A)\\
 		\mathcal{F}(g \circ f) = \mathcal{F}(f) \circ \mathcal{F}(g) & \forall f \in Mor(A,B), \forall g \in Mor(B,C)
 	\end{cases}
 \end{equation}
@@ -3149,15 +3158,15 @@ rispettando l'identità e la composizione, i.e.
 	Per funtori covarianti, la definizione di isomorfismo asserisce che
 	
 	\begin{equation}
-		A \simeq B \implies \E f \in Mor(A,B), g \in Mor(B,A) \, \mid \, g \circ f = \mathbbm{1}_{A} \wedge f \circ g = \mathbbm{1}_{B}
+		A \simeq B \implies \E f \in Mor(A,B), g \in Mor(B,A) \, \mid \, g \circ f = \bigone_{A} \wedge f \circ g = \bigone_{B}
 	\end{equation}
 	
 	Applicando il funtore a entrambi i membri
 	
 	\begin{align}
 		\begin{split}
-			\mathcal{F}(g \circ f) = \mathcal{F}(\mathbbm{1}_{A}) &\wedge \mathcal{F}(f \circ g) = \mathcal{F}(\mathbbm{1}_{B})\\
-			\mathcal{F}(g) \circ \mathcal{F}(f) = \mathbbm{1}_{\mathcal{F}(A)} &\wedge \mathcal{F}(f) \circ \mathcal{F}(g) = \mathbbm{1}_{\mathcal{F}(B)}
+			\mathcal{F}(g \circ f) = \mathcal{F}(\bigone_{A}) &\wedge \mathcal{F}(f \circ g) = \mathcal{F}(\bigone_{B})\\
+			\mathcal{F}(g) \circ \mathcal{F}(f) = \bigone_{\mathcal{F}(A)} &\wedge \mathcal{F}(f) \circ \mathcal{F}(g) = \bigone_{\mathcal{F}(B)}
 		\end{split}
 	\end{align}
 	
@@ -3193,13 +3202,13 @@ Per dimostrare che sia un funtore controvariante, verifichiamo che rispetti l'id
 
 \begin{align}
 	\begin{split}
-		\mathcal{F}(\mathbbm{1}_{V}) &= \mathbbm{1}_{V}^{*}\\
-		&= \mathbbm{1}_{V^{*}}\\
-		&= \mathbbm{1}_{\mathcal{F}(V)}
+		\mathcal{F}(\bigone_{V}) &= \bigone_{V}^{*}\\
+		&= \bigone_{V^{*}}\\
+		&= \bigone_{\mathcal{F}(V)}
 	\end{split}
 \end{align}
 
-in quanto $ \mathbbm{1}_{V} : V \to V $ e $ \mathbbm{1}_{V}^{*} : V^{*} \to V^{*} $, e la composizione
+in quanto $ \bigone_{V} : V \to V $ e $ \bigone_{V}^{*} : V^{*} \to V^{*} $, e la composizione
 
 \begin{align}
 	\begin{split}
@@ -4766,7 +4775,7 @@ In conclusione, per definizione, $ \S^{2}$ è una sottovarietà di $\R^{3} $ con
 			&= %
 			\begin{bmatrix}
 				J(F)(p) & \left[ \dfrac{\partial F^{k}}{\partial x^{h}} (p) \right] \\\\
-				0 & \mathbbm{1}
+				0 & \bigone
 			\end{bmatrix}
 		\end{split}
 	\end{align}
@@ -4775,8 +4784,8 @@ In conclusione, per definizione, $ \S^{2}$ è una sottovarietà di $\R^{3} $ con
 	
 	\begin{align}
 		\begin{split}
-			\det(J(g)(p)) &= \det \left( \begin{bmatrix} J(F)(p) & \left[ \dfrac{\partial F^{k}}{\partial x^{h}} (p) \right] \\\\ 0 & \mathbbm{1} \end{bmatrix} \right)\\\\
-			&= \begin{bmatrix} \det(J(F)(p)) & \det( \left[ \dfrac{\partial F^{k}}{\partial x^{h}} (p) \right] ) \\\\ \det(0) & \det(\mathbbm{1}) \end{bmatrix}\\\\
+			\det(J(g)(p)) &= \det \left( \begin{bmatrix} J(F)(p) & \left[ \dfrac{\partial F^{k}}{\partial x^{h}} (p) \right] \\\\ 0 & \bigone \end{bmatrix} \right)\\\\
+			&= \begin{bmatrix} \det(J(F)(p)) & \det( \left[ \dfrac{\partial F^{k}}{\partial x^{h}} (p) \right] ) \\\\ \det(0) & \det(\bigone) \end{bmatrix}\\\\
 			&= \det(J(F)(p)) \neq 0
 		\end{split}
 	\end{align}
