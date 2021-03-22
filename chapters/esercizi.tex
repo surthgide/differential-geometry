@@ -669,7 +669,51 @@ i.e. $ (a,b,c) = (1,0,y) $.
 	Si scrivano $ \sfrac{\partial}{\partial \rho} $ e $ \sfrac{\partial}{\partial \theta} $ in funzione di $ \sfrac{\partial}{\partial x} $ e $ \sfrac{\partial}{\partial y} $.
 \end{tcolorbox}
 
-qui
+L'equazione che lega i vettori di una base dello spazio tangente
+
+\begin{equation}
+	T_{p}(\R^{2} \setminus \{(0,0)\}) = \R^{2} \setminus \{(0,0)\}
+\end{equation}
+
+ad un'altra base è la seguente:
+
+\begin{equation}
+	\eval{\pdv{u^{j}}}_{p} = \sum_{k=1}^{m} \left( \pdv{v^{k}}{u^{j}}\ (p) \right) \left( \eval{\pdv{v^{k}}}_{p} \right)
+\end{equation}
+
+dove $ u = (\rho,\theta) $ e $ v = (x,y) $.\\
+In questo caso, possiamo scrivere i vettori dello spazio tangente come:
+
+\begin{align}
+	\begin{split}
+		X_{p} = \left( \eval{\pdv{x}}_{p}, \eval{\pdv{y}}_{p} \right) &\doteq (\mu,\nu)\\\\
+		Y_{p} = \left( \eval{\pdv{\rho}}_{p}, \eval{\pdv{\theta}}_{p} \right) &\doteq (a,b)
+	\end{split}
+\end{align}
+
+La matrice di trasformazione è
+
+\begin{equation}
+	T = \left[ \pdv{v^{k}}{u^{j}}\ (p) \right] = \mqty( \pdv{x}{\rho} & \pdv{x}{\theta} \\\\ \pdv{y}{\rho} & \pdv{y}{\theta} ) %
+	= \mqty( \cos(\theta) & - \rho \sin(\theta) \\\\ \sin(\theta) & \rho \cos(\theta) )
+\end{equation}
+
+perciò
+
+\begin{equation}
+	Y_{p} = T X_{p} %
+	\implies %
+	\mqty( a \\ b ) = \mqty( \cos(\theta) & - \rho \sin(\theta) \\\\ \sin(\theta) & \rho \cos(\theta) ) \mqty( \mu \\ \nu ) = \mqty( \cos(\theta) \mu - \rho \sin(\theta) \nu \\\\ \sin(\theta) \mu + \rho \cos(\theta) \nu )
+\end{equation}
+
+dunque
+
+\begin{align}
+	\begin{split}
+		\eval{\pdv{\rho}}_{p} &= \cos(\theta) \eval{\pdv{x}}_{p} - \rho \sin(\theta) \eval{\pdv{y}}_{p}\\\\
+		\eval{\pdv{\theta}}_{p} &= \sin(\theta) \eval{\pdv{x}}_{p} + \rho \cos(\theta) \eval{\pdv{y}}_{p}
+	\end{split}
+\end{align}
 
 \tocless\section{}\label{es2-10}
 
