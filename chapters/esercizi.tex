@@ -721,13 +721,44 @@ dunque
 	Sia $ p = (x,y) $ un punto di $ \R^{2} $. Allora
 	
 	\begin{equation}
-		c_{p}(t) = \begin{pmatrix} \cos(2t) & -\sin(2t) \\\\ \sin(2t) & \cos(2t) \end{pmatrix} \begin{pmatrix} x \\\\ y \end{pmatrix}
+		c_{p}(t) = \mqty( \cos(2t) & -\sin(2t) \\\\ \sin(2t) & \cos(2t) ) \mqty(x \\ y)
 	\end{equation}
 	
 	è una curva liscia in $ \R^{2} $ che inizia in $ p $. Calcolare $ c'(0) $.
 \end{tcolorbox}
 
-qui
+Considerando $ N = \R^{2} $ con carta $ (U,\phi) $ dove $ \phi = (x^{1},\dots,x^{n}) $, il vettore velocità della curva
+
+\map{c}%
+	{\R}{\R^{2}}%
+	{t}{A(t) \, p = \mqty( \cos(2t) & -\sin(2t) \\\\ \sin(2t) & \cos(2t) ) \mqty(x \\ y)}
+
+è dato da
+
+\begin{equation}
+	c'(t_{0}) = \sum_{j=1}^{n} \dot{c}(t_{0}) \eval{\pdv{x^{j}}}_{t_{0}}%
+	\implies%
+	c'(0) = \dot{c}_{1}(0) \eval{\pdv{x}}_{0} + \dot{c}_{2}(0) \eval{\pdv{y}}_{0}
+\end{equation}
+
+Calcoliamo dunque le componenti del vettore tangente:
+
+\begin{align}
+	\begin{split}
+		\dot{c}(0) &= \eval{\dv{t}}_{0}(A(t) \, p)\\
+		&= \left( \eval{\dv{t}}_{0} A(t) \right) p\\
+		&= \eval{ \dv{t} \left( \mqty( \cos(2t) & -\sin(2t) \\\\ \sin(2t) & \cos(2t) ) \right) }_{0} \mqty(x \\ y)\\
+		&= 2 \eval{ \mqty( -\sin(2t) & -\cos(2t) \\\\ \cos(2t) & -\sin(2t) ) }_{0} \mqty(x \\ y)\\
+		&= 2 \mqty( 0 & -1 \\ 1 & 0 ) \mqty(x \\ y)\\
+		&= \mqty(-2y \\ 2x)
+	\end{split}
+\end{align}
+
+da cui
+
+\begin{equation}
+	c'(0) = -2y \eval{\pdv{x}}_{0} + 2x \eval{\pdv{y}}_{0}
+\end{equation}
 
 \tocless\section{}\label{es2-11}
 
