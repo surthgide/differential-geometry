@@ -3822,8 +3822,8 @@ dove $ F^{i} = y^{i} \circ F = r^{i} \circ \psi \circ F $, in quanto la matrice 
 
 \begin{align}
 	\begin{split}
-		\mathcal{B}_{T_{p}(N)} &= \left( \left. \dfrac{\partial}{\partial x^{1}} \right|_{p} , \dots , \left. \dfrac{\partial}{\partial x^{n}} \right|_{p} \right)\\
-		\mathcal{B}_{T_{F(p)}(M)} &= \left( \left. \dfrac{\partial}{\partial y^{1}} \right|_{F(p)} , \dots , \left. \dfrac{\partial}{\partial y^{m}} \right|_{F(p)} \right)
+		\mathcal{B}_{T_{p}(N)} &= \left\{ \eval{\pdv{x^{1}}}_{p}, \dots, \eval{\pdv{x^{n}}}_{p} \right\}\\
+		\mathcal{B}_{T_{F(p)}(M)} &= \left\{ \eval{\pdv{y^{1}}}_{F(p)}, \dots, \eval{\pdv{y^{m}}}_{F(p)} \right\}
 	\end{split}
 \end{align}
 
@@ -3868,7 +3868,7 @@ Consideriamo l'insieme dei punti di $ N $ che hanno come immagine $ q \in M $ at
 \end{equation}
 
 Un punto $ q \in M $ è un \textit{valore regolare per} $ F $ se ogni punto $ p \in F^{-1}(q) $ è un punto regolare. Un punto $ q \in M $ è un \textit{valore critico per} $ F $ se non è un valore regolare o, equivalentemente, se esiste un punto $ p \in F^{-1}(q) $ tale che $ p $ sia un punto critico.\\
-I punti critici e regolari appartengono al dominio della funzione.\\
+I valori critici e regolari appartengono al codominio della funzione.\\
 Come notazione
 
 \begin{align}
@@ -3928,10 +3928,10 @@ Se $ p \in \mathcal{PC}_{f} $ allora $ f_{*p} : T_{p}(N) \to T_{f(p)}(\R) $ non 
 Questo significa che
 
 \begin{equation}
-	f_{*p}(X_{p}) = 0 \in T_{f(p)}(\R)
+	f_{*p}(X_{p}) = 0 \in T_{f(p)}(\R) \qcomma \forall X_{p} \in T_{p}(N)
 \end{equation}
 
-per $ \forall X_{p} \in T_{p}(N) $ e sappiamo che
+e sappiamo che
 
 \begin{equation}
 	f_{*p}(X_{p}) = (X_{p} f) \left. \dfrac{\operatorname{d}}{\operatorname{dr}} \right|_{f(p)}
@@ -3953,11 +3953,10 @@ dunque
 Perché $ f_{*p}(X_{p}) = 0 $ è necessario che $ X_{p} f = 0 $, il che implica
 
 \begin{equation}
-	\dfrac{\partial f}{\partial x^{i}} (p) = 0
+	\dfrac{\partial f}{\partial x^{i}} (p) = 0 \qcomma \forall i=1,\dots,n
 \end{equation}
 
-per $ \forall i=1,\dots,n $.\\
-Riassumendo, la condizione per cui un punto $ p \in N $ sia un punto critico è la seguente
+Riassumendo, la condizione per cui un punto $ p \in N $ sia un punto critico per $ f : N \to \R $ è la seguente:
 
 \begin{gather}
 	p \in \mathcal{PC}_{f}\nonumber\\
@@ -4004,7 +4003,7 @@ Sappiamo inoltre che $ f(\mathcal{PR}_{f}) \not\subset \mathcal{VR}_{f} $ in qua
 
 \paragraph{2.}
 
-Sia $ F : N \to M $ un'applicazione lisca non suriettiva. Per qualunque $ q \in M \setminus F(N) $ abbiamo che $ q \in \mathcal{VR}_{F} $ per definizione ma $ q \notin F(\mathcal{PR}_{F}) $ in quanto $ q \notin F(N) $.\\
+Sia $ F : N \to M $ un'applicazione liscia non suriettiva. Per qualunque $ q \in M \setminus F(N) $ abbiamo che $ q \in \mathcal{VR}_{F} $ per definizione ma $ q \notin F(\mathcal{PR}_{F}) $ in quanto $ q \notin F(N) $.\\
 Riassumendo $ F(\mathcal{PR}_{F}) \not\supset \mathcal{VR}_{F} $.
 
 \subsubsection{Massimi e minimi relativi}
@@ -4080,7 +4079,7 @@ Sia $ N $ una varietà differenziabile e $ f \in C^{\infty}(N) $, un punto $ p \
 
 \subsubsection{Matrice hessiana}
 
-Sia $ N $ una varietà compatta dove $ \dim(N)=2 $. Un punto $ p \in N $  è detto punto critico \textit{non degenere} se $ p \in \mathcal{PC} $ e se, presa una carta $ (U\,\phi) $ con $ \phi (x^{1},x^{2}) $, il determinante della \textit{matrice hessiana} associata a $ f $ in $ p $ è diverso da zero, i.e.
+Sia $ N $ una varietà compatta dove $ \dim(N)=2 $. Un punto $ p \in N $  è detto punto critico \textit{non degenere} se $ p \in \mathcal{PC} $ e se, presa una carta $ (U\,\phi) \in N $ con $ \phi = (x^{1},x^{2}) $, il determinante della \textit{matrice hessiana} associata a $ f $ in $ p $ è diverso da zero, i.e.
 
 \begin{equation}
 	\det(\mathcal{H}(f)(p)) \doteq \det (\begin{bmatrix} \dfrac{\partial^{2} f}{\partial (x^{1})^{2}} & \dfrac{\partial^{2} f}{\partial x^{1} \partial x^{2}} \\\\ \dfrac{\partial^{2} f}{\partial x^{2} \partial x^{1}} & \dfrac{\partial^{2} f}{\partial (x^{2})^{2}} \end{bmatrix}) \neq 0
@@ -4122,11 +4121,11 @@ La teoria di Morse lega lo studio dei punti critici di una varietà alla sua top
 	Siano $ N $ una varietà compatta e connessa con $ \dim(N)=2 $ e $ f $ una funzione liscia che ha tutti i punti critici non degeneri. Siano
 	
 	\begin{itemize}
-		\item $ M = \# \{ \text{punti di massimo per } f \} $
+		\item $ M = \# \text{ punti di massimo per } f $
 		
-		\item $ m = \# \{ \text{punti di minimo per } f \} $
+		\item $ m = \# \text{ punti di minimo per } f $
 		
-		\item $ s = \# \{ \text{punti di sella per } f \} $
+		\item $ s = \# \text{ punti di sella per } f $
 	\end{itemize}
 
 	i quali sono finiti perché la varietà è compatta.\\
