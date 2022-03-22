@@ -2,7 +2,7 @@
 
 \subsection{Funzioni lisce}
 
-Consideriamo $ \R^{n} $ con $ n \geq 1 $ e $ U \subset \R^{n} $ aperto; prendiamo una funzione $ f : U \to \R $ e $ p \in U $: diremo che $ f \in C^{k} $ o \textit{liscia} in $ p $ con $ k \in \N $ se le derivate $ k $-esime di $ f $, definite come
+Consideriamo $ \R^{n} $ con $ n \geq 1 $ e $ U \subset \R^{n} $ aperto; prendiamo una funzione $ f : U \to \R $ e $ p \in U $: diremo che $ f \in C^{k} $in $ p $ con $ k \in \N $ se le derivate $ k $-esime di $ f $, definite come
 
 \begin{equation}
 	\dfrac{\partial^{k} f}{\partial x^{1} \cdots \partial x^{k}}, \quad k \in \N
@@ -20,12 +20,13 @@ Diremo che:
 \begin{itemize}
 	\item $ f \in C^{k} $ in $ U $ se $ f \in C^{k} $ in $ p $ per $ \forall p \in U $
 	
-	\item $ f \in C^{\infty} $ o liscia in $ p $ se $ f \in C^{k} $ in $ p $ per $ \forall k \in \N $
+	\item $ f \in C^{\infty} $ o \textit{liscia} in $ p $ se $ f \in C^{k} $ in $ p $ per $ \forall k \in \N $
 	
-	\item $ f \in C^{\infty} $ o liscia in $ U $ se $ f \in C^{\infty} $ per $ \forall p \in U $
+	\item $ f \in C^{\infty} $ o \textit{liscia} in $ U $ se $ f \in C^{\infty} $ per $ \forall p \in U $
 \end{itemize}
 
-perciò una funzione è liscia se esistono e sono finite le sue derivate di qualunque ordine. Queste funzioni sono quelle su cui si basa il concetto di varietà differenziabile.\\
+perciò una funzione è liscia se esistono e sono finite le sue derivate di qualunque ordine.\\
+Queste funzioni sono quelle su cui si basa il concetto di \textit{varietà differenziabile}.\\
 
 Per generalizzare, consideriamo le funzioni definite non in $ \R $ ma in $ \R^{n} $.\\
 Una funzione $ f : U \to \R^{m} $ con $ m \geq 1 $ e $ U \subset \R^{m} $ aperto è $ C^{k} $ in $ p $ se tutte le sue componenti $ f^{j} : U \to \R $ sono $ f^{j} \in C^{k} $ in $ p $ con $ k \geq 0 $. Nello specifico, $ f = (f^{1}, \dots, f^{m}) $ oppure $ f^{j} = \pi_{j} \circ f $ dove $ \pi_{j} $ è la proiezione $ \pi_{j} : \R^{m} \to \R $ con $ (x^{1}, \dots, x^{m}) \mapsto x^{j} $, $ j = 1, \dots, m $.\\
