@@ -1,30 +1,55 @@
-\section{Funzioni liscia reali analitiche}
+\section{Funzioni lisce e reali analitiche}
 
-\subsection{Funzioni liscia}
+\subsection{Funzioni lisce}
 
-Prendiamo $ \R^{n} $ con $ n \geq 1 $ e $ U \subset \R^{n} $ aperto e prendiamo una funzione $ f : U \to \R $; prendo $ p \in U $, diremo che $ f \in C^{k} $ o \textit{liscia} in $ p $ con $ k \in \N $ se le derivate $ k $-esime di $ f $, definite come
+Consideriamo $ \R^{n} $ con $ n \geq 1 $ e $ U \subset \R^{n} $ aperto; prendiamo una funzione $ f : U \to \R $ e $ p \in U $: diremo che $ f \in C^{k} $ o \textit{liscia} in $ p $ con $ k \in \N $ se le derivate $ k $-esime di $ f $, definite come
 
 \begin{equation}
 	\dfrac{\partial^{k} f}{\partial x^{1} \cdots \partial x^{k}}, \quad k \in \N
 \end{equation}
 
 esistono e sono continue in $ p $.\\
-Prendendo $ k = 0 $, $ f \in C^{0} \iff $ $ f $ è continua.\\
-Diremo che $ f \in C^{k} $ in $ U $ se $ f \in C^{k} $ in $ p $, $ \forall p \in U $.\\
-Diremo che $ f \in C^{\infty} $ o liscia in $ p $ se $ f \in C^{k} $ in $ p $, $ \forall k \in \N $.\\
-Diremo che $ f \in C^{\infty} $ o liscia in $ U $ se $ f \in C^{\infty} $, $ \forall p \in U $, perciò una funzione è liscia se esistono e sono finite le sue derivate di qualunque ordine. Queste funzioni sono quelle su cui si basa il concetti di varietà differenziabile.\\
+Prendendo $ k = 0 $,  abbiamo che
+
+\begin{equation}
+	f \in C^{0} \iff f \text{ continua}
+\end{equation}
+
+Diremo che:
+
+\begin{itemize}
+	\item $ f \in C^{k} $ in $ U $ se $ f \in C^{k} $ in $ p $ per $ \forall p \in U $
+	
+	\item $ f \in C^{\infty} $ o liscia in $ p $ se $ f \in C^{k} $ in $ p $ per $ \forall k \in \N $
+	
+	\item $ f \in C^{\infty} $ o liscia in $ U $ se $ f \in C^{\infty} $ per $ \forall p \in U $
+\end{itemize}
+
+perciò una funzione è liscia se esistono e sono finite le sue derivate di qualunque ordine. Queste funzioni sono quelle su cui si basa il concetto di varietà differenziabile.\\
 
 Per generalizzare, consideriamo le funzioni definite non in $ \R $ ma in $ \R^{n} $.\\
 Una funzione $ f : U \to \R^{m} $ con $ m \geq 1 $ e $ U \subset \R^{m} $ aperto è $ C^{k} $ in $ p $ se tutte le sue componenti $ f^{j} : U \to \R $ sono $ f^{j} \in C^{k} $ in $ p $ con $ k \geq 0 $. Nello specifico, $ f = (f^{1}, \dots, f^{m}) $ oppure $ f^{j} = \pi_{j} \circ f $ dove $ \pi_{j} $ è la proiezione $ \pi_{j} : \R^{m} \to \R $ con $ (x^{1}, \dots, x^{m}) \mapsto x^{j} $, $ j = 1, \dots, m $.\\
-Una funzione $ f : U \to \R^{m} $ è $ C^{k} $ in $ U $ se $ f^{j} \in C^{k} $ in $ U $.\\
-Una funzione $ f : U \to \R^{m} $ è liscia in $ p \in U $ se $ f^{j} \in C^{\infty} $ in $ p $, $ \forall j = 1, \dots, m $.\\
-Una funzione $ f : U \to \R^{m} $ è liscia in $ U $ se $ f^{j} \in C^{\infty} $ in $ U $, $ \forall j = 1, \dots, m $.
+Una funzione $ f : U \to \R^{m} $ è:
+
+\begin{itemize}
+	\item $ C^{k} $ in $ U $ se $ f^{j} \in C^{k} $ in $ U $
+	
+	\item liscia in $ p \in U $ se $ f^{j} \in C^{\infty} $ in $ p $ per $ \forall j = 1, \dots, m $
+	
+	\item liscia in $ U $ se $ f^{j} \in C^{\infty} $ in $ U $ per $ \forall j = 1, \dots, m $
+\end{itemize}
 
 \subsubsection{\textit{Esempi}}
 
 \paragraph{1.}
 
-Sia $ f : \R \to \R $ con $ x \mapsto x^{1/3} $. La funzione è continua ($ f \in C^{0} $) ed è un omeomorfismo\footnote{%
+Sia
+
+\map{f}
+	{\R}{\R}
+	{x}{x^{1/3}}
+	
+La funzione è continua ($ f \in C^{0} $) ed è un omeomorfismo\footnote{%
 	Sia la funzione che la sua inversa sono continue.%
 } ma $ f \notin C^{1} $ nell'origine $ p = 0 $ perché
 
@@ -41,9 +66,9 @@ Sia $ g : \R \to \R $ con
 
 \begin{align}
 	\begin{split}
-		g (x) &= \int_{0}^{x} f (t) \operatorname{dt}\\
+		g (x) &= \int_{0}^{x} f (t) \dd{t}\\
 		&= \dfrac{3 x^{2/3}}{4}
-	\end{split} 
+	\end{split}
 \end{align}
 
 da cui si ottiene che $ g \in C^{1} (\R) $ ma $ g \notin C^{2} (\R) $.
