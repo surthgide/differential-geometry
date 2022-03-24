@@ -8451,7 +8451,9 @@ allora $ (\chi(M),[,]) $ è un'algebra di Lie su $ \R $. Lo spazio vettoriale $ 
 
 Siano $ N $ e $ M $ due varietà differenziabili di dimensione rispettivamente $ n $ ed $ m $, un'applicazione liscia $ F : N \to M $ e un campo di vettori liscio $ X \in \chi(M) $. Fissando un punto $ p \in N $, per associare un vettore del campo dallo spazio tangente di $ N $ in $ p $ a quello di $ M $ in $ F(p) $ possiamo usare il differenziale
 
-\map{F_{*p}}{T_{p}(N)}{T_{F(p)}(M)}{X_{p}}{F_{*p}(X_{p})}
+\map{F_{*p}}
+	{T_{p}(N)}{T_{F(p)}(M)}
+	{X_{p}}{F_{*p}(X_{p})}
 
 ma questo non può essere esteso a tutto il campo di vettori in quanto, se l'applicazione non fosse iniettiva, esisterebbero $ p,q \in N $ tali che $ F(p) = F(q) $: a questo punto si presenta l'assegnazione del vettore in $ F(p) = F(q) $ e ci sarebbe ambiguità tra $ F_{*p}(X_{p}) $ e $ F_{*p}(X_{q}) $ e tra $ F_{*q}(X_{p}) $ e $ F_{*q}(X_{q}) $. Anche se fosse iniettiva ma comunque non suriettiva, non esisterebbe un vettore $ X_{p} \in \chi(N) $ in $ p \in N $ la cui immagine attraverso il differenziale $ F_{*p} $ sia un vettore in un punto $ r \in M \setminus F(N) $ (dove $ F(N) \subsetneqq M $ in quanto $ F $ non è suriettiva).\\\\
 %

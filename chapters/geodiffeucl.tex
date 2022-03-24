@@ -5,11 +5,11 @@
 Consideriamo $ \R^{n} $ con $ n \geq 1 $ e $ U \subset \R^{n} $ aperto; prendiamo una funzione $ f : U \to \R $ e $ p \in U $: diremo che $ f \in C^{k} $in $ p $ con $ k \in \N $ se le derivate $ k $-esime di $ f $, definite come
 
 \begin{equation}
-	\dfrac{\partial^{k} f}{\partial x^{1} \cdots \partial x^{k}}, \quad k \in \N
+	\pdv[k]{f}{x^{1} \cdots}{x^{k}} \qcomma k \in \N
 \end{equation}
 
 esistono e sono continue in $ p $.\\
-Prendendo $ k = 0 $,  abbiamo che
+Prendendo $ k = 0 $, abbiamo che
 
 \begin{equation}
 	f \in C^{0} \iff f \text{ continua}
@@ -29,7 +29,7 @@ perciò una funzione è liscia se esistono e sono finite le sue derivate di qual
 Queste funzioni sono quelle su cui si basa il concetto di \textit{varietà differenziabile}.\\
 
 Per generalizzare, consideriamo le funzioni definite non in $ \R $ ma in $ \R^{n} $.\\
-Una funzione $ f : U \to \R^{m} $ con $ m \geq 1 $ e $ U \subset \R^{m} $ aperto è $ C^{k} $ in $ p $ se tutte le sue componenti $ f^{j} : U \to \R $ sono $ f^{j} \in C^{k} $ in $ p $ con $ k \geq 0 $. Nello specifico, $ f = (f^{1}, \dots, f^{m}) $ oppure $ f^{j} = \pi_{j} \circ f $ dove $ \pi_{j} $ è la proiezione $ \pi_{j} : \R^{m} \to \R $ con $ (x^{1}, \dots, x^{m}) \mapsto x^{j} $, $ j = 1, \dots, m $.\\
+Una funzione $ f : U \to \R^{n} $ con $ n \geq 1 $ e $ U \subset \R^{m} $ con $ m \geq 1 $ aperto è $ C^{k} $ in $ p $ se tutte le sue componenti $ f^{j} : U \to \R $ sono $ f^{j} \in C^{k} $ in $ p $ con $ k \geq 0 $. Nello specifico, $ f = (f^{1}, \dots, f^{m}) $ oppure $ f^{j} = \pi_{j} \circ f $ dove $ \pi_{j} $ è la proiezione $ \pi_{j} : \R^{m} \to \R $ con $ (x^{1}, \dots, x^{m}) \mapsto x^{j} $, $ j = 1, \dots, m $.\\
 Una funzione $ f : U \to \R^{m} $ è:
 
 \begin{itemize}
@@ -65,12 +65,9 @@ la quale non è definita nell'origine e dunque $ f \notin C^{1} (\R) $.
 Se volessi costruire una funzione che sia $ C^{1} $ ma non $ C^{2} $, potrei integrare la $ f $ del punto precedente.\\
 Sia $ g : \R \to \R $ con
 
-\begin{align}
-	\begin{split}
-		g (x) &= \int_{0}^{x} f (t) \dd{t}\\
-		&= \dfrac{3 x^{2/3}}{4}
-	\end{split}
-\end{align}
+\begin{equation}
+	g (x) = \int_{0}^{x} f (t) \dd{t} = \dfrac{3 x^{2/3}}{4}
+\end{equation}
 
 da cui si ottiene che $ g \in C^{1} (\R) $ ma $ g \notin C^{2} (\R) $.
 
@@ -85,12 +82,12 @@ Sia $ f : U \to \R $ con $ U \subset \R^{n} $ aperto, diremo che $ f $ è \texti
 
 \begin{align}
 	\begin{split}
-		f (x) &= f (p) + \sum_{i=1}^{n} \dfrac{\partial f}{\partial x^{i}} (p) (x^{i} - p^{i}) + \dfrac{1}{2} \sum_{i,j=1}^{n} \dfrac{\partial^{2} f}{\partial x^{i} \partial x^{j}} (p) (x^{i} - p^{i}) (x^{j} - p^{j}) +\\
-		& \, + \cdots + \sum_{i_{1},\dots,i_{k}=1}^{n} \dfrac{\partial^{k} f}{\partial x^{i_{1}} \cdots \partial x^{i_{k}}} (p) (x^{i_{1}} - p^{i_{1}}) \cdots (x^{i_{k}} - p^{i_{k}}) + \cdots
+		f (x) &= f (p) + \sum_{i=1}^{n} \pdv{f}{x_{i}} (p) (x^{i} - p^{i}) + \cdots + \dfrac{1}{k!} \sum_{i_{1},\dots,i_{k}=1}^{n} \pdv[k]{f}{x^{i_{1}} \cdots}{x^{i_{k}}} (p) (x^{i_{1}} - p^{i_{1}}) \cdots (x^{i_{k}} - p^{i_{k}}) + \cdots\\
+		&= f (p) + \sum_{k=1}^{\infty} \dfrac{1}{k!} \sum_{i_{1},\dots,i_{k}=1}^{n} \pdv[k]{f}{x^{i_{1}} \cdots}{x^{i_{k}}} (p) \prod_{j=1}^{k} (x^{j} - p^{j})
 	\end{split}
 \end{align}
 
-Se ho una serie di potenze, posso derivarla termine a termine dunque, siccome una funzione reale analitica coincide con il suo sviluppo in serie di Taylor, è possibile derivarla ottenendo sempre una funzione continua con derivata continua. A questo punto, $ f \in C^{\infty} $ e questo segue dall'analisi in quanto le serie di potenze possono essere derivate un numero arbitrario di volte.
+Se abbiamo una serie di potenze, possiamo derivarla termine a termine dunque, siccome una funzione reale analitica coincide con il suo sviluppo in serie di Taylor, è possibile derivarla ottenendo sempre una funzione continua con derivata continua. A questo punto $ f \in C^{\infty} $: questo segue dall'analisi in quanto le serie di potenze possono essere derivate un numero arbitrario di volte.
 
 \subsubsection{\textit{Esempi}}
 
@@ -105,11 +102,11 @@ La funzione $ f (x) = \sin x $ è liscia reale analitica e ha sviluppo di Taylor
 	\end{split}
 \end{align}
 
-Per calcolare la derivata posso derivare termine a termine lo sviluppo di Taylor
+Per calcolare la derivata possiamo derivare termine a termine lo sviluppo di Taylor
 
 \begin{align}
 	\begin{split}
-		\dfrac{\operatorname{d}}{\operatorname{dx}} \sin x &= \dfrac{\operatorname{d}}{\operatorname{dx}} \sum_{j=0}^{\infty} (-1)^{j} \dfrac{x^{2j+1}}{(2j+1)!}\\
+		\dv{x} \sin x &= \dv{x} \sum_{j=0}^{\infty} (-1)^{j} \dfrac{x^{2j+1}}{(2j+1)!}\\
 		&= \sum_{j=0}^{\infty} (-1)^{j} (2j+1) \dfrac{x^{2j}}{(2j+1)!}\\
 		&= \sum_{j=0}^{\infty} (-1)^{j} \dfrac{x^{2j}}{(2j)!}\\
 		&= \cos x
@@ -118,11 +115,11 @@ Per calcolare la derivata posso derivare termine a termine lo sviluppo di Taylor
 
 \paragraph{2.}
 
-Per trovare la derivata di $ f(x) = e^{x} $ ripeto lo stesso procedimento
+Per trovare la derivata di $ f(x) = e^{x} $ ripetiamo lo stesso procedimento
 
 \begin{align}
 	\begin{split}
-		\dfrac{\operatorname{d}}{\operatorname{dx}} e^{x} &= \dfrac{\operatorname{d}}{\operatorname{dx}} \sum_{j=0}^{\infty}\dfrac{x^{j}}{j!}\\
+		\dv{x} e^{x} &= \dv{x} \sum_{j=0}^{\infty}\dfrac{x^{j}}{j!}\\
 		&= \sum_{j=0}^{\infty} j \, \dfrac{x^{j-1}}{j!}\\
 		&= \sum_{j=0}^{\infty} \dfrac{x^{j-1}}{(j-1)!}\\
 		&= \sum_{n=-1}^{\infty} \dfrac{x^{n}}{n!}\\
@@ -133,29 +130,28 @@ Per trovare la derivata di $ f(x) = e^{x} $ ripeto lo stesso procedimento
 
 \paragraph{3.}
 
-Un esempio di funzione liscia ma non reale analitica è $ f : \R \to \R $ con
+Un esempio di funzione liscia ma non reale analitica è
 
-\begin{equation}
-	f(x) = \begin{cases}
-		e^{-1/x^{2}},& \text{se } x > 0\\
-		0,& \text{se } x \leqslant 0
-	\end{cases}
-\end{equation}
+\map{f}
+	{\R}{\R}
+	{x}{%
+		\begin{cases}
+			e^{-1/x^{2}},& \text{se } x > 0\\
+			0,& \text{se } x \leqslant 0
+		\end{cases}
+		}
 
-Per controllare che sia $ C^{0} $ dovrei verificare che
+Per controllare che sia $ C^{0} $ dobbiamo verificare che
 
 \begin{equation}
 	\lim_{x \to 0} e^{-1/x^{2}} = 0
 \end{equation}
 
-Per controllare che sia liscia dovrei verificare che
+Per controllare che sia liscia
 
-\begin{align}
-	\begin{split}
-		&\lim_{x \to 0} f^{\prime} (x) = 0\\
-		&\lim_{x \to 0} \left(\dfrac{2}{x^{3}}\right) e^{-1/x^{2}} = 0
-	\end{split}
-\end{align}
+\begin{equation}
+	\lim_{x \to 0} f^{\prime} (x) = \lim_{x \to 0} \left(\dfrac{2}{x^{3}}\right) e^{-1/x^{2}} = 0
+\end{equation}
 
 Vedi Esercizio \ref{es1-2}.
 
@@ -169,7 +165,7 @@ Tutto questo ci dice che $ f \in C^{\infty}(\R) $. Se fosse anche reale analitic
 
 ma $ f(x) $ nell'intorno di 0 è nulla solo per $ x \leqslant 0 $ mentre lo sviluppo di Taylor è sempre nullo: questa contraddizione porta a dire che, nonostante $ f \in C^{\infty}(\R) $, questa non è reale analitica, scritto anche come $ f \notin C^{\omega}(\R) $.\\
 Un altro motivo per il quale $ f \notin C^{\omega}(\R) $ segue dal fatto che se $ f : U \to \R $ con $ U \in \R $ aperto è reale analitica e $ f = 0 $ in un aperto, allora $ f \equiv 0 $ ovunque\footnote{%
-	Vale anche se è uguale ad una costante diversa da 0.}.
+	Vale anche se è uguale per una costante diversa da 0.}.
 
 \section{Diffeomorfismi tra aperti di $ \R^{n} $}
 
@@ -188,7 +184,7 @@ Quando esiste un diffeomorfismo tra due aperti, si dice che questi sono diffeomo
 		Questo teorema implica quello di "Invarianza topologia della dimensione" in quanto la condizione di diffeomorfismo implica quella di omeomorfismo.}.
 \end{theorem}
 
-\`{E} naturale verificare se gli spazi legati da omeomorfismi siano legati anche da diffeomorfismi.\\
+È naturale verificare se gli spazi legati da omeomorfismi siano legati anche da diffeomorfismi.\\
 I seguenti sottoinsiemi di $ \R $
 
 \begin{itemize}
