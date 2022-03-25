@@ -172,8 +172,14 @@ Un altro motivo per il quale $ f \notin C^{\omega}(\R) $ segue dal fatto che se 
 Prendiamo $ U, V \in \R^{n} $ aperti, diremo che $ f : U \to V $ è un \textit{diffeomorfismo} se è una bigezione\footnote{%
 	Perciò è invertibile.%
 }, $ f \in C^{\infty} $ e la sua inversa $ g : V \to U $ è  $ g \in C^{\infty} $.\\
-Ad esempio, la funzione $ f : \R \to \R $ con $ x \mapsto x^{3} $ è una bigezione, è liscia ma la sua inversa non lo è, dunque $ f $ non è un diffeomorfismo.\\
-Quando esiste un diffeomorfismo tra due aperti, si dice che questi sono diffeomorfi: $ U $ e $ V $ sono diffeomorfi se $ \E f : U \to V $ diffeomorfismo, i.e. $ U \simeq V $.\\
+Ad esempio, la funzione
+
+\map{f}
+	{\R}{\R}
+	{x}{x^{3}}
+	
+è una bigezione, è liscia ma la sua inversa non lo è, dunque $ f $ non è un diffeomorfismo.\\
+Quando esiste un diffeomorfismo tra due aperti, si dice che questi sono \textit{diffeomorfi}: $ U $ e $ V $ sono diffeomorfi se $ \E f : U \to V $ diffeomorfismo, i.e. $ U \simeq V $.\\
 
 \begin{theorem}[Invarianza topologica della dimensione]
 	Se $ U \subset \R^{n} $ e $ V \subset \R^{m} $ sono aperti omeomorfi allora $ n = m $.
@@ -185,7 +191,7 @@ Quando esiste un diffeomorfismo tra due aperti, si dice che questi sono diffeomo
 \end{theorem}
 
 È naturale verificare se gli spazi legati da omeomorfismi siano legati anche da diffeomorfismi.\\
-I seguenti sottoinsiemi di $ \R $
+I seguenti sottoinsiemi aperti di $ \R $:
 
 \begin{itemize}
 	\item $ (a,b) $ con $ a < b $
@@ -197,40 +203,39 @@ I seguenti sottoinsiemi di $ \R $
 	\item $ (- \infty, d) $
 \end{itemize}
 
-per  $ \forall a,b,c,d \in \R $ sono aperti di $ \R $ diffeomorfi\footnote{%
+sono diffeomorfi tra loro\footnote{%
 	Vedi Esercizio \ref{es1-3}.%
-}.
+} per $ \forall a,b,c,d \in \R $.
 
 \subsection{Diffeomorfismo tra $ B_{\delta} (c) $ e $ \R^{n} $}
 
-Con $ B_{1} (0) $ si indica la \textit{palla} di centro l'origine e raggio unitario. In simboli
+Indichiamo con $ B_{1} (0) $ la \textit{palla} di centro l'origine e raggio unitario, i.e.
 
 \begin{equation}
-	B_{1} (0) = \left\{ x \in \R^{n} \, \middle| \, \norm{x} \doteq \sqrt{\sum_{i=1}^{n} (x^{i})^{2}} < 1 \right\}
+	B_{1} (0) = \left\{ x \in \R^{n} \st \norm{x} \doteq \sqrt{\sum_{i=1}^{n} (x^{i})^{2}} < 1 \right\}
 \end{equation}
 
 Per $ n=1 $, $ B_{1} (0) \equiv (-1,1) \simeq \R $.\\
-Definisco
+Definiamo
 
-\begin{align}
-	\begin{split}
-		f : B_{1} (0) &\to \R^{n}\\
-		x &\mapsto \left( \dfrac{x^{1}}{\sqrt{1 - \norm{x}^{2}}}, \cdots, \dfrac{x^{n}}{\sqrt{1 - \norm{x}^{2}}} \right)
-	\end{split}	
-\end{align}
+\map{f}
+	{B_{1} (0)}{\R^{n}}
+	{x}{\left( \dfrac{x^{1}}{\sqrt{1 - \norm{x}^{2}}}, \cdots, \dfrac{x^{n}}{\sqrt{1 - \norm{x}^{2}}} \right)}
 
 questa applicazione è un diffeomorfismo. Per verificarlo, dobbiamo dimostrare che $ f $ sia un bigezione, $ f \in C^{\infty} $ e che $ f^{-1} \in C^{\infty} $.\\
 L'inversa è
 
-\begin{align}
-	\begin{split}
-		f^{-1} : \R^{n} &\to B_{1} (0)\\
-		x &\mapsto \left( \dfrac{x^{1}}{\sqrt{1 + \norm{x}^{2}}}, \cdots, \dfrac{x^{n}}{\sqrt{1 + \norm{x}^{2}}} \right)
-	\end{split}
-\end{align}
+\map{f}
+	{\R^{n}}{B_{1} (0)}
+	{x}{\left( \dfrac{x^{1}}{\sqrt{1 + \norm{x}^{2}}}, \cdots, \dfrac{x^{n}}{\sqrt{1 + \norm{x}^{2}}} \right)}
 
-perché $ f \circ g = \id_{\R^{n}} \, \wedge \, g \circ f = \id_{B_{1} (0)} $.\\
-Perché $ f, f^{-1} \in C^{\infty} $ dobbiamo verificare che ogni loro componente lo sia, il quale è verificato perché la derivata di una delle componenti di $ f $ ha al denominatore sempre $ \sqrt{1 - \norm{x}^{2}} \in B_{1} (0) $ e lo stesso vale per la sua inversa $ \sqrt{1 + \norm{x}^{2}} \in \R^{n} $.
+in quanto
+
+\begin{equation}
+	f \circ g = \id_{\R^{n}} \wedge g \circ f = \id_{B_{1} (0)}
+\end{equation}
+
+Perché sia $ f $ che $ f^{-1} $ siano lisce, dobbiamo verificare che ogni loro componente lo sia, il quale è verificato perché la derivata di una delle componenti di $ f $ ha al denominatore sempre $ \sqrt{1 - \norm{x}^{2}} \in B_{1} (0) $ e lo stesso vale per la sua inversa $ \sqrt{1 + \norm{x}^{2}} \in \R^{n} $.
 
 \begin{corollary}
 	La palla di centro $ c $ e raggio $ \delta $ con $ c \in \R^{n} $ e $ \delta \geqslant 0 $ è diffeomorfa a $ \R^{n} $, i.e. $ B_{\delta} (c) \simeq \R^{n} $.
@@ -318,19 +323,19 @@ Per praticità di notazione, chiamiamo $ h $ il diffeomorfismo $ B_{\delta} (c) 
 
 \end{figure}
 
-Consideriamo la semicalotta aperta in $ \R^{n+1} $ centrata in $ (0,0,1) $ di raggio $ 1 $:
+Consideriamo la semicalotta aperta in $ \R^{n+1} $ centrata in $ (0,\dots,0,1) $ di raggio $ 1 $:
 
 \begin{equation}
-	S = \left\{ (x^{1}, \dots, x^{n+1}) \in \R^{n+1} \middle| (x^{n+1})^{2} + \sum_{i=1}^{n} (x^{i})^{2} = 1 \, \wedge \, x^{n+1} < 1 \right\}
+	S = \left\{ (x^{1}, \dots, x^{n+1}) \in \R^{n+1} \st (x^{n+1})^{2} + \sum_{i=1}^{n} (x^{i})^{2} = 1 \, \wedge \, x^{n+1} < 1 \right\}
 \end{equation}
 
 La palla $ B_{1}(0) $ vive nella proiezione della semicalotta sull'iperpiano $ (x^{1}, \dots, x^{n}) $, definita come
 
 \begin{equation}
-	B_{1}(0) = \left\{ x \in \R^{n} \middle| \norm{x} < 1 \right\}
+	B_{1}(0) = \left\{ x \in \R^{n} \st \norm{x} < 1 \right\}
 \end{equation}
 
-Questa proiezione permette di costruire l'applicazione $ h $ in due passaggi: prima prendiamo un punto in $ B_{1}(0) $, lo proiettiamo su $ S $ e, con una proiezione stereografica, lo portiamo su $ \R^{n} $. La prima applicazione è $ f : B_{1}(0) \to S $ mentre la seconda $ g : S \to \R^{n} $, cioè la proiezione stereografica dal punto $ (0,0,1) $. Dico dunque che $ g \circ f = h $. Le mappe sono
+Questa proiezione permette di costruire l'applicazione $ h $ in due passaggi: prima prendiamo un punto in $ B_{1}(0) $, lo proiettiamo su $ S $ e, con una proiezione stereografica, lo portiamo su $ \R^{n} $. La prima applicazione è $ f : B_{1}(0) \to S $ mentre la seconda $ g : S \to \R^{n} $, cioè la proiezione stereografica dal punto $ (0,\dots,0,1) $. Dico dunque che $ g \circ f = h $. Le mappe sono
 
 \begin{equation}
 	f (x^{1},\dots,x^{n+1}) = \left( x^{1},\dots,x^{n},1-\sqrt{1-\norm{x}^{2}} \right)
@@ -497,7 +502,7 @@ dove $ D_{v} f \in \R $ e $ v = [v^{1},\dots,v^{n}] $.
 Definiamo ora l'insieme di coppie
 
 \begin{equation}
-	X \doteq \left\{ (f,U) \middle| f \in C^{\infty}(U), \, \text{$ U $ intorno di $ p $} \right\}
+	X \doteq \left\{ (f,U) \st f \in C^{\infty}(U), \, \text{$ U $ intorno di $ p $} \right\}
 \end{equation}
 
 Diciamo che\footnote{%
@@ -789,7 +794,7 @@ A questo punto, bisogna dimostrare che $ \phi $ sia $ \R $-lineare, iniettiva\fo
 	Il \textit{kernel} o nucleo di un'applicazione, indicato con $ \ker $, è l'insieme di tutti e soli gli elementi del dominio che hanno come immagine lo $ 0 $ del codominio, i.e. nel caso considerato
 	
 	\begin{equation}
-		\ker \phi = \left\{ v \in T_{p}(\R^{n}) \, \middle| \, \phi(v) \equiv D_{v} = 0 \right\}
+		\ker \phi = \left\{ v \in T_{p}(\R^{n}) \st \phi(v) \equiv D_{v} = 0 \right\}
 	\end{equation}%
 	} di $ \phi $: se questo contiene solo l'elemento $ 0 $, inteso come
 	

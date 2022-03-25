@@ -32,6 +32,7 @@
 \newcommand{\id}{\operatorname{id}}
 \newcommand{\bigone}{\mathbbm{1}}
 \newcommand{\der}{\operatorname{Der}}
+\newcommand{\st}{\, \middle| \,}
 
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Q}{\mathbb{Q}}
@@ -115,6 +116,11 @@
 	{\colorbox{#1}{$\scriptscriptstyle#2$}}}%
 
 \definecolor{hlc}{RGB}{204,241,202} % hlc = highlight colour
+
+\newcommand{\hl}[1]{%
+	\highlight[hlc]{#1}}
+
+% blue links for footsnotes and stuff
 
 \usepackage[bookmarksnumbered=true,linktocpage=true]{hyperref} 
 \hypersetup{

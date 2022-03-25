@@ -109,7 +109,7 @@ Per associare a questo spazio una topologia, possiamo trovare una famiglia di so
 } $ \mathfrak{B} \subset \mathcal{P} (S) $ con
 
 \begin{equation}
-	\mathfrak{B} = \left\{ (a,b) \, \middle| \, a<b, \, 0 \notin (a,b) \right\} \cup \left\{ I_{A}(c,d) \right\} \cup \left\{ I_{B}(c,d) \right\}
+	\mathfrak{B} = \left\{ (a,b) \st a<b, \, 0 \notin (a,b) \right\} \cup \left\{ I_{A}(c,d) \right\} \cup \left\{ I_{B}(c,d) \right\}
 \end{equation}
 
 con $ c,d \in \R^{+} $ e
@@ -137,7 +137,7 @@ L'intersezione tra intervalli di tipo $ (a,b) $ produce intervalli dello stesso 
 e analogamente per $ I_{A}(c,d) \cap I_{B}(c',d') $, il risultato è l'unione di elementi di $ \mathfrak{B} $.\\
 Vogliamo dunque mostrare che lo spazio, insieme alla sua topologia, $ (S,\tau_{\mathfrak{B}}) $ sia $ N_{2} $ e localmente euclideo ma non $ T_{2} $.\\
 Se consideriamo la topologia di $ S $ ristretta\footnote{%
-	$ \R \setminus \{0\} \subset S $ perché una base per $ \tau_{eucl.} $ è $ \mathfrak{B}_{\R \setminus \{0\}} = \left\{ (a,b) \, \middle| \, a<b, \, 0 \notin (a,b) \right\} \subset \mathfrak{B} $.%
+	$ \R \setminus \{0\} \subset S $ perché una base per $ \tau_{eucl.} $ è $ \mathfrak{B}_{\R \setminus \{0\}} = \left\{ (a,b) \st a<b, \, 0 \notin (a,b) \right\} \subset \mathfrak{B} $.%
 } a $ \R \setminus \{0\} \subset S $ otteniamo che $ \tau_{\left. \mathfrak{B} \right|_{\R \setminus \{0\}}} = \tau_{euclidea} $, possiamo quindi trovare una famiglia numerabile tale che ogni intervallo della forma $ (a,b) $ possa essere scritto come unione di questa famiglia numerabile proprio perché $ \R \setminus \{0\} $ è $ N_{2} $, i.e.
 
 \begin{equation}
@@ -156,7 +156,7 @@ dove $ \Q $ indica i numeri razionali e $ 0 \notin (r,s) $; analogamente
 A questo punto possiamo prendere la famiglia
 
 \begin{equation}
-	\mathfrak{C} = \left\{ (r,s) \, \middle| \, r,s \in \Q \, \wedge \, 0 \notin (r,s) \right\} \cup \left\{ I_{A}(r,s) \, \middle| \, r,s \in \Q^{+} \right\} \cup \left\{ I_{B}(r,s) \, \middle| \, r,s \in \Q^{+} \right\}
+	\mathfrak{C} = \left\{ (r,s) \st r,s \in \Q \, \wedge \, 0 \notin (r,s) \right\} \cup \left\{ I_{A}(r,s) \st r,s \in \Q^{+} \right\} \cup \left\{ I_{B}(r,s) \st r,s \in \Q^{+} \right\}
 \end{equation}
 
 la quale è una base numerabile e dunque $ S $ è $ N_{2} $.\\
@@ -372,7 +372,7 @@ Il toro $ \T^{2} = \S^{1} \times \S^{1} $ è una varietà differenziabile.
 Prendiamo l'applicazione $ f : A \subset \R^{n} \to \R^{m} $ con $ A $ aperto ed $ f $ liscia e definiamo il grafico di $ f $ come
 
 \begin{equation}
-	\Gamma(f) \doteq \left\{ (x,f(x)) \, \middle| \, x \in A \right\} \subset \R^{n} \times \R^{m} = \R^{n+m}
+	\Gamma(f) \doteq \left\{ (x,f(x)) \st x \in A \right\} \subset \R^{n} \times \R^{m} = \R^{n+m}
 \end{equation}
 
 \begin{figure}[H]
@@ -412,7 +412,7 @@ Essendo quindi un aperto di una varietà, $ GL_{n}(\R) $ è una varietà differe
 Il cerchio unitario $ \S^{1} $
 
 \begin{equation}
-	\S^{1} = \left\{ (x,y) \in \R^{2} \, \middle| \, x^{2} + y^{2} = 1 \right\}
+	\S^{1} = \left\{ (x,y) \in \R^{2} \st x^{2} + y^{2} = 1 \right\}
 \end{equation}
 
 con la topologia indotta da $ \R^{2} $ (quindi è $ N_{2}+T_{2} $) può essere dotato di una struttura differenziabile costituita da 4 carte prendendo gli aperti\footnote{%
@@ -420,10 +420,10 @@ con la topologia indotta da $ \R^{2} $ (quindi è $ N_{2}+T_{2} $) può essere d
 
 \begin{align}
 	\begin{split}
-		U_{1} &= \left\{ (x,y) \in \S^{1} \, \middle| \, y>0 \right\}\\
-		U_{2} &= \left\{ (x,y) \in \S^{1} \, \middle| \, y<0 \right\}\\
-		U_{3} &= \left\{ (x,y) \in \S^{1} \, \middle| \, x>0 \right\}\\
-		U_{4} &= \left\{ (x,y) \in \S^{1} \, \middle| \, x<0 \right\}
+		U_{1} &= \left\{ (x,y) \in \S^{1} \st y>0 \right\}\\
+		U_{2} &= \left\{ (x,y) \in \S^{1} \st y<0 \right\}\\
+		U_{3} &= \left\{ (x,y) \in \S^{1} \st x>0 \right\}\\
+		U_{4} &= \left\{ (x,y) \in \S^{1} \st x<0 \right\}
 	\end{split}	
 \end{align}
 
@@ -488,7 +488,7 @@ Per dimostrare che sia una struttura differenziabile, prendiamo due carte arbitr
 dove
 
 \begin{equation}
-	U_{1} \cap U_{3} = \left\{ (x,y) \in \S^{1} \, \middle| \, x>0 \, \wedge \, y>0  \right\}
+	U_{1} \cap U_{3} = \left\{ (x,y) \in \S^{1} \st x>0 \, \wedge \, y>0  \right\}
 \end{equation}
 
 e dunque
@@ -522,19 +522,19 @@ Gli aperti che ricoprono lo spazio sono i seguenti
 
 \begin{align}
 	\begin{split}
-		U_{1} &= \left\{ (x,y,z) \in \S^{2} \, \middle| \, z>0 \right\}\\
-		U_{2} &= \left\{ (x,y,z) \in \S^{2} \, \middle| \, z<0 \right\}\\
-		U_{3} &= \left\{ (x,y,z) \in \S^{2} \, \middle| \, y>0 \right\}\\
-		U_{4} &= \left\{ (x,y,z) \in \S^{2} \, \middle| \, y<0 \right\}\\
-		U_{5} &= \left\{ (x,y,z) \in \S^{2} \, \middle| \, x>0 \right\}\\
-		U_{6} &= \left\{ (x,y,z) \in \S^{2} \, \middle| \, x<0 \right\}
+		U_{1} &= \left\{ (x,y,z) \in \S^{2} \st z>0 \right\}\\
+		U_{2} &= \left\{ (x,y,z) \in \S^{2} \st z<0 \right\}\\
+		U_{3} &= \left\{ (x,y,z) \in \S^{2} \st y>0 \right\}\\
+		U_{4} &= \left\{ (x,y,z) \in \S^{2} \st y<0 \right\}\\
+		U_{5} &= \left\{ (x,y,z) \in \S^{2} \st x>0 \right\}\\
+		U_{6} &= \left\{ (x,y,z) \in \S^{2} \st x<0 \right\}
 	\end{split}	
 \end{align}
 
 Prendendo il generico aperto
 
 \begin{equation}
-	D_{ij} \doteq \left\{ (i,j) \in \R^{2} \, \middle| \, i^{2}+j^{2}<1 \right\}
+	D_{ij} \doteq \left\{ (i,j) \in \R^{2} \st i^{2}+j^{2}<1 \right\}
 \end{equation}
 
 definiamo dunque le applicazioni
@@ -601,7 +601,7 @@ Ad esempio, verifichiamo che le carte $ (U_{1},\phi_{1}) $ e $ (U_{4},\phi_{4}) 
 	\end{split}
 \end{align}
 
-dove $ U_{1} \cap U_{4} = \left\{ (x,y,z) \in \S^{2} \, \middle| \, z>0 \, \wedge \, y<0 \right\} $ e dunque 
+dove $ U_{1} \cap U_{4} = \left\{ (x,y,z) \in \S^{2} \st z>0 \, \wedge \, y<0 \right\} $ e dunque 
 
 \begin{align}
 	\begin{split}
@@ -622,7 +622,7 @@ Vedi Esercizio \ref{es2-1}.
 La sfera unitaria $ \S^{n} $ è l'insieme
 
 \begin{equation}
-	\S^{n} = \left\{ x = (x^{1},\dots,x^{n}) \in \R^{n} \, \middle| \, \norm{x} \doteq \sum_{i=1}^{n} (x^{i})^{2} = 1 \right\}
+	\S^{n} = \left\{ x = (x^{1},\dots,x^{n}) \in \R^{n} \st \norm{x} \doteq \sum_{i=1}^{n} (x^{i})^{2} = 1 \right\}
 \end{equation}
 
 ha la topologia indotta da $ \R^{n+1} $ (quindi è $ N_{2}+T_{2} $).\\
@@ -940,7 +940,7 @@ in quanto i punti $ \{-1,1\} $ sono equivalenti, ma questo insieme non è aperto
 	Sia $ S $ uno spazio topologico. Lo spazio
 	
 	\begin{equation}
-		R = \left\{ (x,y) \in S \times S \, \middle| \, x \sim y \right\} \subset S \times S
+		R = \left\{ (x,y) \in S \times S \st x \sim y \right\} \subset S \times S
 	\end{equation}
 
 	è chiuso rispetto alla topologia prodotto in $ S \times S $ se e solo se il quoziente $ \sfrac{S}{\sim} $ è $ T_{2} $.
@@ -958,7 +958,7 @@ Considerando la proposizione riportata sopra, nel caso in cui la relazione di eq
 	Uno spazio topologico $ S $ è $ T_{2} $ se e solo se l'\textit{insieme diagonale}
 	
 	\begin{equation}
-		\Delta = \left\{ (x,x) \, \middle| \, x \in S \right\}
+		\Delta = \left\{ (x,x) \st x \in S \right\}
 	\end{equation}
 	
 	è chiuso in $ S \times S $.
@@ -1097,7 +1097,7 @@ che corrisponde al cono di rette passanti per l'origine individuato dai punti de
 Fissando $ \lambda $, l'insieme
 
 \begin{equation}
-	\lambda V = \left\{ \lambda x \, \middle| \, x \in V \right\}
+	\lambda V = \left\{ \lambda x \st x \in V \right\}
 \end{equation}
 
 è aperto perché omeomorfo a $ V $ tramite l'applicazione
@@ -1124,7 +1124,7 @@ Se lo spazio di partenza $ \R \setminus \{0\} $ è $ N_{2} $ e la relazione di e
 Sapendo che la proiezione $ \pi $ è aperta, possiamo usare il fatto che l'insieme
 
 \begin{equation}
-	R = \left\{ (x,y) \in \R^{n+1} \setminus \{0\} \times \R^{n+1} \setminus \{0\} \, \middle| \, y=\lambda x, \, \lambda \in \R \setminus \{0\} \right\} \subset \R^{n+1} \setminus \{0\} \times \R^{n+1} \setminus \{0\}
+	R = \left\{ (x,y) \in \R^{n+1} \setminus \{0\} \times \R^{n+1} \setminus \{0\} \st y=\lambda x, \, \lambda \in \R \setminus \{0\} \right\} \subset \R^{n+1} \setminus \{0\} \times \R^{n+1} \setminus \{0\}
 \end{equation}
 
 sia chiuso per dimostrare che il proiettivo reale sia anche $ T_{2} $.\\
@@ -1144,7 +1144,7 @@ L'applicazione $ \phi $ è un omeomorfismo perché la topologia prodotto di spaz
 A questo punto, possiamo studiare la chiusura dell'immagine di $ R $ tramite $ \phi $
 
 \begin{equation}
-	\phi(R) = \left\{ \mqty[x & y] \in M_{n+1,2}(\R) \, \middle| \, \rank \left( \mqty[x & y] \right) = 1 \right\}
+	\phi(R) = \left\{ \mqty[x & y] \in M_{n+1,2}(\R) \st \rank \left( \mqty[x & y] \right) = 1 \right\}
 \end{equation}
 
 La condizione per cui il rango delle matrici di questo insieme sia unitario è dovuta al fatto che queste matrici hanno le due colonne proporzionali tra loro, in quanto $ y= \lambda x $.
@@ -1153,7 +1153,7 @@ La condizione per cui il rango delle matrici di questo insieme sia unitario è d
 	Sia l'insieme
 	
 	\begin{equation}
-		X_{r}(n,m) = \left\{ A \in M_{n,m}(\R) \, \middle| \, \rank(A) \leqslant r \, \wedge \, r \leqslant \min\{n,m\} \right\}
+		X_{r}(n,m) = \left\{ A \in M_{n,m}(\R) \st \rank(A) \leqslant r \, \wedge \, r \leqslant \min\{n,m\} \right\}
 	\end{equation}
 
 	questo è chiuso in $ M_{n,m}(\R) = \R^{n m} $.
@@ -1310,7 +1310,7 @@ Due matrici $ A $ e $ B $ rappresentano lo stesso $ k $-spazio vettoriale se e s
 Consideriamo la relazione di equivalenza $ \sim $ sull'insieme
 
 \begin{equation}
-	F(k,n) = \left\{ A \in M_{n,k}(\R) \, \middle| \, \rank(A) = k \right\} \subset M_{n,k}(\R) = \R^{nk}
+	F(k,n) = \left\{ A \in M_{n,k}(\R) \st \rank(A) = k \right\} \subset M_{n,k}(\R) = \R^{nk}
 \end{equation}
 
 definita come
@@ -1335,7 +1335,7 @@ L'intento è di dimostrare che $ G(k,n) $ sia una varietà differenziabile di di
 Come primo passo associamo la topologia quoziente a $ \sfrac{F(k,n)}{\sim} $: l'insieme $ F(k,n) $ è un aperto in quanto il suo complementare
 
 \begin{equation}
-	M_{n,k}(\R) \setminus F(k,n) = \left\{ A \in M_{n,k}(\R) \, \middle| \, \rank(A) \leqslant k \right\}
+	M_{n,k}(\R) \setminus F(k,n) = \left\{ A \in M_{n,k}(\R) \st \rank(A) \leqslant k \right\}
 \end{equation}
 
 è chiuso per il Lemma \ref{lemma-clos-matrix}.\\
@@ -1386,7 +1386,7 @@ Essendo $ \phi $ un omeomorfismo, per dimostrare che $ R $ sia chiuso in $ F(k,n
 Dal Lemma \ref{lemma-clos-matrix} prendiamo la definizione del seguente insieme
 
 \begin{equation}
-	X_{r}(n,m) = \left\{ A \in M_{n,m}(\R) \, \middle| \, \rank(A) \leqslant r \, \wedge \, r \leqslant \min\{n,m\} \right\}
+	X_{r}(n,m) = \left\{ A \in M_{n,m}(\R) \st \rank(A) \leqslant r \, \wedge \, r \leqslant \min\{n,m\} \right\}
 \end{equation}
 
 dunque l'immagine di $ R $ è pari a
@@ -1404,7 +1404,7 @@ Mostriamo ora che $ G(k,n) $ sia una varietà differenziabile per $ k=2 $ e $ n=
 Consideriamo gli aperti di $ G(2,4) $
 
 \begin{equation}
-	U_{ij} = \left\{ [A] \in G(2,4) \, \middle| \, A_{ij} \in GL_{2}(\R) \right\}
+	U_{ij} = \left\{ [A] \in G(2,4) \st A_{ij} \in GL_{2}(\R) \right\}
 \end{equation}
 
 i.e. $ A_{ij} $ è invertibile, dove $ A_{ij} $ è la matrice quadrata $ 2 \times 2 $ che si ottiene considerando le righe $ i $ e $ j $ di $ A $, i.e.
@@ -1434,7 +1434,7 @@ perciò $ A_{ij} g = B_{ij} $ e dunque la scelta del rappresentante di $ [A] $ �
 Gli insiemi $ U_{ij} $ sono aperti in quanto immagini di aperti $ V_{ij} $ tramite la proiezione $ U_{ij} = \pi(V_{ij}) $, dove
 
 \begin{equation}
-	V_{ij} = \left\{ A \in F(2,4) \, \middle| \, A_{ij} \in GL_{2}(\R) \right\}
+	V_{ij} = \left\{ A \in F(2,4) \st A_{ij} \in GL_{2}(\R) \right\}
 \end{equation}
 
 è aperto in $ F(2,4) $ perché complementare di un chiuso.\\
@@ -3545,7 +3545,7 @@ dove $ f \circ c : (-\varepsilon,\varepsilon) \to \R $, perciò
 Consideriamo l'insieme delle matrici invertibili
 
 \begin{equation}
-	GL_{n}(\R) = \left\{ A \in M_{n}(\R) \, \middle| \, \det A \neq 0 \right\} \subset M_{n}(\R)
+	GL_{n}(\R) = \left\{ A \in M_{n}(\R) \st \det A \neq 0 \right\} \subset M_{n}(\R)
 \end{equation}
 
 il quale è un aperto di $ M_{n}(\R) = \R^{n^{2}} $ e una varietà differenziabile di dimensione $ n^{2} $.\\
@@ -3573,13 +3573,13 @@ L'obbiettivo è calcolare il differenziale di questa applicazione sulla matrice 
 Innanzitutto, lo spazio di partenza è dato da
 
 \begin{equation}
-	T_{I}(GL_{n}(\R)) = \left\{ \sum_{i,j=1}^{n} X_{ij} \left. \dfrac{\partial}{\partial r_{ij}} \right|_{I} \, \middle| \, X=[X_{ij}] \in M_{n}(\R) \right\}
+	T_{I}(GL_{n}(\R)) = \left\{ \sum_{i,j=1}^{n} X_{ij} \left. \dfrac{\partial}{\partial r_{ij}} \right|_{I} \st X=[X_{ij}] \in M_{n}(\R) \right\}
 \end{equation}
 
 dove $ \langle \sfrac{\partial}{\partial r_{ij}} |_{I} \rangle = T_{I}(GL_{n}(\R)) $; ad ogni vettore $ X_{I} \in T_{I}(GL_{n}(\R)) $ si può associare il vettore $ X \in M_{n}(\R) $ prendendo semplicemente $ X=[X_{ij}] $ dalla definizione dello spazio $ T_{I}(GL_{n}(\R)) $. Per quanto riguarda lo spazio di arrivo
 
 \begin{equation}
-	T_{g}(GL_{n}(\R)) = \left\{ \sum_{i,j=1}^{n} X_{ij} \left. \dfrac{\partial}{\partial r_{ij}} \right|_{g} \, \middle| \, X=[X_{ij}] \in M_{n}(\R) \right\}
+	T_{g}(GL_{n}(\R)) = \left\{ \sum_{i,j=1}^{n} X_{ij} \left. \dfrac{\partial}{\partial r_{ij}} \right|_{g} \st X=[X_{ij}] \in M_{n}(\R) \right\}
 \end{equation}
 
 esattamente come per lo spazio di partenza, anche questo si identifica con $ M_{n}(\R) $.\\
