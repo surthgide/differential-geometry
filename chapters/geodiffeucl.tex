@@ -335,7 +335,7 @@ La palla $ B_{1}(0) $ vive nella proiezione della semicalotta sull'iperpiano $ (
 	B_{1}(0) = \left\{ x \in \R^{n} \st \norm{x} < 1 \right\}
 \end{equation}
 
-Questa proiezione permette di costruire l'applicazione $ h $ in due passaggi: prima prendiamo un punto in $ B_{1}(0) $, lo proiettiamo su $ S $ e, con una proiezione stereografica, lo portiamo su $ \R^{n} $. La prima applicazione è $ f : B_{1}(0) \to S $ mentre la seconda $ g : S \to \R^{n} $, cioè la proiezione stereografica dal punto $ (0,\dots,0,1) $. Dico dunque che $ g \circ f = h $. Le mappe sono
+Questa proiezione permette di costruire l'applicazione $ h $ in due passaggi: prima prendiamo un punto in $ B_{1}(0) $, lo proiettiamo su $ S $ e, con una proiezione stereografica, lo portiamo su $ \R^{n} $. La prima applicazione è $ f : B_{1}(0) \to S $ mentre la seconda $ g : S \to \R^{n} $, cioè la proiezione stereografica dal punto $ (0,\dots,0,1) $. Abbiamo dunque che $ g \circ f = h $. Le mappe sono
 
 \begin{equation}
 	f (x^{1},\dots,x^{n+1}) = \left( x^{1},\dots,x^{n},1-\sqrt{1-\norm{x}^{2}} \right)
@@ -360,17 +360,17 @@ A questo punto $ B_{1} (0) \simeq \R^{n} $: dal punto di vista della geometria d
 
 \subsection{Teorema di Taylor con resto}
 
-Una funzione reale analitica coincide con il suo sviluppo di Taylor. Per una funzione liscia questo non è necessario, ma queste funzioni coincidono con il loro sviluppo di Taylor con l'aggiunta di un \textit{resto}.\\
-Un sottoinsieme aperto $ U \subset \R^{n} $ è \textit{stellato} rispetto ad un punto $ p \in U $ se il segmento di retta che unisce $ p $ ad $ x \in U $ è interamente contenuto in $ U $.
+Una funzione reale analitica coincide con il suo sviluppo di Taylor. Per una funzione liscia questo non è detto: la coincidenza di una funzione liscia con il suo sviluppo di Taylor è data a meno di un \textit{resto}.\\
+Un sottoinsieme aperto $ U \subset \R^{n} $ è \textit{stellato} rispetto a un punto $ p \in U $ se il segmento di retta che unisce $ p $ a $ x \in U $ è interamente contenuto in $ U $.
 
 \begin{remark}
-	Un insieme convesso è stellato rispetto ad ogni suo punto.
+	Un insieme convesso è stellato rispetto a ogni suo punto.
 \end{remark}
 
-L'ipotesi che un sottoinsieme sia stellato è forte a livello globale ma sempre rispettata a livello locale, in quanto è sempre possibile trovare un aperto stellato rispetto ad un punto all'interno di un insieme.
+L'ipotesi che un sottoinsieme sia stellato è forte a livello globale ma sempre rispettata a livello locale, in quanto è sempre possibile trovare un aperto stellato rispetto a un punto all'interno di un insieme.
 
 \begin{theorem}[Taylor con resto]
-	Sia $ f : U \to \R $ con $ U \subset \R^{n} $ stellato rispetto ad un punto $ p \in U $ e supponiamo $ f \in C^{\infty}(\R) $, allora esistono $ n $ funzioni $ g_{j} \in C^{\infty}(U), \forall j = 1,\dots,n $ tali che
+	Sia $ f : U \to \R $ con $ U \subset \R^{n} $ stellato rispetto a un punto $ p \in U $ e supponiamo $ f \in C^{\infty}(\R) $, allora esistono $ n $ funzioni $ g_{j} \in C^{\infty}(U), \forall j = 1,\dots,n $ tali che
 	
 	\begin{equation}
 		f(x) = f(p) + \sum_{i=1}^{n} (x^{i}-p^{i}) \, g_{i}(x), \quad \forall x \in U
@@ -384,7 +384,7 @@ L'ipotesi che un sottoinsieme sia stellato è forte a livello globale ma sempre 
 \end{theorem}
 
 \begin{proof}
-	Consideriamo il segmento $ r $ che  unisce $ p $ ad un punto $ x \in U $ con $ x $ fissato  arbitrariamente:
+	Consideriamo il segmento $ r $ che  unisce $ p $ a un punto $ x \in U $ con $ x $ fissato  arbitrariamente:
 	
 	\begin{equation}
 		r=p+t(x-p), \quad t \in [0,1]
@@ -458,7 +458,7 @@ dove la prima parte coincide con lo sviluppo in serie di Taylor mentre l'ultimo 
 
 \section{Vettori tangenti in $ \R^{n} $}
 
-Preso un punto $ p \in \R^{n} $, lo \textit{spazio tangente} in quel punto viene scritto $ T_{p}(\R^{n}) $. In sostanza, lo spazio tangente ad un punto $ p $ è l'insieme\footnote{%
+Preso un punto $ p \in \R^{n} $, lo \textit{spazio tangente} in quel punto viene scritto $ T_{p}(\R^{n}) $. In sostanza, lo spazio tangente a un punto $ p $ è l'insieme\footnote{%
 	Sarebbe uno spazio vettoriale con origine il punto $ p $.%
 } di tutti i vettori che escono dal punto stesso. Essendo $ T_{p}(\R^{n}) \simeq \R^{n} $, un elemento $ v \in T_{p}(\R^{n}) $ è dunque un \textit{vettore riga o colonna}
 
@@ -538,7 +538,7 @@ Possiamo definire un'applicazione
 	{C_{p}^{\infty}(\R^{n})}{\R}%
 	{[(f,U)]}{D_{v} f}
 
-Questa applicazione è ben definita in quanto l'associazione di un germe di funzioni ad un numero reale non dipende dal rappresentante scelto perché
+Questa applicazione è ben definita in quanto l'associazione di un germe di funzioni a un numero reale non dipende dal rappresentante scelto perché
 
 \begin{equation}
 	(f,U) \sim (g,V) \implies D_{v} g = D_{v} f
@@ -688,7 +688,7 @@ tale che:
 	\end{align}
 \end{proof}
 
-Una derivazione è quindi un modo per associare ad un germe di funzioni un numero reale, soddisfacendo le proprietà definite sopra.\\
+Una derivazione è quindi un modo per associare a un germe di funzioni un numero reale, soddisfacendo le proprietà definite sopra.\\
 Indichiamo dunque l'insieme delle derivazioni di $ C_{p}^{\infty}(\R^{n}) $ come $ \der_{p}(C_{p}^{\infty}(\R^{n})) $.
 
 \subsection{Isomorfismo tra $ T_{p}(\R^{n}) $ e $ \der_{p}(C_{p}^{\infty}(\R^{n})) $}
@@ -957,7 +957,7 @@ forma una base per lo spazio $ \der_{p}(C_{p}^{\infty}(\R^{n})) $.
 		\phi(e_{i}) = D_{e_{i}}, \quad \forall i=1,\dots,n
 	\end{equation}
 
-	Applicando questo ad una funzione $ f $
+	Applicando questo a una funzione $ f $
 	
 	\begin{align}
 		\begin{split}
@@ -1183,10 +1183,10 @@ Da queste definizioni, si dice che $ (A,+) $ è un $ R $-modulo se è un $ R $-m
 	per $ \forall f,g \in C^{\infty}(U) $ e $ \forall X,Y \in \chi(U) $.
 \end{proof}
 
-\subsection{Derivata di funzione rispetto ad un campo di vettori} 
+\subsection{Derivata di funzione rispetto a un campo di vettori} 
 
-I campi di vettori permettono di derivare funzioni, così come è possibile fare la derivata direzionale di una funzione rispetto ad un vettore e dunque rispetto ad un campo di vettori.\\
-Prendiamo $ X \in \chi(U) $ con $ U \subset \R^{n} $ aperto e $ f \in C^{\infty}(U) $. Definisco la derivata di $ f $ rispetto ad $ X $ come $ X f \in C^{\infty}(U) $. La derivata puntuale è definita come $ (X f) (p) = X_{p} f $ con $ p \in U $: se il campo è
+I campi di vettori permettono di derivare funzioni, così come è possibile fare la derivata direzionale di una funzione rispetto a un vettore e dunque rispetto a un campo di vettori.\\
+Prendiamo $ X \in \chi(U) $ con $ U \subset \R^{n} $ aperto e $ f \in C^{\infty}(U) $. Definisco la derivata di $ f $ rispetto a $ X $ come $ X f \in C^{\infty}(U) $. La derivata puntuale è definita come $ (X f) (p) = X_{p} f $ con $ p \in U $: se il campo è
 
 \begin{equation}
 	X = \sum_{i=1}^{n} a^{i} \dfrac{\partial}{\partial x^{i}}
@@ -1220,7 +1220,7 @@ Posso considerare l'applicazione
 	\end{split}
 \end{align}
 
-ricordando che $ C^{\infty}(U) $, oltre ad essere un anello commutativo unitario, è un'algebra sui reali, perciò l'applicazione $ X $ è $ \R $-lineare. Inoltre, siccome $ X_{p} \in \der_{p}(C_{p}^{\infty}(\R^{n})) $, soddisfa la regola di Leibniz
+ricordando che $ C^{\infty}(U) $, oltre a essere un anello commutativo unitario, è un'algebra sui reali, perciò l'applicazione $ X $ è $ \R $-lineare. Inoltre, siccome $ X_{p} \in \der_{p}(C_{p}^{\infty}(\R^{n})) $, soddisfa la regola di Leibniz
 
 \begin{align}
 	\begin{split}
@@ -1306,4 +1306,4 @@ Inoltre $ \phi $ è anche $ C^{\infty}(U) $-lineare, i.e
 
 per $ \forall f,g \in C^{\infty}(U) $ e $ \forall X,Y \in \chi(U) $.\\
 Dimostreremo per le varietà differenziabili che $ \phi $ è un isomorfismo di $ C^{\infty}(U) $-moduli, i.e. $ \chi(U) \simeq Der(C^{\infty}(U)) $.\\
-Tramite questo isomorfismo, si possono identificare i campi di vettori lisci con le derivazioni dell'algebra delle funzioni lisce, analogamente a come lo spazio tangente ad un punto di $ \R^{n} $ si può identificare con le derivazioni puntuali dell'algebra dei germi delle funzioni in quel punto, i.e. $ T_{p}(\R^{n}) \simeq \der_{p}(C_{p}^{\infty}(\R^{n})) $.
+Tramite questo isomorfismo, si possono identificare i campi di vettori lisci con le derivazioni dell'algebra delle funzioni lisce, analogamente a come lo spazio tangente a un punto di $ \R^{n} $ si può identificare con le derivazioni puntuali dell'algebra dei germi delle funzioni in quel punto, i.e. $ T_{p}(\R^{n}) \simeq \der_{p}(C_{p}^{\infty}(\R^{n})) $.
