@@ -82,8 +82,8 @@ Sia $ f : U \to \R $ con $ U \subset \R^{n} $ aperto, diremo che $ f $ è \texti
 
 \begin{align}
 	\begin{split}
-		f (x) &= f (p) + \sum_{i=1}^{n} \pdv{f}{x_{i}} (p) (x^{i} - p^{i}) + \cdots + \dfrac{1}{k!} \sum_{i_{1},\dots,i_{k}=1}^{n} \pdv[k]{f}{x^{i_{1}} \cdots}{x^{i_{k}}} (p) (x^{i_{1}} - p^{i_{1}}) \cdots (x^{i_{k}} - p^{i_{k}}) + \cdots\\
-		&= f (p) + \sum_{k=1}^{\infty} \dfrac{1}{k!} \sum_{i_{1},\dots,i_{k}=1}^{n} \pdv[k]{f}{x^{i_{1}} \cdots}{x^{i_{k}}} (p) \prod_{j=1}^{k} (x^{j} - p^{j})
+		f (x) &= f (p) + \sum_{i=1}^{n} \pdv{f}{x_{i}} (p) (x^{i} - p^{i}) + \cdots + \dfrac{1}{k!} \sum_{i_{1},\dots,i_{k}=1}^{n} \dfrac{\partial^{k} f}{\partial x^{i_{1}} \cdots \partial x^{i_{k}}} (p) [ (x^{i_{1}} - p^{i_{1}}) \cdots (x^{i_{k}} - p^{i_{k}}) ] + \cdots\\
+		&= f (p) + \sum_{k=1}^{\infty} \dfrac{1}{k!} \sum_{i_{1},\dots,i_{k}=1}^{n} \dfrac{\partial^{k} f}{\partial x^{i_{1}} \cdots \partial x^{i_{k}}} (p) \prod_{j=1}^{k} (x^{j} - p^{j})
 	\end{split}
 \end{align}
 
@@ -159,7 +159,7 @@ Tutto questo ci dice che $ f \in C^{\infty}(\R) $. Se fosse anche reale analitic
 
 \begin{align}
 	\begin{split}
-		f(x) = \sum_{k=0}^{\infty} \dfrac{\partial^{k} f}{\partial x^{k}} (0) \, x^{k}
+		f(x) = \sum_{k=0}^{\infty} \pdv[k]{f}{x} (0) \, x^{k}
 	\end{split}
 \end{align}
 
@@ -351,7 +351,7 @@ da cui
 	\begin{split}
 		h (x^{1},\dots,x^{n+1}) &= (g \circ f) (x^{1},\dots,x^{n+1})\\
 		&= g \left( x^{1},\dots,x^{n},1-\sqrt{1-\norm{x}^{2}} \right)\\
-		&= \left( \dfrac{x^{1}}{\sqrt{1 - \norm{x}^{2}}}, \cdots, \dfrac{x^{n}}{\sqrt{1 - \norm{x}^{2}}} \right)
+		&= \left( \dfrac{x^{1}}{\sqrt{1 - \norm{x}^{2}}}, \cdots, \dfrac{x^{n}}{\sqrt{1 - \norm{x}^{2}}}, 0 \right)
 	\end{split}
 \end{align}
 
@@ -360,8 +360,8 @@ A questo punto $ B_{1} (0) \simeq \R^{n} $: dal punto di vista della geometria d
 
 \subsection{Teorema di Taylor con resto}
 
-Una funzione reale analitica coincide con il suo sviluppo di Taylor. Per una funzione liscia questo non è detto: la coincidenza di una funzione liscia con il suo sviluppo di Taylor è data a meno di un \textit{resto}.\\
-Un sottoinsieme aperto $ U \subset \R^{n} $ è \textit{stellato} rispetto a un punto $ p \in U $ se il segmento di retta che unisce $ p $ a $ x \in U $ è interamente contenuto in $ U $.
+Una funzione reale analitica coincide con il suo sviluppo di Taylor. Per una funzione liscia questo non è detto: la coincidenza di una funzione liscia con il suo sviluppo di Taylor è data a meno di un \textit{resto}. Introduciamo ora il concetto di insieme stellato rispetto a un punto per definire il resto sopraccitato.\\
+Un sottoinsieme aperto $ U \subset \R^{n} $ è \textit{stellato} rispetto a un punto $ p \in U $ se il segmento di retta che unisce $ p $ a $ \forall x \in U $ è interamente contenuto in $ U $.
 
 \begin{remark}
 	Un insieme convesso è stellato rispetto a ogni suo punto.
@@ -370,74 +370,75 @@ Un sottoinsieme aperto $ U \subset \R^{n} $ è \textit{stellato} rispetto a un p
 L'ipotesi che un sottoinsieme sia stellato è forte a livello globale ma sempre rispettata a livello locale, in quanto è sempre possibile trovare un aperto stellato rispetto a un punto all'interno di un insieme.
 
 \begin{theorem}[Taylor con resto]
-	Sia $ f : U \to \R $ con $ U \subset \R^{n} $ stellato rispetto a un punto $ p \in U $ e supponiamo $ f \in C^{\infty}(\R) $, allora esistono $ n $ funzioni $ g_{j} \in C^{\infty}(U), \forall j = 1,\dots,n $ tali che
+	Sia $ f : U \to \R $ con $ U \subset \R^{n} $ stellato rispetto a un punto $ p \in U $ e supponiamo $ f \in C^{\infty}(\R) $, allora esistono $ n $ funzioni $ g_{i} \in C^{\infty}(U) $ per $ i = 1,\dots,n $ definite come
 	
 	\begin{equation}
-		f(x) = f(p) + \sum_{i=1}^{n} (x^{i}-p^{i}) \, g_{i}(x), \quad \forall x \in U
+		g_{i}(p) \doteq \pdv{f}{x^{i}} (p) \qcomma \forall i=1,\dots,n
 	\end{equation}
-	
-	con $ g_{i} $ lisce e definite come
+
+	tali che
 	
 	\begin{equation}
-		g_{i}(p) \doteq \dfrac{\partial f}{\partial x^{i}} (p), \quad \forall i=1,\dots,n
-	\end{equation}
+		f(x) = f(p) + \sum_{i=1}^{n} (x^{i}-p^{i}) \, g_{i}(x) \qcomma \forall x \in U
+	\end{equation}	
 \end{theorem}
 
 \begin{proof}
 	Consideriamo il segmento $ r $ che  unisce $ p $ a un punto $ x \in U $ con $ x $ fissato  arbitrariamente:
 	
 	\begin{equation}
-		r=p+t(x-p), \quad t \in [0,1]
+		r=p+t(x-p) \qcomma t \in [0,1]
 	\end{equation}
 	
 	Essendo $ U $ stellato rispetto a $ p $, possiamo valutare $ f $ in questo segmento (tutti i punti di $ r $ sono definiti in $ U $). Considero fissi $ x $ e $ p $ e derivo $ f(r) $ rispetto a $ t $
 	
-	\begin{equation}
-		\dfrac{\operatorname{d}}{\operatorname{dt}} f(p+t(x-p)) = \sum_{i=1}^{n} \dfrac{\partial f}{\partial x^{i}} (p+t(x-p)) (x^{i}-p^{i})
-	\end{equation}
+	\begin{align}
+		\begin{split}
+			\dv{t} f(r) &= \dv{t} f(p+t(x-p))\\
+			&= \sum_{i=1}^{n} \pdv{f}{x^{i}} \, (p+t(x-p)) \, \dv{r}{t}\\
+			&= \sum_{i=1}^{n} \pdv{f}{x^{i}} \, (p+t(x-p)) \, (x^{i}-p^{i})
+		\end{split}
+	\end{align}
 	
 	per la \textit{regola della catena}.\\
 	Integrando rispetto a $ t $ nell'intervallo $ [0,1] $ ottengo
 	
 	\begin{align}
 		\begin{split}
-			\int_{0}^{1} \dfrac{\operatorname{d}}{\operatorname{dt}} f(p+t(x-p)) \operatorname{dt} &= \int_{0}^{1} \sum_{i=1}^{n} \dfrac{\partial f}{\partial x^{i}} (p+t(x-p)) (x^{i}-p^{i}) \operatorname{dt}\\
-			f(x) - f(p)&= \sum_{i=1}^{n} (x^{i}-p^{i}) \int_{0}^{1} \dfrac{\partial f}{\partial x^{i}} (p+t(x-p)) \operatorname{dt}
+			\int_{0}^{1} \dv{t} f(p+t(x-p)) \dd{t} &= \int_{0}^{1} \sum_{i=1}^{n} \pdv{f}{x^{i}} \, (p+t(x-p)) \, (x^{i}-p^{i}) \dd{t}\\
+			f(x) - f(p)&= \sum_{i=1}^{n} (x^{i}-p^{i}) \int_{0}^{1} \pdv{f}{x^{i}} \, (p+t(x-p)) \dd{t}
 		\end{split}
 	\end{align}
 	
 	chiamando
 	
 	\begin{equation}
-		g_{i}(x) \doteq \int_{0}^{1} \dfrac{\partial f}{\partial x^{i}} (p+t(x-p)) \operatorname{dt}
+		g_{i}(x) \doteq \int_{0}^{1} \pdv{f}{x^{i}} (p+t(x-p)) \dd{t}
 	\end{equation}
 	
 	si può scrivere
 	
 	\begin{equation}
-		f(x)= f(p) + \sum_{i=1}^{n} (x^{i}-p^{i}) g_{i}(x)
+		f(x)= f(p) + \sum_{i=1}^{n} (x^{i}-p^{i}) \, g_{i}(x)
 	\end{equation}
 	
 	dove $ g_{i}(x) \in C^{\infty}(U) $ perché derivata parziale di una funzione liscia.\\
 	Inoltre
 	
-	\begin{align}
-		\begin{split}
-			g_{i}(p) &= \int_{0}^{1} \dfrac{\partial f}{\partial x^{i}} (p) \operatorname{dt}\\\\
-			&= \dfrac{\partial f}{\partial x^{i}} (p), \quad \forall i=1,\dots,n
-		\end{split}
-	\end{align}
+	\begin{equation}
+		g_{i}(p) = \int_{0}^{1} \pdv{f}{x^{i}} (p) \dd{t} = \pdv{f}{x^{i}} (p) \qcomma \forall i=1,\dots,n
+	\end{equation}
 \end{proof}
 
 Vedi Esercizi \ref{es1-5} e \ref{es1-6}.\\
-Prendiamo $ f : U \to \R $ con $ p $ corrispondente all'origine. Per il teorema di Taylor con resto, sappiamo che esiste una funzione $ g_{1} \in C^{\infty}(U) $ tale che $ f(x) = f(0) + x \, g_{1}(x) $ con $ g_{1}(0) = f^{\prime}(0) $. Riapplicando il teorema a $ g_{1} $ (siccome è liscia), si ottiene che $ g_{1}(x) = g_{1}(0) + x g_{2}(x) $ con $ g_{2} \in C^{\infty}(U) $ e $ g_{2}(0) = g_{1}^{\prime}(0) $. Per induzione $ g_{i}(x) = g_{i}(0) + x g_{i+1}(x) $ dove $ g_{i+1} \in C^{\infty} $ e $ g_{i+1}(0) = g_{i}^{\prime}(0) $, $ \forall i \geqslant 1 $. Sostituendo in $ f $ tutte queste funzioni, si ottiene
+Prendiamo $ f : U \to \R $ con $ p $ corrispondente all'origine. Per il teorema di Taylor con resto, sappiamo che esiste una funzione $ g_{1} \in C^{\infty}(U) $ tale che $ f(x) = f(0) + x \, g_{1}(x) $ con $ g_{1}(0) = f^{\prime}(0) $. Riapplicando il teorema a $ g_{1} $ (siccome è liscia), si ottiene che $ g_{1}(x) = g_{1}(0) + x g_{2}(x) $ con $ g_{2} \in C^{\infty}(U) $ e $ g_{2}(0) = g_{1}^{\prime}(0) $. Per induzione $ g_{i}(x) = g_{i}(0) + x g_{i+1}(x) $ dove $ g_{i+1} \in C^{\infty} $ e $ g_{i+1}(0) = g_{i}^{\prime}(0) $ per $ i \geqslant 1 $. Sostituendo in $ f $ tutte queste funzioni, si ottiene
 
 \begin{align}
 	\begin{split}
 			f(x) &= f(0) + x g_{1}(x)\\
 			&= f(0) + x g_{1}(0) + x^{2} g_{2}(x)\\
 			&= f(0) + x g_{1}(0) + x^{2} g_{2}(0) + x^{3} g_{3}(x)\\
-			& \, \vdots\\
+			& \; \vdots\\
 			&= f(0) + x g_{1}(0) + \dots + x^{k} g_{k}(0) + x^{k+1} g_{k+1}(x)
 	\end{split}
 \end{align}
