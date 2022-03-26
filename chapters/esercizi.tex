@@ -36,7 +36,7 @@ per $ \forall \alpha,\beta \in \R $ e con $ k \in \N $, vale $ f_{k} \in C^{k}(\
 La funzione $ f $ è liscia in quanto, perché lo sia, è necessario che
 
 \begin{equation}
-	\pdv[k]{f}{x} = \pdv[k]{x} (0) = 0 \qcomma \forall k \in \N
+	\pdv[k]{f}{x} \, (0) = \pdv[k]{x} e^{\sfrac{-1}{x^{2}}} \, (0) = 0 \qcomma \forall k \in \N
 \end{equation}
 
 e questo è vero poiché
@@ -180,24 +180,22 @@ dove gli ultimi 3 termini indicano il resto.
 \tocless\section{}\label{es1-6}
 
 \begin{tcolorbox}
-	Sia $ f \in C^{\infty}(\R^{2}) $ tale che
+	Sia $ f \in C^{\infty} (\R^{2}) $ tale che
 	
 	\begin{equation}
-		f(0,0) = \dfrac{\partial f}{\partial x} (0,0) = \dfrac{\partial f}{\partial y} (0,0) = 0
+		f(0,0) = \pdv{f}{x} \, (0,0) = \pdv{f}{y} \, (0,0) = 0
 	\end{equation}
 
 	Sia l'applicazione
 	
-	\begin{align}
-		\begin{split}
-			g : \R^{2} & \to \R\\
-			(t,u) &\mapsto%
+	\map{g}
+		{\R^{2}}{\R}
+		{(t,u)}{%
 			\begin{cases}
 				\dfrac{f(t,tu)}{t} & t \neq 0\\\\
 				0 & t = 0
 			\end{cases}
-		\end{split}
-	\end{align}
+			}
 	
 	Dimostrare che $ g \in C^{\infty}(\R^{2}) $.
 \end{tcolorbox}

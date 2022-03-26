@@ -1,0 +1,6 @@
+DOMANDE GEOMETRIA DIFFERENZIALE
+
+esercizio A.6: penso che per dimostrare che g sia liscia dovrei usare il teorema di Taylor con
+resto ma non riesco a capire come; non riesco a utilizzare le condizione del teorema per la 
+dimostrazione
+
