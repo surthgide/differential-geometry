@@ -370,10 +370,10 @@ Un sottoinsieme aperto $ U \subset \R^{n} $ è \textit{stellato} rispetto a un p
 L'ipotesi che un sottoinsieme sia stellato è forte a livello globale ma sempre rispettata a livello locale, in quanto è sempre possibile trovare un aperto stellato rispetto a un punto all'interno di un insieme.
 
 \begin{theorem}[Taylor con resto]
-	Sia $ f : U \to \R $ con $ U \subset \R^{n} $ stellato rispetto a un punto $ p \in U $ e supponiamo $ f \in C^{\infty}(\R) $, allora esistono $ n $ funzioni $ g_{i} \in C^{\infty}(U) $ per $ i = 1,\dots,n $ definite come
+	Sia $ f : U \to \R $ con $ U \subset \R^{n} $ stellato rispetto a un punto $ p \in U $ e supponiamo $ f \in C^{\infty}(U) $, allora esistono $ n $ funzioni $ g_{i} \in C^{\infty}(U) $ per $ i = 1,\dots,n $ definite come
 	
 	\begin{equation}
-		g_{i}(p) \doteq \pdv{f}{x^{i}} (p) \qcomma \forall i=1,\dots,n
+		g_{i}(p) \doteq \pdv{f}{x^{i}} \, (p) \qcomma \forall i=1,\dots,n
 	\end{equation}
 
 	tali che
@@ -413,7 +413,7 @@ L'ipotesi che un sottoinsieme sia stellato è forte a livello globale ma sempre 
 	chiamando
 	
 	\begin{equation}
-		g_{i}(x) \doteq \int_{0}^{1} \pdv{f}{x^{i}} (p+t(x-p)) \dd{t}
+		g_{i}(x) \doteq \int_{0}^{1} \pdv{f}{x^{i}} \, (p+t(x-p)) \dd{t}
 	\end{equation}
 	
 	si può scrivere
@@ -426,19 +426,18 @@ L'ipotesi che un sottoinsieme sia stellato è forte a livello globale ma sempre 
 	Inoltre
 	
 	\begin{equation}
-		g_{i}(p) = \int_{0}^{1} \pdv{f}{x^{i}} (p) \dd{t} = \pdv{f}{x^{i}} (p) \qcomma \forall i=1,\dots,n
+		g_{i}(p) = \int_{0}^{1} \pdv{f}{x^{i}} \, (p) \dd{t} = \pdv{f}{x^{i}} \, (p) \qcomma \forall i=1,\dots,n
 	\end{equation}
 \end{proof}
 
-Vedi Esercizi \ref{es1-5} e \ref{es1-6}.\\
-Prendiamo $ f : U \to \R $ con $ p $ corrispondente all'origine. Per il teorema di Taylor con resto, sappiamo che esiste una funzione $ g_{1} \in C^{\infty}(U) $ tale che $ f(x) = f(0) + x \, g_{1}(x) $ con $ g_{1}(0) = f^{\prime}(0) $. Riapplicando il teorema a $ g_{1} $ (siccome è liscia), si ottiene che $ g_{1}(x) = g_{1}(0) + x g_{2}(x) $ con $ g_{2} \in C^{\infty}(U) $ e $ g_{2}(0) = g_{1}^{\prime}(0) $. Per induzione $ g_{i}(x) = g_{i}(0) + x g_{i+1}(x) $ dove $ g_{i+1} \in C^{\infty} $ e $ g_{i+1}(0) = g_{i}^{\prime}(0) $ per $ i \geqslant 1 $. Sostituendo in $ f $ tutte queste funzioni, si ottiene
+Prendiamo $ f : U \to \R $ con $ p $ corrispondente all'origine. Per il teorema di Taylor con resto, sappiamo che esiste una funzione $ g_{1} \in C^{\infty}(U) $ tale che $ f(x) = f(0) + x \, g_{1}(x) $ con $ g_{1}(0) = f^{\prime}(0) $. Riapplicando il teorema a $ g_{1} $ (siccome è liscia), si ottiene che $ g_{1}(x) = g_{1}(0) + x g_{2}(x) $ con $ g_{2} \in C^{\infty}(U) $ e $ g_{2}(0) = g_{1}^{\prime}(0) $. Per induzione $ g_{i}(x) = g_{i}(0) + x g_{i+1}(x) $ dove $ g_{i+1} \in C^{\infty} (U) $ e $ g_{i+1}(0) = g_{i}^{\prime}(0) $ per $ \forall i \geqslant 1 $. Sostituendo in $ f $ tutte queste funzioni, si ottiene
 
 \begin{align}
 	\begin{split}
 			f(x) &= f(0) + x g_{1}(x)\\
 			&= f(0) + x g_{1}(0) + x^{2} g_{2}(x)\\
 			&= f(0) + x g_{1}(0) + x^{2} g_{2}(0) + x^{3} g_{3}(x)\\
-			& \; \vdots\\
+			& \;\, \vdots\\
 			&= f(0) + x g_{1}(0) + \dots + x^{k} g_{k}(0) + x^{k+1} g_{k+1}(x)
 	\end{split}
 \end{align}
@@ -446,16 +445,17 @@ Prendiamo $ f : U \to \R $ con $ p $ corrispondente all'origine. Per il teorema 
 A questo punto si può identificare
 
 \begin{equation}
-	g_{k}(0) = \dfrac{f^{(k)}(x)}{k!}
+	g_{k}(0) = \dfrac{1}{k!} \pdv[k]{f}{x} \, (0) \doteq \dfrac{f^{(k)}(0)}{k!}
 \end{equation}
 
 da cui
 
 \begin{equation}
-	f(x) = f(0) + x f^{(1)}(x) + \dfrac{x^{2}}{2!} f^{(2)}(x) \dfrac{x^{3}}{3!} f^{(3)}(x) + \dots + \dfrac{x^{k}}{k!} f^{(k)}(x) + x^{k+1} g_{k+1}(x)
+	f(x) = f(0) + \sum_{k=1}^{i} \dfrac{x^{k}}{k!} f^{(k)} (0) + x^{i+1} g_{i+1}(x) \qcomma \forall i \in \N
 \end{equation}
 
-dove la prima parte coincide con lo sviluppo in serie di Taylor mentre l'ultimo termine indica il \textit{resto}.
+dove la prima parte coincide con lo sviluppo in serie di Taylor mentre l'ultimo termine indica il \textit{resto}.\\
+Vedi Esercizi \ref{es1-5} e \ref{es1-6}.
 
 \section{Vettori tangenti in $ \R^{n} $}
 

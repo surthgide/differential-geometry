@@ -143,15 +143,15 @@ L'applicazione $ f $ è un diffeomorfismo in quanto composizione di diffeomorfis
 	Sia $ f \in C^{\infty}(\R^{2}) $. Usando il teorema di Taylor con resto, dimostrare che esistono $ g_{11},g_{12},g_{22} \in C^{\infty}(\R^{2}) $ tali che
 	
 	\begin{equation}
-		f(x,y) = f(0,0) + x \, \dfrac{\partial f}{\partial x} ((0,0)) + y \, \dfrac{\partial f}{\partial y} ((0,0)) + x^{2} \, g_{11}(x,y) + x y \, g_{12}(x,y) + y^{2} \, g_{22}(x,y)
+		f(x,y) = f(0,0) + x \, \dfrac{\partial f}{\partial x} (0,0) + y \, \dfrac{\partial f}{\partial y} (0,0) + x^{2} \, g_{11}(x,y) + x y \, g_{12}(x,y) + y^{2} \, g_{22}(x,y)
 	\end{equation}
 \end{tcolorbox}
 
 \begin{equation}
 	\begin{cases}
-		g_{11}(x,y) = \pdv[2]{f}{x} (0,0)\\\\
-		g_{12}(x,y) = \pdv{f}{x}{y} (0,0)\\\\
-		g_{22}(x,y) = \pdv[2]{f}{y} (0,0)
+		g_{11}(x,y) = {\displaystyle \pdv[2]{f}{x}} \, (0,0)\\\\
+		g_{12}(x,y) = {\displaystyle \pdv{f}{x}{y}} \, (0,0)\\\\
+		g_{22}(x,y) = {\displaystyle \pdv[2]{f}{y}} \, (0,0)
 	\end{cases}
 \end{equation}
 
