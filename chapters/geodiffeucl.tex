@@ -395,7 +395,7 @@ L'ipotesi che un sottoinsieme sia stellato è forte a livello globale ma sempre 
 	\begin{align}
 		\begin{split}
 			\dv{t} f(r) &= \dv{t} f(p+t(x-p))\\
-			&= \sum_{i=1}^{n} \pdv{f}{x^{i}} \, (p+t(x-p)) \, \dv{r}{t}\\
+			&= \sum_{i=1}^{n} \pdv{f}{x^{i}} \, (p+t(x-p)) \, \left( \dv{r}{t} \right)^{i}\\
 			&= \sum_{i=1}^{n} \pdv{f}{x^{i}} \, (p+t(x-p)) \, (x^{i}-p^{i})
 		\end{split}
 	\end{align}
@@ -459,38 +459,45 @@ Vedi Esercizi \ref{es1-5} e \ref{es1-6}.
 
 \section{Vettori tangenti in $ \R^{n} $}
 
-Preso un punto $ p \in \R^{n} $, lo \textit{spazio tangente} in quel punto viene scritto $ T_{p}(\R^{n}) $. In sostanza, lo spazio tangente a un punto $ p $ è l'insieme\footnote{%
-	Sarebbe uno spazio vettoriale con origine il punto $ p $.%
+Preso un punto $ p \in \R^{n} $, lo \textit{spazio tangente} in quel punto viene scritto $ T_{p}(\R^{n}) $. Lo spazio tangente a un punto $ p $ è l'insieme\footnote{%
+	Formalmente, è uno spazio vettoriale con origine il punto $ p $.%
 } di tutti i vettori che escono dal punto stesso. Essendo $ T_{p}(\R^{n}) \simeq \R^{n} $, un elemento $ v \in T_{p}(\R^{n}) $ è dunque un \textit{vettore riga o colonna}
 
 \begin{equation}
-	\begin{bmatrix} v^{1} \\ \vdots \\ v^{n} \end{bmatrix} \qquad \lor \qquad \begin{bmatrix} v^{1} & \cdots & v^{n} \end{bmatrix}
+	\bmqty{ v^{1} \\ \vdots \\ v^{n} } \qquad \lor \qquad \bmqty{ v^{1} & \cdots & v^{n} }
 \end{equation}
 
-dove le $ v^{i} $ sono le componenti del vettore nella base canonica i.e.
+dove le $ v^{i} $ sono le componenti del vettore nella base canonica, i.e.
 
 \begin{equation}
 	v = \sum_{i=1}^{n} v^{i} e_{i}
 \end{equation}
 
-Per generalizzare questo concetto, consideriamo gli elementi degli spazi tangenti non più come oggetti geometrici vettori ma come derivazioni.
+Per generalizzare questo concetto, consideriamo gli elementi degli spazi tangenti non più come oggetti geometrici vettori ma come \textit{derivazioni}.
 
 \subsection{Derivate direzionali}
 
-Siano $ f : U \to \R $ con $ f \in C^{\infty}(\R) $, $ p\in U $ e $ v \in T_{p}(\R^{n}) $. Consideriamo la retta $ c(t) $ che passa per $ p $ con direzione $ v $, parametrizzata come $ c(t)=p+tv $ con $ t \in \R $. Definisco la \textit{derivata direzionale} di $ f $ rispetto a $ v $ come
+Siano $ f : U \to \R $ con $ f \in C^{\infty}(\R^{n}) $, $ p\in U \subset \R^{n} $ e $ v \in T_{p}(\R^{n}) $. Consideriamo la retta $ c(t) $ che passa per $ p $ con direzione $ v $, parametrizzata come
+
+\begin{equation}
+	c(t) = p + t v \qcomma t \in \R
+\end{equation}
+
+Definiamo la \textit{derivata direzionale} di $ f $ rispetto a $ v $ come
 
 \begin{align}
 	\begin{split}
-		D_{v} f \doteq& \, \lim_{t \to 0} \dfrac{f(c(t)) - f(p)}{t}\\\\
-		&= \left. \dfrac{\operatorname{d}}{\operatorname{dt}} f(c(t)) \right|_{t=0}\\\\
-		&= \sum_{i=1}^{n} \dfrac{\partial f}{\partial x^{i}} (p) \, v^{i}
+		D_{v} f \doteq& \, \lim_{t \to 0} \dfrac{f(c(t)) - f(p)}{t}\\
+		&= \left. \dv{t} f(c(t)) \right|_{t=0}\\
+		&= \sum_{i=1}^{n} \pdv{f}{x^{i}} \, (p) \left( \dv{t} c(t) \right)^{i}\\
+		&= \sum_{i=1}^{n} \pdv{f}{x^{i}} \, (p) \, v^{i}
 	\end{split}
 \end{align}
 
 dove $ D_{v} f \in \R $ e $ v = [v^{1},\dots,v^{n}] $.
 
 \begin{remark}
-	Se $ g \equiv f $ con $ g : V \subset \R $ con $ V \subset \R $ in un intorno del punto $ p $, la loro derivata direzionale è la stessa\footnote{%
+	Sia $ g \in C^{\infty} (\R^{n}) $ tale che $ g : V \to \R $ con $ V \subset \R $ e $ V \cap U \neq \emptyset $. Se $ g \equiv f $ in un intorno del punto $ p \in U \cap V $, allora la loro derivata direzionale è la stessa\footnote{%
 		Questo perché il limite del rapporto incrementale nella definizione di $ D_{v} f $ dipende da un intorno arbitrariamente piccolo.%
 	}, i.e. $ D_{v} g = D_{v} f $.
 \end{remark}
@@ -503,21 +510,15 @@ dove $ D_{v} f \in \R $ e $ v = [v^{1},\dots,v^{n}] $.
 Definiamo ora l'insieme di coppie
 
 \begin{equation}
-	X \doteq \left\{ (f,U) \st f \in C^{\infty}(U), \, \text{$ U $ intorno di $ p $} \right\}
+	X \doteq \left\{ (f,U) \st f \in C^{\infty}(U), \, U \text{ intorno di } p \in U \right\}
 \end{equation}
 
-Diciamo che\footnote{%
+Diremo che\footnote{%
 	Il simbolo $ \sim $ indica una relazione di equivalenza.%
 } per $ p \in W $
 
 \begin{equation}
-	(f,U) \sim (g,V) \iff \E W \subseteq U \cap V \mid f \equiv g \qq{in} W
-\end{equation}
-
-o equivalentemente
-
-\begin{equation}
-	(f,U) \sim (g,V) \iff \E W \subseteq U \cap V \mid f(q) \equiv g(q), \forall q \in W
+	(f,U) \sim (g,V) \iff \E W \subseteq U \cap V, \, W \ni p \mid f(q) = g(q) \qcomma \forall q \in W
 \end{equation}
 
 Questa è effettivamente una relazione di equivalenza in quanto riflessiva, simmetrica e transitiva.\\
@@ -527,7 +528,7 @@ Prendiamo dunque lo spazio quoziente
 	\sfrac{X}{\sim} \doteq C_{p}^{\infty}(\R^{n})
 \end{equation}
 
-dove un elemento $ [(f,U)] $ di questo spazio è chiamato \textit{germe} intorno al punto $ p $ ed è una \textit{classe di equivalenza} di coppie. A questo punto, $ C_{p}^{\infty}(\R^{n}) $ è l'insieme dei germi di funzioni liscia intorno a $ p $, i.e.
+dove un elemento $ [(f,U)] $ di questo spazio è chiamato \textit{germe} intorno al punto $ p $ ed è una \textit{classe di equivalenza} di coppie $ (f,U) $. A questo punto, $ C_{p}^{\infty}(\R^{n}) $ è l'insieme dei germi di funzioni lisce intorno a $ p $, i.e.
 
 \begin{equation}
 	C_{p}^{\infty}(\R^{n}) = \left\{ [(f,U)] \right\}
@@ -570,30 +571,38 @@ in altre parole, le classi di equivalenza
 
 \subsubsection{Algebra su campo $ \K $}
 
-Un'algebra $ A $ su un campo $ \K $ è una coppia $ (V,\cdot) $ con $ V $ spazio vettoriale su $ \K $ (dunque con operazioni $ a+b \in A $ con $ a,b \in A $ e $ \lambda a \in A $ con $ \lambda \in \K $) e un'operazione binaria
+Un'algebra $ A $ su un campo $ \K $ è una coppia $ (V,\cdot) $ con $ V $ spazio vettoriale su un campo $ \K $\footnote{%
+	Dunque con operazioni
+	\begin{equation}
+		\begin{cases}
+			a+b \in A, & \forall a,b \in A\\
+			\lambda a \in A, & \forall \lambda \in \K
+		\end{cases}
+	\end{equation}%
+} e un'operazione binaria
 
 \map{\cdot}%
 	{A \times A}{A}%
 	{(a,b)}{a \cdot b}
 
-tale che soddisfi le condizioni\footnote{%
-	In generale, non è necessaria l'associatività per definire un'algebra.}
+tale che soddisfi le condizioni
 
 \begin{equation}
 	\begin{cases}
-		(a \cdot b) \cdot c = a \cdot (b \cdot c) & \text{associatività}\\
+		(a \cdot b) \cdot c = a \cdot (b \cdot c) & \text{associatività}\footnotemark\\
 		\begin{split}
 			(a + b) \cdot c = a \cdot c + b \cdot c\\
 			c \cdot (a + b) = c \cdot a + c \cdot b
 		\end{split} & \text{distributività}\\
 	\lambda (a \cdot b) = (\lambda a) \cdot b = a \cdot (\lambda b) & \text{omogeneità}
 	\end{cases}
+\footnotetext{In generale, non è necessaria l'associatività per definire un'algebra.}
 \end{equation}
 
 per $ \forall a,b,c \in A $ e $ \forall \lambda \in \K $.\\
 Equivalentemente, un algebra su un campo $ \K $ può essere pensata come un anello\footnote{%
 	Le proprietà di associatività e distributività sono sufficienti per renderla un anello.%
-} $ (A,+,\cdot) $ il quale sia anche uno spazio vettoriale tale che sia soddisfatta la proprietà di omogeneità.
+} $ (V,+,\cdot) $ il quale sia anche uno spazio vettoriale con aggiunta la proprietà di omogeneità.
 
 \subsection{$ C_{p}^{\infty}(\R^{n}) $ come algebra su $ \R $}
 
