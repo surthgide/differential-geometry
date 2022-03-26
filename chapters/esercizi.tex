@@ -147,15 +147,35 @@ L'applicazione $ f $ è un diffeomorfismo in quanto composizione di diffeomorfis
 	\end{equation}
 \end{tcolorbox}
 
+Dal teorema di Taylor con resto, se $ f \in C^{\infty} (\R^{2}) $ ($ \R^{2} $ è stellato rispetto all'origine), abbiamo che
+
 \begin{equation}
-	\begin{cases}
-		g_{11}(x,y) = {\displaystyle \pdv[2]{f}{x}} \, (0,0)\\\\
-		g_{12}(x,y) = {\displaystyle \pdv{f}{x}{y}} \, (0,0)\\\\
-		g_{22}(x,y) = {\displaystyle \pdv[2]{f}{y}} \, (0,0)
-	\end{cases}
+	\exists g_{i_{1} \cdots i_{k}} \in C^{\infty} (\R^{2})
 \end{equation}
 
-???
+definite come
+
+\begin{equation}
+	g_{i_{1} \cdots i_{k}} (0,0) \doteq \dfrac{1}{k!} \dfrac{\partial^{k} f}{\partial x^{i_{1}} \cdots \partial x^{i_{k}}} (0,0)
+\end{equation}
+
+tali che
+
+\begin{equation}
+	f(x,y) = f(0,0) + \sum_{m=1}^{k} \sum_{\substack{i_{1},\dots,i_{k}=1 \\ {i_{k}} > \cdots > i_{1}}}^{m} g_{i_{1} \cdots i_{k}} (x,y) \prod_{j=1}^{k} x^{i_{j}} \qcomma \forall k \in \N
+\end{equation}
+
+Espandendo quest'ultima forma per $ k=1 $ otteniamo
+
+\begin{align}
+	\begin{split}
+		f(x,y) &= f(0,0) + x \, g_{1} (x,y) + y \, g_{2} (x,y)\\
+		&= f(0,0) + x \, g_{1} (0,0) + y \, g_{2} (0,0) + x^{2} \, g_{11}(x,y) + x y \, g_{12}(x,y) + y^{2} \, g_{22}(x,y)\\
+		&= f(0,0) + x \, \dfrac{\partial f}{\partial x} (0,0) + y \, \dfrac{\partial f}{\partial y} (0,0) + x^{2} \, g_{11}(x,y) + x y \, g_{12}(x,y) + y^{2} \, g_{22}(x,y)
+	\end{split}
+\end{align}
+
+dove gli ultimi 3 termini indicano il resto.
 
 \tocless\section{}\label{es1-6}
 
