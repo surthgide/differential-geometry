@@ -217,9 +217,22 @@ L'algebra $ A = (C_{p}^{\infty}(\R^{n}),+,\cdot) $ ha le operazioni definite com
 \map{\cdot}%
 	{A \times A}{A}%
 	{([(f,U)],[(g,V)])}{[(f g,U \cap V)]}
-	
-per $ \forall [(f,U)],[(g,V)] \in C_{p}^{\infty}(\R^{n}) $.\\
-La commutatività può essere verificata tramite i seguenti passaggi:
+
+Perché sia effettivamente un'algebra, verifichiamo che sia distributiva e omogenea.\\
+Per la distributività sinistra:
+
+\begin{align}
+	\begin{split}
+		([(f,U)] + [(g,V)]) \cdot [(h,W)] &= [(f+g,U \cap V)] \cdot [(h,W)]\\
+		&= [((f+g) h,U \cap V \cap W)]\\
+		&= [(fh + gh,U \cap V \cap W)]\\
+		&= [(fh,U \cap W)] + [(gh,V \cap W)]\\
+		&= [(f,U)] \cdot [(h,W)] + [(g,V)] \cdot [(h,W)]
+	\end{split}
+\end{align}
+
+per $ \forall [(f,U)], [(g,V)], [(h,W)] \in C_{p}^{\infty}(\R^{n}) $.\\
+La distributività destra deriva immediatamente dalla distributività sinistra e dalla commutatività (condizione non necessaria per un'algebra): quest'ultima può essere verificata tramite i seguenti passaggi:
 
 \begin{align}
 	\begin{split}
@@ -227,13 +240,26 @@ La commutatività può essere verificata tramite i seguenti passaggi:
 		&= [(g+f,V \cap U)]\\
 		&= [(g,V)] + [(f,U)]\\\\
 		%
-		[(f,U)] \cdot [(g,V)] &= [(f \cdot g,U \cap V)]\\
-		&= [(g \cdot f,V \cap U)]\\
+		[(f,U)] \cdot [(g,V)] &= [(fg,U \cap V)]\\
+		&= [(gf,V \cap U)]\\
 		&= [(g,V)] \cdot [(f,U)]
 	\end{split}
 \end{align}
 
-L'unitarietà, i.e.
+per $ \forall [(f,U)], [(g,V)] \in C_{p}^{\infty}(\R^{n}) $.\\
+Per l'omogeneità:
+
+\begin{align}
+	\begin{split}
+		\lambda ([(f,U)] \cdot [(g,V)]) &= \lambda [(fg,U \cap V)]\\
+		&= [(\lambda fg,V \cap U)]\\
+		&= [(\lambda f,U)] \cdot [(g,V)]\\
+		&= [(f,U)] \cdot [(\lambda g,V)]
+	\end{split}
+\end{align}
+
+per $ \forall [(f,U)], [(g,V)] \in C_{p}^{\infty}(\R^{n}) $ e $ \forall \lambda \in \R $.\\
+Infine l'unitarietà, i.e.
 
 \begin{equation}
 	\E e = [(1,U)] \in C_{p}^{\infty}(\R^{n}) \mid [(f,U)] \cdot e = e \cdot [(f,U)] = [(f,U)] \qcomma \forall [(f,U)] \in C_{p}^{\infty}(\R^{n})
