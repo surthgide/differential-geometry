@@ -633,18 +633,19 @@ Nonostante non sia necessario per un'algebra, $ C_{p}^{\infty}(\R^{n}) $ è anch
 
 \subsection{Derivazione puntuale di $ C_{p}^{\infty}(\R^{n}) $}
 
-A questo punto, l'immagine dell'applicazione
+A questo punto, possiamo definire l'applicazione chiamata \textit{derivazione puntuale} dell'algebra $ C_{p}^{\infty}(\R^{n}) $:
 
 \map{D}%
 	{C_{p}^{\infty}(\R^{n})}{\R}%
-	{[(f,U)]}{D_{v} f = \sum_{i=1}^{n} \pdv{f}{x^{i}}\hspace{0px} (p) \, v^{i}}
+	{[(f,U)]}{D_{v} f = \sum_{i=1}^{n} \pdv{f}{x^{i}} \, (p) \, v^{i}}
 
-tale che:
+con $ p \in U \subset \R^{n} $ e $ v = [v^{1}, \dots, v^{n}] \in T_{p} (\R^{n}) $.\\
+Questa applicazione possiede le seguenti proprietà:
 
 \begin{enumerate}
-	\item sia $ \R $-lineare\footnote{%
+	\item $ \R $-linearità\footnote{%
 		Rispetto alla struttura di spazio vettoriale di $ C_{p}^{\infty}(\R^{n}) $.%
-	}, cioè
+	}, i.e.
 		\begin{align}
 			\begin{split}
 				D ([(f,U)] + [(g,V)]) &= D ([(f,U)]) + D ([(g,V)])\\
@@ -652,36 +653,39 @@ tale che:
 			\end{split}
 		\end{align}
 	
-	\item soddisfi la \textit{regola di Leibniz}, cioè
+	\item soddisfa la \textit{regola di Leibniz}, i.e.
 		\begin{equation}
 			D ([(f,U)] \cdot [(g,V)]) = D ([(f,U)]) \, g(p) + f(p) \, D ([(g,V)])
 		\end{equation}
 \end{enumerate}
 
-è chiamata \textit{derivazione puntuale} dell'algebra $ C_{p}^{\infty}(\R^{n}) $.
-
-\begin{proof}[Dimostrazione ($ \R $-linearità)]
+\begin{proof}[Dimostrazione ($ \R $-linearità (somma))]
 	\begin{align}
 		\begin{split}
 			D ([(f,U)] + [(g,V)]) &= D ([(f+g,U \cap V)])\\
 			&= D_{v} (f+g)\\
-			&= \sum_{j=1}^{n} \dfrac{\partial (f+g)}{\partial x^{j}} (p) \, v^{j}\\
-			&= \sum_{j=1}^{n} \dfrac{\partial f}{\partial x^{j}} (p) \, v^{j} + \sum_{j=1}^{n} \dfrac{\partial g}{\partial x^{j}} (p) \, v^{j}\\
+			&= \sum_{j=1}^{n} \pdv{(f+g)}{x^{j}} \, (p) \, v^{j}\\
+			&= \sum_{j=1}^{n} \pdv{f}{x^{j}} \, (p) \, v^{j} + \sum_{j=1}^{n} \pdv{g}{x^{j}} \, (p) \, v^{j}\\
+			&= D_{v} f + D_{v} g\\
 			&= D ([(f,U)]) + D ([(g,V)])
 		\end{split}
 	\end{align}
+
+	per $ \forall [(f,U)], [(g,V)] \in C_{p}^{\infty}(\R^{n}) $, $ \forall p \in U \cap V \subset \R^{n} $ e $ \forall v \in T_{p} (\R^{n}) $.
 \end{proof}
 
-\begin{proof}[Dimostrazione ($ \R $-linearità)]
+\begin{proof}[Dimostrazione ($ \R $-linearità (moltiplicazione per scalare))]
 	\begin{align}
 		\begin{split}
-			\lambda D ([(f,U)]) &= D ([(\lambda f,U)])\\
+			D (\lambda [(f,U)]) &= D ([(\lambda f,U)])\\
 			&= D_{v} (\lambda f)\\
-			&= \sum_{j=1}^{n} \dfrac{\partial (\lambda f)}{\partial x^{j}} (p) \, v^{j}\\
-			&= \lambda \sum_{j=1}^{n} \dfrac{\partial f}{\partial x^{j}} (p) \, v^{j}\\
+			&= \sum_{j=1}^{n} \pdv{(\lambda f)}{x^{j}} \, (p) \, v^{j}\\
+			&= \lambda \sum_{j=1}^{n} \pdv{f}{x^{j}} \, (p) \, v^{j}\\
 			&= \lambda D ([(f,U)])
 		\end{split}
 	\end{align}
+
+	per $ \forall [(f,U)], [(g,V)] \in C_{p}^{\infty}(\R^{n}) $, $ \forall \lambda \in \R $, $ \forall p \in U \subset \R^{n} $ e $ \forall v \in T_{p} (\R^{n}) $.
 \end{proof}
 
 \begin{proof}[Dimostrazione (Regola di Leibniz)]
@@ -689,16 +693,22 @@ tale che:
 		\begin{split}
 			D ([(f,U)] \cdot [(g,V)]) &= D ([(f g,U \cap V)])\\
 			&= D_{v} (f g)\\
-			&= \sum_{j=1}^{n} \dfrac{\partial (f g)}{\partial x^{j}} (p) \, v^{j}\\
-			&= \left( \sum_{j=1}^{n} \dfrac{\partial f}{\partial x^{j}} (p) \, v^{j} \right) \, g(p) + f(p) \left( \, \sum_{j=1}^{n} \dfrac{\partial g}{\partial x^{j}} (p) \, v^{j} \right)\\
-			&= (D_{v} f) g(p) + f(p) (D_{v} g)\\
+			&= \sum_{j=1}^{n} \pdv{(f g)}{x^{j}} \, (p) \, v^{j}\\
+			&= \left( \sum_{j=1}^{n} \pdv{f}{x^{j}} \, (p) \, v^{j} \right) \, g(p) + f(p) \left( \, \sum_{j=1}^{n} \pdv{g}{x^{j}} \, (p) \, v^{j} \right)\\
+			&= (D_{v} f) \, g(p) + f(p) \, (D_{v} g)\\
 			&= D ([(f,U)]) \, g(p) + f(p) \, D ([(g,V)])
 		\end{split}
 	\end{align}
+
+	per $ \forall [(f,U)], [(g,V)] \in C_{p}^{\infty}(\R^{n}) $, $ \forall p \in U \cap V \subset \R^{n} $ e $ \forall v \in T_{p} (\R^{n}) $.
 \end{proof}
 
-Una derivazione è quindi un modo per associare a un germe di funzioni un numero reale, soddisfacendo le proprietà definite sopra.\\
-Indichiamo dunque l'insieme delle derivazioni di $ C_{p}^{\infty}(\R^{n}) $ come $ \der_{p}(C_{p}^{\infty}(\R^{n})) $.
+La derivazione puntuale è quindi un modo per associare un numero reale a un germe di funzioni, soddisfacendo le proprietà definite sopra.\\
+Indichiamo dunque l'insieme delle derivazioni puntuali di $ C_{p}^{\infty}(\R^{n}) $ come $ \der_{p}(C_{p}^{\infty}(\R^{n})) $, i.e.
+
+\begin{equation}
+	\der_{p}(C_{p}^{\infty}(\R^{n})) \doteq \left\{ D ([(f,U)]) = D_{v} f \doteq \sum_{j=1}^{n} \pdv{f}{x^{j}} \, (p) \, v^{j} \in \R \st [(f,U)] \in C_{p}^{\infty}(\R^{n}), v \in T_{p} (\R^{n}) \right\}
+\end{equation}
 
 \subsection{Isomorfismo tra $ T_{p}(\R^{n}) $ e $ \der_{p}(C_{p}^{\infty}(\R^{n})) $}
 
