@@ -721,83 +721,105 @@ Definiamo l'applicazione
 	\end{split}
 \end{align}
 
-questa associa $ v \in T_{p}(\R^{n}) $ con $ p \in \R^{n} $ a $ D_{v} $, la quale è a sua volta un'applicazione che associa la classe di equivalenza di germi di funzioni $ [(f,U)] $ allo scalare
+questa associa il vettore $ v = [v^{1},\dots,v^{n}] \in T_{p}(\R^{n}) $ con $ p \in \R^{n} $ alla derivazione puntuale $ D_{v} $, la quale è a sua volta un'applicazione che associa la classe di equivalenza di germi di funzioni $ [(f,U)] $ alla derivata direzionale di $ f $ rispetto a $ v $, i.e.
 
 \begin{align}
-	D_{v} f = \sum_{j=1}^{n} \dfrac{\partial f}{\partial x^{j}} (p) \, v^{j}
+	D_{v} f = \sum_{j=1}^{n} \dfrac{\partial f}{\partial x^{j}} (p) \, v^{j} \in \R
 \end{align}
 
-con $ v = [v^{1},\dots,v^{n}] $, dove $ D_{v} f $ è la derivata direzionale di $ f $ rispetto a $ v $; possiamo usare lo stesso simbolo per $ D_{v} ([(f,U)]) = D_{v} f $ perché questa relazione vale per qualsiasi rappresentante della classe.\\
-L'applicazione $ \phi $ permette di considerare le derivazioni puntuali dell'algebra dei germi delle funzioni $ C_{p}^{\infty}(\R^{n}) $ al posto dell'insieme dei vettori che partono da un punto, in quanto questi due insiemi sono isomorfi tra loro. Utilizzare le derivazioni è utile perché, in termini di varietà differenziabile, non esiste una visualizzazione di uno spazio tangente.
+Possiamo usare lo stesso simbolo, i.e. $ D_{v} ([(f,U)]) = D_{v} f $, perché questa relazione vale per qualsiasi rappresentante della classe.\\
+L'applicazione $ \phi $ permette di considerare equivalentemente l'insieme delle derivazioni puntuali dell'algebra dei germi delle funzioni $ C_{p}^{\infty}(\R^{n}) $ e lo spazio tangente a un punto, in quanto questi due insiemi sono isomorfi tra loro tramite $ \phi $ stessa. Utilizzare le derivazioni è utile perché per le varietà differenziabili non esiste una visualizzazione dello spazio tangente.
 
 \begin{theorem}
-	L'applicazione $ \phi $ è un isomorfismo di spazi vettoriali, nello specifico tra $ T_{p}(\R^{n}) $ e $ \der_{p}(C_{p}^{\infty}(\R^{n})) $.
+	L'applicazione $ \phi $ è un isomorfismo degli spazi vettoriali $ T_{p}(\R^{n}) $ e $ \der_{p}(C_{p}^{\infty}(\R^{n})) $, i.e. tramite $ \phi $ si ha che
+	
+	\begin{equation}
+		T_{p}(\R^{n}) \stackrel{iso.}{\simeq} \der_{p}(C_{p}^{\infty}(\R^{n}))
+	\end{equation}
 \end{theorem}
 
-Per dimostrare questo teorema è necessario dimostrare innanzitutto che gli elementi $ D_{i} \in \der_{p}(C_{p}^{\infty}(\R^{n})) $ costituiscano uno spazio vettoriale, cioè devono valere
+Per dimostrare questo teorema è necessario notare che gli elementi $ D_{i} \in \der_{p}(C_{p}^{\infty}(\R^{n})) $ costituiscono uno spazio vettoriale\footnote{%
+	Vedi Esercizio \ref{es1-8}.%
+} con operazioni
 
-\begin{align}
-	\begin{split}
-		(D_{1} + D_{2}) ([(f,U)]) &= D_{1}([(f,U)]) + D_{2}([(f,U)])\\
-		(\lambda D) ([(f,U)]) &= \lambda D ([(f,U)])
-	\end{split}
-\end{align}
+\map{+}
+	{\der_{p}(C_{p}^{\infty}(\R^{n})) \times \der_{p}(C_{p}^{\infty}(\R^{n}))}{\der_{p}(C_{p}^{\infty}(\R^{n}))}
+	{(D_{v}, D_{w})}{D_{v} + D_{w}}
+	
+\map{\cdot}
+	{\R \times \der_{p}(C_{p}^{\infty}(\R^{n}))}{\der_{p}(C_{p}^{\infty}(\R^{n}))}
+	{(\lambda, D_{v})}{\lambda D_{v}}
 
-per $ \forall D,D_{1},D_{2} \in \der_{p}(C_{p}^{\infty}(\R^{n})) $ e $ \forall \lambda \in \R $.\\
-Vedi Esercizio \ref{es1-8}.
+Consideriamo ora la seguente preposizione:
 
-\begin{proof}[Dimostrazione ($ \R $-linearità)]
+\begin{definition}
+	Le operazioni dello spazio vettoriale $ \der_{p}(C_{p}^{\infty}(\R^{n})) $ su $ \R $ (definite sopra) sono $ \R $-lineari e la somma soddisfa la regola di Leibniz, i.e.
+	
 	\begin{align}
 		\begin{split}
-			(D_{1} + D_{2}) (\alpha [(f,U)] + \beta [(g,V)]) &= D_{1} (\alpha [(f,U)] + \beta [(g,V)]) +\\
-			&+ \, D_{2} (\alpha [(f,U)] + \beta [(g,V)])\\
-			&= \alpha D_{1} ([(f,U)]) + \beta D_{1} ([(g,V)]) +\\
-			&+ \,\alpha D_{2} ([(f,U)]) + \beta D_{2} ([(g,V)])\\
-			&= \alpha (D_{1} + D_{2}) ([(f,U)]) + \beta (D_{1} + D_{2}) ([(g,V)])
+			(D_{v} + D_{w}) ([(f,U)]) &= D_{v}([(f,U)]) + D_{w}([(f,U)])\\
+			D (\lambda [(f,U)]) &= \lambda D ([(f,U)]) = (\lambda D) ([(f,U)])\\
+			(D_{v} + D_{w}) ([(f,U)] \cdot [(g,V)]) &= (D_{v} + D_{w}) ([(f,U)]) \, g(p) + f(p) \, (D_{v} + D_{w}) ([(g,V)])
 		\end{split}
 	\end{align}
 
-	per $ \alpha,\beta \in \R $.
-\end{proof}
+	per $ \forall D, D_{v}, D_{w} \in \der_{p}(C_{p}^{\infty}(\R^{n})) $ e $ \forall \lambda \in \R $.
+\end{definition}
 
-\begin{proof}[Dimostrazione (Regola di Leibniz)]
+\begin{proof}[Dimostrazione (Proposizione)]
+	Per la $ \R $-linearità:
+	
 	\begin{align}
 		\begin{split}
-			(D_{1} + D_{2}) ([(f,U)] [(g,V)]) &= D_{1} ([(f,U)] [(g,V)]) + D_{2} ([(f,U)] [(g,V)])\\
-			&= D_{1} ([(f,U)]) \, g(p) + f(p) \, D_{1} ([(g,V)]) +\\
-			&+ \, D_{2} ([(f,U)]) \, g(p) + f(p) \, D_{2} ([(g,V)])\\
-			&= (D_{1} + D_{2}) \{ ([(f,U)]) \, g(p) + f(p) \, ([(g,V)]) \}
+			(D_{v} + D_{w}) (\alpha [(f,U)] + \beta [(g,V)]) &= D_{v} (\alpha [(f,U)] + \beta [(g,V)]) +\\
+			&+ \, D_{w} (\alpha [(f,U)] + \beta [(g,V)])\\
+			&= \alpha D_{v} ([(f,U)]) + \beta D_{v} ([(g,V)]) +\\
+			&+ \,\alpha D_{w} ([(f,U)]) + \beta D_{w} ([(g,V)])\\
+			&= \alpha (D_{v} + D_{w}) ([(f,U)]) + \beta (D_{v} + D_{w}) ([(g,V)])
 		\end{split}
 	\end{align}
+
+	per $ \forall D_{v}, D_{w} \in \der_{p}(C_{p}^{\infty}(\R^{n})) $ e $ \alpha,\beta \in \R $.\\
+	Per la regola di Leibniz:
+	
+	\begin{align}
+		\begin{split}
+			(D_{v} + D_{w}) ([(f,U)] \cdot [(g,V)]) &= D_{v} ([(f,U)] \cdot [(g,V)]) + D_{w} ([(f,U)] \cdot [(g,V)])\\
+			&= D_{v} ([(f,U)]) \, g(p) + f(p) \, D_{v} ([(g,V)]) +\\
+			&+ \, D_{w} ([(f,U)]) \, g(p) + f(p) \, D_{w} ([(g,V)])\\
+			&= (D_{v} + D_{w}) ([(f,U)]) \, g(p) + f(p) \, (D_{v} + D_{w}) ([(g,V)])
+		\end{split}
+	\end{align}
+
+	per $ \forall D_{v}, D_{w} \in \der_{p}(C_{p}^{\infty}(\R^{n})) $.
 \end{proof}
 
-A questo punto, bisogna dimostrare che $ \phi $ sia $ \R $-lineare, iniettiva\footnote{%
-	Un'applicazione $ f $ tra due insiemi $ A $ e $ B $ è \textit{iniettiva} se
-	\begin{equation}
-		\forall a_{1},a_{2} \in A \mid a_{1} \neq a_{2} \implies f(a_{1}) \neq f(a_{2})
-	\end{equation}%
-} e suriettiva\footnote{%
-	Un'applicazione $ f $ tra due insiemi $ A $ e $ B $ è \textit{suriettiva} se
-	\begin{equation}
-		\forall b \in B, \, \E a \in A \mid f(a) = b
-	\end{equation}%
-} perché venga considerata un isomorfismo.
-
-\begin{proof}[Dimostrazione ($ \R $-linearità)]
-	Sia $ [(f,U)] \in C_{p}^{\infty}(\R^{n}) $, possiamo scrivere
+\begin{proof}
+	Per dimostrare che $ \phi $ sia un isomorfismo è necessario dimostrare che $ \phi $ sia $ \R $-lineare, iniettiva\footnote{%
+		Un'applicazione $ f $ tra due insiemi $ A $ e $ B $ è \textit{iniettiva} se
+		\begin{equation}
+			\forall a_{1},a_{2} \in A \mid a_{1} \neq a_{2} \implies f(a_{1}) \neq f(a_{2})
+		\end{equation}%
+	} e suriettiva\footnote{%
+		Un'applicazione $ f $ tra due insiemi $ A $ e $ B $ è \textit{suriettiva} se
+		\begin{equation}
+			\forall b \in B, \, \E a \in A \mid f(a) = b
+		\end{equation}%
+	}.\\
+	Per l'$ \R $-linearità, sia $ [(f,U)] \in C_{p}^{\infty}(\R^{n}) $, possiamo scrivere
 	
 	\begin{align}
 		\begin{split}
 			D_{\alpha v + \beta w} ([(f,U)]) &= D_{\alpha v + \beta w} (f)\\
-			&= \sum_{j=1}^{n} \dfrac{\partial f}{\partial x^{j}} (p) \, (\alpha v^{j} + \beta w^{j})\\
-			&= \alpha \sum_{j=1}^{n} \dfrac{\partial f}{\partial x^{j}} (p) \, v^{j} + \beta \sum_{j=1}^{n} \dfrac{\partial f}{\partial x^{j}} (p) \, w^{j}\\
+			&= \sum_{j=1}^{n} \pdv{f}{x^{j}} \, (p) \, (\alpha v^{j} + \beta w^{j})\\
+			&= \alpha \sum_{j=1}^{n} \pdv{f}{x^{j}} \, (p) \, v^{j} + \beta \sum_{j=1}^{n} \pdv{f}{x^{j}} \, (p) \, w^{j}\\
 			&= \alpha D_{v} f + \beta D_{w} f\\
 			&= \alpha D_{v} ([(f,U)]) + \beta D_{w} ([(f,U)])
 		\end{split}
 	\end{align}
 
-	con $ \alpha,\beta \in \R $ e $ v,w \in T_{p}(\R^{n}) $.\\
-	Da questo si ottiene
+	per $ \forall \alpha, \beta \in \R $ e $ v, w \in T_{p} (\R^{n}) $.\\
+	Da questo si ottiene che l'applicazione $ \phi $ è $ \R $-lineare:
 	
 	\begin{align}
 		\begin{split}
@@ -806,14 +828,13 @@ A questo punto, bisogna dimostrare che $ \phi $ sia $ \R $-lineare, iniettiva\fo
 			&= \alpha \phi (v) + \beta \phi (w)
 		\end{split}
 	\end{align}
-\end{proof}
 
-\begin{proof}[Dimostrazione (iniettività)]
-	Consideriamo il \textit{kernel}\footnote{%
-	Il \textit{kernel} o nucleo di un'applicazione, indicato con $ \ker $, è l'insieme di tutti e soli gli elementi del dominio che hanno come immagine lo $ 0 $ del codominio, i.e. nel caso considerato
+	per $ \forall \alpha, \beta \in \R $ e $ v, w \in T_{p} (\R^{n}) $.\\
+	Per l'iniettività, consideriamo il \textit{kernel}\footnote{%
+	Il \textit{kernel} o nucleo di un'applicazione, indicato con $ \ker $, è l'insieme di tutti e soli gli elementi del dominio che hanno come immagine lo $ 0 $ del codominio. Nel caso considerato ora
 	
 	\begin{equation}
-		\ker \phi = \left\{ v \in T_{p}(\R^{n}) \st \phi(v) \equiv D_{v} = 0 \right\}
+		\ker \phi = \left\{ v \in T_{p}(\R^{n}) \st \phi(v) \equiv D_{v} = 0 \in \der_{p}(C_{p}^{\infty}(\R^{n})) \right\}
 	\end{equation}%
 	} di $ \phi $: se questo contiene solo l'elemento $ 0 $, inteso come
 	
@@ -824,9 +845,10 @@ A questo punto, bisogna dimostrare che $ \phi $ sia $ \R $-lineare, iniettiva\fo
 		\end{split}
 	\end{align}
 
-	per $ \forall [(f,U)] \in C_{p}^{\infty}(\R^{n}) $.\\
-	Se quindi $ \ker \phi = \{\} $ allora $ \phi $ è iniettiva.\\
-	Siccome $ 0 $ associa un qualunque rappresentante della classe $ [(f,U)] $ sempre a $ 0 \in \R $, possiamo scegliere il germe $ [(x^{j},\R)] $, i.e.
+	i.e. $ \ker \phi = \{0\} $, allora $ \phi $ è iniettiva\footnote{
+		Questo vale perché $ \phi $ è lineare.%
+	}.\\
+	Siccome $ 0 $ associa un qualunque germe liscio $ [(f,U)] $ sempre a $ 0 \in \R $, possiamo scegliere l'applicazione
 	
 	\begin{align}
 		\begin{split}
@@ -835,108 +857,110 @@ A questo punto, bisogna dimostrare che $ \phi $ sia $ \R $-lineare, iniettiva\fo
 		\end{split}
 	\end{align}
 
-	per $ \forall j=1,\dots,n $, la quale è una proiezione liscia dunque $ x^{j} \in C_{p}^{\infty}(\R^{n}) $. A questo punto
+	per $ \forall j=1,\dots,n $, la quale è una proiezione liscia dunque il germe che la contiene è liscio, i.e. $ [(x^{j},\R)] \in C_{p}^{\infty}(\R^{n}) $. A questo punto
 	
 	\begin{align}
 		\begin{split}
 			0([(x^{j},\R)]) &= D_{v} ([(x^{j},\R)])\\
 			&= D_{v} (x^{j})\\
-			&= \sum_{i=1}^{n} \dfrac{\partial x^{j}}{\partial x^{i}} (p) \, v^{i}\\
+			&= \sum_{i=1}^{n} \pdv{x^{j}}{x^{i}} \, (p) \, v^{i}\\
 			&= \sum_{i=1}^{n} \delta^{ij} \, v^{i}\\
 			&= v^{j}
 		\end{split}
 	\end{align}
 
-	perciò $ v^{j} = 0 $ per $ \forall j=1,\dots,n $ dunque se $ v \in \ker \phi \implies v = 0 \in T_{p}(\R^{n}) $.
-\end{proof}
-
-La suriettività implica che se si fissa una qualunque derivazione puntuale esiste uno spazio tangente che mandato tramite $ \phi $ dà quella derivazione. In simboli
-
-\begin{equation}
-	\forall D \in \der_{p} (C_{p}^{\infty}(\R^{n})), \, \E v \in T_{p}(\R^{n}) \, \mid \, \phi(v) = D
-\end{equation}
-
-dove $ \phi = D_{v} $.\\
-Dobbiamo quindi trovare un $ v $ tale che faccia coincidere $ D \equiv D_{v} $.\\
-Prima di farlo, enunciamo il seguente lemma:
-
-\begin{lemma}[Derivata di costante]
-	Sia la funzione
-	
-	\begin{align}
-		\begin{split}
-			c : \R^{n} &\to \R^{n}\\
-			x &\mapsto c
-		\end{split}
-	\end{align}
-
-	e sia $ D \in \der_{p} (C_{p}^{\infty}(\R^{n})) $. Allora
+	perciò
 	
 	\begin{equation}
-		D([(c,\R^{n})]) = 0
+		\begin{cases}
+			0([(f,U)]) = 0 \in \R, & \forall [(f,U)] \in C_{p}^{\infty}(\R^{n})\\\\
+			0([(x^{j},\R)]) = v^{j}
+		\end{cases}%
+		 \implies v^{j} = 0 \qcomma \forall j=1,\dots,n
 	\end{equation}
-\end{lemma}
+	
+	da cui
+	
+	\begin{equation}
+		v \in \ker \phi \iff v = 0 \in T_{p}(\R^{n})
+	\end{equation}
 
-\begin{proof}[Dimostrazione (lemma)]
-	\begin{align}
-		\begin{split}
-			D([(c,\R^{n})]) &= D([(1 c,\R^{n})])\\
-			&= c \, D([(1,\R^{n})])\\
-			&= c \, D([(1 \cdot 1,\R^{n})])\\
-			&= c \, \{D([(1,\R^{n})]) \, 1 + 1 \, D([(1,\R^{n})])\}\\
-			&= 2 c \, D([(1,\R^{n})])\\
-			&= \, 0
-		\end{split}
-	\end{align}
-\end{proof}
+	La suriettività implica che se si fissa una qualunque derivazione puntuale esiste un vettore nello spazio tangente che mandato tramite $ \phi $ dà quella derivazione. In simboli
 
-A questo punto possiamo dimostrare la suriettività di $ \phi $:
+	\begin{equation}
+		\forall D \in \der_{p} (C_{p}^{\infty}(\R^{n})), \, \E v \in T_{p}(\R^{n}) \, \mid \, \phi(v) = D
+	\end{equation}
+	
+	dove $ \phi = D_{v} $, dunque dobbiamo trovare un $ v $ tale che faccia coincidere $ D = D_{v} $.\\
+	Prima di farlo, enunciamo il seguente lemma:
 
-\begin{proof}[Dimostrazione (suriettività)]
-	Due funzioni sono uguali se e solo se coincidono per ogni punto del dominio, i.e.
+	\begin{lemma}[Derivazione di costante]
+		Siano $ D \in \der_{p} (C_{p}^{\infty}(\R^{n})) $ e la funzione costante
+		
+		\begin{align}
+			\begin{split}
+				c : \R^{n} &\to \R^{n}\\
+				x &\mapsto c
+			\end{split}
+		\end{align}
+	
+		allora $ D([(c,\R^{n})]) = 0 $.
+	\end{lemma}
+
+	\begin{proof}[Dimostrazione (lemma)]
+		\begin{align}
+			\begin{split}
+				D([(c,\R^{n})]) &= D([(1 c,\R^{n})])\\
+				&= c \, D([(1,\R^{n})])\\
+				&= c \, D([(1 \cdot 1,\R^{n})])\\
+				&= c \, ( D([(1,\R^{n})]) \, 1 + 1 \, D([(1,\R^{n})]) )\\
+				&= 2 c \, D([(1,\R^{n})])\\
+				&= \, 0
+			\end{split}
+		\end{align}
+	\end{proof}
+
+	A questo punto, due applicazioni sono uguali se e solo se coincidono per ogni punto del dominio, i.e.
 	
 	\begin{equation}
 		D_{v} = D \iff D_{v}([(f,U)]) = D([(f,U)]), \quad \forall ([(f,U)]) \in (C_{p}^{\infty}(\R^{n}))
 	\end{equation}
 
-	Per dimostrarlo, possiamo scegliere un rappresentante arbitrario della classe $ [(f,U)] $ in quanto $ D_{v}([(f,U)]) = D_{v} f $ e possiamo prendere il dominio $ U $ stellato rispetto a $ p $, perciò per il teorema di Taylor con resto
+	Prendendo un dominio $ U $ stellato rispetto al punto $ p $, per il teorema di Taylor con resto
 	
 	\begin{equation}
-		f(x) = f(p) + \sum_{i=1}^{n} (x^{i}-p^{i}) \, g_{i}(x)
+		f(x) = f(p) + \sum_{i=1}^{n} (x^{i}-p^{i}) \, g_{i}(x) \qcomma \forall x \in U
 	\end{equation}
 
-	per $ \forall x \in U $ e $ \forall g_{i} \in C^{\infty}(U) $ con
+	con
 	
 	\begin{equation}
-		g_{i}(p) = \dfrac{\partial f}{\partial x^{i}} (p), \quad i=1,\dots,n
+		\left. g_{i} \in C^{\infty}(U) \st g_{i}(p) = \dfrac{\partial f}{\partial x^{i}} (p) \right., \quad i=1,\dots,n
 	\end{equation}
 
-	Sia $ v = [v^{1},\dots,v^{n}] $ definito come $ v^{j} = D([(x^{j},\R)]) $ per $ \forall j=1,\dots,n $.\\
-	Ora applichiamo $ D $ a $ f $
+	Sia $ v = [v^{1},\dots,v^{n}] \in T_{p (\R^{n})} $ definito come $ v^{j} = D([(x^{j},\R)]) $ per $ j=1,\dots,n $.\\
+	Ora applichiamo $ D $ a un qualsiasi germe liscio $ [(f,U)] $
 	
 	\begin{align}
 		\begin{split}
-			D ([(f,U)]) &= D ([(f(p),\R^{n})]) + D \left(\left[\left( \sum_{i=1}^{n} (x^{i}-p^{i}) \, g_{i}(x) , U \right)\right]\right)\\
-			&= D \left(\left[\left( \sum_{i=1}^{n} (x^{i}-p^{i}) \, g_{i}(x) , U \right)\right]\right)\\
+			D ([(f,U)]) &= \cancelto{0}{D ([(f(p),\R^{n})])} + D \left(\left[\left( \sum_{i=1}^{n} (x^{i}-p^{i}) \, g_{i}(x) , U \right)\right]\right)\\
 			&= \sum_{i=1}^{n} D ([( (x^{i}-p^{i}) \, g_{i}(x) , U )])\\
-			&= \sum_{i=1}^{n} \left\{ D ([( (x^{i}-p^{i}), U )]) \, g_{i}(p) + (p^{i}-p^{i}) \, D ([( g_{i}(x), U )]) \right\}\\
-			&= \sum_{i=1}^{n} D ([( (x^{i}-p^{i}), U )]) \, g_{i}(p)\\
-			&= \sum_{i=1}^{n} \left\{ D ([( x^{i}, U )]) - D ([( p^{i}, U )]) \right\} g_{i}(p)\\
-			&= \sum_{i=1}^{n} D ([( x^{i}, U )]) \, g_{i}(p)\\
-			&= \sum_{i=1}^{n} D ([( x^{i}, U )]) \, \dfrac{\partial f}{\partial x^{i}} (p)\\
-			&= \sum_{i=1}^{n} \dfrac{\partial f}{\partial x^{i}} (p) \, v^{i}\\
-			&= D_{v} f\\
+			&= \sum_{i=1}^{n} ( D ([( (x^{i}-p^{i}), U )]) \, g_{i}(p) + \cancelto{0}{(p^{i}-p^{i})} \, D ([( g_{i}(x), U )]) )\\
+			&= \sum_{i=1}^{n} ( D ([( x^{i}, U )]) - \cancelto{0}{D ([( p^{i}, U )])} ) g_{i}(p)\\
+			&= \sum_{i=1}^{n} D ([( x^{i}, U )]) \, \pdv{f}{x^{i}} \, (p)\\
+			&= \sum_{i=1}^{n} \pdv{f}{x^{i}} \, (p) \, v^{i}\\
+			&= D_{v} (f)\\
 			&= D_{v} ([(f,U)])
 		\end{split}
 	\end{align}
 
-	per $ \forall [(f,U)] \in C_{p}^{\infty}(\R^{n}) $.
+	dunque $ D = D_{f} $.
 \end{proof}
 
-Date queste proprietà di $ \phi $, questa applicazione è un omeomorfismo tra $ T_{p}(\R^{n}) $ e $ \der_{p}(C_{p}^{\infty}(\R^{n})) $, i.e.
+Date queste proprietà di $ \phi $, questa applicazione è un isomorfismo tra $ T_{p}(\R^{n}) $ e $ \der_{p}(C_{p}^{\infty}(\R^{n})) $, i.e.
 
 \begin{equation}
-	T_{p}(\R^{n}) \simeq \der_{p}(C_{p}^{\infty}(\R^{n}))
+	T_{p}(\R^{n}) \stackrel{iso.}{\simeq} \der_{p}(C_{p}^{\infty}(\R^{n}))
 \end{equation}
 
 \begin{corollary}
