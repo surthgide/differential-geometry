@@ -1,5 +1,7 @@
 \chapter{Esercizi "Geometria differenziale negli spazi euclidei"}
 
+\setcounter{tocdepth}{2}
+
 \tocless\section{}\label{es1-1}
 
 \begin{tcolorbox}
@@ -282,36 +284,129 @@ può essere verificata tramite i seguenti passaggi:
 	Dimostrare che l'insieme $ \der_{p}(C_{p}^{\infty}(\R^{n})) $ delle derivazioni puntuali con le operazioni definite negli appunti è uno spazio vettoriale su $ \R $.
 \end{tcolorbox}
 
-Per dimostrare che $ \der_{p}(C_{p}^{\infty}(\R^{n})) $ sia uno spazio vettoriale sui reali è necessario che vengano rispettate le seguenti relazioni:
+Per dimostrare che $ \der_{p}(C_{p}^{\infty}(\R^{n})) $ sia uno spazio vettoriale su $ \R $ è necessario che le operazioni di somma tra derivazioni e moltiplicazione per scalare rispettino i seguenti 8 assiomi:
 
-\begin{align}
-	\begin{split}
-		(D_{1} + D_{2}) ([(f,U)]) &= D_{1}([(f,U)]) + D_{2}([(f,U)])\\
-		(\lambda D) ([(f,U)]) &= \lambda D ([(f,U)])
-	\end{split}
-\end{align}
+\begin{equation}
+	\begin{cases}
+		D_{v} + (D_{w} + D_{x}) = (D_{v} + D_{w}) + D_{x} & \text{ 1. associatività (somma) }\\
+		%
+		D_{v} + D_{w} = D_{w} + D_{v} & \text{ 2. commutatività (somma) }\\
+		%
+		\exists 0 \in \der_{p}(C_{p}^{\infty}(\R^{n})) \, \mid \, D_{v} + 0 = D_{v} & \text{ 3. elemento neutro (somma) }\\
+		%
+		\exists - D_{v} \in \der_{p}(C_{p}^{\infty}(\R^{n})) \, \mid \, D_{v} + (- D_{v}) = 0 & \text{ 4. inverso (somma) }\\
+		%
+		\alpha (\beta D_{v}) = (\alpha \beta) D_{v} & \text{ 5. compatibilità (moltiplicazione) }\\
+		%
+		\exists 1 \in \R \, \mid \, 1 D_{v} = D_{v} & \text{ 6. elemento neutro (moltiplicazione) }\\
+		%
+		(\alpha + \beta) D_{v} = \alpha D_{v} + \beta D_{v} & \text{ 7. distributività (somma vettoriale) }\\
+		%
+		\alpha (D_{v} + D_{w}) = \alpha D_{v} + \alpha D_{w} & \text{ 8. distributività (somma scalare) }
+	\end{cases}
+\end{equation}
 
-Per la prima:
+per $ \forall D_{v}, D_{w}, D_{x} \in \der_{p}(C_{p}^{\infty}(\R^{n})) $ e $ \forall \alpha, \beta \in \R $.\\
+Per dimostrare queste proprietà consideriamo un qualunque $ [(f,U)] \in C_{p}^{\infty}(\R^{n}) $ e applichiamo a questo le derivazioni:
 
-\begin{align}
-	\begin{split}
-		(D_{v} + D_{w}) ([(f,U)]) &= (D_{v} + D_{w}) (f)\\
-		&= \left( \sum_{i=1}^{n} \eval{ \pdv{x^{i}} }_{p} v^{i} + \sum_{i=1}^{n} \eval{ \pdv{x^{i}} }_{p} w^{i} \right) (f)\\
-		&= \sum_{i=1}^{n} \pdv{f}{x^{i}} (p) \, v^{i} + \sum_{i=1}^{n} \pdv{f}{x^{i}} (p) \, w^{i}\\
-		&= D_{v}([(f,U)]) + D_{w}([(f,U)])
-	\end{split}
-\end{align}
+\begin{enumerate}
+	\item Associatività (somma)
+	
+		\begin{align}
+			\begin{split}
+				( D_{v} + (D_{w} + D_{x}) ) ([(f,U)]) &= D_{v} ([(f,U)]) + (D_{w} + D_{x}) ([(f,U)])\\
+				&= D_{v} ([(f,U)]) + D_{w} ([(f,U)]) + D_{x} ([(f,U)])\\
+				&= (D_{v} + D_{w}) ([(f,U)]) + D_{x} ([(f,U)])\\
+				&= ( (D_{v} + D_{w}) + D_{x} ) ([(f,U)])
+			\end{split}
+		\end{align}
+	
+	\item Commutatività (somma)
+	
+		\begin{align}
+			\begin{split}
+				(D_{v} + D_{w}) ([(f,U)]) &= D_{v} ([(f,U)]) + D_{w} ([(f,U)])\\
+				&= D_{w} ([(f,U)]) + D_{v} ([(f,U)])\\
+				&= (D_{w} + D_{v}) ([(f,U)])
+			\end{split}
+		\end{align}
+	
+		dove nel secondo passaggio abbiamo usato la commutatività della somma in $ \R $
+	
+	\item Elemento neutro (somma)
+	
+		\map{0}
+			{C_{p}^{\infty}(\R^{n})}{\R}
+			{[(f,U)]}{0}
+			
+		per $ \forall [(f,U)] \in C_{p}^{\infty}(\R^{n}) $, dunque
+	
+		\begin{align}
+			\begin{split}
+				(D_{v} + 0) ([(f,U)]) &= D_{v} ([(f,U)]) + 0 ([(f,U)])\\
+				&= D_{v} ([(f,U)]) + 0\\
+				&= D_{v} ([(f,U)])
+			\end{split}
+		\end{align}
+	
+	\item Inverso (somma)
+	
+		\map{- D_{v}}
+			{C_{p}^{\infty}(\R^{n})}{\R}
+			{[(f,U)]}{- \sum_{i=1}^{n} \pdv{f}{x^{i}} \, (p) \, v^{i}}
+			
+		dunque
+	
+		\begin{align}
+			\begin{split}
+				(D_{v} + (- D_{v})) ([(f,U)]) &= D_{v} ([(f,U)]) + (- D_{v}) ([(f,U)])\\
+				&= \sum_{i=1}^{n} \pdv{f}{x^{i}} \, (p) \, v^{i} + \left( - \sum_{i=1}^{n} \pdv{f}{x^{i}} \, (p) \, v^{i} \right)\\
+				&= 0
+			\end{split}
+		\end{align}
+	
+	\item Compatibilità (moltiplicazione)
+	
+		\begin{align}
+			\begin{split}
+				(\alpha (\beta D_{v})) ([(f,U)]) &= \alpha (\beta D_{v}) ([(f,U)])\\
+				&= \alpha D_{v} ([(\beta f,U)])\\
+				&= \alpha \beta D_{v} ([(f,U)])\\
+				&= (\alpha \beta) D_{v} ([(f,U)])
+			\end{split}
+		\end{align}
+	
+	\item Elemento neutro (moltiplicazione)
+	
+		\begin{align}
+			\begin{split}
+				(1 D_{v}) ([(f,U)]) &= D_{v} ([(1 f,U)])\\
+				&= D_{v} ([(f,U)])
+			\end{split}
+		\end{align}
+	
+	\item Distributività (somma vettoriale)
+	
+		\begin{align}
+			\begin{split}
+				(\alpha + \beta) D_{v} ([(f,U)]) &= D_{v} ([((\alpha + \beta) f,U)])\\
+				&= D_{v} ([(\alpha f + \beta f,U)])\\
+				&= \alpha D_{v} ([(f,U)]) + \beta D_{v} ([(f,U)])\\
+			\end{split}
+		\end{align}
+	
+	\item Distributività (somma scalare)
+	
+		\begin{align}
+			\begin{split}
+				\alpha (D_{v} + D_{w}) ([(f,U)]) &= (D_{v} + D_{w}) ([(\alpha f,U)])\\
+				&= D_{v} ([(\alpha f,U)]) + D_{w} ([(\alpha f,U)])\\
+				&= \alpha D_{v} ([(f,U)]) + \alpha D_{w} ([(f,U)])
+			\end{split}
+		\end{align}
+\end{enumerate}
 
-Per la seconda:
-
-\begin{align}
-	\begin{split}
-		(\lambda D) ([(f,U)])  &= (\lambda D) (f)\\
-		&= \left( \lambda \sum_{i=1}^{n} \eval{ \pdv{x^{i}} }_{p} v^{i} \right) (f)\\
-		&= \lambda \left( \sum_{i=1}^{n} \pdv{f}{x^{i}} (p) \, v^{i} \right)\\
-		&= \lambda D ([(f,U)])
-	\end{split}
-\end{align}
+Tutte queste proprietà sono valide per $ \forall D_{v}, D_{w}, D_{x} \in \der_{p}(C_{p}^{\infty}(\R^{n})) $ e $ \forall \alpha, \beta \in \R $
 
 \tocless\section{}\label{es1-9}
 
