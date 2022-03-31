@@ -464,7 +464,7 @@ Preso un punto $ p \in \R^{n} $, lo \textit{spazio tangente} in quel punto viene
 } di tutti i vettori che escono dal punto stesso. Essendo $ T_{p}(\R^{n}) \simeq \R^{n} $, un elemento $ v \in T_{p}(\R^{n}) $ è dunque un \textit{vettore riga o colonna}
 
 \begin{equation}
-	\bmqty{ v^{1} \\ \vdots \\ v^{n} } \qquad \lor \qquad \bmqty{ v^{1} & \cdots & v^{n} }
+	\bmqty{ v^{1} \\ \vdots \\ v^{n} } \qquad \lor \qquad [v^{1}, \cdots, v^{n}]
 \end{equation}
 
 dove le $ v^{i} $ sono le componenti del vettore nella base canonica, i.e.
@@ -487,7 +487,7 @@ Definiamo la \textit{derivata direzionale} di $ f $ rispetto a $ v $ come
 
 \begin{align}
 	\begin{split}
-		D_{v} f \doteq& \, \lim_{t \to 0} \dfrac{f(c(t)) - f(p)}{t}\\
+		D_{v} f &\doteq \lim_{t \to 0} \dfrac{f(c(t)) - f(p)}{t}\\
 		&= \left. \dv{t} f(c(t)) \right|_{t=0}\\
 		&= \sum_{i=1}^{n} \pdv{f}{x^{i}} \, (p) \left( \dv{t} c(t) \right)^{i}\\
 		&= \sum_{i=1}^{n} \pdv{f}{x^{i}} \, (p) \, v^{i}
@@ -714,17 +714,14 @@ Indichiamo dunque l'insieme delle derivazioni puntuali di $ C_{p}^{\infty}(\R^{n
 
 Definiamo l'applicazione
 
-\begin{align}
-	\begin{split}
-		\phi : T_{p}(\R^{n}) &\to \der_{p}(C_{p}^{\infty}(\R^{n}))\\
-		v &\mapsto D_{v}
-	\end{split}
-\end{align}
+\map{\phi}
+	{T_{p}(\R^{n})}{\der_{p}(C_{p}^{\infty}(\R^{n}))}
+	{v}{D_{v}}
 
 questa associa il vettore $ v = [v^{1},\dots,v^{n}] \in T_{p}(\R^{n}) $ con $ p \in \R^{n} $ alla derivazione puntuale $ D_{v} $, la quale è a sua volta un'applicazione che associa la classe di equivalenza di germi di funzioni $ [(f,U)] $ alla derivata direzionale di $ f $ rispetto a $ v $, i.e.
 
 \begin{align}
-	D_{v} f = \sum_{j=1}^{n} \dfrac{\partial f}{\partial x^{j}} (p) \, v^{j} \in \R
+	D_{v} f = \sum_{j=1}^{n} \pdv{f}{x^{j}} \, (p) \, v^{j} \in \R
 \end{align}
 
 Possiamo usare lo stesso simbolo, i.e. $ D_{v} ([(f,U)]) = D_{v} f $, perché questa relazione vale per qualsiasi rappresentante della classe.\\
@@ -772,9 +769,9 @@ Consideriamo ora la seguente preposizione:
 	\begin{align}
 		\begin{split}
 			(D_{v} + D_{w}) (\alpha [(f,U)] + \beta [(g,V)]) &= D_{v} (\alpha [(f,U)] + \beta [(g,V)]) +\\
-			&+ \, D_{w} (\alpha [(f,U)] + \beta [(g,V)])\\
+			& \hspace{15px} + D_{w} (\alpha [(f,U)] + \beta [(g,V)])\\
 			&= \alpha D_{v} ([(f,U)]) + \beta D_{v} ([(g,V)]) +\\
-			&+ \,\alpha D_{w} ([(f,U)]) + \beta D_{w} ([(g,V)])\\
+			& \hspace{15px} + \,\alpha D_{w} ([(f,U)]) + \beta D_{w} ([(g,V)])\\
 			&= \alpha (D_{v} + D_{w}) ([(f,U)]) + \beta (D_{v} + D_{w}) ([(g,V)])
 		\end{split}
 	\end{align}
@@ -786,7 +783,7 @@ Consideriamo ora la seguente preposizione:
 		\begin{split}
 			(D_{v} + D_{w}) ([(f,U)] \cdot [(g,V)]) &= D_{v} ([(f,U)] \cdot [(g,V)]) + D_{w} ([(f,U)] \cdot [(g,V)])\\
 			&= D_{v} ([(f,U)]) \, g(p) + f(p) \, D_{v} ([(g,V)]) +\\
-			&+ \, D_{w} ([(f,U)]) \, g(p) + f(p) \, D_{w} ([(g,V)])\\
+			& \hspace{15px} + D_{w} ([(f,U)]) \, g(p) + f(p) \, D_{w} ([(g,V)])\\
 			&= (D_{v} + D_{w}) ([(f,U)]) \, g(p) + f(p) \, (D_{v} + D_{w}) ([(g,V)])
 		\end{split}
 	\end{align}
@@ -838,24 +835,18 @@ Consideriamo ora la seguente preposizione:
 	\end{equation}%
 	} di $ \phi $: se questo contiene solo l'elemento $ 0 $, inteso come
 	
-	\begin{align}
-		\begin{split}
-			0 : C_{p}^{\infty}(\R^{n}) &\to \R\\
-			[(f,U)] &\mapsto 0
-		\end{split}
-	\end{align}
+	\map{0}
+		{C_{p}^{\infty}(\R^{n})}{\R}
+		{[(f,U)]}{0}
 
 	i.e. $ \ker \phi = \{0\} $, allora $ \phi $ è iniettiva\footnote{
 		Questo vale perché $ \phi $ è lineare.%
 	}.\\
 	Siccome $ 0 $ associa un qualunque germe liscio $ [(f,U)] $ sempre a $ 0 \in \R $, possiamo scegliere l'applicazione
 	
-	\begin{align}
-		\begin{split}
-			x^{j} : \R^{n} &\to \R\\
-			(x^{1},\dots,x^{n}) &\mapsto x^{j}
-		\end{split}
-	\end{align}
+	\map{x^{j}}
+		{\R^{n}}{\R}
+		{(x^{1}, \dots, x^{n})}{x^{j}}
 
 	per $ \forall j=1,\dots,n $, la quale è una proiezione liscia dunque il germe che la contiene è liscio, i.e. $ [(x^{j},\R)] \in C_{p}^{\infty}(\R^{n}) $. A questo punto
 	
@@ -897,12 +888,9 @@ Consideriamo ora la seguente preposizione:
 	\begin{lemma}[Derivazione di costante]
 		Siano $ D \in \der_{p} (C_{p}^{\infty}(\R^{n})) $ e la funzione costante
 		
-		\begin{align}
-			\begin{split}
-				c : \R^{n} &\to \R^{n}\\
-				x &\mapsto c
-			\end{split}
-		\end{align}
+		\map{c}
+			{\R^{n}}{\R^{n}}
+			{x}{c}
 	
 		allora $ D([(c,\R^{n})]) = 0 $.
 	\end{lemma}
@@ -915,7 +903,7 @@ Consideriamo ora la seguente preposizione:
 				&= c \, D([(1 \cdot 1,\R^{n})])\\
 				&= c \, ( D([(1,\R^{n})]) \, 1 + 1 \, D([(1,\R^{n})]) )\\
 				&= 2 c \, D([(1,\R^{n})])\\
-				&= \, 0
+				&= 0
 			\end{split}
 		\end{align}
 	\end{proof}
@@ -1014,7 +1002,7 @@ forma una base per lo spazio $ \der_{p}(C_{p}^{\infty}(\R^{n})) $.
 
 \section{Campi di vettori su aperti di $ \R^{n} $}
 
-Sia un aperto $ U \in \R^{n} $ con $ n \geqslant 1 $, un \textit{campo di vettori} su $ U $ è un'applicazione
+Sia un aperto $ U \subset \R^{n} $ con $ n \geqslant 1 $, un \textit{campo di vettori} su $ U $ è un'applicazione
 
 \map{X}
 	{U}{\bigsqcup_{p \in U} T_{p}(\R^{n})}
@@ -1026,62 +1014,56 @@ dove il codominio è l'\textit{unione disgiunta}\footnote{%
 Un elemento del campo di vettori può essere scritto in funzione della base canonica di $ T_{p}(\R^{n}) $
 
 \begin{equation}
-	X_{p} = \sum_{i=1}^{n} a^{i}(p) \, \left. \dfrac{\partial}{\partial x^{i}} \right|_{p}
+	X_{p} = \sum_{i=1}^{n} a^{i}(p) \eval{ \pdv{x^{i}} }_{p}
 \end{equation}
 
 dove $ a^{i}(p) \in \R $ con $ i=1,\dots,n $. In modo naturale, l'elemento $ X_{p} $ si identifica con l'$ n $-upla $ X_{p} = [a^{1}(p),\dots,a^{n}(p)] $.\\
 Il campo di vettori $ X $ (senza la valutazione in un punto $ p $) si scrive come
 
 \begin{equation}
-	X = \sum_{i=1}^{n} a^{i} \, \dfrac{\partial}{\partial x^{i}}
+	X = \sum_{i=1}^{n} a^{i} \pdv{x^{i}}
 \end{equation}
 
 dove ora $ a^{i} $ è una funzione $ a^{i} : U \to \R $.
 
 \subsection{Campi di vettori lisci}
 
-Un campo di vettori $ X $ è liscia (liscio o differenziabile) se, scritto nella forma
+Un campo di vettori
 
 \begin{equation}
-	X = \sum_{i=1}^{n} a^{i} \, \dfrac{\partial}{\partial x^{i}}
+	X = \sum_{i=1}^{n} a^{i} \pdv{x^{i}}
 \end{equation}
 
-le funzioni $ a^{i} $ sono lisce, i.e. $ a^{i} \in C^{\infty}(U) $ con $ \forall i=1,\dots,n $.\\
+è $ C^{\infty} (U) $ (liscio o differenziabile) se le funzioni $ a^{i} $ sono lisce, i.e. $ a^{i} \in C^{\infty}(U) $ con $ \forall i=1,\dots,n $.\\
 L'insieme dei campi di vettori che rispettano questa prescrizione è chiamato $ \chi(U) $.
 
 \subsubsection{\textit{Esempi}}
 
 \paragraph{1.}
 
-\begin{align}
-	\begin{split}
-		X : U = \R^{2} \setminus \{(0,0)\} &\to T_{(x,y)}(\R^{2})\\
-		(x,y) &\mapsto X = - \dfrac{x}{\sqrt{x^{2}+y^{2}}} \dfrac{\partial}{\partial x} - \dfrac{y}{\sqrt{x^{2}+y^{2}}} \dfrac{\partial}{\partial y}
-	\end{split}
-\end{align}
+\map{X}
+	{\R^{2} \setminus \{(0,0)\}}{T_{(x,y)}(\R^{2})}
+	{(x,y)}{%
+			- \dfrac{x}{\sqrt{x^{2}+y^{2}}} \pdv{x} - \dfrac{y}{\sqrt{x^{2}+y^{2}}} \pdv{y}\\
+			& \hspace{15px} = \left[ - \dfrac{x}{\sqrt{x^{2}+y^{2}}}, - \dfrac{y}{\sqrt{x^{2}+y^{2}}} \right]%
+			}
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.4\textwidth,keepaspectratio]{img2}
-\end{figure}
+\img{0.4}{img2}
 
 Questo campo è liscio perché qualsiasi derivata non annulla mai il denominatore in quanto l'origine non è compresa.
 
 \paragraph{2.}
 
-\begin{align}
-	\begin{split}
-		X : U = \R^{2} \setminus \{(0,0)\} &\to T_{(x,y)}(\R^{2})\\
-		(x,y) &\mapsto X = - \dfrac{y}{\sqrt{x^{2}+y^{2}}} \dfrac{\partial}{\partial x} - \dfrac{x}{\sqrt{x^{2}+y^{2}}} \dfrac{\partial}{\partial y}
-	\end{split}
-\end{align}
+\map{X}
+	{\R^{2} \setminus \{(0,0)\}}{T_{(x,y)}(\R^{2})}
+	{(x,y)}{%
+		- \dfrac{y}{\sqrt{x^{2}+y^{2}}} \pdv{x} - \dfrac{x}{\sqrt{x^{2}+y^{2}}} \pdv{y}\\
+		& \hspace{15px} = \left[ - \dfrac{y}{\sqrt{x^{2}+y^{2}}}, - \dfrac{x}{\sqrt{x^{2}+y^{2}}} \right]%
+		}
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.4\textwidth,keepaspectratio]{img3}
-\end{figure}
+\img{0.4}{img3}
 
-Questo campo è liscio perché qualsiasi derivata non annulla mai il denominatore in quanto l'origine non è compresa.
+Per lo stesso motivo dell'esempio precedente, questo campo è liscio.
 
 \subsection{Operazioni in $ \chi(U) $}
 
