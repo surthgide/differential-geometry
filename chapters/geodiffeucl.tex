@@ -974,13 +974,13 @@ Date queste proprietà di $ \phi $, questa applicazione è un isomorfismo tra $ 
 L'insieme delle $ n $-uple
 
 \begin{equation}
-	\left( \left. \dfrac{\partial}{\partial x^{1}} \right|_{p},\dots,\left. \dfrac{\partial}{\partial x^{n}} \right|_{p} \right)
+	\left( \eval{ \pdv{x^{1}} }_{p}, \dots, \eval{ \pdv{x^{n}} }_{p}  \right)
 \end{equation}
 
 i cui elementi sono definiti come
 
 \begin{equation}
-	\left. \dfrac{\partial}{\partial x^{j}} \right|_{p} ([(f,U)]) = \dfrac{\partial f}{\partial x^{j}} (p), \quad \forall p \in U
+	\eval{ \pdv{x^{j}} }_{p} ([(f,U)]) = \pdv{f}{x^{j}} \, (p) \qcomma \forall p \in U, \, j = 1, \dots, n
 \end{equation}
 
 forma una base per lo spazio $ \der_{p}(C_{p}^{\infty}(\R^{n})) $.
@@ -992,15 +992,16 @@ forma una base per lo spazio $ \der_{p}(C_{p}^{\infty}(\R^{n})) $.
 		\dim ( \der_{p}(C_{p}^{\infty}(\R^{n})) ) = n
 	\end{equation}
 		
-	se $ e_{1},\dots,e_{n} $ è la base canonica\footnote{%
-		Con $ (e_{j})_{k} = \delta_{jk} $, e.g. $ e_{3} = (0,0,1,0,\dots,0) $.%
+	se $ (e_{1},\dots,e_{n}) $ è la base canonica\footnote{%
+		Con $ (e_{j})_{k} = \delta_{jk} $, e.g. $ e_{3} = [0,0,1,0,\dots,0] $.%
 	} di $ T_{p}(\R^{n}) $, si ha che
 
 	\begin{equation}
-		\phi(e_{i}) = D_{e_{i}}, \quad \forall i=1,\dots,n
+		\phi(e_{i}) = D_{e_{i}} \qcomma \forall i=1,\dots,n
 	\end{equation}
 
-	Applicando questo a una funzione $ f $
+	i.e. un isomorfismo porta elementi di base in altrettanti elementi di base.\\
+	Applicando questo a una qualunque funzione $ f \in C^{\infty} (\R^{n}) $
 	
 	\begin{align}
 		\begin{split}
