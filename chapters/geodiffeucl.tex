@@ -1014,16 +1014,15 @@ forma una base per lo spazio $ \der_{p}(C_{p}^{\infty}(\R^{n})) $.
 
 \section{Campi di vettori su aperti di $ \R^{n} $}
 
-Prendiamo un aperto $ U \in \R^{n} $ con $ n \geqslant 1 $, un \textit{campo di vettori} su $ U $ è un'applicazione
+Sia un aperto $ U \in \R^{n} $ con $ n \geqslant 1 $, un \textit{campo di vettori} su $ U $ è un'applicazione
 
-\begin{align}
-	\begin{split}
-		X : U &\to \bigsqcup_{p \in U} T_{p}(\R^{n})\\
-		p &\mapsto X_{p}
-	\end{split}
-\end{align}
+\map{X}
+	{U}{\bigsqcup_{p \in U} T_{p}(\R^{n})}
+	{p}{X_{p}}
 
-dove il codominio è l'\textit{unione disgiunta} degli spazi di vettori tangenti in ogni punto di $ \R^{n} $; inoltre $ T_{p}(\R^{n}) = T_{p}(U) $ in quanto le due algebre seguenti coincidono $ C_{p}^{\infty}(\R^{n}) = C_{p}^{\infty}(U) $ perché i germi delle funzioni sono definiti localmente, quindi non dipendono dall'aperto considerato.\\
+dove il codominio è l'\textit{unione disgiunta}\footnote{%
+	L'unione disgiunta equivale a un'unione in cui ogni insieme ha un indice diverso, e.g. l'insieme non connesso $ (0,1) \sqcup (0,1) $ è diverso da $ (0,1) \cup (0,1) = (0,1) $.%
+} degli spazi di vettori tangenti in ogni punto di $ U $; inoltre $ T_{p}(\R^{n}) = T_{p}(U) $ in quanto le due algebre seguenti coincidono $ C_{p}^{\infty}(\R^{n}) = C_{p}^{\infty}(U) $ perché i germi delle funzioni sono definiti localmente, quindi non dipendono dall'aperto considerato.\\
 Un elemento del campo di vettori può essere scritto in funzione della base canonica di $ T_{p}(\R^{n}) $
 
 \begin{equation}
