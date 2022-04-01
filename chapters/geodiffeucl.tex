@@ -1017,7 +1017,13 @@ Un elemento del campo di vettori può essere scritto in funzione della base cano
 	X_{p} = \sum_{i=1}^{n} a^{i}(p) \eval{ \pdv{x^{i}} }_{p}
 \end{equation}
 
-dove $ a^{i}(p) \in \R $ con $ i=1,\dots,n $. In modo naturale, l'elemento $ X_{p} $ si identifica con l'$ n $-upla $ X_{p} = [a^{1}(p),\dots,a^{n}(p)] $.\\
+dove $ a^{i}(p) \in \R $ con $ i=1,\dots,n $. In modo naturale, l'elemento $ X_{p} $ si identifica con l'$ n $-upla $ X_{p} = (a^{1}(p),\dots,a^{n}(p)) $ in quanto $ T_{p}(\R^{n}) \simeq \R^{n} $.\\
+La notazione che indica che un elemento di una base genera uno spazio è la seguente:
+
+\begin{equation}
+	\expval{ \eval{ \pdv{x^{i}} }_{p} } = T_{p}(\R^{n})
+\end{equation}
+
 Il campo di vettori $ X $ (senza la valutazione in un punto $ p $) si scrive come
 
 \begin{equation}
@@ -1034,95 +1040,101 @@ Un campo di vettori
 	X = \sum_{i=1}^{n} a^{i} \pdv{x^{i}}
 \end{equation}
 
-è $ C^{\infty} (U) $ (liscio o differenziabile) se le funzioni $ a^{i} $ sono lisce, i.e. $ a^{i} \in C^{\infty}(U) $ con $ \forall i=1,\dots,n $.\\
-L'insieme dei campi di vettori che rispettano questa prescrizione è chiamato $ \chi(U) $.
+è $ C^{\infty} (U) $ (liscio o differenziabile) se le funzioni $ a^{i} $ sono lisce, i.e. $ a^{i} \in C^{\infty}(U) $ per $ \forall i=1,\dots,n $.\\
+L'insieme dei campi di vettori che rispettano questa prescrizione è chiamato $ \chi(U) $, i.e.
+
+\begin{equation}
+	\chi(U) = \left\{ X : U \to \bigsqcup_{p \in U} T_{p}(\R^{n}), \, X(p) = X_{p} = \sum_{i=1}^{n} a^{i}(p) \eval{ \pdv{x^{i}} }_{p} \st U \subset \R^{n}, \, a^{i} \in C^{\infty}(U) \right\}
+\end{equation}
 
 \subsubsection{\textit{Esempi}}
 
 \paragraph{1.}
 
-\map{X}
-	{\R^{2} \setminus \{(0,0)\}}{T_{(x,y)}(\R^{2})}
-	{(x,y)}{%
-			- \dfrac{x}{\sqrt{x^{2}+y^{2}}} \pdv{x} - \dfrac{y}{\sqrt{x^{2}+y^{2}}} \pdv{y}\\
-			& \hspace{15px} = \left[ - \dfrac{x}{\sqrt{x^{2}+y^{2}}}, - \dfrac{y}{\sqrt{x^{2}+y^{2}}} \right]%
-			}
+Il campo di vettori seguente è liscio perché qualsiasi derivata delle sue componenti non annulla mai il denominatore in quanto l'origine non è compresa
 
-\img{0.4}{img2}
-
-Questo campo è liscio perché qualsiasi derivata non annulla mai il denominatore in quanto l'origine non è compresa.
+\sbs{0.5}{%
+			\map{X}
+			{\R^{2} \setminus \{(0,0)\}}{T_{(x,y)}(\R^{2})}
+			{(x,y)}{%
+					- \dfrac{x}{\sqrt{x^{2}+y^{2}}} \pdv{x} - \dfrac{y}{\sqrt{x^{2}+y^{2}}} \pdv{y}\\
+					& \hspace{15px} = \left( - \dfrac{x}{\sqrt{x^{2}+y^{2}}}, - \dfrac{y}{\sqrt{x^{2}+y^{2}}} \right)%
+					}
+		}
+	{0.45}{%
+			\img{0.6}{img2}
+		}
 
 \paragraph{2.}
 
-\map{X}
-	{\R^{2} \setminus \{(0,0)\}}{T_{(x,y)}(\R^{2})}
-	{(x,y)}{%
-		- \dfrac{y}{\sqrt{x^{2}+y^{2}}} \pdv{x} - \dfrac{x}{\sqrt{x^{2}+y^{2}}} \pdv{y}\\
-		& \hspace{15px} = \left[ - \dfrac{y}{\sqrt{x^{2}+y^{2}}}, - \dfrac{x}{\sqrt{x^{2}+y^{2}}} \right]%
+Per lo stesso motivo dell'esempio precedente, il campo di vettori seguente è liscio
+
+\sbs{0.5}{%
+			\map{X}
+				{\R^{2} \setminus \{(0,0)\}}{T_{(x,y)}(\R^{2})}
+				{(x,y)}{%
+						- \dfrac{y}{\sqrt{x^{2}+y^{2}}} \pdv{x} - \dfrac{x}{\sqrt{x^{2}+y^{2}}} \pdv{y}\\
+						& \hspace{15px} = \left(s - \dfrac{y}{\sqrt{x^{2}+y^{2}}}, - \dfrac{x}{\sqrt{x^{2}+y^{2}}} \right)%
+						}	
 		}
-
-\img{0.4}{img3}
-
-Per lo stesso motivo dell'esempio precedente, questo campo è liscio.
+	{0.45}{%
+		\img{0.6}{img3}
+	}
 
 \subsection{Operazioni in $ \chi(U) $}
 
-Si può definire la somma come
+Si può definire la somma in $ \chi(U) $ come
 
 \begin{equation}
-	(X+Y)_{p} \doteq X_{p} + Y_{p}
+	(X+Y)_{p} \doteq X_{p} + Y_{p} \qcomma \forall X,Y \in \chi(U), \, \forall p \in U
 \end{equation}
 
-con $ X,Y \in \chi(U) $, questo significa che se
-
-\begin{align}
-	\begin{split}
-		X &= \sum_{i=1}^{n} a^{i} \, \dfrac{\partial}{\partial x^{i}}\\\\
-		Y &= \sum_{i=1}^{n} b^{i} \, \dfrac{\partial}{\partial x^{i}}
-	\end{split}
-\end{align}
-
-con $ a^{i},b^{i} \in C^{\infty}(U) $, allora
+questo significa che, presi due campi di vettori
 
 \begin{equation}
-	X+Y = \sum_{i=1}^{n} (a^{i}+b^{i}) \, \dfrac{\partial}{\partial x^{i}}
+	X = \sum_{i=1}^{n} a^{i} \pdv{x^{i}} \qcomma Y = \sum_{i=1}^{n} b^{i} \pdv{x^{i}}
 \end{equation}
 
-dove ancora $ a^{i}+b^{i} \in C^{\infty}(U) $ con $ \forall i=1,\dots,n $.\\
+dove $ a^{i},b^{i} \in C^{\infty}(U) $ per $ \forall i = 1, \dots, n $, allora
+
+\begin{equation}
+	X + Y = \sum_{i=1}^{n} (a^{i}+b^{i}) \pdv{x^{i}}
+\end{equation}
+
+dove ancora $ a^{i}+b^{i} \in C^{\infty}(U) $.\\
 Si può definire anche la moltiplicazione per scalari come
 
 \begin{equation}
-	(\lambda X)_{p} \doteq \lambda X_{p}
+	(\lambda X)_{p} \doteq \lambda X_{p} \qcomma \forall X \in \chi(U), \, \forall \lambda \in \R, \, \forall p \in U
 \end{equation}
 
-con $ X \in \chi(U) $ e $ \lambda \in \R $, questo significa che se
+questo significa che, preso
 
 \begin{equation}
-	X = \sum_{i=1}^{n} a^{i} \, \dfrac{\partial}{\partial x^{i}}
+	X = \sum_{i=1}^{n} a^{i} \pdv{x^{i}}
 \end{equation}
 
-con $ a^{i} \in C^{\infty}(U) $, allora
+dove $ a^{i} \in C^{\infty}(U) $, allora
 
 \begin{equation}
-	\lambda X = \sum_{i=1}^{n} (\lambda a^{i}) \, \dfrac{\partial}{\partial x^{i}}
+	\lambda X = \sum_{i=1}^{n} (\lambda a^{i}) \pdv{x^{i}}
 \end{equation}
 
-dove ancora $ \lambda a^{i} \in C^{\infty}(U) $ con $ \forall i=1,\dots,n $.\\
+dove ancora $ \lambda a^{i} \in C^{\infty}(U) $ per $ \forall i = 1, \dots, n $.\\
 L'ultima operazione è quella di moltiplicazione di un campo di vettori per un'altra funzione
 
 \begin{equation}
-	(f X)_{p} \doteq f(p) X_{p}
+	(f X)_{p} \doteq f(p) X_{p} \qcomma \forall X \in \chi(U), \, \forall f \in C^{\infty}(U)
 \end{equation}
 
-con $ X \in \chi(U) $ e $ f \in C^{\infty}(U) $, questo significa
+questo significa che
 
 \begin{equation}
-	f X = \sum_{i=1}^{n} (f a^{i}) \, \dfrac{\partial}{\partial x^{i}}
+	f X = \sum_{i=1}^{n} (f a^{i}) \pdv{x^{i}}
 \end{equation}
 
-dove ancora $ f a^{i} \in C^{\infty}(U) $ con $ \forall i=1,\dots,n $.\\
-Le prime due operazioni dotano l'insieme di $ \chi(U) $ della proprietà di spazio vettoriale.\\
-Osserviamo che $ C^{\infty}(U) $ è un anello commutativo unitario.
+dove ancora $ f a^{i} \in C^{\infty}(U) $ per $ \forall i=1,\dots,n $.\\
+Le prime due operazioni dotano l'insieme di $ \chi(U) $ della proprietà di spazio vettoriale; osserviamo inoltre che $ C^{\infty}(U) $ è un anello commutativo unitario.
 
 \subsection{$ \chi(U) $ come $ C^{\infty}(U) $-modulo}
 

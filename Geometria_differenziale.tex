@@ -54,8 +54,6 @@
 \newcommand{\notimplies}{\centernot\implies}
 \newcommand{\E}{\exists \;}
 
-\newcommand{\Abs}[1]{\left\lvert#1\right\rvert}
-
 %\renewcommand{\pdv}[3]{%
 %	\pdv{#1}{#2} \hspace{-1px} (#3)
 %}
@@ -78,6 +76,19 @@
 		\centering
 		\includegraphics[width=#1\textwidth,keepaspectratio]{#2}
 	\end{figure}
+}
+
+% side-by-side (two neighbouring boxes)
+
+% \sbs{[width left box]}{[content left box]}{[width right box]}{[content right box]}
+
+\newcommand{\sbs}[4]{
+	\noindent\begin{minipage}[c]{#1\textwidth}
+		#2
+	\end{minipage}
+	\begin{minipage}[c]{#3\textwidth}
+		#4
+	\end{minipage}
 }
 
 %
