@@ -2,7 +2,7 @@
 
 ### english
 
-The following notes were taken during prof. Andrea Loi's online lessons of Differential geometry (Mathematics dept., Cagliary University).
+The following notes were taken during prof. Andrea Loi's online lessons of Differential geometry 2020-2021 (Mathematics dept., Cagliary University).
 
 Prof.'s website: https://loi.unica.it/geomdiff2021.html
 
