@@ -889,7 +889,7 @@ Consideriamo ora la seguente preposizione:
 		Siano $ D \in \der_{p} (C_{p}^{\infty}(\R^{n})) $ e la funzione costante
 		
 		\map{c}
-			{\R^{n}}{\R^{n}}
+			{\R^{n}}{\R}
 			{x}{c}
 	
 		allora $ D([(c,\R^{n})]) = 0 $.
@@ -1074,7 +1074,7 @@ Per lo stesso motivo dell'esempio precedente, il campo di vettori seguente è li
 				{\R^{2} \setminus \{(0,0)\}}{T_{(x,y)}(\R^{2})}
 				{(x,y)}{%
 						- \dfrac{y}{\sqrt{x^{2}+y^{2}}} \pdv{x} - \dfrac{x}{\sqrt{x^{2}+y^{2}}} \pdv{y}\\
-						& \hspace{15px} = \left(s - \dfrac{y}{\sqrt{x^{2}+y^{2}}}, - \dfrac{x}{\sqrt{x^{2}+y^{2}}} \right)%
+						& \hspace{15px} = \left( - \dfrac{y}{\sqrt{x^{2}+y^{2}}}, - \dfrac{x}{\sqrt{x^{2}+y^{2}}} \right)%
 						}	
 		}
 	{0.45}{%
@@ -1114,7 +1114,7 @@ questo significa che, preso
 	X = \sum_{i=1}^{n} a^{i} \pdv{x^{i}}
 \end{equation}
 
-dove $ a^{i} \in C^{\infty}(U) $, allora
+dove $ a^{i} \in C^{\infty}(U) $ per $ \forall i = 1, \dots, n $, allora
 
 \begin{equation}
 	\lambda X = \sum_{i=1}^{n} (\lambda a^{i}) \pdv{x^{i}}
@@ -1160,7 +1160,7 @@ tale che
 	\end{cases}
 \end{equation}
 
-per $ \forall r,s \in R $ e $ \forall a,b \in A $. Queste proprietà valgono solo da \textit{sinistra}, potrebbero non valere se calcolate da destra.
+per $ \forall r, s \in R $ e $ \forall a, b \in A $. Queste proprietà valgono solo da \textit{sinistra}, potrebbero non valere se calcolate da destra.
 
 \subsubsection{$ \R $-modulo destro}
 
@@ -1185,42 +1185,47 @@ tale che
 \end{equation}
 
 per $ \forall r,s \in R $ e $ \forall a,b \in A $. Queste proprietà valgono solo da \textit{destra}, potrebbero non valere se calcolate da sinistra.\\\\
-Da queste definizioni, si dice che $ (A,+) $ è un $ R $-modulo se è un $ R $-modulo sinistro e destro, con $ \cdot \equiv * $.
+Tramite queste definizioni, definiamo $ (A,+) $ un $ R $-modulo se è sia un $ R $-modulo sinistro che destro, i.e. $ \cdot \equiv * $.
 
 \begin{remark}
-	Se un gruppo $ A $ è un $ R $-modulo e $ R $ è un campo $ \K $, allora $ A $ è uno spazio vettoriale in $ \K $.
+	Se un gruppo $ A $ è un $ R $-modulo ed $ R $ è un campo $ \K $, allora $ A $ è uno spazio vettoriale in $ \K $.
 \end{remark}
+
+\subsubsection{Caso di $ \chi(U) $}
+
+Per l'insieme dei campi di vettori lisci vale il seguente teorema:
 
 \begin{theorem}\label{chi-mod}
 	$ (\chi(U),+) $ è un $ C^{\infty}(U) $-modulo.
 \end{theorem}
 
 \begin{proof}
-	Per dimostrare che $ (\chi(U),+) $ sia un $ C^{\infty}(U) $-modulo, è necessario dimostrare che la seguente applicazione (commutativa)
+	Per dimostrare che il gruppo abeliano $ (\chi(U),+) $ sia un $ C^{\infty}(U) $-modulo, è necessario dimostrare che $ (\chi(U),+) $ sia un $ C^{\infty}(U) $-modulo sinistro e destro per la moltiplicazione di un campo di vettori per una funzione
 	
-	\map{K}%
+	\map{\cdot}%
 		{C^{\infty}(U) \times \chi(U)}{\chi(U)}%
 		{(f,X)}{f X}
 
-	sia liscia.\\
-	Vedi Esercizio \ref{es1-9}.\\
-	Devono dunque essere verificate queste proprietà\footnote{%
-		Nonostante l'applicazione sia commutativa, scriveremo la funzione sempre a sinistra dei campi, per notazione.%
-	}:
+	Devono dunque essere verificate queste proprietà sia a sinistra che a destra:
 
 	\begin{equation}
 		\begin{cases}
-			1_{C^{\infty}(U)} \cdot X = X\\
-			f \cdot (g \cdot X) = (f g) \cdot X\\
-			f \cdot (X+Y) = f \cdot X + f \cdot Y\\
-			(f+g) \cdot X = f \cdot X + g \cdot X
+			1_{C^{\infty}(U)} X = X\\
+			f (g X) = (f g) \cdot X\\
+			f (X+Y) = f X + f Y\\
+			(f+g) X = f X + g X
 		\end{cases}
 	\end{equation}
 
-	per $ \forall f,g \in C^{\infty}(U) $ e $ \forall X,Y \in \chi(U) $.
+	per $ \forall f,g \in C^{\infty}(U) $ e $ \forall X,Y \in \chi(U) $.\\
+	Siccome la moltiplicazione per funzione è commutativa\footnote{%
+		Nonostante ciò, scriveremo la funzione sempre a sinistra dei campi, per notazione e per evitare di confonderla con la derivata di funzione rispetto a un campo di vettori (vedi sottosezione successiva).%
+	}, è sufficiente dimostrare che $ (\chi(U),+) $ sia un $ C^{\infty}(U) $-modulo sinistro (o destro) per dimostrare che sia $ C^{\infty}(U) $-modulo\footnote{%
+		Vedi Esercizio \ref{es1-9}.%
+	}.
 \end{proof}
 
-\subsection{Derivata di funzione rispetto a un campo di vettori} 
+\subsection{Derivata di funzione rispetto a un campo di vettori}
 
 I campi di vettori permettono di derivare funzioni, così come è possibile fare la derivata direzionale di una funzione rispetto a un vettore e dunque rispetto a un campo di vettori.\\
 Prendiamo $ X \in \chi(U) $ con $ U \subset \R^{n} $ aperto e $ f \in C^{\infty}(U) $. Definisco la derivata di $ f $ rispetto a $ X $ come $ X f \in C^{\infty}(U) $. La derivata puntuale è definita come $ (X f) (p) = X_{p} f $ con $ p \in U $: se il campo è
