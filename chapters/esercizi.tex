@@ -504,13 +504,17 @@ Per dimostrare dunque queste proprietà, valutiamo i campi di vettori in un qual
 	
 		\map{- X}
 			{U}{\bigsqcup_{p \in U} T_{p} (\R^{n})}
-			{p}{- \sum_{i=1}^{n} a^{i} (p) \eval{ \pdv{x^{i}} }_{p}}
+			{p}{\sum_{i=1}^{n} (- a^{i} (p)) \eval{ \pdv{x^{i}} }_{p}}
 		
 		dunque
 		
 		\begin{align}
 			\begin{split}
-				qui
+				(X + (- X))_{p} &= X_{p} + (- X)_{p}\\
+				&= \sum_{i=1}^{n} a^{i} (p) \eval{ \pdv{x^{i}} }_{p} + \sum_{i=1}^{n} (- a^{i} (p)) \eval{ \pdv{x^{i}} }_{p}\\
+				&= \sum_{i=1}^{n} (a^{i} (p) - a^{i} (p)) \eval{ \pdv{x^{i}} }_{p}\\
+				&= \sum_{i=1}^{n} 0 \eval{ \pdv{x^{i}} }_{p}\\
+				&= 0_{p}
 			\end{split}
 		\end{align}
 	
@@ -518,10 +522,10 @@ Per dimostrare dunque queste proprietà, valutiamo i campi di vettori in un qual
 	
 		\begin{align}
 			\begin{split}
-				(\alpha (\beta D_{v})) ([(f,U)]) &= \alpha (\beta D_{v}) ([(f,U)])\\
-				&= \alpha D_{v} ([(\beta f,U)])\\
-				&= \alpha \beta D_{v} ([(f,U)])\\
-				&= (\alpha \beta) D_{v} ([(f,U)])
+				(\alpha (\beta X))_{p} &= \alpha (\beta X)_{p}\\
+				&= \alpha \beta X_{p}\\
+				&= (\alpha \beta) X_{p}\\
+				&= ((\alpha \beta) X)_{p}
 			\end{split}
 		\end{align}
 	
