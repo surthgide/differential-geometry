@@ -152,7 +152,7 @@ L'applicazione $ f $ è un diffeomorfismo in quanto composizione di diffeomorfis
 Dal teorema di Taylor con resto, se $ f \in C^{\infty} (\R^{2}) $ ($ \R^{2} $ è stellato rispetto all'origine), abbiamo che
 
 \begin{equation}
-	\exists g_{i_{1} \cdots i_{k}} \in C^{\infty} (\R^{2})
+	\E g_{i_{1} \cdots i_{k}} \in C^{\infty} (\R^{2})
 \end{equation}
 
 definite come
@@ -284,7 +284,7 @@ può essere verificata tramite i seguenti passaggi:
 	Dimostrare che l'insieme $ \der_{p}(C_{p}^{\infty}(\R^{n})) $ delle derivazioni puntuali con le operazioni definite negli appunti è uno spazio vettoriale su $ \R $.
 \end{tcolorbox}
 
-Per dimostrare che $ \der_{p}(C_{p}^{\infty}(\R^{n})) $ sia uno spazio vettoriale su $ \R $ è necessario che le operazioni di somma tra derivazioni e moltiplicazione per scalare rispettino i seguenti 8 assiomi:
+Per dimostrare che $ \der_{p}(C_{p}^{\infty}(\R^{n})) $ sia uno spazio vettoriale su $ \R $ è necessario che le operazioni di somma tra derivazioni e moltiplicazione per scalari rispettino i seguenti 8 assiomi:
 
 \begin{equation}
 	\begin{cases}
@@ -292,13 +292,13 @@ Per dimostrare che $ \der_{p}(C_{p}^{\infty}(\R^{n})) $ sia uno spazio vettorial
 		%
 		D_{v} + D_{w} = D_{w} + D_{v} & \text{ 2. commutatività (somma) }\\
 		%
-		\exists 0 \in \der_{p}(C_{p}^{\infty}(\R^{n})) \, \mid \, D_{v} + 0 = D_{v} & \text{ 3. elemento neutro (somma) }\\
+		\E 0 \in \der_{p}(C_{p}^{\infty}(\R^{n})) \, \mid \, D_{v} + 0 = D_{v} & \text{ 3. elemento neutro (somma) }\\
 		%
-		\exists - D_{v} \in \der_{p}(C_{p}^{\infty}(\R^{n})) \, \mid \, D_{v} + (- D_{v}) = 0 & \text{ 4. inverso (somma) }\\
+		\E - D_{v} \in \der_{p}(C_{p}^{\infty}(\R^{n})) \, \mid \, D_{v} + (- D_{v}) = 0 & \text{ 4. inverso (somma) }\\
 		%
 		\alpha (\beta D_{v}) = (\alpha \beta) D_{v} & \text{ 5. compatibilità (moltiplicazione) }\\
 		%
-		\exists 1 \in \R \, \mid \, 1 D_{v} = D_{v} & \text{ 6. elemento neutro (moltiplicazione) }\\
+		\E 1 \in \R \, \mid \, 1 D_{v} = D_{v} & \text{ 6. elemento neutro (moltiplicazione) }\\
 		%
 		(\alpha + \beta) D_{v} = \alpha D_{v} + \beta D_{v} & \text{ 7. distributività (somma vettoriale) }\\
 		%
@@ -406,7 +406,7 @@ Per dimostrare queste proprietà consideriamo un qualunque $ [(f,U)] \in C_{p}^{
 		\end{align}
 \end{enumerate}
 
-Tutte queste proprietà sono valide per $ \forall D_{v}, D_{w}, D_{x} \in \der_{p}(C_{p}^{\infty}(\R^{n})) $ e $ \forall \alpha, \beta \in \R $
+Tutte queste proprietà sono valide per $ \forall D_{v}, D_{w}, D_{x} \in \der_{p}(C_{p}^{\infty}(\R^{n})) $ e $ \forall \alpha, \beta \in \R $.
 
 \tocless\section{}\label{es1-9}
 
@@ -414,18 +414,148 @@ Tutte queste proprietà sono valide per $ \forall D_{v}, D_{w}, D_{x} \in \der_{
 	Dimostrare che l'insieme dei campi di vettori lisci $ \chi(U) $ su un aperto $ U \subset \R^{n} $ con le operazioni definite negli appunti è uno spazio vettoriale su $ \R $ e un $ C^{\infty} $-modulo.
 \end{tcolorbox}
 
-Per dimostrare che $ \chi(U) $ sia uno spazio vettoriale:
+Per dimostrare che $ \chi(U) $ sia uno spazio vettoriale su $ \R $ è necessario che le operazioni di somma tra campi di vettori e moltiplicazione per scalari rispettino i seguenti 8 assiomi:
+
+\begin{equation}
+	\begin{cases}
+		X + (Y + Z) = (X + Y) + Z & \text{ 1. associatività (somma) }\\
+		%
+		X + Y = Y + X & \text{ 2. commutatività (somma) }\\
+		%
+		\E 0 \in \chi(U) \, \mid \, X + 0 = X & \text{ 3. elemento neutro (somma) }\\
+		%
+		\E - X \in \chi(U) \, \mid \, X + (- X) = 0 & \text{ 4. inverso (somma) }\\
+		%
+		\alpha (\beta X) = (\alpha \beta) X & \text{ 5. compatibilità (moltiplicazione) }\\
+		%
+		\E 1 \in \R \, \mid \, 1 X = X & \text{ 6. elemento neutro (moltiplicazione) }\\
+		%
+		(\alpha + \beta) X = \alpha X + \beta X & \text{ 7. distributività (somma vettoriale) }\\
+		%
+		\alpha (X + Y) = \alpha X + \alpha Y & \text{ 8. distributività (somma scalare) }
+	\end{cases}
+\end{equation}
+
+per $ \forall X, Y, Z \in \chi(U) $ e $ \forall \alpha, \beta \in \R $.\\
+Ricordiamo che le operazioni sono definite come:
 
 \begin{align}
 	\begin{split}
-		(\lambda X + \mu Y)_{p} &= \left( \sum_{i=1}^{n} (\lambda a^{i} + \mu b^{i}) \pdv{x^{i}} \right)_{p}\\
-		&= \left( \lambda \left( \sum_{i=1}^{n} a^{i} \pdv{x^{i}} \right) + \mu \left( \sum_{i=1}^{n} b^{i} \pdv{x^{i}} \right) \right)_{p}\\
-		&= \lambda X_{p} + \mu Y_{p}
+		(X + Y)_{p} &\doteq X_{p} + Y_{p}\\
+		(\alpha X)_{p} &\doteq \alpha X_{p}
 	\end{split}
 \end{align}
 
-per $ \forall X,Y \in \chi(U) $, $ \forall p \in U \subset \R^{n} $ e $ \forall \lambda,\mu \in \R $.\\
-qui
+per $ \forall X, Y \in \chi(U) $, $ \forall \alpha \in \R $ e $ \forall p \in U \subset \R^{n} $, dove i campi di vettori saranno:
+
+\begin{equation}
+	X = \sum_{i=1}^{n} a^{i} \pdv{x^{i}} \qcomma Y = \sum_{i=1}^{n} b^{i} \pdv{x^{i}}
+\end{equation}
+
+con $ a_{i}, b_{i} \in C^{\infty}(U) $.\\
+Per dimostrare dunque queste proprietà, valutiamo i campi di vettori in un qualunque $ p \in U \subset \R^{n} $:
+
+\begin{enumerate}
+	\item Associatività (somma)
+	
+		\begin{align}
+			\begin{split}
+				(X + (Y + Z))_{p} &= (X + Y)_{p} + Z_{p}\\
+				&= X_{p} + Y_{p} + Z_{p}\\
+				&= X_{p} + (Y + Z)_{p}\\
+				&= (X + (Y + Z))_{p}
+			\end{split}
+		\end{align}
+	
+	\item Commutatività (somma)
+	
+		\begin{align}
+			\begin{split}
+				(X + Y)_{p} &= X_{p} + Y_{p}\\
+				&= \sum_{i=1}^{n} a^{i} (p) \eval{ \pdv{x^{i}} }_{p} + \sum_{i=1}^{n} b^{i} (p) \eval{ \pdv{x^{i}} }_{p}\\
+				&= \sum_{i=1}^{n} b^{i} (p) \eval{ \pdv{x^{i}} }_{p} + \sum_{i=1}^{n} a^{i} (p) \eval{ \pdv{x^{i}} }_{p}\\
+				&= Y_{p} + X_{p}\\
+				&= (Y + X)_{p}
+			\end{split}
+		\end{align}
+	
+	\item Elemento neutro (somma)
+	
+		\map{0}
+			{U}{\bigsqcup_{p \in U} T_{p} (\R^{n})}
+			{p}{%
+				0_{p} = \sum_{i=1}^{n} 0 \eval{ \pdv{x^{i}} }_{p}\\
+				&\stackrel{\R^{n}}{\mapsto} (0, \dots, 0)%
+				}
+			
+		dunque
+		
+		\begin{align}
+			\begin{split}
+				(X + 0)_{p} &= X_{p} + 0_{p}\\
+				&= \sum_{i=1}^{n} a^{i} (p) \eval{ \pdv{x^{i}} }_{p} + \sum_{i=1}^{n} 0 \eval{ \pdv{x^{i}} }_{p}\\
+				&= \sum_{i=1}^{n} (a^{i} (p) + 0) \eval{ \pdv{x^{i}} }_{p}\\
+				&= \sum_{i=1}^{n} a^{i} (p) \eval{ \pdv{x^{i}} }_{p}\\
+				&= X_{p}
+			\end{split}
+		\end{align}
+	
+	\item Inverso (somma)
+	
+		\map{- X}
+			{U}{\bigsqcup_{p \in U} T_{p} (\R^{n})}
+			{p}{- \sum_{i=1}^{n} a^{i} (p) \eval{ \pdv{x^{i}} }_{p}}
+		
+		dunque
+		
+		\begin{align}
+			\begin{split}
+				qui
+			\end{split}
+		\end{align}
+	
+	\item Compatibilità (moltiplicazione)
+	
+		\begin{align}
+			\begin{split}
+				(\alpha (\beta D_{v})) ([(f,U)]) &= \alpha (\beta D_{v}) ([(f,U)])\\
+				&= \alpha D_{v} ([(\beta f,U)])\\
+				&= \alpha \beta D_{v} ([(f,U)])\\
+				&= (\alpha \beta) D_{v} ([(f,U)])
+			\end{split}
+		\end{align}
+	
+	\item Elemento neutro (moltiplicazione)
+	
+		\begin{align}
+			\begin{split}
+				(1 D_{v}) ([(f,U)]) &= D_{v} ([(1 f,U)])\\
+				&= D_{v} ([(f,U)])
+			\end{split}
+		\end{align}
+	
+	\item Distributività (somma vettoriale)
+	
+		\begin{align}
+			\begin{split}
+				(\alpha + \beta) D_{v} ([(f,U)]) &= D_{v} ([((\alpha + \beta) f,U)])\\
+				&= D_{v} ([(\alpha f + \beta f,U)])\\
+				&= \alpha D_{v} ([(f,U)]) + \beta D_{v} ([(f,U)])\\
+			\end{split}
+		\end{align}
+	
+	\item Distributività (somma scalare)
+	
+		\begin{align}
+			\begin{split}
+				\alpha (D_{v} + D_{w}) ([(f,U)]) &= (D_{v} + D_{w}) ([(\alpha f,U)])\\
+				&= D_{v} ([(\alpha f,U)]) + D_{w} ([(\alpha f,U)])\\
+				&= \alpha D_{v} ([(f,U)]) + \alpha D_{w} ([(f,U)])
+			\end{split}
+		\end{align}
+\end{enumerate}
+
+Tutte queste proprietà sono valide per $ \forall D_{v}, D_{w}, D_{x} \in \der_{p}(C_{p}^{\infty}(\R^{n})) $ e $ \forall \alpha, \beta \in \R $.
 
 \tocless\section{}\label{es1-10}
 
