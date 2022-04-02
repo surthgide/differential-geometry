@@ -147,13 +147,12 @@ Per controllare che sia $ C^{0} $ dobbiamo verificare che
 	\lim_{x \to 0} e^{-1/x^{2}} = 0
 \end{equation}
 
-Per controllare che sia liscia
+Per controllare che sia liscia\footnote{%
+	Vedi Esercizio \ref{es1-2}.}
 
 \begin{equation}
 	\lim_{x \to 0} f^{\prime} (x) = \lim_{x \to 0} \left(\dfrac{2}{x^{3}}\right) e^{-1/x^{2}} = 0
 \end{equation}
-
-Vedi Esercizio \ref{es1-2}.
 
 Tutto questo ci dice che $ f \in C^{\infty}(\R) $. Se fosse anche reale analitica, dovrebbe coincidere con il suo sviluppo in serie di Taylor anche nell'origine, dunque
 
@@ -241,8 +240,9 @@ Perché sia $ f $ che $ f^{-1} $ siano lisce, dobbiamo verificare che ogni loro 
 	La palla di centro $ c $ e raggio $ \delta $ con $ c \in \R^{n} $ e $ \delta \geqslant 0 $ è diffeomorfa a $ \R^{n} $, i.e. $ B_{\delta} (c) \simeq \R^{n} $.
 \end{corollary}
 
-Per dimostrare questo è necessario dimostrare che siano diffeomorfismi le traslazioni (le quali sono lineari e affini) e le omotetie (scala di un fattore $ \delta $); questa dimostrazione mostra anche che $ B_{1} (0) \simeq B_{\delta} (c) $.\\
-Vedi Esercizio \ref{es1-4}.\\
+Per dimostrare questo è necessario dimostrare che siano diffeomorfismi le traslazioni (le quali sono lineari e affini) e le omotetie (scala di un fattore $ \delta $); questa dimostrazione mostra anche che\footnote{%
+	Vedi Esercizio \ref{es1-4}.%
+} $ B_{1} (0) \simeq B_{\delta} (c) $.\\
 Per praticità di notazione, chiamiamo $ h $ il diffeomorfismo $ B_{\delta} (c) \to \R^{n} $ definito sopra. Per far vedere come nasce questo diffeomorfismo, si può usare la seguente costruzione geometrica
 
 \begin{figure}[H]
@@ -442,7 +442,8 @@ Prendiamo $ f : U \to \R $ con $ p $ corrispondente all'origine. Per il teorema 
 	\end{split}
 \end{align}
 
-A questo punto si può identificare
+A questo punto si può identificare\footnote{%
+	Vedi Esercizio \ref{es1-5}.}
 
 \begin{equation}
 	g_{k}(0) = \dfrac{1}{k!} \pdv[k]{f}{x} \, (0) \doteq \dfrac{f^{(k)}(0)}{k!}
@@ -454,8 +455,8 @@ da cui
 	f(x) = f(0) + \sum_{k=1}^{i} \dfrac{x^{k}}{k!} f^{(k)} (0) + x^{i+1} g_{i+1}(x) \qcomma \forall i \in \N
 \end{equation}
 
-dove la prima parte coincide con lo sviluppo in serie di Taylor mentre l'ultimo termine indica il \textit{resto}.\\
-Vedi Esercizi \ref{es1-5} e \ref{es1-6}.
+dove la prima parte coincide con lo sviluppo in serie di Taylor mentre l'ultimo termine indica il \textit{resto}\footnote{%
+	Vedi Esercizio \ref{es1-6}.}.
 
 \section{Vettori tangenti in $ \R^{n} $}
 
