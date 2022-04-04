@@ -533,8 +533,11 @@ Per dimostrare dunque queste proprietà, valutiamo i campi di vettori in un qual
 	
 		\begin{align}
 			\begin{split}
-				(1 D_{v}) ([(f,U)]) &= D_{v} ([(1 f,U)])\\
-				&= D_{v} ([(f,U)])
+				(1 X_{p}) &= 1 X_{p}\\
+				&= 1 \sum_{i=1}^{n} a^{i} (p) \eval{ \pdv{x^{i}} }_{p}\\
+				&= \sum_{i=1}^{n} (1 a^{i} (p)) \eval{ \pdv{x^{i}} }_{p}\\
+				&= \sum_{i=1}^{n} a^{i} (p) \eval{ \pdv{x^{i}} }_{p}\\
+				&= X_{p}
 			\end{split}
 		\end{align}
 	
@@ -542,9 +545,13 @@ Per dimostrare dunque queste proprietà, valutiamo i campi di vettori in un qual
 	
 		\begin{align}
 			\begin{split}
-				(\alpha + \beta) D_{v} ([(f,U)]) &= D_{v} ([((\alpha + \beta) f,U)])\\
-				&= D_{v} ([(\alpha f + \beta f,U)])\\
-				&= \alpha D_{v} ([(f,U)]) + \beta D_{v} ([(f,U)])\\
+				(\alpha (X + Y))_{p} &= \alpha (X + Y)_{p}\\
+				&= \alpha (X_{p} + Y_{p})\\
+				&= \alpha \left( \sum_{i=1}^{n} a^{i} (p) \eval{ \pdv{x^{i}} }_{p} + \sum_{i=1}^{n} b^{i} (p) \eval{ \pdv{x^{i}} }_{p} \right)\\
+				&= \alpha \sum_{i=1}^{n} a^{i} (p) \eval{ \pdv{x^{i}} }_{p} + \alpha \sum_{i=1}^{n} b^{i} (p) \eval{ \pdv{x^{i}} }_{p}\\
+				&= \alpha X_{p} + \alpha Y_{p}\\
+				&= (\alpha X)_{p} + (\alpha Y)_{p}\\
+				&= (\alpha X + \alpha Y)_{p}
 			\end{split}
 		\end{align}
 	
@@ -552,14 +559,17 @@ Per dimostrare dunque queste proprietà, valutiamo i campi di vettori in un qual
 	
 		\begin{align}
 			\begin{split}
-				\alpha (D_{v} + D_{w}) ([(f,U)]) &= (D_{v} + D_{w}) ([(\alpha f,U)])\\
-				&= D_{v} ([(\alpha f,U)]) + D_{w} ([(\alpha f,U)])\\
-				&= \alpha D_{v} ([(f,U)]) + \alpha D_{w} ([(f,U)])
+				((\alpha + \beta) X)_{p} &= (\alpha + \beta) X_{p}\\
+				&= (\alpha + \beta) \sum_{i=1}^{n} a^{i} (p) \eval{ \pdv{x^{i}} }_{p}\\
+				&= \alpha \sum_{i=1}^{n} a^{i} (p) \eval{ \pdv{x^{i}} }_{p} + \beta \sum_{i=1}^{n} a^{i} (p) \eval{ \pdv{x^{i}} }_{p}\\
+				&= \alpha X_{p} + \beta X_{p}\\
+				&= (\alpha X)_{p} + (\beta X)_{p}\\
+				&= (\alpha X + \beta X)_{p} 
 			\end{split}
 		\end{align}
 \end{enumerate}
 
-Tutte queste proprietà sono valide per $ \forall D_{v}, D_{w}, D_{x} \in \der_{p}(C_{p}^{\infty}(\R^{n})) $ e $ \forall \alpha, \beta \in \R $.
+Tutte queste proprietà sono valide per $ \forall X, Y, Z \in \chi(U) $ e $ \forall \alpha, \beta \in \R $.
 
 \tocless\section{}\label{es1-10}
 
