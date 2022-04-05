@@ -569,7 +569,83 @@ Per dimostrare dunque queste proprietà, valutiamo i campi di vettori in un qual
 		\end{align}
 \end{enumerate}
 
-Tutte queste proprietà sono valide per $ \forall X, Y, Z \in \chi(U) $ e $ \forall \alpha, \beta \in \R $.
+Tutte queste proprietà sono valide per $ \forall X, Y, Z \in \chi(U) $ e $ \forall \alpha, \beta \in \R $.\\
+Sia l'applicazione
+
+\map{\cdot}%
+	{C^{\infty}(U) \times \chi(U)}{\chi(U)}%
+	{(f,X)}{f X}
+
+Per dimostrare che $ (\chi(U),+) $ sia un $ C^{\infty} $-modulo è necessario che siano verificate queste proprietà sia a sinistra che a destra:
+
+\begin{equation}
+	\begin{cases}
+		1_{C^{\infty}(U)} X = X & \text{ 1. elemento neutro (somma) }\\
+		f (g X) = (f g) \cdot X & \text{ 2. compatibilità (moltiplicazione) }\\
+		f (X+Y) = f X + f Y & \text{ 3. distributività (somma vettoriale) }\\
+		(f+g) X = f X + g X & \text{ 4. distributività (somma scalare) }
+	\end{cases}
+\end{equation}
+
+per $ \forall f,g \in C^{\infty}(U) $ e $ \forall X,Y \in \chi(U) $. Siccome la moltiplicazione per funzione è commutativa è sufficiente dimostrare che $ (\chi(U),+) $ sia un $ C^{\infty}(U) $-modulo sinistro (o destro) per dimostrare che sia $ C^{\infty}(U) $-modulo.\\
+Dimostriamo dunque le proprietà riportate sopra, ancora una volta valutando i campi di vettori in un qualunque $ p \in U \subset \R^{n} $:
+
+\begin{enumerate}
+	\item Elemento neutro (somma)
+	
+		\map{1_{C^{\infty}(U)}}
+			{U}{\R}
+			{p}{1}
+			
+		dunque
+			
+		\begin{align}
+			\begin{split}
+				(1_{C^{\infty}(U)} X)_{p} &= 1_{C^{\infty}(U)} (p) X_{p}\\
+				&= 1 \sum_{i=1}^{n} a^{i} (p) \eval{ \pdv{x^{i}} }_{p}\\
+				&= \sum_{i=1}^{n} (1 a^{i} (p)) \eval{ \pdv{x^{i}} }_{p}\\
+				&= \sum_{i=1}^{n} a^{i} (p) \eval{ \pdv{x^{i}} }_{p}\\
+				&= X_{p}
+			\end{split}
+		\end{align}
+	
+	\item Compatibilità (moltiplicazione)
+	
+		\begin{align}
+			\begin{split}
+				(f (g X))_{p} &= f (p) (g X)_{p}\\
+				&= f (p) g (p) X_{p}\\
+				&= (f g) (p) X_{p}\\
+				&= ((f g) X)_{p}
+			\end{split}
+		\end{align}
+	
+	\item Distributività (somma vettoriale)
+	
+		\begin{align}
+			\begin{split}
+				(f (X + Y))_{p} &= f (p) (X + Y)_{p}\\
+				&= f (p) (X_{p} + Y_{p})\\
+				&= f (p) X_{p} + f (p) Y_{p}\\
+				&= (f X)_{p} + (f Y)_{p}\\
+				&= (f X + f Y)_{p}
+			\end{split}
+		\end{align}
+	
+	\item Distributività (somma scalare)
+	
+		\begin{align}
+			\begin{split}
+				((f + g) X)_{p} &= (f + g) (p) X_{p}\\
+				&= (f (p) + g (p)) X_{p}\\
+				&= f (p) X_{p} + g (p) X_{p}\\
+				&= (f X)_{p} + (g X)_{p}\\
+				&= (f X + g X)_{p}
+			\end{split}
+		\end{align}
+\end{enumerate}
+
+Tutte queste proprietà sono valide per $ \forall f,g \in C^{\infty}(U) $ e $ \forall X,Y \in \chi(U) $.
 
 \tocless\section{}\label{es1-10}
 
