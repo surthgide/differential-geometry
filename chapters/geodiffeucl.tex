@@ -1228,51 +1228,46 @@ Per l'insieme dei campi di vettori lisci vale il seguente teorema:
 
 \subsection{Derivata di funzione rispetto a un campo di vettori}
 
-I campi di vettori permettono di derivare funzioni, così come è possibile fare la derivata direzionale di una funzione rispetto a un vettore e dunque rispetto a un campo di vettori.\\
-Prendiamo $ X \in \chi(U) $ con $ U \subset \R^{n} $ aperto e $ f \in C^{\infty}(U) $. Definisco la derivata di $ f $ rispetto a $ X $ come $ X f \in C^{\infty}(U) $. La derivata puntuale è definita come $ (X f) (p) = X_{p} f $ con $ p \in U $: se il campo è
+I campi di vettori permettono di derivare funzioni: la loro azione è equivalente alla derivata direzionale di una funzione rispetto a un vettore.\\
+Siano $ X \in \chi(U) $ con $ U \subset \R^{n} $ aperto e $ f \in C^{\infty}(U) $. Definiamo la derivata della funzione $ f $ rispetto al campo di vettori $ X $ come $ X f \in C^{\infty}(U) $. La derivata puntuale è definita come
 
 \begin{equation}
-	X = \sum_{i=1}^{n} a^{i} \dfrac{\partial}{\partial x^{i}}
+	(X f) (p) = X_{p} f \qcomma \forall p \in U \subset \R^{n}
+\end{equation}
+
+Se il campo è
+
+\begin{equation}
+	X = \sum_{i=1}^{n} a^{i} \pdv{x^{i}}
 \end{equation}
 
 allora
 
-\begin{align}
-	\begin{split}
-		(X f) (p) &= \left( \sum_{i=1}^{n} a^{i}(p) \, \dfrac{\partial}{\partial x^{i}} \right) (f)\\
-		&= \sum_{i=1}^{n} a^{i}(p) \, \dfrac{\partial f}{\partial x^{i}} (p)
-	\end{split}
-\end{align}
+\begin{equation}
+	(X f) (p) = \left( \left( \sum_{i=1}^{n} a^{i} \pdv{x^{i}} \right) f \right)_{p} = \sum_{i=1}^{n} a^{i} (p) \, \pdv{f}{x^{i}} \, (p)
+\end{equation}
 
 perciò
 
-\begin{align}
-	\begin{split}
-		X f : U \to& \R\\
-		p \mapsto& \sum_{i=1}^{n} a^{i}(p) \, \dfrac{\partial f}{\partial x^{i}} (p)
-	\end{split}
-\end{align}
+\map{X f}
+	{U}{\R}
+	{p}{\sum_{i=1}^{n} a^{i} (p) \, \pdv{f}{x^{i}} \, (p)}
 
 Questa applicazione è $ C^{\infty}(U) $ perché lo è $ (X f) (p) $, la quale lo è a sua volta perché $ X \in \chi(U) $ in quanto $ a^{i} \in C^{\infty}(U) $ e $ f \in C^{\infty}(U) $.\\
-Posso considerare l'applicazione
+Possiamo considerare l'applicazione
+
+
+\map{X}
+	{C^{\infty}(U)}{C^{\infty}(U)}
+	{f}{X f}
+
+ricordando che $ C^{\infty}(U) $, oltre a essere un anello commutativo unitario, è un'algebra sui reali, perciò l'applicazione $ X $ è $ \R $-lineare. Inoltre, siccome $ X_{p} \in \der_{p}(C_{p}^{\infty}(\R^{n})) $, soddisfa la regola di Leibniz:
 
 \begin{align}
-	\begin{split}
-		X : C^{\infty}(U) &\to C^{\infty}(U)\\
-		f &\mapsto X f
-	\end{split}
+	X (f g) (p) = X_{p} (f g) = (X_{p} f) \, g(p) + f(p) \, (X_{p} g)
 \end{align}
 
-ricordando che $ C^{\infty}(U) $, oltre a essere un anello commutativo unitario, è un'algebra sui reali, perciò l'applicazione $ X $ è $ \R $-lineare. Inoltre, siccome $ X_{p} \in \der_{p}(C_{p}^{\infty}(\R^{n})) $, soddisfa la regola di Leibniz
-
-\begin{align}
-	\begin{split}
-		X (f g) (p) &= X_{p} (f g)\\
-		&= (X_{p} f) \, g(p) + f(p) \, (X_{p} g) 
-	\end{split}
-\end{align}
-
-perciò anche l'applicazione $ X $ soddisfa la regola di Leibniz
+perciò anche l'applicazione $ X $ soddisfa la regola di Leibniz:
 
 \begin{equation}
 	X (f g) = (X f) \, g + f \, (X g)
