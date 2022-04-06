@@ -1275,18 +1275,17 @@ perciò anche l'applicazione $ X $ soddisfa la regola di Leibniz:
 
 \subsubsection{Derivazione di un'algebra}
 
-Sia $ A $ un'algebra\footnote{%
-	Un'algebra è costituita da $ (\text{spazio vettoriale},\cdot) $, dove l'operazione
-		\begin{align}
-			\begin{split}
-				\cdot : A \times A &\to A\\
-				(a,b) &\mapsto a \cdot b
-			\end{split}
-		\end{align}
+Sia $ A $ un'algebra su campo $ \K $\footnote{%
+	Ricordiamo che un'algebra $ A $ su campo $ \K $ è una coppia $ (V,\cdot) $ dove $ V $ è uno spazio vettoriale e l'operazione
+	
+	\map{\cdot}
+		{A \times A}{A}
+		{(a,b)}{a \cdot b}
+		
 	soddisfa le proprietà
+	
 	\begin{equation}
 		\begin{cases}
-			(a \cdot b) \cdot c = a \cdot (b \cdot c) & \text{associatività}\\
 			\begin{split}
 				(a + b) \cdot c = a \cdot c + b \cdot c\\
 				c \cdot (a + b) = c \cdot a + c \cdot b
@@ -1294,15 +1293,17 @@ Sia $ A $ un'algebra\footnote{%
 			\lambda (a \cdot b) = (\lambda a) \cdot b = a \cdot (\lambda b) & \text{omogeneità}
 		\end{cases}
 	\end{equation}
-	per $ \forall a,b,c \in A $ e $ \forall \lambda \in \R $.%
-} su un campo $ \K $, un'applicazione $ D : A \to A $ che sia $ \K $-lineare e tale che soddisfi la regola di Leibniz
+	per $ \forall a,b,c \in A $ e $ \forall \lambda \in \K $.%
+}, un'applicazione $ D : A \to A $ che sia $ \K $-lineare e tale che soddisfi la regola di Leibniz
 
 \begin{equation}
-	D (a \cdot b) = (D a) \cdot b + a \cdot (D b)
+	D (a \cdot b) = (D a) \cdot b + a \cdot (D b) \qcomma \forall a, b \in A
 \end{equation}
 
-per $ \forall a,b \in A $, è chiamata \textit{derivazione dell'algebra} $ A $. L'insieme di tutte le derivazioni di un'algebra $ A $ viene indicato come $ Der(A) $.\\
-Vedi Esercizi \ref{es1-10} e \ref{es1-11}.
+è chiamata \textit{derivazione dell'algebra} $ A $. L'insieme di tutte le derivazioni di un'algebra $ A $ viene indicato come $ \der(A) $
+\footnote{%
+	Vedi Esercizi \ref{es1-10} e \ref{es1-11}.%
+}.
 
 \subsection{Campo di vettori liscio come derivazione dell'algebra $ C^{\infty}(U) $}
 
