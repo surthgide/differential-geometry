@@ -11,3 +11,7 @@ sia da sinistra che a destra per la moltiplicazione per funzione
 
 CURIOSITÀ: le quattro proprietà che rendono un gruppo un R-modulo sono parte delle proprietà che 
 rendono uno spazio uno spazio vettoriale? (da qui l'osservazione negli appunti)
+
+esercizio A.11: penso di essere praticamente arrivato alla soluzione, ma non sono sicuro di aver 
+usato una proprietà che posso usare; ho scritto che ho usato la commutatività della 
+moltiplicazione dell'algebra ma quest'ultima non è detto che ce l'abbia
