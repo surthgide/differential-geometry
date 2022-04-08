@@ -1309,40 +1309,33 @@ Sia $ A $ un'algebra su campo $ \K $\footnote{%
 
 Possiamo vedere un campo di vettori come una derivazione di un'algebra, quindi definiamo un'applicazione
 
-\begin{align}
-	\begin{split}
-		\phi : \chi(U) &\to Der(C^{\infty}(U))\\
-		X &\mapsto \phi(X)
-	\end{split}
-\end{align}
-
-in cui
-
-\begin{equation}
-	\phi(X) (f) \doteq X f
-\end{equation}
-
-Sia $ \chi(U) $ che $ Der(C^{\infty}(U)) $ sono $ C^{\infty}(U) $-modulo, dall'applicazione
-
-\begin{align}
-	\begin{split}
-		K : C^{\infty}(U) \times Der(C^{\infty}(U)) &\to Der(C^{\infty}(U))\\
-		(f,D) &\mapsto f D
-	\end{split}
-\end{align}
+\map{\phi}
+	{\chi(U)}{\der(C^{\infty}(U))}
+	{X}{\phi(X)}
 
 da cui
+
+\begin{equation}
+	\phi(X) (f) \doteq X f \qcomma \forall f \in C^{\infty}(U)
+\end{equation}
+
+Sia $ \chi(U) $ che $ \der(C^{\infty}(U)) $ sono $ C^{\infty}(U) $-moduli tramite l'applicazione
+
+\map{\cdot}
+	{C^{\infty}(U) \times \der(C^{\infty}(U))}{\der(C^{\infty}(U))}
+	{(f,D)}{f D}
+
+per la quale vale
 
 \begin{equation}
 	(f D) (g) = f (D g)
 \end{equation}
 
-Inoltre $ \phi $ è anche $ C^{\infty}(U) $-lineare, i.e
+Inoltre $ \phi $ è anche $ C^{\infty}(U) $-lineare:
 
 \begin{equation}
-	\phi(f X + g Y) = f \, \phi(X) + g \, \phi(Y)
+	\phi(f X + g Y) = f \, \phi(X) + g \, \phi(Y) \qcomma \forall f, g \in C^{\infty}(U), \, \forall X, Y \in \chi(U)
 \end{equation}
 
-per $ \forall f,g \in C^{\infty}(U) $ e $ \forall X,Y \in \chi(U) $.\\
-Dimostreremo per le varietà differenziabili che $ \phi $ è un isomorfismo di $ C^{\infty}(U) $-moduli, i.e. $ \chi(U) \simeq Der(C^{\infty}(U)) $.\\
+Dimostreremo per le varietà differenziabili che $ \phi $ è un isomorfismo di $ C^{\infty}(U) $-moduli, i.e. $ \chi(U) \simeq \der(C^{\infty}(U)) $.\\
 Tramite questo isomorfismo, si possono identificare i campi di vettori lisci con le derivazioni dell'algebra delle funzioni lisce, analogamente a come lo spazio tangente a un punto di $ \R^{n} $ si può identificare con le derivazioni puntuali dell'algebra dei germi delle funzioni in quel punto, i.e. $ T_{p}(\R^{n}) \simeq \der_{p}(C_{p}^{\infty}(\R^{n})) $.
