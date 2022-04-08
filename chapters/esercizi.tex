@@ -662,7 +662,141 @@ Tutte queste proprietà sono valide per $ \forall f,g \in C^{\infty}(U) $ e $ \f
 	per $ \forall \lambda \in \K $ e $ \forall D_{1},D_{2},D \in Der(A) $ dotano $ Der(A) $ della struttura di spazio vettoriale su $ \K $.
 \end{tcolorbox}
 
-qui
+Per dimostrare che $ \der(A) $ sia uno spazio vettoriale su un campo $ \K $ è necessario che le operazioni di somma tra derivazioni e moltiplicazione per scalari rispettino i seguenti 8 assiomi:
+
+\begin{equation}
+	\begin{cases}
+		D_{1} + (D_{2} + D_{3}) = (D_{1} + D_{2}) + D_{3} & \text{ 1. associatività (somma) }\\
+		%
+		D_{1} + D_{2} = D_{2} + D_{1} & \text{ 2. commutatività (somma) }\\
+		%
+		\E 0 \in \der(A)) \, \mid \, D + 0 = D & \text{ 3. elemento neutro (somma) }\\
+		%
+		\E - D \in \der(A) \, \mid \, D + (- D) = 0 & \text{ 4. inverso (somma) }\\
+		%
+		\alpha (\beta D) = (\alpha \beta) D & \text{ 5. compatibilità (moltiplicazione) }\\
+		%
+		\E \eta \in \K \, \mid \, \eta D = D & \text{ 6. elemento neutro (moltiplicazione) }\\
+		%
+		(\alpha + \beta) D = \alpha D + \beta D & \text{ 7. distributività (somma vettoriale) }\\
+		%
+		\alpha (D_{1} + D_{2}) = \alpha D_{1} + \alpha D_{2} & \text{ 8. distributività (somma scalare) }
+	\end{cases}
+\end{equation}
+
+per $ \forall D_{1}, D_{2}, D_{3}, D \in \der(A) $ e $ \forall \alpha, \beta \in \K $.\\
+Per dimostrare queste proprietà consideriamo un qualunque $ a \in A $ e applichiamo a questo le derivazioni:
+
+\begin{enumerate}
+	\item Associatività (somma)
+	
+		\begin{align}
+			\begin{split}
+				( D_{1} + (D_{2} + D_{3}) ) (a) &= D_{1} (a) + (D_{2} + D_{3}) (a)\\
+				&= D_{1} (a) + D_{2} (a) + D_{3} (a)\\
+				&= (D_{1} + D_{2}) (a) + D_{3} (a)\\
+				&= ( (D_{1} + D_{2}) + D_{3} ) (a)
+			\end{split}
+		\end{align}
+	
+	\item Commutatività (somma)
+	
+		\begin{align}
+			\begin{split}
+				(D_{1} + D_{2}) (a) &= D_{1} (a) + D_{2} (a)\\
+				&= D_{2} (a) + D_{1} (a)\\
+				&= (D_{2} + D_{1}) (a)
+			\end{split}
+		\end{align}
+		
+		dove nel secondo passaggio abbiamo usato la commutatività della somma dell'algebra ereditata dallo spazio vettoriale che la compone
+	
+	\item Elemento neutro (somma)
+	
+		\map{0}
+			{A}{A}
+			{a}{0}
+		
+		dove
+		
+		\begin{equation}
+			a + 0 = a \qcomma \forall a \in A
+		\end{equation}
+		
+		dunque
+		
+		\begin{align}
+			\begin{split}
+				(D + 0) (a) &= D (a) + 0 (a)\\
+				&= D (a) + 0\\
+				&= D (a)
+			\end{split}
+		\end{align}
+	
+	\item Inverso (somma)
+	
+		\map{- D}
+			{A}{A}
+			{a}{- D (a)}
+		
+		dunque
+		
+		\begin{align}
+			\begin{split}
+				(D + (- D)) (a) &= D (a) + (- D) (a)\\
+				&= D (a) + - D (a)\\
+				&= 0
+			\end{split}
+		\end{align}
+	
+	\item Compatibilità (moltiplicazione)
+	
+		\begin{align}
+			\begin{split}
+				(\alpha (\beta D)) (a) &= \alpha (\beta D) (a)\\
+				&= \alpha \beta D (a)\\
+				&= (\alpha \beta) D (a)\\
+				&= ((\alpha \beta) D) (a)
+			\end{split}
+		\end{align}
+	
+	\item Elemento neutro (moltiplicazione)
+	
+		\begin{align}
+			\begin{split}
+				(\eta D) (a) &= \eta D (a)\\
+				&= D (\eta a)\\
+				&= D (a)
+			\end{split}
+		\end{align}
+	
+		dove abbiamo usato il fatto che lo spazio vettoriale che compone l'algebra è sullo stesso campo $ \K $ rispetto a quest'ultima
+	
+	\item Distributività (somma vettoriale)
+	
+		\begin{align}
+			\begin{split}
+				((\alpha + \beta) D) (a) &= (\alpha + \beta) D (a)\\
+				&= \alpha D (a) + \beta D (a)\\
+				&= (\alpha D) (a) + (\beta D) (a)\\
+				&= (\alpha D + \beta D) (a)
+			\end{split}
+		\end{align}
+	
+	\item Distributività (somma scalare)
+	
+		\begin{align}
+			\begin{split}
+				(\alpha (D_{1} + D_{2})) (a) &= \alpha (D_{1} + D_{2}) (a)\\
+				&= \alpha (D_{1} (a) + D_{2} (a))\\
+				&= \alpha D_{1} (a) + \alpha D_{2} (a)\\
+				&= (\alpha D_{1}) (a) + (\alpha D_{2}) (a)\\
+				&= (\alpha D_{1} + \alpha D_{2}) (a)
+			\end{split}
+		\end{align}
+\end{enumerate}
+
+Tutte queste proprietà sono valide per $ \forall D_{1}, D_{2}, D_{3}, D \in \der(A) $ e $ \forall \alpha, \beta \in \K $.
 
 \tocless\section{}\label{es1-11}
 
