@@ -844,17 +844,35 @@ dove nell'ultimo passaggio abbiamo semplificato due coppie di fattori avvalendoc
 \begin{tcolorbox}
 	Verificare che l'unione disgiunta di spazi topologici
 	
-	\begin{align}
-		\begin{split}
-			A &= \coprod_{j \in J} A_{j}\\
-			&= \bigcup_{j \in J} A_{j} \times \{j\}
-		\end{split}
-	\end{align}
+	\begin{equation}
+		A = \bigsqcup_{j \in J} A_{j} \equiv \bigcup_{j \in J} A_{j} \times \{j\}
+	\end{equation}
 	
 	è uno spazio topologico, sapendo che $ U $ è aperto in $ A $ se e solo se $ U \cap A_{j} $ è aperto in $ A_{j} $ per $ \forall j \in J $.
 \end{tcolorbox}
 
-qui
+Per dimostrare che l'unione disgiunta di spazi topologici $ A $ sia ancora uno spazio topologico dobbiamo dimostrare che:
+
+\begin{itemize}
+	\item L'intersezione di due aperti in $ A $ sia ancora aperto in $ A $
+	
+	\item L'unione di un numero qualsiasi di aperti in $ A $ sia ancora aperto in $ A $
+\end{itemize}
+
+Per la prima, prendiamo due aperti $ U $ e $ V $ in $ A $: questo significa che $ U \cap A_{j} $ e $ V \cap A_{j} $ saranno aperti in $ A_{j} $ per $ \forall j \in J $ per la condizione imposta. Siccome gli $ A_{j} $ sono spazi topologici, l'intersezione di due aperti è ancora un aperto, dunque
+
+\begin{equation}
+	U \cap V \cap A_{j} \text{ aperto in } A_{j} \qcomma \forall j \in J
+\end{equation}
+
+A questo punto, vale l'implicazione inversa, perciò $ U \cap V $ è aperto in $ A $.\\\\
+Analogamente, per la seconda, prendiamo una famiglia infinita di aperti $ V_{i} $ (i.e. $ i \in N $) in $ A $: questo significa che $ V_{i} \cap A_{j} $ saranno aperti in $ A_{j} $ per $ \forall j \in J $ per la condizione imposta. Siccome gli $ A_{j} $ sono spazi topologici, l'unione di un numero qualsiasi di aperti è ancora un aperto. Definendo
+
+\begin{equation}
+	V \doteq \bigcup_{i=1}^{\infty} V_{i}
+\end{equation}
+
+possiamo dire che $ V \cap A_{j} $ è aperto in $ A_{j} $ per $ \qcomma \forall j \in J $. A questo punto, vale l'implicazione inversa, perciò $ V $ è aperto in $ A $.
 
 \tocless\section{}\label{es2-1}
 
