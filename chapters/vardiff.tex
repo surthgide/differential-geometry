@@ -1,42 +1,60 @@
 \section{Varietà topologiche e differenziabili}
 
+\subsection{Spazi topologici}
+
+Una topologia $ \tau $ su un insieme non vuoto $ X $ è una classe non vuota di sottoinsiemi di $ X $, i.e. $ \tau \subset \ps (X) $ (dove $ \ps (X) $ indica l'insieme delle parti di $ X $), per la quale valgono:
+
+\begin{enumerate}
+	\item $ \emptyset, X \in \tau $
+	
+	\item L'unione di un numero qualsiasi di insiemi di $ \tau $ appartiene a $ \tau $
+	
+	\item L'intersezione di due insiemi qualsiasi di $ \tau $ appartiene a $ \tau $
+\end{enumerate}
+
+La coppia $ (X, \tau) $ è detta \textit{spazio topologico}; in queste note, indicheremo con $ X $ lo spazio topologico $ (X, \tau) $, sottintendendo la topologia $ \tau $ quando questa è chiara dal contesto.
+
 \subsection{Varietà topologiche}
 
-Sia $ X $ uno spazio topologico\footnote{%
-	Cioè un insieme non vuoto a cui è abbinata una topologia.%
-}, diremo che $ X $ è una \textit{varietà topologica} se sono soddisfatte le seguenti condizioni:
+Sia $ X $ uno spazio topologico, diremo che $ X $ è una \textit{varietà topologica} se sono soddisfatte le seguenti condizioni:
 
 \begin{itemize}
 	\item $ X $ è $ T_{2} $ o \textit{di Hausdorff}, i.e. dati due punti distinti di $ X $ è sempre possibile trovare due intorni disgiunti che contengano i due punti
 	
-	\item $ X $ è $ N_{2} $ o a base numerabile, i.e. esiste una base per la topologia di $ X $ che sia numerabile
+	\item $ X $ è $ N_{2} $ o \textit{a base numerabile}, i.e. esiste una base per la topologia di $ X $ che sia numerabile\footnote{%
+		Un insieme è numerabile se possiede la stessa cardinalità dell'insieme dei numeri naturali $ \N $.}
 	
-	\item $ X $ è localmente euclideo, i.e. per $ \forall p \in X $ esiste un aperto $ U \ni p $ ed esiste un'applicazione $ \phi : U \to \R^{n} $ tale che $ \phi : U \to \phi(U) \subset \R^{n} $ aperto sia un omeomorfismo, dunque localmente ogni aperto di $ X $ è omeomorfo a un aperto di $ \R^{n} $
+	\item $ X $ è \textit{localmente euclideo}, i.e. 
+		\begin{equation}
+			\forall p \in X, \, \E \text{aperto } U \ni p \wedge \E \phi : U \to \R^{n} \, \mid \, \phi : U \to \phi(U) \subset \R^{n} \text{ omeomorfismo}
+		\end{equation}
+		dunque localmente ogni aperto di $ X $ è omeomorfo a un aperto di $ \R^{n} $
 \end{itemize}
 
-La coppia $ (U,\phi) $ è chiamata \textit{carta} intorno a $ p $; nel caso in cui $ \phi(p)=0 $, la carta è detta \textit{centrata} in $ p $.\\
-Diremo che, se lo spazio topologico è localmente omeomorfo a $ \R^{n} $, la sua dimensione è pari a $ \dim (X) = n $.
+La coppia $ (U,\phi) $ è chiamata \textit{carta intorno a} $ p $; se $ \phi(p) = 0 $, la carta è detta \textit{centrata} in $ p $.\\
+Diremo che, se lo spazio topologico è localmente omeomorfo a $ \R^{n} $, la sua dimensione è pari a quella di quest'ultimo, i.e. $ \dim (X) = n $.
 
-\begin{remark}
-	Possiamo sempre assumere che $ \phi(U) \equiv \R^{n} $. Questo perché all'interno dell'immagine di $ U $ in $ \R^{n} $ (i.e. $ \phi(U) $) è sempre possibile trovare una palla $ B_{\delta}(0) $ centrata nell'origine con raggio $ \delta $ opportuno per la quale esista sempre un diffeomorfismo (e quindi un omeomorfismo) $ h : B_{\delta}(0) \to \R^{n} $.\\
-	Sia la carta $ (V,\psi) $ con $ V = \phi^{-1}(B_{\delta}(0)) $ aperto e $ \psi = h \circ \left. \phi \right|_{V} $ in cui $ \psi : V \to \R^{n} $ è un omeomorfismo: da questo si ottiene che, cambiando $ U $ e $ \phi $ se necessario, si può sempre assumere che l'immagine della carta sia $ \R^{n} $, dunque $ \psi(V) = \R^{n} $.
-	
-	\img{0.4}{img4}
-\end{remark}
+\sbs{0.55}{%
+			\begin{remark}
+				Possiamo sempre assumere che $ \phi(U) \equiv \R^{n} $. Questo perché all'interno dell'immagine di $ U $ in $ \R^{n} $ (i.e. $ \phi(U) $) è sempre possibile trovare una palla $ B_{\delta}(0) $ centrata nell'origine con raggio $ \delta $ opportuno per la quale esista sempre un diffeomorfismo (e quindi un omeomorfismo) $ h : B_{\delta}(0) \to \R^{n} $.\\
+				Sia la carta $ (V,\psi) $ con $ V = \phi^{-1}(B_{\delta}(0)) $ aperto e $ \psi = h \circ \eval{\phi}_{V} $ in cui $ \psi : V \to \R^{n} $ è un omeomorfismo: da questo si ottiene che, cambiando $ U $ e $ \phi $ se necessario, si può sempre assumere che l'immagine della carta sia $ \R^{n} $, dunque $ \psi(V) = \R^{n} $.
+			\end{remark}
+		}
+	{0.4}{%
+			\img{1}{img4}
+		}
 
 Il vantaggio di avere una carta su uno spazio topologico è quello di poterlo ricondurre, almeno localmente, a $ \R^{n} $.
 
 \begin{remark}
-	Se $ (U,\phi) $ è una carta su $ X $
+	Se $ (U,\phi) $ è una carta su $ X $ centrata in $ p \in U $, allora
 	
-	\begin{align}
-		\begin{split}
-			\phi(p) = (0,\dots,0) \in \R^{n}\\
-			\phi(q) = (x^{1}(q),\dots,x^{n}(q)) \in \R^{n}
-		\end{split}
-	\end{align}
+	\begin{gather}
+		\phi(p) = (0, \dots, 0) \in \R^{n}\\
+		\phi(q) = (\phi^{1}(q), \dots, \phi^{n}(q)) \in \R^{n} \qcomma \forall q \in U
+	\end{gather}
 
-	con $ p,q \in U $ e $ x^{i} : U \to \R $.
+	dove $ \phi^{i} : U \to \R $.
 \end{remark}
 
 \begin{remark}
@@ -49,21 +67,19 @@ Il vantaggio di avere una carta su uno spazio topologico è quello di poterlo ri
 	rende ben definita la dimensione di una varietà topologica.
 \end{remark}
 
-\`{E} importante precisare che le tre condizioni che determinano uno spazio topologico sono indipendenti tra di loro, dunque due di queste non implicano necessariamente la terza.
+È importante precisare che le tre condizioni che determinano uno spazio topologico sono indipendenti tra di loro, dunque due di queste non implicano necessariamente la terza.
 
 \subsubsection{Unione disgiunta di spazi topologici}
 
 Sia $ \{A_{j}\}_{j \in J} $ una famiglia di spazi topologici e sia
 
-\begin{align}
-	\begin{split}
-		A &= \bigsqcup_{j \in J} A_{j}\\
-		&= \bigcup_{j \in J} A_{j} \times \{j\}
-	\end{split}
-\end{align}
+\begin{equation}
+		A = \bigsqcup_{j \in J} A_{j} \equiv \bigcup_{j \in J} A_{j} \times \{j\}
+\end{equation}
 
-Definisco la topologia dell'unione disgiunta su $ A $ dichiarando $ U $ aperto in $ A $ se e solo se $ U \cap A_{j} $ è aperto in $ A_{j} $ per $ \forall j \in J $.\\
-Vedi Esercizio \ref{BONUS2-1}.
+Definiamo la topologia dell'unione disgiunta\footnote{%
+	Vedi Esercizio \ref{BONUS2-1}.%
+} su $ A $ dichiarando $ U $ aperto in $ A $ se e solo se $ U \cap A_{j} $ è aperto in $ A_{j} $ per $ \forall j \in J $.
 
 \subsubsection{\textit{Esempi}}
 
