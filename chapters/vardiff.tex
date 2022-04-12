@@ -22,7 +22,7 @@ Sia $ X $ uno spazio topologico, diremo che $ X $ è una \textit{varietà topolo
 	\item $ X $ è $ T_{2} $ o \textit{di Hausdorff}, i.e. dati due punti distinti di $ X $ è sempre possibile trovare due intorni disgiunti che contengano i due punti
 	
 	\item $ X $ è $ N_{2} $ o \textit{a base numerabile}, i.e. esiste una base per la topologia di $ X $ che sia numerabile\footnote{%
-		Un insieme è numerabile se possiede la stessa cardinalità dell'insieme dei numeri naturali $ \N $.}
+		Un insieme è numerabile se possiede la stessa cardinalità dell'insieme dei numeri naturali $ \N $; in notazione, $ \# \mathfrak{B} = \# \N = \aleph_{0} $.}
 	
 	\item $ X $ è \textit{localmente euclideo}, i.e. 
 		\begin{equation}
@@ -92,101 +92,114 @@ Sia l'insieme degli assi coordinati
 \end{equation}
 
 questo spazio è $ N_{2} + T_{2} $ in quanto sottospazio di $ \R^{2} $ il quale ha queste proprietà\footnote{%
-	La proprietà di uno spazio di essere $ N_{2} + T_{2} $ è \textit{ereditaria}.%
-}, ma non è localmente euclideo nell'origine. Perché lo sia, deve essere possibile prendere un intorno dell'origine $ U $ il quale sia omeomorfo a $ \R^{n} $, ma se si toglie un punto da entrambi gli spazi, questi dovrebbero essere ancora omeomorfi, nello specifico togliamo l'origine (supponendo che l'origine di $ U $ vada nell'origine di $ \R^{n} $) quindi $ U \setminus \{(0,0)\} \simeq \R^{n} \setminus \{0\} $: se $ n=1 $, lo spazio $ \R^{n} \setminus \{0\} $ è composto da due componenti connesse mentre, se $ n \geqslant 2 $, $ \R^{n} \setminus \{0\} $ è connesso. Dunque non è omeomorfo a $ U \setminus \{(0,0)\} $ in quanto questo spazio è formato da 4 componenti connesse e, dalla topologia, due spazi omeomorfi inducono una bigezione tra le parti connesse.
+	Le proprietà topologiche $ N_{2} $ e $ T_{2} $ sono \textit{ereditarie} e dunque un sottospazio di uno spazio topologico che le possiede avrà anch'esso queste proprietà.%
+}, ma non è localmente euclideo nell'origine. Perché lo sia, deve essere possibile prendere un intorno dell'origine $ U $ il quale sia omeomorfo a $ \R^{n} $, ma se si toglie un punto da entrambi gli spazi, questi dovrebbero essere ancora omeomorfi. Nello specifico togliamo l'origine (supponendo che l'origine di $ U $ vada nell'origine di $ \R^{n} $) quindi dovremmo avere $ U \setminus \{(0,0)\} \simeq \R^{n} \setminus \{0\} $:
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.4\textwidth,keepaspectratio]{img5}
-\end{figure}
+\sbs{0.5}{%
+			\begin{itemize}
+				\setlength\itemsep{2em}
+				
+				\item se $ n=1 $, lo spazio $ \R^{n} \setminus \{0\} $ è composto da due componenti connesse
+				
+				\item se $ n \geqslant 2 $, $ \R^{n} \setminus \{0\} $ è connesso
+			\end{itemize}
+		}
+	{0.45}{%
+			\img{1}{img5}
+		}
+	
+Questo implica che $ \R^{n} \setminus \{0\} $ non è omeomorfo a $ U \setminus \{(0,0)\} $ in quanto quest'ultimo è formato da quattro componenti connesse e, dalla topologia, un omeomorfismo tra due spazi induce una bigezione tra le parti connesse.
 
 \paragraph{2. Spazio $ T_{2} $ e localmente euclideo ma non $ N_{2} $}
 
 Consideriamo l'unione disgiunta
 
-\begin{align}
-	\begin{split}
-		X &= \bigsqcup (0,1)\\
-		&= \bigcup_{j \in J} (0,1) \times \{j\}
-	\end{split}
-\end{align}
+\begin{equation}
+	X = \bigsqcup (0,1) \equiv \bigcup_{j \in J} (0,1) \times \{j\}
+\end{equation}
 
 con $ J $ non numerabile.\\
 Questo spazio non è $ N_{2} $ perché non esiste una base numerabile per infinite coppie non numerabili.\\
-Prendendo due punti qualunque di $ X $: questi o stanno entrambi nello stesso $ (0,1) $, il quale è di Hausdorff, quindi $ X $ è $ T_{2} $; oppure stanno in due intervalli diversi, i quali sono due intervalli disgiunti che contengono i due punti, quindi $ X $ è ancora $ T_{2} $.\\
+Consideriamo due punti qualunque di $ X $: questi stanno entrambi nello stesso $ (0,1) $, il quale è di Hausdorff, oppure stanno in due intervalli diversi, i quali sono due intervalli disgiunti che contengono i due punti; in entrambi casi, $ X $ è $ T_{2} $.\\
 Lo spazio $ X $ è localmente euclideo perché un suo punto $ p $ sarà contenuto in uno degli intervalli $ (0,1) \times \{j_{0}\} $ il quale è omeomorfo a $ \R $.
 
 \paragraph{3. Spazio $ N_{2} $ e localmente euclideo ma non $ T_{2} $ (retta con due origini)}
 
-Sia $ S = \R \setminus \{0\} \cup \{A\} \cup \{B\} $ dove $ A,B \notin \R \setminus \{0\} $.\\ 
-Per associare a questo spazio una topologia, possiamo trovare una famiglia di sottoinsiemi che faccia da base per la topologia (generata da questa famiglia). Sia\footnote{%
-	$ \mathcal{P}(E) $ indica l'insieme di tutti i sottoinsiemi di $ E $.%
-} $ \mathfrak{B} \subset \mathcal{P} (S) $ con
+Sia $ S = \R \setminus \{0\} \cup \{A\} \cup \{B\} $ dove $ A,B \notin \R $.\\ 
+Per associare a questo spazio una topologia, possiamo trovare una famiglia di sottoinsiemi che faccia da base per la topologia (generata da questa famiglia). Siano $ c,d \in \R^{+} $ e l'insieme
 
 \begin{equation}
 	\mathfrak{B} = \left\{ (a,b) \st a<b, \, 0 \notin (a,b) \right\} \cup \left\{ I_{A}(c,d) \right\} \cup \left\{ I_{B}(c,d) \right\}
 \end{equation}
 
-con $ c,d \in \R^{+} $ e
+con $ \mathfrak{B} \subset \mathcal{P} (S) $, dove
+
+\begin{gather}
+	I_{A}(c,d) = (-c,0) \cup \{A\} \cup (0,d)\\
+	I_{B}(c,d) = (-c,0) \cup \{B\} \cup (0,d)
+\end{gather}
+
+Se l'intersezione di elementi di $ \mathfrak{B} $ può essere scritta come unioni di elementi di $ \mathfrak{B} $, allora esiste un'unica topologia $ \tau_{\mathfrak{B}} $ generata da $ \mathfrak{B} $ che ha questa come base.\\
+L'intersezione tra intervalli di tipo $ (a,b) $ produce intervalli dello stesso tipo; quella tra intervalli $ (a,b) $ e $ I_{A}(c,d) $ produce ancora un intervallo euclideo che appartiene alla famiglia; per i casi
 
 \begin{equation}
+	I_{K}(c,d) \cap I_{K}(c',d') =%
+		\begin{cases}
+			I_{K}(c',d), & c' > c \wedge d > d\\
+			I_{K}(c,d'), & c > c \wedge d' > d\\
+			I_{K}(c',d'), & c' > c \wedge d' > d\\
+			I_{K}(c,d), & c > c \wedge d > d
+		\end{cases}%
+	\qq{per} K = A, B
+\end{equation}
+
+\begin{equation}
+	I_{A}(c,d) \cap I_{B}(c',d') = I_{B}(c,d) \cap I_{A}(c',d') =%
 	\begin{cases}
-		I_{A}(c,d) = (-c,0) \cup \{A\} \cup (0,d)\\
-		I_{B}(c,d) = (-c,0) \cup \{B\} \cup (0,d)
+		(c',0) \cup (0,d), & c' > c \wedge d > d\\
+		(- c,0) \cup (0,d'), & c > c \wedge d' > d\\
+		(- c',0) \cup (0,d'), & c' > c \wedge d' > d\\
+		(- c,0) \cup (0,d), & c > c \wedge d > d
 	\end{cases}
 \end{equation}
 
-Se l'intersezione di elementi di $ \mathfrak{B} $ può essere scritta come unioni di elementi di $ \mathfrak{B} $, allora esiste un'unica topologia $ \tau_{\mathfrak{B}} $ generata da $ \mathfrak{B} $ che ha questa come base.\\
-L'intersezione tra intervalli di tipo $ (a,b) $ produce intervalli dello stesso tipo, quella tra intervalli $ (a,b) $ e $ I_{A}(c,d) $ produce ancora un intervallo euclideo che appartiene alla famiglia, per il caso
-
-\begin{equation}
-	I_{A}(c,d) \cap I_{A}(c^{\prime},d^{\prime}) =%
-		\begin{cases}
-			I_{A}(c^{\prime},d)\\
-			I_{A}(c,d^{\prime})\\
-			I_{A}(c^{\prime},d^{\prime})\\
-			I_{A}(c,d)
-		\end{cases}
-\end{equation}
-
-e analogamente per $ I_{A}(c,d) \cap I_{B}(c',d') $, il risultato è l'unione di elementi di $ \mathfrak{B} $.\\
-Vogliamo dunque mostrare che lo spazio, insieme alla sua topologia, $ (S,\tau_{\mathfrak{B}}) $ sia $ N_{2} $ e localmente euclideo ma non $ T_{2} $.\\
+il risultato è l'unione di elementi di $ \mathfrak{B} $.\\
+Vogliamo dunque mostrare che lo spazio topologico $ (S,\tau_{\mathfrak{B}}) $ sia $ N_{2} $ e localmente euclideo ma non $ T_{2} $.\\
 Se consideriamo la topologia di $ S $ ristretta\footnote{%
 	$ \R \setminus \{0\} \subset S $ perché una base per $ \tau_{eucl.} $ è $ \mathfrak{B}_{\R \setminus \{0\}} = \left\{ (a,b) \st a<b, \, 0 \notin (a,b) \right\} \subset \mathfrak{B} $.%
-} a $ \R \setminus \{0\} \subset S $ otteniamo che $ \tau_{\left. \mathfrak{B} \right|_{\R \setminus \{0\}}} = \tau_{euclidea} $, possiamo quindi trovare una famiglia numerabile tale che ogni intervallo della forma $ (a,b) $ possa essere scritto come unione di questa famiglia numerabile proprio perché $ \R \setminus \{0\} $ è $ N_{2} $, i.e.
+} a $ \R \setminus \{0\} \subset S $, otteniamo che $ \tau_{\eval{\mathfrak{B}}_{\R \setminus \{0\}}} = \tau_{eucl.} $. Possiamo quindi trovare una famiglia numerabile tale che ogni intervallo della forma $ (a,b) $ possa essere scritto come unione di questa famiglia numerabile proprio perché $ \R \setminus \{0\} $ è $ N_{2} $, i.e.
 
 \begin{equation}
 	(a,b) = \bigcup_{r,s \in \Q} (r,s)
 \end{equation}
 
-dove $ \Q $ indica i numeri razionali e $ 0 \notin (r,s) $; analogamente
+dove $ \Q $ indica i numeri razionali\footnote{%
+	Ricordiamo che $ \# \Q = \# \N = \aleph_{0} $.%
+} e $ 0 \notin (r,s) $; analogamente
 
-\begin{align}
-	I_{A}(c,d) &= \bigcup_{r,s \in \Q} I_{A}(r,s)\\
-	I_{B}(c,d) &= \bigcup_{r,s \in \Q} I_{B}(r,s)
-\end{align}
+\begin{gather}
+	I_{A}(c,d) = \bigcup_{r,s \in \Q} I_{A}(r,s)\\
+	I_{B}(c,d) = \bigcup_{r,s \in \Q} I_{B}(r,s)
+\end{gather}
 
-A questo punto possiamo prendere la famiglia
+A questo punto, prendendo $ r, s \in \Q^{+} $, possiamo considerare la famiglia
 
 \begin{equation}
-	\mathfrak{C} = \left\{ (r,s) \st r,s \in \Q \, \wedge \, 0 \notin (r,s) \right\} \cup \left\{ I_{A}(r,s) \st r,s \in \Q^{+} \right\} \cup \left\{ I_{B}(r,s) \st r,s \in \Q^{+} \right\}
+	\mathfrak{C} = \left\{ (t,u) \st t,u \in \Q \, \wedge \, t < u \, \wedge \, 0 \notin (r,s) \right\} \cup \left\{ I_{A}(r,s) \right\} \cup \left\{ I_{B}(r,s) \right\}
 \end{equation}
 
-la quale è una base numerabile e dunque $ S $ è $ N_{2} $.\\
-Mostriamo che $ (S,\tau_{\mathfrak{B}}) $ sia localmente euclideo, costruendo un'applicazione
+la quale è una base numerabile per $ S $ e dunque $ S $ è $ N_{2} $.\\
+Per mostrare che $ S $ sia localmente euclideo costruiamo l'applicazione
 
-\begin{align}
-	\begin{split}
-		\phi : I_{A}(c,d) &\to (-c,d) \subset \R\\
-		x &\mapsto x\\
-		A &\mapsto 0
-	\end{split}
-\end{align}
+\map{\phi}
+	{I_{A}(c,d)}{(-c,d) \subset \R}
+	{x}{x\\
+	A &\mapsto 0}
 
-la quale è un omeomorfismo, perché è una bigezione continua. Per la continuità, prendiamo un intervallo $ (e,f) \subset (-c,d) $ con $ 0 \notin (e,f) $ la cui controimmagine è sé stesso, i.e. $ \phi^{-1}((e,f)) = (e,f) \in \tau_{\mathfrak{B}} $; se invece $ (-e,f) $ con $ e,f>0 $, la sua controimmagine sarà $ \phi^{-1}((-e,f)) = I_{A}(e,f) \in \tau_{\mathfrak{B}} $ il quale è un aperto. Per mostrare che $ \phi $ sia effettivamente continua dobbiamo verificare che la sua inversa $ \phi^{-1} $ sia anch'essa continua, ma è equivalente a mostrare che $ \phi $ sia aperta\footnote{%
+la quale è un omeomorfismo, perché è una bigezione continua. Per la continuità, prendiamo un intervallo $ (e,f) \subset (-c,d) $ con $ 0 \notin (e,f) $ la cui controimmagine è sé stesso, i.e. $ \phi^{-1}((e,f)) = (e,f) \in \tau_{\mathfrak{B}} $; se invece consideriamo $ (-e,f) $ con $ e,f>0 $, la sua controimmagine sarà $ \phi^{-1}((-e,f)) = I_{A}(e,f) \in \tau_{\mathfrak{B}} $ il quale è un aperto. Per mostrare che $ \phi $ sia effettivamente continua dobbiamo verificare che la sua inversa $ \phi^{-1} $ sia anch'essa continua, ma questo è equivalente a mostrare che $ \phi $ sia aperta\footnote{%
 	Un'applicazione aperta associa aperti ad aperti.%
-}: sia che si prenda un intervallo $ (e,f) $ oppure $ I_{A}(e,f) $, si ottiene come immagine comunque un aperto, perciò è continua e lo spazio è localmente euclideo.\\
-Infine troviamo che $ (S,\tau_{\mathfrak{B}}) $ non è $ T_{2} $ perché due aperti di questo spazio che contengono $ A $ e $ B $ rispettivamente si devono necessariamente intersecare, i.e. vale sempre $ I_{A}(c,d) \cap I_{B}(e,f) \neq \{\} $.
+}: sia che si prenda un intervallo $ (e,f) $ oppure $ I_{A}(e,f) $, si ottiene comunque come immagine un aperto, perciò è continua e lo spazio è localmente euclideo.\\
+Infine, troviamo che $ S $ non è $ T_{2} $ perché due aperti di questo spazio che contengono $ A $ e $ B $ rispettivamente si devono necessariamente intersecare, i.e. vale sempre $ I_{A}(c,d) \cap I_{B}(e,f) \neq \emptyset $ per $ \forall c, d, e, f \in \R $.
 
 \subsection{Atlanti}
 
@@ -219,7 +232,7 @@ sono lisce.
 \end{figure}
 
 \begin{remark}
-	La $ C^{\infty} $-compatibilità è automaticamente verificata se $ U \cap V = \{\} $.
+	La $ C^{\infty} $-compatibilità è automaticamente verificata se $ U \cap V = \emptyset $.
 \end{remark}
 
 \begin{remark}
@@ -772,7 +785,7 @@ Sia $ S $ uno spazio topologico e $ \sim $ una relazione di equivalenza su $ S $
 Definiamo una topologia su $ \sfrac{S}{\sim} $ definendo un insieme $ U $ tale che
 
 \begin{equation}
-	U \text{ aperto in } \sfrac{S}{\sim} \iff U = \{\} \, \wedge \, U = \sfrac{S}{\sim} \, \wedge \, \pi^{-1}(U) \text{ aperto in } S
+	U \text{ aperto in } \sfrac{S}{\sim} \iff U = \emptyset \, \wedge \, U = \sfrac{S}{\sim} \, \wedge \, \pi^{-1}(U) \text{ aperto in } S
 \end{equation}
 
 cioè $ U $ è aperto se e solo se la sua controimmagine è aperta in $ S $.\\
@@ -961,7 +974,7 @@ in quanto i punti $ \{-1,1\} $ sono equivalenti, ma questo insieme non è aperto
 
 \begin{proof}\label{solved-es2-3}
 	Supponiamo che il quoziente $ \sfrac{S}{\sim} $ sia $ T_{2} $ e dimostriamo che $ R $ sia chiuso in $ S\times S $.\\
-	Prendiamo il punto del complementare $ (x,y) \in S \times S \setminus R $ per cui si ha che $ x \nsim y $, dunque $ \pi(x) \neq \pi(y) $ o alternativamente $ [x] \neq [y] $. A questo punto abbiamo due punti diversi dello spazio quoziente $ \sfrac{S}{\sim} $, il quale è $ T_{2} $, dunque esisteranno due aperti $ U $ e $ V $ di $ \sfrac{S}{\sim} $ tali che $ U \ni [x] $, $ V \ni [y] $ e $ U \cap V = \{\} $. Utilizzando l'inversa della proiezione, $ \pi^{-1}(U) \ni x $ e $ \pi^{-1}(V) \ni y $ sono aperti. Considerando la topologia prodotto, $ \pi^{-1}(U) \times \pi^{-1}(V) \ni (x,y) $ questo è aperto in $ S \times S $ perché prodotto di due aperti e, siccome $ U $ e $ V $ sono disgiunti, $ \pi^{-1}(U) \times \pi^{-1}(V) \subset S \times S \setminus R $, altrimenti ci sarebbero dei punti di $ \pi^{-1}(U) \times \pi^{-1}(V) $ che andrebbero a finire in punti equivalenti in $ S \times S $. Questo implica che $ S \times S \setminus R $ è aperto e, siccome $ S \times S $ è anch'esso aperto perché prodotto di spazi aperti, $ R $ è chiuso.\\
+	Prendiamo il punto del complementare $ (x,y) \in S \times S \setminus R $ per cui si ha che $ x \nsim y $, dunque $ \pi(x) \neq \pi(y) $ o alternativamente $ [x] \neq [y] $. A questo punto abbiamo due punti diversi dello spazio quoziente $ \sfrac{S}{\sim} $, il quale è $ T_{2} $, dunque esisteranno due aperti $ U $ e $ V $ di $ \sfrac{S}{\sim} $ tali che $ U \ni [x] $, $ V \ni [y] $ e $ U \cap V = \emptyset $. Utilizzando l'inversa della proiezione, $ \pi^{-1}(U) \ni x $ e $ \pi^{-1}(V) \ni y $ sono aperti. Considerando la topologia prodotto, $ \pi^{-1}(U) \times \pi^{-1}(V) \ni (x,y) $ questo è aperto in $ S \times S $ perché prodotto di due aperti e, siccome $ U $ e $ V $ sono disgiunti, $ \pi^{-1}(U) \times \pi^{-1}(V) \subset S \times S \setminus R $, altrimenti ci sarebbero dei punti di $ \pi^{-1}(U) \times \pi^{-1}(V) $ che andrebbero a finire in punti equivalenti in $ S \times S $. Questo implica che $ S \times S \setminus R $ è aperto e, siccome $ S \times S $ è anch'esso aperto perché prodotto di spazi aperti, $ R $ è chiuso.\\
 	L'implicazione opposta della proposizione si ottiene invertendo le implicazioni di questa dimostrazione.
 \end{proof}
 
@@ -3867,7 +3880,7 @@ dove valgono
 \begin{equation}
 	\begin{cases}
 		N = \mathcal{PC}_{F} \cup \mathcal{PR}_{F}\\
-		\mathcal{PC}_{F} \cap \mathcal{PR}_{F} = \{\}
+		\mathcal{PC}_{F} \cap \mathcal{PR}_{F} = \emptyset
 	\end{cases}
 \end{equation}
 
@@ -3902,7 +3915,7 @@ Analogamente ai punti regolari e critici, valgono le seguenti relazioni
 \begin{equation}
 	\begin{cases}
 		M = \mathcal{VC}_{F} \cup \mathcal{VR}_{F}\\
-		\mathcal{VC}_{F} \cap \mathcal{VR}_{F} = \{\}
+		\mathcal{VC}_{F} \cap \mathcal{VR}_{F} = \emptyset
 	\end{cases}
 \end{equation}
 
@@ -4706,7 +4719,7 @@ In conclusione, per definizione, $ \S^{2}$ è una sottovarietà di $\R^{3} $ con
 \end{definition}
 
 \begin{theorem}[Preimmagine di un valore regolare]
-	Siano due varietà differenziabili $ N $ e $ M $ rispettivamente con $ \dim(N)=n $ e $ \dim(M)=m $, $ F : N \to M $ un'applicazione liscia tra varietà e $ c \in \mathcal{VR}_{f} \cap F(N) $, i.e. $ F^{-1}(c) \neq \{\} $, allora $ F^{-1}(c) $ è una sottovarietà di $ N $ con $ \dim(F^{-1}(c)) = n-m $ o equivalentemente $ \operatorname{cod}_{N}(F^{-1}(c)) = m $.\\
+	Siano due varietà differenziabili $ N $ e $ M $ rispettivamente con $ \dim(N)=n $ e $ \dim(M)=m $, $ F : N \to M $ un'applicazione liscia tra varietà e $ c \in \mathcal{VR}_{f} \cap F(N) $, i.e. $ F^{-1}(c) \neq \emptyset $, allora $ F^{-1}(c) $ è una sottovarietà di $ N $ con $ \dim(F^{-1}(c)) = n-m $ o equivalentemente $ \operatorname{cod}_{N}(F^{-1}(c)) = m $.\\
 	Inoltre $ T_{p}(F^{-1}(c)) = \ker(F_{*p}) $ per $ \forall p \in F^{-1}(c) $, i.e. lo spazio tangente coincide con l'insieme dei vettori di $ T_{p}(N) $ che si annullano tramite il differenziale.
 \end{theorem}
 
@@ -4952,7 +4965,7 @@ i punti critici di $ F $ sono
 cioè quei punti che rendono unitario il rango di $ F $. A questo punto
 
 \begin{equation}
-	0 \in \mathcal{VR}_{F} \iff S \cap \mathcal{PC}_{F} = \{\}
+	0 \in \mathcal{VR}_{F} \iff S \cap \mathcal{PC}_{F} = \emptyset
 \end{equation}
 
 per cui bisogna risolvere il sistema
@@ -4968,7 +4981,7 @@ per cui bisogna risolvere il sistema
 
 il quale non ha soluzione\footnote{%
 	Perché abbia soluzione, per le seconda equazione si deve avere che una delle tre coordinate sia nulla e le altre due siano una l'opposta dell'altra, ma questa situazione non è permessa dalla prima equazione.%
-} o, equivalentemente, $ S \cap \mathcal{PC}_{F} = \{\} $.\\
+} o, equivalentemente, $ S \cap \mathcal{PC}_{F} = \emptyset $.\\
 Vedi Esercizio \ref{BONUS2-3}.
 
 \paragraph{4. Grafico di funzione}
@@ -5148,7 +5161,7 @@ ma
 	m_{ij} = 0, \, \forall i,j=1,\dots,n \implies \det(A) = 0
 \end{equation}
 
-Siccome quindi $ 1 \notin \mathcal{VC}_{f} $ allora $ 1 \in \mathcal{VR}_{f} $, in quanto $ \mathcal{VC}_{f} \cap \mathcal{VR}_{f} = \{\} $: questo prova che $ f^{-1}(1) = SL_{n}(\R) $ è una sottovarietà di $ GL_{n}(\R) $ di dimensione $ n^{2}-1 $.\\
+Siccome quindi $ 1 \notin \mathcal{VC}_{f} $ allora $ 1 \in \mathcal{VR}_{f} $, in quanto $ \mathcal{VC}_{f} \cap \mathcal{VR}_{f} = \emptyset $: questo prova che $ f^{-1}(1) = SL_{n}(\R) $ è una sottovarietà di $ GL_{n}(\R) $ di dimensione $ n^{2}-1 $.\\
 Dimostreremo che\footnote{%
 	Vedi Sottosezione \ref{SL-sublie}.}
 
@@ -5280,7 +5293,7 @@ Questi teoremi derivano dal teorema della funzione inversa come caso particolare
 \end{proof}
 
 \begin{theorem}[Preimmagine di un'applicazione di rango costante]
-	Siano un'applicazione liscia $ F : N \to M $ tra le varietà differenziabili $ N $ e $ M $ di dimensione rispettivamente $ n $ ed $ m $ e un punto $ c \in M $ tale che $ F^{-1}(c) \neq \{\} $ e supponiamo esista un aperto $ W \subset N $ tale che $ F^{-1}(c) \subset W $ nel quale il rango di $ F $ sia costante, i.e.
+	Siano un'applicazione liscia $ F : N \to M $ tra le varietà differenziabili $ N $ e $ M $ di dimensione rispettivamente $ n $ ed $ m $ e un punto $ c \in M $ tale che $ F^{-1}(c) \neq \emptyset $ e supponiamo esista un aperto $ W \subset N $ tale che $ F^{-1}(c) \subset W $ nel quale il rango di $ F $ sia costante, i.e.
 	
 	\begin{equation}
 		\rank(F(q))=k, \qquad \forall q \in W
@@ -5439,7 +5452,7 @@ Se $ k = m \leqslant n $ allora $ F $ è una sommersione ($ F_{*p} $ suriettivo)
 		W \doteq \{ q \in U \mid \rank(J(F)(q)) = \rank \left( \left[ \dfrac{\partial F^{i}}{\partial x^{j}} (q) \right] \right) = k \}
 	\end{equation}
 
-	Per ipotesi $ p \in W $ e dunque $ W \neq \{\} $. Mostriamo che $ W $ è aperto in $ U $: siccome $ U $ è aperto in $ N $, allora anche $ W $ sarà aperto in $ N $.\\
+	Per ipotesi $ p \in W $ e dunque $ W \neq \emptyset $. Mostriamo che $ W $ è aperto in $ U $: siccome $ U $ è aperto in $ N $, allora anche $ W $ sarà aperto in $ N $.\\
 	Possiamo riscrivere $ W $ con $ \rank(J(F)(q)) \geqslant k $ perché il rango è massimale e non può essere $ >k $, dunque le condizioni sono equivalenti, i.e.
 	
 	\begin{equation}
@@ -5574,11 +5587,11 @@ Combinando questo corollario con il teorema del rango costante si ottengono i te
 \end{proof}
 
 \begin{corollary}[3]
-	Siano $ N $ una varietà differenziabile compatta e $ F : N \to \R^{m} $ un'applicazione liscia, allora deve esistere almeno un punto critico, i.e. $ \mathcal{PC}_{F} \neq \{\} $.
+	Siano $ N $ una varietà differenziabile compatta e $ F : N \to \R^{m} $ un'applicazione liscia, allora deve esistere almeno un punto critico, i.e. $ \mathcal{PC}_{F} \neq \emptyset $.
 \end{corollary}
 
 \begin{proof}
-	Se per assurdo $ \mathcal{PC}_{F} = \{\} $ allora $ N = \mathcal{PR}_{F} $ e quindi $ F $ è una sommersione: per il secondo corollario $ F(N) = \R^{m} $ ma questo è assurdo in quanto $ N $ è compatta e dunque la sua immagine è compatta mentre $ \R^{m} $ non lo è (un'applicazione suriettiva porta compatti in compatti).
+	Se per assurdo $ \mathcal{PC}_{F} = \emptyset $ allora $ N = \mathcal{PR}_{F} $ e quindi $ F $ è una sommersione: per il secondo corollario $ F(N) = \R^{m} $ ma questo è assurdo in quanto $ N $ è compatta e dunque la sua immagine è compatta mentre $ \R^{m} $ non lo è (un'applicazione suriettiva porta compatti in compatti).
 \end{proof}
 
 \begin{corollary}[4]\label{imm_sph}
@@ -5986,7 +5999,7 @@ Dimostriamo questo fatto mediante il seguente lemma
 	\end{equation}
 \end{proof}
 
-Supponiamo per assurdo che $ F $ sia un embedding: l'applicazione $ f : \R \to F(\R) $ con la topologia di $ F(\R) $ indotta dal toro $ \T^{2} $ è un diffeomorfismo e dunque anche un omeomorfismo. Per le proprietà degli omeomorfismi, esiste una bigezione tra i punti di accumulazione del dominio e quelli del codominio, i.e. $ \mathcal{D}(\Z) \to \mathcal{D}(F(\Z)) $, però $ \mathcal{D}(\Z) = \{\} $ in quanto i numeri interi sono isolati in $ \R $ mentre $ \mathcal{D}(F(\Z)) \ni (1,1) $. Questa contraddizione porta a dire che $ F $ non è un embedding e quindi $ F(\R) $ non è una sottovarietà di $ \T^{2} $.
+Supponiamo per assurdo che $ F $ sia un embedding: l'applicazione $ f : \R \to F(\R) $ con la topologia di $ F(\R) $ indotta dal toro $ \T^{2} $ è un diffeomorfismo e dunque anche un omeomorfismo. Per le proprietà degli omeomorfismi, esiste una bigezione tra i punti di accumulazione del dominio e quelli del codominio, i.e. $ \mathcal{D}(\Z) \to \mathcal{D}(F(\Z)) $, però $ \mathcal{D}(\Z) = \emptyset $ in quanto i numeri interi sono isolati in $ \R $ mentre $ \mathcal{D}(F(\Z)) \ni (1,1) $. Questa contraddizione porta a dire che $ F $ non è un embedding e quindi $ F(\R) $ non è una sottovarietà di $ \T^{2} $.
 
 \begin{remark}
 	Si dimostra che $ F(\R) $ è denso in $ \T^{2} $, cioè il toro è completamente ricoperto dall'immagine della funzione o equivalentemente ogni intorno di ogni punto del toro ha al suo interno un punto dell'immagine (per dimostrare questo, viene utilizzata la teoria dei numeri).
@@ -6350,19 +6363,19 @@ Siano $ (p,v) \in T_{p}(M) $ e $ (q,w) \in T_{q}(M) $ due punti distinti di $ T(
 	\item se $ p = q $ allora $ T_{p}(M) = T_{q}(M) \subset T(U) $ dove $ U $ è un aperto coordinato di $ (U,\phi) \ni p=q $, ma $ T(U) \simeq \phi(U) \times \R^{n} $ dunque $ T(U) $ eredita la proprietà $ T_{2} $ da $ \phi(U) \times \R^{n} $ e a sua volta $ T_{p}(M) = T_{q}(M) $ la eredita da $ T(U) $, i.e.
 	
 	\begin{equation}
-		\E A,B \in T(U) = T(M) \text{ aperti}, \, A \ni (p,v) \wedge B \ni (q,w) \mid A \cap B = \{\}
+		\E A,B \in T(U) = T(M) \text{ aperti}, \, A \ni (p,v) \wedge B \ni (q,w) \mid A \cap B = \emptyset
 	\end{equation}
 	
 	\item se $ p \neq q $, siccome $ M $ è $ T_{2} $ esisteranno due aperti disgiunti coordinati che contengono $ p $ e $ q $, i.e.
 	
 	\begin{equation}
-		\E U,V \in M, \, U \ni p \wedge V \ni q, \, (U,\phi),(V,\psi) \in M \mid U \cap V = \{\}
+		\E U,V \in M, \, U \ni p \wedge V \ni q, \, (U,\phi),(V,\psi) \in M \mid U \cap V = \emptyset
 	\end{equation}
 
 	per cui, siccome $ T(U) \ni (p,v) $ e $ T(V) \ni (q,w) $ e
 	
 	\begin{equation}
-		T(U) \cap T(V) = T(U \cap V) = \{\} \quad \because \quad U \cap V = \{\}
+		T(U) \cap T(V) = T(U \cap V) = \emptyset \quad \because \quad U \cap V = \emptyset
 	\end{equation}
 
 	abbiamo che $ T(M) $ è di Hausdorff.
