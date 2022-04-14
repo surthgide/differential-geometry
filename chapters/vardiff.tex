@@ -154,7 +154,7 @@ L'intersezione tra intervalli di tipo $ (a,b) $ produce intervalli dello stesso 
 \end{equation}
 
 \begin{equation}
-	I_{A}(c,d) \cap I_{B}(c',d') = I_{B}(c,d) \cap I_{A}(c',d') =%
+	I_{A}(c,d) \cap I_{B}(c',d') = %
 	\begin{cases}
 		(c',0) \cup (0,d), & c' > c \wedge d > d\\
 		(- c,0) \cup (0,d'), & c > c \wedge d' > d\\
@@ -177,10 +177,9 @@ dove $ \Q $ indica i numeri razionali\footnote{%
 	Ricordiamo che $ \# \Q = \# \N = \aleph_{0} $.%
 } e $ 0 \notin (r,s) $; analogamente
 
-\begin{gather}
-	I_{A}(c,d) = \bigcup_{r,s \in \Q} I_{A}(r,s)\\
-	I_{B}(c,d) = \bigcup_{r,s \in \Q} I_{B}(r,s)
-\end{gather}
+\begin{equation}
+	I_{K}(c,d) = \bigcup_{r,s \in \Q} I_{K}(r,s) \qcomma K = A, B
+\end{equation}
 
 A questo punto, prendendo $ r, s \in \Q^{+} $, possiamo considerare la famiglia
 
@@ -192,51 +191,53 @@ la quale è una base numerabile per $ S $ e dunque $ S $ è $ N_{2} $.\\
 Per mostrare che $ S $ sia localmente euclideo costruiamo l'applicazione
 
 \map{\phi}
-	{I_{A}(c,d)}{(-c,d) \subset \R}
+	{I_{K}(c,d)}{(-c,d) \subset \R}
 	{x}{x\\
-	A &\mapsto 0}
+	K &\mapsto 0}
 
-la quale è un omeomorfismo, perché è una bigezione continua. Per la continuità, prendiamo un intervallo $ (e,f) \subset (-c,d) $ con $ 0 \notin (e,f) $ la cui controimmagine è sé stesso, i.e. $ \phi^{-1}((e,f)) = (e,f) \in \tau_{\mathfrak{B}} $; se invece consideriamo $ (-e,f) $ con $ e,f>0 $, la sua controimmagine sarà $ \phi^{-1}((-e,f)) = I_{A}(e,f) \in \tau_{\mathfrak{B}} $ il quale è un aperto. Per mostrare che $ \phi $ sia effettivamente continua dobbiamo verificare che la sua inversa $ \phi^{-1} $ sia anch'essa continua, ma questo è equivalente a mostrare che $ \phi $ sia aperta\footnote{%
+la quale è un omeomorfismo, perché è una bigezione continua. Per la continuità, prendiamo un intervallo $ (e,f) \subset (-c,d) $ con $ 0 \notin (e,f) $ la cui controimmagine è sé stesso, i.e. $ \phi^{-1}((e,f)) = (e,f) \in \tau_{\mathfrak{B}} $; se invece consideriamo $ (-e,f) $ con $ e,f>0 $, la sua controimmagine sarà $ \phi^{-1}((-e,f)) = I_{K}(e,f) \in \tau_{\mathfrak{B}} $ il quale è un aperto. Per mostrare che $ \phi $ sia effettivamente continua dobbiamo verificare che la sua inversa $ \phi^{-1} $ sia anch'essa continua, ma questo è equivalente a mostrare che $ \phi $ sia aperta\footnote{%
 	Un'applicazione aperta associa aperti ad aperti.%
-}: sia che si prenda un intervallo $ (e,f) $ oppure $ I_{A}(e,f) $, si ottiene comunque come immagine un aperto, perciò è continua e lo spazio è localmente euclideo.\\
+}: sia che si prenda un intervallo $ (e,f) $ oppure $ I_{K}(e,f) $, si ottiene comunque come immagine un aperto, perciò è continua e lo spazio è localmente euclideo.\\
 Infine, troviamo che $ S $ non è $ T_{2} $ perché due aperti di questo spazio che contengono $ A $ e $ B $ rispettivamente si devono necessariamente intersecare, i.e. vale sempre $ I_{A}(c,d) \cap I_{B}(e,f) \neq \emptyset $ per $ \forall c, d, e, f \in \R $.
 
 \subsection{Atlanti}
 
 \subsubsection{Atlanti topologici}
 
-Sia $ M $ uno spazio topologico, un \textit{atlante topologico su} $ M $ è una famiglia di carte $ \{(U_{\alpha},\phi_{\alpha})\}_{\alpha \in A} $ tali che
+Sia $ M $ uno spazio topologico, un \textit{atlante topologico su} $ M $ è una famiglia di carte $ \{(U_{\alpha},\phi_{\alpha})\}_{\alpha \in A} $ tali che $ U_{\alpha} $ siano sottoinsiemi aperti di $ M $, $ \phi_{\alpha} $ siano omeomorfismi da $ U_{\alpha} $ a un sottoinsieme aperto di uno spazio euclideo e
 
 \begin{equation}
 	\bigcup_{\alpha \in A} U_{\alpha} = M
 \end{equation}
 
-i.e. la famiglia delle carte è un \textit{ricoprimento} dello spazio topologico, il quale è localmente euclideo.
+i.e. la famiglia delle carte è un \textit{ricoprimento} dello spazio topologico. Se il codominio di ogni carta è uno spazio euclideo $ \R^{n} $ allora $ M $ è una varietà topologica, per cui vale $ \dim M = n $.
 
 \subsubsection{Compatibilità tra carte}
 
-Due carte $ (U,\phi) $ e $ (V,\psi) $ di uno spazio topologico $ M $ sono $ C^{\infty} $\textit{-compatibili} se le applicazioni
-
-\begin{align}
-	\begin{split}
-		\phi \circ \psi^{-1} : \psi(U \cap V) &\to \phi(U \cap V)\\
-		\psi \circ \phi^{-1} : \phi(U \cap V) &\to \psi(U \cap V)
-	\end{split}
-\end{align}
-
-sono lisce.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.4\textwidth,keepaspectratio]{img6}
-\end{figure}
+\sbs{0.55}{%
+			Due carte $ (U,\phi) $ e $ (V,\psi) $ di uno spazio topologico $ M $ sono $ C^{\infty} $\textit{-compatibili} se le composizioni\footnotemark
+			
+			\begin{gather}
+				\phi \circ \psi^{-1} : \psi(U \cap V) \to \phi(U \cap V)\\
+				\psi \circ \phi^{-1} : \phi(U \cap V) \to \psi(U \cap V)
+			\end{gather}
+			
+			sono lisce.
+		}
+	{0.4}{%
+			\img{0.9}{img6}
+		}
+	
+	\footnotetext{%
+		Talvolta queste applicazioni sono chiamate \textit{applicazioni di transizione}, dal fatto che collegano due carte.
+	}
 
 \begin{remark}
 	La $ C^{\infty} $-compatibilità è automaticamente verificata se $ U \cap V = \emptyset $.
 \end{remark}
 
 \begin{remark}
-	La proprietà di $ C^{\infty} $-compatibilità è riflessiva e simmetrica ma non transitiva, i.e.
+	La proprietà di $ C^{\infty} $-compatibilità è riflessiva e simmetrica ma non transitiva:
 	
 	\begin{itemize}
 		\item Se $ (U,\phi) $ è $ C^{\infty} $-compatibile con $ (V,\psi) $ allora $ (V,\psi) $ è $ C^{\infty} $-compatibile con $ (U,\phi) $
@@ -247,55 +248,61 @@ sono lisce.
 	\end{itemize}
 \end{remark}
 
-Per le prime due condizioni della transitività, definendo $ U_{ij} \doteq U_{i} \cap U_{j} $ e $ U_{ijk} \doteq U_{i} \cap U_{j} \cap U_{k} $ con $ i,j,k=1,2,3 $, le seguenti applicazioni sono lisce
+Definiamo le intersezioni tra aperti
 
-\begin{align}
-	\begin{split}
-		\phi_{1} \circ \phi_{2}^{-1} : \phi_{2}(U_{12}) &\to \phi_{1}(U_{12})\\
-		\phi_{2} \circ \phi_{1}^{-1} : \phi_{1}(U_{12}) &\to \phi_{2}(U_{12})\\
-		\phi_{2} \circ \phi_{3}^{-1} : \phi_{3}(U_{23}) &\to \phi_{2}(U_{23})\\
-		\phi_{3} \circ \phi_{2}^{-1} : \phi_{2}(U_{23}) &\to \phi_{3}(U_{23})
-	\end{split}
-\end{align}
+\begin{equation}
+	\begin{cases}
+		U_{ij} \doteq U_{i} \cap U_{j}\\
+		U_{ijk} \doteq U_{i} \cap U_{j} \cap U_{k}
+	\end{cases}%
+	\qquad i,j,k=1,2,3
+\end{equation}
 
-e dovrebbero esserlo anche
+Per le prime due condizioni della transitività, le seguenti applicazioni sono lisce
 
-\begin{align}
-	\begin{split}
-		\phi_{1} \circ \phi_{3}^{-1} : \phi_{3}(U_{13}) &\to \phi_{1}(U_{13})\\
-		\phi_{3} \circ \phi_{1}^{-1} : \phi_{1}(U_{13}) &\to \phi_{3}(U_{13})
-	\end{split}
-\end{align}
+\begin{gather}
+	\phi_{1} \circ \phi_{2}^{-1} : \phi_{2}(U_{12}) \to \phi_{1}(U_{12})\\
+	\phi_{2} \circ \phi_{1}^{-1} : \phi_{1}(U_{12}) \to \phi_{2}(U_{12})\\
+	\phi_{2} \circ \phi_{3}^{-1} : \phi_{3}(U_{23}) \to \phi_{2}(U_{23})\\
+	\phi_{3} \circ \phi_{2}^{-1} : \phi_{2}(U_{23}) \to \phi_{3}(U_{23})
+\end{gather}
 
-scrivendo
+e, se la $ C^{\infty} $-compatibilità fosse transitiva, dovrebbero esserlo anche
 
-\begin{align}
-	\begin{split}
-		\phi_{3} \circ \phi_{1}^{-1} &= \phi_{3} \circ (\phi_{2}^{-1} \circ \phi_{2}) \circ \phi_{1}^{-1}\\
-		&= (\phi_{3} \circ \phi_{2}^{-1}) \circ (\phi_{2} \circ \phi_{1}^{-1})
-	\end{split}
-\end{align}
+\begin{gather}
+	\phi_{1} \circ \phi_{3}^{-1} : \phi_{3}(U_{13}) \to \phi_{1}(U_{13})\\
+	\phi_{3} \circ \phi_{1}^{-1} : \phi_{1}(U_{13}) \to \phi_{3}(U_{13})
+\end{gather}
 
-l'applicazione $ \phi_{3} \circ \phi_{2}^{-1} $ è $ C^{\infty}(\phi_{2}(U_{23})) $ e $ \phi_{2} \circ \phi_{1}^{-1} $ è $ C^{\infty}(\phi_{1}(U_{12})) $ dunque $ \phi_{3} \circ \phi_{1}^{-1} $ è sicuramente $ C^{\infty}(\phi_{1}(U_{123})) $ ma non sappiamo a priori il suo comportamento in $ \phi_{1}(U_{13} \setminus U_{123}) $, dunque non possiamo dire che $ \phi_{3} \circ \phi_{1}^{-1} $ sia $ C^{\infty} $ e perciò la $ C^{\infty} $-compatibilità non è transitiva.\\\\
+Scrivendo
+
+\begin{equation}
+	\phi_{3} \circ \phi_{1}^{-1} = \phi_{3} \circ (\phi_{2}^{-1} \circ \phi_{2}) \circ \phi_{1}^{-1} %
+	= (\phi_{3} \circ \phi_{2}^{-1}) \circ (\phi_{2} \circ \phi_{1}^{-1})
+\end{equation}
+
+l'applicazione $ \phi_{3} \circ \phi_{2}^{-1} $ è $ C^{\infty}(\phi_{2}(U_{23})) $ e $ \phi_{2} \circ \phi_{1}^{-1} $ è $ C^{\infty}(\phi_{1}(U_{12})) $ dunque $ \phi_{3} \circ \phi_{1}^{-1} $ è sicuramente $ C^{\infty}(\phi_{1}(U_{123})) $ ma non sappiamo a priori il suo comportamento in $ \phi_{1}(U_{13} \setminus U_{123}) $, dunque non possiamo dire che $ \phi_{3} \circ \phi_{1}^{-1} $ sia $ C^{\infty}(\phi_{1}(U_{13})) $ e perciò la $ C^{\infty} $-compatibilità non è transitiva.\\\\
 %
-Sia $ \mathfrak{U} = \{(U_{\alpha},\phi_{\alpha})\} $ un atlante topologico di uno spazio $ M $, diremo che $ (V,\psi) $ carta di $ M $ è $ C^{\infty} $-compatibile con $ \mathfrak{U} $ se $ (V,\psi) $ è $ C^{\infty} $-compatibile con $ (U_{\alpha},\phi_{\alpha}) $ per $ \forall \alpha \in A $.\\\\
-%
-Sia $ \mathfrak{U} $ un atlante topologico su $ M $, se due carte $ (V,\psi) $ e $ (W,\sigma) $ sono $ C^{\infty} $-compatibili con $ \mathfrak{U} $ allora $ (V,\psi) $ è $ C^{\infty} $-compatibile con $ (W,\sigma) $.
+Sia $ \mathfrak{U} = \{(U_{\alpha},\phi_{\alpha})\} $ un atlante topologico di uno spazio $ M $, diremo che $ (V,\psi) $ carta di $ M $ è $ C^{\infty} $-compatibile con $ \mathfrak{U} $ se $ (V,\psi) $ è $ C^{\infty} $-compatibile con $ (U_{\alpha},\phi_{\alpha}) $ per $ \forall \alpha \in A $.
+
+\begin{definition}
+	Sia $ \mathfrak{U} $ un atlante topologico su $ M $, se due carte $ (V,\psi) $ e $ (W,\sigma) $ sono $ C^{\infty} $-compatibili con $ \mathfrak{U} $ allora lo sono tra loro, i.e. $ (V,\psi) $ è $ C^{\infty} $-compatibile con $ (W,\sigma) $.
+\end{definition}
 
 \begin{proof}[Dimostrazione (transitività tramite atlante)]
 	Vogliamo dimostrare che le due applicazioni
 	
-	\begin{align}
-		\begin{split}
-			\psi \circ \sigma^{-1} : \phi(V \cap W) &\to \psi(V \cap W)\\
-			\sigma \circ \psi^{-1} : \psi(V \cap W) &\to \sigma(V \cap W)
-		\end{split}
-	\end{align}
+	\begin{gather}
+		\psi \circ \sigma^{-1} : \phi(V \cap W) \to \psi(V \cap W)\\
+		\sigma \circ \psi^{-1} : \psi(V \cap W) \to \sigma(V \cap W)
+	\end{gather}
 
 	siano lisce.\\
-	Prendiamo $ \sigma \circ \psi^{-1} $: questa è liscia se, per $ \forall p \in V \cap W $, $ \sigma \circ \psi^{-1} $ è liscia in $ \psi(p) \in \psi(V \cap W) $.\\
-	Essendo l'atlante $ \mathfrak{U} $ un ricoprimento di $ M $, esisterà una carta $ (U_{\alpha},\phi_{\alpha}) \ni p $ dunque $ p \in U_{\alpha} \cap V \cap W $: potendo scrivere $ \sigma \circ \psi^{-1} = \sigma \circ \phi_{\alpha}^{-1} \circ \phi_{\alpha} \circ \psi^{-1} $ questa è automaticamente liscia in $ \psi(U_{\alpha} \cap V \cap W) $.\\
-	Questo conclude la dimostrazione perché abbiamo trovato un aperto che contiene il punto, i.e. $ p \in U_{\alpha} \cap V \cap W $ per $ p $ arbitrario, in cui l'applicazione sia liscia, la quale è una proprietà locale.
+	Prendiamo $ \sigma \circ \psi^{-1} $: questa è liscia se lo è in $ \psi(p) \in \psi(V \cap W) $ per $ \forall p \in V \cap W $.\\
+	Essendo l'atlante $ \mathfrak{U} $ un ricoprimento di $ M $, esisterà una carta $ (U_{\alpha},\phi_{\alpha}) \ni p $ perciò con $ p \in U_{\alpha} \cap V \cap W $: potendo scrivere $ \sigma \circ \psi^{-1} = (\sigma \circ \phi_{\alpha}^{-1}) \circ (\phi_{\alpha} \circ \psi^{-1}) $, questa è automaticamente liscia in $ \psi(U_{\alpha} \cap V \cap W) $ in quanto, per ipotesi, lo sono le funzioni di transizione che la compongono.\\
+	Questo conclude la dimostrazione perché abbiamo trovato un aperto che contiene il punto, i.e. $ U_{\alpha} \cap V \cap W \ni p $ per $ p $ arbitrario, in cui l'applicazione sia liscia\footnote{%
+		La proprietà di un'applicazione di essere liscia ha carattere locale.%
+	}
 	
 \end{proof}
 
