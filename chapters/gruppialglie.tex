@@ -392,9 +392,9 @@ Consideriamo in particolare lo spazio vettoriale delle matrici quadrate sui real
 la quale corrisponde alla norma usuale in $ \R^{n^{2}} $: da ciò deriva che questa norma soddisfa le condizioni poste sopra\footnote{%
 	In particolare, la subadditività deriva dalla diseguaglianza di Cauchy-Schwarz (\textit{C-S}):
 	
-	\begin{equation}
+	\begin{equation*}
 		\norm{v \cdot w} \leqslant \norm{v} \norm{w}, \qquad v,w \in \R^{n},
-	\end{equation}%
+	\end{equation*}%
 }, rendendo quindi $ M_{n}(\R) $ uno spazio vettoriale normato.\\\\
 %
 Una tripletta $ (V,\cdot,\norm{}) $ è un'\textit{algebra normata} se $ V $ è uno spazio vettoriale su $ \R $, $ (V,\cdot) $ è un'algebra su $ \R $ e $ (V,\norm{\cdot}) $ è uno spazio vettoriale normato tali che valga la proprietà di submoltiplicatività
@@ -1776,7 +1776,7 @@ Il gruppo delle matrici ortogonali
 è un sottogruppo di Lie embedded di $ GL_{n}(\R) $, compatto\footnote{%
 	L'insieme $ O(n) $ è compatto in quanto chiuso e limitato in $ GL_{n}(\R) $: chiuso perché preimmagine di $ I \in \mathcal{VR}_{f} $ tramite l'applicazione continua
 	
-	\map{f}%
+	\maps{f}%
 		{GL_{n}(\R)}{S(n)}%
 		{A}{A^{T} A}
 	
@@ -2701,9 +2701,9 @@ I campi di vettori invarianti a sinistra sono importanti perché esiste un isomo
 	La coppia $ (L(G),\comm{}{}) $ è una sottoalgebra\footnote{%
 		Presi due spazi vettoriali $ V $ e $ W \subset V $ con $ (V,\comm{}{}) $ algebra di Lie, $ (W,\comm{}{}_{| W}) $ è una sottoalgebra di Lie se $ W $ è un sottospazio vettoriale e
 		
-		\begin{equation}
+		\begin{equation*}
 			\comm{w_{1}}{w_{2}} \in W \qcomma \forall w_{1},w_{2} \in W
-		\end{equation}%
+		\end{equation*}%
 	} di Lie di $ (\chi(G),\comm{}{}) $ e dunque essa stessa un'algebra di Lie finito-dimensionale, in quanto ha la stessa dimensione dello spazio tangente $ T_{e}(G) $ poiché $ L(G) \stackrel{iso.}{\simeq} T_{e}(G) $.
 \end{corollary}
 
@@ -3052,12 +3052,12 @@ Siano $ H $ e $ G $ due gruppi di Lie e $ F : H \to G $ un omomorfismo di gruppi
 Per trasportare i campi di vettori invarianti a sinistra su $ H $ in quelli su $ G $, possiamo utilizzare gli isomorfismi tra questi spazi e gli spazi tangenti e comporli con il differenziale dell'omomorfismo: consideriamo le applicazioni\footnote{%
 	Al fine di non appesantire la notazione, il simbolo $ \hat{} $ verrà usato per entrambi gli isomorfismi
 	
-	\begin{equation}
+	\begin{equation*}
 		\begin{cases}
 			\hat{} : T_{e}(G) \to L_{G}\\
 			\hat{} : T_{e}(H) \to L_{H}
 		\end{cases}
-	\end{equation}
+	\end{equation*}
 	
 	e analogamente per il suo inverso; inoltre $ e $ indicherà l'elemento neutro per entrambi i gruppi di Lie, anche perché legati da un omomorfismo, il quale mappa $ e \in H $ in $ e \in G $.%
 }
@@ -3148,9 +3148,9 @@ Anche nel contesto di omomorfismi, è possibile definire campi di vettori $ F $-
 	Siano $ F : H \to G $ un omomorfismo di gruppi di Lie e un campo di vettori su $ H $ invariante a sinistra $ X \in L(H) $, allora $ X $ è $ F $-related\footnote{%
 		Siano un'applicazione liscia $ F : N \to M $ e due campi di vettori lisci $ X \in \chi(N) $ e $ Y \in \chi(M) $, allora $ X $ è $ F $-related a $ Y $ se
 		
-		\begin{equation}
+		\begin{equation*}
 			F_{*p} (X_{p}) = Y_{F(p)} \qcomma \forall p \in N
-		\end{equation}
+		\end{equation*}
 	
 		Nel caso in cui $ F $ sia un diffeomorfismo, un campo di vettori e il suo pushforward sono sempre $ F $-related tra loro.%
 	} a $ F_{*}(X) $, i.e.

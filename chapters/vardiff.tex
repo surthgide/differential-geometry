@@ -392,7 +392,7 @@ Per le curve differenziabili, $ \dim (M) = 1 $. Poniamo $ M $ connessa, sapendo 
 Per le superfici differenziabili\footnote{%
 	Le \textit{parametrizzazioni} $ X $ di curve e superfici sono l'inverso delle carte $ \phi = X^{-1} $, i.e per la parametrizzazione di una superficie
 	
-	\map{X}%
+	\maps{X}%
 		{U \subset \R^{2}}{\R^{3}}%
 		{(u,v)}{(x(u,v),y(u,v),z(u,v))}
 
@@ -3679,10 +3679,10 @@ Il differenziale di $ L_{g} $ valutato nella matrice identità $ I $ corrisponde
 Sia $ G $ un gruppo di Lie\footnote{%
 	Se $ G $ è un gruppo di Lie, allora è una varietà differenziale e un gruppo algebrico con operazioni lisce
 	
-	\begin{align}
+	\begin{align*}
 		\mu : G \times G &\to G & i : G &\to G\nonumber\\
 		(g,h) &\mapsto g h & g &\mapsto g^{-1}
-	\end{align}%
+	\end{align*}%
 } ed $ e \in G $ l'identità. L'obbiettivo è calcolare i differenziali:
 
 \begin{align}
@@ -3772,9 +3772,9 @@ Un'applicazione liscia $ F : N \to M $ è un'immersione (risp. una sommersione) 
 	Per i teoremi di algebra lineare\footnote{%
 		Data un'applicazione lineare $ T : V \to W $, abbiamo che
 		
-		\begin{equation}
+		\begin{equation*}
 			\dim(V) + \dim(\ker(T)) = \dim(T(V))
-		\end{equation}
+		\end{equation*}
 		
 		dove quest'ultimo viene anche chiamato rango di $ T $, i.e. $ \dim(T(V)) \doteq \rank(T) $.%
 	}, se $ F : N \to M $ è un'immersione $ \dim(N) \leqslant \dim(M) $ mentre se è una sommersione $ \dim(N) \geqslant \dim(M) $.
@@ -4041,18 +4041,18 @@ Riassumendo $ F(\mathcal{PR}_{F}) \not\supset \mathcal{VR}_{F} $.
 In analisi, per una funzione $ f : \R \to \R $ il punto $ x_{0} \in \R $ è un massimo (risp. minimo) locale se esiste un intorno $ I $ contenente $ x_{0} $ tale che $ f(x) \leqslant f(x_{0}) $ (risp. $ f(x) \geqslant f(x_{0}) $) per $ \forall x \in I $. Se $ x_{0} $ è un punto di massimo o minimo relativo allora\footnote{%
 	Per definizione
 	
-	\begin{equation}
+	\begin{equation*}
 		\dot{f}(x_{0}) = \lim_{x \to x_{0}} \dfrac{f(x) - f(x_{0})}{x - x_{0}}
-	\end{equation}
+	\end{equation*}
 
 	Per un massimo locale $ f(x) \leqslant f(x_{0}) $ per $ \forall x \in I $ dunque $ f(x) - f(x_{0}) \leqslant 0 $; considerando i limiti da destra e da sinistra e sfruttando la permanenza del segno
 	
-	\begin{align}
+	\begin{align*}
 		\begin{split}
 			\dot{f}(x_{0})^{+} = \lim_{x \to x_{0}^{+}} \dfrac{f(x) - f(x_{0})}{x - x_{0}} \leqslant 0\\
 			\dot{f}(x_{0})^{-} = \lim_{x \to x_{0}^{-}} \dfrac{f(x) - f(x_{0})}{x - x_{0}} \geqslant 0
 		\end{split}
-	\end{align}
+	\end{align*}
 
 	perciò $ \dot{f}(x_{0}) = 0 $.%
 } $ \dot{f}(x_{0}) = 0 $, dunque $ x_{0} \in \mathcal{PC}_{f} $.\\\\
@@ -8222,7 +8222,7 @@ ma $ XY \notin Der(C^{\infty}(M)) $, i.e. non rispetta la regola di Leibniz
 
 Definiamo quindi il \textit{commutatore o "bracket" tra due campi di vettori} come\footnote{%
 	Alternativamente si può scrivere
-
+%	rifai questa applicazione con \maps{}{}{}{}{}
 	\begin{align}
 		\begin{split}
 			[\cdot,\cdot] : Der(C^{\infty}(M)) \times Der(C^{\infty}(M)) &\to Der(C^{\infty}(M))\\
