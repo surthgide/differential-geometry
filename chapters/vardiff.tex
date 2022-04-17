@@ -307,11 +307,11 @@ Sia $ \mathfrak{U} = \{(U_{\alpha},\phi_{\alpha})\} $ un atlante topologico di u
 
 \subsection{Varietà differenziabili}
 
-Sia $ M $ uno spazio topologico, un atlante topologico $ \mathfrak{U} = \{(U_{\alpha},\phi_{\alpha})\} $ è detto $ C^{\infty} $ (liscio o differenziabile) se $ (U_{\alpha},\phi_{\alpha}) $ è $ C^{\infty} $-compatibile con $ (U_{\beta},\phi_{\beta}) $ per $ \forall \alpha,\beta $.\\
-Diremo che un atlante differenziabile $ \mathfrak{M} = \{(U_{\alpha},\phi_{\alpha})\} $ è \textit{massimale} se per qualunque altro atlante differenziabile $ \mathfrak{M}^{\prime} $ di $ M $ si ha che
+Un atlante topologico $ \mathfrak{U} = \{(U_{\alpha},\phi_{\alpha})\} $ è detto \textit{differenziabile} (liscio o $ C^{\infty} $) se ogni sua carta è $ C^{\infty} $-compatibile con ogni altra carta al suo interno.\\
+Diremo che un atlante differenziabile $ \mathfrak{M} = \{(U_{\alpha},\phi_{\alpha})\} $ è \textit{massimale} se per qualunque altro atlante differenziabile $ \mathfrak{M}' $ di $ M $ si ha che
 
 \begin{equation}
-	\mathfrak{M} \subset \mathfrak{M}^{\prime} \implies \mathfrak{M} = \mathfrak{M}^{\prime}
+	\mathfrak{M} \subset \mathfrak{M}' \implies \mathfrak{M} = \mathfrak{M}'
 \end{equation}
 
 Dato $ M $ spazio topologico, una \textit{struttura differenziabile} su $ M $ è la scelta di un atlante massimale per $ M $.\\
@@ -320,10 +320,10 @@ Diciamo che una varietà differenziabile ha dimensione $ n $ se questa è la dim
 	Vale il teorema di invarianza della dimensione differenziabile.%
 }.\\\\
 %
-Qualunque sia l'atlante differenziabile su una varietà topologica è sempre possibile trovare un atlante massimale unico che lo contiene, cioè
+Qualunque sia l'atlante differenziabile su una varietà topologica è sempre possibile trovare un atlante massimale unico che lo contiene, i.e.
 
 \begin{definition}
-	Sia $ \mathfrak{U} $ un atlante differenziabile su uno spazio topologico $ M $, allora esiste ed è unica la struttura differenziale (o atlante massimale) $ \mathfrak{M} $ su $ M $ tale che contenga $ \mathfrak{U} \subset \mathfrak{M} $.
+	Sia $ \mathfrak{U} $ un atlante differenziabile su uno spazio topologico $ M $, allora esiste ed è unica la struttura differenziale (o atlante massimale) $ \mathfrak{M} $ su $ M $ tale che $ \mathfrak{U} \subset \mathfrak{U} $.
 \end{definition}
 
 \begin{proof}
@@ -333,29 +333,25 @@ Qualunque sia l'atlante differenziabile su una varietà topologica è sempre pos
 \end{proof}
 
 \begin{remark}
-	Siano $ M $ una varietà differenziabile, $ (U_{\beta},\phi_{\beta}) $ una carta della struttura differenziabile e $ V \subset U_{\beta} $ un aperto di $ M $, allora $ (V,\phi) $ (dove $ \phi $ è la restrizione della funzione $ \phi_{\beta} $ all'aperto $ V $, i.e. $ \phi = \left. \phi_{\beta} \right|_{V} $) è una carta per $ M $ per la struttura differenziabile fissata.
+	Siano $ M $ una varietà differenziabile, $ (U_{\beta},\phi_{\beta}) $ una carta della struttura differenziabile e $ V \subset U_{\beta} $ un aperto di $ M $, allora $ (V,\phi) $ (dove $ \phi $ è la restrizione della funzione $ \phi_{\beta} $ all'aperto $ V $, i.e. $ \phi = \eval{\phi_{\beta}}_{V} $) è una carta per $ M $ per la struttura differenziabile fissata.
 \end{remark}
 
 Infatti, se prendiamo l'atlante massimale differenziabile $ \mathfrak{M} = \{(U_{\alpha},\phi_{\alpha})\} $ e consideriamo $ \phi \circ \phi_{\alpha}^{-1} $
 
-\begin{align}
-	\begin{split}
-		\phi \circ \phi_{\alpha}^{-1} : \phi_{\alpha}(U_{\alpha} \cap V) &\to \phi(U_{\alpha} \cap V)\\
-		\phi_{\alpha} \circ \phi^{-1} : \phi(U_{\alpha} \cap V) &\to \phi_{\alpha}(U_{\alpha} \cap V)
-	\end{split}
-\end{align}
+\begin{gather}
+	\phi \circ \phi_{\alpha}^{-1} : \phi_{\alpha}(U_{\alpha} \cap V) \to \phi(U_{\alpha} \cap V)\\
+	\phi_{\alpha} \circ \phi^{-1} : \phi(U_{\alpha} \cap V) \to \phi_{\alpha}(U_{\alpha} \cap V)
+\end{gather}
 
 vediamo che queste sono $ C^{\infty} $-compatibili con l'atlante perché
 
 \begin{align}
-	\begin{split}
-		\phi \circ \phi_{\alpha}^{-1} &= \left. \phi_{\beta} \circ \phi_{\alpha}^{-1} \right|_{\phi_{\alpha}(U_{\alpha} \cap V)}\\
-		\phi_{\alpha} \circ \phi^{-1} &= \left. \phi_{\alpha} \circ \phi_{\beta}^{-1} \right|_{\phi(U_{\alpha} \cap V)}\\
-	\end{split}
+	\phi \circ \phi_{\alpha}^{-1} = \eval{\phi_{\beta} \circ \phi_{\alpha}^{-1}}_{\phi_{\alpha}(U_{\alpha} \cap V)}\\
+	\phi_{\alpha} \circ \phi^{-1} = \eval{\phi_{\alpha} \circ \phi_{\beta}^{-1}}_{\phi_{\beta}(U_{\alpha} \cap V)}
 \end{align}
 
 sono le restrizioni a un aperto di funzioni $ C^{\infty} $-compatibili e dunque appartengono all'atlante massimale.\\
-In particolare, se $ U $ è un aperto qualunque di $ M $ e $ (U_{\beta},\phi_{\beta}) $ una carta della struttura differenziabile, allora $ (U \cap U_{\beta},\left. \phi_{\beta} \right|_{U \cap U_{\beta}}) $ è una carta nella struttura differenziabile.
+In particolare, se $ U $ è un aperto qualunque di $ M $ e $ (U_{\beta},\phi_{\beta}) $ è una carta della struttura differenziabile, allora $ (U \cap U_{\beta}, \eval{\phi_{\beta}}_{U \cap U_{\beta}}) $ è una carta nella struttura differenziabile.
 
 \subsubsection{\textit{Esempi}}
 
