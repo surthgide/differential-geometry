@@ -55,7 +55,7 @@ La funzione è continua ($ f \in C^{0} $) ed è un omeomorfismo\footnote{%
 } ma $ f \notin C^{1} $ nell'origine $ p = 0 $ perché
 
 \begin{equation}
-	f^{\prime} = \dfrac{x^{-2/3}}{3}
+	f' = \dfrac{x^{-2/3}}{3}
 \end{equation}
 
 la quale non è definita nell'origine e dunque $ f \notin C^{1} (\R) $.
@@ -151,7 +151,7 @@ Per controllare che sia liscia\footnote{%
 	Vedi Esercizio \ref{es1-2}.}
 
 \begin{equation}
-	\lim_{x \to 0} f^{\prime} (x) = \lim_{x \to 0} \left(\dfrac{2}{x^{3}}\right) e^{-1/x^{2}} = 0
+	\lim_{x \to 0} f' (x) = \lim_{x \to 0} \left(\dfrac{2}{x^{3}}\right) e^{-1/x^{2}} = 0
 \end{equation}
 
 Tutto questo ci dice che $ f \in C^{\infty}(\R) $. Se fosse anche reale analitica, dovrebbe coincidere con il suo sviluppo in serie di Taylor anche nell'origine, dunque
@@ -430,7 +430,7 @@ L'ipotesi che un sottoinsieme sia stellato è forte a livello globale ma sempre 
 	\end{equation}
 \end{proof}
 
-Prendiamo $ f : U \to \R $ con $ p $ corrispondente all'origine. Per il teorema di Taylor con resto, sappiamo che esiste una funzione $ g_{1} \in C^{\infty}(U) $ tale che $ f(x) = f(0) + x \, g_{1}(x) $ con $ g_{1}(0) = f^{\prime}(0) $. Riapplicando il teorema a $ g_{1} $ (siccome è liscia), si ottiene che $ g_{1}(x) = g_{1}(0) + x g_{2}(x) $ con $ g_{2} \in C^{\infty}(U) $ e $ g_{2}(0) = g_{1}^{\prime}(0) $. Per induzione $ g_{i}(x) = g_{i}(0) + x g_{i+1}(x) $ dove $ g_{i+1} \in C^{\infty} (U) $ e $ g_{i+1}(0) = g_{i}^{\prime}(0) $ per $ \forall i \geqslant 1 $. Sostituendo in $ f $ tutte queste funzioni, si ottiene
+Prendiamo $ f : U \to \R $ con $ p $ corrispondente all'origine. Per il teorema di Taylor con resto, sappiamo che esiste una funzione $ g_{1} \in C^{\infty}(U) $ tale che $ f(x) = f(0) + x \, g_{1}(x) $ con $ g_{1}(0) = f'(0) $. Riapplicando il teorema a $ g_{1} $ (siccome è liscia), si ottiene che $ g_{1}(x) = g_{1}(0) + x g_{2}(x) $ con $ g_{2} \in C^{\infty}(U) $ e $ g_{2}(0) = g_{1}'(0) $. Per induzione $ g_{i}(x) = g_{i}(0) + x g_{i+1}(x) $ dove $ g_{i+1} \in C^{\infty} (U) $ e $ g_{i+1}(0) = g_{i}'(0) $ per $ \forall i \geqslant 1 $. Sostituendo in $ f $ tutte queste funzioni, si ottiene
 
 \begin{align}
 	\begin{split}
@@ -1182,6 +1182,7 @@ tale che
 \end{equation}
 
 per $ \forall r,s \in R $ e $ \forall a,b \in A $. Queste proprietà valgono solo da \textit{destra}, potrebbero non valere se calcolate da sinistra.\\\\
+%
 Tramite queste definizioni, definiamo $ (A,+) $ un $ R $-modulo se è sia un $ R $-modulo sinistro che destro, i.e. $ \cdot \equiv * $.
 
 \begin{remark}
