@@ -872,7 +872,7 @@ Analogamente, per la seconda, prendiamo una famiglia infinita di aperti $ V_{i} 
 	V \doteq \bigcup_{i=1}^{\infty} V_{i}
 \end{equation}
 
-possiamo dire che $ V \cap A_{j} $ è aperto in $ A_{j} $ per $ \qcomma \forall j \in J $. A questo punto, vale l'implicazione inversa, perciò $ V $ è aperto in $ A $.
+possiamo dire che $ V \cap A_{j} $ è aperto in $ A_{j} $ per $ \forall j \in J $. A questo punto, vale l'implicazione inversa, perciò $ V $ è aperto in $ A $.
 
 \tocless\section{}\label{es2-1}
 
@@ -881,15 +881,14 @@ possiamo dire che $ V \cap A_{j} $ è aperto in $ A_{j} $ per $ \qcomma \forall 
 
 \end{tcolorbox}
 
-Definiamo i $ 2(n+1) $ aperti
+Prendendo un parametro $ k = 1,\dots,n+1 $, definiamo i $ 2(n+1) $ aperti
 
 \begin{equation}
 	U_{i} = %
 	\begin{cases}
-		\{ (x^{1},\dots,x^{n+1}) \in \R^{n+1} \mid x^{i} > 0 \} & i = 2k\\\\
-		\{ (x^{1},\dots,x^{n+1}) \in \R^{n+1} \mid x^{i} < 0 \} & i = 2k+1
-	\end{cases}%
-	\quad k \in \N, \, i = 1,\dots,2(n+1)
+		\{ (x^{1},\dots,x^{n+1}) \in \R^{n+1} \mid x^{i} > 0 \}, & i = 2k-1\\\\
+		\{ (x^{1},\dots,x^{n+1}) \in \R^{n+1} \mid x^{i} < 0 \}, & i = 2k
+	\end{cases}
 \end{equation}
 
 per i quali vale $ U_{i} \subset \R^{n+1} $ e che formano un ricoprimento per $ \S^{n} $, i.e.
@@ -901,13 +900,13 @@ per i quali vale $ U_{i} \subset \R^{n+1} $ e che formano un ricoprimento per $ 
 Definiamo anche gli aperti
 
 \begin{equation}
-	D_{i} = \{ (x^{1},\dots,x^{i},\dots,x^{n+1}) \in \R^{n+1} \mid \norm{x} < 1 \} = B_{1}(0) \simeq \R^{n} \qcomma i = 1,\dots,2(n+1)
+	D_{j} = \{ (x^{1},\dots,x^{j-1},x^{j+1},\dots,x^{n+1}) \in \R^{n} \mid \norm{x} < 1 \} = B_{1}(0) \simeq \R^{n} \qcomma j = 1,\dots,n+1
 \end{equation}
 
 i quali, in sostanza, sono palle di raggio unitario centrate nell'origine nel piano $ \R^{n} \times \{0\}_{\R^{i}} $, dove
 
 \begin{equation}
-	\norm{x} = \sqrt{ \sum_{p=1}^{n} (x^{p})^{2} }
+	\norm{x} = \sqrt{ \sum_{i=1}^{n} (x^{i})^{2} }
 \end{equation}
 
 Infine definiamo le applicazioni lisce
@@ -922,7 +921,7 @@ con inverse
 	{D_{i}}{U_{i}}%
 	{(x^{1},\dots,x^{i-1},x^{i},\dots,x^{n+1})}{\left( x^{1},\dots,x^{i-1},\sqrt{1-\norm{x}^{2}},x^{i},\dots,x^{n+1} \right)}
 
-La famiglia di coppie $ \mathfrak{U} = \{ (U_{i},\phi_{i}) \}_{i=1,\dots,2(n+1)} $ definisce un atlante differenziabile per $ \S^{n} $ in quanto i cambi di carte sono lisci (la dimostrazione è analoga a quelle fatta negli appunti per $ \S^{2} $).
+La famiglia di coppie $ \mathfrak{U} = \{ (U_{i},\phi_{i}) \}_{i=1,\dots,2(n+1)} $ definisce un atlante differenziabile per $ \S^{n} $ in quanto i cambi di carte sono lisci: la dimostrazione è analoga a quella fatta nell'Esempio \ref{unit-sph} per $ \S^{2} $.
 
 \tocless\section{}\label{es2-2}
 
