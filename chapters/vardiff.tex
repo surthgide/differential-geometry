@@ -229,7 +229,7 @@ i.e. la famiglia delle carte è un \textit{ricoprimento} dello spazio topologico
 		}
 	
 	\footnotetext{%
-		Talvolta queste applicazioni sono chiamate \textit{applicazioni di transizione}, dal fatto che collegano due carte.
+		Talvolta queste applicazioni sono chiamate \textit{applicazioni di transizione}, dal fatto che collegano due carte, oppure \textit{cambi di carte}.
 	}
 
 \begin{remark}
@@ -299,7 +299,7 @@ Sia $ \mathfrak{U} = \{(U_{\alpha},\phi_{\alpha})\} $ un atlante topologico di u
 
 	siano lisce.\\
 	Prendiamo $ \sigma \circ \psi^{-1} $: questa è liscia se lo è in $ \psi(p) \in \psi(V \cap W) $ per $ \forall p \in V \cap W $.\\
-	Essendo l'atlante $ \mathfrak{U} $ un ricoprimento di $ M $, esisterà una carta $ (U_{\alpha},\phi_{\alpha}) \ni p $ perciò con $ p \in U_{\alpha} \cap V \cap W $: potendo scrivere $ \sigma \circ \psi^{-1} = (\sigma \circ \phi_{\alpha}^{-1}) \circ (\phi_{\alpha} \circ \psi^{-1}) $, questa è automaticamente liscia in $ \psi(U_{\alpha} \cap V \cap W) $ in quanto, per ipotesi, lo sono le funzioni di transizione che la compongono.\\
+	Essendo l'atlante $ \mathfrak{U} $ un ricoprimento di $ M $, esisterà una carta $ (U_{\alpha},\phi_{\alpha}) \ni p $ perciò con $ p \in U_{\alpha} \cap V \cap W $: potendo scrivere $ \sigma \circ \psi^{-1} = (\sigma \circ \phi_{\alpha}^{-1}) \circ (\phi_{\alpha} \circ \psi^{-1}) $, questa è automaticamente liscia in $ \psi(U_{\alpha} \cap V \cap W) $ in quanto, per ipotesi, lo sono i cambi di carte che la compongono.\\
 	Questo conclude la dimostrazione perché abbiamo trovato un aperto che contiene il punto, i.e. $ U_{\alpha} \cap V \cap W \ni p $ per $ p $ arbitrario, in cui l'applicazione sia liscia\footnote{%
 		La proprietà di un'applicazione di essere liscia ha carattere locale.%
 	}
@@ -355,24 +355,21 @@ In particolare, se $ U $ è un aperto qualunque di $ M $ e $ (U_{\beta},\phi_{\b
 
 \subsubsection{\textit{Esempi}}
 
-\paragraph{0. $ \R^{n} $}
+\paragraph{0. Spazio euclideo}
 
-Considero $ (\R^{n},\id_{\R^{n}}) $: questo è un atlante differenziabile per $ \R^{n} $ ($ N_{2}+T_{2} $, aspetti topologici) che contiene l'unica carta $ (\R^{n},\id_{\R^{n}}) $.\\
-Essendoci un atlante differenziale per lo spazio, esisterà un'unica struttura differenziabile su $ \R^{n} $ di cui $ (\R^{n},\id_{\R^{n}}) $ è una carta.
+Sia la carta $ (\R^{n},\id_{\R^{n}}) $: questa rappresenta un atlante differenziabile per $ \R^{n} $ che contiene un'unica carta. Essendoci un atlante differenziale per lo spazio, esisterà un'unica struttura differenziabile su $ \R^{n} $ di cui $ (\R^{n},\id_{\R^{n}}) $ è l'unica carta.
 
 \paragraph{1. Aperto di varietà differenziabile}
 
-Siano $ M $ una varietà differenziabile e $ U \subset M $ un suo aperto, allora $ U $ è una varietà differenziabile, con struttura indotta da $ M $, tale che $ \dim (U) = \dim (M) $.\\
-Infatti se $ \mathfrak{U} = \{(U_{\alpha},\phi_{\alpha})\} $ è un atlante differenziabile su $ M $ (massimale o no), allora $ \mathfrak{V} = \{(U_{\alpha} \cap U,\left. \phi_{\alpha} \right|_{U_{\alpha} \cap U})\} $ è un atlante differenziabile per $ U $.
+Siano $ M $ una varietà differenziabile e $ U \subset M $ un suo aperto, allora $ U $ è una varietà differenziabile, con struttura indotta da $ M $, tale che $ \dim (U) = \dim (M) $. Se $ \mathfrak{U} = \{(U_{\alpha},\phi_{\alpha})\} $ è un atlante differenziabile su $ M $ (massimale o no), allora $ \mathfrak{V} = \{(U_{\alpha} \cap U,\left. \phi_{\alpha} \right|_{U_{\alpha} \cap U})\} $ è un atlante differenziabile per $ U $.
 
 \paragraph{2. Varietà 0-dimensionali}
 
-Essendo $ \R^{0} = \{0\} $, siccome deve esistere un omeomorfismo dall'intorno del punto a $ 0 $, questo intorno sarà costituito dal solo punto. La varietà sarà dunque costituita da un insieme di punti con \textit{topologia discreta}, i.e. ogni punto è aperto. Uno spazio discreto è sempre $ T_{2} $ e, per questo spazio, la base è numerabile.\\
-La condizione di $ C^{\infty} $-compatibilità è automatica perché gli aperti sono sempre disgiunti.
+Essendo $ \R^{0} = \{0\} $, siccome deve esistere un omeomorfismo dall'intorno del punto a $ 0 $, questo intorno sarà costituito dal solo punto. Una varietà 0-dimensionale sarà dunque costituita da un insieme di punti con \textit{topologia discreta}, i.e. ogni punto è un aperto per la topologia. Uno spazio discreto è sempre $ N_{2}+T_{2} $. La condizione di $ C^{\infty} $-compatibilità è automatica perché tutti gli aperti sono disgiunti.
 
 \paragraph{3. Curve}
 
-Per le curve differenziabili, $ \dim (M) = 1 $. Poniamo $ M $ connessa, sapendo che
+Per le curve differenziabili, $ \dim (M) = 1 $. Sia $ M $ una varietà differenziabile connessa, sapendo che
 
 \begin{theorem}
 	\begin{equation}
@@ -384,56 +381,56 @@ Per le curve differenziabili, $ \dim (M) = 1 $. Poniamo $ M $ connessa, sapendo 
 
 \paragraph{4. Superfici}
 
-Per le superfici differenziabili\footnote{%
-	Le \textit{parametrizzazioni} $ X $ di curve e superfici sono l'inverso delle carte $ \phi = X^{-1} $, i.e per la parametrizzazione di una superficie
-	
-	\maps{X}%
-		{U \subset \R^{2}}{\R^{3}}%
-		{(u,v)}{(x(u,v),y(u,v),z(u,v))}
+Per le superfici differenziabili, $ \dim (M) = 2 $. Le \textit{parametrizzazioni} $ X $ di curve e superfici sono l'inverso delle carte $ \phi = X^{-1} $, i.e per la parametrizzazione di una superficie
 
-	e per la carta $ (X(u,v),\phi) $.%
-}, $ \dim (M) = 2 $. Poniamo $ M $ compatta e connessa.\\
-Il toro $ \T^{2} = \S^{1} \times \S^{1} $ è una varietà differenziabile.
+\map{X}%
+	{U \subset \R^{2}}{\R^{3}}%
+	{(u,v)}{(x(u,v),y(u,v),z(u,v))}
+
+e per la carta $ (X(u,v),\phi) $.
+% Poniamo $ M $ compatta e connessa.
 
 \paragraph{5. Grafico di una funzione}
 
-Prendiamo l'applicazione $ f : A \subset \R^{n} \to \R^{m} $ con $ A $ aperto ed $ f $ liscia e definiamo il grafico di $ f $ come
+Siano un aperto $ A \subset \R^{n} $ e un'applicazione liscia $ f : A \to \R^{m} $.
 
-\begin{equation}
-	\Gamma(f) \doteq \left\{ (x,f(x)) \st x \in A \right\} \subset \R^{n} \times \R^{m} = \R^{n+m}
-\end{equation}
+\sbs{0.55}{%
+			 Definiamo il \textit{grafico di} $ f $ come
+			
+			\begin{equation}
+				\Gamma(f) \doteq \left\{ (x,f(x)) \st x \in A \right\} \subset \R^{n} \times \R^{m} = \R^{n+m}
+			\end{equation}
+		
+			Si può dotare $ \Gamma(f) $ di una struttura di varietà differenziabile di dimensione $ n $.\\
+			Il grafico $ \Gamma(f) \subset \R^{n+m} $ è $ N_{2}+T_{2} $ (perché lo è $ \R^{n+m} $) dunque è una varietà topologica. Considerando l'omeomorfismo
+			
+			\map{\phi}%
+			{\Gamma(f)}{A}%
+			{(x,f(x))}{x}
+		}
+	{0.45}{%
+			\img{1}{img7}
+		}
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.5\textwidth,keepaspectratio]{img7}
-\end{figure}
 
-Si può dotare $ \Gamma(f) $ di una struttura di varietà differenziabile di dimensione $ n $.\\
-Il grafico $ \Gamma(f) \subset \R^{n+m} $ è $ N_{2}+T_{2} $ (perché lo è $ \R^{n+m} $) dunque è una varietà topologica. Considerando l'applicazione
-
-\map{\phi}%
-	{\Gamma(f)}{A}%
-	{(x,f(x))}{x}
-
-possiamo costruire un'unica carta $ (\Gamma(f),\phi) $ con $ \phi $ omeomorfismo, la quale comporta l'esistenza di un atlante massimale che la contenga. L'applicazione $ \phi $ è un omeomorfismo perché è continua e la sua inversa è continua perché $ f $ è liscia.
+possiamo costruire un atlante costituito da un'unica carta $ (\Gamma(f),\phi) $, il quale implica l'esistenza di un atlante massimale che lo contenga. L'applicazione $ \phi $ è un omeomorfismo perché è continua e la sua inversa è continua in quanto $ f $ è liscia.
 
 \paragraph{6. Gruppo lineare}
 
-Sia l'insieme
+Ricordiamo che è possibile identificare l'insieme delle matrici quadrate con lo spazio euclideo $ M_{n}(\R) = \R^{n^{2}} $ mappando le righe delle matrici in ordine per creare un vettore di $ n^{2} $ componenti.\\
+Sia l'insieme delle matrici con determinante non nullo
 
 \begin{equation}
-	GL_{n}(\R) = \{ A \in M_{n}(\R) \mid \det A \neq 0 \} \subset M_{n}(\R)
+	GL_{n}(\R) = \{ A \in M_{n}(\R) \mid \det(A) \neq 0 \} \subset M_{n}(\R)
 \end{equation}
 
-Si può identificare l'insieme delle matrici quadrate con lo spazio euclideo $ M_{n}(\R) = \R^{n^{2}} $ (mappando le righe delle matrici in ordine per creare un vettore di $ n^{2} $ componenti).\\
-Con la topologia indotta da $ \R^{n^{2}} $, lo spazio $ GL_{n}(\R) $ è $ N_{2}+T_{2} $. Inoltre, $ GL_{n}(\R) $ è un aperto di $ M_{n}(\R) $ perché è il complementare dell'insieme chiuso
+Con la topologia indotta da $ \R^{n^{2}} $, lo spazio $ GL_{n}(\R) $ è $ N_{2}+T_{2} $. Inoltre, $ GL_{n}(\R) $ è un aperto di $ M_{n}(\R) $ perché complementare dell'insieme chiuso
 
 \begin{equation}
-	 M_{n}(\R) \setminus GL_{n}(\R) = \{ A \in M_{n}(\R) \mid \det A = 0 \}
+	 M_{n}(\R) \setminus GL_{n}(\R) = \{ A \in M_{n}(\R) \mid \det(A) = 0 \}
 \end{equation}
 
-in quanto il determinante è un'applicazione continua e la controimmagine di $ 0 $ è un chiuso.\\
-Essendo quindi un aperto di una varietà, $ GL_{n}(\R) $ è una varietà differenziabile con l'unica carta $ \id $; questa varietà ha $ \dim(GL_{n}(\R)) = n^{2} $.
+in quanto il determinante è un'applicazione continua dunque la controimmagine del punto $ 0 $ è un chiuso. Essendo quindi un aperto di una varietà, $ GL_{n}(\R) $ è una varietà differenziabile con l'unica carta $ (GL_{n}(\R),\id_{GL_{n}(\R)}) $; questa varietà ha $ \dim(GL_{n}(\R)) = n^{2} $.
 
 \paragraph{7. Cerchio unitario $ \S^{1} $}\label{ex-s1}
 
@@ -443,17 +440,15 @@ Il cerchio unitario $ \S^{1} $
 	\S^{1} = \left\{ (x,y) \in \R^{2} \st x^{2} + y^{2} = 1 \right\}
 \end{equation}
 
-con la topologia indotta da $ \R^{2} $ (quindi è $ N_{2}+T_{2} $) può essere dotato di una struttura differenziabile costituita da 4 carte prendendo gli aperti\footnote{%
-	Questi insiemi sono aperti perché intersezioni di $ \S^{1} $ aperto con aperti di $ \R^{n} $, e.g. il semipiano superiore.}
+con la topologia indotta da $ \R^{2} $ (quindi $ N_{2}+T_{2} $) può essere dotato di una struttura differenziabile costituita da quattro carte prendendo gli aperti\footnote{%
+	Questi insiemi sono aperti perché intersezioni di $ \S^{1} $ aperto con aperti di $ \R^{n} $, e.g. il semipiano superiore o quello inferiore.}
 
-\begin{align}
-	\begin{split}
-		U_{1} &= \left\{ (x,y) \in \S^{1} \st y>0 \right\}\\
-		U_{2} &= \left\{ (x,y) \in \S^{1} \st y<0 \right\}\\
-		U_{3} &= \left\{ (x,y) \in \S^{1} \st x>0 \right\}\\
-		U_{4} &= \left\{ (x,y) \in \S^{1} \st x<0 \right\}
-	\end{split}	
-\end{align}
+\begin{gather}
+	U_{1} = \left\{ (x,y) \in \S^{1} \st y>0 \right\}\\
+	U_{2} = \left\{ (x,y) \in \S^{1} \st y<0 \right\}\\
+	U_{3} = \left\{ (x,y) \in \S^{1} \st x>0 \right\}\\
+	U_{4} = \left\{ (x,y) \in \S^{1} \st x<0 \right\}
+\end{gather}
 
 i quali sono un ricoprimento del cerchio unitario, i.e.
 
@@ -461,57 +456,55 @@ i quali sono un ricoprimento del cerchio unitario, i.e.
 	\S^{1} = \bigcup_{k=1}^{4} U_{k}
 \end{equation}
 
-Definiamo ora 4 funzioni che costituiranno, insieme agli aperti sopra definiti, un atlante per lo spazio
+Definiamo ora quattro funzioni che costituiranno, insieme agli aperti sopra definiti, un atlante per lo spazio
 
-\begin{align}
-	\begin{split}
-		\phi_{1} : U_{1} &\to (-1,1)_{x} \in \R^{2}\\
-		(x,y) &\mapsto x\\\\
-		%
-		\phi_{2} : U_{2} &\to (-1,1)_{x} \in \R^{2}\\
-		(x,y) &\mapsto x\\\\
-		%
-		\phi_{3} : U_{3} &\to (-1,1)_{y} \in \R^{2}\\
-		(x,y) &\mapsto y\\\\
-		%
-		\phi_{4} : U_{4} &\to (-1,1)_{y} \in \R^{2}\\
-		(x,y) &\mapsto y
-	\end{split}
-\end{align}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.5\textwidth,keepaspectratio]{img8}
-\end{figure}
+\sbs{0.45}{%
+			\map{\phi_{1}}
+				{U_{1}}{(-1,1)_{x} \subset \R^{2}}
+				{(x,y)}{x}
+			
+			\map{\phi_{2}}
+				{U_{2}}{(-1,1)_{x} \subset \R^{2}}
+				{(x,y)}{x}
+			
+			\map{\phi_{3}}
+				{U_{3}}{(-1,1)_{y} \subset \R^{2}}
+				{(x,y)}{y}
+			
+			\map{\phi_{4}}
+				{U_{4}}{(-1,1)_{y} \subset \R^{2}}
+				{(x,y)}{y}
+		}
+	{0.52}{%
+			\img{1}{img8}
+		}
 
 Vogliamo mostrare che $ \{(U_{i},\phi_{i})\}_{i=1,\dots,4} $ sia un atlante differenziabile in modo tale da dotare $ \S^{1} $ di un atlante massimale e quindi renderlo una varietà differenziabile.\\
 Dimostriamo prima che le $ \phi_{i} $ siano omeomorfismi: sono continue e lisce perché sono restrizioni a una delle componenti e le inverse
 
-\begin{align}
-	\begin{split}
-		\phi_{1}^{-1} : (-1,1)_{x} &\to U_{1}\\
-		x &\mapsto (x,\sqrt{1-x^{2}})\\\\
-		%
-		\phi_{2}^{-1} : (-1,1)_{x} &\to U_{2}\\
-		x &\mapsto (x,-\sqrt{1-x^{2}})\\\\
-		%
-		\phi_{3}^{-1} : (-1,1)_{y} &\to U_{3}\\
-		y &\mapsto (\sqrt{1-y^{2}},y)\\\\
-		%
-		\phi_{4}^{-1} : (-1,1)_{y} &\to U_{4}\\
-		y &\mapsto (-\sqrt{1-y^{2}},y)
-	\end{split}
-\end{align}
+\map{\phi_{1}^{-1}}
+	{(-1,1)_{x}}{U_{1}}
+	{x}{(x,\sqrt{1-x^{2}})}
+
+\map{\phi_{2}^{-1}}
+	{(-1,1)_{x}}{U_{2}}
+	{x}{(x,-\sqrt{1-x^{2}})}
+
+\map{\phi_{3}^{-1}}
+	{(-1,1)_{x}}{U_{3}}
+	{y}{(x,\sqrt{1-y^{2}})}
+
+\map{\phi_{4}^{-1}}
+	{(-1,1)_{x}}{U_{4}}
+	{y}{(x,-\sqrt{1-y^{2}})}
 
 sono anch'esse continue e lisce; questo dimostra che lo spazio è una varietà topologica.\\
 Per dimostrare che sia una struttura differenziabile, prendiamo due carte arbitrarie e ne facciamo la composizione per controllare la loro $ C^{\infty} $-compatibilità:
 
-\begin{align}
-	\begin{split}
-		\phi_{3} \circ \phi_{1}^{-1} : \phi_{1}(U_{1} \cap U_{3}) &\to \phi_{3}(U_{1} \cap U_{3})\\
-		\phi_{1} \circ \phi_{3}^{-1} : \phi_{3}(U_{1} \cap U_{3}) &\to \phi_{1}(U_{1} \cap U_{3})
-	\end{split}
-\end{align}
+\begin{gather}
+	\phi_{3} \circ \phi_{1}^{-1} : \phi_{1}(U_{1} \cap U_{3}) \to \phi_{3}(U_{1} \cap U_{3})\\
+	\phi_{1} \circ \phi_{3}^{-1} : \phi_{3}(U_{1} \cap U_{3}) \to \phi_{1}(U_{1} \cap U_{3})
+\end{gather}
 
 dove
 
@@ -521,24 +514,17 @@ dove
 
 e dunque
 
-\begin{align}
-	\begin{split}
-		\phi_{1}(U_{1} \cap U_{3}) &= (0,1)_{x}\\
-		\phi_{3}(U_{1} \cap U_{3}) &= (0,1)_{y}
-	\end{split}
-\end{align}
+\begin{gather}
+	\phi_{1}(U_{1} \cap U_{3}) = (0,1)_{x}\\
+	\phi_{3}(U_{1} \cap U_{3}) = (0,1)_{y}
+\end{gather}
 
 L'azione delle composizioni è la seguente
 
-\begin{align}
-	\begin{split}
-		(\phi_{3} \circ \phi_{1}^{-1}) (x) &= \phi_{3} ((x,\sqrt{1-x^{2}}))\\
-		&= \sqrt{1-x^{2}}\\\\
-		%
-		(\phi_{1} \circ \phi_{3}^{-1}) (y) &= \phi_{1} ((\sqrt{1-y^{2}},y))\\
-		&= \sqrt{1-y^{2}}
-	\end{split}
-\end{align}
+\begin{gather}
+	(\phi_{3} \circ \phi_{1}^{-1}) (x) = \phi_{3} (x,\sqrt{1-x^{2}})) = \sqrt{1-x^{2}}\\
+	(\phi_{1} \circ \phi_{3}^{-1}) (y) = \phi_{1} (\sqrt{1-y^{2}},y)) = \sqrt{1-y^{2}}
+\end{gather}
 
 Queste applicazioni sono lisce in quanto le loro derivate non divergono mai perché i denominatori non si annullano mai negli intervalli dei domini.\\
 Il ragionamento è analogo per tutte le altre composizioni, dunque $ \{(U_{i},\phi_{i})\}_{i=1,\dots,4} $ è un atlante differenziabile per $ \S^{1} $.
@@ -549,108 +535,109 @@ La sfera unitaria $ \S^{2} $ è una varietà topologica inclusa in $ \R^{3} $ (c
 Gli aperti che ricoprono lo spazio sono i seguenti
 
 \begin{align}
-	\begin{split}
-		U_{1} &= \left\{ (x,y,z) \in \S^{2} \st z>0 \right\}\\
-		U_{2} &= \left\{ (x,y,z) \in \S^{2} \st z<0 \right\}\\
-		U_{3} &= \left\{ (x,y,z) \in \S^{2} \st y>0 \right\}\\
-		U_{4} &= \left\{ (x,y,z) \in \S^{2} \st y<0 \right\}\\
-		U_{5} &= \left\{ (x,y,z) \in \S^{2} \st x>0 \right\}\\
-		U_{6} &= \left\{ (x,y,z) \in \S^{2} \st x<0 \right\}
-	\end{split}	
+	U_{1} = \left\{ (x,y,z) \in \S^{2} \st z>0 \right\}\\
+	U_{2} = \left\{ (x,y,z) \in \S^{2} \st z<0 \right\}\\
+	U_{3} = \left\{ (x,y,z) \in \S^{2} \st y>0 \right\}\\
+	U_{4} = \left\{ (x,y,z) \in \S^{2} \st y<0 \right\}\\
+	U_{5} = \left\{ (x,y,z) \in \S^{2} \st x>0 \right\}\\
+	U_{6} = \left\{ (x,y,z) \in \S^{2} \st x<0 \right\}
 \end{align}
 
 Prendendo il generico aperto
 
 \begin{equation}
-	D_{ij} \doteq \left\{ (i,j) \in \R^{2} \st i^{2}+j^{2}<1 \right\}
+	D_{ij} \doteq \left\{ (i,j) \in \R^{2} \st i^{2}+j^{2}<1 \right\} \subset \R^{2} \qcomma i,j = x,y,z
 \end{equation}
 
-definiamo dunque le applicazioni
+definiamo dunque le seguenti applicazioni per formare le carte $ \{(U_{i},\phi_{i})\}_{i=1,\dots,6} $
 
-\begin{align}
-	\begin{split}
-		\phi_{1} : U_{1} &\to D_{xy} \in \R^{2}\\
-		(x,y,z) &\mapsto (x,y)\\\\
-		%
-		\phi_{2} : U_{2} &\to D_{xy} \in \R^{2}\\
-		(x,y,z) &\mapsto (x,y)\\\\
-		%
-		\phi_{3} : U_{3} &\to D_{xz} \in \R^{2}\\
-		(x,y,z) &\mapsto (x,z)\\\\
-		%
-		\phi_{4} : U_{4} &\to D_{xz} \in \R^{2}\\
-		(x,y,z) &\mapsto (x,z)\\\\
-		%
-		\phi_{5} : U_{5} &\to D_{yz} \in \R^{2}\\
-		(x,y,z) &\mapsto (y,z)\\\\
-		%
-		\phi_{6} : U_{6} &\to D_{yz} \in \R^{2}\\
-		(x,y,z) &\mapsto (y,z)
-	\end{split}
-\end{align}
-
-per formare le carte $ \{(U_{i},\phi_{i})\}_{i=1,\dots,6} $.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.7\textwidth,keepaspectratio]{img9}
-\end{figure}
+\sbs{0.45}{%
+			\map{\phi_{1}}
+				{U_{1}}{D_{xy}}
+				{(x,y,z)}{(x,y)}
+			
+			\map{\phi_{2}}
+				{U_{2}}{D_{xy}}
+				{(x,y,z)}{(x,y)}
+			
+			\map{\phi_{3}}
+				{U_{3}}{D_{xz}}
+				{(x,y,z)}{(x,z)}
+			
+			\map{\phi_{4}}
+				{U_{4}}{D_{xz}}
+				{(x,y,z)}{(x,z)}
+			
+			\map{\phi_{5}}
+				{U_{5}}{D_{yz}}
+				{(x,y,z)}{(y,z)}
+			
+			\map{\phi_{6}}
+				{U_{6}}{D_{yz}}
+				{(x,y,z)}{(y,z)}
+		}
+		{0.52}{%
+			Ad esempio, l'applicazione $ \phi_{1} $ è rappresentata di seguente:
+			\img{1}{img9}
+		}
 
 Le applicazioni inverse sono
 
-\begin{align}
-	\begin{split}
-		\phi_{1}^{-1} : D_{xy} &\to U_{1} \in \R^{2}\\
-		(x,y) &\mapsto (x,y,\sqrt{1-x^{2}-y^{2}})\\\\
-		%
-		\phi_{2}^{-1} : D_{xy} &\to U_{2} \in \R^{2}\\
-		(x,y) &\mapsto (x,y,-\sqrt{1-x^{2}-y^{2}})\\\\
-		%
-		\phi_{3}^{-1} : D_{xz} &\to U_{3} \in \R^{2}\\
-		(x,z) &\mapsto (x,\sqrt{1-x^{2}-z^{2}},z)\\\\
-		%
-		\phi_{4}^{-1} : D_{xz} &\to U_{4} \in \R^{2}\\
-		(x,z) &\mapsto (x,-\sqrt{1-x^{2}-z^{2}},z)\\\\
-		%
-		\phi_{5}^{-1} : D_{yz} &\to U_{5} \in \R^{2}\\
-		(y,z) &\mapsto (\sqrt{1-y^{2}-z^{2}},y,z)\\\\
-		%
-		\phi_{6}^{-1} : D_{yz} &\to U_{6} \in \R^{2}\\
-		(y,z) &\mapsto (-\sqrt{1-y^{2}-z^{2}},y,z)
-	\end{split}
-\end{align}
+\map{\phi_{1}^{-1}}
+	{D_{xy}}{U_{1} \subset \R^{2}}
+	{(x,y)}{(x,y,\sqrt{1-x^{2}-y^{2}})}
+
+\map{\phi_{2}^{-1}}
+	{D_{xy}}{U_{2} \subset \R^{2}}
+	{(x,y)}{(x,y,-\sqrt{1-x^{2}-y^{2}})}
+
+\map{\phi_{3}^{-1}}
+	{D_{xz}}{U_{3} \subset \R^{2}}
+	{(x,z)}{(x,\sqrt{1-x^{2}-z^{2}},z)}
+
+\map{\phi_{4}^{-1}}
+	{D_{xz}}{U_{4} \subset \R^{2}}
+	{(x,z)}{(x,-\sqrt{1-x^{2}-z^{2}},z)}
+
+\map{\phi_{5}^{-1}}
+	{D_{yz}}{U_{5} \subset \R^{2}}
+	{(y,z)}{(\sqrt{1-y^{2}-z^{2}},y,z)}
+
+\map{\phi_{6}^{-1}}
+	{D_{yz}}{U_{6} \subset \R^{2}}
+	{(y,z)}{(-\sqrt{1-y^{2}-z^{2}},y,z)}
 
 Ad esempio, verifichiamo che le carte $ (U_{1},\phi_{1}) $ e $ (U_{4},\phi_{4}) $ siano compatibili:
 
-\begin{align}
-	\begin{split}
-		\phi_{1} \circ \phi_{4}^{-1} : \phi_{4}(U_{1} \cap U_{4}) &\to \phi_{1}(U_{1} \cap U_{4})\\
-		\phi_{4} \circ \phi_{1}^{-1} : \phi_{1}(U_{1} \cap U_{4}) &\to \phi_{4}(U_{1} \cap U_{4})
-	\end{split}
-\end{align}
+\begin{gather}
+	\phi_{1} \circ \phi_{4}^{-1} : \phi_{4}(U_{1} \cap U_{4}) \to \phi_{1}(U_{1} \cap U_{4})\\
+	\phi_{4} \circ \phi_{1}^{-1} : \phi_{1}(U_{1} \cap U_{4}) \to \phi_{4}(U_{1} \cap U_{4})
+\end{gather}
 
-dove $ U_{1} \cap U_{4} = \left\{ (x,y,z) \in \S^{2} \st z>0 \, \wedge \, y<0 \right\} $ e dunque 
+dove
 
-\begin{align}
-	\begin{split}
-		(\phi_{1} \circ \phi_{4}^{-1})(x,z) &= \phi_{1} \left( x,-\sqrt{1-x^{2}-z^{2}},z \right)\\
-		&= \left( x,-\sqrt{1-x^{2}-z^{2}} \right)\\\\
-		%
-		(\phi_{4} \circ \phi_{1}^{-1})(x,y) &= \phi_{4} \left( x,y,\sqrt{1-x^{2}-y^{2}} \right)\\
-		&= \left( x,\sqrt{1-x^{2}-y^{2}} \right)
-	\end{split}
-\end{align}
+\begin{equation}
+	U_{1} \cap U_{4} = \left\{ (x,y,z) \in \S^{2} \st z>0 \, \wedge \, y<0 \right\}
+\end{equation}
+
+dunque
+
+\begin{gather}
+	(\phi_{1} \circ \phi_{4}^{-1})(x,z) = \phi_{1} \left( x,-\sqrt{1-x^{2}-z^{2}},z \right) = \left( x,-\sqrt{1-x^{2}-z^{2}} \right)\\
+	(\phi_{4} \circ \phi_{1}^{-1})(x,y) = \phi_{4} \left( x,y,\sqrt{1-x^{2}-y^{2}} \right) = \left( x,\sqrt{1-x^{2}-y^{2}} \right)
+\end{gather}
 
 e analogamente per le altre composizioni. Tutte queste applicazioni e le loro inverse sono lisce per lo stesso motivo dato per il cerchio unitario.\\
-Tutto ciò dota lo spazio di un atlante differenziabile e dunque la sfera unitaria $ \S^{2} $ di una struttura differenziabile.\\
-Vedi Esercizio \ref{es2-1}.
+Tutto ciò dota lo spazio di un atlante differenziabile e dunque la sfera unitaria $ \S^{2} $ di una struttura differenziabile\footnote{%
+	Vedi Esercizio \ref{es2-1}.%
+}.
 
 \paragraph{9. Sfera unitaria $ \S^{n} $ con proiezione stereografica}
 
-La sfera unitaria $ \S^{n} $ è l'insieme
+La sfera unitaria $ \S^{n} $
 
 \begin{equation}
-	\S^{n} = \left\{ x = (x^{1},\dots,x^{n}) \in \R^{n} \st \norm{x} \doteq \sum_{i=1}^{n} (x^{i})^{2} = 1 \right\}
+	\S^{n} = \left\{ x = (x^{1},\dots,x^{n+1}) \in \R^{n+1} \st \norm{x}^{2} \doteq \sum_{i=1}^{n+1} (x^{i})^{2} = 1 \right\} \subset \R^{n+1}
 \end{equation}
 
 ha la topologia indotta da $ \R^{n+1} $ (quindi è $ N_{2}+T_{2} $).\\
@@ -658,72 +645,89 @@ Siano i poli $ N = (0,\dots,0,1) $ e $ S = (0,\dots,0,-1) $ da cui i due aperti\
 	Sono aperti perché complementari di un chiuso, i.e. i punti ai poli.%
 } per le carte
 
-\begin{align}
-	\begin{split}
-		U_{N} &= \S^{n} \setminus \{N\}\\
-		U_{S} &= \S^{n} \setminus \{S\}
-	\end{split}
-\end{align}
+\begin{gather}
+	U_{N} = \S^{n} \setminus \{N\}\\
+	U_{S} = \S^{n} \setminus \{S\}
+\end{gather}
 
-Costruiamo ora le applicazioni per la proiezione stereografica
+Costruiamo ora le applicazioni per la proiezione stereografica che si ottengono considerando una retta per uno dei poli e il punto da proiettare, e l'intersezione della retta stessa con il piano $ \R^{n} \times \{0\} = \R^{n} $:
 
-\begin{align}
-	\begin{split}
-		\pi_{N} : \S^{n} \setminus \{N\} &\to \R^{n} \times \{0\} = \R^{n}\\
-		(x^{1},\dots,x^{n+1}) &\mapsto \left( \dfrac{2x^{1}}{1-x^{n+1}},\dots,\dfrac{2x^{n}}{1-x^{n+1}} \right)\\\\
-		%
-		\pi_{S} : \S^{n} \setminus \{S\} &\to \R^{n} \times \{0\} = \R^{n}\\
-		(x^{1},\dots,x^{n+1}) &\mapsto \left( \dfrac{2x^{1}}{1+x^{n+1}},\dots,\dfrac{2x^{n}}{1+x^{n+1}} \right)
-	\end{split}
-\end{align}
-
-Queste applicazioni si ottengono considerando una retta per uno dei poli e il punto da proiettare e l'intersezione della retta stessa con il piano $ \R^{n} \times \{0\} = \R^{n} $.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.6\textwidth,keepaspectratio]{img10}
-\end{figure}
+\sbs{0.55}{%
+			\map{\pi_{N}}
+				{U_{N}}{\R^{n} \times \{0\} = \R^{n}}
+				{(x^{1},\dots,x^{n+1})}{\left( \dfrac{2x^{1}}{1-x^{n+1}},\dots,\dfrac{2x^{n}}{1-x^{n+1}} \right)}
+			
+			\map{\pi_{S}}
+				{U_{S}}{\R^{n} \times \{0\} = \R^{n}}
+				{(x^{1},\dots,x^{n+1})}{\left( \dfrac{2x^{1}}{1+x^{n+1}},\dots,\dfrac{2x^{n}}{1+x^{n+1}} \right)}
+		}
+	{0.45}{%
+			\img{1}{img10}
+		}
 
 Le inverse delle applicazioni sono
 
-\begin{align}
-	\begin{split}
-		\pi_{N}^{-1} : \R^{n} &\to \S^{n} \setminus \{N\}\\
-		(x^{1},\dots,x^{n}) &\mapsto \left( \dfrac{x^{1}}{1+\norm{x}^{2}},\dots,\dfrac{x^{n}}{1+\norm{x}^{2}},\dfrac{\norm{x}^{2}-1}{1+\norm{x}^{2}} \right)\\\\
-		%
-		\pi_{S}^{-1} : \R^{n} &\to \S^{n} \setminus \{S\}\\
-		(x^{1},\dots,x^{n}) &\mapsto \left( \dfrac{x^{1}}{1+\norm{x}^{2}},\dots,\dfrac{x^{n}}{1+\norm{x}^{2}},\dfrac{1-\norm{x}^{2}}{1+\norm{x}^{2}} \right)
-	\end{split}
-\end{align}
+\map{\pi_{N}^{-1}}
+	{\R^{n}}{U_{N}}
+	{(x^{1},\dots,x^{n})}{\left( \dfrac{x^{1}}{1+\norm{x}^{2}},\dots,\dfrac{x^{n}}{1+\norm{x}^{2}},\dfrac{1-\norm{x}^{2}}{1+\norm{x}^{2}} \right)}
+
+\map{\pi_{S}^{-1}}
+	{\R^{n}}{U_{S}}
+	{(x^{1},\dots,x^{n})}{\left( \dfrac{x^{1}}{1+\norm{x}^{2}},\dots,\dfrac{x^{n}}{1+\norm{x}^{2}},\dfrac{\norm{x}^{2}-1}{1+\norm{x}^{2}} \right)}
 
 Sia le funzioni che le loro inverse sono lisce e sono omeomorfismi.\\
-Per dotare $ \S^{n} $ di una struttura differenziabile prendendo l'atlante massimale che include queste due carte, è necessario verificare che i cambi di carte siano lisci
+Per dotare $ \S^{n} $ di una struttura differenziabile, prendendo l'atlante massimale che include queste due carte, è necessario verificare che i cambi di carte siano lisci
+
+\begin{gather}
+	\pi_{N} \circ \pi_{S}^{-1} : \pi_{S}(U_{N} \cap U_{S}) \to \pi_{N}(U_{N} \cap U_{S})\\
+	\pi_{S} \circ \pi_{N}^{-1} : \pi_{N}(U_{N} \cap U_{S}) \to \pi_{S}(U_{N} \cap U_{S})
+\end{gather}
+
+dove $ U_{S} \cap U_{N} = \S^{n} \setminus \{N,S\} $ e quindi
+
+\begin{equation}
+	\pi_{N}(U_{S} \cap U_{N}) = \pi_{S}(U_{S} \cap U_{N}) = \R^{n} \setminus \{0\}
+\end{equation}
+
+A questo punto i cambi di carte si riducono all'applicazione identità e sono dunque lisce.\\
+Considerando l'eguaglianza
+
+\begin{equation}
+	\dfrac{ 2 \left( \dfrac{x^{k}}{1 + \norm{x}^{2}} \right) }{ 1 - \dfrac{\norm{x}^{2} - 1}{1 + \norm{x}^{2}} } = \dfrac{2 x^{k}}{1 + \norm{x}^{2}} \left( \dfrac{ 1 + \norm{x}^{2} - \norm{x}^{2} + 1 }{ 1 + \norm{x}^{2} } \right)^{-1} %
+	= \dfrac{2 x^{k}}{1 + \norm{x}^{2}} \left( \dfrac{1 + \norm{x}^{2}}{2} \right) %
+	= x^{k}
+\end{equation}
+
+otteniamo
 
 \begin{align}
 	\begin{split}
-		\pi_{N} \circ \pi_{S}^{-1} : \pi_{S}(U_{S} \cap U_{N}) &\to \pi_{N}(U_{S} \cap U_{N})\\
-		\pi_{S} \circ \pi_{N}^{-1} : \pi_{N}(U_{S} \cap U_{N}) &\to \pi_{S}(U_{S} \cap U_{N})
-	\end{split}
-\end{align}
-
-dove $ U_{S} \cap U_{N} = \S^{n} \setminus \{N,S\} $ e quindi $ \pi_{S}(U_{S} \cap U_{N}) = \pi_{N}(U_{S} \cap U_{N}) = \R^{n} \setminus \{0\} $, perciò
-
-\begin{align}
-	\begin{split}
-		\pi_{N} \circ \pi_{S}^{-1} : \R^{n} \setminus \{0\} &\to \R^{n} \setminus \{0\}\\
-		(x^{1},\dots,x^{n}) &\mapsto \pi_{N}\left( \dfrac{x^{1}}{1+\norm{x}^{2}},\dots,\dfrac{x^{n}}{1+\norm{x}^{2}},\dfrac{1-\norm{x}^{2}}{1+\norm{x}^{2}} \right) =\\
+		(\pi_{N} \circ \pi_{S}^{-1}) (x^{1},\dots,x^{n}) &= \pi_{N} (\pi_{S}^{-1} (x^{1},\dots,x^{n}))\\
+		&= \pi_{N} \left( \dfrac{x^{1}}{1+\norm{x}^{2}},\dots,\dfrac{x^{n}}{1+\norm{x}^{2}},\dfrac{\norm{x}^{2}-1}{1+\norm{x}^{2}} \right)\\
+		&= \left( \dfrac{ 2 \left( \dfrac{x^{1}}{1 + \norm{x}^{2}} \right) }{ 1 - \dfrac{\norm{x}^{2} - 1}{1 + \norm{x}^{2}} }, \dots, \dfrac{ 2 \left( \dfrac{x^{n}}{1 + \norm{x}^{2}} \right) }{ 1 - \dfrac{\norm{x}^{2} - 1}{1 + \norm{x}^{2}} } \right)\\
 		&= (x^{1},\dots,x^{n})
 	\end{split}
 \end{align}
 
-e la sua inversa è identica a sé stessa $ \pi_{S} \circ \pi_{N}^{-1} \equiv \pi_{N} \circ \pi_{S}^{-1} $; queste composizioni sono lisce dunque le carte $ (U_{N},\pi_{N}) $ e $ (U_{S},\pi_{S}) $ sono $ C^{\infty} $-compatibili perciò $ \{(U_{N},\pi_{N}),(U_{S},\pi_{S})\} $ è un atlante differenziabile su $ \S^{n} $, il quale diventa una varietà differenziabile.\\
-Vedi Esercizio \ref{es2-2}.
+e analogamente per $ \pi_{S} \circ \pi_{N}^{-1} $. A questo punto
+
+\begin{equation}
+	\pi_{N} \circ \pi_{S}^{-1} \equiv \pi_{S} \circ \pi_{N}^{-1} = \id_{\R^{n} \setminus \{0\}}
+\end{equation}
+
+Queste composizioni sono lisce dunque le carte $ (U_{N},\pi_{N}) $ e $ (U_{S},\pi_{S}) $ sono $ C^{\infty} $-compatibili perciò $ \{(U_{N},\pi_{N}),(U_{S},\pi_{S})\} $ è un atlante differenziabile su $ \S^{n} $, la quale diventa una varietà differenziabile\footnote{%
+	Vedi Esercizio \ref{es2-2}.%
+}.
 
 \paragraph{10. Prodotto di varietà differenziabili}
 
-Prendiamo due varietà differenziabili $ M $ ed $ N $ e consideriamo il prodotto cartesiano $ M \times N $ con \textit{topologia prodotto}, il che rende $ M \times N $ ancora $ N_{2}+T_{2} $.\\
-Siano $ \mathfrak{U} = \{(U_{\alpha},\phi_{\alpha})\}_{\alpha \in A} $ un atlante differenziabile di $ M $ e $ \mathfrak{V} = \{(V_{\beta},\psi_{\beta})\}_{\beta \in B} $ un atlante differenziabile di $ N $.\\
-Sia un atlante per $ M \times N $
+Prendiamo due varietà differenziabili $ M $ ed $ N $ e consideriamo il prodotto cartesiano $ M \times N $ con \textit{topologia prodotto}, la quale rende $ M \times N $ ancora $ N_{2}+T_{2} $. La dimensione del prodotto di due varietà è
+
+\begin{equation}
+	\dim (M \times N) = \dim(M) + \dim(N) = m + n
+\end{equation}
+
+Siano $ \mathfrak{U} = \{(U_{\alpha},\phi_{\alpha})\}_{\alpha \in A} $ un atlante differenziabile di $ M $ e $ \mathfrak{V} = \{(V_{\beta},\psi_{\beta})\}_{\beta \in B} $ un atlante differenziabile di $ N $. Sia un atlante per $ M \times N $
 
 \begin{equation}
 	\mathfrak{W} = \{(U_{\alpha} \times V_{\beta},\phi_{\alpha} \times \psi_{\beta})\}_{\alpha \in A, \, \beta \in B}
@@ -732,46 +736,42 @@ Sia un atlante per $ M \times N $
 dove al variare di $ \alpha $ e $ \beta $ per l'aperto $ U_{\alpha} \times V_{\beta} \in M \times N $ si ottiene un ricoprimento per lo spazio prodotto, i.e.
 
 \begin{equation}
-	M \times N = \bigcup_{\alpha,\beta} (U_{\alpha} \times V_{\beta})
+	M \times N = \bigcup_{\substack{ \alpha \in A \\ \beta \in B }} (U_{\alpha} \times V_{\beta})
 \end{equation}
 
 Le applicazioni
 
-\begin{align}
-	\begin{split}
-		\phi_{\alpha} \times \psi_{\beta} : U_{\alpha} \times V_{\beta} &\to \phi_{\alpha}(U_{\alpha}) \times \psi_{\beta}(V_{\beta}) \subset \R^{m} \times \R^{n} = \R^{m+n}\\
-		(x,y) &\mapsto (\phi_{\alpha}(x),\psi_{\beta}(y))
-	\end{split}
-\end{align}
+\map{\phi_{\alpha} \times \psi_{\beta}}
+	{U_{\alpha} \times V_{\beta}}{\phi_{\alpha}(U_{\alpha}) \times \psi_{\beta}(V_{\beta}) \subset \R^{m} \times \R^{n} = \R^{m+n}}
+	{(x,y)}{(\phi_{\alpha}(x),\psi_{\beta}(y))}
 
-dove $ \dim M = m $ e $ \dim N = n $, sono continue (il prodotto di applicazioni continue è continuo) perché omeomorfismi e le inverse sono il prodotto delle inverse
+sono continue (il prodotto di applicazioni continue è continuo) perché omeomorfismi e le inverse sono il prodotto delle inverse
 
 \begin{equation}
 	(\phi_{\alpha} \times \psi_{\beta})^{-1} = \phi_{\alpha}^{-1} \times \psi_{\beta}^{-1} : \phi_{\alpha}(U_{\alpha}) \times \psi_{\beta}(V_{\beta}) \to U_{\alpha} \times V_{\beta}
 \end{equation}
 
 anch'esse continue perché inverse di omeomorfismi.\\
-Questo rende $ \mathfrak{W} $ un atlante topologico; perché sia un atlante differenziabile, verifichiamo che le carte siano $ C^{\infty} $-compatibili controllando che i cambi di carte siano omeomorfismi
+Questo rende $ \mathfrak{W} $ un atlante topologico; perché sia un atlante differenziabile, verifichiamo che le carte siano $ C^{\infty} $-compatibili controllando che i cambi di carte siano lisci
 
 \begin{equation}
 	(\phi_{\alpha} \times \psi_{\beta}) \circ (\phi_{\rho} \times \psi_{\sigma})^{-1} : (\phi_{\rho} \times \psi_{\sigma})(U_{\rho} \times V_{\sigma}) \to (\phi_{\alpha} \times \psi_{\beta})(U_{\alpha} \times V_{\beta})
 \end{equation}
 
-alternativamente
+alternativamente possiamo scriverli come
 
 \begin{equation}
 	(\phi_{\alpha} \circ \phi_{\rho}^{-1}) \times (\psi_{\beta} \circ \psi_{\sigma})^{-1} : \phi_{\rho}(U_{\rho}) \times \psi_{\sigma}(V_{\sigma}) \to \phi_{\alpha}(U_{\alpha}) \times \psi_{\beta}(V_{\beta})
 \end{equation}
 
-le composizioni $ \phi_{\alpha} \circ \phi_{\rho}^{-1} $ e $ \psi_{\beta} \circ \psi_{\sigma} $ sono lisce perché ognuna di queste prova la compatibilità delle carte in $ M $ e in $ N $ rispettivamente e dunque il loro prodotto è ancora liscio. Questi ragionamenti portano all'esistenza di una struttura differenziale per $ M \times N $ il quale diventa una varietà differenziabile.\\
-La dimensione del prodotto di varietà è $ \dim (M \times N) = \dim M + \dim N $.\\
-Il toro bidimensionale $ \T^{2} = \S^{1} \times \S^{1} $ e il cilindro infinito $ \mathcal{C} = \S^{1} \times \R $ sono superfici differenziabili; anche il toro $ n $-dimensionale è una varietà differenziabile
+Le composizioni $ \phi_{\alpha} \circ \phi_{\rho}^{-1} $ e $ \psi_{\beta} \circ \psi_{\sigma} $ sono lisce perché ognuna di queste prova la compatibilità delle carte in $ M $ e in $ N $ rispettivamente e dunque il loro prodotto è ancora liscio. Questi ragionamenti portano all'esistenza di una struttura differenziale per $ M \times N $, la quale diventa dunque una varietà differenziabile.\\
+Esempi di superfici differenziabili risultato di prodotti tra varietà differenziabili sono il toro bidimensionale $ \T^{2} = \S^{1} \times \S^{1} $ e il cilindro infinito $ \mathcal{C} = \S^{1} \times \R $; anche il toro $ n $-dimensionale è una varietà differenziabile
 
 \begin{align}
 	\T^{n} = \prod^{n} \S^{1}
 \end{align}
 
-dove la produttoria implica la topologia prodotto $ \times $.
+dove la produttoria implica, in questo caso, la topologia prodotto $ \times $.
 
 \subsection{Spazi quoziente dal punto di vista topologico}
 
