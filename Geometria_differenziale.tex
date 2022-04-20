@@ -186,10 +186,12 @@
 \date{Ottobre 2020}
 
 \begin{document}
-	
-\pagenumbering{gobble}
 
 \maketitle
+
+%
+
+\pagenumbering{roman}
 
 %
 
@@ -229,13 +231,13 @@
 
 %
 
-\begin{appendices}
-%	\appendixtitleoff
-%	\appendixheaderoff
-%	\appendixpageoff
-	
-	\input{chapters/esercizi}
-\end{appendices}
+\appendix
+
+\makeatletter
+\renewcommand{\@chapapp}{Esercizi}
+\makeatother
+
+\input{chapters/esercizi}
 
 %
 
