@@ -989,49 +989,46 @@ La famiglia di coppie $ \mathfrak{U} = \{ (U_{i},\phi_{i}) \}_{i=1,\dots,2(n+1)}
 \section{}\label{es2-2}
 
 \begin{tcolorbox}
-	Dimostrare che la struttura differenziabile su $ \S^{n} $ definita dall’esercizio precedente e quella definita dalle proiezioni
+	Dimostrare che la struttura differenziabile su $ \S^{n} $ definita nell’esercizio precedente e quella definita dalle proiezioni
 	stereografiche coincidono.
 \end{tcolorbox}
 
-Per dimostrare che le due strutture differenziabili coincidano, è sufficiente mostrare che le carte di ognuna siano liscia-compatibili con quelle dell'altra.\\
+Per dimostrare che le due strutture differenziabili coincidano è sufficiente mostrare che le carte di ognuna siano $ C^{\infty} $-compatibili con quelle dell'altra.\\
 Considerando le intersezioni:
 
 \begin{align}
-	\begin{split}
 		U_{N} \cap U_{i} &= %\\
 		\begin{cases}
-			U_{i} & i \neq 2(n+1)-1 = 2n-1\\
-			U_{i} \setminus \{ N \} & i = 2n-1
-		\end{cases}\\\\
+			U_{i}, & i \neq 2(n+1)\\
+			U_{i} \setminus \{ N \}, & i = 2(n+1)
+		\end{cases}\\
 		%
 		U_{S} \cap U_{i} &= %\\
 		\begin{cases}
-			U_{i} & i \neq 2(n+1)\\
-			U_{i} \setminus \{ S \} & i = 2n+1
+			U_{i}, & i \neq 2(n+1) - 1 = 2 n + 1\\
+			U_{i} \setminus \{ S \}, & i = 2n+1
 		\end{cases}
-	\end{split}
 \end{align}
 
 possiamo scrivere i cambi di carta
 
-\begin{align}
-	\begin{split}
-		\pi_{N} \circ \phi_{i}^{-1} &: \phi_{i}(U_{N} \cap U_{i}) \to \pi_{N}(U_{N} \cap U_{i})\\
-		\pi_{S} \circ \phi_{i}^{-1} &: \phi_{i}(U_{S} \cap U_{i}) \to \pi_{S}(U_{S} \cap U_{i})\\\\
-		\phi_{i} \circ \pi_{N}^{-1} &: \pi_{N}(U_{N} \cap U_{i}) \to \phi_{i}(U_{N} \cap U_{i})\\
-		\phi_{i} \circ \pi_{S}^{-1} &: \pi_{N}(U_{S} \cap U_{i}) \to \phi_{i}(U_{S} \cap U_{i})
-	\end{split}
-\end{align}
+\begin{gather}
+	\pi_{N} \circ \phi_{i}^{-1} : \phi_{i}(U_{N} \cap U_{i}) \to \pi_{N}(U_{N} \cap U_{i})\\
+	\pi_{S} \circ \phi_{i}^{-1} : \phi_{i}(U_{S} \cap U_{i}) \to \pi_{S}(U_{S} \cap U_{i})\\
+	\nonumber\\
+	\phi_{i} \circ \pi_{N}^{-1} : \pi_{N}(U_{N} \cap U_{i}) \to \phi_{i}(U_{N} \cap U_{i})\\
+	\phi_{i} \circ \pi_{S}^{-1} : \pi_{N}(U_{S} \cap U_{i}) \to \phi_{i}(U_{S} \cap U_{i})
+\end{gather}
 
 esplicitamente abbiamo che
 
 \begin{align}
 	\begin{split}
-		(\pi_{N} \circ \phi_{i}^{-1})(x^{1},\dots,x^{n}) &= \pi_{N} \left( x^{1}, \dots, x^{i-1}, \sqrt{1 - \norm{x}^{2}}, x^{i}, \dots, x^{n} \right)\\
-		&= \left( \dfrac{2 x^{1}}{1-x^{n}}, \dots, \dfrac{2 x^{i-1}}{1-x^{n}}, \dfrac{\sqrt{1 - \norm{x}^{2}}}{1-x^{n}}, \dfrac{2 x^{i}}{1-x^{n}}, \dots, \dfrac{2 x^{n-1}}{1-x^{n}} \right)\\\\
+		(\pi_{N} \circ \phi_{i}^{-1})(x^{1},\dots,x^{n}) &= \pi_{N} \left( x^{1}, \dots, x^{i-1}, (-1)^{i} \sqrt{1 - \norm{x}^{2}}, x^{i}, \dots, x^{n} \right)\\
+		&= \left( \dfrac{2 x^{1}}{1-x^{n}}, \dots, \dfrac{2 x^{i-1}}{1-x^{n}}, \dfrac{2 (-1)^{i} \sqrt{1 - \norm{x}^{2}}}{1-x^{n}}, \dfrac{2 x^{i}}{1-x^{n}}, \dots, \dfrac{2 x^{n-1}}{1-x^{n}} \right)\\\\
 		%
-		(\phi_{i} \circ \pi_{N}^{-1})(x^{1},\dots,x^{n}) &= \phi_{i} \left( \dfrac{x^{1}}{1 + \norm{x}^{2}}, \dots, \dfrac{x^{n}}{1 + \norm{x}^{2}}, \dfrac{\norm{x}^{2} - 1}{1 + \norm{x}^{2}} \right)\\
-		&= \left( \dfrac{x^{1}}{1 + \norm{x}^{2}}, \dots, \dfrac{x^{i-1}}{1 + \norm{x}^{2}}, \dfrac{x^{i+1}}{1 + \norm{x}^{2}}, \dots, \dfrac{x^{n}}{1 + \norm{x}^{2}}, \dfrac{\norm{x}^{2} - 1}{1 + \norm{x}^{2}} \right)
+		(\phi_{i} \circ \pi_{N}^{-1})(x^{1},\dots,x^{n}) &= \phi_{i} \left( \dfrac{x^{1}}{1 + \norm{x}^{2}}, \dots, \dfrac{x^{n}}{1 + \norm{x}^{2}}, \dfrac{1 - \norm{x}^{2}}{1 + \norm{x}^{2}} \right)\\
+		&= \left( \dfrac{x^{1}}{1 + \norm{x}^{2}}, \dots, \dfrac{x^{i-1}}{1 + \norm{x}^{2}}, \dfrac{x^{i+1}}{1 + \norm{x}^{2}}, \dots, \dfrac{x^{n}}{1 + \norm{x}^{2}}, \dfrac{1 - \norm{x}^{2}}{1 + \norm{x}^{2}} \right)
 	\end{split}
 \end{align}
 
