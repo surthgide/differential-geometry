@@ -938,17 +938,14 @@ possiamo dire che $ V \cap A_{j} $ è aperto in $ A_{j} $ per $ \forall j \in J 
 
 \begin{tcolorbox}
 	Sia $ \S^{n} $ la sfera unitaria in $ \R^{n+1} $. Trovare un atlante differenziabile di $ \S^{n} $ con $ 2(n+1) $ carte.
-
 \end{tcolorbox}
 
-Prendendo un parametro $ k = 1,\dots,n+1 $, definiamo i $ 2(n+1) $ aperti
+Prendendo un parametro $ k = 1,\dots,n+1 $, definiamo\footnote{%
+	La funzione $ \ceil*{x} $ \textit{ceiling} (soffitto) mappa un numero reale nel successivo numero naturale più vicino (arrotonda per eccesso), e.g. $ \ceil*{\frac{3}{2}} = 3 $.%
+} i $ 2(n+1) $ aperti
 
 \begin{equation}
-	U_{i} = %
-	\begin{cases}
-		\{ (x^{1},\dots,x^{n+1}) \in \R^{n+1} \mid x^{i} > 0 \}, & i = 2k-1\\\\
-		\{ (x^{1},\dots,x^{n+1}) \in \R^{n+1} \mid x^{i} < 0 \}, & i = 2k
-	\end{cases}
+	U_{i} = \left\{ (x^{1},\dots,x^{n+1}) \in \R^{n+1} \st (-1)^{i} x^{\ceil*{\frac{i}{2}}} > 0 \right\} \qcomma k = 1, \dots, 2(n+1)
 \end{equation}
 
 per i quali vale $ U_{i} \subset \R^{n+1} $ e che formano un ricoprimento per $ \S^{n} $, i.e.
@@ -957,13 +954,13 @@ per i quali vale $ U_{i} \subset \R^{n+1} $ e che formano un ricoprimento per $ 
 	\S^{n} = \bigcup_{i=1}^{2(n+1)} U_{i}
 \end{equation}
 
-Definiamo anche gli aperti
+Definiamo anche gli aperti per $ j = 1,\dots,n+1 $
 
 \begin{equation}
-	D_{j} = \{ (x^{1},\dots,x^{j-1},x^{j+1},\dots,x^{n+1}) \in \R^{n} \mid \norm{x} < 1 \} = B_{1}(0) \simeq \R^{n} \qcomma j = 1,\dots,n+1
+	D_{j} = \{ (x^{1},\dots,x^{j-1},x^{j+1},\dots,x^{n+1}) \in \R^{n} \times \{0\} = \R^{n} \, \mid \, \norm{x} < 1 \} = B_{1}(0) \simeq \R^{n}
 \end{equation}
 
-i quali, in sostanza, sono palle di raggio unitario centrate nell'origine nel piano $ \R^{n} \times \{0\}_{\R^{i}} $, dove
+i quali, in sostanza, sono palle di raggio unitario centrate nell'origine nel piano $ \R^{n} \times \{0\} $, dove
 
 \begin{equation}
 	\norm{x} = \sqrt{ \sum_{i=1}^{n} (x^{i})^{2} }
@@ -972,14 +969,14 @@ i quali, in sostanza, sono palle di raggio unitario centrate nell'origine nel pi
 Infine definiamo le applicazioni lisce
 
 \map{\phi_{i}}%
-	{U_{i}}{D_{i}}%
+	{U_{i}}{D_{\ceil*{\frac{i}{2}}}}%
 	{(x^{1},\dots,x^{i-1},x^{i},x^{i+1},\dots,x^{n+1})}{(x^{1},\dots,x^{i-1},x^{i+1},\dots,x^{n+1})}
 
 con inverse
 
 \map{\phi_{i}^{-1}}%
-	{D_{i}}{U_{i}}%
-	{(x^{1},\dots,x^{i-1},x^{i},\dots,x^{n+1})}{\left( x^{1},\dots,x^{i-1},\sqrt{1-\norm{x}^{2}},x^{i},\dots,x^{n+1} \right)}
+	{D_{\ceil*{\frac{i}{2}}}}{U_{i}}%
+	{(x^{1},\dots,x^{i-1},x^{i},\dots,x^{n})}{\left( x^{1},\dots,x^{i-1},(-1)^{i} \sqrt{1-\norm{x}^{2}},x^{i},\dots,x^{n} \right)}
 
 La famiglia di coppie $ \mathfrak{U} = \{ (U_{i},\phi_{i}) \}_{i=1,\dots,2(n+1)} $ definisce un atlante differenziabile per $ \S^{n} $ in quanto i cambi di carte sono lisci: la dimostrazione è analoga a quella fatta nell'Esempio \ref{unit-sph} per $ \S^{2} $.
 
