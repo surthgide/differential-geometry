@@ -9,7 +9,7 @@
 \usepackage{cases}
 \usepackage{centernot}
 \usepackage[makeroom]{cancel}
-\usepackage{graphicx}
+\usepackage{graphics,graphicx}
 \graphicspath{ {images/} }
 \usepackage[a4paper,width=170mm,top=25mm,bottom=25mm]{geometry}
 \usepackage{fancyhdr}
@@ -28,6 +28,7 @@
 \usepackage{bbm}
 \usepackage[toc]{appendix}
 \usepackage{parskip}
+\usepackage{tikz-cd}
 %\usepackage{namedef}
 
 % symbols definition
@@ -91,6 +92,17 @@
 	\end{figure}
 }
 
+% diagram definition
+
+%\newcommand{\diagr}[1]{
+%	\begin{figure}[H]
+%		\centering
+%		\begin{tikzcd}
+%			#1
+%		\end{tikzcd}
+%	\end{figure}
+%}
+
 % side-by-side (two neighbouring boxes)
 
 % \sbs{[width left box]}{[content left box]}{[width right box]}{[content right box]}
@@ -112,13 +124,13 @@
 \renewcommand{\@chapapp}{Capitolo}
 \makeatother
 
-\renewcommand{\appendixtocname}{Esercizi}
-\renewcommand{\appendixpagename}{Esercizi}
+%\renewcommand{\appendixtocname}{Esercizi}
+%\renewcommand{\appendixpagename}{Esercizi}
 %\appendixtitletocoff
 
 % remove sections from exercises
 
-\newcommand{\nocontentsline}[3]{}
+%\newcommand{\nocontentsline}[3]{}
 %\newcommand{}[2]{\bgroup\let\addcontentsline=\nocontentsline#1{#2}\egroup}
 
 % environments names
