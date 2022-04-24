@@ -775,30 +775,25 @@ dove la produttoria implica, in questo caso, la topologia prodotto $ \times $.
 
 \subsection{Spazi quoziente dal punto di vista topologico}
 
-Sia $ S $ uno spazio topologico e $ \sim $ una relazione di equivalenza su $ S $. Dalla relazione di equivalenza deriva una proiezione sullo \textit{spazio quoziente} $ \sfrac{S}{\sim} $, mappando un elemento $ x \in S $ nella classe di equivalenza $ [x] $, i.e.
+Sia $ S $ uno spazio topologico e $ \sim $ una relazione di equivalenza su $ S $: lo \textit{spazio quoziente} $ \sfrac{S}{\sim} $ è l'insieme delle classi di equivalenza degli elementi di $ S $. Dalla relazione di equivalenza deriva una proiezione sullo spazio quoziente, la quale mappa un elemento $ x \in S $ nella classe di equivalenza $ [x] $, i.e.
 
-\begin{align}
-	\begin{split}
-		\pi : S &\to \sfrac{S}{\sim}\\
-		x &\mapsto [x]
-	\end{split}
-\end{align}
-
+\map{\pi}
+	{S}{\sfrac{S}{\sim}}
+	{x}{[x]}
+	
 Definiamo una topologia su $ \sfrac{S}{\sim} $ definendo un insieme $ U $ tale che
 
 \begin{equation}
 	U \text{ aperto in } \sfrac{S}{\sim} \iff U = \emptyset \, \wedge \, U = \sfrac{S}{\sim} \, \wedge \, \pi^{-1}(U) \text{ aperto in } S
 \end{equation}
 
-cioè $ U $ è aperto se e solo se la sua controimmagine è aperta in $ S $.\\
-Per verificare che questa sia una topologia è necessario che l'intersezione di due aperti e l'unione arbitraria di aperti siano ancora aperti: queste proprietà sono soddisfatte perché rispettate da $ \pi^{-1} $
+i.e. $ U $ è aperto se e solo se la sua controimmagine è aperta in $ S $.\\
+Per verificare che questa sia una topologia è necessario che l'intersezione di due aperti e l'unione arbitraria di aperti siano ancora aperti nello spazio: queste proprietà sono soddisfatte perché rispettate da $ \pi^{-1} $
 
-\begin{align}
-	\begin{split}
-		\pi^{-1}(U \cap V) &= \pi^{-1}(U) \cap \pi^{-1}(V)\\
-		\pi^{-1}\left( \bigcup_{j \in J} V_{j} \right) &= \bigcup_{j \in J} \pi^{-1}(V_{j})
-	\end{split}
-\end{align}
+\begin{gather}
+	\pi^{-1}(U \cap V) = \pi^{-1}(U) \cap \pi^{-1}(V)\\
+	\pi^{-1}\left( \bigcup_{j \in J} V_{j} \right) = \bigcup_{j \in J} \pi^{-1}(V_{j})
+\end{gather}
 
 Questa topologia è chiamata \textit{topologia quoziente} su $ \sfrac{S}{\sim} $.
 
@@ -808,7 +803,7 @@ Questa topologia è chiamata \textit{topologia quoziente} su $ \sfrac{S}{\sim} $
 	}.
 \end{remark}
 
-Definiamo l'applicazione $ f : S \to Y $ con $ S $ e $ Y $ spazi topologici: questa applicazione è \textit{costante sulle classi di equivalenza} se, presi due elementi $ s_{1},s_{2} \in S $, si ha che
+Definiamo l'applicazione $ f : S \to Y $ tra spazi topologici: questa applicazione si dice \textit{costante sulle classi di equivalenza} se, presi due elementi $ s_{1},s_{2} \in S $, si ha che
 
 \begin{equation}
 	s_{1} \sim s_{2} \implies f(s_{1}) = f(s_{2})
@@ -816,46 +811,43 @@ Definiamo l'applicazione $ f : S \to Y $ con $ S $ e $ Y $ spazi topologici: que
 
 Questa proprietà permette di considerare una seconda applicazione
 
-\begin{align}
-	\begin{split}
-		\tilde{f} : \sfrac{S}{\sim} &\to Y\\
-		[s] &\mapsto f(s)
-	\end{split}
-\end{align}
+\map{\tilde{f}}
+	{\sfrac{S}{\sim}}{Y}
+	{[s]}{f(s)}
 
-la quale è ben definita in quanto non importi il rappresentante della classe $ [s] $ al fine del calcolo di $ f(s) $.\\
-Una proprietà di queste applicazioni è la seguente
+la quale è ben definita in quanto il rappresentante della classe $ [s] $ preso non influisce al fine del calcolo di $ f(s) $.\\
+Tramite il seguente diagramma
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzcd}
+		S \arrow[r, "f"] \arrow[d, "\pi"']        & Y \\
+		\sfrac{S}{\sim} \arrow[ru, "\tilde{f}"'] &  %
+	\end{tikzcd}
+\end{figure}
+
+possiamo derivare la seguente proprietà
 
 \begin{equation}
 	f = \tilde{f} \circ \pi
 \end{equation}
-
-come si può evincere dal seguente diagramma
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.2\textwidth,keepaspectratio]{img11}
-\end{figure}
 
 \begin{definition}
 	$ f $ è continua $ \iff $ $ \tilde{f} $ è continua
 \end{definition}
 
 \begin{proof}[Dimostrazione ($ \impliedby $)]
-	Se $ \tilde{f} $ è continua, siccome lo è anche $ \pi $, la composizione di funzioni continue è continua dunque $ f = \tilde{f} \circ \pi $ è continua.
+	Per ipotesi  $ \tilde{f} $ è continua: siccome anche la proiezione $ \pi $ è continua, $ f = \tilde{f} \circ \pi $ è continua in quanto la composizione di funzioni continue è ancora continua.
 \end{proof}
 
 \begin{proof}[Dimostrazione ($ \implies $)]
 	Sia $ V $ un aperto di $ Y $: prendiamo la controimmagine di $ V $ tramite la funzione continua $ f $
 	
-	\begin{align}
-		\begin{split}
-			f^{-1}(V) &= (\tilde{f} \circ \pi)^{-1}(V)\\
-			&= \pi^{-1}(\tilde{f}^{-1}(V))
-		\end{split}
-	\end{align}
+	\begin{equation}
+			f^{-1}(V) = (\tilde{f} \circ \pi)^{-1}(V) = \pi^{-1}(\tilde{f}^{-1}(V))
+	\end{equation}
 
-	Siccome $ f $ è continua, $ f^{-1}(V) $ è aperto dunque anche $ \pi^{-1}(\tilde{f}^{-1}(V)) $ è aperto: per definizione di topologia quoziente anche $ \tilde{f}^{-1}(V) $ è aperto in $ S $. Quest'ultima è la definizione di applicazione continua dunque $ \tilde{f} $ è continua.
+	Siccome $ f $ è continua, $ f^{-1}(V) $ è aperto e dunque anche $ \pi^{-1}(\tilde{f}^{-1}(V)) $ è aperto. Per definizione di topologia quoziente, anche $ \tilde{f}^{-1}(V) $ è aperto in $ S $: questa è la definizione di applicazione continua dunque $ \tilde{f} $ è continua.
 \end{proof}
 
 \subsubsection{\textit{Esempi}}
