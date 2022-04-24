@@ -870,43 +870,48 @@ Scriviamo lo spazio quoziente rispetto a questa relazione di equivalenza come $ 
 
 \paragraph{2.}
 
-Sia $ S = I = [0,1] $ e $ A = \{0,1\} $ e consideriamo $ \sfrac{S}{A} = \sfrac{I}{\{0,1\}} $: utilizzando la stessa relazione di equivalenza $ \sim $ dell'esempio precedente si può identificare lo spazio quoziente $ \sfrac{I}{\{0,1\}} $ come un cerchio, in quanto tutti i punti di $ I $ vengono identificati con sé stessi mentre gli estremi $ A = \{0,1\} $ si identificano uno con l'altro.\\
-Si dimostra l'omeomorfismo $ \sfrac{I}{\{0,1\}} \simeq \S^{1} $.
+Siano gli insiemi $ I = [0,1] \subset \R $ e $ A = \{0,1\} $. 
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.6\textwidth,keepaspectratio]{img12}
-\end{figure}
+\sbs{0.49}{%
+			Consideriamo il quoziente $ \sfrac{I}{\{0,1\}} $: utilizzando la stessa relazione di equivalenza $ \sim $ dell'esempio precedente, si può identificare lo spazio quoziente $ \sfrac{I}{\{0,1\}} $ con un cerchio, in quanto tutti i punti di $ I $ vengono identificati con sé stessi mentre gli estremi $ \{0,1\} $ si identificano uno con l'altro; è possibile dimostrare l'omeomorfismo $ \sfrac{I}{\{0,1\}} \simeq \S^{1} $.
+			}
+	{0.5}{%
+			\img{1}{img12}
+			}
 
-Sia l'applicazione
+Sia l'applicazione continua
 
 \map{f}%
 	{I}{\S^{1}}%
 	{x}{e^{2 i \pi x} = (\cos(2 \pi x), \sin(2 \pi x))}
 
-questa è continua e costante sulle classi di equivalenza di $ \sfrac{I}{\{0,1\}} $. A questo punto è possibile costruire il diagramma
+questa è costante sulle classi di equivalenza di $ \sfrac{I}{\{0,1\}} $. Tramite questa applicazione, possiamo costruire il diagramma
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.2\textwidth,keepaspectratio]{img13}
+	\begin{tikzcd}
+		I \arrow[r, "f"] \arrow[d, "\pi"']        & \S^{1} \\
+		{\sfrac{I}{0,1}} \arrow[ru, "\tilde{f}"'] &       
+	\end{tikzcd}
 \end{figure}
 
-il quale implica l'esistenza di una funzione $ \tilde{f} $ la quale è continua perché $ f $ è continua.\\
-L'applicazione $ \tilde{f} $ è anche iniettiva e suriettiva: perché sia identificato come un omeomorfismo, si utilizza il seguente lemma
+il quale implica l'esistenza della funzione $ \tilde{f} $, la quale è continua perché $ f $ è continua. Questa applicazione è anche iniettiva e suriettiva: perché sia identificata come un omeomorfismo, si utilizza il seguente lemma
 
 \begin{lemma}[dell'applicazione chiusa]\label{lemma-clos-app}
 	Se si ha una bigezione continua da uno spazio compatto a uno spazio $ T_{2} $ o di Hausdorff, allora questa è un omeomorfismo.
 \end{lemma}
 
-dove $ \sfrac{I}{\{0,1\}} $ è uno spazio compatto perché quoziente dello spazio compatto $ I $, cioè immagine di un compatto tramite un'applicazione continua e $ \S^{1} $ è $ T_{2} $ o di Hausdorff perché incluso in $ \R^{2} $.
+Lo spazio quoziente $ \sfrac{I}{\{0,1\}} $ è uno spazio compatto perché quoziente dello spazio compatto $ I $ (quindi immagine di un compatto tramite l'applicazione continua, i.e. $ \pi $) ed $ \S^{1} $ è $ T_{2} $ o di Hausdorff perché incluso in $ \R^{2} $.
 
 \begin{proof}[Dimostrazione (Lemma dell'applicazione chiusa)]
-	\`{E} sufficiente far vedere che l'applicazione sia chiusa: lo è perché un chiuso in un compatto è compatto, l'immagine di un compatto tramite un'applicazione continua è un compatto e un sottoinsieme compatto di uno spazio di Hausdorff è chiuso.
+	\`{E} sufficiente far vedere che l'applicazione sia chiusa\footnote{%
+		Una bigezione continua tra due spazi topologici è un omeomorfismo se e solo se è aperta (risp. chiusa).%
+	}: lo è perché un chiuso in un compatto è compatto, l'immagine di un compatto tramite un'applicazione continua è un compatto e un sottoinsieme compatto di uno spazio di Hausdorff è chiuso.
 \end{proof}
 
 \paragraph{3.}
 
-Sia $ S = \R $ e $ A = (0,+\infty) $ e consideriamo $ \sfrac{S}{A} = \sfrac{\R}{A} $. Lo spazio quoziente non è di Hausdorff perché, se lo fosse, ogni suo punto sarebbe un chiuso cioè $ \sfrac{\R}{A} $ sarebbe\footnote{%
+Siano $ S = \R $ e $ A = (0,+\infty) $ e consideriamo il quoziente $ \sfrac{S}{A} = \sfrac{\R}{A} $. Lo spazio quoziente non è di Hausdorff perché, se lo fosse, ogni suo punto sarebbe un chiuso cioè $ \sfrac{\R}{A} $ sarebbe\footnote{%
 	Per un qualsiasi insieme $ E $, se questo è $ T_{2} $ o di Hausdorff allora è $ T_{1} $ e anche $ T_{0} $, i.e. $ T_{2} \implies T_{1} \implies T_{0} $.%
 } $ T_{1} $.\\
 Considerando la classe di equivalenza $ [A] \in \sfrac{\R}{A} $, questa è chiusa se la sua controimmagine è chiusa ma
@@ -919,7 +924,7 @@ il quale è un aperto perciò $ [A] $ non è chiuso e lo spazio quoziente non è
 
 \paragraph{4.}
 
-Sia $ S = \R $ e $ A = \Q $. Si dimostra che $ \sfrac{\R}{\Q} $ non è $ N_{2} $ e nemmeno $ N_{1} $.
+Siano $ S = \R $ e $ A = \Q $: è possibile dimostrare che $ \sfrac{\R}{\Q} $ non è $ N_{2} $ e nemmeno $ N_{1} $.
 
 \subsubsection{Relazione di equivalenza aperta}
 
