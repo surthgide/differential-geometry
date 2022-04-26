@@ -1,2 +1,5 @@
 try to make diagrams work via macros
 
+add %s to white lines to reduce space between formulas and paragraphs (how didnt i notice this
+before smh)
+
