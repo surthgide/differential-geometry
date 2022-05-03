@@ -803,19 +803,19 @@ Questa topologia è chiamata \textit{topologia quoziente} su $ \sfrac{S}{\sim} $
 	}.
 \end{remark}
 
-Definiamo l'applicazione $ f : S \to Y $ tra spazi topologici: questa applicazione si dice \textit{costante sulle classi di equivalenza} se, presi due elementi $ s_{1},s_{2} \in S $, si ha che
+Definiamo l'applicazione $ f : S \to Y $ tra spazi topologici: questa applicazione si dice \textit{costante sulle classi di equivalenza} se, presi due elementi $ x_{1}, x_{2} \in S $, si ha che
 
 \begin{equation}
-	s_{1} \sim s_{2} \implies f(s_{1}) = f(s_{2})
+	x_{1} \sim x_{2} \implies f(x_{1}) = f(x_{2})
 \end{equation}
 
 Questa proprietà permette di considerare una seconda applicazione
 
 \map{\tilde{f}}
 	{\sfrac{S}{\sim}}{Y}
-	{[s]}{f(s)}
+	{[x]}{f(x)}
 
-la quale è ben definita in quanto il rappresentante della classe $ [s] $ preso non influisce al fine del calcolo di $ f(s) $.\\
+la quale è ben definita in quanto il rappresentante della classe $ [s] $ preso non influisce al fine del calcolo di $ f(x) $.\\
 Tramite il seguente diagramma
 
 \begin{figure}[H]
@@ -864,7 +864,7 @@ Sia $ S $ uno spazio topologico e $ A $ un suo qualsiasi sottoinsieme. Definiamo
 \end{equation}
 
 cioè ogni punto di $ S \setminus A $ è identificato con sé stesso mentre tutti i punti di $ A $ sono identificati tra loro\footnote{%
-	Tutti i punti di $ S \setminus A $ vanno in sé stessi mentre tutti i punti di $ A $ vanno in uno solo.%
+	In altre parole, tutti i punti di $ S \setminus A $ vanno in sé stessi mentre tutti i punti di $ A $ vanno in uno solo.%
 }.\\
 Scriviamo lo spazio quoziente rispetto a questa relazione di equivalenza come $ \sfrac{S}{\sim} = \sfrac{S}{A} $, chiamato \textit{spazio ottenuto da} $ S $ \textit{tramite} $ A $.
 
@@ -873,16 +873,16 @@ Scriviamo lo spazio quoziente rispetto a questa relazione di equivalenza come $ 
 Siano gli insiemi $ I = [0,1] \subset \R $ e $ A = \{0,1\} $. 
 
 \sbs{0.49}{%
-			Consideriamo il quoziente $ \sfrac{I}{\{0,1\}} $: utilizzando la stessa relazione di equivalenza $ \sim $ dell'esempio precedente, si può identificare lo spazio quoziente $ \sfrac{I}{\{0,1\}} $ con un cerchio, in quanto tutti i punti di $ I $ vengono identificati con sé stessi mentre gli estremi $ \{0,1\} $ si identificano uno con l'altro; è possibile dimostrare l'omeomorfismo $ \sfrac{I}{\{0,1\}} \simeq \S^{1} $.
+			Consideriamo il quoziente $ \sfrac{I}{\{0,1\}} $: utilizzando la stessa relazione di equivalenza $ \sim $ dell'esempio precedente, si può identificare lo spazio quoziente $ \sfrac{I}{\{0,1\}} $ con un cerchio, in quanto tutti i punti di $ I $ vengono identificati con sé stessi mentre gli estremi $ \{0,1\} $ si identificano uno con l'altro..
 			}
 	{0.5}{%
 			\img{1}{img12}
 			}
-
-Sia l'applicazione continua
+		
+Dimostriamo ora l'omeomorfismo $ \sfrac{I}{\{0,1\}} \simeq \S^{1} $. Sia l'applicazione continua
 
 \map{f}%
-	{I}{\S^{1}}%
+	{I}{\S^{1} \subset \R^{2}}%
 	{x}{e^{2 i \pi x} = (\cos(2 \pi x), \sin(2 \pi x))}
 
 questa è costante sulle classi di equivalenza di $ \sfrac{I}{\{0,1\}} $. Tramite questa applicazione, possiamo costruire il diagramma
@@ -901,7 +901,7 @@ il quale implica l'esistenza della funzione $ \tilde{f} $, la quale è continua 
 	Se si ha una bigezione continua da uno spazio compatto a uno spazio $ T_{2} $ o di Hausdorff, allora questa è un omeomorfismo.
 \end{lemma}
 
-Lo spazio quoziente $ \sfrac{I}{\{0,1\}} $ è uno spazio compatto perché quoziente dello spazio compatto $ I $ (quindi immagine di un compatto tramite l'applicazione continua, i.e. $ \pi $) ed $ \S^{1} $ è $ T_{2} $ o di Hausdorff perché incluso in $ \R^{2} $.
+Lo spazio quoziente $ \sfrac{I}{\{0,1\}} $ è uno spazio compatto perché quoziente dello spazio compatto $ I $ (quindi immagine di un compatto tramite un'applicazione continua, i.e. $ \pi $) ed $ \S^{1} $ è $ T_{2} $ o di Hausdorff perché incluso in $ \R^{2} $.
 
 \begin{proof}[Dimostrazione (Lemma dell'applicazione chiusa)]
 	\`{E} sufficiente far vedere che l'applicazione sia chiusa\footnote{%
@@ -912,7 +912,7 @@ Lo spazio quoziente $ \sfrac{I}{\{0,1\}} $ è uno spazio compatto perché quozie
 \paragraph{3.}
 
 Siano $ S = \R $ e $ A = (0,+\infty) $ e consideriamo il quoziente $ \sfrac{S}{A} = \sfrac{\R}{A} $. Lo spazio quoziente non è di Hausdorff perché, se lo fosse, ogni suo punto sarebbe un chiuso cioè $ \sfrac{\R}{A} $ sarebbe\footnote{%
-	Per un qualsiasi insieme $ E $, se questo è $ T_{2} $ o di Hausdorff allora è $ T_{1} $ e anche $ T_{0} $, i.e. $ T_{2} \implies T_{1} \implies T_{0} $.%
+	Per un qualsiasi spazio, se questo è $ T_{2} $ o di Hausdorff allora è $ T_{1} $ e anche $ T_{0} $, i.e. $ T_{2} \implies T_{1} \implies T_{0} $.%
 } $ T_{1} $.\\
 Considerando la classe di equivalenza $ [A] \in \sfrac{\R}{A} $, questa è chiusa se la sua controimmagine è chiusa ma
 
@@ -928,12 +928,11 @@ Siano $ S = \R $ e $ A = \Q $: è possibile dimostrare che $ \sfrac{\R}{\Q} $ no
 
 \subsubsection{Relazione di equivalenza aperta}
 
-Sia $ S $ uno spazio topologico e $ \sim $ una relazione di equivalenza su $ S $. Diremo che $ \sim $ è aperta se l'applicazione sul quoziente $ \pi : S \to \sfrac{S}{\sim} $ è aperta.
+Sia $ S $ uno spazio topologico e $ \sim $ una relazione di equivalenza su $ S $. Diremo che $ \sim $ è aperta se la proiezione sul quoziente $ \pi : S \to \sfrac{S}{\sim} $ è aperta.
 
 \subsubsection{\textit{Esempio}}
 
-Sia $ S = \R $ e $ A = \{-1,1\} $ e consideriamo $ \sfrac{S}{A} = \sfrac{\R}{\{-1,1\}} $.\\
-L'applicazione $ \pi : \R \to \sfrac{\R}{\{-1,1\}} $ non è aperta perché, per esempio $ \pi((0,2)) $ non è aperto in $ \sfrac{\R}{\{-1,1\}} $ perché la sua controimmagine è pari a
+Siano $ S = \R $ e $ A = \{-1,1\} $ e consideriamo $ \sfrac{S}{A} = \sfrac{\R}{\{-1,1\}} $. L'applicazione $ \pi : \R \to \sfrac{\R}{\{-1,1\}} $ non è aperta perché, per esempio, $ \pi((0,2)) $ non è aperto in $ \sfrac{\R}{\{-1,1\}} $ poiché la sua controimmagine è pari a
 
 \begin{equation}
 	\pi^{-1}(\pi((0,2))) = (0,2) \cup \{-1\}
@@ -949,8 +948,7 @@ in quanto i punti $ \{-1,1\} $ sono equivalenti, ma questo insieme non è aperto
 
 \begin{proof}\label{solved-es2-4}
 	Per dimostrare questa proposizione è necessario costruire una base numerabile per $ \sfrac{S}{\sim} $ sapendo che ne esiste una in $ S $.\\
-	Sia $ \{B_{n}\}_{n \in \N} $ una base numerabile per $ S $. Consideriamo l'immagine $ \pi(B_{n}) $ per $ \forall n \in \N $: questa è aperta in $ \sfrac{S}{\sim} $ in quanto $ \sim $ è aperta e inoltre è parte di una famiglia numerabile. Perciò $ \{\pi(B_{n})\}_{n \in \N} $ è una base numerabile per il quoziente $ \sfrac{S}{\sim} $.\\
-	Sia $ U $ aperto in $ \sfrac{S}{\sim} $ allora $ \pi^{-1}(U) $ è aperta in $ S $ e questo implica che
+	Sia $ \{B_{n}\}_{n \in \N} $ una base numerabile per $ S $. Consideriamo l'immagine $ \pi(B_{n}) $ per $ \forall n \in \N $: questa è aperta in $ \sfrac{S}{\sim} $ in quanto $ \sim $ è aperta (e dunque anche $ \pi $ è aperta); inoltre è parte di una famiglia numerabile. A questo punto, $ \{\pi(B_{n})\}_{n \in \N} $ è una base numerabile per il quoziente $ \sfrac{S}{\sim} $: sia $ U $ aperto in $ \sfrac{S}{\sim} $, allora $ \pi^{-1}(U) $ è aperta in $ S $ e questo implica che
 	
 	\begin{align}
 		\begin{split}
@@ -972,12 +970,18 @@ in quanto i punti $ \{-1,1\} $ sono equivalenti, ma questo insieme non è aperto
 \end{definition}
 
 \begin{proof}\label{solved-es2-3}
-	Supponiamo che il quoziente $ \sfrac{S}{\sim} $ sia $ T_{2} $ e dimostriamo che $ R $ sia chiuso in $ S\times S $.\\
-	Prendiamo il punto del complementare $ (x,y) \in S \times S \setminus R $ per cui si ha che $ x \nsim y $, dunque $ \pi(x) \neq \pi(y) $ o alternativamente $ [x] \neq [y] $. A questo punto abbiamo due punti diversi dello spazio quoziente $ \sfrac{S}{\sim} $, il quale è $ T_{2} $, dunque esisteranno due aperti $ U $ e $ V $ di $ \sfrac{S}{\sim} $ tali che $ U \ni [x] $, $ V \ni [y] $ e $ U \cap V = \emptyset $. Utilizzando l'inversa della proiezione, $ \pi^{-1}(U) \ni x $ e $ \pi^{-1}(V) \ni y $ sono aperti. Considerando la topologia prodotto, $ \pi^{-1}(U) \times \pi^{-1}(V) \ni (x,y) $ questo è aperto in $ S \times S $ perché prodotto di due aperti e, siccome $ U $ e $ V $ sono disgiunti, $ \pi^{-1}(U) \times \pi^{-1}(V) \subset S \times S \setminus R $, altrimenti ci sarebbero dei punti di $ \pi^{-1}(U) \times \pi^{-1}(V) $ che andrebbero a finire in punti equivalenti in $ S \times S $. Questo implica che $ S \times S \setminus R $ è aperto e, siccome $ S \times S $ è anch'esso aperto perché prodotto di spazi aperti, $ R $ è chiuso.\\
+	Supponiamo che il quoziente $ \sfrac{S}{\sim} $ sia $ T_{2} $ e dimostriamo che $ R $ è chiuso in $ S \times S $.\\
+	Siano $ S \times S \setminus R $ il complementare dello spazio $ R $ e il punto $ (x,y) \in S \times S \setminus R $, per il quale $ x \nsim y $ dunque $ [x] \neq [y] $ o alternativamente $ \pi(x) \neq \pi(y) $. Essendo $ \sfrac{S}{\sim} $ di Hausdorff, abbiamo che
+	
+	\begin{equation}
+		\E U, V \subset \sfrac{S}{\sim} \text{ aperti} \, \mid \, U \ni [x] \wedge V \ni [y] \wedge U \cap V = \emptyset
+	\end{equation}
+	
+	Siccome la proiezione $ \pi $ è aperta, gli insiemi $ \pi^{-1}(U) \ni x $ e $ \pi^{-1}(V) \ni y $ sono aperti in $ S $. Considerando la topologia prodotto, abbiamo che l'insieme $ \pi^{-1}(U) \times \pi^{-1}(V) \ni (x,y) $ è aperto in $ S \times S $ perché prodotto di due aperti. Dato che $ U $ e $ V $ sono disgiunti, $ \pi^{-1}(U) \times \pi^{-1}(V) \subset S \times S \setminus R $, perché altrimenti ci sarebbero dei punti di $ \pi^{-1}(U) \times \pi^{-1}(V) $ che andrebbero a finire in punti equivalenti in $ S \times S $. Questo implica che $ S \times S \setminus R $ è aperto e, siccome $ S \times S $ è anch'esso aperto perché prodotto di spazi aperti, $ R $ è chiuso in quanto complementare di $ S \times S $.\\
 	L'implicazione opposta della proposizione si ottiene invertendo le implicazioni di questa dimostrazione.
 \end{proof}
 
-Considerando la proposizione riportata sopra, nel caso in cui la relazione di equivalenza $ \sim $ sia l'uguaglianza "$ = $" (da cui $ \sfrac{S}{\sim} = S $), otteniamo il seguente corollario
+Considerando la proposizione riportata sopra, nel caso in cui la relazione di equivalenza $ \sim $ sia l'uguaglianza $ = $ (da cui $ \sfrac{S}{\sim} = S $), otteniamo il seguente corollario
 
 \begin{corollary}
 	Uno spazio topologico $ S $ è $ T_{2} $ se e solo se l'\textit{insieme diagonale}
