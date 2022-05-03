@@ -1007,19 +1007,19 @@ cioè se i due punti appartengono alla stessa retta.\\
 Sia dunque il \textit{proiettivo reale} lo spazio quoziente
 
 \begin{equation}
-	\mathcal{RP}^{n} = \dfrac{\R^{n+1} \setminus \{0\}}{\sim}
+	\rp{n} = \dfrac{\R^{n+1} \setminus \{0\}}{\sim}
 \end{equation}
 
 con la topologia quoziente indotta da $ \sim $.\\
-Vogliamo ora dimostrare che $ \mathcal{RP}^{n} $ sia una varietà differenziabile compatta e connessa di dimensione $ n $.
+Vogliamo ora dimostrare che $ \rp{n} $ sia una varietà differenziabile compatta e connessa di dimensione $ n $.
 
-\subsubsection{Omeomorfismo tra $ \mathcal{RP}^{n} $ e $ \sfrac{\S^{n}}{\sim_{a}} $}
+\subsubsection{Omeomorfismo tra $ \rp{n} $ e $ \sfrac{\S^{n}}{\sim_{a}} $}
 
 \begin{definition}
 	Lo spazio proiettivo reale è omeomorfo alla sfera $ n $-dimensionale quozientata alla relazione di equivalenza \textit{antipodale} $ \sim_{a} $ (due punti della sfera sono equivalenti se opposti), in simboli
 	
 	\begin{equation}
-		\mathcal{RP}^{n} \simeq \sfrac{\S^{n}}{\sim_{a}}
+		\rp{n} \simeq \sfrac{\S^{n}}{\sim_{a}}
 	\end{equation}
 
 	con la relazione di equivalenza antipodale definita come
@@ -1063,12 +1063,12 @@ Vogliamo ora dimostrare che $ \mathcal{RP}^{n} $ sia una varietà differenziabil
 
 	Per asserire che $ \tilde{f} $ sia continua, possiamo dimostrare che $ f $ lo sia: quest'ultima applicazione è composizione di $ f = \pi_{a} \circ g $ dunque continua, perché le componenti di $ g $ sono continue e la proiezione sul quoziente è continua.\\
 	L'ultimo passo è mostrare che $ \tilde{f} $ sia una bigezione\footnote{%
-		Non possiamo utilizzare il lemma dell'applicazione chiusa perché altrimenti dovremmo utilizzare come assunzione che $ \mathcal{RP}^{n} $ sia compatto, ma questo è la tesi della dimostrazione.%
+		Non possiamo utilizzare il lemma dell'applicazione chiusa perché altrimenti dovremmo utilizzare come assunzione che $ \rp{n} $ sia compatto, ma questo è la tesi della dimostrazione.%
 	}: per fare ciò prendiamo la sua inversa
 
 	\begin{align}
 		\begin{split}
-			\tilde{f}^{-1} : \sfrac{\S^{n}}{\sim_{a}} &\to \mathcal{RP}^{n}\\
+			\tilde{f}^{-1} : \sfrac{\S^{n}}{\sim_{a}} &\to \rp{n}\\
 			[x]_{a} &\mapsto [x]
 		\end{split}
 	\end{align}
@@ -1080,11 +1080,11 @@ Vogliamo ora dimostrare che $ \mathcal{RP}^{n} $ sia una varietà differenziabil
 	\end{equation}
 
 	Analogamente, possiamo dire che sia continua perché due punti antipodali appartengono per forza alla stessa retta, i.e. $ p,q \in [x]_{a} \iff p,q \in [x] $.\\
-	Avendo dimostrato che $ \tilde{f} $ è una bigezione continua, otteniamo che $ \mathcal{RP}^{n} \simeq \sfrac{\S^{n}}{\sim_{a}} $.
+	Avendo dimostrato che $ \tilde{f} $ è una bigezione continua, otteniamo che $ \rp{n} \simeq \sfrac{\S^{n}}{\sim_{a}} $.
 \end{proof}
 
 \begin{corollary}
-	$ \mathcal{RP}^{n} $ è compatto e connesso, in quanto lo è la sfera\footnote{%
+	$ \rp{n} $ è compatto e connesso, in quanto lo è la sfera\footnote{%
 		La sfera $ \S^{n} $ è connessa perché la sfera è densa nella sfera meno un punto (tramite proiezione stereografica in $ \R^{n} $) e la chiusura di uno spazio connesso è ancora connessa; per quanto riguarda la compattezza, il \textit{teorema di Heine-Borel} afferma che un sottoinsieme di $ \R^{n} $ è compatto se e solo se è chiuso e limitato.%
 	} $ \S^{n} $ e la topologia quoziente preserva queste proprietà.
 \end{corollary}
@@ -1093,20 +1093,20 @@ Vogliamo ora dimostrare che $ \mathcal{RP}^{n} $ sia una varietà differenziabil
 
 \paragraph{1.}
 
-Se prendiamo $ n=1 $, $ \mathcal{RP}^{1} \simeq \S^{1} $: si può identificare $ \S^{1} $ con l'intervallo $ I $ omeomorfo alla semicirconferenza quozientato i due punti estremi di quest'ultima $ \{A,B\} $, i.e. $ \S^{1} \simeq \sfrac{I}{\{A,B\}} $, in modo tale che si prenda solo uno dei due punti antipodali.
+Se prendiamo $ n=1 $, $ \rp{1} \simeq \S^{1} $: si può identificare $ \S^{1} $ con l'intervallo $ I $ omeomorfo alla semicirconferenza quozientato i due punti estremi di quest'ultima $ \{A,B\} $, i.e. $ \S^{1} \simeq \sfrac{I}{\{A,B\}} $, in modo tale che si prenda solo uno dei due punti antipodali.
 
 \paragraph{2.}
 
-Se prendiamo $ n=2 $, $ \mathcal{RP}^{2} \simeq \sfrac{\S^{2}}{\sim_{a}} $. Per visualizzarlo, prendiamo la calotta superiore di $ \S^{2} $ la quale è omeomorfa al disco unitario $ D_{1} $. Il disco unitario, pieno della proiezione della semicalotta in cui sono identificati i punti antipodali della circonferenza, rappresenta dunque il proiettivo reale $ \mathcal{RP}^{2} $.\\
+Se prendiamo $ n=2 $, $ \rp{2} \simeq \sfrac{\S^{2}}{\sim_{a}} $. Per visualizzarlo, prendiamo la calotta superiore di $ \S^{2} $ la quale è omeomorfa al disco unitario $ D_{1} $. Il disco unitario, pieno della proiezione della semicalotta in cui sono identificati i punti antipodali della circonferenza, rappresenta dunque il proiettivo reale $ \rp{2} $.\\
 Dimensioni più alte non sono rappresentabili tramite esempi nello spazio tridimensionale.
 
-\subsubsection{Proprietà di $ \mathcal{RP}^{n} $}
+\subsubsection{Proprietà di $ \rp{n} $}
 
-Per dimostrare che $ \mathcal{RP}^{n} $ sia una varietà differenziabile dobbiamo prima dimostrare che sia una varietà topologica, dunque $ N_{2}+T_{2} $ con un atlante topologico, e poi far vedere che i cambi di carta siano lisci.\\
+Per dimostrare che $ \rp{n} $ sia una varietà differenziabile dobbiamo prima dimostrare che sia una varietà topologica, dunque $ N_{2}+T_{2} $ con un atlante topologico, e poi far vedere che i cambi di carta siano lisci.\\
 La dimostrazione che il proiettivo reale sia $ N_{2} $ passa per la proiezione
 
 \begin{equation}
-	\pi : \R^{n+1} \setminus \{0\} \to \dfrac{\R^{n+1} \setminus \{0\}}{\sim} = \mathcal{RP}^{n}
+	\pi : \R^{n+1} \setminus \{0\} \to \dfrac{\R^{n+1} \setminus \{0\}}{\sim} = \rp{n}
 \end{equation}
 
 in quanto questa applicazione preserva la proprietà di numerabilità $ N_{2} $: se lo spazio di partenza $ \R^{n+1} \setminus \{0\} $ è $ N_{2} $ (lo è perché sottoinsieme di $ \R^{n+1} $ il quale è a sua volta $ N_{2} $) allora, se l'applicazione $ \pi $ è aperta (equivalentemente, se $ \sim $ è aperta), lo è anche il proiettivo reale.\\
@@ -1148,7 +1148,7 @@ la quale è continua con inversa continua
 \end{align}
 
 Essendo $ \lambda V $ aperto in $ \R \setminus \{0\} $, $ \pi^{-1}(\pi(V)) $ è aperto e dunque la proiezione $ \pi $ è aperta.\\
-Se lo spazio di partenza $ \R \setminus \{0\} $ è $ N_{2} $ e la relazione di equivalenza $ \sim $ è aperta, allora lo spazio quoziente $ \mathcal{RP}^{n} $ è $ N_{2} $.\\\\
+Se lo spazio di partenza $ \R \setminus \{0\} $ è $ N_{2} $ e la relazione di equivalenza $ \sim $ è aperta, allora lo spazio quoziente $ \rp{n} $ è $ N_{2} $.\\\\
 %
 Sapendo che la proiezione $ \pi $ è aperta, possiamo usare il fatto che l'insieme
 
@@ -1211,13 +1211,13 @@ Seguendo questo ragionamento, possiamo pensare a $ \phi(R) $ come l'intersezione
 \end{equation}
 
 Essendo dunque $ \phi(R) $ intersezione di un chiuso con lo spazio d'interesse, questo rende $ \phi(R) $ chiuso in $ \phi(\R^{n+1} \setminus \{0\} \times \R^{n+1} \setminus \{0\}) $, dunque $ R $ è chiuso in $ \R^{n+1} \setminus \{0\} \times \R^{n+1} \setminus \{0\} $.\\
-Questo prova che $ \mathcal{RP}^{n} $ sia $ T_{2} $.\\\\
+Questo prova che $ \rp{n} $ sia $ T_{2} $.\\\\
 %
 A questo punto, costruiamo un atlante topologico per il proiettivo reale.\\
 Siano gli $ n+1 $ insiemi
 
 \begin{equation}
-	U_{i} = \{ [(a^{0},\dots,a^{n})] = \pi(a^{0},\dots,a^{n}) \in \mathcal{RP}^{n} \mid a^{i} \neq 0 \} \qcomma i=0,\dots,n
+	U_{i} = \{ [(a^{0},\dots,a^{n})] = \pi(a^{0},\dots,a^{n}) \in \rp{n} \mid a^{i} \neq 0 \} \qcomma i=0,\dots,n
 \end{equation}
 
 i cui elementi sono dunque le classi di $ n+1 $-uple di cui la componente $ i $-esima sia diversa da zero. Si può anche pensare a questi insieme come $ U_{i} = \pi(V_{i}) $ con
@@ -1226,11 +1226,11 @@ i cui elementi sono dunque le classi di $ n+1 $-uple di cui la componente $ i $-
 	V_{i} = \{ (a^{0},\dots,a^{n}) \in \R^{n+1} \setminus \{0\} \mid a^{i} \neq 0 \} \subset \R^{n+1} \setminus \{0\} \qcomma i=0,\dots,n
 \end{equation}
 
-Gli insiemi $ U_{i} $ sono aperti in $ \mathcal{RP}^{n} $ perché $ \pi $ è aperta e i $ V_{i} $ sono aperti in $ \R^{n+1} \setminus \{0\} $.\\
-Questi insiemi sono un ricoprimento per $ \mathcal{RP}^{n} $
+Gli insiemi $ U_{i} $ sono aperti in $ \rp{n} $ perché $ \pi $ è aperta e i $ V_{i} $ sono aperti in $ \R^{n+1} \setminus \{0\} $.\\
+Questi insiemi sono un ricoprimento per $ \rp{n} $
 
 \begin{equation}
-	\bigcup_{i=0}^{n} U_{i} = \mathcal{RP}^{n}
+	\bigcup_{i=0}^{n} U_{i} = \rp{n}
 \end{equation}
 
 o equivalentemente
@@ -1239,7 +1239,7 @@ o equivalentemente
 	\bigcup_{i=0}^{n} V_{i} = \R^{n+1} \setminus \{0\}
 \end{equation}
 
-perché ogni punto di $ \R^{n+1} \setminus \{0\} $ avrà almeno una coordinata diversa da zero e, conseguentemente, la sua proiezione su $ \mathcal{RP}^{n} $ avrà anch'essa almeno una coordinata diversa da zero.\\
+perché ogni punto di $ \R^{n+1} \setminus \{0\} $ avrà almeno una coordinata diversa da zero e, conseguentemente, la sua proiezione su $ \rp{n} $ avrà anch'essa almeno una coordinata diversa da zero.\\
 Siano le applicazioni
 
 \begin{align}
@@ -1251,7 +1251,7 @@ Siano le applicazioni
 
 con $ i=0,\dots,n $, cioè cancelliamo l'$ i $-esima componente dal vettore nell'immagine e dividiamo tutte le altre per $ a^{i} $.\\
 Queste applicazioni sono ben definite in quanto la proporzionalità tra gli elementi della classe di equivalenza $ [(a^{0},\dots,a^{n})] $ viene assorbita nei rapporti in immagine.\\
-Essendo l'unione degli insiemi $ U_{i} $ un ricoprimento per $ \mathcal{RP}^{n} $, dimostrando che le $ \phi_{i} $ sono degli omeomorfismi, facciamo vedere che $ \mathfrak{M} = \{(U_{i},\phi_{i})\} $ è un atlante topologico per $ \mathcal{RP}^{n} $.\\
+Essendo l'unione degli insiemi $ U_{i} $ un ricoprimento per $ \rp{n} $, dimostrando che le $ \phi_{i} $ sono degli omeomorfismi, facciamo vedere che $ \mathfrak{M} = \{(U_{i},\phi_{i})\} $ è un atlante topologico per $ \rp{n} $.\\
 Queste applicazioni fanno parte del diagramma
 
 \begin{figure}[H]
@@ -1278,7 +1278,7 @@ Le applicazioni inverse sono
 	\end{split}
 \end{align}
 
-siccome è presente la componente $ i $-esima uguale a 1, la classe $ [(x^{1},\dots,x^{i-1},1,x^{i},x^{i+1},\dots,x^{n})] $ appartiene a $ \mathcal{RP}^{n} $ anche se $ (x^{1},\dots,x^{n}) = (0,\dots,0) $. Queste applicazioni sono le inverse di $ \phi_{i} $ perché
+siccome è presente la componente $ i $-esima uguale a 1, la classe $ [(x^{1},\dots,x^{i-1},1,x^{i},x^{i+1},\dots,x^{n})] $ appartiene a $ \rp{n} $ anche se $ (x^{1},\dots,x^{n}) = (0,\dots,0) $. Queste applicazioni sono le inverse di $ \phi_{i} $ perché
 
 \begin{align}
 	\begin{split}
@@ -1292,8 +1292,8 @@ siccome è presente la componente $ i $-esima uguale a 1, la classe $ [(x^{1},\d
 	\end{split}
 \end{align}
 
-e sono continue. Dunque abbiamo dimostrato che le $ \phi_{i} $ sono omeomorfismi e quindi $ \mathfrak{M} = \{(U_{i},\phi_{i})\}_{i=0,\dots,n} $ è un atlante topologico per $ \mathcal{RP}^{n} $.\\
-Dimostriamo ora che $ \mathfrak{M} $ è un atlante differenziabile di $ \mathcal{RP}^{n} $, cioè dobbiamo far vedere che le sue carte siano $ C^{\infty} $-compatibili tra loro: siano $ i,j=0,\dots,n $ con $ i<j $ e prendiamo i cambi di carta
+e sono continue. Dunque abbiamo dimostrato che le $ \phi_{i} $ sono omeomorfismi e quindi $ \mathfrak{M} = \{(U_{i},\phi_{i})\}_{i=0,\dots,n} $ è un atlante topologico per $ \rp{n} $.\\
+Dimostriamo ora che $ \mathfrak{M} $ è un atlante differenziabile di $ \rp{n} $, cioè dobbiamo far vedere che le sue carte siano $ C^{\infty} $-compatibili tra loro: siano $ i,j=0,\dots,n $ con $ i<j $ e prendiamo i cambi di carta
 
 \begin{align}
 	\begin{split}
@@ -1315,15 +1315,15 @@ Dunque
 	\end{split}
 \end{align}
 
-entrambi i cambi di carta sono lisci quindi $ \mathfrak{M} $ è un atlante differenziabile: questo dimostra l'esistenza di un atlante differenziabile massimale che rende $ \mathcal{RP}^{n} $ una varietà differenziabile.
+entrambi i cambi di carta sono lisci quindi $ \mathfrak{M} $ è un atlante differenziabile: questo dimostra l'esistenza di un atlante differenziabile massimale che rende $ \rp{n} $ una varietà differenziabile.
 
 \subsection{Grassmanniana come varietà differenziabile}
 
 Siano $ k,n \in \N $ con $ k \leqslant n $, definisco la \textit{grassmanniana} $ G(k,n) $ come l'insieme di tutti i sottospazi vettoriali di $ \R^{n} $ di dimensione $ k $.\\
-Essendo $ \mathcal{RP}^{n} $ l'insieme di tutti i sottospazi vettoriali di dimensione 1 (i.e. rette) di $ \R^{n+1} $, si ha che
+Essendo $ \rp{n} $ l'insieme di tutti i sottospazi vettoriali di dimensione 1 (i.e. rette) di $ \R^{n+1} $, si ha che
 
 \begin{equation}
-	G(1,n) = \mathcal{RP}^{n-1}
+	G(1,n) = \rp{n-1}
 \end{equation}
 
 dunque la grassmanniana può essere pensata come la generalizzazione del proiettivo reale.\\
@@ -5024,21 +5024,21 @@ rispetta la condizione per le sottovarietà e dunque la dimensione del grafico d
 
 \paragraph{5. Sottoinsieme del proiettivo reale}
 
-Sia l'insieme $ S \subset \mathcal{RP}^{2} $ definito come
+Sia l'insieme $ S \subset \rp{2} $ definito come
 
 \begin{equation}
-	S = \{ [x_{0},x_{1},x_{2}] \in \mathcal{RP}^{2} \mid x_{0}^{2} - x_{1}^{2} + x_{2}^{2} = 0 \}
+	S = \{ [x_{0},x_{1},x_{2}] \in \rp{2} \mid x_{0}^{2} - x_{1}^{2} + x_{2}^{2} = 0 \}
 \end{equation}
 
 questo insieme è ben definito perché un altro rappresentante della classe $ (y_{0},y_{1},y_{2}) \in [x_{0},x_{1},x_{2}] $ che sia proporzionale a quello della definizione per mezzo di $ \lambda \in \R \setminus 0 $, i.e. $ (y_{0},y_{1},y_{2}) = \lambda (x_{0},x_{1},x_{2}) $, rispetta ancora la condizione.\\
-Prendendo le tre carte $ (U_{i},\phi_{1}) $ con $ i=0,1,2 $ di $ \mathcal{RP}^{2} $, queste sono carte adattate relativamente a $ S $ e dunque la rendono una sottovarietà del proiettivo reale: di seguito i tre casi per le tre carte
+Prendendo le tre carte $ (U_{i},\phi_{1}) $ con $ i=0,1,2 $ di $ \rp{2} $, queste sono carte adattate relativamente a $ S $ e dunque la rendono una sottovarietà del proiettivo reale: di seguito i tre casi per le tre carte
 
 \begin{itemize}
 	\item Prendiamo la carta $ (U_{0},\phi_{0}) $ dove
 	
 	\begin{align}
 		\begin{split}
-			U_{0} = \{ [x_{0},x_{1},x_{2}] &\in \mathcal{RP}^{2} \mid x_{0} \neq 0 \}\\\\
+			U_{0} = \{ [x_{0},x_{1},x_{2}] &\in \rp{2} \mid x_{0} \neq 0 \}\\\\
 			\phi_{0} : U_{0} &\to \R^{2}\\
 			[x_{0},x_{1},x_{2}] &\mapsto (x,y) = \left( \dfrac{x_{1}}{x_{0}}, \dfrac{x_{2}}{x_{0}} \right)
 		\end{split}
@@ -5067,7 +5067,7 @@ Prendendo le tre carte $ (U_{i},\phi_{1}) $ con $ i=0,1,2 $ di $ \mathcal{RP}^{2
 	
 	\begin{align}
 		\begin{split}
-			U_{1} = \{ [x_{0},x_{1},x_{2}] &\in \mathcal{RP}^{2} \mid x_{1} \neq 0 \}\\\\
+			U_{1} = \{ [x_{0},x_{1},x_{2}] &\in \rp{2} \mid x_{1} \neq 0 \}\\\\
 			\phi_{1} : U_{1} &\to \R^{2}\\
 			[x_{0},x_{1},x_{2}] &\mapsto (x,y) = \left( \dfrac{x_{0}}{x_{1}}, \dfrac{x_{2}}{x_{1}} \right)
 		\end{split}
@@ -5096,7 +5096,7 @@ Prendendo le tre carte $ (U_{i},\phi_{1}) $ con $ i=0,1,2 $ di $ \mathcal{RP}^{2
 	
 	\begin{align}
 		\begin{split}
-			U_{2} = \{ [x_{0},x_{1},x_{2}] &\in \mathcal{RP}^{2} \mid x_{2} \neq 0 \}\\\\
+			U_{2} = \{ [x_{0},x_{1},x_{2}] &\in \rp{2} \mid x_{2} \neq 0 \}\\\\
 			\phi_{2} : U_{2} &\to \R^{2}\\
 			[x_{0},x_{1},x_{2}] &\mapsto (x,y) = \left( \dfrac{x_{0}}{x_{2}}, \dfrac{x_{1}}{x_{2}} \right)
 		\end{split}
