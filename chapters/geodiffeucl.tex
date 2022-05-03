@@ -26,8 +26,6 @@ Diremo che:
 \end{itemize}
 
 perciò una funzione è liscia se esistono e sono finite le sue derivate di qualunque ordine.\\
-Queste funzioni sono quelle su cui si basa il concetto di \textit{varietà differenziabile}.\\
-
 Per generalizzare, consideriamo le funzioni definite non in $ \R $ ma in $ \R^{n} $.\\
 Una funzione $ f : U \to \R^{n} $ con $ n \geq 1 $ e $ U \subset \R^{m} $ con $ m \geq 1 $ aperto è $ C^{k} $ in $ p $ se tutte le sue componenti $ f^{j} : U \to \R $ sono $ f^{j} \in C^{k} $ in $ p $ con $ k \geq 0 $. Nello specifico, $ f = (f^{1}, \dots, f^{m}) $ oppure $ f^{j} = \pi_{j} \circ f $ dove $ \pi_{j} $ è la proiezione $ \pi_{j} : \R^{m} \to \R $ con $ (x^{1}, \dots, x^{m}) \mapsto x^{j} $, $ j = 1, \dots, m $.\\
 Una funzione $ f : U \to \R^{m} $ è:
@@ -49,7 +47,6 @@ Sia
 \map{f}
 	{\R}{\R}
 	{x}{x^{1/3}}
-	
 La funzione è continua ($ f \in C^{0} $) ed è un omeomorfismo\footnote{%
 	Sia la funzione che la sua inversa sono continue.%
 } ma $ f \notin C^{1} $ nell'origine $ p = 0 $ perché
@@ -62,9 +59,8 @@ la quale non è definita nell'origine e dunque $ f \notin C^{1} (\R) $.
 
 \paragraph{2.}
 
-Se volessi costruire una funzione che sia $ C^{1} $ ma non $ C^{2} $, potrei integrare la $ f $ del punto precedente.\\
-Sia $ g : \R \to \R $ con
 
+Se volessimo costruire una funzione che sia $ C^{1} $ ma non $ C^{2} $, potrei integrare la $ f $ del punto precedente. Sia $ g : \R \to \R $ con
 \begin{equation}
 	g (x) = \int_{0}^{x} f (t) \dd{t} = \dfrac{3 x^{2/3}}{4}
 \end{equation}
@@ -77,9 +73,9 @@ Vedi Esercizio \ref{es1-1}.
 
 \subsection{Funzioni reali analitiche}
 
-Dato $ p \in \R^{n} $, un intorno $ U $ di $ p $ è un aperto di $ \R^{n} $ che contiene $ p $.\\
-Sia $ f : U \to \R $ con $ U \subset \R^{n} $ aperto, diremo che $ f $ è \textit{reale analitica} in $ p \in U $ se $ f $ coincide con il suo sviluppo di Taylor intorno a $ p $. Questo significa che se prendo una funzione $ f (x) $ con $ x = (x^{1}, \dots, x^{n}) $ e $ p = (p^{1}, \dots, p^{n}) $ ho che
 
+Sia il punto $ p \in \R^{n} $, un intorno $ U $ di $ p $ è un aperto di $ \R^{n} $ che contiene $ p $.\\
+Sia $ f : U \to \R $ con $ U \subset \R^{n} $ aperto, diremo che $ f $ è \textit{reale analitica} in $ p \in U $ se $ f $ coincide con il suo sviluppo di Taylor intorno a $ p $. Questo significa che se prendiamo una funzione $ f (x) $ con $ x = (x^{1}, \dots, x^{n}) $ e $ p = (p^{1}, \dots, p^{n}) $ abbiamo che
 \begin{align}
 	\begin{split}
 		f (x) &= f (p) + \sum_{i=1}^{n} \pdv{f}{x_{i}} (p) (x^{i} - p^{i}) + \cdots + \dfrac{1}{k!} \sum_{i_{1},\dots,i_{k}=1}^{n} \dfrac{\partial^{k} f}{\partial x^{i_{1}} \cdots \partial x^{i_{k}}} (p) ( (x^{i_{1}} - p^{i_{1}}) \cdots (x^{i_{k}} - p^{i_{k}}) ) + \cdots\\
@@ -94,14 +90,10 @@ Se abbiamo una serie di potenze, possiamo derivarla termine a termine dunque, si
 \paragraph{1.}
 
 La funzione $ f (x) = \sin x $ è liscia reale analitica e ha sviluppo di Taylor
-
-\begin{align}
-	\begin{split}
-		\sin x &= x - \dfrac{x^{3}}{3!} + \dfrac{x^{5}}{5!} - \dots\\
-		&= \sum_{j=0}^{\infty} (-1)^{j} \dfrac{x^{2j+1}}{(2j+1)!}
-	\end{split}
-\end{align}
-
+%
+\begin{equation}
+	\sin x = x - \dfrac{x^{3}}{3!} + \dfrac{x^{5}}{5!} - \dots = \sum_{j=0}^{\infty} (-1)^{j} \dfrac{x^{2j+1}}{(2j+1)!}
+\end{equation}
 Per calcolare la derivata possiamo derivare termine a termine lo sviluppo di Taylor
 
 \begin{align}
@@ -176,7 +168,6 @@ Ad esempio, la funzione
 \map{f}
 	{\R}{\R}
 	{x}{x^{3}}
-	
 è una bigezione, è liscia ma la sua inversa non lo è, dunque $ f $ non è un diffeomorfismo.\\
 Quando esiste un diffeomorfismo tra due aperti, si dice che questi sono \textit{diffeomorfi}: $ U $ e $ V $ sono diffeomorfi se $ \E f : U \to V $ diffeomorfismo, i.e. $ U \simeq V $.\\
 
@@ -247,7 +238,6 @@ Per praticità di notazione, chiamiamo $ h $ il diffeomorfismo $ B_{\delta} (c) 
 
 \begin{figure}[H]
 	\centering
-
 	\begin{tikzpicture}[scale=1]
 	
 		\begin{axis}[
@@ -356,7 +346,8 @@ da cui
 \end{align}
 
 A questo punto $ B_{1} (0) \simeq \R^{n} $: dal punto di vista della geometria differenziale, due oggetti diffeomorfi vengono considerati equivalenti\footnote{%
-	In topologia, vale lo stesso ragionamento per oggetti omeomorfi.}.
+	In topologia, vale lo stesso ragionamento per oggetti omeomorfi.%
+}.
 
 \subsection{Teorema di Taylor con resto}
 
@@ -392,6 +383,7 @@ L'ipotesi che un sottoinsieme sia stellato è forte a livello globale ma sempre 
 	
 	Essendo $ U $ stellato rispetto a $ p $, possiamo valutare $ f $ in questo segmento (tutti i punti di $ r $ sono definiti in $ U $). Considero fissi $ x $ e $ p $ e derivo $ f(r) $ rispetto a $ t $
 	
+	Essendo $ U $ stellato rispetto a $ p $, possiamo valutare $ f $ in questo segmento (tutti i punti di $ r $ sono definiti in $ U $). Considero fissi $ x $ e $ p $ e deriviamo $ f(r) $ rispetto a $ t $
 	\begin{align}
 		\begin{split}
 			\dv{t} f(r) &= \dv{t} f(p+t(x-p))\\
@@ -401,8 +393,8 @@ L'ipotesi che un sottoinsieme sia stellato è forte a livello globale ma sempre 
 	\end{align}
 	
 	per la \textit{regola della catena}.\\
-	Integrando rispetto a $ t $ nell'intervallo $ [0,1] $ ottengo
 	
+	Integrando rispetto a $ t $ nell'intervallo $ [0,1] $ otteniamo
 	\begin{align}
 		\begin{split}
 			\int_{0}^{1} \dv{t} f(p+t(x-p)) \dd{t} &= \int_{0}^{1} \sum_{i=1}^{n} \pdv{f}{x^{i}} \, (p+t(x-p)) \, (x^{i}-p^{i}) \dd{t}\\
@@ -549,8 +541,7 @@ Questa applicazione è ben definita in quanto l'associazione di un germe di funz
 
 \subsubsection{\textit{Esempio}}
 
-Siano $ f $ e $ g $
-
+Siano le applicazioni
 \begin{equation}
 	\begin{cases}
 		f(x) = \dfrac{1}{1-x}, & x \in \R \setminus \{1\}\\\\
@@ -636,8 +627,8 @@ Nonostante non sia necessario per un'algebra, $ C_{p}^{\infty}(\R^{n}) $ è anch
 
 A questo punto, possiamo definire l'applicazione chiamata \textit{derivazione puntuale} dell'algebra $ C_{p}^{\infty}(\R^{n}) $:
 
-\map{D}%
-	{C_{p}^{\infty}(\R^{n})}{\R}%
+\map{D}
+	{C_{p}^{\infty}(\R^{n})}{\R}
 	{[(f,U)]}{D_{v} f = \sum_{i=1}^{n} \pdv{f}{x^{i}} \, (p) \, v^{i}}
 
 con $ p \in U \subset \R^{n} $ e $ v = [v^{1}, \dots, v^{n}] \in T_{p} (\R^{n}) $.\\
@@ -647,18 +638,21 @@ Questa applicazione possiede le seguenti proprietà:
 	\item $ \R $-linearità\footnote{%
 		Rispetto alla struttura di spazio vettoriale di $ C_{p}^{\infty}(\R^{n}) $.%
 	}, i.e.
+		%
 		\begin{align}
 			D ([(f,U)] + [(g,V)]) &= D ([(f,U)]) + D ([(g,V)])\\
 			D (\lambda [(f,U)]) &= \lambda D ([(f,U)])
 		\end{align}
 	
 	\item soddisfa la \textit{regola di Leibniz}, i.e.
+		%
 		\begin{equation}
 			D ([(f,U)] \cdot [(g,V)]) = D ([(f,U)]) \, g(p) + f(p) \, D ([(g,V)])
 		\end{equation}
 \end{enumerate}
 
 \begin{proof}[Dimostrazione ($ \R $-linearità (somma))]
+	%
 	\begin{align}
 		\begin{split}
 			D ([(f,U)] + [(g,V)]) &= D ([(f+g,U \cap V)])\\
@@ -741,7 +735,6 @@ Per dimostrare questo teorema è necessario notare che gli elementi $ D_{i} \in 
 \map{+}
 	{\der_{p}(C_{p}^{\infty}(\R^{n})) \times \der_{p}(C_{p}^{\infty}(\R^{n}))}{\der_{p}(C_{p}^{\infty}(\R^{n}))}
 	{(D_{v}, D_{w})}{D_{v} + D_{w}}
-	
 \map{\cdot}
 	{\R \times \der_{p}(C_{p}^{\infty}(\R^{n}))}{\der_{p}(C_{p}^{\infty}(\R^{n}))}
 	{(\lambda, D_{v})}{\lambda D_{v}}
@@ -756,7 +749,7 @@ Consideriamo ora la seguente preposizione:
 		D (\lambda [(f,U)]) &= \lambda D ([(f,U)]) = (\lambda D) ([(f,U)])\\
 		(D_{v} + D_{w}) ([(f,U)] \cdot [(g,V)]) &= (D_{v} + D_{w}) ([(f,U)]) \, g(p) + f(p) \, (D_{v} + D_{w}) ([(g,V)])
 	\end{align}
-
+	
 	per $ \forall D, D_{v}, D_{w} \in \der_{p}(C_{p}^{\infty}(\R^{n})) $ e $ \forall \lambda \in \R $.
 \end{definition}
 
@@ -791,11 +784,13 @@ Consideriamo ora la seguente preposizione:
 \begin{proof}
 	Per dimostrare che $ \phi $ sia un isomorfismo è necessario dimostrare che $ \phi $ sia $ \R $-lineare, iniettiva\footnote{%
 		Un'applicazione $ f $ tra due insiemi $ A $ e $ B $ è \textit{iniettiva} se
+		%
 		\begin{equation*}
 			\forall a_{1},a_{2} \in A \mid a_{1} \neq a_{2} \implies f(a_{1}) \neq f(a_{2})
 		\end{equation*}%
 	} e suriettiva\footnote{%
 		Un'applicazione $ f $ tra due insiemi $ A $ e $ B $ è \textit{suriettiva} se
+		%
 		\begin{equation*}
 			\forall b \in B, \, \E a \in A \mid f(a) = b
 		\end{equation*}%
@@ -976,7 +971,6 @@ forma una base per lo spazio $ \der_{p}(C_{p}^{\infty}(\R^{n})) $.
 	\begin{equation}
 		\dim ( \der_{p}(C_{p}^{\infty}(\R^{n})) ) = n
 	\end{equation}
-		
 	se $ (e_{1},\dots,e_{n}) $ è la base canonica\footnote{%
 		Con $ (e_{j})_{k} = \delta_{jk} $, e.g. $ e_{3} = [0,0,1,0,\dots,0] $.%
 	} di $ T_{p}(\R^{n}) $, si ha che
@@ -1138,14 +1132,10 @@ Le prime due operazioni dotano l'insieme di $ \chi(U) $ della proprietà di spaz
 \subsubsection{$ \R $-modulo sinistro}
 
 Sia $ R $ un anello commutativo unitario, un gruppo abeliano $ (A,+) $ è detto $ R $\textit{-modulo sinistro} se esiste un'applicazione
-
-\begin{align}
-	\begin{split}
-		\cdot : R \times A &\to A\\
-		(r,a) &\mapsto r \cdot a
-	\end{split}
-\end{align}
-
+%
+\map{\cdot}
+	{R \times A}{A}
+	{(r,a)}{r \cdot a}
 tale che
 
 \begin{equation}
@@ -1163,13 +1153,10 @@ per $ \forall r, s \in R $ e $ \forall a, b \in A $. Queste proprietà valgono s
 
 Sia $ R $ un anello commutativo unitario, un gruppo abeliano $ (A,+) $ è detto $ R $\textit{-modulo destro} se esiste un'applicazione
 
-\begin{align}
-	\begin{split}
-		* : A \times R &\to A\\
-		(a,r) &\mapsto a * r
-	\end{split}
-\end{align}
-
+%
+\map{*}
+	{A \times R}{A}
+	{(a,r)}{a * r}
 tale che
 
 \begin{equation}
@@ -1200,8 +1187,8 @@ Per l'insieme dei campi di vettori lisci vale il seguente teorema:
 \begin{proof}
 	Per dimostrare che il gruppo abeliano $ (\chi(U),+) $ sia un $ C^{\infty}(U) $-modulo, è necessario dimostrare che $ (\chi(U),+) $ sia un $ C^{\infty}(U) $-modulo sinistro e destro per la moltiplicazione di un campo di vettori per una funzione
 	
-	\map{\cdot}%
-		{C^{\infty}(U) \times \chi(U)}{\chi(U)}%
+	\map{\cdot}
+		{C^{\infty}(U) \times \chi(U)}{\chi(U)}
 		{(f,X)}{f X}
 
 	Devono dunque essere verificate queste proprietà sia a sinistra che a destra:
@@ -1278,7 +1265,6 @@ Sia $ A $ un'algebra su campo $ \K $\footnote{%
 	\maps{\cdot}
 		{A \times A}{A}
 		{(a,b)}{a \cdot b}
-		
 	soddisfa le proprietà
 	
 	\begin{equation*}
