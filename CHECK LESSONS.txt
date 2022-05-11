@@ -1,2 +1,6 @@
 esempio varietà differenziabile superfici
 
+dimostrazione spazio proiettivo reale omeomorfo alla sfera n-dimensionale quozientata alla relazione 
+di equivalenza: non capisco perché la bigettività è dimostrata tramite l'essere continua con 
+inversa continua
+
