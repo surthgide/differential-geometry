@@ -1003,7 +1003,7 @@ Presi due punti $ x, y \in \R^{n+1} \setminus \{0\} $, possiamo  quindi individu
 	x \sim y \, \iff \, \E \lambda \in \R \setminus \{0\} \, \mid \, y = \lambda x
 \end{equation}
 
-ciò significa che due punti appartengono alla stessa retta se e solo se sono proporzionali.\\
+ciò significa che due punti sono equivalenti se e solo se sono proporzionali (e dunque appartengono alla stessa retta).\\
 Sia dunque il \textit{proiettivo reale} lo spazio quoziente
 
 \begin{equation}
@@ -1014,6 +1014,8 @@ con la topologia quoziente indotta dalla relazione di equivalenza $ \sim $.\\
 Vogliamo ora dimostrare che $ \rp{n} $ sia una varietà differenziabile compatta e connessa di dimensione $ n $.
 
 \subsubsection{Omeomorfismo tra $ \rp{n} $ e $ \sfrac{\S^{n}}{\sim_{a}} $}
+
+Iniziamo col dimostrare la compattezza e la connessione di $ \rp{n} $ mediante il suo omeomorfismo con la sfera quozientata.
 
 \begin{definition}
 	Lo spazio proiettivo reale è omeomorfo alla sfera $ n $-dimensionale quozientata alla relazione di equivalenza \textit{antipodale} $ \sim_{a} $ (due punti della sfera sono equivalenti se opposti), i.e.
@@ -1079,7 +1081,7 @@ Vogliamo ora dimostrare che $ \rp{n} $ sia una varietà differenziabile compatta
 	Analogamente, possiamo dire che sia continua perché due punti antipodali appartengono obbligatoriamente alla stessa retta, i.e.
 	
 	\begin{equation}
-		p,q \in [x]_{a} \iff p,q \in [x]
+		p,q \in [x]_{a} \implies p,q \in [x]
 	\end{equation}
 
 	Avendo dimostrato che $ \tilde{f} $ è una bigezione continua, otteniamo che $ \rp{n} \simeq \sfrac{\S^{n}}{\sim_{a}} $.
@@ -1095,16 +1097,19 @@ Vogliamo ora dimostrare che $ \rp{n} $ sia una varietà differenziabile compatta
 
 \paragraph{1.}
 
-Se prendiamo $ n=1 $, $ \rp{1} \simeq \S^{1} $: si può identificare $ \S^{1} $ con l'intervallo $ I $ omeomorfo alla semicirconferenza quozientato i due punti estremi di quest'ultima $ \{A,B\} $, i.e. $ \S^{1} \simeq \sfrac{I}{\{A,B\}} $, in modo tale che si prenda solo uno dei due punti antipodali.
-
+Se prendiamo $ n=1 $, $ \rp{1} \simeq \sfrac{\S^{1}}{\sim_{a}} $: si può identificare $ \sfrac{\S^{1}}{\sim_{a}} $ con l'intervallo $ I $ (omeomorfo alla semicirconferenza) quozientato i due punti estremi $ \{A,B\} $, i.e. $ \S^{1} \simeq \sfrac{I}{\{A,B\}} $, in modo tale che si prenda solo uno dei due punti antipodali.
+	
 \paragraph{2.}
 
-Se prendiamo $ n=2 $, $ \rp{2} \simeq \sfrac{\S^{2}}{\sim_{a}} $. Per visualizzarlo, prendiamo la calotta superiore di $ \S^{2} $ la quale è omeomorfa al disco unitario $ D_{1} $. Il disco unitario, pieno della proiezione della semicalotta in cui sono identificati i punti antipodali della circonferenza, rappresenta dunque il proiettivo reale $ \rp{2} $.\\
+Se prendiamo $ n=2 $, $ \rp{2} \simeq \sfrac{\S^{2}}{\sim_{a}} $. Per visualizzarlo, prendiamo la calotta superiore di $ \S^{2} $, la quale è omeomorfa al disco unitario $ D_{1} $. Il disco unitario, pieno della proiezione della semicalotta in cui sono identificati i punti antipodali della circonferenza, rappresenta dunque il proiettivo reale $ \rp{2} $.\\
 Dimensioni più alte non sono rappresentabili tramite esempi nello spazio tridimensionale.
 
 \subsubsection{Proprietà di $ \rp{n} $}
 
-Per dimostrare che $ \rp{n} $ sia una varietà differenziabile dobbiamo prima dimostrare che sia una varietà topologica, dunque $ N_{2}+T_{2} $ con un atlante topologico, e poi far vedere che i cambi di carta siano lisci.\\
+Per dimostrare che $ \rp{n} $ sia una varietà differenziabile dobbiamo prima dimostrare che sia una varietà topologica, dunque $ N_{2}+T_{2} $ con un atlante topologico, e poi far vedere che i cambi di carta siano lisci.
+
+\paragraph{Proprietà $ N_{2} $}
+
 La dimostrazione che il proiettivo reale sia $ N_{2} $ passa per la proiezione
 
 \begin{equation}
@@ -1112,7 +1117,7 @@ La dimostrazione che il proiettivo reale sia $ N_{2} $ passa per la proiezione
 \end{equation}
 
 in quanto questa applicazione preserva la proprietà di numerabilità $ N_{2} $: se lo spazio di partenza $ \R^{n+1} \setminus \{0\} $ è $ N_{2} $ (lo è perché sottoinsieme di $ \R^{n+1} $ il quale è a sua volta $ N_{2} $) allora, se l'applicazione $ \pi $ è aperta (equivalentemente, se $ \sim $ è aperta), lo è anche il proiettivo reale.\\
-Perché $ \pi $ sia aperta, questa deve mandare aperti in aperti: sia l'aperto $ V \subset \R^{n+1} \setminus \{0\} $ e consideriamo $ \pi(V) $. Nella topologia quoziente, l'immagine $ \pi(V) $ è aperta se la sua controimmagine $ \pi^{-1}(\pi(V)) $ è aperta: $ \pi(x) $ con $ x \in V $ è l'identificazione di tutti i punti che appartengono alla stessa retta di $ x $; prendendo $ \pi^{-1}(\pi(x)) $ otteniamo non solo il punto $ x $ ma tutti i punti che appartengono alla retta identificata da $ x $ stesso, dunque considerando tutti i punti dell'aperto $ V $ otteniamo
+Perché $ \pi $ sia aperta, questa deve mandare aperti in aperti: sia l'aperto $ V \subset \R^{n+1} \setminus \{0\} $ e consideriamo l'insieme $ \pi(V) $. Nella topologia quoziente, l'immagine $ \pi(V) $ è aperta se la sua controimmagine $ \pi^{-1}(\pi(V)) $ è aperta: $ \pi(x) $ con $ x \in V $ è l'identificazione di tutti i punti che appartengono alla stessa retta di $ x $; prendendo $ \pi^{-1}(\pi(x)) $ otteniamo non solo il punto $ x $ ma tutti i punti che appartengono alla retta identificata da $ x $ stesso, dunque considerando tutti i punti dell'aperto $ V $ otteniamo
 
 \begin{equation}
 	\pi^{-1}(\pi(V)) = \bigcup_{\lambda \in \R \setminus \{0\}} \{\lambda V\}
@@ -1128,30 +1133,26 @@ che corrisponde al cono di rette passanti per l'origine individuato dai punti de
 Fissando $ \lambda $, l'insieme
 
 \begin{equation}
-	\lambda V = \left\{ \lambda x \st x \in V \right\}
+	\lambda V = \left\{ \lambda x \st x \in V \right\} \subset \R^{n+1} \setminus \{0\}
 \end{equation}
 
 è aperto perché omeomorfo a $ V $ tramite l'applicazione
 
-\begin{align}
-	\begin{split}
-		\phi_{\lambda} : V &\to \lambda V\\
-		x &\mapsto \lambda x
-	\end{split}
-\end{align}
+\map{\phi_{\lambda}}
+	{V}{\lambda V}
+	{x}{\lambda x}
 
 la quale è continua con inversa continua
 
-\begin{align}
-	\begin{split}
-		\phi_{\lambda}^{-1} : \lambda V &\to V\\
-		\lambda^{-1} x &\mapsto x
-	\end{split}
-\end{align}
+\map{\phi_{\lambda}^{-1}}
+	{\lambda V}{V}
+	{\lambda x}{x}
 
-Essendo $ \lambda V $ aperto in $ \R \setminus \{0\} $, $ \pi^{-1}(\pi(V)) $ è aperto e dunque la proiezione $ \pi $ è aperta.\\
-Se lo spazio di partenza $ \R \setminus \{0\} $ è $ N_{2} $ e la relazione di equivalenza $ \sim $ è aperta, allora lo spazio quoziente $ \rp{n} $ è $ N_{2} $.\\\\
-%
+Essendo $ \lambda V $ aperto in $ \R^{n+1} \setminus \{0\} $, $ \pi^{-1}(\pi(V)) $ è aperto e dunque la proiezione $ \pi $ è aperta.\\
+Se lo spazio di partenza $ \R \setminus \{0\} $ è $ N_{2} $ e la relazione di equivalenza $ \sim $ è aperta, allora lo spazio quoziente $ \rp{n} $ è $ N_{2} $.
+
+\paragraph{Proprietà $ T_{2} $}
+
 Sapendo che la proiezione $ \pi $ è aperta, possiamo usare il fatto che l'insieme
 
 \begin{equation}
@@ -1159,26 +1160,28 @@ Sapendo che la proiezione $ \pi $ è aperta, possiamo usare il fatto che l'insie
 \end{equation}
 
 sia chiuso per dimostrare che il proiettivo reale sia anche $ T_{2} $.\\
-Per dimostrare che sia chiuso, consideriamo l'applicazione
+Per dimostrare che $ R $ sia chiuso, consideriamo l'applicazione
 
 \map{\phi}%
 	{\R^{n+1} \setminus \{0\} \times \R^{n+1} \setminus \{0\}}{M_{n+1,2}(\R) = \R^{2(n+1)}}%
-	{(x,y)}{\mqty[x & y]}
+	{(x,y)}{\bmqty{x & y}}
 
 cioè che associa alle coppie di vettori $ (x,y) $ le matrici con $ (n+1) $ righe e $ 2 $ colonne costituite dai vettori $ x $ e $ y $ posti in colonne affiancate, i.e.
 
 \begin{equation}
-	x = \begin{bmatrix} x^{1} \\ \vdots \\ x^{n+1} \end{bmatrix}, \, y = \begin{bmatrix} y^{1} \\ \vdots \\ y^{n+1} \end{bmatrix} \quad \longmapsto \quad \begin{bmatrix} x & y \end{bmatrix} = \begin{bmatrix} x^{1} & y^{1} \\ \vdots & \vdots \\ x^{n+1} & y^{n+1} \end{bmatrix}
+	x = \bmqty{x^{1} \\ \vdots \\ x^{n+1}} , \, y = \bmqty{y^{1} \\ \vdots \\ y^{n+1}} %
+	\quad \longmapsto \quad%
+	\bmqty{x & y} = \bmqty{x^{1} & y^{1} \\ \vdots & \vdots \\ x^{n+1} & y^{n+1}}
 \end{equation}
 
-L'applicazione $ \phi $ è un omeomorfismo perché la topologia prodotto di spazi euclidei coincide con la topologia euclidea, i.e. $ \R^{n} \times \R^{m} \simeq \R^{n+m} $ cioè sono topologicamente equivalenti (ogni aperto di uno è aperto dell'altro).\\
-A questo punto, possiamo studiare la chiusura dell'immagine di $ R $ tramite $ \phi $
+L'applicazione $ \phi $ è un omeomorfismo perché la topologia prodotto di spazi euclidei coincide con la topologia euclidea, i.e. $ \R^{n} \times \R^{m} \simeq \R^{n+m} $ e quindi sono topologicamente equivalenti (ogni aperto di uno è aperto dell'altro).\\
+A questo punto, dimostrando che l'immagine di $ R $ tramite $ \phi $ è un chiuso, otterremo che il proiettivo reale è di Hausdorff. L'insieme in questione è il seguente:s
 
 \begin{equation}
 	\phi(R) = \left\{ \mqty[x & y] \in M_{n+1,2}(\R) \st \rank \left( \mqty[x & y] \right) = 1 \right\}
 \end{equation}
 
-La condizione per cui il rango delle matrici di questo insieme sia unitario è dovuta al fatto che queste matrici hanno le due colonne proporzionali tra loro, in quanto $ y= \lambda x $.
+La condizione per cui il rango delle matrici di questo insieme è unitario è dovuta al fatto che queste matrici hanno le due colonne proporzionali tra loro, in quanto $ y= \lambda x $.
 
 \begin{lemma}\label{lemma-clos-matrix}
 	Sia l'insieme
@@ -1193,28 +1196,26 @@ La condizione per cui il rango delle matrici di questo insieme sia unitario è d
 \begin{proof}
 	Consideriamo l'applicazione
 	
-	\begin{align}
-		\begin{split}
-			f :  M_{n,m}(\R) &\to \R^{d}\\
-			A &\mapsto (m_{11},\dots,m_{nm})
-		\end{split}
-	\end{align}
+	\map{f}
+		{M_{n,m}(\R)}{\R^{d}}
+		{A}{(m_{11}, \dots, m_{nm})}
 
 	che mappa le matrici $ A \in M_{n,m}(\R) $ in $ d $-uple\footnote{%
-		Il numero totale di minori di ordine $ r $ per una matrice $ A \in M_{n,m}(\R) $ è $ d = \begin{pmatrix} m \\ r+1 \end{pmatrix} \begin{pmatrix} n \\ r+1 \end{pmatrix} $.%
-	} di minori $ m_{ij} = \det(A_{ij}) $ di $ A $ di ordine $ r < \min\{n,m\} $, dove le $ A_{ij} $ sono le sottomatrici ricavate da $ A $ rimuovendo la $ i $-esima riga e la $ j $-esima colonna. Questa applicazione è continua perché è composizione dell'applicazione che rimuove righe e colonne alla matrice $ A $ e il determinante di questa stessa matrice (entrambe le applicazioni sono continue).\\
-	Una matrice $ A $ ha rango $ \rank(A) \leqslant r $ se e solo se tutti i minori di ordine $ r+1 $ sono nulli, dunque l'insieme $ X_{r}(n,m) $ è la controimmagine di $ 0 \in \R^{d} $ tramite l'applicazione continua $ f $: essendo $ \{0\} $ chiuso in $ \R^{d} $ perché $ \R^{d} $ è di Hausdorff, allora anche la sua controimmagine tramite $ f $, i.e. $ f^{-1}(0) = X_{r}(n,m) $, è chiusa in $ M_{n,m}(\R) $.
+		Il numero totale di minori di ordine $ r $ per una matrice $ A \in M_{n,m}(\R) $ è $ d = \binom{n}{r+1} \binom{m}{r+1} $.%
+	} di minori $ m_{ij} \doteq \det(A_{ij}) $ di $ A $ di ordine $ r < \min\{n,m\} $, dove le $ A_{ij} $ sono le sottomatrici ricavate da $ A $ rimuovendo la $ i $-esima riga e la $ j $-esima colonna. Questa applicazione è continua perché è composizione di due applicazioni continue: l'applicazione che rimuove righe e colonne alla matrice $ A $ e il determinante di questa stessa matrice.\\
+	Una matrice $ A $ ha rango $ \rank(A) \leqslant r $ se e solo se tutti i minori di ordine $ r+1 $ sono nulli, dunque l'insieme $ X_{r}(n,m) $ è la controimmagine di $ 0 \in \R^{d} $ tramite l'applicazione continua $ f $: essendo $ 0 $ chiuso in $ \R^{d} $ perché $ \R^{d} $ è di Hausdorff, allora anche la sua controimmagine tramite $ f $, i.e. $ f^{-1}(0) = X_{r}(n,m) $, è chiusa in $ M_{n,m}(\R) $.
 \end{proof}
 
-Seguendo questo ragionamento, possiamo pensare a $ \phi(R) $ come l'intersezione dell'immagine dello spazio di Hausdorff $ \R^{n+1} \setminus \{0\} \times \R^{n+1} \setminus \{0\} $ tramite $ \phi $ con $ X_{1}(n+1,2) $, il quale è un chiuso
+Seguendo questo ragionamento, possiamo pensare a $ \phi(R) $ come l'intersezione dell'immagine dello spazio di Hausdorff $ \R^{n+1} \setminus \{0\} \times \R^{n+1} \setminus \{0\} $ tramite $ \phi $ con $ X_{1}(n+1,2) $, il quale è un chiuso, i.e.
 
 \begin{equation}
 	\phi(R) = X_{1}(n+1,2) \cap \phi(\R^{n+1} \setminus \{0\} \times \R^{n+1} \setminus \{0\})
 \end{equation}
 
-Essendo dunque $ \phi(R) $ intersezione di un chiuso con lo spazio d'interesse, questo rende $ \phi(R) $ chiuso in $ \phi(\R^{n+1} \setminus \{0\} \times \R^{n+1} \setminus \{0\}) $, dunque $ R $ è chiuso in $ \R^{n+1} \setminus \{0\} \times \R^{n+1} \setminus \{0\} $.\\
-Questo prova che $ \rp{n} $ sia $ T_{2} $.\\\\
-%
+Essendo dunque $ \phi(R) $ intersezione di un chiuso con lo spazio d'interesse, questo rende $ \phi(R) $ chiuso in $ \phi(\R^{n+1} \setminus \{0\} \times \R^{n+1} \setminus \{0\}) $, dunque $ R $ è chiuso in $ \R^{n+1} \setminus \{0\} \times \R^{n+1} \setminus \{0\} $ in quanto $ \phi $ è un omeomorfismo: questo prova che $ \rp{n} $ sia $ T_{2} $.\\
+
+\paragraph{Altante per $ \rp{n} $}
+
 A questo punto, costruiamo un atlante topologico per il proiettivo reale.\\
 Siano gli $ n+1 $ insiemi
 
