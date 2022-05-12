@@ -996,27 +996,27 @@ Considerando la proposizione riportata sopra, nel caso in cui la relazione di eq
 \subsection{Proiettivo reale come varietà differenziabile}
 
 Il proiettivo reale può essere pensato come una varietà "astratta" in quanto non è un sottoinsieme di uno spazio euclideo o un prodotto di varietà.\\
-Consideriamo lo spazio $ S = \R^{n+1} \setminus \{0\} $ con $ n \geqslant 0 $ e prendiamo tutte le rette di $ \R^{n+1} \setminus \{0\} $ passanti per l'origine, equivalentemente tutti i sottospazi vettoriali di $ \R^{n+1} $ di dimensione unitaria.\\
-Una retta passante per l'origine è determinata da un suo punto $ x $ (l'altro è l'origine), i cui multipli daranno tutti i punti della retta stessa. La condizione di equivalenza, presi due punti $ x,y \in S $, si può scrivere nel seguente modo
+Consideriamo lo spazio $ \R^{n+1} \setminus \{0\} $ con $ n \geqslant 0 $ e tutte le rette di $ \R^{n+1} \setminus \{0\} $ passanti per l'origine, i.e. tutti i sottospazi vettoriali di $ \R^{n+1} $ di dimensione unitaria. Ognuna di queste rette è determinata dall'origine e da un suo punto $ x $, i cui multipli daranno tutti i punti della retta stessa.\\
+Presi due punti $ x, y \in \R^{n+1} \setminus \{0\} $, possiamo  quindi individuare la seguente condizione di equivalenza
 
 \begin{equation}
 	x \sim y \, \iff \, \E \lambda \in \R \setminus \{0\} \, \mid \, y = \lambda x
 \end{equation}
 
-cioè se i due punti appartengono alla stessa retta.\\
+ciò significa che due punti appartengono alla stessa retta se e solo se sono proporzionali.\\
 Sia dunque il \textit{proiettivo reale} lo spazio quoziente
 
 \begin{equation}
 	\rp{n} = \dfrac{\R^{n+1} \setminus \{0\}}{\sim}
 \end{equation}
 
-con la topologia quoziente indotta da $ \sim $.\\
+con la topologia quoziente indotta dalla relazione di equivalenza $ \sim $.\\
 Vogliamo ora dimostrare che $ \rp{n} $ sia una varietà differenziabile compatta e connessa di dimensione $ n $.
 
 \subsubsection{Omeomorfismo tra $ \rp{n} $ e $ \sfrac{\S^{n}}{\sim_{a}} $}
 
 \begin{definition}
-	Lo spazio proiettivo reale è omeomorfo alla sfera $ n $-dimensionale quozientata alla relazione di equivalenza \textit{antipodale} $ \sim_{a} $ (due punti della sfera sono equivalenti se opposti), in simboli
+	Lo spazio proiettivo reale è omeomorfo alla sfera $ n $-dimensionale quozientata alla relazione di equivalenza \textit{antipodale} $ \sim_{a} $ (due punti della sfera sono equivalenti se opposti), i.e.
 	
 	\begin{equation}
 		\rp{n} \simeq \sfrac{\S^{n}}{\sim_{a}}
@@ -1030,48 +1030,45 @@ Vogliamo ora dimostrare che $ \rp{n} $ sia una varietà differenziabile compatta
 \end{definition}
 
 \begin{proof}
-	Al fine di dimostrare questo isomorfismo, consideriamo il seguente diagramma:
+	Consideriamo innanzitutto i seguenti diagrammi di domini e mappe:
 	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.7\textwidth,keepaspectratio]{img14}
+		\begin{tikzcd}
+			\R^{n+1} \setminus \{0\} \arrow[rrrr, "f", bend left] \arrow[rrd, "g"] \arrow[rrddd, "\pi", bend right] &  &                                               &  & \sfrac{\S^{n}}{\sim_{a}} &  & x \arrow[rrrr, "f", maps to, bend left] \arrow[rrd, "g", maps to] \arrow[rrddd, "\pi", maps to, bend right] &  &                                                                              &  & {[x]_{a}} \\
+			&  & \S^{n} \arrow[dd, "h"] \arrow[rru, "\pi_{a}"] &  &                          &  &                                                                                                             &  & \dfrac{x}{\norm{x}} \arrow[rru, "\pi_{a}", maps to] \arrow[dd, "h", maps to] &  &           \\
+			&  &                                               &  &                          &  &                                                                                                             &  &                                                                              &  &           \\
+			&  & \rp{n} \arrow[rruuu, "\tilde{f}", bend right] &  &                          &  &                                                                                                             &  & {[x]} \arrow[rruuu, "\tilde{f}", maps to, bend right]                        &  &          
+		\end{tikzcd}
 	\end{figure}
 
-	L'applicazione
+	Perché $ \rp{n} \simeq \sfrac{\S^{n}}{\sim_{a}} $ è necessario che $ \tilde{f} $ sia un omeomorfismo, i.e. una bigezione continua con inversa continua.\\
+	Prendiamo l'applicazione
 	
-	\begin{align}
-		\begin{split}
-			g : \R^{n+1} \setminus \{0\} &\to \S^{n}\\
-			x &\mapsto \dfrac{x}{\norm{x}}
-		\end{split}
-	\end{align}
+	\map{g}
+		{\R^{n+1} \setminus \{0\}}{\S^{n}}
+		{x}{\dfrac{x}{\norm{x}}}
 
-	prendendo un qualunque rappresentante di $ \R^{n+1} \setminus \{0\} $, potrebbe risultare in $ \pm x $, perciò usiamo l'applicazione
+	Se consideriamo un qualunque rappresentante di $ \R^{n+1} \setminus \{0\} $, questo viene mappato tramite $ g $ in $ \pm x $, perciò prendiamo anche l'applicazione
 	
-	\begin{align}
-		\begin{split}
-			f : \R^{n+1} \setminus \{0\} &\to \sfrac{\S^{n}}{\sim_{a}}\\
-			x &\mapsto [x]_{a}
-		\end{split}
-	\end{align}
+	\map{f}
+		{\R^{n+1} \setminus \{0\}}{\sfrac{\S^{n}}{\sim_{a}}}
+		{x}{[x]_{a}}
 
 	la quale considera la classe dei punti antipodali nella sfera $ \S^{n} $. L'applicazione $ \tilde{f} $ che va dal proiettivo reale al quoziente è dunque ben definita tramite
 	
 	\begin{equation}
-		\tilde{f}([x]) = [g(x)]_{a}
+		\tilde{f}([x]) = [g(x)]_{a} \qq{in quanto} \tilde{f} \circ \pi = \pi_{a} \circ g
 	\end{equation}
 
-	Per asserire che $ \tilde{f} $ sia continua, possiamo dimostrare che $ f $ lo sia: quest'ultima applicazione è composizione di $ f = \pi_{a} \circ g $ dunque continua, perché le componenti di $ g $ sono continue e la proiezione sul quoziente è continua.\\
+	Per asserire che $ \tilde{f} $ sia continua, possiamo dimostrare che $ f $ lo sia: valendo la relazione $ f = \pi_{a} \circ g $, $ f $ è dunque continua, perché le componenti di $ g $ sono continue e la proiezione sul quoziente è continua.\\
 	L'ultimo passo è mostrare che $ \tilde{f} $ sia una bigezione\footnote{%
-		Non possiamo utilizzare il lemma dell'applicazione chiusa perché altrimenti dovremmo utilizzare come assunzione che $ \rp{n} $ sia compatto, ma questo è la tesi della dimostrazione.%
+		Non possiamo utilizzare il lemma dell'applicazione chiusa perché altrimenti dovremmo utilizzare come assunzione che $ \rp{n} $ sia compatto, ma questa è la tesi della dimostrazione.%
 	}: per fare ciò prendiamo la sua inversa
 
-	\begin{align}
-		\begin{split}
-			\tilde{f}^{-1} : \sfrac{\S^{n}}{\sim_{a}} &\to \rp{n}\\
-			[x]_{a} &\mapsto [x]
-		\end{split}
-	\end{align}
+	\map{\tilde{f}^{-1}}
+		{\sfrac{\S^{n}}{\sim_{a}}}{\rp{n}}
+		{[x]_{a}}{[x]}
 
 	la quale è continua perché composizione di applicazioni continue
 	
@@ -1079,7 +1076,12 @@ Vogliamo ora dimostrare che $ \rp{n} $ sia una varietà differenziabile compatta
 		\tilde{f}^{-1} = (\pi_{a} \circ g \circ \pi^{-1})^{-1} = \pi \circ g^{-1} \circ \pi_{a}^{-1}
 	\end{equation}
 
-	Analogamente, possiamo dire che sia continua perché due punti antipodali appartengono per forza alla stessa retta, i.e. $ p,q \in [x]_{a} \iff p,q \in [x] $.\\
+	Analogamente, possiamo dire che sia continua perché due punti antipodali appartengono obbligatoriamente alla stessa retta, i.e.
+	
+	\begin{equation}
+		p,q \in [x]_{a} \iff p,q \in [x]
+	\end{equation}
+
 	Avendo dimostrato che $ \tilde{f} $ è una bigezione continua, otteniamo che $ \rp{n} \simeq \sfrac{\S^{n}}{\sim_{a}} $.
 \end{proof}
 
