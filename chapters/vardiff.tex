@@ -1159,7 +1159,7 @@ Sapendo che la proiezione $ \pi $ è aperta, possiamo usare il fatto che l'insie
 	R = \left\{ (x,y) \in \R^{n+1} \setminus \{0\} \times \R^{n+1} \setminus \{0\} \st y=\lambda x, \, \lambda \in \R \setminus \{0\} \right\} \subset \R^{n+1} \setminus \{0\} \times \R^{n+1} \setminus \{0\}
 \end{equation}
 
-sia chiuso per dimostrare che il proiettivo reale sia anche $ T_{2} $.\\
+sia chiuso in $ \R^{n+1} \setminus \{0\} \times \R^{n+1} \setminus \{0\} $ per dimostrare che il proiettivo reale sia anche $ T_{2} $.\\
 Per dimostrare che $ R $ sia chiuso, consideriamo l'applicazione
 
 \map{\phi}%
@@ -1175,7 +1175,7 @@ cioè che associa alle coppie di vettori $ (x,y) $ le matrici con $ (n+1) $ righ
 \end{equation}
 
 L'applicazione $ \phi $ è un omeomorfismo perché la topologia prodotto di spazi euclidei coincide con la topologia euclidea, i.e. $ \R^{n} \times \R^{m} \simeq \R^{n+m} $ e quindi sono topologicamente equivalenti (ogni aperto di uno è aperto dell'altro).\\
-A questo punto, dimostrando che l'immagine di $ R $ tramite $ \phi $ è un chiuso, otterremo che il proiettivo reale è di Hausdorff. L'insieme in questione è il seguente:s
+A questo punto, dimostrando che l'immagine di $ R $ tramite $ \phi $ è un chiuso in $ M_{n+1,2}(\R) $, otterremo che il proiettivo reale è di Hausdorff. L'insieme in questione è il seguente:
 
 \begin{equation}
 	\phi(R) = \left\{ \mqty[x & y] \in M_{n+1,2}(\R) \st \rank \left( \mqty[x & y] \right) = 1 \right\}
@@ -1184,7 +1184,7 @@ A questo punto, dimostrando che l'immagine di $ R $ tramite $ \phi $ è un chius
 La condizione per cui il rango delle matrici di questo insieme è unitario è dovuta al fatto che queste matrici hanno le due colonne proporzionali tra loro, in quanto $ y= \lambda x $.
 
 \begin{lemma}\label{lemma-clos-matrix}
-	Sia l'insieme
+	Sia l'insieme delle matrici reali di rango minore o uguale a $ r $
 	
 	\begin{equation}
 		X_{r}(n,m) = \left\{ A \in M_{n,m}(\R) \st \rank(A) \leqslant r \, \wedge \, r \leqslant \min\{n,m\} \right\}
@@ -1202,11 +1202,11 @@ La condizione per cui il rango delle matrici di questo insieme è unitario è do
 
 	che mappa le matrici $ A \in M_{n,m}(\R) $ in $ d $-uple\footnote{%
 		Il numero totale di minori di ordine $ r $ per una matrice $ A \in M_{n,m}(\R) $ è $ d = \binom{n}{r+1} \binom{m}{r+1} $.%
-	} di minori $ m_{ij} \doteq \det(A_{ij}) $ di $ A $ di ordine $ r < \min\{n,m\} $, dove le $ A_{ij} $ sono le sottomatrici ricavate da $ A $ rimuovendo la $ i $-esima riga e la $ j $-esima colonna. Questa applicazione è continua perché è composizione di due applicazioni continue: l'applicazione che rimuove righe e colonne alla matrice $ A $ e il determinante di questa stessa matrice.\\
-	Una matrice $ A $ ha rango $ \rank(A) \leqslant r $ se e solo se tutti i minori di ordine $ r+1 $ sono nulli, dunque l'insieme $ X_{r}(n,m) $ è la controimmagine di $ 0 \in \R^{d} $ tramite l'applicazione continua $ f $: essendo $ 0 $ chiuso in $ \R^{d} $ perché $ \R^{d} $ è di Hausdorff, allora anche la sua controimmagine tramite $ f $, i.e. $ f^{-1}(0) = X_{r}(n,m) $, è chiusa in $ M_{n,m}(\R) $.
+	} di minori $ m_{ij} \doteq \det(A_{ij}) $ di $ A $ di ordine $ r + 1 $, dove le $ A_{ij} $ sono le sottomatrici ricavate da $ A $ rimuovendo la $ i $-esima riga e la $ j $-esima colonna. Questa applicazione è continua perché è composizione di due applicazioni continue: l'applicazione che rimuove righe e colonne alla matrice $ A $ e il determinante di questa stessa matrice.\\
+	Una matrice $ A $ ha rango $ \rank(A) \leqslant r $ se e solo se tutti i minori di ordine $ r+1 $ sono nulli, dunque l'insieme $ X_{r}(n,m) $ è la controimmagine di $ 0 \in \R^{d} $ tramite l'applicazione continua $ f $: essendo $ 0 $ chiuso in $ \R^{d} $ perché $ \R^{d} $ è di Hausdorff, allora anche la sua controimmagine tramite l'applicazione continua $ f $, i.e. $ f^{-1}(0) = X_{r}(n,m) $, è chiusa in $ M_{n,m}(\R) $.
 \end{proof}
 
-Seguendo questo ragionamento, possiamo pensare a $ \phi(R) $ come l'intersezione dell'immagine dello spazio di Hausdorff $ \R^{n+1} \setminus \{0\} \times \R^{n+1} \setminus \{0\} $ tramite $ \phi $ con $ X_{1}(n+1,2) $, il quale è un chiuso, i.e.
+Seguendo questo ragionamento, possiamo pensare a $ \phi(R) $ come l'intersezione dell'immagine dello spazio di Hausdorff $ \R^{n+1} \setminus \{0\} \times \R^{n+1} \setminus \{0\} $ tramite $ \phi $ con l'insieme delle matrici a due colonne di rango unitario $ X_{1}(n+1,2) $, il quale è un chiuso, i.e.
 
 \begin{equation}
 	\phi(R) = X_{1}(n+1,2) \cap \phi(\R^{n+1} \setminus \{0\} \times \R^{n+1} \setminus \{0\})
