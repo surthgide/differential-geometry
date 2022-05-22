@@ -1127,10 +1127,7 @@ Perché $ \pi $ sia aperta, questa deve mandare aperti in aperti: sia l'aperto $
 
 che corrisponde al cono di rette passanti per l'origine individuato dai punti dell'aperto $ V $
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.45\textwidth,keepaspectratio]{img15}
-\end{figure}
+\img{0.45}{img15}
 
 Fissando $ \lambda $, l'insieme
 
@@ -1164,8 +1161,8 @@ Sapendo che la proiezione $ \pi $ è aperta, possiamo usare il fatto che l'insie
 sia chiuso in $ \R^{n+1} \setminus \{0\} \times \R^{n+1} \setminus \{0\} $ per dimostrare che il proiettivo reale sia anche $ T_{2} $.\\
 Per dimostrare che $ R $ sia chiuso, consideriamo l'applicazione
 
-\map{\phi}%
-	{\R^{n+1} \setminus \{0\} \times \R^{n+1} \setminus \{0\}}{M_{n+1,2}(\R) = \R^{2(n+1)}}%
+\map{\phi}
+	{\R^{n+1} \setminus \{0\} \times \R^{n+1} \setminus \{0\}}{M_{n+1,2}(\R) = \R^{2(n+1)}}
 	{(x,y)}{\bmqty{x & y}}
 
 che associa alle coppie di vettori\footnote{%
@@ -1328,8 +1325,8 @@ entrambi i cambi di carta sono lisci quindi $ \mathfrak{M} $ è un atlante diffe
 
 \subsection{Grassmanniana come varietà differenziabile}
 
-Siano $ k,n \in \N $ con $ k \leqslant n $, definisco la \textit{grassmanniana} $ G(k,n) $ come l'insieme di tutti i sottospazi vettoriali di $ \R^{n} $ di dimensione $ k $.\\
-Essendo $ \rp{n} $ l'insieme di tutti i sottospazi vettoriali di dimensione 1 (i.e. rette) di $ \R^{n+1} $, si ha che
+Siano $ k,n \in \N $ con $ k \leqslant n $, definiamo la \textit{grassmanniana} $ G(k,n) $ come l'insieme di tutti i sottospazi vettoriali di $ \R^{n} $ di dimensione $ k $.\\
+Essendo $ \rp{n} $ l'insieme di tutti i sottospazi vettoriali di dimensione unitaria (i.e. rette) di $ \R^{n+1} $, si ha che
 
 \begin{equation}
 	G(1,n) = \rp{n-1}
@@ -1341,17 +1338,17 @@ Vogliamo ora dotare la grassmanniana di una struttura di varietà differenziabil
 \begin{remark}
 	Un $ k $-spazio vettoriale\footnote{%
 		Cioè uno spazio vettoriale di dimensione $ k $.%
-	} $ S $ di $ \R^{n} $ è determinato da $ a_{1},\dots,a_{k} $ vettori linearmente indipendenti di $ \R^{n} $ quindi da una matrice $ A = \begin{bmatrix} a_{1} & \dots & a_{k} \end{bmatrix} \in M_{n,k}(\R^{n}) $ con rango $ \rank(A) = k $.
+	} $ S $ di $ \R^{n} $ è determinato da $ a_{1},\dots,a_{k} $ vettori linearmente indipendenti di $ \R^{n} $, quindi da una matrice $ A = \bmqty{ a_{1} & \dots & a_{k} } \in M_{n,k}(\R^{n}) $ con $ \rank(A) = k $.
 \end{remark}
 
 Due matrici $ A $ e $ B $ rappresentano lo stesso $ k $-spazio vettoriale se e solo se le colonne di una sono linearmente dipendenti dalle colonne dell'altra, i.e. $ B = A g $ dove $ g \in GL_{k}(\R) $ ($ g $ è invertibile), perciò le matrici $ A $ e $ B $ sono legate da una trasformazione lineare (o cambio di base) nello spazio generato dai vettori colonna che compongono le matrici.\\
-Consideriamo la relazione di equivalenza $ \sim $ sull'insieme
+Siano l'insieme delle matrici di $ n $ righe e $ k $ colonne di rango $ k $
 
 \begin{equation}
 	F(k,n) = \left\{ A \in M_{n,k}(\R) \st \rank(A) = k \right\} \subset M_{n,k}(\R) = \R^{nk}
 \end{equation}
 
-definita come
+e la relazione di equivalenza $ \sim $ definita come
 
 \begin{equation}
 	A \sim B \, \iff \, \E g \in GL_{k}(\R) \, \mid \, B = A g
@@ -1370,22 +1367,25 @@ L'intento è di dimostrare che $ G(k,n) $ sia una varietà differenziabile di di
 	\dim (G(k,n)) = k (n-k)
 \end{equation}
 
-Come primo passo associamo la topologia quoziente a $ \sfrac{F(k,n)}{\sim} $: l'insieme $ F(k,n) $ è un aperto in quanto il suo complementare
+Come primo passo, associamo la topologia quoziente\footnote{%
+	Vedi Esercizio \ref{es2-5}.%
+} a $ G(k,n) $: l'insieme $ F(k,n) $ è un aperto in quanto il suo complementare
 
 \begin{equation}
 	M_{n,k}(\R) \setminus F(k,n) = \left\{ A \in M_{n,k}(\R) \st \rank(A) \leqslant k \right\}
 \end{equation}
 
-è chiuso per il Lemma \ref{lemma-clos-matrix}.\\
-Per dimostrare che lo spazio $ G(k,n) $ sia $ N_{2} $, usiamo la Proposizione \ref{prop-n2}: $ F(k,n) $ è $ N_{2} $ in quanto sottospazio di $ M_{n,k}(\R) $ e la proiezione $ \pi : F(k,n) \to \sfrac{F(k,n)}{\sim} = G(k,n) $ è aperta (equivalentemente $ \sim $ è aperta).
+è chiuso per il Lemma \ref{lemma-clos-matrix}.
+
+\paragraph{Proprietà $ N_{2} $}
+
+Per dimostrare che lo spazio $ G(k,n) $ sia $ N_{2} $, usiamo la Proposizione \ref{prop-n2}: $ F(k,n) $ è $ N_{2} $ in quanto sottospazio di $ M_{n,k}(\R) $ e la proiezione $ \pi : F(k,n) \to G(k,n) $ è aperta (equivalentemente $ \sim $ è aperta).
 La dimostrazione che $ \pi $ sia aperta è analoga a quella per il proiettivo: preso un aperto, la sua immagine deve essere aperta, il quale si dimostra facendo vedere che la controimmagine di quest'ultima sia aperta.\\
 Sia $ V $ un aperto di $ F(k,n) $, possiamo scrivere
 
-\begin{align}
-	\begin{split}
-		\pi^{-1}(\pi(V)) = \bigcup_{g \in GL_{k}(\R)} V g
-	\end{split}
-\end{align}
+\begin{equation}
+	\pi^{-1}(\pi(V)) = \bigcup_{g \in GL_{k}(\R)} V g
+\end{equation}
 
 dove
 
@@ -1395,51 +1395,54 @@ dove
 
 Prendiamo l'applicazione
 
-\map{\phi_{g}}%
-	{F(k,n)}{F(k,n)}%
+\map{\phi_{g}}
+	{F(k,n)}{F(k,n)}
 	{A}{A g}
 
-questo è un omeomorfismo dunque $ \phi_{g}(V) = V g $ è un aperto perché $ V $ è aperto. Questo dimostra che $ \pi^{-1}(\pi(V)) $ sia aperto in quanto unione di aperti e quindi $ G(k,n) $ è $ N_{2} $.\\\\
-%
-Per dimostrare che lo spazio $ G(k,n) $ sia $ T_{2} $, usiamo la Proposizione \ref{prop-t2}: prendiamo l'insieme
+questo è un omeomorfismo dunque $ \phi_{g}(V) = V g $ è aperto perché $ V $ è aperto. Questo dimostra che $ \pi^{-1}(\pi(V)) $ è aperto in quanto unione di aperti e quindi $ G(k,n) $ è $ N_{2} $.
+
+\paragraph{Proprietà $ T_{2} $}
+
+Per dimostrare che lo spazio $ G(k,n) $ sia $ T_{2} $, usiamo la Proposizione \ref{prop-t2}: sia l'insieme
 
 \begin{equation}
-	R = \{ (A,B) \in F(k,n) \times F(k,n) \mid B = A g, \, g \in GL_{k}(\R) \}
+	R = \{ (A,B) \in F(k,n) \times F(k,n) \mid B = A g, \, g \in GL_{k}(\R) \} \subset F(k,n) \times F(k,n)
 \end{equation}
 
 per dimostrare che sia chiuso, consideriamo l'applicazione
 
-\map{\phi}%
-	{M_{n,k}(\R) \times M_{n,k}(\R)}{M_{n,2k}(\R)}%
-	{(A,B)}{\mqty(A & B)}
+\map{\phi}
+	{M_{n,k}(\R) \times M_{n,k}(\R)}{M_{n,2k}(\R)}
+	{(A,B)}{\pmqty{A & B}}
 
 cioè $ \phi $ "affianca" due matrici rendendole un'unica matrice con il doppio delle colonne.
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.6\textwidth,keepaspectratio]{img17}
-\end{figure}
+\sbs{0.35}{%
+			Essendo $ \phi $ un omeomorfismo, per dimostrare che $ R $ sia chiuso in $ F(k,n) \times F(k,n) $ basta dimostrare che $ \phi(R) $ sia chiuso in $ \phi(F(k,n) \times F(k,n)) $.
+			}
+	{0.6}{%
+			\img{0.9}{img17}
+			}
 
-Essendo $ \phi $ un omeomorfismo, per dimostrare che $ R $ sia chiuso in $ F(k,n) \times F(k,n) $, basta dimostrare che $ \phi(R) $ sia chiuso in $ \phi(F(k,n) \times F(k,n)) $.\\
 Dal Lemma \ref{lemma-clos-matrix} prendiamo la definizione del seguente insieme
 
 \begin{equation}
-	X_{r}(n,m) = \left\{ A \in M_{n,m}(\R) \st \rank(A) \leqslant r \, \wedge \, r \leqslant \min\{n,m\} \right\}
+	X_{r}(n,m) = \left\{ A \in M_{n,m}(\R) \st \rank(A) \leqslant r \right\} %
+	\qcomma r \leqslant \min\{n,m\}
 \end{equation}
 
-dunque l'immagine di $ R $ è pari a
+dunque l'immagine di $ R $ tramite $ \phi $ è pari a
 
 \begin{equation}
 	\phi(R) = \{ A \in M_{n,2k}(\R) \mid \rank(A) \leqslant k \} = \phi(F(k,n) \times F(k,n)) \cap X_{k}(n,2k)
 \end{equation}
 
-in quanto $ \phi(R) $ è l'insieme delle matrici $ n \times 2k $ le quali hanno rango al massimo uguale a $ k $ (in quanto formate da due matrici di rango $ k $ legate tra loro da $ g $). Essendo $ X_{k}(n,2k) $ chiuso, allora anche $ \phi(R) $ è chiuso in $ \phi(F(k,n) \times F(k,n)) $ e dunque $ R $ è chiuso in $ F(k,n) \times F(k,n) $, dimostrando che $ G(k,n) $ è $ T_{2} $.\\
-Vedi Esercizio \ref{es2-5}. \textbf{l 9 m 28.20}
+in quanto $ \phi(R) $ è l'insieme delle matrici $ n \times 2k $ le quali hanno rango al massimo uguale a $ k $, in quanto formate da due matrici di rango $ k $ legate tra loro da $ g $. Essendo $ X_{k}(n,2k) $ chiuso, allora anche $ \phi(R) $ è chiuso in $ \phi(F(k,n) \times F(k,n)) $ e dunque $ R $ è chiuso in $ F(k,n) \times F(k,n) $. Questo dimostra che $ G(k,n) $ è $ T_{2} $.
 
 \subsubsection{Calcolo esplicito per $ G(2,4) $}
 
-Mostriamo ora che $ G(k,n) $ sia una varietà differenziabile per $ k=2 $ e $ n=4 $ (il ragionamento è analogo per altri valori di $ k $ e $ n $); la dimensione è $ \dim(G(2,4)) = 2(4-2) = 4 $.\\
-Consideriamo gli aperti di $ G(2,4) $
+A titolo di esempio, mostriamo ora che $ G(k,n) $ è una varietà differenziabile per $ k=2 $ e $ n=4 $ (il ragionamento è analogo per altri valori di $ k $ e $ n $); in questo caso $ \dim(G(2,4)) = 2(4-2) = 4 $.\\
+Siano gli aperti di $ G(2,4) $
 
 \begin{equation}
 	U_{ij} = \left\{ [A] \in G(2,4) \st A_{ij} \in GL_{2}(\R) \right\}
@@ -1448,28 +1451,28 @@ Consideriamo gli aperti di $ G(2,4) $
 i.e. $ A_{ij} $ è invertibile, dove $ A_{ij} $ è la matrice quadrata $ 2 \times 2 $ che si ottiene considerando le righe $ i $ e $ j $ di $ A $, i.e.
 
 \begin{equation}
-	[A] = \left[ \mqty( a_{11} & a_{12} \\ a_{21} & a_{22} \\ a_{31} & a_{32} \\ a_{41} & a_{42} ) \right] \quad \longrightarrow \quad%
+	[A] = \left[ \pmqty{ a_{11} & a_{12} \\ a_{21} & a_{22} \\ a_{31} & a_{32} \\ a_{41} & a_{42} } \right] \quad \longrightarrow \quad%
 	\begin{cases}
-		A_{12} = \mqty( a_{11} & a_{12} \\ a_{21} & a_{22} ) & A_{23} = \mqty( a_{21} & a_{22} \\ a_{31} & a_{32} )\\\\
+		A_{12} = \pmqty{ a_{11} & a_{12} \\ a_{21} & a_{22} } & A_{23} = \pmqty{ a_{21} & a_{22} \\ a_{31} & a_{32} }\\\\
 		%
-		A_{13} = \mqty( a_{11} & a_{12} \\ a_{31} & a_{32} ) & A_{24} = \mqty( a_{21} & a_{22} \\ a_{41} & a_{42} )\\\\
+		A_{13} = \pmqty{ a_{11} & a_{12} \\ a_{31} & a_{32} } & A_{24} = \pmqty{ a_{21} & a_{22} \\ a_{41} & a_{42} }\\\\
 		%
-		A_{14} = \mqty( a_{11} & a_{12} \\ a_{41} & a_{42} ) & A_{34} = \mqty( a_{31} & a_{32} \\ a_{41} & a_{42} )
+		A_{14} = \pmqty{ a_{11} & a_{12} \\ a_{41} & a_{42} } & A_{34} = \pmqty{ a_{31} & a_{32} \\ a_{41} & a_{42} }
 	\end{cases}
 \end{equation}
 
-Preso $ B = A g $ (i.e. $ A \sim B $), abbiamo che $ A_{ij} $ è invertibile se e solo se $ B_{ij} $ è invertibile
+Considerando $ B = A g $ (i.e. $ A \sim B $), abbiamo che $ A_{ij} $ è invertibile se e solo se $ B_{ij} $ è invertibile
 
 \begin{align}
 	\begin{split}
 		A g &= B\\
-		\mqty( a_{11} & a_{12} \\ a_{21} & a_{22} \\ a_{31} & a_{32} \\ a_{41} & a_{42} ) \mqty( g_{11} & g_{12} \\ g_{21} & g_{22} ) &= \mqty( b_{11} & b_{12} \\ b_{21} & b_{22} \\ b_{31} & b_{32} \\ b_{41} & b_{42} )\\
-		\mqty( a_{11} g_{11} + a_{12} g_{21} & a_{11} g_{12} + a_{12} g_{22} \\ a_{21} g_{11} + a_{22} g_{21} & a_{21} g_{12} + a_{22} g_{22} \\ a_{31} g_{11} + a_{32} g_{21} & a_{31} g_{12} + a_{32} g_{22} \\ a_{41} g_{11} + a_{42} g_{21} & a_{41} g_{12} + a_{42} g_{22} ) &= \mqty( b_{11} & b_{12} \\ b_{21} & b_{22} \\ b_{31} & b_{32} \\ b_{41} & b_{42} )
+		\pmqty{ a_{11} & a_{12} \\ a_{21} & a_{22} \\ a_{31} & a_{32} \\ a_{41} & a_{42} } \pmqty{ g_{11} & g_{12} \\ g_{21} & g_{22} } &= \pmqty{ b_{11} & b_{12} \\ b_{21} & b_{22} \\ b_{31} & b_{32} \\ b_{41} & b_{42} }\\
+		\pmqty{ a_{11} g_{11} + a_{12} g_{21} & a_{11} g_{12} + a_{12} g_{22} \\ a_{21} g_{11} + a_{22} g_{21} & a_{21} g_{12} + a_{22} g_{22} \\ a_{31} g_{11} + a_{32} g_{21} & a_{31} g_{12} + a_{32} g_{22} \\ a_{41} g_{11} + a_{42} g_{21} & a_{41} g_{12} + a_{42} g_{22} } &= \pmqty{ b_{11} & b_{12} \\ b_{21} & b_{22} \\ b_{31} & b_{32} \\ b_{41} & b_{42} }
 	\end{split}
 \end{align}
 
 perciò $ A_{ij} g = B_{ij} $ e dunque la scelta del rappresentante di $ [A] $ è irrilevante.\\
-Gli insiemi $ U_{ij} $ sono aperti in quanto immagini di aperti $ V_{ij} $ tramite la proiezione $ U_{ij} = \pi(V_{ij}) $, dove
+Gli insiemi $ U_{ij} $ sono aperti in quanto immagini di aperti $ V_{ij} $ tramite la proiezione $ U_{ij} = \pi(V_{ij}) $, dove 
 
 \begin{equation}
 	V_{ij} = \left\{ A \in F(2,4) \st A_{ij} \in GL_{2}(\R) \right\}
@@ -1491,14 +1494,11 @@ in quanto l'unione degli $ V_{ij} $ è un ricoprimento di $ F(2,4) $
 perché una matrice, per essere di rango $ k=2 $ e quindi appartenere a $ F(2,4) $, deve avere i suoi minori $ m_{ij} = \det(V_{ij}) $ di ordine 2 diversi da zero.\\
 Per costruire le carte dell'atlante, consideriamo l'applicazione
 
-\begin{align}
-	\begin{split}
-		\phi_{12} : U_{12} &\to M_{2}(\R) = \R^{4}\\
-		[A] &\mapsto A_{34} (A_{12})^{-1}
-	\end{split}
-\end{align}
+\map{\phi_{12}}
+	{U_{12}}{M_{2}(\R) = \R^{4}}
+	{[A]}{A_{34} (A_{12})^{-1}}
 
-la quale è ben definita in quanto, se considerassimo un rappresentante diverso $ B = A g $, avremmo che $ B_{34} = A_{34} g $ e $ B_{12} = A_{12} g $, dunque
+la quale è ben definita in quanto, se considerassimo un rappresentante diverso $ B = A g $, avremmo che $ B_{34} = A_{34} g $ e $ B_{12} = A_{12} g $, da cui
 
 \begin{align}
 	\begin{split}
@@ -1508,31 +1508,32 @@ la quale è ben definita in quanto, se considerassimo un rappresentante diverso 
 	\end{split}
 \end{align}
 
-Le altre applicazioni sono analoghe, dunque
+Le altre applicazioni sono analoghe, perciò
 
-\begin{align}
-	\begin{split}
-		\phi_{ij} : U_{ij} &\to M_{2}(\R) = \R^{4}\\
-		[A] &\mapsto A_{lm} (A_{ij})^{-1}
-	\end{split}
-\end{align}
+\map{\phi_{ij}}
+	{U_{ij}}{M_{2}(\R) = \R^{4}}
+	{[A]}{A_{lm} (A_{ij})^{-1}}
 
 dove $ \{i,j,l,m\}=\{1,2,3,4\} $.\\
-Verifichiamo che le $ \phi_{ij} $ siano omeomorfismi, prendendo come esempio $ \phi_{12} $, dimostrando che sia continua e con inversa continua. La continuità è data dal seguente diagramma
+Verifichiamo che le $ \phi_{ij} $ siano omeomorfismi prendendo come esempio $ \phi_{12} $: dimostriamo che questa è continua e con inversa continua. La continuità è data dal seguente diagramma
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.3\textwidth,keepaspectratio]{img18}
+	\begin{tikzcd}
+		V_{12} \arrow[rr, "\psi_{12}"] \arrow[dd, "\pi"'] &  & \R^{4} \\
+		&  &        \\
+		U_{12} \arrow[rruu, "\phi_{12}"']                 &  &       
+	\end{tikzcd}
 \end{figure}
 
 dove $ \psi_{12}(A) = A_{34} (A_{12})^{-1} $ è continua e costante sulle classe di equivalenza.\\
 La sua inversa è
 
-\map{(\phi_{12})^{-1}}%
-	{M_{2}(\R) = \R^{4}}{U_{12}}%
-	{\mqty( c_{11} & c_{12} \\ c_{21} & c_{22} )}{\left[ \mqty( 1 & 0 \\ 0 & 1 \\ c_{11} & c_{12} \\ c_{21} & c_{22} ) \right]}
+\map{(\phi_{12})^{-1}}
+	{M_{2}(\R) = \R^{4}}{U_{12}}
+	{\pmqty{ c_{11} & c_{12} \\ c_{21} & c_{22} }}{\left[ \pmqty{ 1 & 0 \\ 0 & 1 \\ c_{11} & c_{12} \\ c_{21} & c_{22} } \right]}
 
-perché
+poiché
 
 \begin{equation}
 	\phi_{12} \circ (\phi_{12})^{-1} = \id_{\R^{4}}
@@ -1540,17 +1541,12 @@ perché
 
 e dall'altro lato
 
-\begin{align}
-	\begin{split}
-		((\phi_{12})^{-1} \circ \phi_{12})([A]) &= (\phi_{12})^{-1}(A_{34} (A_{12})^{-1})\\
-		&= \left[ \mqty( \id_{2 \times 2} \\ A_{34} (A_{12})^{-1} ) \right]\\
-		&= \left[ \mqty( A_{12} \\ A_{34} ) \right]\\
-		&= [A]
-	\end{split}
-\end{align}
+\begin{equation}
+	((\phi_{12})^{-1} \circ \phi_{12})([A]) = (\phi_{12})^{-1}(A_{34} (A_{12})^{-1}) = \left[ \mqty{ \id_{2 \times 2} \\ A_{34} (A_{12})^{-1} } \right] = \left[ \mqty{ A_{12} \\ A_{34} } \right] = [A]
+\end{equation}
 
-dunque anche
-
+perciò anche
+%
 \begin{equation}
 	(\phi_{12})^{-1} \circ \phi_{12} = \id_{U_{12}}
 \end{equation}
@@ -1562,37 +1558,35 @@ L'inversa è continua perché composizione di due funzioni continue
 \end{equation}
 
 dove
+%
+\map{(\psi_{12})^{-1}}
+	{\R^{4}}{\R^{8}}
+	{\pmqty{ c_{11} & c_{12} \\ c_{21} & c_{22} }}{\pmqty{ 1 & 0 \\ 0 & 1 \\ c_{11} & c_{12} \\ c_{21} & c_{22} }}
 
-\map{(\psi_{12})^{-1}}%
-	{\R^{4}}{\R^{8}}%
-	{\mqty( c_{11} & c_{12} \\ c_{21} & c_{22} )}{\mqty( 1 & 0 \\ 0 & 1 \\ c_{11} & c_{12} \\ c_{21} & c_{22} )}
+Questo mostra l'esistenza di un atlante topologico $ \mathfrak{M} = \{(U_{ij},\phi_{ij})\}_{i,j=1,\dots,4} $ per $ G(2,4) $: affinché questo atlante sia differenziabile, prendiamo ad esempio i cambi di carte relativi a $ \phi_{12} $ e $ \phi_{13} $)
+%
+\begin{gather}
+	\phi_{12} \circ (\phi_{13})^{-1} : \phi_{13} (U_{12} \cap U_{13}) \to \phi_{12} (U_{12} \cap U_{13})\\
+	\phi_{13} \circ (\phi_{12})^{-1} : \phi_{12} (U_{12} \cap U_{13}) \to \phi_{13} (U_{12} \cap U_{13})
+\end{gather}
 
-Questo mostra l'esistenza di un atlante topologico $ \mathfrak{M} = \{(U_{ij},\phi_{ij})\}_{i,j=1,\dots,4} $ per $ G(2,4) $: affinché questo atlante sia differenziabile, mostriamo che i cambi di carte (e.g. $ \phi_{12} $ e $ \phi_{13} $)
-
+e mostriamo che siano lisci:
+%
 \begin{align}
 	\begin{split}
-		\phi_{12} \circ (\phi_{13})^{-1} : \phi_{13} (U_{12} \cap U_{13}) \to \phi_{12} (U_{12} \cap U_{13})\\
-		\phi_{13} \circ (\phi_{12})^{-1} : \phi_{12} (U_{12} \cap U_{13}) \to \phi_{13} (U_{12} \cap U_{13})
-	\end{split}
-\end{align}
-
-siano lisci
-
-\begin{align}
-	\begin{split}
-		(\phi_{13} \circ (\phi_{12})^{-1}) (C) &= \left( \mqty( c_{11} & c_{12} \\ c_{21} & c_{22} ) \right)\\\\
-		&= \phi_{13} \left( \left[ \mqty( 1 & 0 \\ 0 & 1 \\ c_{11} & c_{12} \\ c_{21} & c_{22} ) \right] \right)\\\\
-		&= \mqty( 0 & 1 \\ c_{21} & c_{22} ) \mqty( 1 & 0 \\ c_{11} & c_{12} )^{-1}\\\\
-		&= \mqty( 0 & 1 \\ c_{21} & c_{22} ) \dfrac{1}{c_{12}} \mqty( c_{12} & 0 \\ -c_{11} & 1 )\\\\
-		&= \dfrac{1}{c_{12}} \mqty( -c_{11} & 1 \\ c_{12} c_{21} - c_{11} c_{22} & c_{22} )\\\\
-		&= \dfrac{1}{c_{12}} \mqty( -c_{11} & 1 \\ -\det(C) & c_{22} )
+		(\phi_{13} \circ (\phi_{12})^{-1}) (C) &= (\phi_{13} \circ (\phi_{12})^{-1}) \left( \pmqty{ c_{11} & c_{12} \\ c_{21} & c_{22} } \right)\\\\
+		&= \phi_{13} \left( \left[ \pmqty{ 1 & 0 \\ 0 & 1 \\ c_{11} & c_{12} \\ c_{21} & c_{22} } \right] \right)\\\\
+		&= \pmqty{ 0 & 1 \\ c_{21} & c_{22} } \pmqty{ 1 & 0 \\ c_{11} & c_{12} }^{-1}\\\\
+		&= \pmqty{ 0 & 1 \\ c_{21} & c_{22} } \dfrac{1}{c_{12}} \pmqty{ c_{12} & 0 \\ -c_{11} & 1 }\\\\
+		&= \dfrac{1}{c_{12}} \pmqty{ -c_{11} & 1 \\ c_{12} c_{21} - c_{11} c_{22} & c_{22} }\\\\
+		&= \dfrac{1}{c_{12}} \pmqty{ -c_{11} & 1 \\ -\det(C) & c_{22} }
 	\end{split}
 \end{align}
 
 dove $ c_{12} \neq 0 $ in quanto $ \det(C_{13}) = c_{12} $ e questa deve essere invertibile, abbiamo dunque
 
-\map{\phi_{13} \circ (\phi_{12})^{-1}}%
-	{\R^{4}}{\R^{4}}%
+\map{\phi_{13} \circ (\phi_{12})^{-1}}
+	{\R^{4}}{\R^{4}}
 	{C = (c_{11}, c_{12}, c_{21}, c_{22})}{\dfrac{1}{c_{12}} (-c_{11}, 1, -\det(C), c_{22})}
 
 la quale ha ogni componente liscia, proprio perché $ c_{12} \neq 0 $. Il ragionamento è analogo per gli altri cambi di carte: questo dimostra che $ \mathfrak{M} = \{(U_{ij},\phi_{ij})\}_{i,j=1,\dots,4} $ è un atlante differenziabile per $ G(2,4) $ e dunque esiste un atlante massimale che lo contiene il quale dota $ G(2,4) $ di struttura di varietà differenziabile.
