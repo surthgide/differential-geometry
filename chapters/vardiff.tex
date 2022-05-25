@@ -1163,23 +1163,23 @@ Per dimostrare che $ R $ sia chiuso, consideriamo l'applicazione
 
 \map{\phi}
 	{\R^{n+1} \setminus \{0\} \times \R^{n+1} \setminus \{0\}}{M_{n+1,2}(\R) = \R^{2(n+1)}}
-	{(x,y)}{\bmqty{x & y}}
+	{(x,y)}{\pmqty{x & y}}
 
 che associa alle coppie di vettori\footnote{%
 	Possiamo parlare di vettori invece che di punti perché $ T_{p}(\R^{n}) = \R^{n} $.%
 } $ (x,y) $ le matrici con $ (n+1) $ righe e $ 2 $ colonne costituite dai vettori $ x $ e $ y $ posti in colonne affiancate, i.e.
 
 \begin{equation}
-	x = \bmqty{x^{1} \\ \vdots \\ x^{n+1}} , \, y = \bmqty{y^{1} \\ \vdots \\ y^{n+1}} %
+	x = \pmqty{x^{1} \\ \vdots \\ x^{n+1}} , \, y = \pmqty{y^{1} \\ \vdots \\ y^{n+1}} %
 	\quad \longmapsto \quad%
-	\bmqty{x & y} = \bmqty{x^{1} & y^{1} \\ \vdots & \vdots \\ x^{n+1} & y^{n+1}}
+	\pmqty{x & y} = \pmqty{x^{1} & y^{1} \\ \vdots & \vdots \\ x^{n+1} & y^{n+1}}
 \end{equation}
 
 L'applicazione $ \phi $ è un omeomorfismo perché la topologia prodotto di spazi euclidei coincide con la topologia euclidea, i.e. $ \R^{n} \times \R^{m} \simeq \R^{n+m} $ e quindi sono topologicamente equivalenti (ogni aperto di uno è aperto dell'altro).\\
 A questo punto, dimostrando che l'immagine di $ R $ tramite $ \phi $ è un chiuso in $ M_{n+1,2}(\R) $, otterremo che il proiettivo reale è di Hausdorff. L'insieme in questione è il seguente
 
 \begin{equation}
-	\phi(R) = \left\{ \mqty[x & y] \in M_{n+1,2}(\R) \st \rank \left( \mqty[x & y] \right) = 1 \right\}
+	\phi(R) = \left\{ \pmqty{x & y} \in M_{n+1,2}(\R) \st \rank \left( \pmqty{x & y} \right) = 1 \right\}
 \end{equation}
 
 La condizione per cui il rango delle matrici di questo insieme è unitario è dovuta al fatto che queste matrici hanno le due colonne proporzionali tra loro, in quanto $ y= \lambda x $ con $ \lambda \in \R $.
@@ -1338,10 +1338,10 @@ Vogliamo ora dotare la grassmanniana di una struttura di varietà differenziabil
 \begin{remark}
 	Un $ k $-spazio vettoriale\footnote{%
 		Cioè uno spazio vettoriale di dimensione $ k $.%
-	} $ S $ di $ \R^{n} $ è determinato da $ a_{1},\dots,a_{k} $ vettori linearmente indipendenti di $ \R^{n} $, quindi da una matrice $ A = \bmqty{ a_{1} & \dots & a_{k} } \in M_{n,k}(\R^{n}) $ con $ \rank(A) = k $.
+	} $ S $ di $ \R^{n} $ è determinato da $ a_{1},\dots,a_{k} $ vettori linearmente indipendenti di $ \R^{n} $, quindi da una matrice $ A = \pmqty{ a_{1} & \cdots & a_{k} } \in M_{n,k}(\R^{n}) $ di rango $ k $.
 \end{remark}
 
-Due matrici $ A $ e $ B $ rappresentano lo stesso $ k $-spazio vettoriale se e solo se le colonne di una sono linearmente dipendenti dalle colonne dell'altra, i.e. $ B = A g $ dove $ g \in GL_{k}(\R) $ ($ g $ è invertibile), perciò le matrici $ A $ e $ B $ sono legate da una trasformazione lineare (o cambio di base) nello spazio generato dai vettori colonna che compongono le matrici.\\
+Due matrici $ A $ e $ B $ rappresentano lo stesso $ k $-spazio vettoriale se e solo se le colonne di una sono linearmente dipendenti dalle colonne dell'altra, i.e. $ B = A g $ dove $ g \in GL_{k}(\R) $ ($ g $ è invertibile), perciò le matrici $ A $ e $ B $ sono legate da una trasformazione lineare (detta anche \textit{cambio di base}) nello spazio generato dai vettori colonna che compongono le matrici.\\
 Siano l'insieme delle matrici di $ n $ righe e $ k $ colonne di rango $ k $
 
 \begin{equation}
@@ -1372,7 +1372,7 @@ Come primo passo, associamo la topologia quoziente\footnote{%
 } a $ G(k,n) $: l'insieme $ F(k,n) $ è un aperto in quanto il suo complementare
 
 \begin{equation}
-	M_{n,k}(\R) \setminus F(k,n) = \left\{ A \in M_{n,k}(\R) \st \rank(A) \leqslant k \right\}
+	M_{n,k}(\R) \setminus F(k,n) = \left\{ A \in M_{n,k}(\R) \st \rank(A) \leqslant k - 1 \right\} = X_{k-1} (n,k)
 \end{equation}
 
 è chiuso per il Lemma \ref{lemma-clos-matrix}.
@@ -1451,7 +1451,7 @@ Siano gli aperti di $ G(2,4) $
 i.e. $ A_{ij} $ è invertibile, dove $ A_{ij} $ è la matrice quadrata $ 2 \times 2 $ che si ottiene considerando le righe $ i $ e $ j $ di $ A $, i.e.
 
 \begin{equation}
-	[A] = \left[ \pmqty{ a_{11} & a_{12} \\ a_{21} & a_{22} \\ a_{31} & a_{32} \\ a_{41} & a_{42} } \right] \quad \longrightarrow \quad%
+	[A] = \left[ \pmqty{ a_{11} & a_{12} \\ a_{21} & a_{22} \\ a_{31} & a_{32} \\ a_{41} & a_{42} } \right] \quad \longrightarrow \quad %
 	\begin{cases}
 		A_{12} = \pmqty{ a_{11} & a_{12} \\ a_{21} & a_{22} } & A_{23} = \pmqty{ a_{21} & a_{22} \\ a_{31} & a_{32} }\\\\
 		%
@@ -1508,7 +1508,7 @@ la quale è ben definita in quanto, se considerassimo un rappresentante diverso 
 	\end{split}
 \end{align}
 
-Le altre applicazioni sono analoghe, perciò
+Le altre applicazioni sono analoghe:
 
 \map{\phi_{ij}}
 	{U_{ij}}{M_{2}(\R) = \R^{4}}
@@ -1526,8 +1526,14 @@ Verifichiamo che le $ \phi_{ij} $ siano omeomorfismi prendendo come esempio $ \p
 	\end{tikzcd}
 \end{figure}
 
-dove $ \psi_{12}(A) = A_{34} (A_{12})^{-1} $ è continua e costante sulle classe di equivalenza.\\
-La sua inversa è
+dove l'applicazione
+
+\map{\psi_{12}}
+	{U_{12}}{M_{2}(\R) = \R^{4}}
+	{A}{A_{34} (A_{12})^{-1}}
+
+è continua e costante sulle classi di equivalenza.\\
+L'inversa di $ \phi_{12} $ è
 
 \map{(\phi_{12})^{-1}}
 	{M_{2}(\R) = \R^{4}}{U_{12}}
@@ -1535,43 +1541,42 @@ La sua inversa è
 
 poiché
 
-\begin{equation}
-	\phi_{12} \circ (\phi_{12})^{-1} = \id_{\R^{4}}
-\end{equation}
-
-e dall'altro lato
-
-\begin{equation}
-	((\phi_{12})^{-1} \circ \phi_{12})([A]) = (\phi_{12})^{-1}(A_{34} (A_{12})^{-1}) = \left[ \mqty{ \id_{2 \times 2} \\ A_{34} (A_{12})^{-1} } \right] = \left[ \mqty{ A_{12} \\ A_{34} } \right] = [A]
-\end{equation}
-
-perciò anche
-%
-\begin{equation}
+\begin{gather}
+	\phi_{12} \circ (\phi_{12})^{-1} = \id_{\R^{4}}\\
 	(\phi_{12})^{-1} \circ \phi_{12} = \id_{U_{12}}
-\end{equation}
+\end{gather}
 
-L'inversa è continua perché composizione di due funzioni continue
+in quanto\footnote{%
+	Il simbolo $ \bigone_{n \times m} $ indica la matrice identità di $ M_{n,m}(\R) $.%
+}
+
+\begin{gather}
+	(\phi_{12} \circ (\phi_{12})^{-1})(A) = \phi_{12} \left( \pmqty{ \bigone_{2 \times 2} \\ A } \right) = A (\bigone_{2 \times 2})^{-1} = A\\\\
+	%
+	((\phi_{12})^{-1} \circ \phi_{12})([A]) = (\phi_{12})^{-1}(A_{34} (A_{12})^{-1}) = \left[ \pmqty{ \bigone_{2 \times 2} \\ A_{34} (A_{12})^{-1} } \right] = \left[ \pmqty{ A_{12} \\ A_{34} } \right] = [A]
+\end{gather}
+
+L'inversa è continua perché composizione di funzioni continue
 
 \begin{equation}
 	(\phi_{12})^{-1} = (\psi_{12} \circ \pi^{-1})^{-1} = \pi \circ (\psi_{12})^{-1}
 \end{equation}
 
 dove
-%
+
 \map{(\psi_{12})^{-1}}
 	{\R^{4}}{\R^{8}}
 	{\pmqty{ c_{11} & c_{12} \\ c_{21} & c_{22} }}{\pmqty{ 1 & 0 \\ 0 & 1 \\ c_{11} & c_{12} \\ c_{21} & c_{22} }}
 
-Questo mostra l'esistenza di un atlante topologico $ \mathfrak{M} = \{(U_{ij},\phi_{ij})\}_{i,j=1,\dots,4} $ per $ G(2,4) $: affinché questo atlante sia differenziabile, prendiamo ad esempio i cambi di carte relativi a $ \phi_{12} $ e $ \phi_{13} $)
-%
+Questo mostra l'esistenza di un atlante topologico $ \mathfrak{M} = \{(U_{ij},\phi_{ij})\}_{i,j=1,\dots,4} $ per $ G(2,4) $: affinché questo atlante sia differenziabile, prendiamo ad esempio i cambi di carte relativi a $ \phi_{12} $ e $ \phi_{13} $
+
 \begin{gather}
 	\phi_{12} \circ (\phi_{13})^{-1} : \phi_{13} (U_{12} \cap U_{13}) \to \phi_{12} (U_{12} \cap U_{13})\\
 	\phi_{13} \circ (\phi_{12})^{-1} : \phi_{12} (U_{12} \cap U_{13}) \to \phi_{13} (U_{12} \cap U_{13})
 \end{gather}
 
 e mostriamo che siano lisci:
-%
+
 \begin{align}
 	\begin{split}
 		(\phi_{13} \circ (\phi_{12})^{-1}) (C) &= (\phi_{13} \circ (\phi_{12})^{-1}) \left( \pmqty{ c_{11} & c_{12} \\ c_{21} & c_{22} } \right)\\\\
@@ -1587,9 +1592,9 @@ dove $ c_{12} \neq 0 $ in quanto $ \det(C_{13}) = c_{12} $ e questa deve essere 
 
 \map{\phi_{13} \circ (\phi_{12})^{-1}}
 	{\R^{4}}{\R^{4}}
-	{C = (c_{11}, c_{12}, c_{21}, c_{22})}{\dfrac{1}{c_{12}} (-c_{11}, 1, -\det(C), c_{22})}
+	{(c_{11}, c_{12}, c_{21}, c_{22})}{\dfrac{1}{c_{12}} (-c_{11}, 1, -\det(C), c_{22})}
 
-la quale ha ogni componente liscia, proprio perché $ c_{12} \neq 0 $. Il ragionamento è analogo per gli altri cambi di carte: questo dimostra che $ \mathfrak{M} = \{(U_{ij},\phi_{ij})\}_{i,j=1,\dots,4} $ è un atlante differenziabile per $ G(2,4) $ e dunque esiste un atlante massimale che lo contiene il quale dota $ G(2,4) $ di struttura di varietà differenziabile.
+la quale ha ogni componente liscia, proprio perché $ c_{12} \neq 0 $; il cambio di carte inverso $ \phi_{12} \circ (\phi_{13})^{-1} $ produce lo stesso risultata. Il ragionamento è analogo per gli altri cambi di carte: questo dimostra che $ \mathfrak{M} = \{(U_{ij},\phi_{ij})\}_{i,j=1,\dots,4} $ è un atlante differenziabile per $ G(2,4) $ e dunque esiste un atlante massimale che lo contiene il quale dota $ G(2,4) $ di struttura di varietà differenziabile.
 
 \section{Funzioni lisce su e tra varietà differenziabili}
 
