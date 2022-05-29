@@ -10,8 +10,8 @@
 
 Per la funzione
 
-\map{f_{k}}%
-	{\R}{\R}%
+\map{f_{k}}
+	{\R}{\R}
 	{x}{\alpha x^{k(k+2)/(k+1)} + \beta}
 	
 per $ \forall \alpha,\beta \in \R $ e con $ k \in \N $, vale $ f_{k} \in C^{k}(\R) $ ma $ f_{k} \notin C^{k+1}(\R) $.
@@ -83,20 +83,20 @@ La funzione non è però reale analitica perché, in un intervallo aperto qualsi
 
 Consideriamo le applicazioni:
 
-\map{f}%
-	{(a,b)}{(0,1)}%
+\map{f}
+	{(a,b)}{(0,1)}
 	{x}{\dfrac{x-a}{b-a}}
 
-\map{g}%
-	{(0,1)}{(c,+\infty)}%
+\map{g}
+	{(0,1)}{(c,+\infty)}
 	{x}{\dfrac{c}{x}}
 	
-\map{h}%
-	{(0,1)}{(-\infty,d)}%
+\map{h}
+	{(0,1)}{(-\infty,d)}
 	{x}{\ln(x)-d}
 	
-\map{i}%
-	{(c,+\infty)}{\R}%
+\map{i}
+	{(c,+\infty)}{\R}
 	{x}{\ln(x-c)}
 
 Queste sono diffeomorfismi in quanto bigezioni lisce con inversa liscia, dunque le loro composizioni sono ancora diffeomorfismi. Le seguenti composizioni delle applicazioni sopraccitate inducono i seguenti diffeomorfismi:
@@ -123,8 +123,8 @@ Queste sono diffeomorfismi in quanto bigezioni lisce con inversa liscia, dunque 
 \begin{tcolorbox}
 	Dimostrare che l'applicazione
 	
-	\map{h}%
-		{B_{1}(0)}{\R^{n}}%
+	\map{h}
+		{B_{1}(0)}{\R^{n}}
 		{x}{\left( \dfrac{x^{1}}{\sqrt{1 - \norm{x}^{2}}}, \cdots, \dfrac{x^{n}}{\sqrt{1 - \norm{x}^{2}}} \right)}
 	
 	definisce un diffeomorfismo tra la palla aperta unitaria centrata nell'origine di $ \R^{n} $ e $ \R^{n} $. Dedurre che la palla aperta di centro $ c \in \R^{n} $ e raggio $ r > 0 $ in $ \R^{n} $ è diffeomorfa a $ \R^{n} $.
@@ -138,21 +138,21 @@ L'applicazione $ h $ è una bigezione liscia in quanto ogni sua componente è li
 
 La sua inversa
 
-\map{h^{-1}}%
-	{\R^{n}}{B_{1}(0)}%
+\map{h^{-1}}
+	{\R^{n}}{B_{1}(0)}
 	{x}{\left( \dfrac{x^{1}}{\sqrt{1 + \norm{x}^{2}}}, \cdots, \dfrac{x^{n}}{\sqrt{1 + \norm{x}^{2}}} \right)}
 	
 è ancora liscia per lo stesso motivo, dunque $ h $ induce il diffeomorfismo $ B_{1}(0) \simeq \R^{n} $.\\
 Se consideriamo l'applicazione lineare (dunque liscia con inversa liscia e perciò diffeomorfismo)
 
-\map{g}%
-	{B_{r}(c)}{B_{1}(0)}%
+\map{g}
+	{B_{r}(c)}{B_{1}(0)}
 	{x}{\dfrac{x-c}{r}}
 	
 con $ c = (c^{1},\dots,c^{n}) $, e la componiamo con $ h $, otteniamo
 
-\map{f = h \circ g}%
-	{B_{r}(c)}{\R^{n}}%
+\map{f = h \circ g}
+	{B_{r}(c)}{\R^{n}}
 	{x}{\left( \dfrac{\dfrac{x^{1} - c^{1}}{r}}{\sqrt{1 + \norm{\dfrac{x-c}{r}}^{2}}}, \cdots, \dfrac{\dfrac{x^{n} - c^{n}}{r}}{\sqrt{1 + \norm{\dfrac{x-c}{r}}^{2}}} \right)}
 
 L'applicazione $ f $ è un diffeomorfismo in quanto composizione di diffeomorfismi, dunque $ f $ induce il diffeomorfismo $ B_{r}(c) \simeq \R^{n} $.
@@ -248,12 +248,12 @@ qui
 
 L'algebra $ A = (C_{p}^{\infty}(\R^{n}),+,\cdot) $ ha le operazioni definite come segue:
 
-\map{+}%
-	{A \times A}{A}%
+\map{+}
+	{A \times A}{A}
 	{([(f,U)],[(g,V)])}{[(f+g,U \cap V)]}
 	
-\map{\cdot}%
-	{A \times A}{A}%
+\map{\cdot}
+	{A \times A}{A}
 	{([(f,U)],[(g,V)])}{[(f g,U \cap V)]}
 
 Perché sia effettivamente un'algebra, verifichiamo che sia distributiva e omogenea.\\
@@ -270,7 +270,7 @@ Per la distributività sinistra:
 \end{align}
 
 per $ \forall [(f,U)], [(g,V)], [(h,W)] \in C_{p}^{\infty}(\R^{n}) $.\\
-La distributività destra deriva immediatamente dalla distributività sinistra e dalla commutatività (condizione non necessaria per un'algebra): quest'ultima può essere verificata tramite i seguenti passaggi:
+La distributività destra deriva immediatamente dalla distributività sinistra e dalla commutatività (condizione non necessaria per un'algebra): quest'ultima può essere verificata tramite i seguenti passaggi
 
 \begin{align}
 	\begin{split}
@@ -1080,7 +1080,89 @@ Vedi Dimostrazione \ref{solved-es2-4}.
 	Dimostrare che la Grassmanniana $ G(k,n) $ è uno spazio topologico connesso e compatto.
 \end{tcolorbox}
 
-\textbf{l 9 m 28.20}
+\paragraph{Connessione}
+
+Siccome il quoziente preserva la proprietà di connessione, è sufficiente mostrare che lo spazio delle matrici di rango $ k $, i.e. $ F(k,n) $, sia connesso per dimostrare che lo sia $ G(k,n) $.\\
+Uno spazio topologico connesso per archi è anche connesso, dunque dimostriamo che per qualunque coppia di matrici di $ F(k,n) $ sia possibile costruire una funzione continua che le colleghi, i.e. preso $ I = [0,1] \subset \R $
+
+\begin{gather}
+	F(k,n) \text{ connesso per archi} \nonumber\\
+	\Updownarrow\\
+	\forall A, B \in F(k,n), \E f : I \to F(k,n) \text{ continua} %
+	\, \mid \, f(0) = A \, \wedge \, f(1) = B \nonumber
+\end{gather}
+
+Siano due matrici invertibili $ P \in GL_{n}(\R) $ e $ Q \in GL_{k}(\R) $, una qualsiasi matrice $ A \in F(k,n) $ può essere scritta come
+
+\begin{equation}
+	A = P J Q \qcomma J \doteq \pmqty{I_{k} \\ 0_{n-k,k}}
+\end{equation}
+
+Consideriamo ora le due applicazioni continue seguenti:
+
+\map{P_{t}}
+	{I}{GL_{n}(\R)}
+	{t}{P_{t}}
+
+dove
+
+\begin{equation}
+	\begin{cases}
+		P_{t}(0) = P_{0} = P\\
+		P_{t}(1) = P_{1} = \diag(1,\dots,1,\det(P))
+	\end{cases}
+\end{equation}
+
+\map{Q_{t}}
+	{I}{GL_{n}(\R)}
+	{t}{Q_{t}}
+
+dove
+
+\begin{equation}
+	\begin{cases}
+		Q_{t}(0) = Q_{0} = Q\\
+		Q_{t}(1) = Q_{1} = \diag(1,\dots,1,\det(Q))
+	\end{cases}
+\end{equation}
+
+Queste sono continue perché ognuna risiede in una delle componenti connesse dell'insieme delle matrici invertibili, i.e. in una delle seguenti due parti
+
+\begin{equation}
+	GL_{m}(\R) = \{ A \in GL_{m}(\R) \mid \det(A) > 0 \} \sqcup \{ A \in GL_{m}(\R) \mid \det(A) < 0 \}
+\end{equation}
+
+A questo punto, consideriamo l'applicazione
+
+\map{f}
+	{I}{F(k,n)}
+	{t}{P_{t} J Q_{t}}
+
+dove
+
+\begin{equation}
+	\begin{cases}
+		f(0) = P_{0} J Q_{0} = A\\
+		f(1) = P_{1} J Q_{1} = J
+	\end{cases}
+\end{equation}
+
+La continuità di questa funzione deriva dalla continuità di $ P_{t} $ e $ Q_{t} $.\\
+Collegando ogni matrice di $ F(k,n) $ alla matrice $ J $ (anch'essa in $ F(k,n) $ in quanto di rango $ k $) è possibile collegare queste matrici tra loro, dimostrando che $ F(k,n) $ è connesso e dunque lo è anche la Grassmanniana.
+
+\paragraph{Compattezza}
+
+Possiamo pensare alla Grassmanniana anche come quoziente di una \textit{varietà differenziale di Stiefel}\footnote{%
+	Una varietà differenziale di Stiefel $ V_{k}(\R^{n}) $ è l'insieme di tutte le basi ortonormali di dimensione $ k $, i.e. le $ k $-uple di vettori linearmente indipendenti e normalizzati; questa varietà è un sottoinsieme di $ \R^{n} $.%
+}
+
+\begin{equation}
+	G(k,n) = \dfrac{V_{k}(\R^{n})}{\sim}
+\end{equation}
+
+dove due basi di $ V_{k}(\R^{n}) $ sono equivalenti se generano lo stesso $ k $-spazio.\\
+Siccome il quoziente preserva anche la proprietà di compattezza, è sufficiente mostrare che la varietà di Stiefel sia connessa per dimostrare che lo sia la Grassmanniana.\\
+Sappiamo che se un sottoinsieme di $ \R^{n} $ è chiuso e limitato allora è compatto: dato che $ V_{k}(\R^{n}) \subset \R^{n} $ è chiusa e limitata, allora è compatta e dunque lo è anche la Grassmanniana.
 
 %
 
@@ -1106,7 +1188,7 @@ Prendiamo gli atlanti differenziabili $ \{(U,\phi)\} \in M $ e $ \{(U \times V,\
 	{\phi( i_{q_{0}}^{-1}(U \times V) \cap U )}{\R^{m+n}}%
 	{\phi(p)}{(p^{1},\dots,p^{m},q_{0}^{1},\dots,q_{0}^{n})}
 
-deve essere liscia. Per dimostrare che lo sia, dalla Proposizione \ref{map-comp}, basta dimostrare che le sue componenti siano lisce: presa la proiezione sulla $ k $-esima componente
+deve essere liscia. Per dimostrare che lo sia, dalla Proposizione \ref{map-comp}, basta mostrare che le sue componenti siano lisce: presa la proiezione sulla $ k $-esima componente
 
 \map{r^{k}}%
 	{\R^{n}}{\R}%

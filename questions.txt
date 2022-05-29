@@ -20,3 +20,8 @@ definizione atlante topologico: le carte di un atlante topologico devono avere u
 dallo spazio topologico a un sottoinsieme di uno spazio euclideo o basta che siano degli 
 omeomorfismi verso un altro spazio?
 
+esercizio B.6: non sono totalmente sicuro della veridicità della dimostrazione connessione; 
+dimostrare la compattezza tramite le varietà di Stiefel mi sembra inutile ma non sono riuscito a 
+farlo tramite F(k,n); usando la varietà di Stiefel devo dimostrare anche che questa è chiusa e 
+limitata o è sufficiente nominarlo al fine dell'esercizio?
+
