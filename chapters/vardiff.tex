@@ -1853,61 +1853,59 @@ Ad esempio, sull'ipersfera $ \S^{7} $ esistono 28 strutture differenziabili non 
 
 Sia $ \R $ la varietà differenziabile con atlante $ (\R,\id_{\R}) $ e $ \R' $ la stessa varietà topologica con atlante differenziabile $ (\R,\psi) $, dove
 
-\begin{align}
-	\begin{split}
-		\psi : \R &\to \R\\
-		x &\mapsto x^{\sfrac{1}{3}}
-	\end{split}	
-\end{align}
+\map{\psi}
+	{\R}{\R}
+	{x}{x^{\sfrac{1}{3}}}
 
-Queste due strutture differenziali sono diverse, cioè le loro carte non sono $ C^{\infty} $-compatibili, infatti il cambio di carta $ \psi \circ (\id_{\R})^{-1} = \psi $ non è liscio, però sono diffeomorfe tramite l'applicazione
+Queste due strutture differenziali sono diverse: le loro carte non sono $ C^{\infty} $-compatibili, in quanto i cambi di carte
 
-\begin{align}
-	\begin{split}
-		F : \R &\to \R'\\
-		x &\mapsto x^{3}
-	\end{split}	
-\end{align}
+\map{\psi \circ (\id_{\R})^{-1} = \psi \circ \id_{\R} = \psi}
+	{\R}{\R}
+	{x}{x^{\sfrac{1}{3}}}
+	
+\map{\id_{\R} \circ \psi^{-1} = \psi^{-1}}
+	{\R}{\R}
+	{x}{x^{3}}
 
-con inversa
+non sono lisci.\\
+Però sono diffeomorfe tramite l'applicazione continua
 
-\begin{align}
-	\begin{split}
-		F^{-1} : \R' &\to \R\\
-		x &\mapsto x^{\sfrac{1}{3}}
-	\end{split}	
-\end{align}
+\map{F}
+	{\R}{\R'}
+	{x}{x^{3}}
 
-la quale è un diffeomorfismo perché continua e liscia. Per dimostrare che $ F \in C^{\infty} $, controlliamo la composizione tra carte
+con inversa anch'essa continua
 
-\begin{align}
-	\begin{split}
-		\psi \circ F \circ (\id_{\R})^{-1} = \psi \circ F = \id_{\R} : \R &\to \R\\
-		x &\mapsto x\\\\
-		%
-		\id_{\R} \circ F^{-1} \circ \psi^{-1} = F^{-1} \circ \psi^{-1} = \id_{\R} : \R' &\to \R'\\
-		x &\mapsto x
-	\end{split}	
-\end{align}
+\map{F}
+{\R'}{\R}
+{x}{x^{\sfrac{1}{3}}}
 
-le quali sono entrambe lisce.\\
+Per dimostrare che $ F $ e $ F^{-1} $ siano $ C^{\infty} $, controlliamo la composizione tra carte\footnote{%
+	È importante notare che l'applicazione è o meno liscia in base alla composizione delle carte e non in base alla sola derivazione dell'immagine: questo differenzia la definizione di funzione liscia e funzione liscia \textit{tra varietà}.%
+}
+
+\map{\psi \circ F \circ (\id_{\R})^{-1} = \psi \circ F = \id_{\R}}
+	{\R}{\R}
+	{x}{x}
+	
+\map{\id_{\R} \circ F^{-1} \circ \psi^{-1} = F^{-1} \circ \psi^{-1} = \id_{\R'}}
+	{\R'}{\R'}
+	{x}{x}
+
+le quali sono entrambe lisce e dunque $ \R \simeq \R' $.\\
 L'identità da $ \R $ in $ \R' $ non è un diffeomorfismo in quanto
 
-\begin{align}
-	\begin{split}
-		(\psi \circ \id \circ (\id_{\R})^{-1})(x) &= \psi(x)\\
-		&= x^{\sfrac{1}{3}}
-	\end{split}
-\end{align}
+\begin{equation}
+	(\psi \circ \id \circ (\id_{\R})^{-1})(x) = \psi(x) = x^{\sfrac{1}{3}}
+\end{equation}
 
 non è liscia.
 
 \paragraph{2.}
 
-Nonostante sia controintuitivo, possiamo considerare il cerchio unitario $ \S^{1} $ come una varietà topologica di dimensione\footnote{%
+Solitamente consideriamo $ \S^{n} $ all'interno di $ \R^{n+1} $ e dunque con la struttura di topologica e differenziale di dimensione $ n+1 $. Nonostante sia controintuitivo, possiamo però considerare il cerchio unitario $ \S^{1} $ come una varietà topologica di dimensione\footnote{%
 	Numero arbitrario.%
-} 307 non compatta: oltre alla topologia considerata in precedenza (quella che viene normalmente chiamata "standard"), $ \S^{1} $ è in bigezione con $ \R^{307} $, dunque possiamo portare la struttura di varietà topologica standard di $ \R^{307} $ in $ \S^{1} $ ($ \R^{307} $ non è compatto quindi non lo sarà nemmeno $ \S^{1} $).\\
-Lo stesso discorso vale se consideriamo la proprietà di varietà differenziale.
+} 307 non compatta: oltre alla topologia considerata in precedenza (quella che viene normalmente chiamata "standard"), $ \S^{1} $ è in bigezione con $ \R^{307} $, dunque possiamo portare la struttura di varietà topologica standard di $ \R^{307} $ in $ \S^{1} $ ($ \R^{307} $ non è compatto quindi non lo sarà nemmeno $ \S^{1} $). Lo stesso discorso vale se consideriamo la proprietà di varietà differenziale.
 
 \subsection{Carte e diffeomorfismi}
 
