@@ -1639,29 +1639,24 @@ Riassumendo, presa una varietà differenziabile $ M $ e un atlante differenziabi
 
 \subsection{Funzioni lisce tra varietà}
 
-Sia $ F : N \to M $ una funzione tra varietà differenziabili $ N $ e $ M $ di dimensione rispettivamente $ n $ e $ m $. Diremo che la funzione è $ C^{\infty} $ (liscia o differenziabile) in un punto $ p \in N $ se $ F $ è continua ed esiste una carta $ (U,\phi) $ di $ N $ intorno a $ p $ e una carta $ (V,\psi) $ di $ M $ intorno a $ F(p) $ tale che la composizione
+Sia $ F : N \to M $ una funzione tra varietà differenziabili $ N $ e $ M $ di dimensione rispettivamente $ n $ e $ m $. Diremo che la funzione $ F $ è $ C^{\infty} $ (liscia o differenziabile) in un punto $ p \in N $ se è continua ed esistono una carta $ (U,\phi) $ di $ N $ intorno a $ p $ e una carta $ (V,\psi) $ di $ M $ intorno a $ F(p) $ tali che la composizione
 
 \begin{equation}
-	\psi \circ F_{|U} \circ \phi^{-1} : \phi(F^{-1}(V) \cap U) \to \R^{m}
+	\psi \circ \eval{F}_{U} \circ \phi^{-1} : \phi(F^{-1}(V) \cap U) \to \R^{m}
 \end{equation}
 
-con $ \phi(F^{-1}(V) \cap U) \subset \R^{n} $, sia liscia in $ \phi(p) $\footnote{%
-	$ F_{|U} \equiv F $ in quanto agisce prima $ \phi^{-1} $ che restringe già il dominio all'aperto $ U $.%
-}.\\
+con $ \phi(F^{-1}(V) \cap U) \subset \R^{n} $, sia liscia in $ \phi(p) $. Possiamo scrivere $ \eval{F}_{U} \equiv F $ in quanto agisce prima $ \phi^{-1} $ che restringe il dominio all'aperto $ U $.\\
 Siccome non possiamo sapere se $ F(U) \subset V $, consideriamo l'aperto (in quanto $ F $ è continua) $ F^{-1}(V) \cap U \subset U $
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.85\textwidth,keepaspectratio]{img20}
-\end{figure}
+\img{0.85}{img20}
 
 La definizione non dipende dalle carte scelte, infatti se $ (U',\phi') $ è una carta di $ N $ intorno a $ p $ e $ (V',\psi') $ è una carta di $ M $ intorno a $ F(p) $, allora
 
 \begin{equation}
-	\psi' \circ F \circ (\phi')^{-1} = \left. [(\psi' \circ \psi^{-1}) \circ (\psi \circ F \circ \phi^{-1}) \circ (\phi \circ (\phi')^{-1})] \right|_{\phi'(F^{-1}(V \cap V') \cap U \cap U')}
+	\psi' \circ F \circ (\phi')^{-1} = \eval{ [(\psi' \circ \psi^{-1}) \circ (\psi \circ F \circ \phi^{-1}) \circ (\phi \circ (\phi')^{-1})] }_{ \phi'(F^{-1}(V \cap V') \cap U \cap U') }
 \end{equation}
 
-dove $ \phi'(F^{-1}(V \cap V') \cap U \cap U') \ni \phi'(p) $, è liscia perché lo è $ \psi \circ F \circ \phi^{-1} $ per ipotesi e lo sono $ \psi' \circ \psi^{-1} $ e $ \phi \circ (\phi')^{-1} $ perché sono coppie di carte di una struttura differenziabile.\\
+dove $ \phi'(F^{-1}(V \cap V') \cap U \cap U') \ni \phi'(p) $, è liscia perché lo è $ \psi \circ F \circ \phi^{-1} $ per ipotesi e lo sono $ \psi' \circ \psi^{-1} $ e $ \phi \circ (\phi')^{-1} $ perché sono cambi di carte di una struttura differenziabile.\\
 Una funzione $ F : N \to M $ è liscia se lo è in ogni punto $ p \in N $.
 
 \begin{remark}
@@ -1676,17 +1671,17 @@ Una funzione $ F : N \to M $ è liscia se lo è in ogni punto $ p \in N $.
 \end{remark}
 
 \begin{definition}
-	Siano $ N $ e $ M $ varietà differenziabili, di dimensione rispettivamente $ n $ e $ m $, con strutture differenziabili $ \mathfrak{N} $ e $ \mathfrak{M} $ rispettivamente e siano $ \mathfrak{U} \subset \mathfrak{M} $ e $ \mathfrak{V} \subset \mathfrak{N} $ due strutture differenziali in N e M. Sia $ F : N \to M $ un'applicazione, allora $ F \in C^{\infty} $ in $ p $ se e solo se $ F $ è continua e si ha che
+	Siano $ N $ e $ M $ varietà differenziabili rispettivamente di dimensione  $ n $ e $ m $ e con strutture differenziabili $ \mathfrak{N} $ e $ \mathfrak{M} $ e siano $ \mathfrak{U} \subset \mathfrak{M} $ e $ \mathfrak{V} \subset \mathfrak{N} $ due strutture differenziali rispettivamente in N e M. Sia $ F : N \to M $ un'applicazione, allora $ F \in C^{\infty} $ in $ p $ se e solo se $ F $ è continua e si ha che
 	
 	\begin{equation}
-		\psi' \circ F \circ (\phi')^{-1} : \phi'(F^{-1}(V') \cap U') \to \R^{m} \qcomma \forall (U',\phi') \in \mathfrak{U}, \forall (V',\psi') \in \mathfrak{V}
+		\psi' \circ F \circ (\phi')^{-1} : \phi'(F^{-1}(V') \cap U') \to \R^{m} \qcomma \forall (U',\phi') \in \mathfrak{U}, \, \forall (V',\psi') \in \mathfrak{V}
 	\end{equation}
 
-	sia liscia in $ \phi'(p) \in \phi'(F^{-1}(V') \cap U') $.
+	è liscia in $ \phi'(p) \in \phi'(F^{-1}(V') \cap U') $.
 \end{definition}
 
 \begin{proof}[Dimostrazione ($ \implies $)]
-	Sia $ F \in C^{\infty}(M) $ e $ p \in N $, allora esistono delle carte $ p \in (U,\phi) \in \mathfrak{M} $ e $ F(p) \in (V,\psi) \in \mathfrak{N} $ tali che $ \psi \circ F \circ \phi^{-1} $ sia liscia in $ \phi(p) $. Ma, dato che la definizione della proprietà di essere liscia non dipende dalle carte scelte, questo significa che $ \psi' \circ F \circ (\phi')^{-1} $ è liscia in $ \phi'(p) $. La dimostrazione si conclude per il fatto che $ p $ sia arbitrario.
+	Siano $ F \in C^{\infty}(N) $ e $ p \in N $, allora esistono delle carte $ (U,\phi) \in \mathfrak{M} $ e $ (V,\psi) \in \mathfrak{N} $ che contengono rispettivamente $ p $ e $ F(p) $ tali che $ \psi \circ F \circ \phi^{-1} $ sia liscia in $ \phi(p) $. Ma, dato che la definizione della proprietà di essere liscia non dipende dalle carte scelte, questo significa che $ \psi' \circ F \circ (\phi')^{-1} $ è liscia in $ \phi'(p) $. La dimostrazione si conclude per il fatto che $ p $ sia arbitrario.
 \end{proof}
 
 \begin{proof}[Dimostrazione ($ \impliedby $)]
@@ -1714,17 +1709,14 @@ Una funzione $ F : N \to M $ è liscia se lo è in ogni punto $ p \in N $.
 \end{proof}
 
 \begin{definition}[Componenti]\label{map-comp}
-	Sia un'applicazione $ F : N \to \R^{n} $ e sia la proiezione
+	Siano un'applicazione $ F : N \to \R^{n} $ e le proiezioni
 	
-	\begin{align}
-		\begin{split}
-			r^{i} : \R^{n} &\to \R\\
-			(x^{1},\dots,x^{n}) &\mapsto x^{i}
-		\end{split}
-	\end{align}
+	\map{r^{i}}
+		{\R^{n}}{\R}
+		{(x^{1},\dots,x^{n})}{x^{i}}
 
 	con $ i=1,\dots,n $.\\
-	$ F $ è liscia se e solo se $ r^{i} \circ F \doteq F^{i} $ è liscia.
+	L'applicazione $ F $ è liscia se e solo se tutte le $ r^{i} \circ F \doteq F^{i} $ sono lisce.
 \end{definition}
 
 \begin{proof}[Dimostrazione ($ \implies $)]
@@ -1734,78 +1726,70 @@ Una funzione $ F : N \to M $ è liscia se lo è in ogni punto $ p \in N $.
 \begin{proof}[Dimostrazione ($ \impliedby $)]
 	Supponiamo che $ r^{i} \circ F \doteq F^{i} : N \to \R $ sia liscia per $ \forall i=1,\dots,n $. Per $ \forall p \in N $ abbiamo che $ F^{i} \circ \phi^{-1} : \phi(U) \to \R $ è liscia se scegliamo una carta $ (U,\phi) \ni p $, dove $ \phi(p) \subset \R^{n} $. A questo punto, la funzione
 	
-	\begin{align}
-		\begin{split}
-			F \circ \phi^{-1} : \phi(U) &\to \R^{n}\\
-			q &\mapsto (F^{1} \circ \phi^{-1},\dots,F^{n} \circ \phi^{-1})(q)
-		\end{split}
-	\end{align}
+	\map{F \circ \phi^{-1}}
+		{\phi(U)}{\R^{n}}
+		{q}{(F^{1} \circ \phi^{-1}, \dots, F^{n} \circ \phi^{-1})(q)}
 
 	è liscia in $ \phi(p) $, dunque $ F $ è liscia in $ p $ per definizione, perché $ F \circ \phi^{-1} \equiv \id_{\R^{n}} \circ F \circ \phi^{-1} $.
 \end{proof}
 
-Riassumendo, prese due varietà differenziabili $ N $ ed $ M $ e due atlanti differenziabili arbitrari $ \mathfrak{U} \subset \mathfrak{N} $ e $ \mathfrak{V} \subset \mathfrak{M} $ contenuti nelle rispettive strutture differenziabili, allora $ F : N \to M $ è liscia se e solo se $ F $ è continua e per $ \forall (U,\phi) \in \mathfrak{U} $ e $ \forall (V,\psi) \in \mathfrak{V} $ abbiamo che $ \psi \circ F \circ \phi^{-1} : \phi(F^{-1}(V) \cap U) \to \R^{m} $ sia liscia.
+Riassumendo, prese due varietà differenziabili $ N $ ed $ M $ e due atlanti differenziabili arbitrari $ \mathfrak{U} \subset \mathfrak{N} $ e $ \mathfrak{V} \subset \mathfrak{M} $ contenuti nelle rispettive strutture differenziabili, abbiamo che un'applicazione $ F : N \to M $ è liscia se e solo se è continua e $ \psi \circ F \circ \phi^{-1} : \phi(F^{-1}(V) \cap U) \to \R^{m} $ è liscia per $ \forall (U,\phi) \in \mathfrak{U} $ e $ \forall (V,\psi) \in \mathfrak{V} $.
 
 \subsubsection{\textit{Esempio}}
 
 Consideriamo l'applicazione continua
 
-\begin{align}
-	\begin{split}
-		F  : \R &\to \S^{1}\\
-		t &\mapsto (\cos 2 \pi t, \sin 2 \pi t)
-	\end{split}
-\end{align}
+\map{F}
+	{\R}{\S^{1}}
+	{t}{(\cos 2 \pi t, \sin 2 \pi t)}
 
-dove con $ \R $ e $ \S^{1} $ si intendono gli spazi con le loro strutture differenziabili fissate.\\
+dove con $ \R $ e $ \S^{1} $ si intendono gli spazi con le loro strutture differenziabili fissate, i.e. le relative varietà differenziabili.\\
 Fissiamo gli atlanti $ (\R,\id_{\R}) $ e $ \{(U_{i},\phi_{i})\}_{i=1,\dots,4} $ dove gli $ U_{i} $ sono le varie semicirconferenze di $ \S^{1} $ e le $ \phi_{i} $ sono le proiezioni di queste sugli assi\footnote{%
 	Vedi Esempio \ref{ex-s1} per dettagli.%
 }, i.e.
 
-\begin{align}
-	\begin{split}
-		U_{1} &= \{ (x,y) \in \S^{1} \mid y>0 \}\\
-		U_{2} &= \{ (x,y) \in \S^{1} \mid y<0 \}\\
-		U_{3} &= \{ (x,y) \in \S^{1} \mid x>0 \}\\
-		U_{4} &= \{ (x,y) \in \S^{1} \mid x<0 \}
-	\end{split}	
-\end{align}
+\begin{gather}
+	U_{1} = \{ (x,y) \in \S^{1} \mid y>0 \}\\
+	U_{2} = \{ (x,y) \in \S^{1} \mid y<0 \}\\
+	U_{3} = \{ (x,y) \in \S^{1} \mid x>0 \}\\
+	U_{4} = \{ (x,y) \in \S^{1} \mid x<0 \}
+\end{gather}
+%
+\map{\phi_{1}}
+	{U_{1}}{(-1,1)_{x} \subset \R^{2}}
+	{(x,y)}{x}
+%
+\map{\phi_{2}}
+	{U_{2}}{(-1,1)_{x} \subset \R^{2}}
+	{(x,y)}{x}
+%
+\map{\phi_{3}}
+	{U_{3}}{(-1,1)_{y} \subset \R^{2}}
+	{(x,y)}{y}
+%
+\map{\phi_{4}}
+	{U_{4}}{(-1,1)_{y} \subset \R^{2}}
+	{(x,y)}{y}
 
-\begin{align}
-	\begin{split}
-		\phi_{1} : U_{1} &\to (-1,1)_{x} \subset \R^{2}\\
-		(x,y) &\mapsto x\\\\
-		%
-		\phi_{2} : U_{2} &\to (-1,1)_{x} \subset \R^{2}\\
-		(x,y) &\mapsto x\\\\
-		%
-		\phi_{3} : U_{3} &\to (-1,1)_{y} \subset \R^{2}\\
-		(x,y) &\mapsto y\\\\
-		%
-		\phi_{4} : U_{4} &\to (-1,1)_{y} \subset \R^{2}\\
-		(x,y) &\mapsto y
-	\end{split}
-\end{align}
+Dobbiamo verificare che l'applicazione $ \phi_{i} \circ F \circ \id_{\R} $ sia liscia per $ \forall i=1,\dots,4 $: innanzitutto $ \phi(F^{-1}(V) \cap U) $ della definizione corrisponde a $ \id_{\R}(F^{-1}(U_{i}) \cap \R) = F^{-1}(U_{i}) \subset \R $, dunque le composizioni
 
-Dobbiamo verificare che l'applicazione $ \phi_{i} \circ F \circ \id_{\R} $ sia liscia per $ \forall i=1,\dots,4 $: innanzitutto $ \phi(F^{-1}(V) \cap U) $ della definizione corrisponde a $ \id_{\R}(F^{-1}(U_{i}) \cap \R) = F^{-1}(U_{i}) \subset \R $, dunque
+\map{\phi_{1} \circ F}
+	{F^{-1}(U_{1})}{\R^{2}}
+	{t}{\cos(2 \pi t)}
+%
+\map{\phi_{2} \circ F}
+	{F^{-1}(U_{2})}{\R^{2}}
+	{t}{\cos(2 \pi t)}
+%
+\map{\phi_{3} \circ F}
+	{F^{-1}(U_{3})}{\R^{2}}
+	{t}{\sin(2 \pi t)}
+%
+\map{\phi_{4} \circ F}
+	{F^{-1}(U_{4})}{\R^{2}}
+	{t}{\sin(2 \pi t)}
 
-\begin{align}
-	\begin{split}
-		\phi_{1} \circ F : F^{-1}(U_{1}) &\to \R^{2}\\
-		t &\mapsto \cos 2 \pi t\\\\
-		%
-		\phi_{2} \circ F : F^{-1}(U_{2}) &\to \R^{2}\\
-		t &\mapsto \cos 2 \pi t\\\\
-		%
-		\phi_{3} \circ F : F^{-1}(U_{3}) &\to \R^{2}\\
-		t &\mapsto \sin 2 \pi t\\\\
-		%
-		\phi_{4} \circ F : F^{-1}(U_{4}) &\to \R^{2}\\
-		t &\mapsto \sin 2 \pi t
-	\end{split}
-\end{align}
-
-le quali sono tutte lisce perciò lo è anche $ F $.
+sono tutte lisce perciò lo è anche $ F $.
 
 \subsection{Diffeomorfismi tra varietà}
 
