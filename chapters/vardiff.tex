@@ -1611,7 +1611,7 @@ Siano $ M $ una varietà differenziabile di dimensione $ n $ e una funzione $ f 
 La definizione non dipende dalla carta scelta intorno al punto $ p $: se $ (V,\psi) $ è un'altra carta intorno a $ p $, allora
 
 \begin{equation}
-	f \circ \psi^{-1} = \eval{ (f \circ \phi^{-1})(\phi \circ \psi^{-1}) }_{\psi(U \cap V)} : \psi(U \cap V) \to \R
+	f \circ \psi^{-1} = \eval{ (f \circ \phi^{-1}) \circ (\phi \circ \psi^{-1}) }_{\psi(U \cap V)} : \psi(U \cap V) \to \R
 \end{equation}
 
 dove $ \phi \circ \psi^{-1} \in C^{\infty} $ perché le carte a cui appartengono sono $ C^{\infty} $-compatibili tra loro e $ f \circ \phi^{-1} \in C^{\infty} $ per ipotesi, dunque $ \eval{ (f \circ \phi^{-1})(\phi \circ \psi^{-1}) }_{\psi(U \cap V)} \in C^{\infty} $ anche se ristretta a $ \psi(U \cap V) \ni p $, in quanto basta far vedere che esista un aperto opportuno che contenga il punto in cui la funzione sia liscia (condizione locale).\\
@@ -1628,7 +1628,7 @@ Indicheremo con $ C^{\infty}(M) $ l'insieme delle funzioni lisce su $ M $ mentre
 \end{definition}
 
 \begin{proof}[Dimostrazione ($ \implies $)]
-	Se $ f \in C^{\infty}(M) $ allora esiste una carta $ (V,\psi) \in \mathfrak{M} $ dell'atlante massimale tale che $ f \circ \psi^{-1} : \psi(V) \to \R $ sia liscia in $ p $: siccome la definizione di funzione liscia non dipende dalla carta scelta all'interno della struttura differenziabile, possiamo prendere anche la carta $ (U,\phi) \in \mathfrak{U} $ e dunque $ f \circ \phi^{-1} : \phi(U) \to \R $ è ancora liscia.
+	Se $ f \in C^{\infty}(M) $ allora esiste una carta $ (V,\psi) \in \mathfrak{M} $ dell'atlante massimale tale che $ f \circ \psi^{-1} : \psi(V) \to \R $ sia liscia in $ p $: siccome la definizione di funzione liscia non dipende dalla carta scelta all'interno della struttura differenziabile, possiamo prendere anche una carta $ (U,\phi) \in \mathfrak{U} $ e dunque $ f \circ \phi^{-1} : \phi(U) \to \R $ è ancora liscia.
 \end{proof}
 
 \begin{proof}[Dimostrazione ($ \impliedby $)]
