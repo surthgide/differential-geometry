@@ -1688,12 +1688,14 @@ Una funzione $ F : N \to M $ è liscia se lo è in ogni punto $ p \in N $.
 	La dimostrazione dell'implicazione inversa è immediata in quanto le carte degli atlanti sono un ricoprimento degli spazi.
 \end{proof}
 
+Riassumendo, prese due varietà differenziabili $ N $ ed $ M $ e due atlanti differenziabili arbitrari $ \mathfrak{U} \subset \mathfrak{N} $ e $ \mathfrak{V} \subset \mathfrak{M} $ contenuti nelle rispettive strutture differenziabili, abbiamo che un'applicazione $ F : N \to M $ è liscia se e solo se è continua e $ \psi \circ F \circ \phi^{-1} : \phi(F^{-1}(V) \cap U) \to \R^{m} $ è liscia per $ \forall (U,\phi) \in \mathfrak{U} $ e $ \forall (V,\psi) \in \mathfrak{V} $.
+
 \begin{definition}[Composizione di funzioni lisce tra varietà]
-	Siano $ M $, $ N $ e $ P $ varietà differenziabili ed $ F : N \to M $ e $ G : M \to P $ due funzioni continue e lisce, allora la composizione continua $ G \circ F $ è liscia.
+	Siano $ M $, $ N $ e $ P $ varietà differenziabili, ed $ F : N \to M $ e $ G : M \to P $ due funzioni continue e lisce, allora la composizione continua $ G \circ F $ è liscia.
 \end{definition}
 
 \begin{proof}
-	Siano $ (U,\phi) $ una carta di $ N $ intorno a $ p \in N $ e $ (W,\sigma) $ una carta di $ P $ intorno a $ G(F(p)) $. Dobbiamo dimostrare che la funzione $ \sigma \circ G \circ F \circ \phi^{-1} $ sia liscia nel punto
+	Siano $ (U,\phi) $ una carta di $ N $ intorno a $ p $ e $ (W,\sigma) $ una carta di $ P $ intorno a $ G(F(p)) $. Dobbiamo dimostrare che la funzione $ \sigma \circ G \circ F \circ \phi^{-1} $ sia liscia nel punto
 	
 	\begin{equation}
 		\phi(p) \in \phi((G \circ F)^{-1}(W) \cap U) = \phi(F^{-1}(G^{-1}(W)) \cap U)
@@ -1720,7 +1722,7 @@ Una funzione $ F : N \to M $ è liscia se lo è in ogni punto $ p \in N $.
 \end{definition}
 
 \begin{proof}[Dimostrazione ($ \implies $)]
-	Se $ F $ è liscia allora tutte le sue componenti $ F^{i} $ lo sono.
+	Se $ F $ è liscia allora lo sono anche tutte le sue componenti $ F^{i} $.
 \end{proof}
 
 \begin{proof}[Dimostrazione ($ \impliedby $)]
@@ -1732,8 +1734,6 @@ Una funzione $ F : N \to M $ è liscia se lo è in ogni punto $ p \in N $.
 
 	è liscia in $ \phi(p) $, dunque $ F $ è liscia in $ p $ per definizione, perché $ F \circ \phi^{-1} \equiv \id_{\R^{n}} \circ F \circ \phi^{-1} $.
 \end{proof}
-
-Riassumendo, prese due varietà differenziabili $ N $ ed $ M $ e due atlanti differenziabili arbitrari $ \mathfrak{U} \subset \mathfrak{N} $ e $ \mathfrak{V} \subset \mathfrak{M} $ contenuti nelle rispettive strutture differenziabili, abbiamo che un'applicazione $ F : N \to M $ è liscia se e solo se è continua e $ \psi \circ F \circ \phi^{-1} : \phi(F^{-1}(V) \cap U) \to \R^{m} $ è liscia per $ \forall (U,\phi) \in \mathfrak{U} $ e $ \forall (V,\psi) \in \mathfrak{V} $.
 
 \subsubsection{\textit{Esempio}}
 
