@@ -1136,13 +1136,58 @@ Sappiamo che se un sottoinsieme di $ \R^{n} $ è chiuso e limitato allora è com
 
 %
 
+\section{}\label{es2-7}
+
+\begin{tcolorbox}
+Sia $ \S^{1} $ il cerchio unitario di $ \R^{2} $. Dimostrare che una funzione liscia $ f : \R^{2} \to \R $ si restringe a una funzione liscia $ f_{|\S^{1}} : \S^{1} \to \R $.
+	\end{tcolorbox}
+	
+	Presa una carta $ (U,\phi) $ della struttura differenziabile di $ \R^{2} $, perché $ f $ sia liscia è necessario che sia liscia la composizione
+	
+	\begin{equation}
+	f \circ \phi^{-1} : \phi(U) \to \R
+	\end{equation}
+
+con $ U \subset \R^{2} $ aperto.\\
+Siccome la definizione non dipende dalla carta scelta e dal fatto che un diffeomorfismo
+
+\begin{equation}
+g : U \to g(U) \subset \R^{2}
+\end{equation}
+
+definisce una carta della struttura differenziale $ (U,g) $\footnote{%
+Vedi Proposizione \ref{diffeo-map}.%
+}, possiamo prendere il diffeomorfismo
+
+\map{g}
+{\R^{2}}{\S^{1}}
+{(x,y)}{\left( \dfrac{x}{\sqrt{x^{2} + y^{2}}},\dfrac{y}{\sqrt{x^{2} + y^{2}}} \right)}
+
+e dunque la carta $ (\S^{1},g) $ della struttura differenziale di $ \R^{2} $ per riscrivere la definizione di funzione liscia, dunque
+
+\begin{equation}
+	f \circ g^{-1} : g(\R^{2}) = \S^{1} \to \R
+		\end{equation}
+		
+	la quale può essere riscritta come
+
+\begin{equation}
+f_{|\S^{1}} : \S^{1} \to \R
+\end{equation}
+
+%
+
+\newpage
+
+%
+
 \section{}\label{es2-6}
 
 \begin{tcolorbox}
 	Siano $ M $ e $ N $ due varietà differenziabili e $ q_{0} \in N $. Dimostrare che
 	
-	\map{i_{q_{0}}}%
-		{M}{M \times N}%
+	\map{i_{q_{0}}}
+		{M}{M \times N}
 		{p}{(p,q_{0})}
 	
 	è un'applicazione liscia.
@@ -1172,51 +1217,6 @@ le componenti della composizione sono date dalla seguente applicazione
 	}
 
 le quali sono tutte lisce.
-
-%
-
-\newpage
-
-%
-
-\section{}\label{es2-7}
-
-\begin{tcolorbox}
-	Sia $ \S^{1} $ il cerchio unitario di $ \R^{2} $. Dimostrare che una funzione liscia $ f : \R^{2} \to \R $ si restringe a una funzione liscia $ f_{|\S^{1}} : \S^{1} \to \R $.
-\end{tcolorbox}
-
-Presa una carta $ (U,\phi) $ della struttura differenziabile di $ \R^{2} $, perché $ f $ sia liscia è necessario che sia liscia la composizione
-
-\begin{equation}
-	f \circ \phi^{-1} : \phi(U) \to \R
-\end{equation}
-
-con $ U \subset \R^{2} $ aperto.\\
-Siccome la definizione non dipende dalla carta scelta e dal fatto che un diffeomorfismo
-
-\begin{equation}
-	g : U \to g(U) \subset \R^{2}
-\end{equation}
-
-definisce una carta della struttura differenziale $ (U,g) $\footnote{%
-	Vedi Proposizione \ref{diffeo-map}.%
-}, possiamo prendere il diffeomorfismo
-
-\map{g}%
-	{\R^{2}}{\S^{1}}%
-	{(x,y)}{\left( \dfrac{x}{\sqrt{x^{2} + y^{2}}},\dfrac{y}{\sqrt{x^{2} + y^{2}}} \right)}
-	
-e dunque la carta $ (\S^{1},g) $ della struttura differenziale di $ \R^{2} $ per riscrivere la definizione di funzione liscia, dunque
-
-\begin{equation}
-	f \circ g^{-1} : g(\R^{2}) = \S^{1} \to \R
-\end{equation}
-
-la quale può essere riscritta come
-
-\begin{equation}
-	f_{|\S^{1}} : \S^{1} \to \R
-\end{equation}
 
 %
 
@@ -1387,8 +1387,8 @@ dunque
 
 Considerando $ N = \R^{2} $ con carta $ (U,\phi) $ dove $ \phi = (x^{1},\dots,x^{n}) $, il vettore velocità della curva
 
-\map{c}%
-	{\R}{\R^{2}}%
+\map{c}
+	{\R}{\R^{2}}
 	{t}{A(t) \, p = \mqty( \cos(2t) & -\sin(2t) \\\\ \sin(2t) & \cos(2t) ) \mqty(x \\ y)}
 
 è dato da
