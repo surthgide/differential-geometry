@@ -1,0 +1,1018 @@
+\section{}\label{BONUS2-1}
+
+\begin{tcolorbox}
+	Verificare che l'unione disgiunta di spazi topologici
+	
+	\begin{equation}
+		A = \bigsqcup_{j \in J} A_{j} \equiv \bigcup_{j \in J} A_{j} \times \{j\}
+	\end{equation}
+	
+	è uno spazio topologico, sapendo che $ U $ è aperto in $ A $ se e solo se $ U \cap A_{j} $ è aperto in $ A_{j} $ per $ \forall j \in J $.
+\end{tcolorbox}
+
+Per dimostrare che l'unione disgiunta di spazi topologici $ A $ sia ancora uno spazio topologico dobbiamo dimostrare che:
+
+\begin{itemize}
+	\item L'intersezione di due aperti in $ A $ sia ancora aperto in $ A $
+	
+	\item L'unione di un numero qualsiasi di aperti in $ A $ sia ancora aperto in $ A $
+\end{itemize}
+
+Per la prima, prendiamo due aperti $ U $ e $ V $ in $ A $: questo significa che $ U \cap A_{j} $ e $ V \cap A_{j} $ saranno aperti in $ A_{j} $ per $ \forall j \in J $ per la condizione imposta. Siccome gli $ A_{j} $ sono spazi topologici, l'intersezione di due aperti è ancora un aperto, dunque
+
+\begin{equation}
+	U \cap V \cap A_{j} \text{ aperto in } A_{j} \qcomma \forall j \in J
+\end{equation}
+
+A questo punto, vale l'implicazione inversa, perciò $ U \cap V $ è aperto in $ A $.\\\\
+Analogamente, per la seconda, prendiamo una famiglia infinita di aperti $ V_{i} $ (i.e. $ i \in N $) in $ A $: questo significa che $ V_{i} \cap A_{j} $ saranno aperti in $ A_{j} $ per $ \forall j \in J $ per la condizione imposta. Siccome gli $ A_{j} $ sono spazi topologici, l'unione di un numero qualsiasi di aperti è ancora un aperto. Definendo
+
+\begin{equation}
+	V \doteq \bigcup_{i=1}^{\infty} V_{i}
+\end{equation}
+
+possiamo dire che $ V \cap A_{j} $ è aperto in $ A_{j} $ per $ \forall j \in J $. A questo punto, vale l'implicazione inversa, perciò $ V $ è aperto in $ A $.
+
+\section{}\label{es2-1}
+
+\begin{tcolorbox}
+	Sia $ \S^{n} $ la sfera unitaria in $ \R^{n+1} $. Trovare un atlante differenziabile di $ \S^{n} $ con $ 2(n+1) $ carte.
+\end{tcolorbox}
+
+Prendendo un parametro $ k = 1,\dots,n+1 $, definiamo\footnote{%
+	La funzione $ \ceil*{x} $ \textit{ceiling} (soffitto) mappa un numero reale nel successivo numero naturale più vicino (arrotonda per eccesso), e.g. $ \ceil*{\frac{3}{2}} = 3 $.%
+} i $ 2(n+1) $ aperti
+
+\begin{equation}
+	U_{i} = \left\{ (x^{1},\dots,x^{n+1}) \in \R^{n+1} \st (-1)^{i} x^{\ceil*{\frac{i}{2}}} > 0 \right\} \qcomma k = 1, \dots, 2(n+1)
+\end{equation}
+
+per i quali vale $ U_{i} \subset \R^{n+1} $ e che formano un ricoprimento per $ \S^{n} $, i.e.
+
+\begin{equation}
+	\S^{n} = \bigcup_{i=1}^{2(n+1)} U_{i}
+\end{equation}
+
+Definiamo anche gli aperti per $ j = 1,\dots,n+1 $
+
+\begin{equation}
+	D_{j} = \{ (x^{1},\dots,x^{j-1},x^{j+1},\dots,x^{n+1}) \in \R^{n} \times \{0\} = \R^{n} \, \mid \, \norm{x} < 1 \} = B_{1}(0) \simeq \R^{n}
+\end{equation}
+
+i quali, in sostanza, sono palle di raggio unitario centrate nell'origine nel piano $ \R^{n} \times \{0\} $, dove
+
+\begin{equation}
+	\norm{x} = \sqrt{ \sum_{i=1}^{n} (x^{i})^{2} }
+\end{equation}
+
+Infine definiamo le applicazioni lisce
+
+\map{\phi_{i}}%
+	{U_{i}}{D_{\ceil*{\frac{i}{2}}}}%
+	{(x^{1},\dots,x^{i-1},x^{i},x^{i+1},\dots,x^{n+1})}{(x^{1},\dots,x^{i-1},x^{i+1},\dots,x^{n+1})}
+
+con inverse
+
+\map{\phi_{i}^{-1}}%
+	{D_{\ceil*{\frac{i}{2}}}}{U_{i}}%
+	{(x^{1},\dots,x^{i-1},x^{i},\dots,x^{n})}{\left( x^{1},\dots,x^{i-1},(-1)^{i} \sqrt{1-\norm{x}^{2}},x^{i},\dots,x^{n} \right)}
+
+La famiglia di coppie $ \mathfrak{U} = \{ (U_{i},\phi_{i}) \}_{i=1,\dots,2(n+1)} $ definisce un atlante differenziabile per $ \S^{n} $ in quanto i cambi di carte sono lisci: la dimostrazione è analoga a quella fatta nell'Esempio \ref{unit-sph} per $ \S^{2} $.
+
+%
+
+\newpage
+
+%
+
+\section{}\label{es2-2}
+
+\begin{tcolorbox}
+	Dimostrare che la struttura differenziabile su $ \S^{n} $ definita nell’esercizio precedente e quella definita dalle proiezioni
+	stereografiche coincidono.
+\end{tcolorbox}
+
+Per dimostrare che le due strutture differenziabili coincidano è sufficiente mostrare che le carte di ognuna siano $ C^{\infty} $-compatibili con quelle dell'altra.\\
+Considerando le intersezioni:
+
+\begin{align}
+	U_{N} \cap U_{i} &= %\\
+	\begin{cases}
+		U_{i}, & i \neq 2(n+1)\\
+		U_{i} \setminus \{ N \}, & i = 2(n+1)
+	\end{cases}\\
+	%
+	\nonumber\\
+	%
+	U_{S} \cap U_{i} &= %\\
+	\begin{cases}
+		U_{i}, & i \neq 2(n+1) - 1 = 2 n + 1\\
+		U_{i} \setminus \{ S \}, & i = 2n+1
+	\end{cases}
+\end{align}
+
+possiamo scrivere i cambi di carta
+
+\begin{gather}
+	\pi_{N} \circ \phi_{i}^{-1} : \phi_{i}(U_{N} \cap U_{i}) \to \pi_{N}(U_{N} \cap U_{i})\\
+	\pi_{S} \circ \phi_{i}^{-1} : \phi_{i}(U_{S} \cap U_{i}) \to \pi_{S}(U_{S} \cap U_{i})\\
+	\nonumber\\
+	\phi_{i} \circ \pi_{N}^{-1} : \pi_{N}(U_{N} \cap U_{i}) \to \phi_{i}(U_{N} \cap U_{i})\\
+	\phi_{i} \circ \pi_{S}^{-1} : \pi_{N}(U_{S} \cap U_{i}) \to \phi_{i}(U_{S} \cap U_{i})
+\end{gather}
+
+esplicitamente abbiamo che
+
+\begin{align}
+	\begin{split}
+		(\pi_{N} \circ \phi_{i}^{-1})(x^{1},\dots,x^{n}) &= \pi_{N} \left( x^{1}, \dots, x^{i-1}, (-1)^{i} \sqrt{1 - \norm{x}^{2}}, x^{i}, \dots, x^{n} \right)\\
+		&= \left( \dfrac{2 x^{1}}{1-x^{n}}, \dots, \dfrac{2 x^{i-1}}{1-x^{n}}, \dfrac{2 (-1)^{i} \sqrt{1 - \norm{x}^{2}}}{1-x^{n}}, \dfrac{2 x^{i}}{1-x^{n}}, \dots, \dfrac{2 x^{n-1}}{1-x^{n}} \right)\\\\
+		%
+		(\phi_{i} \circ \pi_{N}^{-1})(x^{1},\dots,x^{n}) &= \phi_{i} \left( \dfrac{x^{1}}{1 + \norm{x}^{2}}, \dots, \dfrac{x^{n}}{1 + \norm{x}^{2}}, \dfrac{1 - \norm{x}^{2}}{1 + \norm{x}^{2}} \right)\\
+		&= \left( \dfrac{x^{1}}{1 + \norm{x}^{2}}, \dots, \dfrac{x^{i-1}}{1 + \norm{x}^{2}}, \dfrac{x^{i+1}}{1 + \norm{x}^{2}}, \dots, \dfrac{x^{n}}{1 + \norm{x}^{2}}, \dfrac{1 - \norm{x}^{2}}{1 + \norm{x}^{2}} \right)
+	\end{split}
+\end{align}
+
+e analogamente per $ \pi_{S} $: i cambi di carta sono lisci dunque le strutture differenziabili sono equivalenti.
+
+%
+
+\newpage
+
+%
+
+\section{}\label{es2-5}
+
+\begin{tcolorbox}
+	Dimostrare che la Grassmanniana $ G(k,n) $ è uno spazio topologico connesso e compatto.
+\end{tcolorbox}
+
+\paragraph{Connessione}
+
+Siccome il quoziente preserva la proprietà di connessione, è sufficiente mostrare che lo spazio delle matrici di rango $ k $, i.e. $ F(k,n) $, sia connesso per dimostrare che lo sia $ G(k,n) $.\\
+Uno spazio topologico connesso per archi è anche connesso, dunque dimostriamo che per qualunque coppia di matrici di $ F(k,n) $ sia possibile costruire una funzione continua che le colleghi, i.e. preso $ I = [0,1] \subset \R $
+
+\begin{gather}
+	F(k,n) \text{ connesso per archi} \nonumber\\
+	\Updownarrow\\
+	\forall A, B \in F(k,n), \E f : I \to F(k,n) \text{ continua} %
+	\, \mid \, f(0) = A \, \wedge \, f(1) = B \nonumber
+\end{gather}
+
+Siano due matrici invertibili $ P \in GL_{n}(\R) $ e $ Q \in GL_{k}(\R) $, una qualsiasi matrice $ A \in F(k,n) $ può essere scritta come
+
+\begin{equation}
+	A = P J Q \qcomma J \doteq \pmqty{I_{k} \\ 0_{n-k,k}}
+\end{equation}
+
+Consideriamo ora le due applicazioni continue seguenti:
+
+\map{P_{t}}
+	{I}{GL_{n}(\R)}
+	{t}{P_{t}}
+
+dove
+
+\begin{equation}
+	\begin{cases}
+		P_{t}(0) = P_{0} = P\\
+		P_{t}(1) = P_{1} = \diag(1,\dots,1,\det(P))
+	\end{cases}
+\end{equation}
+
+\map{Q_{t}}
+	{I}{GL_{n}(\R)}
+	{t}{Q_{t}}
+
+dove
+
+\begin{equation}
+	\begin{cases}
+		Q_{t}(0) = Q_{0} = Q\\
+		Q_{t}(1) = Q_{1} = \diag(1,\dots,1,\det(Q))
+	\end{cases}
+\end{equation}
+
+Queste sono continue perché ognuna risiede in una delle componenti connesse dell'insieme delle matrici invertibili, i.e. in una delle seguenti due parti
+
+\begin{equation}
+	GL_{m}(\R) = \{ A \in GL_{m}(\R) \mid \det(A) > 0 \} \sqcup \{ A \in GL_{m}(\R) \mid \det(A) < 0 \}
+\end{equation}
+
+A questo punto, consideriamo l'applicazione
+
+\map{f}
+	{I}{F(k,n)}
+	{t}{P_{t} J Q_{t}}
+
+dove
+
+\begin{equation}
+	\begin{cases}
+		f(0) = P_{0} J Q_{0} = A\\
+		f(1) = P_{1} J Q_{1} = J
+	\end{cases}
+\end{equation}
+
+La continuità di questa funzione deriva dalla continuità di $ P_{t} $ e $ Q_{t} $.\\
+Collegando ogni matrice di $ F(k,n) $ alla matrice $ J $ (anch'essa in $ F(k,n) $ in quanto di rango $ k $) è possibile collegare queste matrici tra loro, dimostrando che $ F(k,n) $ è connesso e dunque lo è anche la Grassmanniana.
+
+\paragraph{Compattezza}
+
+Possiamo pensare alla Grassmanniana anche come quoziente di una \textit{varietà differenziale di Stiefel}\footnote{%
+	Una varietà differenziale di Stiefel $ V_{k}(\R^{n}) $ è l'insieme di tutte le basi ortonormali di dimensione $ k $, i.e. le $ k $-uple di vettori linearmente indipendenti e normalizzati; questa varietà è un sottoinsieme di $ \R^{n} $.%
+}
+
+\begin{equation}
+	G(k,n) = \dfrac{V_{k}(\R^{n})}{\sim}
+\end{equation}
+
+dove due basi di $ V_{k}(\R^{n}) $ sono equivalenti se generano lo stesso $ k $-spazio.\\
+Siccome il quoziente preserva anche la proprietà di compattezza, è sufficiente mostrare che la varietà di Stiefel sia connessa per dimostrare che lo sia la Grassmanniana.\\
+Sappiamo che se un sottoinsieme di $ \R^{n} $ è chiuso e limitato allora è compatto: dato che $ V_{k}(\R^{n}) \subset \R^{n} $ è chiusa e limitata, allora è compatta e dunque lo è anche la Grassmanniana.
+
+%
+
+\newpage
+
+%
+
+\section{}\label{es2-7}
+
+\begin{tcolorbox}
+	Sia $ \S^{1} $ il cerchio unitario di $ \R^{2} $. Dimostrare che una funzione liscia $ f : \R^{2} \to \R $ si restringe a una funzione liscia $ f_{|\S^{1}} : \S^{1} \to \R $.
+\end{tcolorbox}
+
+Presa una carta $ (U,\phi) $ della struttura differenziabile di $ \R^{2} $, perché $ f $ sia liscia è necessario che sia liscia la composizione
+
+\begin{equation}
+	f \circ \phi^{-1} : \phi(U) \to \R
+\end{equation}
+
+con $ U \subset \R^{2} $ aperto.\\
+Siccome la definizione non dipende dalla carta scelta e dal fatto che un diffeomorfismo
+
+\begin{equation}
+	g : U \to g(U) \subset \R^{2}
+\end{equation}
+
+definisce una carta della struttura differenziale $ (U,g) $\footnote{%
+	Vedi Proposizione \ref{diffeo-map}.%
+}, possiamo prendere il diffeomorfismo
+
+\map{g}
+	{\R^{2}}{\S^{1}}
+	{(x,y)}{\left( \dfrac{x}{\sqrt{x^{2} + y^{2}}},\dfrac{y}{\sqrt{x^{2} + y^{2}}} \right)}
+
+e dunque la carta $ (\S^{1},g) $ della struttura differenziale di $ \R^{2} $ per riscrivere la definizione di funzione liscia, dunque
+
+\begin{equation}
+	f \circ g^{-1} : g(\R^{2}) = \S^{1} \to \R
+\end{equation}
+
+la quale può essere riscritta come
+
+\begin{equation}
+	f_{|\S^{1}} : \S^{1} \to \R
+\end{equation}
+
+%
+
+\newpage
+
+%
+
+\section{}\label{es2-6}
+
+\begin{tcolorbox}
+	Siano $ M $ e $ N $ due varietà differenziabili e $ q_{0} \in N $. Dimostrare che
+	
+	\map{i_{q_{0}}}
+		{M}{M \times N}
+		{p}{(p,q_{0})}
+	
+	è un'applicazione liscia.
+\end{tcolorbox}
+
+Prendiamo gli atlanti differenziabili $ \{(U,\phi)\} \in M $ e $ \{(U \times V,\phi \times \psi)\} \in M \times N $: perché $ i_{q_{0}} $ sia liscia questa deve essere continua (lo è in quanto inclusione) e la composizione
+
+\map{(\phi \times \psi) \circ i_{q_{0}} \circ \phi^{-1}}
+	{\phi( i_{q_{0}}^{-1}(U \times V) \cap U )}{\R^{m+n}}
+	{\phi(p)}{(p^{1},\dots,p^{m},q_{0}^{1},\dots,q_{0}^{n})}
+
+deve essere liscia. Per dimostrare che lo sia, dalla Proposizione \ref{map-comp}, basta mostrare che le sue componenti siano lisce: presa la proiezione sulla $ k $-esima componente
+
+\map{r^{k}}
+	{\R^{n}}{\R}
+	{(x^{1},\dots,x^{n})}{x^{k}}
+
+le componenti della composizione sono date dalla seguente applicazione
+
+\map{r^{k} \circ (\phi \times \psi) \circ i_{q_{0}} \circ \phi^{-1}}%
+	{\phi( i_{q_{0}}^{-1}(U \times V) \cap U )}{\R}%
+	{\phi(p)}{%
+				\begin{cases}
+					p^{k} & k \leqslant m\\
+					q_{0}^{k} & k > m
+				\end{cases}%
+			}
+
+le quali sono tutte lisce.
+
+%
+
+\newpage
+
+%
+
+\section{}\label{es2-8}
+
+\begin{tcolorbox}
+	Sia un'applicazione
+	
+	\begin{align}
+		\begin{split}
+			F : \R^{2} &\to \R^{3}\\
+			(x,y) &\mapsto (x,y,xy)
+		\end{split}
+	\end{align}
+	
+	e $ p = (x,y) \in \R^{2} $. Trovare $ a,b,c \in \R $ tali che:
+	
+	\begin{equation}
+		F_{*p} \left( \left. \dfrac{\partial}{\partial x} \right|_{p} \right) = a \left. \dfrac{\partial}{\partial u} \right|_{F(p)} + b \left. \dfrac{\partial}{\partial v} \right|_{F(p)} + c \left. \dfrac{\partial}{\partial w} \right|_{F(p)}
+	\end{equation}
+\end{tcolorbox}
+
+Per trovare i coefficienti dell'immagine del differenziale ricordiamo che, per una funzione tra varietà differenziabili $ F : N \to M $ con carte
+
+\begin{equation}
+	\begin{cases}
+		(U,\phi) \in N, & \phi = (x^{1},\dots,x^{n})\\
+		(V,\psi) \in N, & \psi = (y^{1},\dots,y^{m})
+	\end{cases}
+\end{equation}
+
+vale
+
+\begin{equation}
+	F_{*p} \left( \eval{\pdv{x^{j}}}_{p} \right) = \sum_{k=1}^{m} \left( \pdv{F^{k}}{x^{j}}\ (p) \right) \left( \eval{\pdv{y^{k}}}_{F(p)} \right)
+\end{equation}
+
+dove $ F^{k} = y^{k} \circ F $.\\
+Essendo  il differenziale un'applicazione lineare, possiamo anche scrivere
+
+\begin{equation}
+	F_{*p} (X_{p}) = A(p) X_{p} = Y_{F(p)} \in T_{F(p)}(M)
+\end{equation}
+
+dove
+
+\begin{equation}
+	A(p) = \left[ \pdv{F^{k}}{x^{j}}\ (p) \right]
+\end{equation}
+
+Per la funzione considerata, abbiamo che
+
+\begin{equation}
+	A(x,y) = \mqty( 1 & 0 \\ 0 & 1 \\ y & x )
+\end{equation}
+
+Possiamo identificare $ T_{p}(\R^{k}) = \R^{k} $ dunque
+
+\begin{align}
+	\begin{split}
+		\left( \mu \eval{\pdv{x}}_{p}, \nu \eval{\pdv{y}}_{p} \right) &\to (\mu,\nu)\\
+		\left( a \eval{\pdv{u}}_{F(p)}, b \eval{\pdv{v}}_{F(p)}, c \eval{\pdv{w}}_{F(p)} \right) &\to (a,b,c)
+	\end{split}
+\end{align}
+
+dunque
+
+\begin{equation}
+	F_{*p} \left( \mqty( \mu \\ \nu ) \right) = \mqty( 1 & 0 \\ 0 & 1 \\ y & x ) \mqty( \mu \\ \nu ) = \mqty( \mu \\ \nu \\ y \mu + x \nu )
+\end{equation}
+
+perciò abbiamo che
+
+\begin{equation}
+	F_{*p} \left( \mqty( 1 \\ 0 ) \right) = \mqty( 1 & 0 \\ 0 & 1 \\ y & x ) \mqty( 1 \\ 0 ) = \mqty( 1 \\ 0 \\ y ) = \eval{\pdv{u}}_{F(p)} + y \eval{\pdv{w}}_{F(p)}
+\end{equation}
+
+i.e. $ (a,b,c) = (1,0,y) $.
+
+%
+
+\newpage
+
+%
+
+\section{}\label{es2-9}
+
+\begin{tcolorbox}
+	Siano $ x $ e $ y $ le coordinate standard su $ \R^{2} $ e $ U = \R^{2} \setminus \{(0,0)\} $. In $ U $ le coordinate polari $ (\rho, \theta) $ con $ \rho > 0 $ e $ \theta \in (0,2\pi) $ sono definite come
+	
+	\begin{equation}
+		\begin{cases}
+			x = \rho \cos(\theta)\\
+			y = \rho \sin(\theta)
+		\end{cases}
+	\end{equation}
+	
+	Si scrivano $ \sfrac{\partial}{\partial \rho} $ e $ \sfrac{\partial}{\partial \theta} $ in funzione di $ \sfrac{\partial}{\partial x} $ e $ \sfrac{\partial}{\partial y} $.
+\end{tcolorbox}
+
+L'equazione che lega i vettori di una base dello spazio tangente
+
+\begin{equation}
+	T_{p}(\R^{2} \setminus \{(0,0)\}) = \R^{2} \setminus \{(0,0)\}
+\end{equation}
+
+a un'altra base è la seguente:
+
+\begin{equation}
+	\eval{\pdv{u^{j}}}_{p} = \sum_{k=1}^{m} \left( \pdv{v^{k}}{u^{j}}\ (p) \right) \left( \eval{\pdv{v^{k}}}_{p} \right)
+\end{equation}
+
+dove $ u = (\rho,\theta) $ e $ v = (x,y) $.\\
+In questo caso, possiamo scrivere i vettori dello spazio tangente come:
+
+\begin{align}
+	\begin{split}
+		X_{p} = \left( \eval{\pdv{x}}_{p}, \eval{\pdv{y}}_{p} \right) &\doteq (\mu,\nu)\\\\
+		Y_{p} = \left( \eval{\pdv{\rho}}_{p}, \eval{\pdv{\theta}}_{p} \right) &\doteq (a,b)
+	\end{split}
+\end{align}
+
+La matrice di trasformazione è
+
+\begin{equation}
+	T = \left[ \pdv{v^{k}}{u^{j}}\ (p) \right] = \mqty( \pdv{x}{\rho} & \pdv{x}{\theta} \\\\ \pdv{y}{\rho} & \pdv{y}{\theta} ) %
+	= \mqty( \cos(\theta) & - \rho \sin(\theta) \\\\ \sin(\theta) & \rho \cos(\theta) )
+\end{equation}
+
+perciò
+
+\begin{equation}
+	Y_{p} = T X_{p} %
+	\implies %
+	\mqty( a \\ b ) = \mqty( \cos(\theta) & - \rho \sin(\theta) \\\\ \sin(\theta) & \rho \cos(\theta) ) \mqty( \mu \\ \nu ) = \mqty( \cos(\theta) \mu - \rho \sin(\theta) \nu \\\\ \sin(\theta) \mu + \rho \cos(\theta) \nu )
+\end{equation}
+
+dunque
+
+\begin{align}
+	\begin{split}
+		\eval{\pdv{\rho}}_{p} &= \cos(\theta) \eval{\pdv{x}}_{p} - \rho \sin(\theta) \eval{\pdv{y}}_{p}\\\\
+		\eval{\pdv{\theta}}_{p} &= \sin(\theta) \eval{\pdv{x}}_{p} + \rho \cos(\theta) \eval{\pdv{y}}_{p}
+	\end{split}
+\end{align}
+
+%
+
+\newpage
+
+%
+
+\section{}\label{es2-10}
+
+\begin{tcolorbox}
+	Sia $ p = (x,y) $ un punto di $ \R^{2} $. Allora
+	
+	\begin{equation}
+		c_{p}(t) = \mqty( \cos(2t) & -\sin(2t) \\\\ \sin(2t) & \cos(2t) ) \mqty(x \\ y)
+	\end{equation}
+	
+	è una curva liscia in $ \R^{2} $ che inizia in $ p $. Calcolare $ c'(0) $.
+\end{tcolorbox}
+
+Considerando $ N = \R^{2} $ con carta $ (U,\phi) $ dove $ \phi = (x^{1},\dots,x^{n}) $, il vettore velocità della curva
+
+\map{c}
+{\R}{\R^{2}}
+{t}{A(t) \, p = \mqty( \cos(2t) & -\sin(2t) \\\\ \sin(2t) & \cos(2t) ) \mqty(x \\ y)}
+
+è dato da
+
+\begin{equation}
+	c'(t_{0}) = \sum_{j=1}^{n} \dot{c}(t_{0}) \eval{\pdv{x^{j}}}_{t_{0}}%
+	\implies%
+	c'(0) = \dot{c}_{1}(0) \eval{\pdv{x}}_{0} + \dot{c}_{2}(0) \eval{\pdv{y}}_{0}
+\end{equation}
+
+Calcoliamo dunque le componenti del vettore tangente:
+
+\begin{align}
+	\begin{split}
+		\dot{c}(0) &= \eval{\dv{t}}_{0}(A(t) \, p)\\
+		&= \left( \eval{\dv{t}}_{0} A(t) \right) p\\
+		&= \eval{ \dv{t} \left( \mqty( \cos(2t) & -\sin(2t) \\\\ \sin(2t) & \cos(2t) ) \right) }_{0} \mqty(x \\ y)\\
+		&= 2 \eval{ \mqty( -\sin(2t) & -\cos(2t) \\\\ \cos(2t) & -\sin(2t) ) }_{0} \mqty(x \\ y)\\
+		&= 2 \mqty( 0 & -1 \\ 1 & 0 ) \mqty(x \\ y)\\
+		&= \mqty(-2y \\ 2x)
+	\end{split}
+\end{align}
+
+da cui
+
+\begin{equation}
+	c'(0) = -2y \eval{\pdv{x}}_{0} + 2x \eval{\pdv{y}}_{0}
+\end{equation}
+
+%
+
+\newpage
+
+%
+
+\section{}\label{es2-11}
+
+\begin{tcolorbox}
+	Siano $ N $ e $ M $ varietà differenziabili e $ \pi_{N} : N \times M \to N $ e $ \pi_{M} : N \times M \to M $ le proiezioni naturali. Dimostrare che per $ (p,q) \in N \times M $ l'applicazione
+	
+	\begin{equation}
+		(\pi_{N_{*p}},\pi_{M_{*p}}) : T_{(p,q)}(N \times M) \to T_{p}(N) \times T_{q}(M)
+	\end{equation}
+	
+	è un isomorfismo.
+\end{tcolorbox}
+
+qui
+
+% -----------------------
+
+% fine pdf 2.1-2.3
+
+% -----------------------
+
+%
+
+\newpage
+
+%
+
+\section{}\label{es2-12}
+
+\begin{tcolorbox}
+	Siano $ S_{1} $ e $ S_{2} $ due sottovarietà di due varietà differenziabili $ M_{1} $ e $ M_{2} $ rispettivamente. Dimostrare che $ S_{1} \times S_{2} $ è una sottovarietà di $ M_{1} \times M_{2} $.
+\end{tcolorbox}
+
+qui
+
+%
+
+\newpage
+
+%
+
+\section{}\label{es2-13}
+
+\begin{tcolorbox}
+	Sia l'applicazione
+	
+	\begin{align}
+		\begin{split}
+			F : \R^{2} &\to \R\\
+			(x,y) &\mapsto x^{2}-6xy+y^{2}
+		\end{split}
+	\end{align}
+	
+	Trovare i $ c \in \R $ tali che $ F^{-1}(c) $ sia una sottovarietà di $ \R^{2} $.
+\end{tcolorbox}
+
+qui
+
+%
+
+\newpage
+
+%
+
+\section{}\label{es2-14}
+
+\begin{tcolorbox}
+	Dire se le soluzione del sistema
+	
+	\begin{equation}
+		\begin{cases}
+			x^{3} + y^{3} + z^{3} = 1\\
+			z = xy
+		\end{cases}
+	\end{equation}
+	
+	costituiscono una sottovarietà di $ \R^{3} $.
+\end{tcolorbox}
+
+qui
+
+%
+
+\newpage
+
+%
+
+\section{}\label{BONUS2-3}
+
+\begin{tcolorbox}
+	Sia la sottovarietà di $ \R^{3} $
+	
+	\begin{equation}
+		S = \{ (x,y,z) \in \R^{3} \mid x^{3} + y^{3} + z^{3} = 1 \wedge x+y+z=0 \} \subset \R^{3}
+	\end{equation}
+	
+	Calcolare lo spazio tangente $ T_{p}(S) $ con $ p \in S $.
+\end{tcolorbox}
+
+qui
+
+%
+
+\newpage
+
+%
+
+\section{}\label{es2-15}
+
+\begin{tcolorbox}
+	Un polinomio $ F(x_{0},\dots,x_{n}) \in \R[x_{0},\dots,x_{n}] $ è omogeneo di grado $ k $ se è combinazione lineare di monomi $ x_{0}^{i_{1}} \cdots x_{n}^{i_{m}} $ di grado $ k $ tale che $ \sum_{j=1}^{m} i_{j} = k $. Dimostrare che
+	
+	\begin{equation}
+		\sum_{i=0}^{n} x^{i} \, \dfrac{\partial F}{\partial x^{i}} = k F
+	\end{equation}
+	
+	Dedurre che $ F^{-1}(c) $ con $ c \neq 0 $ è una sottovarietà di $ \R^{n} $ di dimensione $ n-1 $. Dimostrare inoltre che per $ c,d>0 $ si ha che $ F^{-1}(c) \simeq F^{-1}(d) $ diffeomorfe e lo stesso vale per $ c,d<0 $.\\\\
+	Suggerimento per la prima parte: usare l'uguaglianza
+	
+	\begin{equation}
+		F(\lambda x_{0},\dots,\lambda x_{n}) = \lambda^{k} F(x_{0},\dots,x_{n})
+	\end{equation}
+	
+	valida per ogni $ \lambda \in \R $.
+\end{tcolorbox}
+
+qui
+
+%
+
+\newpage
+
+%
+
+\section{}\label{es2-16}
+
+\begin{tcolorbox}
+	Dimostrare che
+	
+	\begin{equation}
+		\mathbb{SL}_{n}(\C) = \{ A \in M_{n}(\C) \mid \det(A) \neq 0 \} \subset M_{n}(\C)
+	\end{equation}
+	
+	è una sottovarietà di $ M_{n}(\C) $ con $ \dim(\mathbb{SL}_{n}(\C)) = 2n^{2}-2  $
+\end{tcolorbox}
+
+qui
+
+%
+
+\newpage
+
+%
+
+\section{}\label{es2-17}
+
+\begin{tcolorbox}
+	Sia $ F : N \to M $ un'applicazione liscia tra varietà differenziabili. Dimostrare che l'insieme $ \mathcal{PR}_{F} $ dei punti regolari di $ F $ è un aperto di $ N $.
+\end{tcolorbox}
+
+qui
+
+%
+
+\newpage
+
+%
+
+\section{}\label{es2-18}
+
+\begin{tcolorbox}
+	Sia $ F : N \to M $ un'applicazione liscia tra varietà differenziabili. Dimostrare che se $ F $ è chiusa allora  l'insieme $ \mathcal{VR}_{F} $ dei valori regolari di $ F $ è un aperto in $ M $.
+\end{tcolorbox}
+
+qui
+
+%
+
+\newpage
+
+%
+
+\section{}\label{es2-19}
+
+\begin{tcolorbox}
+	Dimostrare che l'applicazione
+	
+	\begin{align}
+		\begin{split}
+			F : \R &\to \R^{3}\\
+			t &\mapsto (t,t^{2},t^{3})
+		\end{split}
+	\end{align}
+	
+	è un embedding liscio e scrivere $ F(\R) $ come zero di funzioni.
+\end{tcolorbox}
+
+qui
+
+%
+
+\newpage
+
+%
+
+\section{}\label{es2-20}
+
+\begin{tcolorbox}
+	Dimostrare che l'applicazione
+	
+	\begin{align}
+		\begin{split}
+			F : \R &\to \R^{3}\\
+			t &\mapsto (\cosh(t),\sinh(t))
+		\end{split}
+	\end{align}
+	
+	è un embedding liscio e che
+	
+	\begin{equation}
+		F(\R) = \{ (x,y) \in \R^{2} \mid x^{2}-y^{2} = 1 \}
+	\end{equation}
+\end{tcolorbox}
+
+qui
+
+%
+
+\newpage
+
+%
+
+\section{}\label{es2-21}
+
+\begin{tcolorbox}
+	Dimostrare che la composizione di immersioni è un’immersione e che il prodotto cartesiano di due immersioni è un’immersione.
+\end{tcolorbox}
+
+qui
+
+%
+
+\newpage
+
+%
+
+\section{}\label{es2-22}
+
+\begin{tcolorbox}
+	Dimostrare che se $ F : N \to M $ è un'immersione e $ Z \subset N $ è una sottovarietà di $ N $ allora $ F_{|Z} : Z \to M $ è un'immersione.
+\end{tcolorbox}
+
+qui
+
+%
+
+\newpage
+
+%
+
+\section{}\label{es2-23}
+
+\begin{tcolorbox}
+	Dimostrare che l'applicazione
+	
+	\begin{align}
+		\begin{split}
+			F : \S^{2} &\to \R^{4}\\
+			(x,y,z) &\mapsto (x^{2}-y^{2},xy,xz,yz)
+		\end{split}
+	\end{align}
+	
+	induce un embedding liscio da $ \rp{2} $ a $ \R^{4} $.
+\end{tcolorbox}
+
+qui
+
+%
+
+\newpage
+
+%
+
+\section{}\label{es2-24}
+
+\begin{tcolorbox}
+	Dimostrare che un'immersione iniettiva e propria è un embedding liscio. Mostrare che esistono embedding lisci che non sono applicazione proprie.\\\\
+	Ricordare che un'applicazione continua $ f : X \to Y $ tra spazi topologici è propria se $ f^{-1}(K) $ è compatto in $ X $ per ogni compatto $ K $ di $ Y $.
+\end{tcolorbox}
+
+qui
+
+% -----------------------
+
+% fine pdf 2.4
+
+% -----------------------
+
+%
+
+\newpage
+
+%
+
+\section{}\label{es2-25}
+
+\begin{tcolorbox}
+	Sia $ N $ una sottovarietà di una varietà differenziabile $ M $. Dimostrare che $ T(N) $ è una sottovarietà di $ T(M) $.
+\end{tcolorbox}
+
+qui
+
+%
+
+\newpage
+
+%
+
+\section{}\label{BONUS2-4}
+
+\begin{tcolorbox}
+	Verificare che la sfera $ \S^{1} $ sia parallelizzabile.
+\end{tcolorbox}
+
+qui
+
+%
+
+\newpage
+
+%
+
+\section{}\label{es2-26}
+
+\begin{tcolorbox}
+	Una varietà differenziabile $ N $ è detta \textit{orientabile} se esiste un atlante di $ N $ rispetto al quale il determinante jacobiano dei cambi di carte è positivo. Dimostrare che:
+	
+	\begin{enumerate}
+		\item $ \rp{3} $ è una varietà orientabile;
+		\item il fibrato tangente $ T(N) $ di una varietà differenziabile $ N $ è orientabile.
+	\end{enumerate}
+\end{tcolorbox}
+
+qui
+
+%
+
+\newpage
+
+%
+
+\section{}\label{es2-27}
+
+\begin{tcolorbox}
+	Dimostrare che l'applicazione $ \mathcal{F}_{*} $ che associa a ogni varietà differenziabile il suo fibrato tangente e a ogni applicazione $ F : N \to M $ tra varietà differenziabili il suo differenziale $ F_{*} : T(N) \to T(M) $ definita come
+	
+	\begin{equation}
+		\mathcal{F}_{*}((p,v)) = (F(p), F_{*p}(v))
+	\end{equation}
+	
+	per $ \forall (p,v) \in T(N) $ definisce un funtore covariante dalla categoria delle varietà differenziabili in sé stessa.
+\end{tcolorbox}
+
+qui
+
+%
+
+\newpage
+
+%
+
+\section{}\label{es2-28}
+
+\begin{tcolorbox}
+	Una \textit{derivazione} di un'algebra di Lie $ (V,[\cdot,\cdot]) $ su un campo $ \K $ è un'applicazione lineare $ D : V \to V $ tale che
+	
+	\begin{equation}
+		D([Y,Z]) = [DY,Z] + [Y,DZ]
+	\end{equation}
+	
+	per $ \forall Y,Z \in V $. Dimostrare che, dato $ X \in V $, l'applicazione
+	
+	\begin{align}
+		\begin{split}
+			D_{X} : V &\to V\\
+			Y &\mapsto [X,Y]
+		\end{split}
+	\end{align}
+	
+	è una derivazione.
+\end{tcolorbox}
+
+qui
+
+%
+
+\newpage
+
+%
+
+\section{}\label{es2-29}
+
+\begin{tcolorbox}
+	Siano $ M = \R \setminus 0 $ e $ X = \sfrac{\operatorname{d}}{\operatorname{dx}} \in \chi(M) $. Trovare la curva integrale di $ X $ massimale che inizia in un generico punto $ p \in \R $.
+\end{tcolorbox}
+
+qui
+
+%
+
+\newpage
+
+%
+
+\section{}\label{es2-30}
+
+\begin{tcolorbox}
+	Trovare il flusso (locale) dei seguenti campi di vettori in $ \chi(\R^{2}) $:
+	
+	\begin{equation}
+		\begin{cases}
+			X = x \, \dfrac{\partial}{\partial x} - y \, \dfrac{\partial}{\partial y}\\\\
+			Y = x \, \dfrac{\partial}{\partial x} + y \, \dfrac{\partial}{\partial y}\\\\
+			Z = \dfrac{\partial}{\partial x} + y \, \dfrac{\partial}{\partial y}
+		\end{cases}
+	\end{equation}
+	
+	Nel caso siano completi, calcolare il loro gruppo di diffeomorfismi a un parametro.
+\end{tcolorbox}
+
+qui
+
+%
+
+\newpage
+
+%
+
+\section{}\label{es2-31}
+
+\begin{tcolorbox}
+	Dimostrare che il campo di vettori $ X = \sfrac{\partial}{\partial x} \in \chi(\R^{2} \setminus (0,0)) $ non è completo.
+\end{tcolorbox}
+
+qui
+
+%
+
+\newpage
+
+%
+
+\section{}\label{es2-32}
+
+\begin{tcolorbox}
+	Sia $ M $ una varietà differenziabile e $ X \in \chi(M) $ tale che $ X(p) = 0 $ in un punto $ p \in M $. Dimostrare che la curva integrale di $ X $ che inizia in $ p $ è la curva costante $ c(t)=p $.
+\end{tcolorbox}
+
+\textbf{l 26 m 36}
+
+%
+
+\newpage
+
+%
+
+\section{}\label{es2-33}
+
+\begin{tcolorbox}
+	Sia $ M $ una varietà differenziabile e $ X \in \chi(M) $ il campo di vettori nullo, i.e. $ X = 0 $. Descrivere il gruppo dei diffeomorfismi a un parametro associato a $ X $.
+\end{tcolorbox}
+
+qui
+
+%
+
+\newpage
+
+%
+
+\section{}\label{es2-34}
+
+\begin{tcolorbox}
+	Siano $ F : N \to M $ un diffeomorfismo tra varietà differenziabili, $ X \in \chi(N) $ e $ f \in C^{\infty}(N) $. Dimostrare che
+	
+	\begin{equation}
+		F_{*}(f X) = (f \circ F^{-1}) \, F_{*} X
+	\end{equation}
+\end{tcolorbox}
+
+qui
+
