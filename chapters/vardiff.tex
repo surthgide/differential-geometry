@@ -1744,8 +1744,8 @@ Consideriamo l'applicazione continua
 	{t}{(\cos 2 \pi t, \sin 2 \pi t)}
 
 dove con $ \R $ e $ \S^{1} $ si intendono gli spazi con le loro strutture differenziabili fissate, i.e. le relative varietà differenziabili.\\
-Fissiamo gli atlanti $ (\R,\id_{\R}) $ e $ \{(U_{i},\phi_{i})\}_{i=1,\dots,4} $ dove gli $ U_{i} $ sono le varie semicirconferenze di $ \S^{1} $ e le $ \phi_{i} $ sono le proiezioni di queste sugli assi\footnote{%
-	Vedi Esempio \ref{ex-s1} per dettagli.%
+Fissiamo gli atlanti $ (\R,\id_{\R}) $ e $ \{(U_{i},\phi_{i})\}_{i=1,\dots,4} $ dove gli aperti $ U_{i} $ sono semicirconferenze di $ \S^{1} $ e le $ \phi_{i} $ sono le proiezioni di queste sugli assi\footnote{%
+	Vedi Esempio \ref{ex-s1}.%
 }, i.e.
 
 \begin{gather}
@@ -1771,7 +1771,7 @@ Fissiamo gli atlanti $ (\R,\id_{\R}) $ e $ \{(U_{i},\phi_{i})\}_{i=1,\dots,4} $ 
 	{U_{4}}{(-1,1)_{y} \subset \R^{2}}
 	{(x,y)}{y}
 
-Dobbiamo verificare che l'applicazione $ \phi_{i} \circ F \circ \id_{\R} $ sia liscia per $ \forall i=1,\dots,4 $: innanzitutto $ \phi(F^{-1}(V) \cap U) $ della definizione corrisponde a $ \id_{\R}(F^{-1}(U_{i}) \cap \R) = F^{-1}(U_{i}) \subset \R $, dunque le composizioni
+Per far vedere che $ F $ sia un'applicazione liscia tra varietà, dobbiamo verificare che le composizioni $ \phi_{i} \circ F \circ \id_{\R} = \phi_{i} \circ F $ siano lisce per $ \forall i=1,\dots,4 $: possiamo scrivere che l'insieme $ \phi(F^{-1}(V) \cap U) $ della definizione corrisponde a $ \id_{\R}(F^{-1}(U_{i}) \cap \R) = F^{-1}(U_{i}) \subset \R $ per questo caso, da cui le composizioni
 
 \map{\phi_{1} \circ F}
 	{F^{-1}(U_{1})}{\R^{2}}
@@ -1789,7 +1789,7 @@ Dobbiamo verificare che l'applicazione $ \phi_{i} \circ F \circ \id_{\R} $ sia l
 	{F^{-1}(U_{4})}{\R^{2}}
 	{t}{\sin(2 \pi t)}
 
-sono tutte lisce perciò lo è anche $ F $.
+le quali sono tutte lisce perciò lo è anche $ F $.
 
 \subsection{Diffeomorfismi tra varietà}
 
