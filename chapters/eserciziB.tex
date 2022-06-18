@@ -40,7 +40,7 @@ possiamo dire che $ V \cap A_{j} $ è aperto in $ A_{j} $ per $ \forall j \in J 
 \end{tcolorbox}
 
 Prendendo un parametro $ k = 1,\dots,n+1 $, definiamo\footnote{%
-	La funzione $ \ceil*{x} $ \textit{ceiling} (soffitto) mappa un numero reale nel successivo numero naturale più vicino (arrotonda per eccesso), e.g. $ \ceil*{\frac{3}{2}} = 3 $.%
+	La funzione $ \ceil*{x} $ \textit{ceiling} (soffitto) mappa un numero reale nel successivo numero naturale più vicino (i.e. arrotonda per eccesso), e.g. $ \ceil*{\frac{3}{2}} = 2 $.%
 } i $ 2(n+1) $ aperti
 
 \begin{equation}
@@ -298,7 +298,7 @@ Prendiamo gli atlanti differenziabili $ \{(U,\phi)\} \in M $ e $ \{(U \times V,\
 
 \map{(\phi \times \psi) \circ i_{q_{0}} \circ \phi^{-1}}
 	{\phi( i_{q_{0}}^{-1}(U \times V) \cap U )}{\R^{m+n}}
-	{\phi(p)}{(p^{1},\dots,p^{m},q_{0}^{1},\dots,q_{0}^{n})}
+	{\phi(p)}{(\phi^{1}(p),\dots,\phi^{m}(p),\psi^{1}(q_{0}),\dots,\psi^{n}(q_{0}))}
 
 deve essere liscia. Per dimostrare che lo sia, dalla Proposizione \ref{map-comp}, basta mostrare che le sue componenti siano lisce: presa la proiezione sulla $ k $-esima componente
 
@@ -308,16 +308,16 @@ deve essere liscia. Per dimostrare che lo sia, dalla Proposizione \ref{map-comp}
 
 le componenti della composizione sono date dalla seguente applicazione
 
-\map{r^{k} \circ (\phi \times \psi) \circ i_{q_{0}} \circ \phi^{-1}}%
-	{\phi( i_{q_{0}}^{-1}(U \times V) \cap U )}{\R}%
+\map{r^{k} \circ (\phi \times \psi) \circ i_{q_{0}} \circ \phi^{-1}}
+	{\phi( i_{q_{0}}^{-1}(U \times V) \cap U )}{\R}
 	{\phi(p)}{%
 				\begin{cases}
-					p^{k} & k \leqslant m\\
-					q_{0}^{k} & k > m
+					\phi^{k}(p), & k \leqslant m\\
+					\psi^{k}(q_{0}), & k > m
 				\end{cases}%
 			}
 
-le quali sono tutte lisce.
+le quali sono tutte lisce, dunque anche l'inclusione è liscia tra varietà.
 
 %
 
