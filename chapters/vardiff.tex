@@ -1966,67 +1966,76 @@ Solitamente consideriamo $ \S^{n} $ all'interno di $ \R^{n+1} $ e dunque con la 
 
 \subsection{Proiezioni tra varietà}
 
-Siano $ N $ e $ M $ due varietà differenziabili di dimensione $ n $ e $ m $ rispettivamente e siano le proiezioni
+\begin{definition}
+	Siano $ N $ e $ M $ due varietà differenziabili rispettivamente di dimensione $ n $ e $ m $. Le seguenti proiezioni
+	
+	\map{\pi_{N}}
+	{N \times M}{N}
+	{(x,y)}{x}
+	%
+	\map{\pi_{M}}
+	{N \times M}{M}
+	{(x,y)}{y}
+	
+	sono lisce.
+\end{definition}
 
-\begin{align}
-	\begin{split}
-		\pi_{N} : N \times M &\to N\\
-		(x,y) &\mapsto x\\\\
-		%
-		\pi_{M} : N \times M &\to M\\
-		(x,y) &\mapsto y
-	\end{split}	
-\end{align}
-
-allora $ \pi_{N} $ e $ \pi_{M} $ sono lisce.\\
-Sia $ \{(U_{\alpha},\phi_{\alpha})\}_{\alpha \in A} $ un atlante differenziabile per $ N $ e $ \{(V_{\beta},\psi_{\beta})\}_{\beta \in B} $ un atlante differenziabile per $ M $, dunque $ \{(U_{\alpha} \times V_{\beta},\phi_{\alpha} \times \psi_{\beta})\} $ è un atlante differenziabile per $ N \times M $. Per far vedere che $ \pi_{N} $ sia liscia (la dimostrazione per $ \pi_{M} $ è analoga), siccome per la teoria $ F : N \to M $ con la verifica
-
-\begin{equation}
-	\psi \circ F \circ \phi^{-1} : \phi(F^{-1}(V) \cap U) \to \R^{n}
-\end{equation}
-
-allora il dominio è
-
-\begin{align}
-	\begin{split}
-		(\phi_{\alpha} \times \psi_{\beta})(\pi^{-1}(U_{\alpha}) \cap (U_{\alpha} \times V_{\beta})) &= (\phi_{\alpha} \times \psi_{\beta})((U_{\alpha} \times M) \cap (U_{\alpha} \times V_{\beta}))\\
-		&= (\phi_{\alpha} \times \psi_{\beta})(U_{\alpha} \times V_{\beta})\\
-		&= \phi_{\alpha}(U_{\alpha}) \times \psi_{\beta}(V_{\beta})
-	\end{split}	
-\end{align}
-
-dove $ \phi_{\alpha}(U_{\alpha}) \subset \R^{n} $ e $ \psi_{\beta}(V_{\beta}) \subset \R^{m} $, perciò
-
-\begin{align}
-	\begin{split}
-		\phi_{\alpha} \circ \pi_{N} \circ (\phi_{\alpha} \times \psi_{\beta})^{-1} : \phi_{\alpha}(U_{\alpha}) \times \psi_{\beta}(V_{\beta}) &\to \R^{n}\\
-		(a^{1},\dots,a^{n},b^{1},\dots,b^{m}) &\mapsto \phi_{\alpha} (\pi_{N} ((\phi_{\alpha}^{-1} \times \psi_{\beta}^{-1}) ((a^{1},\dots,a^{n},b^{1},\dots,b^{m}))))\\
+\begin{proof}
+	Se consideriamo $ \{(U_{\alpha},\phi_{\alpha})\}_{\alpha \in A} $ un atlante differenziabile per $ N $ e $ \{(V_{\beta},\psi_{\beta})\}_{\beta \in B} $ un atlante differenziabile per $ M $, allora $ \{(U_{\alpha} \times V_{\beta},\phi_{\alpha} \times \psi_{\beta})\} $ è un atlante differenziabile per $ N \times M $.\\
+	Dalla teoria sulle funzioni tra varietà, un'applicazione $ F : N \to M $ è liscia tra varietà se è continua e se è liscia la seguente composizione
+	
+	\begin{equation}
+		\psi \circ F \circ \phi^{-1} : \phi(F^{-1}(V) \cap U) \to \R^{n}
+	\end{equation}
+	
+	Per mostrare dunque che $ \pi_{N} $ sia liscia\footnote{%
+		La dimostrazione per $ \pi_{M} $ è analoga.%
+	}, consideriamo innanzitutto il dominio della composizione relativa:
+	
+	\begin{align}
+		\begin{split}
+			(\phi_{\alpha} \times \psi_{\beta})(\pi^{-1}(U_{\alpha}) \cap (U_{\alpha} \times V_{\beta})) &= (\phi_{\alpha} \times \psi_{\beta})((U_{\alpha} \times M) \cap (U_{\alpha} \times V_{\beta}))\\
+			&= (\phi_{\alpha} \times \psi_{\beta})(U_{\alpha} \times V_{\beta})\\
+			&= \phi_{\alpha}(U_{\alpha}) \times \psi_{\beta}(V_{\beta})
+		\end{split}	
+	\end{align}
+	
+	dove $ \phi_{\alpha}(U_{\alpha}) \subset \R^{n} $ e $ \psi_{\beta}(V_{\beta}) \subset \R^{m} $. A questo punto, essendo le proiezioni continue, $ \pi_{N} $ è liscia in quanto lo è la composizione
+	
+	\map{\phi_{\alpha} \circ \pi_{N} \circ (\phi_{\alpha} \times \psi_{\beta})^{-1}}
+	{\phi_{\alpha}(U_{\alpha}) \times \psi_{\beta}(V_{\beta})}{\R^{n}}
+	{(a^{1},\dots,a^{n},b^{1},\dots,b^{m})}{%
+		\phi_{\alpha} (\pi_{N} ((\phi_{\alpha}^{-1} \times \psi_{\beta}^{-1}) ((a^{1},\dots,a^{n},b^{1},\dots,b^{m}))))\\
 		&\mapsto \phi_{\alpha} (\pi_{N} ((\phi_{\alpha}^{-1}((a^{1},\dots,a^{n})),\psi_{\beta}^{-1}((b^{1},\dots,b^{m}))))\\
 		&\mapsto \phi_{\alpha} (\phi_{\alpha}^{-1}((a^{1},\dots,a^{n})))\\
 		&\mapsto (a^{1},\dots,a^{n})
-	\end{split}	
-\end{align}
+	}
+\end{proof}
 
-i.e. $ \phi_{\alpha} \circ \pi_{N} \circ (\phi_{\alpha} \times \psi_{\beta})^{-1} \equiv \pi_{N} $, la quale è liscia.\\\\
-%
-Siano $ N $, $ M_{1} $ e $ M_{2} $ tre varietà differenziabili e sia l'applicazione
+\begin{remark}
+	Siano $ N $, $ M_{1} $ e $ M_{2} $ tre varietà differenziabili e l'applicazione
+	
+	\map{F}
+		{N}{M_{1} \times M_{2}}
+		{q}{(F_{1}(q),F_{2}(q))}
+	
+	dove $ F_{1} : N \to M_{1} $ e $ F_{1} : N \to M_{2} $, allora $ F $ è liscia se e solo se lo sono $ F_{1} $ e $ F_{2} $.
+\end{remark}
 
-\begin{align}
-	\begin{split}
-		F : N &\to M_{1} \times M_{2}\\
-		q &\mapsto (F_{1}(q),F_{2}(q))
-	\end{split}
-\end{align}
+\begin{proof}[Dimostrazione ($ \implies $)]
+	Se $ F $ è liscia allora le sue componenti $ F_{i} = \pi_{i} \circ F $ (con $ \pi_{i} : M_{1} \times M_{2} \to M_{i} $) devono essere lisce: questo è verificato perché $ \pi_{i} \in C^{\infty} $ per $ i=1,2 $, dunque la composizione che risulta in $ F_{i} $ è liscia.
+\end{proof}
 
-dove $ F_{1} : N \to M_{1} $ e $ F_{1} : N \to M_{2} $, allora $ F $ è liscia se e solo se lo sono $ F_{1} $ e $ F_{2} $.\\
-Infatti, se $ F $ è liscia allora le sue componenti $ F_{i} = \pi_{i} \circ F $ (con $ \pi_{i} : M_{1} \times M_{2} \to M_{i} $) devono essere lisce: questo è verificato perché $ \pi_{i} \in C^{\infty} $ per $ i=1,2 $, dunque la composizione che risulta in $ F_{i} $ è liscia.\\
-Viceversa, se $ F_{1} $ e $ F_{2} $ sono lisce allora $ \phi_{1} \circ F_{1} \circ \phi^{-1} $ e $ \phi_{2} \circ F_{2} \circ \phi^{-1} $ sono lisce, dove $ (U_{1},\phi_{1}) $ è una carta in $ M_{1} $, $ (U_{2},\phi_{2}) $ è una carta in $ M_{2} $ e $ (U,\phi) $ è una carta in $ N $. A questo punto
-
-\begin{equation}
-	(\phi_{1} \circ F_{1} \circ \phi^{-1}, \phi_{2} \circ F_{2} \circ \phi^{-1}) = (\phi_{1} \times \phi_{2}) \circ F \circ \phi^{-1}
-\end{equation}
-
-è liscia e, per definizione di applicazione liscia, lo è anche $ F $.
+\begin{proof}[Dimostrazione ($ \impliedby $)]
+	Se $ F_{1} $ e $ F_{2} $ sono lisce allora $ \phi_{1} \circ F_{1} \circ \phi^{-1} $ e $ \phi_{2} \circ F_{2} \circ \phi^{-1} $ sono lisce, dove $ (U_{1},\phi_{1}) $ è una carta in $ M_{1} $, $ (U_{2},\phi_{2}) $ è una carta in $ M_{2} $ e $ (U,\phi) $ è una carta in $ N $. Da questo otteniamo che la seguente composizione è liscia
+	
+	\begin{equation}
+		(\phi_{1} \circ F_{1} \circ \phi^{-1}, \phi_{2} \circ F_{2} \circ \phi^{-1}) = (\phi_{1} \times \phi_{2}) \circ F \circ \phi^{-1}
+	\end{equation}
+	
+	Sappiamo inoltre che la topologia prodotto conserva la continuità delle funzioni, dunque $ F $ è continua in quanto $ F = F_{1} \times F_{2} $.\\
+	Essendo $ F $ continua e $ (\phi_{1} \times \phi_{2}) \circ F \circ \phi^{-1} $ liscia, otteniamo dunque che $ F $ è liscia tra varietà.
+\end{proof}
 
 \subsection{Gruppi di Lie}
 
