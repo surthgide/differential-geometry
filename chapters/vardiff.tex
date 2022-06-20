@@ -1929,38 +1929,39 @@ Solitamente consideriamo $ \S^{n} $ all'interno di $ \R^{n+1} $ e dunque con la 
 \subsection{Carte e diffeomorfismi}
 
 \begin{definition}
-	Sia $ N $ una varietà differenziabile e $ (U,\phi) $ una sua carta, allora l'applicazione $ \phi : U \to \phi(U) $ è un diffeomorfismo, dove la struttura differenziabile di $ U $ proviene da quella di $ N $ mentre quella di $ \phi(U) $ da $ \R^{n} $.
+	Siano $ N $ una varietà differenziabile di dimensione $ n $ e $ (U,\phi) $ una sua carta, allora l'applicazione $ \phi : U \to \phi(U) $ è un diffeomorfismo, dove la struttura differenziabile di $ U $ proviene da quella di $ N $ mentre quella di $ \phi(U) $ da $ \R^{n} $.
 \end{definition}
 
 \begin{proof}
-	Osserviamo che $ (U,\phi) $ è un'atlante differenziabile per $ U $ e $ (\phi(U),\id_{\R^{n}}) $ è un atlante differenziabile per $ \phi(U) $, allora per la definizione di funzione liscia tra varietà
+	Osserviamo che $ (U,\phi) $ è un'atlante differenziabile per $ U $ e $ (\phi(U),\id_{\R^{n}}) $ è un atlante differenziabile per $ \phi(U) $. Perché $ \phi $ sia un diffeomorfismo è necessario che sia liscia, invertibile e con inversa liscia: per la definizione di funzione liscia tra varietà, $ \phi $ è liscia in quanto lo è la composizione
 	
-	\begin{align}
-		\begin{split}
-			\id_{\phi(U)} \circ \phi \circ \phi^{-1} &= \id_{\phi(U)}\\
-			\phi \circ \phi^{-1} \circ \id_{U} &= \id_{U}
-		\end{split}	
-	\end{align}
+	\begin{equation}
+		\id_{\phi(U)} \circ \phi \circ \phi^{-1} = \id_{\phi(U)}
+	\end{equation}
 
-	abbiamo che $ \phi $ è un diffeomorfismo tra $ U $ e $ \phi(U) $.
+	Sappiamo inoltre che è invertibile in quanto omeomorfismo e la sua inversa è ancora liscia tra varietà perché lo è la composizione
+	
+	\begin{equation}
+		\phi \circ \phi^{-1} \circ \id_{U} = \id_{U}
+	\end{equation}
+
+	Questo dimostra che $ \phi $ è un diffeomorfismo, dunque $ U \simeq \phi(U) $.
 \end{proof}
 
 \begin{definition}\label{diffeo-map}
-	Sia $ U \subset N $ un aperto di una varietà differenziabile $ N $ di dimensione $ n $ e sia $ F : U \to F(U) \subset \R^{n} $ (aperto) un diffeomorfismo, allora $ (U,F) $ è una carta di $ N $ (nella struttura differenziabile di $ N $).
+	Siano $ U \subset N $ un aperto di una varietà differenziabile $ N $ di dimensione $ n $ e $ F : U \to F(U) \subset \R^{n} $ (aperto) un diffeomorfismo, allora $ (U,F) $ è una carta di $ N $, i.e. appartiene alla struttura differenziabile $ \mathfrak{N} $ di $ N $.
 \end{definition}
 
 \begin{proof}
 	\`{E} sufficiente verificare che $ (U,F) $ sia compatibile con ogni carta $ (U_{\alpha},\phi_{\alpha}) $ dell'atlante massimale $ \mathfrak{N} $ di $ N $ che definisce la sua struttura differenziabile, cioè appartiene all'atlante stesso.\\
-	Prendiamo i cambi di carte
+	Consideriamo dunque i cambi di carte
 	
-	\begin{align}
-		\begin{split}
-			F \circ (\phi_{\alpha})^{-1} : \phi_{\alpha}(U_{\alpha} \cap U) \to F(U_{\alpha} \cap U)\\
-			\phi_{\alpha} \circ F^{-1} : F(U_{\alpha} \cap U) \to \phi_{\alpha}(U_{\alpha} \cap U)
-		\end{split}	
-	\end{align}
+	\begin{gather}
+		F \circ (\phi_{\alpha})^{-1} : \phi_{\alpha}(U_{\alpha} \cap U) \to F(U_{\alpha} \cap U)\\
+		\phi_{\alpha} \circ F^{-1} : F(U_{\alpha} \cap U) \to \phi_{\alpha}(U_{\alpha} \cap U)
+	\end{gather}
 
-	in cui $ F $ è liscia in quanto diffeomorfismo e $ \phi_{\alpha} $ e la sua inversa sono lisce per la dimostrazione precedente, perciò i cambi di carte sono anch'essi lisci in quanto composizione di applicazioni lisce.
+	in cui $ F $ è liscia in quanto diffeomorfismo e $ \phi_{\alpha} $ e la sua inversa sono lisce per la dimostrazione precedente, perciò i cambi di carte sono anch'essi lisci in quanto composizione di applicazioni lisce, rendendo quindi $ (U,F) \in \mathfrak{N} $.
 \end{proof}
 
 \subsection{Proiezioni tra varietà}
