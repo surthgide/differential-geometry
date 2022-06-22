@@ -1,10 +1,104 @@
-\section{}\label{es3-1}
+\section{Prodotto diretto di gruppi di Lie}\label{es3-1}
 
 \begin{tcolorbox}
 	Dimostrare che il prodotto diretto di due gruppi di Lie è un gruppo di Lie.
 \end{tcolorbox}
 
-qui
+Consideriamo i due seguenti gruppi di Lie:
+
+\begin{itemize}
+	\item $ (G, \mu, i) $ con operazioni definite come
+	
+		\map{\mu}
+			{G \times G}{G}
+			{(g_{1},g_{2})}{g_{1} \cdot g_{2}}
+		
+		\map{i}
+			{G}{G}
+			{g}{g^{-1}}
+		
+	\item $ (H, \nu, j) $ con operazioni definite come
+	
+		\map{\nu}
+			{H \times H}{H}
+			{(h_{1},h_{2})}{h_{1} * h_{2}}
+		
+		\map{j}
+			{H}{H}
+			{h}{h^{-1}}
+\end{itemize}
+
+A questo punto definiamo $ (\Omega, \sigma, k) $ il prodotto diretto dei due gruppi di Lie appena definiti, i.e.
+
+\begin{equation}
+	(\Omega, \sigma, k) \doteq (G, \mu, i) \times (H, \nu, j) = (G \times H, \mu \times \nu, i \times j)
+\end{equation}
+
+dove le operazioni di $ \Omega $ sono definite come:
+
+\map{\sigma}
+	{\Omega \times \Omega}{\Omega}
+	{(s_{1},s_{2})}{s_{1} \star s_{2}}
+
+\map{k}
+	{\Omega}{\Omega}
+	{s}{s^{-1}}
+
+Esplicitando i gruppi di Lie sottostanti, possiamo riscrivere queste operazioni come:
+
+\map{\sigma = \mu \times \nu}
+	{G \times G \times H \times H}{G \times H}
+	{(g_{1},g_{2},h_{1},h_{2})}{(g_{1} \cdot g_{2},h_{1} * h_{2})}
+
+\map{k = i \times j}
+	{G \times H}{G \times H}
+	{(g,h)}{(g^{-1},h^{-1})}
+
+Il prodotto diretto conserva in $ \Omega $ le proprietà di gruppo algebrico di $ G $ e $ H $. Affinché $ \Omega $ sia un gruppo di Lie, è necessario che le operazioni $ \sigma $ e $ k $ siano lisce: per dimostrare questo, consideriamo le seguenti proiezioni tra varietà
+
+\sbs{0.5}{%
+			\map{\pi_{G}}
+				{\Omega}{G}
+				{s = (g,h)}{g}
+			}
+	{0.5}{%
+			\map{\pi_{H}}
+				{\Omega}{H}
+				{s = (g,h)}{h}
+			
+			}
+		
+Da cui possiamo derivare i seguenti diagrammi:
+
+\sbs{0.5}{%
+			\diagr{%
+					G \times G \arrow[rr, "\mu"]                                                                                         \&  \& G                                                   \\
+					\&  \&                                                     \\
+					\Omega \times \Omega \arrow[rr, "\sigma"] \arrow[dd, "\pi_{H} \times \pi_{H}"] \arrow[uu, "\pi_{G} \times \pi_{G}"'] \&  \& \Omega \arrow[dd, "\pi_{H}"] \arrow[uu, "\pi_{G}"'] \\
+					\&  \&                                                     \\
+					H \times H \arrow[rr, "\nu"]                                                                                         \&  \& H                                                  
+					}
+			}
+	{0.5}{%
+			\diagr{%
+					G \arrow[rr, "i"]                                                   \&  \& G                                                   \\
+					\&  \&                                                     \\
+					\Omega \arrow[rr, "k"] \arrow[dd, "\pi_{H}"] \arrow[uu, "\pi_{G}"'] \&  \& \Omega \arrow[dd, "\pi_{H}"] \arrow[uu, "\pi_{G}"'] \\
+					\&  \&                                                     \\
+					G \arrow[rr, "j"]                                                   \&  \& H                                                  
+					}
+			}
+
+Mediante le proiezioni è possibile scrivere le operazioni del gruppo $ \Omega $ come
+
+\begin{gather}
+		\sigma = (\pi_{G})^{-1} \circ \mu \circ (\pi_{G} \times \pi_{G}) %
+		= (\pi_{H})^{-1} \circ \nu \circ (\pi_{H} \times \pi_{H})\\
+		k = (\pi_{G})^{-1} \circ i \circ \pi_{G} %
+		= (\pi_{H})^{-1} \circ j \circ \pi_{H}
+\end{gather}
+
+Siccome le proiezioni e le operazioni dei gruppi $ G $ e $ H $ sono liscie, anche le operazioni di $ \Omega $ sono lisce in quanto composizioni di applicazioni lisce; questo mostra che $ (\Omega, \sigma, k) $ è un gruppo di Lie.
 
 %
 
