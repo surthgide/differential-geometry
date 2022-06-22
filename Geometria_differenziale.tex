@@ -99,14 +99,17 @@
 
 % diagram definition
 
-%\newcommand{\diagr}[1]{
-%	\begin{figure}[H]
-%		\centering
-%		\begin{tikzcd}
-%			#1
-%		\end{tikzcd}
-%	\end{figure}
-%}
+% mind this link for why & -> \&:
+% https://tex.stackexchange.com/questions/15093/single-ampersand-used-with-wrong-catcode-error-using-tikz-matrix-in-beamer
+
+\newcommand{\diagr}[1]{
+	\begin{figure}[H]
+		\centering
+		\begin{tikzcd}[ampersand replacement=\&]
+			#1
+		\end{tikzcd}
+	\end{figure}
+}
 
 % side-by-side (two neighbouring boxes)
 

@@ -818,14 +818,11 @@ Questa proprietà permette di considerare una seconda applicazione
 la quale è ben definita in quanto il rappresentante della classe $ [s] $ preso non influisce al fine del calcolo di $ f(x) $.\\
 Tramite il seguente diagramma
 
-\begin{figure}[H]
-	\centering
-	\begin{tikzcd}
-		S \arrow[rr, "f"] \arrow[dd, "\pi"']       &  & Y \\
-		&  &   \\
-		\sfrac{S}{\sim} \arrow[rruu, "\tilde{f}"'] &  &  
-	\end{tikzcd}
-\end{figure}
+\diagr{%
+		S \arrow[rr, "f"] \arrow[dd, "\pi"']       \&  \& Y \\
+		\&  \&   \\
+		\sfrac{S}{\sim} \arrow[rruu, "\tilde{f}"'] \&  \&  
+		}
 
 possiamo derivare la seguente proprietà
 
@@ -888,14 +885,11 @@ Dimostriamo ora l'omeomorfismo $ \sfrac{I}{\{0,1\}} \simeq \S^{1} $. Sia l'appli
 
 questa è costante sulle classi di equivalenza di $ \sfrac{I}{\{0,1\}} $. Tramite questa applicazione, possiamo costruire il diagramma
 
-\begin{figure}[H]
-	\centering
-	\begin{tikzcd}
-		I \arrow[rr, "f"] \arrow[dd, "\pi"']        &  & \S^{1} \\
-		&  &        \\
-		{\sfrac{I}{0,1}} \arrow[rruu, "\tilde{f}"'] &  &       
-	\end{tikzcd}
-\end{figure}
+\diagr{%
+		I \arrow[rr, "f"] \arrow[dd, "\pi"']        \&  \& \S^{1} \\
+		\&  \&        \\
+		{\sfrac{I}{0,1}} \arrow[rruu, "\tilde{f}"'] \&  \&       
+		}
 
 il quale implica l'esistenza della funzione $ \tilde{f} $, la quale è continua perché $ f $ è continua. Questa applicazione è anche iniettiva e suriettiva: perché sia identificata come un omeomorfismo, si utilizza il seguente lemma
 
@@ -1036,15 +1030,12 @@ Iniziamo col dimostrare la compattezza e la connessione di $ \rp{n} $ mediante i
 \begin{proof}
 	Consideriamo innanzitutto i seguenti diagrammi di domini e mappe:
 	
-	\begin{figure}[H]
-		\centering
-		\begin{tikzcd}
-			\R^{n+1} \setminus \{0\} \arrow[rrrr, "f", bend left] \arrow[rrd, "g"] \arrow[rrddd, "\pi", bend right] &  &                                               &  & \sfrac{\S^{n}}{\sim_{a}} &  & x \arrow[rrrr, "f", maps to, bend left] \arrow[rrd, "g", maps to] \arrow[rrddd, "\pi", maps to, bend right] &  &                                                                              &  & {[x]_{a}} \\
-			&  & \S^{n} \arrow[dd, "h"] \arrow[rru, "\pi_{a}"] &  &                          &  &                                                                                                             &  & \dfrac{x}{\norm{x}} \arrow[rru, "\pi_{a}", maps to] \arrow[dd, "h", maps to] &  &           \\
-			&  &                                               &  &                          &  &                                                                                                             &  &                                                                              &  &           \\
-			&  & \rp{n} \arrow[rruuu, "\tilde{f}", bend right] &  &                          &  &                                                                                                             &  & {[x]} \arrow[rruuu, "\tilde{f}", maps to, bend right]                        &  &          
-		\end{tikzcd}
-	\end{figure}
+	\diagr{%
+			\R^{n+1} \setminus \{0\} \arrow[rrrr, "f", bend left] \arrow[rrd, "g"] \arrow[rrddd, "\pi", bend right] \&  \&                                               \&  \& \sfrac{\S^{n}}{\sim_{a}} \&  \& x \arrow[rrrr, "f", maps to, bend left] \arrow[rrd, "g", maps to] \arrow[rrddd, "\pi", maps to, bend right] \&  \&                                                                              \&  \& {[x]_{a}} \\
+			\&  \& \S^{n} \arrow[dd, "h"] \arrow[rru, "\pi_{a}"] \&  \&                          \&  \&                                                                                                             \&  \& \dfrac{x}{\norm{x}} \arrow[rru, "\pi_{a}", maps to] \arrow[dd, "h", maps to] \&  \&           \\
+			\&  \&                                               \&  \&                          \&  \&                                                                                                             \&  \&                                                                              \&  \&           \\
+			\&  \& \rp{n} \arrow[rruuu, "\tilde{f}", bend right] \&  \&                          \&  \&                                                                                                             \&  \& {[x]} \arrow[rruuu, "\tilde{f}", maps to, bend right]                        \&  \&          
+			}
 
 	Perché $ \rp{n} \simeq \sfrac{\S^{n}}{\sim_{a}} $ è necessario che $ \tilde{f} $ sia un omeomorfismo, i.e. una bigezione continua con inversa continua.\\
 	Prendiamo l'applicazione
@@ -1256,14 +1247,11 @@ con $ i=0,\dots,n $, cioè eliminiamo l'$ i $-esima componente dal vettore nell'
 Essendo l'unione degli insiemi $ U_{i} $ un ricoprimento per $ \rp{n} $, mostrando che le $ \phi_{i} $ sono degli omeomorfismi, dimostriamo che $ \mathfrak{M} = \{(U_{i},\phi_{i})\} $ è un atlante topologico per $ \rp{n} $.\\
 Queste applicazioni fanno parte del diagramma
 
-\begin{figure}[H]
-	\centering
-	\begin{tikzcd}
-		V_{i} \arrow[rr, "\psi_{i}"] \arrow[dd, "\pi"'] &  & \R^{n} \\
-		&  &        \\
-		U_{i} \arrow[rruu, "\phi_{i}"']                 &  &       
-	\end{tikzcd}
-\end{figure}
+\diagr{%
+		V_{i} \arrow[rr, "\psi_{i}"] \arrow[dd, "\pi"'] \&  \& \R^{n} \\
+		\&  \&        \\
+		U_{i} \arrow[rruu, "\phi_{i}"']                 \&  \&       
+		}
 
 dove
 
@@ -1517,14 +1505,11 @@ Le altre applicazioni sono analoghe:
 dove $ \{i,j,l,m\}=\{1,2,3,4\} $.\\
 Verifichiamo che le $ \phi_{ij} $ siano omeomorfismi prendendo come esempio $ \phi_{12} $: dimostriamo che questa è continua e con inversa continua. La continuità è data dal seguente diagramma
 
-\begin{figure}[H]
-	\centering
-	\begin{tikzcd}
-		V_{12} \arrow[rr, "\psi_{12}"] \arrow[dd, "\pi"'] &  & \R^{4} \\
-		&  &        \\
-		U_{12} \arrow[rruu, "\phi_{12}"']                 &  &       
-	\end{tikzcd}
-\end{figure}
+\diagr{%
+		V_{12} \arrow[rr, "\psi_{12}"] \arrow[dd, "\pi"'] \&  \& \R^{4} \\
+		\&  \&        \\
+		U_{12} \arrow[rruu, "\phi_{12}"']                 \&  \&       
+		}
 
 dove l'applicazione
 
