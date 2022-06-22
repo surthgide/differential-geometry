@@ -2039,17 +2039,15 @@ Solitamente consideriamo $ \S^{n} $ all'interno di $ \R^{n+1} $ e dunque con la 
 
 \subsection{Gruppi di Lie}
 
-Un \textit{gruppo di Lie} $ G $ è un gruppo algebrico che sia anche una varietà differenziabile con le operazioni di gruppo lisce, i.e. le operazioni
+Un \textit{gruppo di Lie} $ G $ è un gruppo algebrico che sia anche una varietà differenziabile nel quale le operazioni di gruppo
 
-\begin{align}
-	\begin{split}
-		\mu : G \times G &\to G\\
-		(g,h) &\mapsto g \cdot h\\\\
-		%
-		i : G &\to G\\
-		g &\mapsto g^{-1}
-	\end{split}
-\end{align}
+\map{\mu}
+	{G \times G}{G}
+	{(g,h)}{g \cdot h}
+	
+\map{i}
+	{G}{G}
+	{g}{g^{-1}}
 
 sono lisce.
 
@@ -2059,15 +2057,13 @@ sono lisce.
 
 Il gruppo $ (\R,+) $ è anche una varietà differenziabile. Le operazioni
 
-\begin{align}
-	\begin{split}
-		+ : \R \times \R &\to \R\\
-		(x,y) &\mapsto x+y\\\\
-		%
-		i : \R &\to \R\\
-		x &\mapsto - x
-	\end{split}
-\end{align}
+\map{+}
+	{\R \times \R}{\R}
+	{(x,y)}{x + y}
+
+\map{i}
+	{\R}{\R}
+	{x}{- x}
 
 sono lisce dunque è un gruppo di Lie.
 
@@ -2075,46 +2071,43 @@ sono lisce dunque è un gruppo di Lie.
 
 Il gruppo $ (\R \setminus \{0\},\cdot) $ è una varietà differenziabile e dunque gruppo di Lie in quanto
 
-\begin{align}
-	\begin{split}
-		\cdot : \R \setminus \{0\} \times \R \setminus \{0\} &\to \R \setminus \{0\}\\
-		(x,y) &\mapsto x \cdot y\\\\
-		%
-		i : \R &\to \R\\
-		x &\mapsto x^{-1}
-	\end{split}
-\end{align}
+\map{\cdot}
+	{\R \setminus \{0\} \times \R \setminus \{0\}}{\R \setminus \{0\}}
+	{(x,y)}{x \cdot y}
+
+\map{i}
+	{\R \setminus \{0\}}{\R \setminus \{0\}}
+	{x}{x^{-1}}
 
 sono lisce.
 
-\paragraph{3. Cerchio unitario $ \S^{1} $}
+\paragraph{3. Cerchio unitario}
 
 Il cerchio unitario
 
 \begin{equation}
-	\S^{1} = \{ z \in \C \, \mid \, \norm{z} = 1 \} \subset \C
+	\S^{1} = \{ z \in \C \, \mid \, \norm{z} = 1 \} \subset \C = \R^{2}
 \end{equation}
 
 dove $ \C $ indica l'insieme dei numeri complessi, è un gruppo di Lie in quanto
 
-\begin{align}
-	\begin{split}
-		\cdot : \S^{1} \times \S^{1} &\to \S^{1}\\
-		(z,w) &\mapsto z \cdot w\\\\
-		%
-		i : \S^{1} &\to \S^{1}\\
-		z &\mapsto z^{-1}
-	\end{split}
-\end{align}
+\map{\cdot}
+	{\S^{1} \times \S^{1}}{\S^{1}}
+	{(z,w)}{z \cdot w}
+
+\map{i}
+	{\S^{1}}{\S^{1}}
+	{z}{z^{-1}}
 
 sono lisce.
 
 \paragraph{4. Prodotto diretto}
 
-Il prodotto diretto di gruppi di Lie è ancora un gruppo di Lie, con il prodotto tra varietà differenziabili e con l'operazione componente per componente.\\
-Vedi Esercizio \ref{es3-1}.
+Il prodotto diretto di gruppi di Lie è ancora un gruppo di Lie, con il prodotto tra varietà differenziabili e con l'operazione componente per componente\footnote{%
+	Vedi Esercizio \ref{es3-1}.%
+}.
 
-\paragraph{5. $ GL_{n}(\R) $}
+\paragraph{5. Gruppo lineare generale}
 
 Il gruppo delle matrici invertibili
 
@@ -2122,38 +2115,33 @@ Il gruppo delle matrici invertibili
 	GL_{n}(\R) = \{ A \in M_{n}(\R) \, \mid \, \det(A) \neq 0 \} \subset M_{n}(\R) = \R^{n^{2}}
 \end{equation}
 
-con la struttura differenziale è ereditata da $ M_{n}(\R) = \R^{n^{2}} $, in quanto $ GL_{n}(\R) $ è aperto in questo spazio, è un gruppo di Lie rispetto alla moltiplicazione. La carta $ (GL_{n}(\R),\id) $ corrisponde a un atlante per $ GL_{n}(\R) $.\\
-Per dimostrare che sia un gruppo di Lie, dobbiamo verificare che le operazioni di moltiplicazione e di inversione siano lisce: consideriamo il prodotto tra matrici
+con la struttura differenziale ereditata da $ M_{n}(\R) = \R^{n^{2}} $ (in quanto $ GL_{n}(\R) $ è aperto in questo spazio) è un gruppo di Lie rispetto alla moltiplicazione. La carta $ (GL_{n}(\R),\id) $ corrisponde a un atlante per $ GL_{n}(\R) $.\\
+Per dimostrare che sia un gruppo di Lie, dobbiamo verificare che le operazioni di moltiplicazione e di inversione siano lisce: consideriamo quindi il prodotto tra matrici
 
-\begin{align}
-	\begin{split}
-		\mu : GL_{n}(\R) \times GL_{n}(\R) &\to GL_{n}(\R)\\
-		(A,B) &\mapsto A B
-	\end{split}
-\end{align}
+\map{\mu}
+	{GL_{n}(\R) \times GL_{n}(\R)}{GL_{n}(\R)}
+	{(A,B)}{A B}
 
-se $ A = (a_{ij}) $ e $ B = (b_{jk}) $ allora
+Se $ A = (a_{ij}) $ e $ B = (b_{jk}) $ allora
 
 \begin{equation}
 	(A B)_{ik} = \sum_{j=1}^{n} a_{ij} b_{jk}
 \end{equation}
 
-dunque $ \mu \in C^{\infty} $ in quanto somma e prodotto di funzioni lisce; l'inversione è definita come
+dunque $ \mu \in C^{\infty} $ in quanto somma e prodotto di funzioni lisce.\\
+L'inversione è definita come
 
-\begin{align}
-	\begin{split}
-		i : GL_{n}(\R) &\to GL_{n}(\R)\\
-		A &\mapsto A^{-1}
-	\end{split}
-\end{align}
+\map{i}
+	{GL_{n}(\R)}{GL_{n}(\R)}
+	{A}{A^{-1}}
 
-considerando la matrice dei cofattori $ \mathcal{C} $
+Considerando la matrice dei cofattori $ \mathcal{C} $ definita mediante
 
 \begin{equation}
 	\mathcal{C}_{ij} \doteq (-1)^{i+j} m_{ij} = (-1)^{i+j} \det(A_{ij})
 \end{equation}
 
-dove gli $ A_{i,j} $ sono le sottomatrici di $ A $ (le matrici a cui sono state tolte la riga $ i $ e la colonna $ j $), si ha che l'inverso di una matrice $ A $ è dato da
+dove le $ A_{ij} $ sono le sottomatrici di $ A $ (le matrici a cui sono state tolte la riga $ i $ e la colonna $ j $), si ha che l'inverso di una matrice $ A $ è dato da
 
 \begin{equation}
 	A^{-1} = \dfrac{1}{\det(A)} \, \mathcal{C}^{T}
