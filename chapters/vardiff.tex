@@ -2169,33 +2169,37 @@ dunque l'inversione è liscia in quanto composizione di funzioni lisce.
 
 \subsection{Derivate parziali su varietà differenziabili}
 
-Fissiamo una varietà differenziabile $ N $ di dimensione $ n $ e una carta $ (U,\phi) $ intorno a un punto $ p $, dunque abbiamo il diffeomorfismo $ \phi : U \to \phi(U) \subset \R^{n} $. Prendendo la proiezione
+Siano una varietà differenziabile $ N $ di dimensione $ n $ e una carta $ (U,\phi) $ intorno a un punto $ p \in N $, dal quale consideriamo il diffeomorfismo $ \phi : U \to \phi(U) \subset \R^{n} $. Prendendo la proiezione
 
-\begin{align}
-	\begin{split}
-		r^{i} : \R^{n} &\to \R\\
-		(x^{1},\dots,x^{n}) &\mapsto x^{i}
-	\end{split}
-\end{align}
+\map{r^{i}}
+	{\R^{n}}{\R}
+	{(x^{1},\dots,x^{n})}{x^{i}}
 
 con $ i=1,\dots,n $, otteniamo che $ x^{i} = r^{i} \circ \phi $, in quanto $ \phi(p) = (x^{1}(p),\dots,x^{n}(p)) \in \R^{n} $.\\
-Consideriamo una funzione $ f : N \to \R $ che sia $ C^{\infty}(N) $, vogliamo definire la \textit{derivata parziale di} $ f $ \textit{rispetto alla coordinata} $ x^{i} $, i.e. $ \sfrac{\partial f}{\partial x^{i}} (p) $, la quale dipenderà dunque dalla carta scelta. L'idea alla base della derivata parziale di una funzione su una varietà è quella di riportare tutto a $ \R^{n} $ e svolgere la derivata usuale, dunque definiamo
+Sia una funzione liscia $ f : N \to \R $, vogliamo definire la \textit{derivata parziale di} $ f $ \textit{rispetto alla coordinata} $ x^{i} $ \textit{nel punto} $ p $, la quale dipenderà dunque dalla carta scelta che contiene $ p $. L'idea alla base della derivata parziale di una funzione su una varietà è quella di riportare tutto a $ \R^{n} $ e svolgere la derivata usuale, dunque definiamo
 
 \begin{equation}
-	\dfrac{\partial f}{\partial x^{i}} (p) \doteq \left. \dfrac{\partial}{\partial x^{i}} \right|_{p} f
+	\pdv{f}{x^{i}} \, (p) \doteq \eval{ \pdv{x^{i}} }_{p} f
 \end{equation}
 
-Usando la composizione $ f \circ \phi^{-1} : \phi(U) \to \R $
+\sbs{0.45}{%
+			Per poter calcolare la derivata parziale, passiamo attraverso la composizione
+			
+			\begin{equation}
+				f \circ \phi^{-1} : \phi(U) \to \R
+			\end{equation}
+		
+			visualizzabile a lato.
+			}
+	{0.55}{%
+			\img{0.55}{img22}
+			}
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.4\textwidth,keepaspectratio]{img22}
-\end{figure}
-
-scriviamo
+Tramite questa, possiamo quindi esprimere la derivata parziale come:
 
 \begin{equation}
-	\left. \dfrac{\partial}{\partial x^{i}} \right|_{p} f = \dfrac{\partial (f \circ \phi^{-1})}{\partial r^{i}} (\phi(p)) \doteq \left. \dfrac{\partial}{\partial r^{i}} \right|_{\phi(p)} (f \circ \phi^{-1})
+	\eval{ \pdv{x^{i}} }_{p} f = \pdv{(f \circ \phi^{-1})}{r^{i}} \, (\phi(p)) %
+	\doteq \eval{ \pdv{r^{i}} }_{\phi(p)} (f \circ \phi^{-1})
 \end{equation}
 
 La dipendenza dalle carte scelte per la varietà è analoga alla scelta delle coordinate per $ \R^{n} $ (e.g. standard vs. polari).
@@ -2204,7 +2208,7 @@ La dipendenza dalle carte scelte per la varietà è analoga alla scelta delle co
 	Presa una funzione $ f \in C^{\infty} $ su una varietà, la sua derivata parziale
 	
 	\begin{equation}
-		\dfrac{\partial f}{\partial x^{i}} (p) \doteq \left. \dfrac{\partial}{\partial r^{i}} \right|_{\phi(p)} (f \circ \phi^{-1}) : U \to \R
+		\pdv{f}{x^{i}} \, (p) \doteq \eval{ \pdv{r^{i}} }_{\phi(p)} (f \circ \phi^{-1}) : U \to \R
 	\end{equation}
 
 	è ancora liscia.
@@ -2213,14 +2217,12 @@ La dipendenza dalle carte scelte per la varietà è analoga alla scelta delle co
 \begin{proof}
 	Possiamo scrivere
 	
-	\begin{align}
-		\begin{split}
-			\dfrac{\partial f}{\partial x^{i}} (p) &= \dfrac{\partial f}{\partial x^{i}} (\phi^{-1}(\phi(p)))\\
-			&\doteq \dfrac{\partial (f \circ \phi^{-1})}{\partial r^{i}} (\phi(p))
-		\end{split}
-	\end{align}
+	\begin{equation}
+		\pdv{f}{x^{i}} \, (p) = \pdv{f}{x^{i}} \, (\phi^{-1}(\phi(p))) %
+		\doteq \pdv{(f \circ \phi^{-1})}{r^{i}} \, (\phi(p))
+	\end{equation}
 
-	a questo punto
+	da cui
 	
 	\begin{equation}
 		\pdv{f}{x^{i}} \circ \phi^{-1} = \pdv{(f \circ \phi^{-1})}{r^{i}} \qcomma \forall i=1,\dots,n
@@ -2231,27 +2233,23 @@ La dipendenza dalle carte scelte per la varietà è analoga alla scelta delle co
 
 \subsubsection{\textit{Esempio}}
 
-Sia $ N $ una varietà differenziabile e $ (U,\phi) $ con $ \phi = (x^{1},\dots,x^{n}) $ una carta.\\
-Allora
+Siano una varietà differenziabile $ N $ e una sua carta $ (U,\phi) $ con $ \phi = (x^{1},\dots,x^{n}) $. Allora
 
 \begin{equation}
-	\dfrac{\partial x^{i}}{\partial x^{j}} = \delta^{ij}
+	\pdv{x^{i}}{x^{j}} = \delta^{ij}
 \end{equation}
 
 Infatti, usando la definizione
 
 \begin{equation}
-	\dfrac{\partial x^{i}}{\partial x^{j}} (p) = \dfrac{\partial (x^{i} \circ \phi^{-1})}{\partial r^{j}} (\phi(p))
+	\pdv{x^{i}}{x^{j}} \, (p) = \pdv{(x^{i} \circ \phi^{-1})}{r^{j}} \, (\phi(p))
 \end{equation}
 
-con $ p \in U $ e $ r^{j} $ le coordinate standard di $ \R^{n} $, siccome $ x^{i} = \phi \circ r^{i} $
+con $ p \in U $ e $ r^{j} $ le coordinate standard di $ \R^{n} $. A questo punto, siccome $ x^{i} = \phi \circ r^{i} $, abbiamo che
 
-\begin{align}
-	\begin{split}
-		\dfrac{\partial x^{i}}{\partial x^{j}} (p) &= \dfrac{\partial r^{i}}{\partial r^{j}} (\phi(p))\\
-		&= \delta^{ij}
-	\end{split}
-\end{align}
+\begin{equation}
+	\pdv{x^{i}}{x^{j}} \, (p) = \pdv{r^{i}}{r^{j}} \, (\phi(p)) = \delta^{ij}
+\end{equation}
 
 \subsection{Jacobiano per applicazioni tra varietà}
 
