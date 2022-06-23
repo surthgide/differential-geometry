@@ -233,85 +233,90 @@ Perché sia $ f $ che $ f^{-1} $ siano lisce, dobbiamo verificare che ogni loro 
 
 Per dimostrare questo è necessario dimostrare che siano diffeomorfismi le traslazioni (le quali sono lineari e affini) e le omotetie (scala di un fattore $ \delta $); questa dimostrazione mostra anche che\footnote{%
 	Vedi Esercizio \ref{es1-4}.%
-} $ B_{1} (0) \simeq B_{\delta} (c) $.\\
-Per praticità di notazione, chiamiamo $ h $ il diffeomorfismo $ B_{\delta} (c) \to \R^{n} $ definito sopra. Per far vedere come nasce questo diffeomorfismo, si può usare la seguente costruzione geometrica
+} $ B_{1} (0) \simeq B_{\delta} (c) $.
 
-\begin{figure}[H]
-	\centering
-	\begin{tikzpicture}[scale=1]
-	
-		\begin{axis}[
-					axis lines=center,
-					anchor=origin,
-					axis equal=true,
-					xlabel={$ (x^{1}, \dots, x^{n}) $},
-					ylabel=$ x^{n+1} $,
-					xticklabel=\empty,
-					yticklabel=\empty,
-					xlabel style = {anchor=south west},
-					ylabel style = {anchor=south},
-					xmax=2.5,
-					xmin=-1.5,
-					ymax=1.5,
-					ymin=-0.5
-					]
-			
-			\addplot[
-					samples=1000, 
-					color=black,
-					]
-			{1-sqrt(1-x^2)};
-			
-			\addplot[
-					domain=0:2,
-					samples=1000, 
-					color=red,
-					]
-			{1-x/2};
-			
-			\addplot[
-					samples=1000, 
-					color=black,
-					dashed,
-					]
-			coordinates {(1,0)(1,1)};
-			
-			\addplot[
-					samples=1000, 
-					color=black,
-					dashed,
-					]
-			coordinates {(-1,0)(-1,1)};
-			
-			\addplot[
-					color=red,
-					mark=*,
-					]
-			coordinates {(0,1)};
-			
-			\addplot[
-					color=red,
-					mark=*,
-					]
-			coordinates {(2,0)};
-			
-			\addplot[
-					color=blue,
-					mark=*,
-					]
-			coordinates {(0,1)};
-			
-			\addplot[
-					color=blue,
-					mark=*,
-					]
-			coordinates {(2,0)};
 
-		\end{axis}
-	
-	\end{tikzpicture}
-
-\end{figure}
+\sbs{0.3}{%
+			Per praticità di notazione, chiamiamo $ h $ il diffeomorfismo $ B_{\delta} (c) \to \R^{n} $ definito sopra. Per far vedere come nasce questo diffeomorfismo, si può usare la seguente costruzione geometrica
+			}
+	{0.8}{%
+			\begin{figure}[H]
+				\centering
+				\begin{tikzpicture}[scale=1]
+					
+					\begin{axis}[
+						axis lines=center,
+						anchor=origin,
+						axis equal=true,
+						xlabel={$ (x^{1}, \dots, x^{n}) $},
+						ylabel=$ x^{n+1} $,
+						xticklabel=\empty,
+						yticklabel=\empty,
+						xlabel style = {anchor=south west},
+						ylabel style = {anchor=south},
+						xmax=2.5,
+						xmin=-1.5,
+						ymax=1.5,
+						ymin=-0.5
+						]
+						
+						\addplot[
+						samples=1000, 
+						color=black,
+						]
+						{1-sqrt(1-x^2)};
+						
+						\addplot[
+						domain=0:2,
+						samples=1000, 
+						color=red,
+						]
+						{1-x/2};
+						
+						\addplot[
+						samples=1000, 
+						color=black,
+						dashed,
+						]
+						coordinates {(1,0)(1,1)};
+						
+						\addplot[
+						samples=1000, 
+						color=black,
+						dashed,
+						]
+						coordinates {(-1,0)(-1,1)};
+						
+						\addplot[
+						color=red,
+						mark=*,
+						]
+						coordinates {(0,1)};
+						
+						\addplot[
+						color=red,
+						mark=*,
+						]
+						coordinates {(2,0)};
+						
+						\addplot[
+						color=blue,
+						mark=*,
+						]
+						coordinates {(0,1)};
+						
+						\addplot[
+						color=blue,
+						mark=*,
+						]
+						coordinates {(2,0)};
+						
+					\end{axis}
+					
+				\end{tikzpicture}
+				
+			\end{figure}
+			}
 
 Consideriamo la semicalotta aperta in $ \R^{n+1} $ centrata in $ (0,\dots,0,1) $ di raggio $ 1 $:
 
@@ -489,16 +494,17 @@ Definiamo la \textit{derivata direzionale} di $ f $ rispetto a $ v $ come
 
 dove $ D_{v} f \in \R $ e $ v = [v^{1},\dots,v^{n}] $.
 
-\begin{remark}
-	Sia $ g \in C^{\infty} (\R^{n}) $ tale che $ g : V \to \R $ con $ V \subset \R $ e $ V \cap U \neq \emptyset $. Se $ g \equiv f $ in un intorno del punto $ p \in U \cap V $, allora la loro derivata direzionale è la stessa\footnote{%
-		Questo perché il limite del rapporto incrementale nella definizione di $ D_{v} f $ dipende da un intorno arbitrariamente piccolo.%
-	}, i.e. $ D_{v} g = D_{v} f $.
-\end{remark}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.4\textwidth,keepaspectratio]{img1}
-\end{figure}
+\sbs{0.4}{%
+			\begin{remark}
+				Sia $ g \in C^{\infty} (\R^{n}) $ tale che $ g : V \to \R $ con $ V \subset \R $ e $ V \cap U \neq \emptyset $. Se $ g \equiv f $ in un intorno del punto $ p \in U \cap V $, allora la loro derivata direzionale è la stessa\footnotemark, i.e. $ D_{v} g = D_{v} f $.
+			\end{remark}
+			}
+	{0.6}{%
+			\img{0.6}{img1}
+			}
+\footnotetext{%
+	Questo perché il limite del rapporto incrementale nella definizione di $ D_{v} f $ dipende da un intorno arbitrariamente piccolo.%
+}
 
 Definiamo ora l'insieme di coppie
 
@@ -982,13 +988,9 @@ forma una base per lo spazio $ \der_{p}(C_{p}^{\infty}(\R^{n})) $.
 	i.e. un isomorfismo porta elementi di base in altrettanti elementi di base.\\
 	Applicando questo a una qualunque funzione $ f \in C^{\infty} (\R^{n}) $
 	
-	\begin{align}
-		\begin{split}
-			D_{e_{i}} (f) &= \sum_{j=1}^{n} \dfrac{\partial f}{\partial x^{j}} (p) \, (e_{i})_{j}\\
-			&= \sum_{j=1}^{n} \dfrac{\partial f}{\partial x^{j}} (p) \, \delta_{ij}\\
-			&= \dfrac{\partial f}{\partial x^{i}} (p)
-		\end{split}
-	\end{align}
+	\begin{equation}
+		D_{e_{i}} (f) = \sum_{j=1}^{n} \dfrac{\partial f}{\partial x^{j}} (p) \, (e_{i})_{j} = \sum_{j=1}^{n} \dfrac{\partial f}{\partial x^{j}} (p) \, \delta_{ij} = \dfrac{\partial f}{\partial x^{i}} (p)
+	\end{equation}
 \end{proof}
 
 \section{Campi di vettori su aperti di $ \R^{n} $}

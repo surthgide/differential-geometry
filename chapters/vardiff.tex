@@ -482,21 +482,24 @@ Definiamo ora quattro funzioni che costituiranno, insieme agli aperti sopra defi
 Vogliamo mostrare che $ \{(U_{i},\phi_{i})\}_{i=1,\dots,4} $ sia un atlante differenziabile in modo tale da dotare $ \S^{1} $ di un atlante massimale e quindi renderlo una varietà differenziabile.\\
 Dimostriamo prima che le $ \phi_{i} $ siano omeomorfismi: sono continue e lisce perché sono restrizioni a una delle componenti e le inverse
 
-\map{\phi_{1}^{-1}}
-	{(-1,1)_{x}}{U_{1}}
-	{x}{(x,\sqrt{1-x^{2}})}
-
-\map{\phi_{2}^{-1}}
-	{(-1,1)_{x}}{U_{2}}
-	{x}{(x,-\sqrt{1-x^{2}})}
-
-\map{\phi_{3}^{-1}}
-	{(-1,1)_{x}}{U_{3}}
-	{y}{(x,\sqrt{1-y^{2}})}
-
-\map{\phi_{4}^{-1}}
-	{(-1,1)_{x}}{U_{4}}
-	{y}{(x,-\sqrt{1-y^{2}})}
+\sbs{0.5}{%
+			\map{\phi_{1}^{-1}}
+				{(-1,1)_{x}}{U_{1}}
+				{x}{(x,\sqrt{1-x^{2}})}
+			
+			\map{\phi_{2}^{-1}}
+				{(-1,1)_{x}}{U_{2}}
+				{x}{(x,-\sqrt{1-x^{2}})}
+			}
+	{0.5}{%
+			\map{\phi_{3}^{-1}}
+				{(-1,1)_{x}}{U_{3}}
+				{y}{(x,\sqrt{1-y^{2}})}
+			
+			\map{\phi_{4}^{-1}}
+				{(-1,1)_{x}}{U_{4}}
+				{y}{(x,-\sqrt{1-y^{2}})}
+			}
 
 sono anch'esse continue e lisce; questo dimostra che lo spazio è una varietà topologica.\\
 Per dimostrare che sia una struttura differenziabile, prendiamo due carte arbitrarie e ne facciamo la composizione per controllare la loro $ C^{\infty} $-compatibilità:
@@ -583,29 +586,32 @@ definiamo dunque le seguenti applicazioni per formare le carte $ \{(U_{i},\phi_{
 
 Le applicazioni inverse sono
 
-\map{\phi_{1}^{-1}}
-	{D_{xy}}{U_{1} \subset \R^{2}}
-	{(x,y)}{(x,y,\sqrt{1-x^{2}-y^{2}})}
-
-\map{\phi_{2}^{-1}}
-	{D_{xy}}{U_{2} \subset \R^{2}}
-	{(x,y)}{(x,y,-\sqrt{1-x^{2}-y^{2}})}
-
-\map{\phi_{3}^{-1}}
-	{D_{xz}}{U_{3} \subset \R^{2}}
-	{(x,z)}{(x,\sqrt{1-x^{2}-z^{2}},z)}
-
-\map{\phi_{4}^{-1}}
-	{D_{xz}}{U_{4} \subset \R^{2}}
-	{(x,z)}{(x,-\sqrt{1-x^{2}-z^{2}},z)}
-
-\map{\phi_{5}^{-1}}
-	{D_{yz}}{U_{5} \subset \R^{2}}
-	{(y,z)}{(\sqrt{1-y^{2}-z^{2}},y,z)}
-
-\map{\phi_{6}^{-1}}
-	{D_{yz}}{U_{6} \subset \R^{2}}
-	{(y,z)}{(-\sqrt{1-y^{2}-z^{2}},y,z)}
+\sbs{0.5}{%
+			\map{\phi_{1}^{-1}}
+				{D_{xy}}{U_{1} \subset \R^{2}}
+				{(x,y)}{(x,y,\sqrt{1-x^{2}-y^{2}})}
+			
+			\map{\phi_{2}^{-1}}
+				{D_{xy}}{U_{2} \subset \R^{2}}
+				{(x,y)}{(x,y,-\sqrt{1-x^{2}-y^{2}})}
+			
+			\map{\phi_{3}^{-1}}
+				{D_{xz}}{U_{3} \subset \R^{2}}
+				{(x,z)}{(x,\sqrt{1-x^{2}-z^{2}},z)}
+			}
+	{0.5}{%
+			\map{\phi_{4}^{-1}}
+				{D_{xz}}{U_{4} \subset \R^{2}}
+				{(x,z)}{(x,-\sqrt{1-x^{2}-z^{2}},z)}
+			
+			\map{\phi_{5}^{-1}}
+				{D_{yz}}{U_{5} \subset \R^{2}}
+				{(y,z)}{(\sqrt{1-y^{2}-z^{2}},y,z)}
+			
+			\map{\phi_{6}^{-1}}
+				{D_{yz}}{U_{6} \subset \R^{2}}
+				{(y,z)}{(-\sqrt{1-y^{2}-z^{2}},y,z)}
+			}
 
 Ad esempio, verifichiamo che le carte $ (U_{1},\phi_{1}) $ e $ (U_{4},\phi_{4}) $ siano compatibili:
 
@@ -815,20 +821,22 @@ Questa proprietà permette di considerare una seconda applicazione
 	{\sfrac{S}{\sim}}{Y}
 	{[x]}{f(x)}
 
-la quale è ben definita in quanto il rappresentante della classe $ [s] $ preso non influisce al fine del calcolo di $ f(x) $.\\
-Tramite il seguente diagramma
+la quale è ben definita in quanto il rappresentante della classe $ [s] $ preso non influisce al fine del calcolo di $ f(x) $.
 
-\diagr{%
-		S \arrow[rr, "f"] \arrow[dd, "\pi"']       \&  \& Y \\
-		\&  \&   \\
-		\sfrac{S}{\sim} \arrow[rruu, "\tilde{f}"'] \&  \&  
-		}
-
-possiamo derivare la seguente proprietà
-
-\begin{equation}
-	f = \tilde{f} \circ \pi
-\end{equation}
+\sbs{0.5}{%
+			Il diagramma a lato permette di derivare la seguente proprietà:
+			
+			\begin{equation}
+				f = \tilde{f} \circ \pi
+			\end{equation}
+			}
+	{0.5}{%
+			\diagr{%
+					S \arrow[rr, "f"] \arrow[dd, "\pi"']       \&  \& Y \\
+					\&  \&   \\
+					\sfrac{S}{\sim} \arrow[rruu, "\tilde{f}"'] \&  \&  
+					}
+			}
 
 \begin{definition}
 	$ f $ è continua $ \iff $ $ \tilde{f} $ è continua
@@ -1112,13 +1120,19 @@ La dimostrazione che il proiettivo reale sia $ N_{2} $ passa per la proiezione
 in quanto questa applicazione preserva la proprietà di numerabilità $ N_{2} $: se lo spazio di partenza $ \R^{n+1} \setminus \{0\} $ è $ N_{2} $ (lo è perché sottoinsieme di $ \R^{n+1} $ il quale è a sua volta $ N_{2} $) allora, se l'applicazione $ \pi $ è aperta (equivalentemente, se $ \sim $ è aperta), lo è anche il proiettivo reale.\\
 Perché $ \pi $ sia aperta, questa deve mandare aperti in aperti: sia l'aperto $ V \subset \R^{n+1} \setminus \{0\} $ e consideriamo l'insieme $ \pi(V) $. Nella topologia quoziente, l'immagine $ \pi(V) $ è aperta se la sua controimmagine $ \pi^{-1}(\pi(V)) $ è aperta: $ \pi(x) $ con $ x \in V $ è l'identificazione di tutti i punti che appartengono alla stessa retta di $ x $; prendendo $ \pi^{-1}(\pi(x)) $ otteniamo non solo il punto $ x $ ma tutti i punti che appartengono alla retta identificata da $ x $ stesso, dunque considerando tutti i punti dell'aperto $ V $ otteniamo
 
-\begin{equation}
-	\pi^{-1}(\pi(V)) = \bigcup_{\lambda \in \R \setminus \{0\}} \{\lambda V\}
-\end{equation}
+\sbs{0.5}{%
+			\begin{equation}
+				\pi^{-1}(\pi(V)) = \bigcup_{\lambda \in \R \setminus \{0\}} \{\lambda V\}
+			\end{equation}
+			
+			che corrisponde al cono di rette passanti per l'origine individuato dai punti dell'aperto $ V $.
+			}
+	{0.5}{%
+			\img{0.8}{img15}
+			}
 
-che corrisponde al cono di rette passanti per l'origine individuato dai punti dell'aperto $ V $
 
-\img{0.45}{img15}
+
 
 Fissando $ \lambda $, l'insieme
 
@@ -1126,17 +1140,18 @@ Fissando $ \lambda $, l'insieme
 	\lambda V = \left\{ \lambda x \st x \in V \right\} \subset \R^{n+1} \setminus \{0\}
 \end{equation}
 
-è aperto perché omeomorfo a $ V $ tramite l'applicazione
+è aperto perché omeomorfo a $ V $ tramite l'applicazione continua con inversa continua
 
-\map{\phi_{\lambda}}
-	{V}{\lambda V}
-	{x}{\lambda x}
-
-la quale è continua con inversa continua
-
-\map{\phi_{\lambda}^{-1}}
-	{\lambda V}{V}
-	{\lambda x}{x}
+\sbs{0.5}{%
+			\map{\phi_{\lambda}}
+				{V}{\lambda V}
+				{x}{\lambda x}
+			}
+	{0.5}{%
+			\map{\phi_{\lambda}^{-1}}
+				{\lambda V}{V}
+				{\lambda x}{x}
+			}
 
 Essendo $ \lambda V $ aperto in $ \R^{n+1} \setminus \{0\} $, $ \pi^{-1}(\pi(V)) $ è aperto e dunque la proiezione $ \pi $ è aperta.\\
 Se lo spazio di partenza $ \R^{n+1} \setminus \{0\} $ è $ N_{2} $ e la relazione di equivalenza $ \sim $ è aperta, allora lo spazio quoziente $ \rp{n} $ è $ N_{2} $.
@@ -1245,7 +1260,7 @@ con $ i=0,\dots,n $, cioè eliminiamo l'$ i $-esima componente dal vettore nell'
 	Gli elementi all'interno di una stessa classe appartengono tutti allo stesso spazio vettoriale di dimensione unitaria quindi sono proporzionali gli uni agli altri.%
 }.\\
 Essendo l'unione degli insiemi $ U_{i} $ un ricoprimento per $ \rp{n} $, mostrando che le $ \phi_{i} $ sono degli omeomorfismi, dimostriamo che $ \mathfrak{M} = \{(U_{i},\phi_{i})\} $ è un atlante topologico per $ \rp{n} $.\\
-Queste applicazioni fanno parte del diagramma
+Queste applicazioni fanno parte dei diagrammi
 
 \diagr{%
 		V_{i} \arrow[rr, "\psi_{i}"] \arrow[dd, "\pi"'] \&  \& \R^{n} \\
@@ -1757,40 +1772,46 @@ Fissiamo gli atlanti $ (\R,\id_{\R}) $ e $ \{(U_{i},\phi_{i})\}_{i=1,\dots,4} $ 
 	U_{3} = \{ (x,y) \in \S^{1} \mid x>0 \}\\
 	U_{4} = \{ (x,y) \in \S^{1} \mid x<0 \}
 \end{gather}
-%
-\map{\phi_{1}}
-	{U_{1}}{(-1,1)_{x} \subset \R^{2}}
-	{(x,y)}{x}
-%
-\map{\phi_{2}}
-	{U_{2}}{(-1,1)_{x} \subset \R^{2}}
-	{(x,y)}{x}
-%
-\map{\phi_{3}}
-	{U_{3}}{(-1,1)_{y} \subset \R^{2}}
-	{(x,y)}{y}
-%
-\map{\phi_{4}}
-	{U_{4}}{(-1,1)_{y} \subset \R^{2}}
-	{(x,y)}{y}
+
+\sbs{0.5}{%
+			\map{\phi_{1}}
+				{U_{1}}{(-1,1)_{x} \subset \R^{2}}
+				{(x,y)}{x}
+			
+			\map{\phi_{2}}
+				{U_{2}}{(-1,1)_{x} \subset \R^{2}}
+				{(x,y)}{x}
+			}
+	{0.5}{%
+			\map{\phi_{3}}
+				{U_{3}}{(-1,1)_{y} \subset \R^{2}}
+				{(x,y)}{y}
+			
+			\map{\phi_{4}}
+				{U_{4}}{(-1,1)_{y} \subset \R^{2}}
+				{(x,y)}{y}
+			}
 
 Per far vedere che $ F $ sia un'applicazione liscia tra varietà, dobbiamo verificare che le composizioni $ \phi_{i} \circ F \circ \id_{\R} = \phi_{i} \circ F $ siano lisce per $ \forall i=1,\dots,4 $: possiamo scrivere che l'insieme $ \phi(F^{-1}(V) \cap U) $ della definizione corrisponde a $ \id_{\R}(F^{-1}(U_{i}) \cap \R) = F^{-1}(U_{i}) \subset \R $ per questo caso, da cui le composizioni
 
-\map{\phi_{1} \circ F}
-	{F^{-1}(U_{1})}{\R^{2}}
-	{t}{\cos(2 \pi t)}
-%
-\map{\phi_{2} \circ F}
-	{F^{-1}(U_{2})}{\R^{2}}
-	{t}{\cos(2 \pi t)}
-%
-\map{\phi_{3} \circ F}
-	{F^{-1}(U_{3})}{\R^{2}}
-	{t}{\sin(2 \pi t)}
-%
-\map{\phi_{4} \circ F}
-	{F^{-1}(U_{4})}{\R^{2}}
-	{t}{\sin(2 \pi t)}
+\sbs{0.5}{%
+			\map{\phi_{1} \circ F}
+				{F^{-1}(U_{1})}{\R^{2}}
+				{t}{\cos(2 \pi t)}
+			
+			\map{\phi_{2} \circ F}
+				{F^{-1}(U_{2})}{\R^{2}}
+				{t}{\cos(2 \pi t)}
+			}
+	{0.5}{%
+			\map{\phi_{3} \circ F}
+				{F^{-1}(U_{3})}{\R^{2}}
+				{t}{\sin(2 \pi t)}
+			
+			\map{\phi_{4} \circ F}
+				{F^{-1}(U_{4})}{\R^{2}}
+				{t}{\sin(2 \pi t)}
+			}
 
 le quali sono tutte lisce perciò lo è anche $ F $.
 
@@ -1872,17 +1893,18 @@ ma l'inverso non lo è
 	{\R}{\R}
 	{x}{x^{\sfrac{1}{3}}}
 
-Però le varietà differenziabili sono diffeomorfe tramite l'applicazione tra varietà continua
+Però le varietà differenziabili sono diffeomorfe tramite l'applicazione tra varietà continua con inversa anch'essa continua
 
-\map{F}
-	{\R}{\R'}
-	{x}{x^{3}}
-
-con inversa anch'essa continua
-
-\map{F}
-{\R'}{\R}
-{x}{x^{\sfrac{1}{3}}}
+\sbs{0.5}{%
+			\map{F}
+				{\R}{\R'}
+				{x}{x^{3}}
+			}
+	{0.5}{%
+			\map{F^{-1}}
+				{\R'}{\R}
+				{x}{x^{\sfrac{1}{3}}}
+			}
 
 Per dimostrare che $ F $ e $ F^{-1} $ siano $ C^{\infty} $ tra varietà, controlliamo la composizione tra carte\footnote{%
 	È importante notare che l'applicazione è o meno liscia in base alla composizione delle carte e non in base alla sola derivazione dell'immagine: questo differenzia la definizione di funzione liscia e funzione liscia \textit{tra varietà}.%
@@ -1952,17 +1974,18 @@ Solitamente consideriamo $ \S^{n} $ all'interno di $ \R^{n+1} $ e dunque con la 
 \subsection{Proiezioni tra varietà}
 
 \begin{definition}
-	Siano $ N $ e $ M $ due varietà differenziabili rispettivamente di dimensione $ n $ e $ m $. Le seguenti proiezioni
+	Siano $ N $ e $ M $ due varietà differenziabili rispettivamente di dimensione $ n $ e $ m $. Le seguenti proiezioni sono lisce
 	
-	\map{\pi_{N}}
-	{N \times M}{N}
-	{(x,y)}{x}
-	%
-	\map{\pi_{M}}
-	{N \times M}{M}
-	{(x,y)}{y}
-	
-	sono lisce.
+	\sbs{0.5}{%
+				\map{\pi_{N}}
+					{N \times M}{N}
+					{(x,y)}{x}
+				}
+		{0.5}{%
+				\map{\pi_{M}}
+					{N \times M}{M}
+					{(x,y)}{y}
+				}
 \end{definition}
 
 \begin{proof}
@@ -2024,17 +2047,18 @@ Solitamente consideriamo $ \S^{n} $ all'interno di $ \R^{n+1} $ e dunque con la 
 
 \subsection{Gruppi di Lie}
 
-Un \textit{gruppo di Lie} $ G $ è un gruppo algebrico che sia anche una varietà differenziabile nel quale le operazioni di gruppo
+Un \textit{gruppo di Lie} $ G $ è un gruppo algebrico che sia anche una varietà differenziabile nel quale le operazioni di gruppo sono lisce
 
-\map{\mu}
-	{G \times G}{G}
-	{(g,h)}{g \cdot h}
-	
-\map{i}
-	{G}{G}
-	{g}{g^{-1}}
-
-sono lisce.
+\sbs{0.5}{%
+			\map{\mu}
+				{G \times G}{G}
+				{(g,h)}{g \cdot h}
+			}
+	{0.5}{%
+			\map{i}
+				{G}{G}
+				{g}{g^{-1}}
+			}
 
 \subsubsection{\textit{Esempi}}
 
@@ -2042,13 +2066,16 @@ sono lisce.
 
 Il gruppo $ (\R,+) $ è anche una varietà differenziabile. Le operazioni
 
-\map{+}
-	{\R \times \R}{\R}
-	{(x,y)}{x + y}
-
-\map{i}
-	{\R}{\R}
-	{x}{- x}
+\sbs{0.5}{%
+			\map{+}
+				{\R \times \R}{\R}
+				{(x,y)}{x + y}
+			}
+	{0.5}{%
+			\map{i}
+				{\R}{\R}
+				{x}{- x}
+			}
 
 sono lisce dunque è un gruppo di Lie.
 
@@ -2056,13 +2083,16 @@ sono lisce dunque è un gruppo di Lie.
 
 Il gruppo $ (\R \setminus \{0\},\cdot) $ è una varietà differenziabile e dunque gruppo di Lie in quanto
 
-\map{\cdot}
-	{\R \setminus \{0\} \times \R \setminus \{0\}}{\R \setminus \{0\}}
-	{(x,y)}{x \cdot y}
-
-\map{i}
-	{\R \setminus \{0\}}{\R \setminus \{0\}}
-	{x}{x^{-1}}
+\sbs{0.5}{%
+			\map{\cdot}
+				{\R \setminus \{0\} \times \R \setminus \{0\}}{\R \setminus \{0\}}
+				{(x,y)}{x \cdot y}
+			}
+	{0.5}{%
+			\map{i}
+				{\R \setminus \{0\}}{\R \setminus \{0\}}
+				{x}{x^{-1}}
+			}
 
 sono lisce.
 
@@ -2076,13 +2106,16 @@ Il cerchio unitario
 
 dove $ \C $ indica l'insieme dei numeri complessi, è un gruppo di Lie in quanto
 
-\map{\cdot}
-	{\S^{1} \times \S^{1}}{\S^{1}}
-	{(z,w)}{z \cdot w}
-
-\map{i}
-	{\S^{1}}{\S^{1}}
-	{z}{z^{-1}}
+\sbs{0.5}{%
+			\map{\cdot}
+				{\S^{1} \times \S^{1}}{\S^{1}}
+				{(z,w)}{z \cdot w}
+			}
+	{0.5}{%
+			\map{i}
+				{\S^{1}}{\S^{1}}
+				{z}{z^{-1}}
+			}
 
 sono lisce.
 

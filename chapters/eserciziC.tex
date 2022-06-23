@@ -7,25 +7,29 @@
 Consideriamo i due seguenti gruppi di Lie:
 
 \begin{itemize}
-	\item $ (G, \mu, i) $ con operazioni definite come
-	
-		\map{\mu}
-			{G \times G}{G}
-			{(g_{1},g_{2})}{g_{1} \cdot g_{2}}
+	\item $ (G, \mu, i) $ con operazioni definite come\\
+		\sbs{0.45}{%
+					\map{\mu}
+						{G \times G}{G}
+						{(g_{1},g_{2})}{g_{1} \cdot g_{2}}
+					}
+			{0.45}{%
+					\map{i}
+						{G}{G}
+						{g}{g^{-1}}
+					}
 		
-		\map{i}
-			{G}{G}
-			{g}{g^{-1}}
-		
-	\item $ (H, \nu, j) $ con operazioni definite come
-	
-		\map{\nu}
-			{H \times H}{H}
-			{(h_{1},h_{2})}{h_{1} * h_{2}}
-		
-		\map{j}
-			{H}{H}
-			{h}{h^{-1}}
+	\item $ (H, \nu, j) $ con operazioni definite come\\
+		\sbs{0.45}{%
+					\map{\nu}
+					{H \times H}{H}
+					{(h_{1},h_{2})}{h_{1} * h_{2}}
+					}
+			{0.45}{%
+					\map{j}
+						{H}{H}
+						{h}{h^{-1}}
+					}	
 \end{itemize}
 
 A questo punto definiamo $ (\Omega, \sigma, k) $ il prodotto diretto dei due gruppi di Lie appena definiti, i.e.
@@ -36,13 +40,16 @@ A questo punto definiamo $ (\Omega, \sigma, k) $ il prodotto diretto dei due gru
 
 dove le operazioni di $ \Omega $ sono definite come:
 
-\map{\sigma}
-	{\Omega \times \Omega}{\Omega}
-	{(s_{1},s_{2})}{s_{1} \star s_{2}}
-
-\map{k}
-	{\Omega}{\Omega}
-	{s}{s^{-1}}
+\sbs{0.5}{%
+			\map{\sigma}
+				{\Omega \times \Omega}{\Omega}
+				{(s_{1},s_{2})}{s_{1} \star s_{2}}
+			}
+	{0.5}{%
+			\map{k}
+				{\Omega}{\Omega}
+				{s}{s^{-1}}
+			}
 
 Esplicitando i gruppi di Lie sottostanti, possiamo riscrivere queste operazioni come:
 
