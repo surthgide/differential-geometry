@@ -2253,9 +2253,9 @@ con $ p \in U $ e $ r^{j} $ le coordinate standard di $ \R^{n} $. A questo punto
 
 \subsection{Jacobiano per applicazioni tra varietà}
 
-Sia un'applicazione $ F : N \to M $ liscia con $ N $ e $ M $ varietà differenziabili con dimensioni $ n $ e $ m $ rispettivamente e fissiamo due carte $ (U,\phi) \in N $ e $ (V,\psi) \in M $, dove $ F(U) \subset V $ (è sempre possibile e inoltre non restrittivo in quanto è possibile prendere l'aperto $ U $ arbitrariamente piccolo affinché si verifichi questa condizione\footnote{%
-	Qualunque aperto contenuto in una carta definisce ancora una carta nella struttura differenziabile: se $ U \subset U_{\alpha} $ dove $ (U_{\alpha},\phi_{\alpha}) $ è una carta della varietà differenziabile, allora $ (U, \phi_{\alpha \mid U}) $ è ancora una carta della stessa varietà.%
-}).\\
+Sia un'applicazione liscia $ F : N \to M $ con $ N $ e $ M $ varietà differenziabili di dimensione $ n $ e $ m $ rispettivamente; fissiamo due carte $ (U,\phi) \in N $ e $ (V,\psi) \in M $, dove $ F(U) \subset V $: è sempre possibile fare in modo che quest'ultima relazione sia valida e inoltre non restrittivo in quanto è possibile prendere l'aperto $ U $ arbitrariamente piccolo affinché si verifichi questa condizione\footnote{%
+	Qualunque aperto contenuto in una carta definisce ancora una carta nella struttura differenziabile: se $ U \subset U_{\alpha} $ dove $ (U_{\alpha},\phi_{\alpha}) $ è una carta della varietà differenziabile, allora $ (U, \eval{\phi_{\alpha}}_{U}) $ è ancora una carta della stessa varietà.%
+}.\\
 Sia la componente $ i $-esima di $ F $ rispetto alle coordinate $ (y^{1},\dots,y^{m}) $
 
 \begin{equation}
@@ -2265,28 +2265,31 @@ Sia la componente $ i $-esima di $ F $ rispetto alle coordinate $ (y^{1},\dots,y
 dove $ \psi = (y^{1},\dots,y^{m}) $. L'applicazione $ F^{i} : U \to \R $ è $ C^{\infty}(U) $, quindi possiamo definire le sue derivate parziali
 
 \begin{equation}
-	\dfrac{\partial F^{i}}{\partial x^{j}} : U \to \R
+	\pdv{F^{i}}{x^{j}} : U \to \R
 \end{equation}
 
 le quali possono essere organizzate nella \textit{matrice jacobiana} $ J $ \textit{di} $ F $ rispetto alle carte $ (U,\phi) $ e $ (V,\psi) $ nel punto $ p \in U $
 
-\begin{align}
-	\begin{split}
-		J(F) &\doteq \left[ \dfrac{\partial F^{i}}{\partial x^{j}} (p) \right] \in M_{m,n}(\R)\\\\
-		&= \begin{bmatrix} \dfrac{\partial F^{1}}{\partial x^{1}} (p) & & \cdots & & \dfrac{\partial F^{1}}{\partial x^{m}} (p) \\\\ \vdots & & \ddots & & \vdots \\\\ \dfrac{\partial F^{n}}{\partial x^{1}} (p) & & \cdots & & \dfrac{\partial F^{n}}{\partial x^{m}} (p) \end{bmatrix}
-	\end{split}
-\end{align}
+\begin{equation}
+	J(F)(p) \doteq \left[ \pdv{F^{i}}{x^{j}} \, (p) \right] %
+	= \bmqty{ % 
+				\dpdv{F^{1}}{x^{1}} \, (p) & \cdots & \dpdv{F^{1}}{x^{n}} \, (p) \\\\
+				\vdots & \ddots & \vdots \\\\
+				\dpdv{F^{m}}{x^{1}} \, (p) & \cdots & \dpdv{F^{m}}{x^{n}} \, (p)
+		 		} %
+	\in M_{m,n}(\R)
+\end{equation}
 
-Quindi, per definizione di derivata parziale
+Per definizione di derivata parziale, possiamo scrivere gli elementi di $ J $ come
 
 \begin{equation}
-	\dfrac{\partial F^{i}}{\partial x^{j}} (p) = \dfrac{\partial (F^{i} \circ \phi^{-1})}{\partial r^{j}} (\phi(p))
+	J_{ij}(F)(p) = \pdv{F^{i}}{x^{j}} \, (p) = \pdv{(F^{i} \circ \phi^{-1})}{r^{j}} \, (\phi(p))
 \end{equation}
 
 Nel caso in cui $ N = \R^{n} $ e $ M = \R^{m} $
 
 \begin{equation}
-	\dfrac{\partial F}{\partial x^{i}} = \dfrac{\partial F}{\partial r^{i}}
+	\pdv{F^{i}}{x^{j}} = \pdv{F^{i}}{r^{j}}
 \end{equation}
 
 in quanto le carte hanno come applicazioni delle identità.\\
@@ -2294,29 +2297,27 @@ Se la dimensione della varietà di partenza è uguale alla dimensione della vari
 
 \subsubsection{Matrice jacobiana del cambio di coordinate}
 
-Sia $ N $ una varietà differenziabile e siano $ (U,\phi) $ e $ (V,\psi) $ due carte di $ N $ con $ \phi = (x^{1},\dots,x^{n}) $ e $ \psi = (y^{1},\dots,y^{n}) $. Consideriamo il diffeomorfismo tra aperti di $ \R^{n} $
+Siano $ N $ una varietà differenziabile, e $ (U,\phi) $ e $ (V,\psi) $ due sue carte con $ \phi = (x^{1},\dots,x^{n}) $ e $ \psi = (y^{1},\dots,y^{n}) $. Consideriamo il diffeomorfismo tra aperti di $ \R^{n} $
 
 \begin{equation}
 	\psi \circ \phi^{-1} : \phi(U \cap V) \to \psi(U \cap V)
 \end{equation}
 
-Possiamo quindi calcolare la sua matrice jacobiana, sapendo che le $ y^{i} : U \cap V \to \R $ sono lisce
+Possiamo calcolare la sua matrice jacobiana, sapendo che le $ y^{i} : U \cap V \to \R $ sono lisce
+
+\begin{equation}
+	J(\psi \circ \phi^{-1})(\phi(p)) = \left[ \pdv{(\psi \circ \phi^{-1})^{i}}{r^{j}} \, (\phi(p)) \right] %
+	= \left[ \pdv{y^{i}}{x^{j}} \, (p) \right] \in M_{n}(\R)
+\end{equation}
+
+poiché, scrivendo esplicitamente le componenti, otteniamo
 
 \begin{align}
 	\begin{split}
-		J(\psi \circ \phi^{-1})(\phi(p)) &= \left[ \dfrac{\partial (\psi \circ \phi^{-1})^{i}}{\partial r^{j}} (\phi(p)) \right] \in M_{n}(\R)\\
-		&= \left[ \dfrac{\partial y^{i}}{\partial x^{j}} (p) \right]
-	\end{split}
-\end{align}
-
-perché, scrivendo esplicitamente le componenti, otteniamo
-
-\begin{align}
-	\begin{split}
-		\dfrac{\partial (\psi \circ \phi^{-1})^{i}}{\partial r^{j}} (\phi(p)) &= \dfrac{\partial (r^{i} \circ \psi \circ \phi^{-1})}{\partial r^{j}} (\phi(p))\\
-		&= \dfrac{\partial (y^{i} \circ \phi^{-1})}{\partial r^{j}} (\phi(p))\\
-		&= \left( \dfrac{\partial y^{i}}{\partial r^{j}} \circ \phi^{-1} \right) (\phi(p))\\
-		&= \dfrac{\partial y^{i}}{\partial x^{j}} (p)
+		\pdv{(\psi \circ \phi^{-1})^{i}}{r^{j}} \, (\phi(p)) &= \pdv{(r^{i} \circ \psi \circ \phi^{-1})}{r^{j}} \, (\phi(p))\\
+		&= \pdv{(y^{i} \circ \phi^{-1})}{r^{j}} \, (\phi(p))\\
+		&= \left( \pdv{y^{i}}{r^{j}} \circ \phi^{-1} \right) \, (\phi(p))\\
+		&= \pdv{y^{i}}{x^{j}} \, (p)
 	\end{split}
 \end{align}
 
