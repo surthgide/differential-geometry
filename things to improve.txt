@@ -1,4 +1,2 @@
-try to make diagrams work via macros
-
-
+cambia tutte i \phi in \varphi alla fine della revisione degli appunti
 
