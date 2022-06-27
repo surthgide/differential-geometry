@@ -2326,24 +2326,26 @@ poiché, scrivendo esplicitamente le componenti, otteniamo
 Sia $ F : N \to M $ un'applicazione liscia, diremo che $ F $ è un \textit{diffeomorfismo locale} in un punto $ p \in N $ se esiste un intorno $ U $ di $ p $ in $ N $ tale che $ F(U) \subset M $ sia aperto e $ F : U \to F(U) $ sia un diffeomorfismo.
 
 \begin{theorem}[Teorema della funzione inversa (IFT) in analisi]
-	Sia $ F : W \to \R^{n} $ con $ W \subset \R^{n} $ aperto e $ F \in C^{\infty} $, allora $ F $ è un diffeomorfismo locale in $ p \in W $ se e solo se lo jacobiano associato è invertibile, i.e.
+	Sia un'applicazione liscia $ F : W \to \R^{n} $ con $ W \subset \R^{n} $, allora $ F $ è un diffeomorfismo locale in $ p \in W $ se e solo se lo jacobiano associato è invertibile, i.e.
 	
 	\begin{equation}
-		\det(J(F)(p)) = \det( \left[ \pdv{F}{x^{j}} \hspace{0px} (p) \right] ) \neq 0
+		\det(J(F)(p)) = \det( \left[ \pdv{F^{i}}{x^{j}} \, (p) \right] ) \neq 0 %
+		\implies %
+		J(F)(p) \in GL_{n} (\R)
 	\end{equation}
 \end{theorem}
 
-Possiamo quindi individuare un intorno $ U \subset W $ di un punto $ p $ il quale sia diffeomorfo alla sua immagine tramite $ F $ controllando semplicemente un numero, il quale dipende esclusivamente dal punto e non dal suo intorno.\\
-Questo teorema implica un altro teorema
+Possiamo quindi individuare un intorno $ U \subset W $ di un punto $ p \in W $ il quale sia diffeomorfo alla sua immagine tramite $ F $ controllando semplicemente un numero, il quale dipende esclusivamente dal punto e non dal suo intorno.\\
+Questo teorema implica un altro teorema analogo in geometria differenziale:
 
 \begin{theorem}[IFT in geometria differenziale]\label{ift}
 	Sia $ F : N \to M $ un'applicazione liscia dove $ \dim(N) = \dim(M) $ e sia un punto $ p \in N $, allora $ F $ è un diffeomorfismo locale in $ p $ se e solo se la matrice jacobiana per varietà è invertibile, i.e.
 	
 	\begin{equation}
-		\det(J(F)(p)) = \det( \left[ \pdv{F}{x^{j}} \hspace{0px} (p) \right] ) \neq 0
+		\det(J(F)(p)) = \det( \left[ \pdv{F^{i}}{x^{j}} \, (p) \right] ) \neq 0
 	\end{equation}
 	
-	per carte $ (U,\phi) \in N $ e $ (V,\psi) \in M $ tale che $ F(U) \subseteq V $, dove $ p \in U $ e $ F(p) \in V $.
+	per carte $ (U,\phi) \in N $ e $ (V,\psi) \in M $ tali che $ F(U) \subseteq V $, dove $ p \in U $ e $ F(p) \in V $.
 \end{theorem}
 
 Questa estensione alle varietà è naturale in quanto possiamo scrivere l'applicazione tra varietà localmente come da un aperto di $ \R^{n} $ a $ \R^{n} $ e quindi utilizzare il teorema della funzione inversa dell'analisi.
@@ -2352,29 +2354,36 @@ Questa estensione alle varietà è naturale in quanto possiamo scrivere l'applic
 	Osserviamo che
 	
 	\begin{equation}
-		J(\psi \circ F \circ \phi^{-1})(\phi(p)) = \left[ \dfrac{\partial F}{\partial x^{j}} (p) \right]
+		J(\psi \circ F \circ \phi^{-1})(\phi(p)) = \left[ \pdv{F^{i}}{x^{j}} \, (p) \right]
 	\end{equation}
 
 	in quanto, esattamente come per il cambio di carte
 	
 	\begin{align}
 		\begin{split}
-			J(\psi \circ F \circ \phi^{-1})(\phi(p)) &= \left[ \dfrac{\partial (\psi \circ F \circ \phi^{-1})^{i}}{\partial r^{j}} (\phi(p)) \right]\\
-			&= \left[ \dfrac{\partial (r^{i} \circ \psi \circ F \circ \phi^{-1})}{\partial r^{j}} (\phi(p)) \right]\\
-			&= \left[ \dfrac{\partial (y^{i} \circ F \circ \phi^{-1})}{\partial r^{j}} (\phi(p)) \right]\\
-			&= \left[ \dfrac{\partial (F^{i} \circ \phi^{-1})}{\partial r^{j}} (\phi(p)) \right]\\
-			&= \left[ \dfrac{\partial F^{i}}{\partial x^{j}} (p) \right]
+			J(\psi \circ F \circ \phi^{-1})(\phi(p)) &= \left[ \pdv{(\psi \circ F \circ \phi^{-1})^{i}}{r^{j}} \, (\phi(p)) \right]\\
+			&= \left[ \pdv{(r^{i} \circ \psi \circ F \circ \phi^{-1})}{r^{j}} \, (\phi(p)) \right]\\
+			&= \left[ \pdv{(y^{i} \circ F \circ \phi^{-1})}{r^{j}} \, (\phi(p)) \right]\\
+			&= \left[ \pdv{(F^{i} \circ \phi^{-1})}{r^{j}} \, (\phi(p)) \right]\\
+			&= \left[ \pdv{F^{i}}{x^{j}} \, (p) \right]
 		\end{split}
 	\end{align}
 
 	Quindi
 	
 	\begin{equation}
-		\det( J(\psi \circ F \circ \phi^{-1})(\phi(p)) ) \neq 0 \, \iff \, \det( \left[ \dfrac{\partial F^{i}}{\partial x^{j}} (p) \right] ) \neq 0
+		\det( J(\psi \circ F \circ \phi^{-1})(\phi(p)) ) \neq 0 \, \iff \, \det( \left[ \pdv{F^{i}}{x^{j}} \, (p) \right] ) \neq 0
 	\end{equation}
 
-	ma dominio e codominio della funzione $ \psi \circ F \circ \phi^{-1} $ sono $ \phi(U) \to \R^{n} $ e il suo determinante jacobiano è diverso da zero, dunque $ \psi \circ F \circ \phi^{-1} $ è un diffeomorfismo locale in $ \phi(p) $, il quale è equivalente a dire che $ F $ sia un diffeomorfismo locale in $ p $, in quanto sia $ \psi $ che $ \phi $ sono diffeomorfismi.\\
-	Il fatto che $ \psi \circ F \circ \phi^{-1} $ sia un diffeomorfismo locale in $ \phi(p) $ significa che esiste un aperto $ W \ni p $ tale che
+	ma dominio e codominio della funzione di cui calcoliamo la matrice jacobiana sono rispettivamente
+	
+	\begin{equation}
+		\psi \circ F \circ \phi^{-1} : \phi(U) \to \R^{n}
+	\end{equation}
+
+	e il suo determinante jacobiano è diverso da zero, dunque $ \psi \circ F \circ \phi^{-1} $ è un diffeomorfismo locale in $ \phi(p) $ per IFT in analisi, il quale è equivalente a dire che $ F $ sia un diffeomorfismo locale in $ p $, in quanto sia $ \psi $ che $ \phi $ sono diffeomorfismi.\\
+	Il fatto che $ \psi \circ F \circ \phi^{-1} $ sia un diffeomorfismo locale in $ \phi(p) $ significa che esiste un aperto $ W \ni 
+	\phi(p) $ tale che
 	
 	\begin{equation}
 		\psi \circ F \circ \phi^{-1} : W \to \psi(F(\phi^{-1}(W)))
@@ -2384,32 +2393,31 @@ Questa estensione alle varietà è naturale in quanto possiamo scrivere l'applic
 \end{proof}
 
 \begin{corollary}[IFT]\label{ift-cor}
-	Sia $ N $ una varietà differenziabile di dimensione $ n $ e $ F^{1},\dots,F^{n} = F $ delle funzioni lisce definite in un aperto $ U \subset N $ facente parte di una carta $ (U,\phi) \in N $ dove $ \phi = (x^{1},\dots,x^{n}) $, allora le $ F^{1},\dots,F^{n} $ definiscono coordinate intorno a un punto $ p \in U $ se e solo se il loro jacobiano è invertibile, i.e.
+	Siano $ N $ una varietà differenziabile di dimensione $ n $ e $ F^{1},\dots,F^{n} = F $ delle funzioni lisce definite in un aperto $ U \subset N $ facente parte di una carta $ (U,\phi) \in N $ dove $ \phi = (x^{1},\dots,x^{n}) $, allora le $ F^{1},\dots,F^{n} $ definiscono coordinate intorno a un punto $ p \in U $ se e solo se il loro jacobiano è invertibile, i.e.
 	
 	\begin{equation}
-		\det( \left[ \dfrac{\partial F^{i}}{\partial x^{j}} (p) \right] ) \neq 0
+		\det( \left[ \pdv{F^{i}}{x^{j}} \, (p) \right] ) \neq 0
 	\end{equation}
 \end{corollary}
 
 \begin{proof}[Dimostrazione ($ \implies $)]
-	Supponiamo che $ F^{1},\dots,F^{n} $ siano un sistema di coordinate intorno al punto $ p $: questo è equivalente a dire che $ (U,\phi) $ è una carta intorno a $ p $. Se abbiamo una carta, $ F $ è un diffeomorfismo il che implica che sia un diffeomorfismo locale in $ p $ e dunque, per IFT
+	Supponiamo che le $ F^{1},\dots,F^{n} $ siano un sistema di coordinate intorno al punto $ p $: questo è equivalente a dire che $ (U,F) $ è una carta intorno a $ p $. Se abbiamo una carta, $ F $ è un diffeomorfismo il che implica che sia un diffeomorfismo locale in $ p $ e dunque, per IFT
 	
 	\begin{equation}
-		\det( \left[ \dfrac{\partial F^{i}}{\partial x^{j}} (p) \right] ) \neq 0
+		\det( \left[ \pdv{F^{i}}{x^{j}} \, (p) \right] ) \neq 0
 	\end{equation}
 \end{proof}
 
 \begin{proof}[Dimostrazione ($ \impliedby $)]
-	Se il determinante dello jacobiano è diverso da zero, tramite l'IFT, abbiamo che $ F $ è un diffeomorfismo locale in $ p $, i.e. $ F : W \to F(W) \subset \R^{n} $ con $ p \in W \subset U $ è un diffeomorfismo. Abbiamo dimostrato\footnote{%
-		La funzione $ F $ è compatibile con tutte le carte $ (U_{\alpha},\phi_{\alpha}) $ della varietà differenziabile, in quanto i cambi di carte
-		
-		\begin{align*}
-				F \circ \phi_{\alpha}^{-1} : \phi_{\alpha}(U_{\alpha} \cap W) &\to F(U_{\alpha} \cap W)\\
-				\phi_{\alpha} \circ F^{-1} : F(U_{\alpha} \cap W) &\to \phi_{\alpha}(U_{\alpha} \cap W)
-		\end{align*}
-		
-		sono lisci, perciò $ (W,F) $ è ancora una carta per la varietà.%
-	} inoltre che $ (W,F) $ definisce una carta nella varietà differenziabile, dunque le $ F^{1},\dots,F^{n} $ sono un sistema di coordinate.
+	Se il determinante dello jacobiano è diverso da zero, tramite IFT, abbiamo che $ F $ è un diffeomorfismo locale in $ p $, i.e. $ F : W \to F(W) \subset \R^{n} $ con $ p \in W \subset U $ è un diffeomorfismo.\\
+	La funzione $ F $ è compatibile con tutte le carte $ (U_{\alpha},\phi_{\alpha}) $ della varietà differenziabile, in quanto i cambi di carte
+				
+	\begin{gather}
+			F \circ \phi_{\alpha}^{-1} : \phi_{\alpha}(U_{\alpha} \cap W) \to F(U_{\alpha} \cap W)\\
+			\phi_{\alpha} \circ F^{-1} : F(U_{\alpha} \cap W) \to \phi_{\alpha}(U_{\alpha} \cap W)
+	\end{gather}
+			
+	sono lisci poiché $ F $ è un diffeomorfismo nei domini considerati, perciò $ (W,F) $ è ancora una carta per la varietà differenziabile, dunque le $ F^{1},\dots,F^{n} $ sono un sistema di coordinate attorno a $ p $.
 \end{proof}
 
 \section{Lo spazio tangente a una varietà differenziale in un suo punto}
