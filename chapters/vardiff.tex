@@ -8277,10 +8277,10 @@ Di seguito, la verifica:
 		&= (XY)(fg) - (YX)(fg)\\
 		&= ( \, X((Yf) g + f (Y g)) \, ) - ( \, Y((Xf) g + f (X g)) \, )\\
 		&= ( \, X(Y(f)) \, g + Y(f) \, X(g) + X(f) \, Y(g) + f \, X(Y(g)) \, ) + \\
-		& \hspace{13px} - ( \, Y(X(f)) \, g + X(f) \, Y(g) + Y(f) \, X(g) + f \, Y(X(g)) \, )\\
+		& \hal - ( \, Y(X(f)) \, g + X(f) \, Y(g) + Y(f) \, X(g) + f \, Y(X(g)) \, )\\
 		%
 		&= X(Y(f)) \, g + Y(f) \, X(g) + X(f) \, Y(g) + f \, X(Y(g)) + \\
-		& \hspace{13px} - Y(X(f)) \, g - X(f) \, Y(g) - Y(f) \, X(g) - f \, Y(X(g))\\
+		& \hal - Y(X(f)) \, g - X(f) \, Y(g) - Y(f) \, X(g) - f \, Y(X(g))\\
 		%
 		&= X(Y(f)) \, g - Y(X(f)) \, g + f \, X(Y(g)) - f \, Y(X(g))\\
 		&= (XY-YX)(f) \, g + f \, (XY-YX)(g)\\
@@ -8355,10 +8355,10 @@ perché la rispetta $ [X,Y] \in Der(C^{\infty}(U)) $ ed è effettivamente un cam
 		\begin{split}
 			[f X, g Y](h) &= f X(g \, Y(h)) - g Y(f \, X(h))\\
 			&= f ( \, X(g) \, Y(h) + g \, XY(h) \, ) + \\
-			& \hspace{13px} - g ( \, Y(f) \, X(h) + f \, YX(h) \, )\\
+			& \hal - g ( \, Y(f) \, X(h) + f \, YX(h) \, )\\
 			%
 			&= f \, X(g) \, Y(h) + f g \, XY(h) + \\
-			& \hspace{13px} - g \, Y(f) \, X(h) - g f \, YX(h)\\
+			& \hal - g \, Y(f) \, X(h) - g f \, YX(h)\\
 			%
 			&= f g (XY-YX)(h) + f \, X(g) \, Y(h) - g \, Y(f) \, X(h)\\
 			&= ( \, f g [X,Y] + (f \, X(g)) \, Y - (g \, Y(f)) \, X \, )(h)
@@ -8372,7 +8372,7 @@ perché la rispetta $ [X,Y] \in Der(C^{\infty}(U)) $ ed è effettivamente un cam
 		\begin{split}
 			[X,Y]_{|U} &= \left[ \sum_{j=1}^{n} a^{j} \dfrac{\partial}{\partial x^{j}} , \sum_{k=1}^{n} b^{k} \dfrac{\partial}{\partial x^{k}} \right]\\
 			&= \sum_{j,k=1}^{n} a^{j} b^{k} \cancel{\left[ \dfrac{\partial}{\partial x^{j}} , \dfrac{\partial}{\partial x^{k}} \right]} + \\
-			& \hspace{13px} + \sum_{j,k=1}^{n} a^{j} \dfrac{\partial b^{k}}{\partial x^{j}} \dfrac{\partial}{\partial x^{k}} - \sum_{j,k=1}^{n} b^{k} \dfrac{\partial a^{j}}{\partial x^{k}} \dfrac{\partial}{\partial x^{j}}\\
+			& \hal + \sum_{j,k=1}^{n} a^{j} \dfrac{\partial b^{k}}{\partial x^{j}} \dfrac{\partial}{\partial x^{k}} - \sum_{j,k=1}^{n} b^{k} \dfrac{\partial a^{j}}{\partial x^{k}} \dfrac{\partial}{\partial x^{j}}\\
 			&= \sum_{j,k=1}^{n} a^{j} \dfrac{\partial b^{k}}{\partial x^{j}} \dfrac{\partial}{\partial x^{k}} - \sum_{j,k=1}^{n} b^{j} \dfrac{\partial a^{k}}{\partial x^{j}} \dfrac{\partial}{\partial x^{k}}\\
 			&= \sum_{j,k=1}^{n} \left( a^{j} \dfrac{\partial b^{k}}{\partial x^{j}} + b^{j} \dfrac{\partial a^{k}}{\partial x^{j}} \right) \dfrac{\partial}{\partial x^{k}}
 		\end{split}
@@ -8484,7 +8484,7 @@ Verifichiamo ora che non sia completamente integrabile: per farlo, è sufficient
 		&= \left[ z \dfrac{\partial}{\partial x}, \dfrac{\partial}{\partial y} \right] + \left[ z \dfrac{\partial}{\partial x}, \dfrac{\partial}{\partial z} \right] + \cancel{\left[ \dfrac{\partial}{\partial z}, \dfrac{\partial}{\partial y} \right]} + \cancel{\left[ \dfrac{\partial}{\partial z}, \dfrac{\partial}{\partial z} \right]}\\
 		&= \left[ z \dfrac{\partial}{\partial x}, \dfrac{\partial}{\partial y} \right] + \left[ z \dfrac{\partial}{\partial x}, \dfrac{\partial}{\partial z} \right]\\
 		&= (z \cdot 1) \cancel{\left[ \dfrac{\partial}{\partial x}, \dfrac{\partial}{\partial y} \right]} + \left( z \, \cancel{\dfrac{\partial 1}{\partial x}} \right) \dfrac{\partial}{\partial y} - \cancel{\left( \dfrac{\partial z}{\partial y} \right)} \dfrac{\partial}{\partial x} + \\
-		& \hspace{13px} + (z \cdot 1) \cancel{\left[ \dfrac{\partial}{\partial x}, \dfrac{\partial}{\partial z} \right]} + \left( z \, \cancel{\dfrac{\partial 1}{\partial x}} \right) \dfrac{\partial}{\partial z} - \cancelto{1}{\left( \dfrac{\partial z}{\partial z} \right)} \dfrac{\partial}{\partial x}\\
+		& \hal + (z \cdot 1) \cancel{\left[ \dfrac{\partial}{\partial x}, \dfrac{\partial}{\partial z} \right]} + \left( z \, \cancel{\dfrac{\partial 1}{\partial x}} \right) \dfrac{\partial}{\partial z} - \cancelto{1}{\left( \dfrac{\partial z}{\partial z} \right)} \dfrac{\partial}{\partial x}\\
 		%
 		&= - \dfrac{\partial}{\partial x} \notin D
 	\end{split}
