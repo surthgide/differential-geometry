@@ -2422,22 +2422,20 @@ Questa estensione alle varietà è naturale in quanto possiamo scrivere l'applic
 
 \section{Lo spazio tangente a una varietà differenziale in un suo punto}
 
-Negli aperti di $ \R^{n} $ possiamo definire lo spazio tangente in un punto come l'insieme dei vettori di $ n $ componenti uscenti da quel punto; considerando un aperto $ U \subset \R^{n} $, per lo spazio tangente vale
+Negli aperti di $ \R^{n} $ possiamo definire lo spazio tangente in un punto come l'insieme dei vettori di $ n $ componenti uscenti da quel punto. Considerando un aperto $ U \subset \R^{n} $, per lo spazio tangente vale
 
 \begin{equation}
 	T_{p}(U) = T_{p}(\R^{n}) \simeq \der_{p}(C_{p}^{\infty}(\R^{n}))
 \end{equation}
 
-dunque questo può essere pensato come lo spazio delle derivazioni puntuali dell'algebra dei germi delle funzioni $ C^{\infty} $, dove $ C_{p}^{\infty}(U) \equiv C_{p}^{\infty}(\R^{n}) $ in quanto due funzioni sono equivalenti in un punto se coincidono in un aperto, arbitrariamente piccolo, che contiene il punto stesso. Quest'ultimo approccio (siccome non è possibile avere una visualizzazione dello spazio tangente nelle varietà come quello in $ \R^{n} $) si presta maggiormente per definire lo spazio tangente su una varietà.\\
-Sia $ N $ è una varietà differenziabile e $ p \in N $ un suo punto, definiamo ora lo \textit{spazio tangente a una varietà in un suo punto} come
+dunque questo può essere pensato come lo spazio delle derivazioni puntuali dell'algebra dei germi delle funzioni lisce, dove $ C_{p}^{\infty}(U) \equiv C_{p}^{\infty}(\R^{n}) $ in quanto due funzioni sono equivalenti in un punto se coincidono in un aperto, arbitrariamente piccolo, che contiene il punto stesso. Siccome non è possibile avere una visualizzazione dello spazio tangente nelle varietà come quello in $ \R^{n} $, quest'ultimo approccio si presta maggiormente per definire lo spazio tangente su una varietà.\\
+Siano $ N $ una varietà differenziabile e $ p \in N $ un suo punto, definiamo ora lo \textit{spazio tangente a una varietà in un suo punto} come
 
 \begin{equation}
 	T_{p}(N) \doteq \der_{p}(C_{p}^{\infty}(N))
 \end{equation}
 
-dove $ C_{p}^{\infty}(N) $ è l'insieme dei germi di funzioni\footnote{%
-	Un germe di funzioni $ [(f,U)] $ è una classe di equivalenza di coppie $ (f,U) $.%
-} lisce in un intorno di $ p $: un elemento di $ C_{p}^{\infty}(N) $ è una classe di equivalenza di coppie $ [(f,U)] $, dove $ p \in U \subset N $ aperto, secondo la seguente relazione di equivalenza
+dove $ C_{p}^{\infty}(N) $ è l'insieme dei germi di funzioni lisce in un intorno di $ p $. Un elemento di $ C_{p}^{\infty}(N) $ è una classe di equivalenza di coppie $ [(f,U)] $, dove $ p \in U $ con $ U \subset N $ aperto, secondo la seguente relazione di equivalenza
 
 \begin{gather}
 	(f,U) \sim (g,V) \mid f \in C^{\infty}(U) \wedge g \in C^{\infty}(V) \nonumber\\
@@ -2446,18 +2444,16 @@ dove $ C_{p}^{\infty}(N) $ è l'insieme dei germi di funzioni\footnote{%
 \end{gather}
 
 i.e. due germi di funzioni appartengono alla stessa classe equivalenza se e solo se le funzioni coincidono in un intorno di $ W \ni p $.\\
-Come nel caso euclideo, $ C_{p}^{\infty}(N) $ è ancora un'algebra su $ \R $ con operazioni di somma e prodotto per scalare (per far sì che sia uno spazio vettoriale) e tra funzioni
+Come nel caso euclideo, $ C_{p}^{\infty}(N) $ è ancora un'algebra\footnote{%
+	Vedi Esercizio \ref{es1-7}.%
+} su $ \R $ con operazioni di somma e prodotto per scalare (per far sì che sia uno spazio vettoriale) e tra funzioni
 
-\begin{align}
-	\begin{split}
-		[(f,U)] + [(g,V)] &= [(f+g , U \cap V)]\\
-		\lambda [(f,U)] &= [(\lambda f,U)]\\
-		[(f,U)] \cdot [(g,V)] &= [(f \cdot g , U \cap V)]
-	\end{split}
-\end{align}
+\begin{gather}
+	\lambda [(f,U)] + \mu [(g,V)] = [(\lambda f + \mu g , U \cap V)]\\
+	[(f,U)] \cdot [(g,V)] = [(f g , U \cap V)]
+\end{gather}
 
-per $ \forall [(f,U)], [(g,V)] \in C_{p}^{\infty}(N) $ e $ \forall \lambda \in \R $.\\\\
-%
+per $ \forall [(f,U)], [(g,V)] \in C_{p}^{\infty}(N) $ e $ \forall \lambda, \mu \in \R $.\\
 Le derivazioni puntuali $ \der_{p}(C_{p}^{\infty}(N)) $, per definizione, sono l'insieme di applicazioni del tipo
 
 \begin{equation}
@@ -2470,7 +2466,9 @@ che siano $ \R $-lineari rispetto alla struttura di spazio vettoriale in $ C_{p}
 	D([(f,U)] [(g,V)]) = D([(f,U)]) \, g(p) + f(p) \, D([(g,V)])
 \end{equation}
 
-L'insieme $ \der_{p}(C_{p}^{\infty}(N)) $ è uno spazio vettoriale su $ \R $ rispetto alle operazioni
+L'insieme $ \der_{p}(C_{p}^{\infty}(N)) $ è uno spazio vettoriale\footnote{%
+	Vedi Esercizio \ref{es1-8}.%
+} su $ \R $ rispetto alle operazioni
 
 \begin{align}
 	\begin{split}
