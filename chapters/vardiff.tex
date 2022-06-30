@@ -2556,33 +2556,58 @@ Nel caso in cui la dimensione della varietà sia unitaria, scriveremo
 
 \subsection{Differenziale di un'applicazione liscia tra varietà}
 
-Siano due varietà differenziabili $ N $ e $ M $ con dimensione $ n $ e $ m $ rispettivamente e sia un'applicazione liscia $ F : N \to M $. Preso un punto $ p \in N $, definiamo l'applicazione lineare
+Siano due varietà differenziabili $ N $ e $ M $ con dimensione $ n $ e $ m $ rispettivamente, e un'applicazione liscia $ F : N \to M $. Preso un punto $ p \in N $, definiamo l'applicazione lineare \textit{differenziale di} $ F $ \textit{nel punto} $ p $ come
 
 \begin{equation}
 	F_{*p} : T_{p}(N) \to T_{F(p)}(M)
 \end{equation}
 
-chiamata \textit{differenziale di} $ F $ \textit{nel punto} $ p $.\\
-Sia $ X_{p} \in T_{p}(N) = \der_{p}(C_{p}^{\infty}(N)) $, vogliamo definire dunque $ F_{*p}(X_{p}) \in T_{F(p)}(M) = \der_{F(p)}(C_{F(p)}^{\infty}(M)) $. Sia $ [(f,U)] \in C_{F(p)}^{\infty}(M) $ e definiamo
+Sia un elemento delle derivazioni puntuali $ X_{p} \in T_{p}(N) = \der_{p}(C_{p}^{\infty}(N)) $, vogliamo definire l'azione del differenziale su $ X_{p} $
 
 \begin{equation}
-	 F_{*p}(X_{p})([(f,U)]) \doteq X_{p}([(f \circ F_{\mid F^{-1}(U)},F^{-1}(U))]) \equiv X_{p}(f \circ F_{\mid F^{-1}(U)}) \equiv X_{p}(f \circ F)
+	F_{*p}(X_{p}) \in T_{F(p)}(M) = \der_{F(p)}(C_{F(p)}^{\infty}(M))
 \end{equation}
 
-in quanto questa definizione non dipende dal rappresentante di $ [(f \circ F_{\mid F^{-1}(U)},F^{-1}(U))] $ scelto e sottintenderemo la restrizione a $ F^{-1}(U) $.
+Per fare questo, prendiamo un aperto $ V \subset M $ e un germe di funzioni lisce $ [(f,V)] \in C_{F(p)}^{\infty}(M) $, e definiamo:
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.5\textwidth,keepaspectratio]{img23}
-\end{figure}
+\begin{equation}
+	F_{*p}(X_{p})([(f,V)]) \doteq X_{p} \left( \left[ \left( f \circ \eval{F}_{F^{-1}(V)}, F^{-1}(V) \right) \right] \right) %
+	\equiv X_{p} \left( f \circ \eval{F}_{F^{-1}(V)} \right) %
+	\equiv X_{p}(f \circ F)
+\end{equation}
 
+dove
+
+\begin{gather}
+	F_{*p}(X_{p}) : C_{F(p)}^{\infty}(M) \to \R\\
+	X_{p} : C_{p}^{\infty}(N) \to \R\\
+	\left[ \left( f \circ \eval{F}_{F^{-1}(V)}, F^{-1}(V) \right) \right] \in C_{p}^{\infty}(N)\\
+	f \circ F : N \to \R
+\end{gather}
+
+\sbs{0.5}{%
+			\diagr{%
+				T_{p}(N) \arrow[rr, "F_{*_{p}}"]             \&    \& T_{F(p)}(M)                                         \\
+				N \arrow[rr, "F"] \arrow[rrdd, "f \circ F"'] \&    \& M \arrow[dd, "f"']                                  \\
+				\&    \&                                                     \\
+				\&    \& \R                                                  	
+				}	
+			}
+	{0.5}{%
+			\diagr{%
+				C_{p}^{\infty}(N) \arrow[rd, "X_{p}"']       \&    \& C_{F(p)}^{\infty}(M) \arrow[ld, "F_{*_{p}}(X_{p})"] \\
+				\& \R \&                                                    
+				}
+			}
+
+Nella definizione, la prima identificazione è data dal fatto che questa definizione non dipende dal rappresentante di $ [(f \circ \eval{F}_{F^{-1}(V)}, F^{-1}(V))] $ scelto; per la seconda, sottintenderemo la restrizione a $ F^{-1}(V) $ per comodità di notazione.\\
 In breve
 
 \begin{equation}
 	F_{*p}(X_{p})(f) \doteq X_{p}(f \circ F) \in \R
 \end{equation}
 
-dove l'applicazione $ F_{*p}(X_{p}) : C_{F(p)}^{\infty}(M) \to \R $ rispetta la $ \R $-linearità
+L'applicazione $ F_{*p}(X_{p}) : C_{F(p)}^{\infty}(M) \to \R $ può essere vista come una derivazione puntuale dell'algebra $ C_{F(p)}^{\infty}(M) $ in quanto rispetta la $ \R $-linearità e la regola di Leibniz, poiché rispettate da $ X_{p} \in \der_{p}(C_{p}^{\infty}(N)) $:
 
 \begin{align}
 	\begin{split}
@@ -2593,18 +2618,17 @@ dove l'applicazione $ F_{*p}(X_{p}) : C_{F(p)}^{\infty}(M) \to \R $ rispetta la 
 	\end{split}
 \end{align}
 
-in quanto $ X_{p} \in \der_{p}(C_{p}^{\infty}(N)) $ è $ \R $-lineare, e rispetta anche la regola di Leibniz
-
 \begin{align}
 	\begin{split}
-		F_{*p}(X_{p})(f \cdot g) &= X_{p}((f \cdot g) \circ F)\\
-		&= X_{p}((f \circ F) \cdot (g \circ F))\\
-		&= X_{p}(f \circ F) \cdot (g \circ F)(p) + (f \circ F)(p) \cdot X_{p}(g \circ F)\\
-		&= F_{*p}(X_{p})(f) \cdot g(F(p)) + f(F(p)) \cdot F_{*p}(X_{p})(g)
+		F_{*p}(X_{p})(f g) &= X_{p}((f g) \circ F)\\
+		&= X_{p}((f \circ F) (g \circ F))\\
+		&= \left( X_{p}(f \circ F) \right) (g \circ F)(p) + (f \circ F)(p) \left( X_{p}(g \circ F) \right)\\
+		&= \left( F_{*p}(X_{p})(f) \right) g(F(p)) + f(F(p)) \left( F_{*p}(X_{p})(g) \right)
 	\end{split}
 \end{align}
 
-in quanto $ X_{p}$ rispetta la regola di Leibniz, dunque $ F_{*p}(X_{p}) \in \der_{F(p)}(C_{F(p)}^{\infty}(M)) $.
+per $ \forall f, g \in [(f,V)] \in C_{F(p)}^{\infty}(M) $ e $ \forall \lambda, \mu \in \R $.\\
+Queste proprietà mostrano dunque che $ F_{*p}(X_{p}) \in \der_{F(p)}(C_{F(p)}^{\infty}(M)) $.
 
 \subsubsection{Proprietà del differenziale di un'applicazione}
 
