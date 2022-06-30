@@ -2634,7 +2634,7 @@ Queste proprietà mostrano dunque che $ F_{*p}(X_{p}) \in \der_{F(p)}(C_{F(p)}^{
 
 \paragraph{1. Linearità}
 
-Per mostrare che $ F_{*p} : T_{p}(N) \to T_{F(p)}(M) $ sia un'applicazione lineare, prendiamo due vettori $ X_{p},Y_{p} \in T_{p}(N) $, due numeri reali $ \alpha,\beta \in \R $ e una funzione $ f \in [(f,U)] \in C_{F(p)}^{\infty}(M) $
+Per mostrare che $ F_{*p} : T_{p}(N) \to T_{F(p)}(M) $ sia un'applicazione lineare, prendiamo due vettori $ X_{p},Y_{p} \in T_{p}(N) $, due numeri reali $ \alpha,\beta \in \R $, e una funzione $ f \in [(f,V)] \in C_{F(p)}^{\infty}(M) $ e facciamo agire il differenziale su una composizione lineare dei due vettori considerati:
 
 \begin{align}
 	\begin{split}
@@ -2652,7 +2652,7 @@ da cui
 
 \paragraph{2. Regola della catena}
 
-Siano $ N $, $ M $ e $ P $ tre varietà differenziabili e $ F : N \to M $ e $ G : M \to P $ due applicazioni lisce, il differenziale della composizione delle due applicazioni in un punto $ p \in N $ vale
+Siano $ N $, $ M $ e $ P $ tre varietà differenziabili, e $ F : N \to M $ e $ G : M \to P $ due applicazioni lisce, il differenziale della composizione delle due applicazioni in un punto $ p \in N $ vale
 
 \begin{equation}
 	(G \circ F)_{*p} = G_{*F(p)} \circ F_{*p}
@@ -2660,14 +2660,12 @@ Siano $ N $, $ M $ e $ P $ tre varietà differenziabili e $ F : N \to M $ e $ G 
 
 in quanto
 
-\begin{align}
-	\begin{split}
-		F_{*p} : T_{p}(N) &\to T_{F(p)}(M)\\
-		G_{*F(p)} : T_{F(p)}(M) &\to T_{G(F(p))}(P)
-	\end{split}
-\end{align}
+\begin{gather}
+	F_{*p} : T_{p}(N) \to T_{F(p)}(M)\\
+	G_{*F(p)} : T_{F(p)}(M) \to T_{G(F(p))}(P)
+\end{gather}
 
-La dimostrazione di questa relazione si ottiene applicando la composizione a $ X_{p} \in T_{p}(N) $ a sua volta applicato a $ f \in [(f,U)] \in C_{G(F(p))}^{\infty}(P) $
+La dimostrazione di questa relazione si ottiene applicando la composizione a $ X_{p} \in T_{p}(N) $ a sua volta applicato a $ f \in [(f,W)] \in C_{G(F(p))}^{\infty}(P) $
 
 \begin{align}
 	\begin{split}
@@ -2688,14 +2686,13 @@ Il differenziale dell'identità $ \id_{N} : N \to N $ in punto $ p \in N $ è l'
 
 in quanto
 
-\begin{align}
-	\begin{split}
-		(\id_{N})_{*p} (X_{p})(f) &= X_{p} (f \circ \id_{N})\\
-		&= X_{p}(f)
-	\end{split}
-\end{align}
+\begin{equation}
+		(\id_{N})_{*p} (X_{p})(f) = X_{p} (f \circ \id_{N}) %
+		= X_{p}(f)
+\end{equation}
 
-Sia un diffeomorfismo $ F : N \to M $, allora $ F_{*p} : T_{p}(N) \to T_{F(p)}(M) $ è un isomorfismo tra spazi vettoriali: essendo $ F $ un diffeomorfismo, esiste una funzione $ G : M \to N $ per cui
+per $ \forall f \in [(f,U)] \in C^{\infty}_{p}(N) $.\\
+Sia un diffeomorfismo $ F : N \to M $, allora il differenziale $ F_{*p} : T_{p}(N) \to T_{F(p)}(M) $ è un isomorfismo tra spazi vettoriali: essendo $ F $ un diffeomorfismo, esiste una funzione $ G : M \to N $ per cui
 
 \begin{equation}
 	\begin{cases}
@@ -2705,20 +2702,29 @@ Sia un diffeomorfismo $ F : N \to M $, allora $ F_{*p} : T_{p}(N) \to T_{F(p)}(M
 \end{equation}
 
 dunque
-	
-\begin{align}
-	\begin{split}
-		(G \circ F)_{*p} &= G_{*F(p)} \circ F_{*p}\\
-		&= (\id_{N})_{*p}\\
-		&= \id_{T_{p}(N)}\\\\
-		%
-		(F \circ G)_{*F(p)} &= F_{*p} \circ G_{*F(p)}\\
-		&= (\id_{M})_{*F(p)}\\
-		&= \id_{T_{F(p)}(M)}
-	\end{split}
-\end{align}
 
-perciò $ (F_{*p})^{-1} = G_{*F(p)} $ (inversa destra e sinistra).
+\begin{gather}
+	(G \circ F)_{*p} = G_{*F(p)} \circ F_{*p} %
+	= (\id_{N})_{*p} %
+	= \id_{T_{p}(N)}\\
+	%
+	(F \circ G)_{*F(p)} = F_{*p} \circ G_{*F(p)} %
+	= (\id_{M})_{*F(p)} %
+	= \id_{T_{F(p)}(M)}
+\end{gather}
+
+i.e.
+
+\begin{equation}
+	\begin{cases}
+		G_{*F(p)} \circ F_{*p} = \id_{T_{p}(N)}\\
+		F_{*p} \circ G_{*F(p)} = \id_{T_{F(p)}(M)}
+	\end{cases}%
+	\implies %
+	(F_{*p})^{-1} = G_{*F(p)}
+\end{equation}
+
+perciò $  $ (inversa destra e sinistra), dunque esiste un'applicazione $ \R $-lineare invertibile che lega i due spazi vettoriali, i.e. $ T_{p}(N) \simeq T_{F(p)}(M) $ attraverso il differenziale $ F_{*p} $.
 
 \paragraph{4. Invarianza differenziabile della dimensione}
 
@@ -2726,7 +2732,7 @@ perciò $ (F_{*p})^{-1} = G_{*F(p)} $ (inversa destra e sinistra).
 	Sia $ F : U \to V $ un diffeomorfismo tra gli aperti $ U \subset \R^{n} $ e $ V \subset \R^{m} $, allora $ n = m $.
 \end{theorem}
 
-Conseguentemente, la definizione di varietà differenziabile è ben posta in quanto un diffeomorfismo non può legare un aperto a un altro aperto di dimensione diversa dal primo.
+Conseguentemente a questo teorema, la definizione di varietà differenziabile è ben posta in quanto un diffeomorfismo non può legare due aperti di dimensione diversa.
 
 \begin{proof}
 	Essendo $ F : U \to V $ un diffeomorfismo, sappiamo che
@@ -2735,7 +2741,9 @@ Conseguentemente, la definizione di varietà differenziabile è ben posta in qua
 		F_{*p} : T_{p}(U) = T_{p}(\R^{n}) \to T_{F(p)}(V) = T_{F(p)}(\R^{m})
 	\end{equation}
 
-	è un isomorfismo, ma un isomorfismo tra due spazi di dimensione finita può esistere solo se i due spazi hanno la stessa dimensione, il che implica
+	è un isomorfismo\footnote{%
+		Si possono identificare gli spazi tangenti in $ U $ e $ V $ con i rispettivi in $ \R^{n} $ e $ \R^{m} $ in quanto l'algebra considerata non dipende dall'aperto scelto intorno al punto, e.g. $ C_{p}^{\infty}(U) = C_{p}^{\infty}(\R^{n}) $.%
+	}, ma un isomorfismo tra due spazi di dimensione finita può esistere solo se i due spazi hanno la stessa dimensione, il che implica
 	
 	\begin{equation}
 		\dim(T_{p}(\R^{n})) = \dim(T_{F(p)}(\R^{m})) \implies n = m
@@ -2746,16 +2754,16 @@ Nel caso topologico non si può utilizzare questo procedimento in quanto ha sens
 
 \paragraph{5. Base per $ T_{p}(N) $}
 
-Sia $ N $ una varietà differenziabile, $ (U,\phi) \in N $ una sua carta con $ \phi = (x^{1},\dots,x^{n}) $ e $ p \in (U,\phi) $ un punto della varietà: l'insieme
+Siano $ N $ una varietà differenziabile, $ (U,\phi) $ una sua carta con $ \phi = (x^{1},\dots,x^{n}) $ e $ p \in U $ un punto della varietà: l'insieme
 
 \begin{equation}
-	\mathcal{B}_{T_{p}(N)} = \left\{ \eval{ \pdv{x^{1}} }_{p}, \dots, \eval{ \pdv{x^{n}} }_{p} \right\}
+	\B_{T_{p}(N)} = \left\{ \eval{ \pdv{x^{1}} }_{p}, \dots, \eval{ \pdv{x^{n}} }_{p} \right\}
 \end{equation}
 
 è una base per $ T_{p}(N) = \der_{p}(C_{p}^{\infty}(N)) $ in quanto
 
 \begin{equation}
-	\left. \dfrac{\partial}{\partial x^{i}} \right|_{p} \in T_{p}(N) \qcomma \forall i=1,\dots,n
+	\eval{ \pdv{x^{i}} }_{p} \in T_{p}(N) \qcomma \forall i=1,\dots,n
 \end{equation}
 
 conseguentemente
@@ -2765,226 +2773,215 @@ conseguentemente
 \end{equation}
 
 \begin{proof}
-	Sappiamo che l'applicazione $ \phi : U \to \phi(U) \subset \R^{n} $ appartenente alla carta $ (U,\phi) $ non è solo un omeomorfismo ma anche un diffeomorfismo dunque il suo differenziale
+	Sappiamo che l'applicazione $ \phi : U \to \phi(U) \subset \R^{n} $ appartenente alla carta $ (U,\phi) $ non è solo un omeomorfismo ma anche un diffeomorfismo, dunque il suo differenziale
 	
 	\begin{equation}
 		\phi_{*p} : T_{p}(U) = T_{p}(N) \to T_{\phi(p)}(\phi(U)) = T_{\phi(p)}(\R^{n})
 	\end{equation}
 
 	è un isomorfismo tra spazi vettoriali.\\
-	Calcoliamo ora l'azione di $ \phi_{*p} $ in un vettore generico della base $ \mathcal{B}_{T_{p}(N)} $:
+	Calcoliamo ora l'azione di $ \phi_{*p} $ su un vettore generico dell'insieme $ \mathcal{B}_{T_{p}(N)} $ applicato a una qualsiasi funzione $ f \in [(f,U)] \in C_{p}^{\infty}(N) $:
 	
 	\begin{align}
 		\begin{split}
-			\phi_{*p} \left( \left. \dfrac{\partial}{\partial x^{i}} \right|_{p} \right) (f) &= \left. \dfrac{\partial}{\partial x^{i}} \right|_{p} (f \circ \phi)\\
-			&= \left. \dfrac{\partial}{\partial r^{i}} \right|_{\phi(p)} (f \circ \phi \circ \phi^{-1})\\
-			&= \left. \dfrac{\partial}{\partial r^{i}} \right|_{\phi(p)} f
+			\phi_{*p} \left( \eval{ \pdv{x^{i}} }_{p} \right) (f) &= \eval{ \pdv{x^{i}} }_{p} (f \circ \phi)\\
+			&= \eval{ \pdv{r^{i}} }_{\phi(p)} (f \circ \phi \circ \phi^{-1})\\
+			&= \eval{ \pdv{r^{i}} }_{\phi(p)} f
 		\end{split}
 	\end{align}
 
-	per $ \forall f \in [(f,U)] \in C_{\phi(p)}^{\infty}(N) $, perciò
+	perciò
 	
 	\begin{equation}
-		\phi_{*p} \left( \left. \dfrac{\partial}{\partial x^{i}} \right|_{p} \right) = \left. \dfrac{\partial}{\partial r^{i}} \right|_{\phi(p)} \qcomma \forall i=1,\dots,n
+		\phi_{*p} \left( \eval{ \pdv{x^{i}} }_{p} \right) = \eval{ \pdv{r^{i}} }_{\phi(p)} \qcomma \forall i=1,\dots,n
 	\end{equation}
 
-	Essendo la derivata parziale in $ r^{i} $ un elemento di base e $ \phi_{*p} $ un isomorfismo che, in quanto tale, porta basi in basi, le derivate parziali in $ x^{i} $ sono quindi una base per $ T_{p}(N) $.
+	Essendo la derivata parziale in $ r^{i} $ un elemento di base per $ T_{\phi(p)}(\R^{n}) $ e $ \phi_{*p} $ un isomorfismo che, in quanto tale, porta basi in basi, le derivate parziali in $ x^{i} $ sono quindi una base per $ T_{p}(N) $, i.e.
+	
+	\begin{equation}
+		\expval{ \eval{ \pdv{x^{i}} }_{p} } = T_{p}(N)
+	\end{equation}
 \end{proof}
 
 \paragraph{6. Matrice dell'applicazione differenziale (aperti euclidei)}
 
-Siano $ U = N \subset \R^{n} $ e $ V = M \subset \R^{m} $ aperti, sia $ F : U \to V $ un'applicazione liscia e sia $ p \in U $, il differenziale sarà
+Siano $ U \subset \R^{n} $ e $ V \subset \R^{m} $ due aperti euclidei, $ F : U \to V $ un'applicazione liscia e $ p \in U $ un punto, il differenziale dell'applicazione sarà
 
 \begin{equation}
 	F_{*p} : T_{p}(U) = T_{p}(\R^{n}) \to T_{F(p)}(V) = T_{F(p)}(\R^{m})
 \end{equation}
 
-Si possono identificare gli spazi tangenti in $ U $ e $ V $ con i rispettivi in $ \R^{n} $ e $ \R^{m} $ in quanto l'algebra considerata non dipende dall'aperto scelto intorno al punto, e.g. $ C_{p}^{\infty}(U) = C_{p}^{\infty}(\R^{n}) $.\\
-Siano
+Siano le basi rispettivamente per $ T_{p}(U) $ e $ T_{F(p)}(V) $:
+
+\begin{gather}
+	\B_{T_{p}(U)} = \left\{ \eval{ \pdv{r^{1}} }_{p}, \dots, \eval{ \pdv{r^{n}} }_{p} \right\}\\
+	\B_{T_{F(p)}(V)} = \left\{ \eval{ \pdv{r^{1}} }_{F(p)}, \dots, \eval{ \pdv{r^{m}} }_{F(p)} \right\}
+\end{gather}
+
+Essendo il differenziale un'applicazione lineare, gli elementi della matrice relativa a $ F_{*p} $ sono dati dalle incognite $ a_{kj} $ della seguente equazione:
 
 \begin{equation}
-	\mathcal{B}_{T_{p}(U)} = \left\{ \eval{ \pdv{r^{1}} }_{p}, \dots, \eval{ \pdv{r^{n}} }_{p} \right\}
+	F_{*p} \left( \eval{ \pdv{r^{j}} }_{p} \right) = \sum_{k=1}^{m} a_{kj} \left( \eval{ \pdv{r^{k}} }_{F(p)} \right) \qcomma j=1,\dots,n
 \end{equation}
 
-una base per $ T_{p}(U) $ e
+Per trovarle, applichiamo entrambi i membri dell'equazione allo stesso oggetto, i.e. la proiezione naturale in $ \R^{m} $
 
-\begin{equation}
-	\mathcal{B}_{T_{F(p)}(V)} = \left\{ \eval{ \pdv{r^{1}} }_{F(p)}, \dots, \eval{ \pdv{r^{m}} }_{F(p)} \right\}
-\end{equation}
-
-una base per $ T_{F(p)}(V) $, allora gli elementi della matrice dell'applicazione $ F_{*p} $ sono dati da
-
-\begin{equation}
-	F_{*p} \left( \left. \dfrac{\partial}{\partial r^{j}} \right|_{p} \right) = \sum_{k=1}^{m} a_{kj} \left( \left. \dfrac{\partial}{\partial r^{k}} \right|_{F(p)} \right) \qcomma j=1,\dots,n
-\end{equation}
-
-in quanto $ F_{*p} $ è lineare. Le incognite sono le $ a_{kj} $ e, per trovarle, applichiamo entrambi i membri dell'equazione allo stesso oggetto, i.e. la proiezione naturale in $ \R^{m} $
-
-\begin{align}
-	\begin{split}
-		r^{i} : \R^{m} &\to \R\\
-		(x^{1},\dots,x^{m}) &\mapsto x^{i}
-	\end{split}
-\end{align}
+\map{r^{i}}
+	{\R^{m}}{\R}
+	{(x^{1},\dots,x^{m})}{x^{i}}
 
 dunque prendiamo il secondo membro
 
 \begin{align}
 	\begin{split}
-		\sum_{k=1}^{m} a_{kj} \left( \left. \dfrac{\partial}{\partial r^{k}} \right|_{F(p)} r^{i} \right) &= \sum_{k=1}^{m} a_{kj} \left( \left. \dfrac{\partial r^{i}}{\partial r^{k}} \right|_{F(p)} \right)\\
-		&= \sum_{k=1}^{m} a_{kj} \left( \dfrac{\partial r^{i}}{\partial r^{k}} \right)\\
+		\sum_{k=1}^{m} a_{kj} \left( \eval{ \pdv{r^{k}} }_{F(p)} r^{i} \right) &= \sum_{k=1}^{m} a_{kj} \pdv{r^{i}}{r^{k}} \, (F(p))\\
+		&= \sum_{k=1}^{m} a_{kj} \pdv{r^{i}}{r^{k}}\\
 		&= \sum_{k=1}^{m} a_{kj} \delta_{ik}\\
-		&= a_{ij}
+		&= a_{ij} \in M_{m,n}(\R)
 	\end{split}
 \end{align}
 
-dove $ [a_{ij}] \in M_{m,n}(\R) $ con $ i $ e $ j $ indici di riga e colonna rispettivamente. Siccome
+Siccome
 
-\begin{align}
-	\begin{split}
-		F : U &\to V\\
-		q &\mapsto (F^{1}(q),\dots,F^{m}(q))
-	\end{split}
-\end{align}
+\map{F}
+	{U}{V}
+	{q}{(F^{1}(q),\dots,F^{m}(q))}
 
 allora
 
-\begin{align}
-	\begin{split}
-		r^{i} \circ F : U &\to V\\
-		q &\mapsto F^{i}(q)
-	\end{split}
-\end{align}
+\map{r^{i} \circ F}
+	{U}{V}
+	{q}{F^{i}(q)}
 
-a questo punto possiamo calcolare il primo membro applicato a $ r^{i} $
+A questo punto possiamo calcolare il primo membro applicato a $ r^{i} $
 
 \begin{align}
 	\begin{split}
-		F_{*p} \left( \left. \dfrac{\partial}{\partial r^{j}} \right|_{p} \right) (r^{i}) &= \left. \dfrac{\partial}{\partial r^{j}} \right|_{p} (r^{i} \circ F)\\
-		&= \left. \dfrac{\partial}{\partial r^{j}} \right|_{p} (r^{i} \circ F)\\
-		&= \left. \dfrac{\partial}{\partial r^{j}} \right|_{p} F^{i}\\
-		&= \dfrac{\partial F^{i}}{\partial r^{j}} (p)
+		F_{*p} \left( \eval{ \pdv{r^{j}} }_{p} \right) (r^{i}) &= \eval{ \pdv{r^{j}} }_{p} (r^{i} \circ F)\\
+		&= \eval{ \pdv{r^{j}} }_{p} F^{i}\\
+		&= \pdv{F^{i}}{r^{j}} \, (p)
 	\end{split}
 \end{align}
 
 perciò
 
 \begin{equation}
-	a_{ij} = \dfrac{\partial F^{i}}{\partial r^{j}} (p)
+	a_{ij} = \pdv{F^{i}}{r^{j}} \, (p)
 \end{equation}
 
 dunque le incognite corrispondono alle entrate della matrice jacobiana della funzione $ F $, i.e. $ [a_{ij}] = J(F)(p) $.\\
 In generale, sia un'applicazione lineare
 
-\begin{align}
-	\begin{split}
-		L : \R^{n} &\to \R^{m}\\
-		v &\mapsto A v
-	\end{split}
-\end{align}
+\map{L}
+	{\R^{n}}{\R^{m}}
+	{v}{A v}
 
-dove $ v = [r^{1},\dots,r^{n}]^{T} $ e $ A = [A_{ij}] \in M_{m,n}(\R) $, allora il suo jacobiano coincide proprio con la matrice della rappresentazione, i.e. $ J(L)(p) \equiv A $. Dato questo, possiamo scrivere che se un'applicazione è lineare allora $ L_{*p} \equiv L $.
+dove $ v = [r^{1},\dots,r^{n}]^{T} $ e $ A = [A_{ij}] \in M_{m,n}(\R) $, allora il suo jacobiano coincide proprio con la matrice della rappresentazione della funzione, i.e. $ J(L)(v) \equiv A $. Dato questo, possiamo scrivere che se un'applicazione è lineare allora $ L_{*v} \equiv L $.
 
 \paragraph{7. Cambio di base}
 
-Siano $ N $ una varietà differenziabile, un suo punto $ p \in N $ e due sue carte $ (U,\phi) $ e $ (U,\psi) $ con $ \phi = (x^{1},\dots,x^{n}) $ e $ \psi = (y^{1},\dots,y^{n}) $. Le basi per $ T_{p}(N) $ date da queste due funzioni sono legate da
+Siano $ N $ una varietà differenziabile, un suo punto $ p \in N $, e $ (U,\phi) $ e $ (U,\psi) $ due sue carte con $ \phi = (x^{1},\dots,x^{n}) $ e $ \psi = (y^{1},\dots,y^{n}) $. Le basi per $ T_{p}(N) $ date da queste due funzioni sono legate da
 
 \begin{equation}
-	\left. \dfrac{\partial}{\partial x^{j}} \right|_{p} = \sum_{k=1}^{n} \dfrac{\partial y^{k}}{\partial x^{j}} (p) \left( \left. \dfrac{\partial}{\partial y^{k}} \right|_{p} \right)
+	\eval{ \pdv{x^{j}} }_{p} = \sum_{k=1}^{n} \pdv{y^{k}}{x^{j}} \, (p) \left( \eval{ \pdv{y^{k}} }_{p} \right)
 \end{equation}
 
 \begin{proof}
 	La derivata in $ x^{j} $ appartiene allo spazio tangente $ T_{p}(N) $, dunque
 	
 	\begin{equation}
-		\left. \dfrac{\partial}{\partial x^{j}} \right|_{p} = \sum_{k=1}^{n} a_{kj} \left( \left. \dfrac{\partial}{\partial y^{k}} \right|_{p} \right)
+		\eval{ \pdv{x^{j}} }_{p} = \sum_{k=1}^{n} a_{kj} \left( \eval{ \pdv{y^{k}} }_{p} \right)
 	\end{equation}
 
 	Per trovare le $ a_{kj} $ applico entrambi i membri dell'equazione precedente alla funzione $ y^{i} : U \to \R $. Per il secondo membro
 	
 	\begin{align}
 		\begin{split}
-			\sum_{k=1}^{n} a_{kj} \left( \left. \dfrac{\partial}{\partial y^{k}} \right|_{p} y^{i} \right) &= \sum_{k=1}^{n} a_{kj} \left( \left. \dfrac{\partial y^{i}}{\partial y^{k}} \right|_{p} \right)\\
-			&= \sum_{k=1}^{n} a_{kj} \left( \dfrac{\partial y^{i}}{\partial y^{k}}\right)\\
+			\sum_{k=1}^{n} a_{kj} \left( \eval{ \pdv{y^{k}} }_{p} y^{i} \right) &= \sum_{k=1}^{n} a_{kj} \pdv{y^{i}}{y^{k}} \, (p)\\
+			&= \sum_{k=1}^{n} a_{kj} \pdv{y^{i}}{y^{k}}\\
 			&= \sum_{k=1}^{n} a_{kj} \delta_{ik}\\
 			&= a_{ij}
 		\end{split}
 	\end{align}
 
-	per il primo
+	per il primo membro
 	
 	\begin{equation}
-		\eval{ \pdv{x^{j}} }_{p} y^{j} = \pdv{y^{i}}{x^{j}} (p)
+		\eval{ \pdv{x^{j}} }_{p} y^{j} = \pdv{y^{i}}{x^{j}} \, (p)
 	\end{equation}
 
 	perciò
 	
 	\begin{equation}
-		a_{ij} = \pdv{y^{i}}{x^{j}} (p)
+		a_{ij} = \pdv{y^{i}}{x^{j}} \, (p)
 	\end{equation}
 \end{proof}
 
 \paragraph{8. Matrice dell'applicazione differenziale (varietà differenziabili)}
 
-Siano $ F : N \to M $ un'applicazione liscia, un punto $ p \in N $ e due carte $ (U,\phi) \in N $ e $ (V,\psi) \in M $ con $ \phi = (x^{1},\dots,x^{n}) $ e $ \psi = (y^{1},\dots,y^{n}) $ e con $ F(U) \subset V $. Siano inoltre
+Siano un'applicazione liscia $ F : N \to M $, un punto $ p \in N $, e due carte $ (U,\phi) \in N $ e $ (V,\psi) \in M $ con $ \phi = (x^{1},\dots,x^{n}) $ e $ \psi = (y^{1},\dots,y^{n}) $ tali che $ F(U) \subset V $. Siano inoltre le basi per gli spazi tangenti
 
 \begin{align}
-	\begin{split}
-		\mathcal{B}_{T_{p}(N)} &= \left\{ \eval{ \pdv{x^{1}} }_{p}, \dots, \eval{ \pdv{x^{n}} }_{p} \right\}\\
-		\mathcal{B}_{T_{F(p)}(M)} &= \left\{ \eval{ \pdv{y^{1}} }_{F(p)}, \dots, \eval{ \pdv{y^{m}} }_{F(p)} \right\}
-	\end{split}
+	\B_{T_{p}(N)} = \left\{ \eval{ \pdv{x^{1}} }_{p}, \dots, \eval{ \pdv{x^{n}} }_{p} \right\}\\
+	\B_{T_{F(p)}(M)} = \left\{ \eval{ \pdv{y^{1}} }_{F(p)}, \dots, \eval{ \pdv{y^{m}} }_{F(p)} \right\}
 \end{align}
 
-La matrice associata al differenziale $ F_{*p} : T_{p}(N) \to T_{F(p)}(M) $ rispetto alla base $ \mathcal{B}_{T_{p}(N)} $ è la matrice jacobiana
+La matrice associata al differenziale $ F_{*p} : T_{p}(N) \to T_{F(p)}(M) $ rispetto alla base $ \B_{T_{p}(N)} $ è la matrice jacobiana
 
 \begin{equation}
-	J(F)(p) = \left[ \dfrac{\partial F^{i}}{\partial x^{j}} (p) \right]
+	J(F)(p) = \left[ \pdv{F^{i}}{x^{j}} \, (p) \right] \in M_{m,n}(\R)
 \end{equation}
 
 perciò
 
 \begin{equation}
-	F_{*p} \left( \left. \dfrac{\partial}{\partial x^{j}} \right|_{p} \right) = \sum_{k=1}^{n} \left( \dfrac{\partial F^{k}}{\partial x^{j}} (p) \right) \left( \left. \dfrac{\partial}{\partial y^{k}} \right|_{F(p)} \right)
+	F_{*p} \left( \eval{ \pdv{x^{j}} }_{p} \right) = \sum_{k=1}^{n} \pdv{F^{k}}{x^{j}} \, (p) \left( \eval{ \pdv{y^{k}} }_{F(p)} \right)
 \end{equation}
 
 \begin{proof}
-	In generale, essendo il differenziale una funzione lineare
+	In generale, essendo il differenziale una funzione lineare, possiamo scrivere
 	
 	\begin{equation}
-		F_{*p} \left( \left. \dfrac{\partial}{\partial x^{j}} \right|_{p} \right) = \sum_{k=1}^{n} a_{kj} \left( \left. \dfrac{\partial}{\partial y^{k}} \right|_{F(p)} \right)
+		F_{*p} \left( \eval{ \pdv{x^{j}} }_{p} \right) = \sum_{k=1}^{n} a_{kj} \left( \eval{ \pdv{y^{k}} }_{F(p)} \right)
 	\end{equation}
 	
-	Se applichiamo il secondo membro a $ y^{i} $
+	Se applichiamo il secondo membro alla funzione $ y^{i} $
 	
 	\begin{align}
 		\begin{split}
-			\sum_{k=1}^{n} a_{kj} \left( \left. \dfrac{\partial}{\partial y^{k}} \right|_{F(p)} y^{i} \right) &= \sum_{k=1}^{n} a_{kj} \left( \left. \dfrac{\partial y^{i}}{\partial y^{k}} \right|_{F(p)} \right)\\
-			&= \sum_{k=1}^{n} a_{kj} \left( \dfrac{\partial y^{i}}{\partial y^{k}} \right)\\
+			\sum_{k=1}^{n} a_{kj} \left( \eval{ \pdv{y^{k}} }_{F(p)} \right) &= \sum_{k=1}^{n} a_{kj} \pdv{y^{i}}{y^{k}} \, (F(p))\\
+			&= \sum_{k=1}^{n} a_{kj} \pdv{y^{i}}{y^{k}}\\
 			&= \sum_{k=1}^{n} a_{kj} \delta_{ik}\\
 			&= a_{ij}
 		\end{split}
 	\end{align}
 	
-	e per il primo membro
+	mentre per il primo membro
 	
 	\begin{align}
 		\begin{split}
-			F_{*p} \left( \left. \dfrac{\partial}{\partial x^{j}} \right|_{p} \right) (y^{i}) &= \left. \dfrac{\partial}{\partial x^{j}} \right|_{p} (y^{i} \circ F)\\
-			&= \left. \dfrac{\partial}{\partial x^{j}} \right|_{p} F^{i}\\
-			&= \dfrac{\partial F^{i}}{\partial x^{j}} (p)
+			F_{*p} \left( \eval{ \pdv{x^{j}} }_{p} \right) (y^{i}) &= \eval{ \pdv{x^{j}} }_{p} (y^{i} \circ F)\\
+			&= \eval{ \pdv{x^{j}} }_{p} F^{i}\\
+			&= \pdv{F^{i}}{x^{j}} \, (p)
 		\end{split}
 	\end{align}
+
+	perciò
+	
+	\begin{equation}
+	a_{ij} = \pdv{y^{i}}{x^{j}} \, (p)
+	\end{equation}
 \end{proof}
 
-\begin{remark}
-	Possiamo enunciare il teorema della funzione inversa utilizzando il differenziale al posto dello jacobiano:
-	
-	\begin{theorem}
-		Sia $ F : N \to M $ un'applicazione liscia dove $ \dim(N) = \dim(M) $ e sia un punto $ p \in N $, allora $ F $ è un diffeomorfismo locale in $ p $ se e solo se il suo differenziale $ F_{*p} $ è un isomorfismo.
-	\end{theorem}
+\paragraph{9. IFT tramite differenziale}
 
-	Questo perché lo jacobiano è invertibile se e solo se il differenziale è un isomorfismo.
-\end{remark}
+Possiamo enunciare il teorema della funzione inversa utilizzando il differenziale al posto dello jacobiano:
+
+\begin{theorem}
+	Sia $ F : N \to M $ un'applicazione liscia dove $ \dim(N) = \dim(M) $ e sia un punto $ p \in N $, allora $ F $ è un diffeomorfismo locale in $ p $ se e solo se il suo differenziale $ F_{*p} $ è un isomorfismo.
+\end{theorem}
+
+Questo perché lo jacobiano è invertibile se e solo se il differenziale è un isomorfismo: perché un'applicazione sia un isomorfismo è necessario che la matrice associata sia invertibile, i.e. che il determinante della matrice associata non sia nullo.
 
 \subsection{Categorie}
 
