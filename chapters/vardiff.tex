@@ -2481,30 +2481,29 @@ per $ \forall D,D_{u},D_{v} \in \der_{p}(C_{p}^{\infty}(\R^{n})) $ e $ \forall \
 
 \subsection{Derivazioni e derivate parziali}
 
-Siano una varietà differenziabile $ N $ di dimensione $ n $, una funzione $ f \in C^{\infty}(N) $, un punto $ p \in N $ e una carta $ (U, \phi) \in N $ intorno a $ p $ con $ \phi = (x^{1},\dots,x^{n}) $: la derivata parziale di $ f $ rispetto alle componenti di $ \phi $ nel punto $ p $ è definita come
+Siano una varietà differenziabile $ N $ di dimensione $ n $, una funzione $ f \in C^{\infty}(N) $, un punto $ p \in N $ e una carta $ (U, \phi) \in N $ intorno a $ p $ con $ \phi = (x^{1},\dots,x^{n}) $: la \textit{derivata parziale di} $ f $ \textit{rispetto alle componenti di} $ \phi $ \textit{nel punto} $ p $ è definita come
 
 \begin{equation}
-	\dfrac{\partial f}{\partial x^{i}} (p) \doteq \left. \dfrac{\partial}{\partial x^{i}} \right|_{p} f = \dfrac{\partial (f \circ \phi^{-1})}{\partial r^{i}} (\phi(p))
+	\pdv{f}{x^{i}} \, (p) \doteq \eval{ \pdv{x^{i}} }_{p} f = \pdv{(f \circ \phi^{-1})}{r^{i}} \, (\phi(p)) \qcomma i=1,\dots,n
 \end{equation}
 
-per $ i=1,\dots,n $.\\
 Possiamo pensare alla derivata parziale come elemento delle derivazioni puntuali, i.e.
 
 \begin{equation}
-	\left. \dfrac{\partial}{\partial x^{i}} \right|_{p} \in \der_{p}(C_{p}^{\infty}(N))
+	\eval{ \pdv{x^{i}} }_{p} \in \der_{p}(C_{p}^{\infty}(N))
 \end{equation}
 
-in quanto
+in quanto le applicazioni
 
 \begin{equation}
-	\left. \dfrac{\partial}{\partial x^{i}} \right|_{p} : C_{p}^{\infty}(N) \to \R
+	\eval{ \pdv{x^{i}} }_{p} : C_{p}^{\infty}(N) \to \R
 \end{equation}
 
-inoltre questa è $ \R $-lineare e soddisfa la regola di Leibniz.\\
+sono $ \R $-lineari e soddisfano la regola di Leibniz.\\
 La definizione di questa derivazione, con dominio l'insieme dei germi di funzione, è la seguente
 
 \begin{equation}
-	\left. \dfrac{\partial}{\partial x^{i}} \right|_{p} ([(f,U)]) \doteq \dfrac{\partial f}{\partial x^{i}} (p)
+	\pdv{f}{x^{i}} \, (p) \doteq \eval{ \pdv{x^{i}} }_{p} ([(f,U)])
 \end{equation}
 
 la quale è ben definita perché
@@ -2524,37 +2523,35 @@ Siano due classi $ [(f,U)],[(g,V)] \in C_{p}^{\infty}(N) $, consideriamo la deri
 
 \begin{align}
 	\begin{split}
-		\left. \dfrac{\partial}{\partial x^{i}} \right|_{p} (\lambda [(f,U)] + \mu [(g,V)]) &= \left. \dfrac{\partial}{\partial x^{i}} \right|_{p} ([(\lambda f,U)] + [(\mu g,V)])\\
-		&= \left. \dfrac{\partial}{\partial x^{i}} \right|_{p} (\lambda f + \mu g)\\
-		&= \left. \dfrac{\partial}{\partial r^{i}} \right|_{\phi(p)} ((\lambda f + \mu g) \circ \phi^{-1})\\
-		&= \left. \dfrac{\partial}{\partial r^{i}} \right|_{\phi(p)} (\lambda f \circ \phi^{-1} + \mu g \circ \phi^{-1})\\
-		&= \lambda \left. \dfrac{\partial}{\partial r^{i}} \right|_{\phi(p)} (f \circ \phi^{-1}) + \mu \left. \dfrac{\partial}{\partial r^{i}} \right|_{\phi(p)} (g \circ \phi^{-1})\\
-		&= \lambda \left. \dfrac{\partial}{\partial x^{i}} \right|_{p} f + \mu \left. \dfrac{\partial}{\partial x^{i}} \right|_{p} g\\
-		&= \lambda \left. \dfrac{\partial}{\partial x^{i}} \right|_{p} [(f,U)] + \mu \left. \dfrac{\partial}{\partial x^{i}} \right|_{p} [(g,V)]
+		\eval{ \pdv{x^{i}} }_{p} (\lambda [(f,U)] + \mu [(g,V)]) &= \eval{ \pdv{x^{i}} }_{p} ([(\lambda f + \mu g, U \cap V)])\\
+		&= \eval{ \pdv{x^{i}} }_{p} (\lambda f + \mu g)\\
+		&= \eval{ \pdv{r^{i}} }_{\phi(p)} ((\lambda f + \mu g) \circ \phi^{-1})\\
+		&= \eval{ \pdv{r^{i}} }_{\phi(p)} (\lambda f \circ \phi^{-1} + \mu g \circ \phi^{-1})\\
+		&= \lambda \eval{ \pdv{r^{i}} }_{\phi(p)} (f \circ \phi^{-1}) + \mu \eval{ \pdv{r^{i}} }_{\phi(p)} (g \circ \phi^{-1})\\
+		&= \lambda \eval{ \pdv{x^{i}} }_{p} f + \mu \eval{ \pdv{x^{i}} }_{p} g\\
+		&= \lambda \eval{ \pdv{x^{i}} }_{p} [(f,U)] + \mu \eval{ \pdv{x^{i}} }_{p} [(g,V)]
 	\end{split}
 \end{align}
 
 per $ \forall \lambda,\mu \in \R $, questo prova la $ \R $-linearità della derivata parziale.\\
-Per la regola di Leibniz
+Per la regola di Leibniz:
 
 \begin{align}
 	\begin{split}
-		\left. \dfrac{\partial}{\partial x^{i}} \right|_{p} ([(f,U)] [(g,V)]) &= \left. \dfrac{\partial}{\partial x^{i}} \right|_{p} ([(f \cdot g,U \cap V)]\\
-		&= \left. \dfrac{\partial}{\partial x^{i}} \right|_{p} (f \cdot g)\\
-		&= \left. \dfrac{\partial}{\partial r^{i}} \right|_{\phi(p)} ((f \cdot g) \circ \phi^{-1})\\
-		&= \left. \dfrac{\partial}{\partial r^{i}} \right|_{\phi(p)} ((f \circ \phi^{-1}) \cdot (g \circ \phi^{-1}))\\
-		&= \left( \left. \dfrac{\partial}{\partial r^{i}} \right|_{\phi(p)} (f \circ \phi^{-1}) \right) \cdot (g \circ \phi^{-1})(\phi(p)) +\\
-		&+ (f \circ \phi^{-1})(\phi(p)) \cdot \left( \left. \dfrac{\partial}{\partial r^{i}} \right|_{\phi(p)} (g \circ \phi^{-1}) \right)\\
-		&= \left( \left. \dfrac{\partial}{\partial x^{i}} \right|_{p} f \right) \cdot g(p) + f(p) \cdot \left( \left. \dfrac{\partial}{\partial x^{i}} \right|_{p} g \right)\\
-		&= \left( \left. \dfrac{\partial}{\partial x^{i}} \right|_{p} [(f,U)] \right) \cdot ([(g,V)])(p) +\\
-		&+ ([(f,U)])(p) \cdot \left( \left. \dfrac{\partial}{\partial x^{i}} \right|_{p} [(g,V)] \right)
+		\eval{ \pdv{x^{i}} }_{p} ([(f,U)]& \cdot [(g,V)]) = \eval{ \pdv{x^{i}} }_{p} ([(fg,U \cap V)]\\
+		&= \eval{ \pdv{x^{i}} }_{p} (f g)\\
+		&= \eval{ \pdv{r^{i}} }_{\phi(p)} ((f g) \circ \phi^{-1})\\
+		&= \eval{ \pdv{r^{i}} }_{\phi(p)} ((f \circ \phi^{-1}) (g \circ \phi^{-1}))\\
+		&= \left( \eval{ \pdv{r^{i}} }_{\phi(p)} (f \circ \phi^{-1}) \right) (g \circ \phi^{-1})(\phi(p)) + (f \circ \phi^{-1})(\phi(p)) \left( \eval{ \pdv{r^{i}} }_{\phi(p)} (g \circ \phi^{-1}) \right)\\
+		&= \left( \eval{ \pdv{x^{i}} }_{p} f \right) g(p) + f(p) \left( \eval{ \pdv{x^{i}} }_{p} g \right)\\
+		&= \left( \eval{ \pdv{x^{i}} }_{p} [(f,U)] \right) ([(g,V)])(p) + ([(f,U)])(p) \left( \eval{ \pdv{x^{i}} }_{p} [(g,V)] \right)
 	\end{split}
 \end{align}
 
 Nel caso in cui la dimensione della varietà sia unitaria, scriveremo
 
 \begin{equation}
-	\left. \dfrac{\operatorname{d}}{\operatorname{dt}} \right|_{p} \doteq \left( \left. \dfrac{\partial}{\partial x^{i}} \right|_{p} \right)_{n=1}
+	\left( \eval{ \pdv{x^{i}} }_{p} \right)_{n=1} \doteq \eval{ \dv{t} }_{p}
 \end{equation}
 
 \subsection{Differenziale di un'applicazione liscia tra varietà}
