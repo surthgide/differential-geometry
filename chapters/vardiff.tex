@@ -2985,109 +2985,72 @@ Questo perché lo jacobiano è invertibile se e solo se il differenziale è un i
 
 \subsection{Categorie}
 
-Una \textit{categoria} $ \mathfrak{C} $ consiste di una collezione\footnote{%
-	Utilizzeremo il termine "collezione" al posto di "insieme" per evitare contraddizioni logiche, e.g. in situazioni dove potrebbe essere presente la locuzione "insiemi di insiemi".%
-} di oggetti $ Ob(\mathfrak{C}) $ e per ogni coppia di elementi appartenenti alla categoria $ A,B \in Ob(\mathfrak{C}) $ esiste un insieme non vuoto $ Mor(A,B) $ dei morfismi\footnote{%
-	Un morfismo è una mappa tra due oggetti che conserva la struttura dell'oggetto sorgente nell'oggetto obbiettivo; ad esempio, è la generalizzazione nella teoria delle categorie delle funzioni nella teoria degli insiemi o delle funzioni continue in topologia.%
+Una \textit{categoria} $ \mathfrak{C} $ è definita come una collezione\footnote{%
+	Utilizzeremo il termine "collezione" al posto di "insieme" per evitare contraddizioni logiche, ad esempio in situazioni dove potrebbe essere presente la locuzione "insiemi di insiemi".%
+} $ Ob(\mathfrak{C}) $ di oggetti, e.g. insiemi, varietà differenziali o gruppi. Per ogni coppia di elementi $ A,B \in Ob(\mathfrak{C}) $ appartenenti alla categoria $ \mathfrak{C} $ esiste un insieme non vuoto $ Mor(A,B) $ dei \textit{morfismi}\footnote{%
+	Un morfismo è una mappa tra due oggetti che conserva la struttura dell'oggetto sorgente nell'oggetto obbiettivo; ad esempio, può essere pensato come la generalizzazione nella teoria delle categorie delle funzioni nella teoria degli insiemi o delle funzioni continue in topologia.%
 } da $ A $ a $ B $ tale che siano soddisfatte le seguenti condizioni:
 
 \begin{equation}
 	\begin{cases}
-		\E g \circ f \in Mor(A,C)\footnotemark, & \forall f \in Mor(A,B), \, \forall g \in Mor(B,C)\\
+		\E g \circ f \in Mor(A,C), & \forall f \in Mor(A,B), \, \forall g \in Mor(B,C)\\
 		\E \bigone_{A} \in Mor(A,A) \mid f \circ \bigone_{A} = f, & \forall f \in Mor(A,B)\\
 		\E \bigone_{B} \in Mor(B,B) \mid \bigone_{B} \circ f = f, & \forall f \in Mor(A,B)\\
 		(f \circ g) \circ h = f \circ (g \circ h), & \forall f \in Mor(A,B), \forall g \in Mor(B,C), \forall h \in Mor(C,D)
 	\end{cases}
-\footnotetext{Il simbolo $ \circ $ indica la composizione ma, nella teoria delle categorie, non è necessariamente la composizione come si intende per le funzioni in teoria degli insiemi; nonostante ciò, vedremo solo esempi in cui queste due composizioni coincidono.}
 \end{equation}
+
+Il simbolo $ \circ $ indica la composizione ma, nella teoria delle categorie, non è necessariamente la composizione come si intende per le funzioni in teoria degli insiemi; nonostante ciò, vedremo solo esempi in cui queste due definizioni di composizione coincidono.\\
+In tutti gli esempi che seguono tutte le proprietà delle categorie sono soddisfatte e la composizione $ \circ $ corrisponde a quella usuale per ogni caso considerato.
 
 \subsubsection{\textit{Esempi}}
 
 \paragraph{0. Insiemi}
 
-Sia $ \mathfrak{C} $ la categoria degli insiemi, allora
+Sia $ \mathfrak{C} $ la categoria degli insiemi, allora la collezione di oggetti e l'insieme dei morfismi sono dati da:
 
-\begin{equation}
-	Ob(\mathfrak{C}) = \{ \text{collezione di tutti gli insiemi} \}
-\end{equation}
-
-dove l'insieme dei morfismi è dato da
-
-\begin{equation}
-	Mor(A,B) = \{ \text{applicazioni } f : A \to B \}
-\end{equation}
-
-per $ \forall A,B \in Ob(\mathfrak{C}) $.\\
-Tutte le proprietà delle categorie sono soddisfatte e la composizione $ \circ $ corrisponde a quella usuale.
+\begin{gather}
+	Ob(\mathfrak{C}) = \{ \text{collezione di tutti gli insiemi} \}\\
+	Mor(A,B) = \{ \text{applicazioni } f : A \to B \} \qcomma \forall A,B \in Ob(\mathfrak{C})
+\end{gather}
 
 \paragraph{1. Spazi vettoriali su $ \R $}
 
-Sia $ \mathfrak{C} $ la categoria degli spazi vettoriali su $ \R $, allora
+Sia $ \mathfrak{C} $ la categoria degli spazi vettoriali su $ \R $, allora la collezione di oggetti e l'insieme dei morfismi sono dati da:
 
-\begin{equation}
-	Ob(\mathfrak{C}) = \{ \text{collezione di tutti gli spazi vettoriali su } \R \}
-\end{equation}
-
-dove l'insieme dei morfismi è dato da
-
-\begin{equation}
-	Mor(V,W) = Hom(V,W) = \{ \text{applicazioni } \R \text{ lineari } f : V \to W \}
-\end{equation}
-
-per $ \forall V,W \in Ob(\mathfrak{C}) $.\\
-Tutte le proprietà delle categorie sono soddisfatte e la composizione $ \circ $ corrisponde a quella usuale.
+\begin{gather}
+	Ob(\mathfrak{C}) = \{ \text{collezione di tutti gli spazi vettoriali su } \R \}\\
+	Mor(V,W) = Hom(V,W) = \{ \text{applicazioni $ \R $-lineari } f : V \to W \} \qcomma \forall V,W \in Ob(\mathfrak{C})
+\end{gather}
 
 \paragraph{2. Spazi topologici}
 
-Sia $ \mathfrak{Top} $ la categoria degli spazi topologici, allora
+Sia $ \mathfrak{Top} $ la categoria degli spazi topologici, allora la collezione di oggetti e l'insieme dei morfismi sono dati da:
 
-\begin{equation}
-	Ob(\mathfrak{Top}) = \{ \text{collezione di tutti gli spazi topologici} \}
-\end{equation}
-
-dove l'insieme dei morfismi è dato da
-
-\begin{equation}
-	Mor(X,Y) = C^{0}(X,Y) = \{ \text{applicazioni continue } f : X \to Y \}
-\end{equation}
-
-per $ \forall X,Y \in Ob(\mathfrak{Top}) $.\\
-Tutte le proprietà delle categorie sono soddisfatte e la composizione $ \circ $ corrisponde a quella usuale.
+\begin{gather}
+	Ob(\mathfrak{Top}) = \{ \text{collezione di tutti gli spazi topologici} \}\\
+	Mor(X,Y) = C^{0}(X,Y) = \{ \text{applicazioni continue } f : X \to Y \} \qcomma \forall X,Y \in Ob(\mathfrak{Top})
+\end{gather}
 
 \paragraph{3. Varietà differenziabili}
 
-Sia $ \mathfrak{C} $ la categoria delle varietà differenziabili, allora
+Sia $ \mathfrak{C} $ la categoria delle varietà differenziabili, allora la collezione di oggetti e l'insieme dei morfismi sono dati da:
 
-\begin{equation}
-	Ob(\mathfrak{C}) = \{ \text{collezione di tutte le varietà differenziabili} \}
-\end{equation}
-
-dove l'insieme dei morfismi è dato da
-
-\begin{equation}
-	Mor(N,M) = \{ \text{applicazioni lisce } F : N \to M \}
-\end{equation}
-
-per $ \forall N,M \in Ob(\mathfrak{C}) $.\\
-Tutte le proprietà delle categorie sono soddisfatte e la composizione $ \circ $ corrisponde a quella usuale.
+\begin{gather}
+	Ob(\mathfrak{C}) = \{ \text{collezione di tutte le varietà differenziabili} \}\\
+	Mor(N,M) = \{ \text{applicazioni lisce } F : N \to M \} \qcomma \forall N,M \in Ob(\mathfrak{C})
+\end{gather}
 
 \paragraph{4. Varietà differenziabili puntate}
 
 Sia $ \mathfrak{C} $ la categoria delle varietà differenziabili puntate, i.e. varietà in cui è fissato un punto\footnote{%
-	Due varietà differenziali puntate sono diverse anche se si cambia solo il punto fissato, e.g. $ (M,p) \neq (M,q) \mid p \neq q $}, allora
+	Due varietà differenziali puntate sono diverse anche se si cambia solo il punto fissato, e.g. $ (M,p) \neq (M,q) $ per $ p \neq q $.%
+}, allora la collezione di oggetti e l'insieme dei morfismi sono dati da:
 
-\begin{equation}
-	Ob(\mathfrak{C}) = \{ \text{collezione di tutte le coppie } (M,p) \, \mid M \text{ varietà differenziabili}, \, p \in M \}
-\end{equation}
-
-dove l'insieme dei morfismi è dato da
-
-\begin{equation}
-	Mor((M,p),(N,q)) = \{ \text{applicazioni lisce } F : N \to M \, \mid \, F(p)=q \}
-\end{equation}
-
-per $ \forall (M,p),(N,q) \in Ob(\mathfrak{C}) $.\\
-Tutte le proprietà delle categorie sono soddisfatte e la composizione $ \circ $ corrisponde a quella usuale.
+\begin{gather}
+	Ob(\mathfrak{C}) = \{ \text{collezione di tutte le coppie } (M,p) \, \mid M \text{ varietà differenziabili}, \, p \in M \}\\
+		Mor((M,p),(N,q)) = \{ \text{applicazioni lisce } F : N \to M \, \mid \, F(p)=q \} \qcomma \forall (M,p),(N,q) \in Ob(\mathfrak{C})
+\end{gather}
 
 \subsubsection{Isomorfismi}
 
@@ -3098,7 +3061,7 @@ Data una categoria $ \mathfrak{C} $, la definizione di oggetti isomorfi è la se
 \end{equation}
 
 dove $ A,B \in Ob(\mathfrak{C}) $, $ \bigone_{A} \in Mor(A,A) $ e $ \bigone_{B} \in Mor(B,B) $.\\
-Per esempio, per la categoria degli insiemi, due oggetti sono isomorfi se esistono due applicazioni l'una inversa dell'altra tali che associno questi due oggetti tra loro.
+Per esempio, per la categoria degli insiemi, due oggetti sono isomorfi se esistono due applicazioni che associno questi due oggetti tra loro e che siano l'una inversa dell'altra.
 
 \subsubsection{\textit{Esempi}}
 
@@ -3132,7 +3095,7 @@ Due oggetti nella categoria delle varietà differenziabili sono isomorfi quando 
 
 \paragraph{4. Varietà differenziabili puntate}
 
-Due oggetti nella categoria delle varietà differenziabili puntate sono isomorfi quando sono diffeomorfi, i.e.
+Due oggetti nella categoria delle varietà differenziabili puntate sono isomorfi quando sono diffeomorfi e il diffeomorfismo associa il punto di una varietà al punto dell'altra, i.e.
 
 \begin{equation}
 	(N,p) \simeq (M,q) \iff \E F : N \to M \text{ diffeomorfismo} \, \mid \, N \stackrel{\text{diff.}}{\simeq} M \wedge F(p)=q
