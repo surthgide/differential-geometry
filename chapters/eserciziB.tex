@@ -328,19 +328,16 @@ le quali sono tutte lisce, dunque anche l'inclusione è liscia tra varietà.
 \section{Coefficienti campo di vettori}\label{es2-8}
 
 \begin{tcolorbox}
-	Sia un'applicazione
+	Siano un punto $ p = (x,y) \in \R^{2} $ e un'applicazione
 	
-	\begin{align}
-		\begin{split}
-			F : \R^{2} &\to \R^{3}\\
-			(x,y) &\mapsto (x,y,xy)
-		\end{split}
-	\end{align}
+	\map{F}
+		{\R^{2}}{\R^{3}}
+		{(x,y)}{(x,y,xy)}
 	
-	e $ p = (x,y) \in \R^{2} $. Trovare $ a,b,c \in \R $ tali che:
+	Trovare $ a,b,c \in \R $ tali che:
 	
 	\begin{equation}
-		F_{*p} \left( \left. \dfrac{\partial}{\partial x} \right|_{p} \right) = a \left. \dfrac{\partial}{\partial u} \right|_{F(p)} + b \left. \dfrac{\partial}{\partial v} \right|_{F(p)} + c \left. \dfrac{\partial}{\partial w} \right|_{F(p)}
+		F_{*p} \left( \eval{ \pdv{x} }_{p} \right) = a \eval{ \pdv{u} }_{F(p)} + b \eval{ \pdv{v} }_{F(p)} + c \eval{ \pdv{w} }_{F(p)}
 	\end{equation}
 \end{tcolorbox}
 
@@ -349,18 +346,18 @@ Per trovare i coefficienti dell'immagine del differenziale ricordiamo che, per u
 \begin{equation}
 	\begin{cases}
 		(U,\phi) \in N, & \phi = (x^{1},\dots,x^{n})\\
-		(V,\psi) \in N, & \psi = (y^{1},\dots,y^{m})
+		(V,\psi) \in M, & \psi = (y^{1},\dots,y^{m})
 	\end{cases}
 \end{equation}
 
 vale
 
 \begin{equation}
-	F_{*p} \left( \eval{\pdv{x^{j}}}_{p} \right) = \sum_{k=1}^{m} \left( \pdv{F^{k}}{x^{j}}\ (p) \right) \left( \eval{\pdv{y^{k}}}_{F(p)} \right)
+	F_{*p} \left( \eval{\pdv{x^{j}}}_{p} \right) = \sum_{k=1}^{m} \pdv{F^{k}}{x^{j}}\ (p) \left( \eval{\pdv{y^{k}}}_{F(p)} \right) \qcomma j = 1,\dots,n
 \end{equation}
 
 dove $ F^{k} = y^{k} \circ F $.\\
-Essendo  il differenziale un'applicazione lineare, possiamo anche scrivere
+Essendo il differenziale un'applicazione lineare, considerando $ X_{p} \in T_{p}(N) $ possiamo anche scrivere
 
 \begin{equation}
 	F_{*p} (X_{p}) = A(p) X_{p} = Y_{F(p)} \in T_{F(p)}(M)
@@ -375,33 +372,33 @@ dove
 Per la funzione considerata, abbiamo che
 
 \begin{equation}
-	A(x,y) = \mqty( 1 & 0 \\ 0 & 1 \\ y & x )
+	A(x,y) = \bmqty{ 1 & 0 \\ 0 & 1 \\ y & x }
 \end{equation}
 
-Possiamo identificare $ T_{p}(\R^{k}) = \R^{k} $ dunque
+Siccome possiamo identificare $ T_{p}(\R^{k}) = \R^{k} $, è possibile scrivere
 
-\begin{align}
-	\begin{split}
-		\left( \mu \eval{\pdv{x}}_{p}, \nu \eval{\pdv{y}}_{p} \right) &\to (\mu,\nu)\\
-		\left( a \eval{\pdv{u}}_{F(p)}, b \eval{\pdv{v}}_{F(p)}, c \eval{\pdv{w}}_{F(p)} \right) &\to (a,b,c)
-	\end{split}
-\end{align}
+\begin{gather}
+	X_{p} = \mu \eval{\pdv{x}}_{p} + \nu \eval{\pdv{y}}_{p} \equiv \bmqty{ \mu \\ \nu }\\
+	Y_{F(p)} = a \eval{\pdv{u}}_{F(p)} + b \eval{\pdv{v}}_{F(p)} + c \eval{\pdv{w}}_{F(p)} \equiv \bmqty{ a \\ b \\ c }
+\end{gather}
 
-dunque
+A questo punto
 
 \begin{equation}
-	F_{*p} \left( \mqty( \mu \\ \nu ) \right) = \mqty( 1 & 0 \\ 0 & 1 \\ y & x ) \mqty( \mu \\ \nu ) = \mqty( \mu \\ \nu \\ y \mu + x \nu )
+	F_{*p} \left( \bmqty{ \mu \\ \nu } \right) = \bmqty{ 1 & 0 \\ 0 & 1 \\ y & x } \bmqty{ \mu \\ \nu } %
+	= \bmqty{ a \\ b \\ c } %
+	= \bmqty{ \mu \\ \nu \\ y \mu + x \nu }
 \end{equation}
 
 perciò abbiamo che
 
 \begin{equation}
-	F_{*p} \left( \mqty( 1 \\ 0 ) \right) = \mqty( 1 & 0 \\ 0 & 1 \\ y & x ) \mqty( 1 \\ 0 ) = \mqty( 1 \\ 0 \\ y ) = \eval{\pdv{u}}_{F(p)} + y \eval{\pdv{w}}_{F(p)}
+	F_{*p} \left( \bmqty{ 1 \\ 0 } \right) = \bmqty{ 1 & 0 \\ 0 & 1 \\ y & x } \bmqty{ 1 \\ 0 } %
+	= \bmqty{ 1 \\ 0 \\ y } %
+	\equiv \eval{\pdv{u}}_{F(p)} + y \eval{\pdv{w}}_{F(p)}
 \end{equation}
 
 i.e. $ (a,b,c) = (1,0,y) $.
-
-%
 
 \newpage
 
