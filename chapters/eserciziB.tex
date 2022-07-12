@@ -315,7 +315,7 @@ le componenti della composizione sono date dalla seguente applicazione
 					\phi^{k}(p), & k \leqslant m\\
 					\psi^{k}(q_{0}), & k > m
 				\end{cases}%
-			}
+				}
 
 le quali sono tutte lisce, dunque anche l'inclusione è liscia tra varietà.
 
@@ -416,7 +416,7 @@ i.e. $ (a,b,c) = (1,0,y) $.
 		\end{cases}
 	\end{equation}
 	
-	Si scrivano $ \sfrac{\partial}{\partial \rho} $ e $ \sfrac{\partial}{\partial \theta} $ in funzione di $ \sfrac{\partial}{\partial x} $ e $ \sfrac{\partial}{\partial y} $.
+	Si scrivano $ \pdv*{\rho} $ e $ \pdv*{\theta} $ in funzione di $ \pdv*{x} $ e $ \pdv*{y} $.
 \end{tcolorbox}
 
 L'equazione che lega i vettori di una base dello spazio tangente
@@ -428,42 +428,42 @@ L'equazione che lega i vettori di una base dello spazio tangente
 a un'altra base è la seguente:
 
 \begin{equation}
-	\eval{\pdv{u^{j}}}_{p} = \sum_{k=1}^{m} \left( \pdv{v^{k}}{u^{j}}\ (p) \right) \left( \eval{\pdv{v^{k}}}_{p} \right)
+	\eval{\pdv{u^{j}}}_{p} = \sum_{k=1}^{2} \pdv{v^{k}}{u^{j}} \, (p) \left( \eval{\pdv{v^{k}}}_{p} \right)
 \end{equation}
 
 dove $ u = (\rho,\theta) $ e $ v = (x,y) $.\\
-In questo caso, possiamo scrivere i vettori dello spazio tangente come:
-
-\begin{align}
-	\begin{split}
-		X_{p} = \left( \eval{\pdv{x}}_{p}, \eval{\pdv{y}}_{p} \right) &\doteq (\mu,\nu)\\\\
-		Y_{p} = \left( \eval{\pdv{\rho}}_{p}, \eval{\pdv{\theta}}_{p} \right) &\doteq (a,b)
-	\end{split}
-\end{align}
-
-La matrice di trasformazione è
+Siccome
 
 \begin{equation}
-	T = \left[ \pdv{v^{k}}{u^{j}}\ (p) \right] = \mqty( \pdv{x}{\rho} & \pdv{x}{\theta} \\\\ \pdv{y}{\rho} & \pdv{y}{\theta} ) %
-	= \mqty( \cos(\theta) & - \rho \sin(\theta) \\\\ \sin(\theta) & \rho \cos(\theta) )
+	\begin{cases}
+		x = \rho \cos(\theta)\\
+		y = \rho \sin(\theta)
+	\end{cases}%
+	\implies %
+	\begin{cases}
+		\rho = \sqrt{x^{2} + y^{2}}\\
+		\cos(\theta) = x / \rho\\
+		\sin(\theta) =  / \rho
+	\end{cases}
 \end{equation}
 
-perciò
+Possiamo scrivere la matrice di trasformazione $ T $ come
 
 \begin{equation}
-	Y_{p} = T X_{p} %
-	\implies %
-	\mqty( a \\ b ) = \mqty( \cos(\theta) & - \rho \sin(\theta) \\\\ \sin(\theta) & \rho \cos(\theta) ) \mqty( \mu \\ \nu ) = \mqty( \cos(\theta) \mu - \rho \sin(\theta) \nu \\\\ \sin(\theta) \mu + \rho \cos(\theta) \nu )
+	T \doteq \left[ \pdv{v^{k}}{u^{j}} \, (p) \right] = \bmqty{ \dpdv{x}{\rho} & \dpdv{x}{\theta} \\\\ \dpdv{y}{\rho} & \dpdv{y}{\theta} } %
+	= \bmqty{ \cos(\theta) & - \rho \sin(\theta) \\\\ \sin(\theta) & \rho \cos(\theta) } %
+	= \bmqty{ \dfrac{x}{\sqrt{x^{2} + y^{2}}} & - y \\\\ \dfrac{y}{\sqrt{x^{2} + y^{2}}} & x }
 \end{equation}
 
 dunque
 
-\begin{align}
-	\begin{split}
-		\eval{\pdv{\rho}}_{p} &= \cos(\theta) \eval{\pdv{x}}_{p} - \rho \sin(\theta) \eval{\pdv{y}}_{p}\\\\
-		\eval{\pdv{\theta}}_{p} &= \sin(\theta) \eval{\pdv{x}}_{p} + \rho \cos(\theta) \eval{\pdv{y}}_{p}
-	\end{split}
-\end{align}
+\begin{gather}
+		\eval{\pdv{\rho}}_{p} = \dfrac{1}{\sqrt{x^{2} + y^{2}}} \left( x \eval{\pdv{x}}_{p} + y \eval{\pdv{y}}_{p} \right) %
+		\quad \lor \quad %
+		\rho \eval{\pdv{\rho}}_{p} = x \eval{\pdv{x}}_{p} + y \eval{\pdv{y}}_{p}\\
+		\nonumber\\
+		\eval{\pdv{\theta}}_{p} = - y \eval{\pdv{x}}_{p} + x \eval{\pdv{y}}_{p}
+\end{gather}
 
 %
 
