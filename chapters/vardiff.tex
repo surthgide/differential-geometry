@@ -3109,7 +3109,10 @@ Due oggetti nella categoria delle varietà differenziabili puntate sono isomorfi
 
 \subsection{Funtori}
 
-I \textit{funtori} si dividono in funtori \textit{covarianti} e \textit{controvarianti}.\\
+Siano due categorie $ \mathfrak{C} $ e $ \mathfrak{D} $, un \textit{funtore} $ \mathcal{F} : \mathfrak{C} \to \mathfrak{D} $ è una coppia di applicazioni che agisce nel seguente modo: una delle applicazioni mappa la collezione di oggetti $ Ob(\mathfrak{C}) $ in $ Ob(\mathfrak{D}) $; l'altra applicazione mappa i morfismi $ Mor(C_{1}, C_{2}) $ in $ Mor(D_{1} ,D_{2}) $, dove $ C_{1}, C_{2} \in Ob(\mathfrak{C}) $ e $ D_{1}, D_{2} \in Ob(\mathfrak{D}) $ sono due coppie qualsiasi di oggetti delle rispettive categorie. I funtori si dividono in \textit{covarianti} e \textit{controvarianti}.
+
+\paragraph{Funtori covarianti}
+
 Siano $ \mathfrak{C} $ e $ \mathfrak{D} $ due categorie, un \textit{funtore covariante} è una coppia di applicazioni identificate da $ \mathcal{F} $ tali che
 
 \begin{equation}
@@ -3128,46 +3131,40 @@ rispettando l'identità e la composizione, i.e.
 	\end{cases}
 \end{equation}
 
-Il funtore differenziale covariante, date $ \mathfrak{C} $ la categoria delle varietà puntate e $ \mathfrak{D} $ la categoria degli spazi vettoriali, associa
+Siano $ \mathfrak{C} $ la categoria delle varietà puntate e $ \mathfrak{D} $ la categoria degli spazi vettoriali, il \textit{funtore differenziale covariante} associa
 
 \begin{equation}
 	\begin{cases}
-		\mathcal{F}(N,p) = T_{p}(N), & \forall (N,p) \in Ob(\mathfrak{C}), \, T_{p}(N) \in Ob(\mathfrak{D})\\
-		\mathcal{F}(F) = F_{*p} \in Mor(T_{p}(N),T_{q=F(p)}(M)) & \forall F \in Mor((N,p),(M,q))
+		\mathcal{F}((N,p)) = T_{p}(N), & \forall (N,p) \in Ob(\mathfrak{C}), \, T_{p}(N) \in Ob(\mathfrak{D})\\
+		\mathcal{F}(F) = F_{*p} & \forall F \in Mor((N,p),(M,q)), \, F_{*p} \in Mor(T_{p}(N),T_{q=F(p)}(M))
 	\end{cases}
 \end{equation}
 
 Per dimostrare che sia un funtore covariante, verifichiamo che rispetti l'identità
 
 \begin{align}
-	\begin{split}
-		\mathcal{F}(\bigone_{N}) &= (\bigone_{N})_{*p}\\
-		&= \bigone_{T_{p}(N)}\\
-		&= \bigone_{\mathcal{F}(N,p)}
-	\end{split}
+	\mathcal{F}(\bigone_{N}) = (\bigone_{N})_{*p} %
+	= \bigone_{T_{p}(N)} %
+	= \bigone_{\mathcal{F}((N,p))}
 \end{align}
 
 e la composizione
 
 \begin{align}
-	\begin{split}
-		\mathcal{F}(G \circ F) &= (G \circ F)_{*p}\\
-		&= G_{*F(p)} \circ F_{*p}\\
-		&= \mathcal{F}(G) \circ \mathcal{F}(F)
-	\end{split}
+	\mathcal{F}(G \circ F) = (G \circ F)_{*p} %
+	= G_{*F(p)} \circ F_{*p} %
+	= \mathcal{F}(G) \circ \mathcal{F}(F)
 \end{align}
 
-per qualsiasi applicazione liscia tra varietà
+per qualsiasi varietà $ N $, $ M $ e $ P $ con $ p \in N $ e qualsiasi coppia di applicazioni lisce tra varietà che rispettino le seguenti condizioni
 
-\begin{align}
-	\begin{split}
-		F : (N,p) &\to (M,F(p))\\
-		G : (M,F(p)) &\to (P,G(F(p)))
-	\end{split}
-\end{align}
+\begin{gather}
+	F : (N,p) \to (M,F(p))\\
+	G : (M,F(p)) \to (P,G(F(p)))
+\end{gather}
 
-e qualsiasi varietà $ N $, $ M $ e $ P $ con $ p \in N $.\\\\
-%
+\paragraph{Funtori controvarianti}
+
 Siano $ \mathfrak{C} $ e $ \mathfrak{D} $ due categorie, un \textit{funtore controvariante} è una coppia di applicazioni identificate da $ \mathcal{F} $ tali che
 
 \begin{equation}
@@ -3199,20 +3196,32 @@ rispettando l'identità e la composizione, i.e.
 \begin{proof}
 	Per funtori covarianti, la definizione di isomorfismo asserisce che
 	
-	\begin{equation}
-		A \simeq B \implies \E f \in Mor(A,B), g \in Mor(B,A) \, \mid \, g \circ f = \bigone_{A} \wedge f \circ g = \bigone_{B}
-	\end{equation}
+	\begin{gather}
+		A \simeq B \nonumber \\
+		\Updownarrow\\ %
+		\E f \in Mor(A,B) \wedge g \in Mor(B,A) \, \mid \, g \circ f = \bigone_{A} \wedge f \circ g = \bigone_{B} \nonumber
+	\end{gather}
 	
-	Applicando il funtore a entrambi i membri
+	Applicando il funtore a entrambi i membri di entrambe le condizioni:
 	
-	\begin{align}
-		\begin{split}
-			\mathcal{F}(g \circ f) = \mathcal{F}(\bigone_{A}) &\wedge \mathcal{F}(f \circ g) = \mathcal{F}(\bigone_{B})\\
-			\mathcal{F}(g) \circ \mathcal{F}(f) = \bigone_{\mathcal{F}(A)} &\wedge \mathcal{F}(f) \circ \mathcal{F}(g) = \bigone_{\mathcal{F}(B)}
-		\end{split}
-	\end{align}
+	\sbs{0.5}{%
+				\begin{align}
+					\begin{split}
+						\mathcal{F}(g \circ f) &= \mathcal{F}(\bigone_{A})\\
+						\mathcal{F}(g) \circ \mathcal{F}(f) &= \bigone_{\mathcal{F}(A)}
+					\end{split}
+				\end{align}
+				}
+		{0.5}{%
+				\begin{align}
+					\begin{split}
+						\mathcal{F}(f \circ g) = \mathcal{F}(\bigone_{B})\\
+						\mathcal{F}(f) \circ \mathcal{F}(g) = \bigone_{\mathcal{F}(B)}
+					\end{split}
+				\end{align}
+				}
 	
-	il quale dimostra che $ \mathcal{F}(A) \simeq \mathcal{F}(B) $.\\
+	le quali dimostrano che $ \mathcal{F}(A) \simeq \mathcal{F}(B) $ secondo la definizione di isomorfismo.\\
 	La dimostrazione per funtori controvarianti è analoga.
 \end{proof}
 
@@ -3225,7 +3234,7 @@ Sia $ \mathfrak{C} $ la categoria degli spazi vettoriali su $ \R $, consideriamo
 \begin{equation}
 	\begin{cases}
 		\mathcal{F}(V) = V^{*}, & \forall V \in Ob(\mathfrak{C})\\
-		\mathcal{F}(f) = f^{*}, & \forall f \in Hom(V,W) = Mor(V,W)
+		\mathcal{F}(f) = f^{*}, & \forall f \in Mor(V,W) \doteq Hom(V,W)
 	\end{cases}
 \end{equation}
 
@@ -3233,42 +3242,45 @@ dove $ V^{*} $ è lo spazio duale\footnote{%
 	Lo spazio duale $ V^{*} $ corrisponde all'insieme degli omeomorfismi da $ V $ a $ \R $, i.e. $ V^{*} = Hom(V,\R) $.%
 } di $ V $ i cui oggetti sono applicazioni da $ V $ in $ \R $ e
 
-\begin{align}
-	\begin{split}
-		f^{*} : W^{*} = Hom(W,\R) &\to V^{*} = Hom(\mathcal{F}(W),\mathcal{F}(V)) = Hom(W^{*},V^{*})\\
-		\alpha &\mapsto f^{*}(\alpha) = \alpha \circ f
-	\end{split}
-\end{align}
+\map{f^{*}}
+	{W^{*} = Hom(W,\R)}{V^{*} = Hom(\mathcal{F}(W),\mathcal{F}(V)) = Hom(W^{*},V^{*})}
+	{\alpha}{f^{*}(\alpha) = \alpha \circ f}
 
 Per dimostrare che sia un funtore controvariante, verifichiamo che rispetti l'identità
 
 \begin{align}
-	\begin{split}
-		\mathcal{F}(\bigone_{V}) &= \bigone_{V}^{*}\\
-		&= \bigone_{V^{*}}\\
-		&= \bigone_{\mathcal{F}(V)}
-	\end{split}
+	\mathcal{F}(\bigone_{V}) = \bigone_{V}^{*} %
+	= \bigone_{V^{*}} %
+	= \bigone_{\mathcal{F}(V)}
 \end{align}
 
-in quanto $ \bigone_{V} : V \to V $ e $ \bigone_{V}^{*} : V^{*} \to V^{*} $, e la composizione
+in quanto
+
+\begin{equation}
+	\begin{cases}
+		\bigone_{V} : V \to V\\
+		\bigone_{V}^{*} : V^{*} \to V^{*}
+	\end{cases}
+\end{equation}
+
+e la composizione
 
 \begin{align}
-	\begin{split}
-		\mathcal{F}(g \circ f) &= (g \circ f)^{*}\\
-		&= f^{*} \circ g^{*}\\
-		&= \mathcal{F}(f) \circ \mathcal{F}(g)
-	\end{split}
+	\mathcal{F}(g \circ f) = (g \circ f)^{*} %
+	= f^{*} \circ g^{*} %
+	= \mathcal{F}(f) \circ \mathcal{F}(g)
 \end{align}
 
 per qualsiasi $ f \in Mor(V,W) $ e $ g \in Mor(W,Z) $, in quanto
 
-\begin{align}
-	\begin{split}
-		(g \circ f)^{*}(\alpha) &= \alpha \circ g \circ f\\
-		&= f^{*} (\alpha \circ g)\\
-		&= f^{*} \circ g^{*} \circ \alpha
-	\end{split}
-\end{align}
+\begin{equation}
+	(g \circ f)^{*}(\alpha) = \alpha \circ g \circ f %
+	= f^{*} (\alpha \circ g) %
+	= f^{*} (g^{*}(\alpha)) %
+	= f^{*} \circ g^{*} \circ \alpha
+\end{equation}
+
+per $ \forall \alpha \in W^{*} $.
 
 \paragraph{2) Varietà puntate e isomorfismi}
 
@@ -3281,7 +3293,7 @@ Siano $ \mathfrak{C} $ la categoria delle varietà puntate e $ \mathfrak{D} $ la
 	\end{cases}
 \end{equation}
 
-A questo punto, se due varietà puntate sono diffeomorfe $ (N,p) \simeq (M,q) $ allora i loro due spazi tangenti saranno isomorfi $ T_{q}(M) $.
+A questo punto, se due varietà puntate sono diffeomorfe $ (N,p) \simeq (M,q) $ allora i loro due spazi tangenti saranno isomorfi $ T_{p}(N) \simeq T_{q=F(p)}(M) $.
 
 \subsection{Curve su una varietà differenziabile}
 
