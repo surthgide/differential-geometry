@@ -2991,7 +2991,7 @@ Questo perché lo jacobiano è invertibile se e solo se il differenziale è un i
 Una \textit{categoria} $ \mathfrak{C} $ è definita come una collezione\footnote{%
 	Utilizzeremo il termine "collezione" al posto di "insieme" per evitare contraddizioni logiche, ad esempio in situazioni dove potrebbe essere presente la locuzione "insiemi di insiemi".%
 } $ Ob(\mathfrak{C}) $ di oggetti, e.g. insiemi, varietà differenziali o gruppi. Per ogni coppia di elementi $ A,B \in Ob(\mathfrak{C}) $ appartenenti alla categoria $ \mathfrak{C} $ esiste un insieme non vuoto $ Mor(A,B) $ dei \textit{morfismi}\footnote{%
-	Un morfismo è una mappa tra due oggetti che conserva la struttura dell'oggetto sorgente nell'oggetto obbiettivo; ad esempio, può essere pensato come la generalizzazione nella teoria delle categorie delle funzioni nella teoria degli insiemi o delle funzioni continue in topologia.%
+	Un morfismo è una mappa tra due oggetti che conserva la struttura dell'oggetto sorgente nell'oggetto obbiettivo; ad esempio, può essere pensato come la generalizzazione nella teoria delle categorie delle funzioni in teoria degli insiemi o delle funzioni continue in topologia.%
 } da $ A $ a $ B $ tale che siano soddisfatte le seguenti condizioni:
 
 \begin{equation}
@@ -3003,10 +3003,11 @@ Una \textit{categoria} $ \mathfrak{C} $ è definita come una collezione\footnote
 	\end{cases}
 \end{equation}
 
-Il simbolo $ \circ $ indica la composizione ma, nella teoria delle categorie, non è necessariamente la composizione come si intende per le funzioni in teoria degli insiemi; nonostante ciò, vedremo solo esempi in cui queste due definizioni di composizione coincidono.\\
-In tutti gli esempi che seguono tutte le proprietà delle categorie sono soddisfatte e la composizione $ \circ $ corrisponde a quella usuale per ogni caso considerato.
+Il simbolo $ \circ $ indica la composizione ma, nella teoria delle categorie, non è necessariamente la composizione come si intende per le funzioni in teoria degli insiemi; nonostante ciò, vedremo solo esempi in cui queste due definizioni di composizione coincidono.
 
 \subsubsection{\textit{Esempi}}
+
+In tutti gli esempi che seguono tutte le proprietà delle categorie sono soddisfatte e la composizione $ \circ $ corrisponde a quella usuale per ogni caso considerato.
 
 \paragraph{0) Insiemi}
 
@@ -3023,7 +3024,7 @@ Sia $ \mathfrak{C} $ la categoria degli spazi vettoriali su $ \R $, allora la co
 
 \begin{gather}
 	Ob(\mathfrak{C}) = \{ \text{collezione di tutti gli spazi vettoriali su } \R \}\\
-	Mor(V,W) = Hom(V,W) = \{ \text{applicazioni $ \R $-lineari } f : V \to W \} \qcomma \forall V,W \in Ob(\mathfrak{C})
+	Mor(V,W) \doteq Hom(V,W) = \{ \text{applicazioni $ \R $-lineari } f : V \to W \} \qcomma \forall V,W \in Ob(\mathfrak{C})
 \end{gather}
 
 \paragraph{2) Spazi topologici}
@@ -3032,7 +3033,7 @@ Sia $ \mathfrak{Top} $ la categoria degli spazi topologici, allora la collezione
 
 \begin{gather}
 	Ob(\mathfrak{Top}) = \{ \text{collezione di tutti gli spazi topologici} \}\\
-	Mor(X,Y) = C^{0}(X,Y) = \{ \text{applicazioni continue } f : X \to Y \} \qcomma \forall X,Y \in Ob(\mathfrak{Top})
+	Mor(X,Y) \doteq C^{0}(X,Y) = \{ \text{applicazioni continue } f : X \to Y \} \qcomma \forall X,Y \in Ob(\mathfrak{Top})
 \end{gather}
 
 \paragraph{3) Varietà differenziabili}
@@ -3052,16 +3053,18 @@ Sia $ \mathfrak{C} $ la categoria delle varietà differenziabili puntate, i.e. v
 
 \begin{gather}
 	Ob(\mathfrak{C}) = \{ \text{collezione di tutte le coppie } (M,p) \, \mid M \text{ varietà differenziabili}, \, p \in M \}\\
-		Mor((M,p),(N,q)) = \{ \text{applicazioni lisce } F : N \to M \, \mid \, F(p)=q \} \qcomma \forall (M,p),(N,q) \in Ob(\mathfrak{C})
+		Mor((N,p),(M,q)) = \{ \text{applicazioni lisce } F : N \to M \, \mid \, F(p)=q \} \qcomma \forall (N,p),(M,q) \in Ob(\mathfrak{C})
 \end{gather}
 
 \subsubsection{Isomorfismi}
 
 Data una categoria $ \mathfrak{C} $, la definizione di oggetti isomorfi è la seguente:
 
-\begin{equation}
-	A \simeq B \text{ isomorfi} \iff \E f \in Mor(A,B) \wedge g \in Mor(B,A) \, \mid \, g \circ f = \bigone_{A} \wedge f \circ g = \bigone_{B}
-\end{equation}
+\begin{gather}
+	A \simeq B \text{ isomorfi} \nonumber \\
+	\Updownarrow\\ %
+	\E f \in Mor(A,B) \wedge g \in Mor(B,A) \, \mid \, g \circ f = \bigone_{A} \wedge f \circ g = \bigone_{B} \nonumber
+\end{gather}
 
 dove $ A,B \in Ob(\mathfrak{C}) $, $ \bigone_{A} \in Mor(A,A) $ e $ \bigone_{B} \in Mor(B,B) $.\\
 Per esempio, per la categoria degli insiemi, due oggetti sono isomorfi se esistono due applicazioni che associno questi due oggetti tra loro e che siano l'una inversa dell'altra.
