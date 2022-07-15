@@ -3297,28 +3297,39 @@ A questo punto, se due varietà puntate sono diffeomorfe $ (N,p) \simeq (M,q) $ 
 
 \subsection{Curve su una varietà differenziabile}
 
-Una \textit{curva} liscia $ c $ su una varietà differenziabile $ N $ è un'applicazione liscia tale che $ c : (a,b) \subset \R \to N $. Se $ 0 \in (a,b) $ diremo che $ c $ \textit{inizia} in $ c(0)=p $.
+\sbs{0.5}{%
+			Una \textit{curva} liscia $ c $ su una varietà differenziabile $ N $ è un'applicazione liscia tale che
+			
+			\begin{equation}
+				c : (a,b) \to N \qcomma (a,b) \subset \R
+			\end{equation}
+		
+			Se $ 0 \in (a,b) $ diremo che $ c $ \textit{inizia} in $ p = c(0) $.
+			}
+	{0.5}{%
+			\img{0.9}{img24}
+			}
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.5\textwidth,keepaspectratio]{img24}
-\end{figure}
-
-Definiamo il \textit{vettore tangente} o \textit{vettore velocità} $ c'(t_{0}) \in T_{c(t_{0})}(N) $ della curva $ c $, dove $ t_{0} \in (a,b) $, come
+Definiamo il \textit{vettore tangente} o \textit{vettore velocità} $ c'(t_{0}) $ alla curva $ c $ nel punto $ c(t_{0}) \in c((a,b)) \subset N $ come
 
 \begin{equation}
-	c'(t_{0}) \doteq c_{*t_{0}} \left( \left. \dfrac{\operatorname{d}}{\operatorname{dt}} \right|_{t_{0}} \right)
+	c'(t_{0}) \doteq c_{*t_{0}} \left( \eval{ \dv{t} }_{t_{0}} \right) \in T_{c(t_{0})}(N)
 \end{equation}
 
-dove $ c_{*t_{0}} : T_{t_{0}}((a,b)) = T_{t_{0}}(\R) \to T_{c(t_{0})}(N) $.\\
-Il vettore tangente $ c'(t_{0}) $ è dunque l'immagine, tramite l'applicazione lineare del differenziale $ c_{*t} $, del vettore $ (\sfrac{\operatorname{d}}{\operatorname{dt}}) |_{t_{0}} $, il quale rappresenta la base canonica di $ T_{t_{0}}(\R) $.
+dove il differenziale è dato da
+
+\begin{equation}
+	c_{*t_{0}} : T_{t_{0}}((a,b)) = T_{t_{0}}(\R) \to T_{c(t_{0})}(N)
+\end{equation}
+
+Il vettore tangente $ c'(t_{0}) $ è dunque l'immagine del vettore $ \eval{ \dv*{t} }_{t_{0}} $ tramite l'applicazione lineare del differenziale $ c_{*t} $; il vettore $ \eval{ \dv*{t} }_{t_{0}} $ rappresenta la base canonica di $ T_{t_{0}}(\R) $.
 
 \begin{remark}
-	Sia $ c : (a,b) \to \R $ una curva. Possiamo considerare sia la derivata di $ c $ nel punto $ t_{0} \in (a,b) $ sia il vettore tangente alla curva e le notazioni saranno le seguenti
+	Sia $ c : (a,b) \to \R $ una curva sui reali. Possiamo considerare sia la derivata di $ c $ nel punto $ t_{0} \in (a,b) $ sia il vettore tangente alla curva tramite le notazioni seguenti:
 	
 	\begin{equation}
 		\begin{cases}
-			\dot{c}(t_{0}) \doteq \left. \dfrac{\operatorname{d}}{\operatorname{dt}} \right|_{t_{0}} c(t) \in \R & \text{derivata}\\\\
+			\dot{c}(t_{0}) \doteq \eval{ \ddv{t} }_{t_{0}} c(t) \in \R & \text{derivata}\\\\
 			%
 			c'(t_{0}) \in T_{c(t_{0})}(\R) & \text{vettore tangente}
 		\end{cases}
@@ -3328,44 +3339,37 @@ Il vettore tangente $ c'(t_{0}) $ è dunque l'immagine, tramite l'applicazione l
 Siccome $ c'(t_{0}) \in T_{c(t_{0})}(\R) $, possiamo scrivere il vettore tangente come
 
 \begin{equation}
-	c'(t_{0}) = a \, \left. \dfrac{\operatorname{d}}{\operatorname{dr}} \right|_{c(t_{0})}
+	c'(t_{0}) = a \eval{ \dv{r} }_{c(t_{0})}
 \end{equation}
 
-dove $ a \in \R $ e $ \langle \sfrac{\operatorname{d}}{\operatorname{dr}} |_{c(t_{0})} \rangle = T_{c(t_{0})}(\R) $.\\
+dove $ a \in \R $ e $ \langle \eval{ \dv*{r} }_{c(t_{0})} \rangle = T_{c(t_{0})}(\R) $.\\
 Per determinare $ a $, applichiamo entrambi i membri dell'equazione alla funzione identità
 
-\begin{align}
-	\begin{split}
-		r : \R &\to \R\\
-		x &\mapsto x
-	\end{split}
-\end{align}
+\map{r}
+	{\R}{\R}
+	{x}{x}
 
 Per il secondo membro
 
-\begin{align}
-	\begin{split}
-		\left( a \, \left. \dfrac{\operatorname{d}}{\operatorname{dr}} \right|_{c(t_{0})} \right) r &= a \, \left. \dfrac{\operatorname{dr}}{\operatorname{dr}} \right|_{c(t_{0})}\\
-		&= a \, \dfrac{\operatorname{dr}}{\operatorname{dr}}\\
-		&= a
-	\end{split}
-\end{align}
+\begin{equation}
+	\left( a \eval{ \dv{r} }_{c(t_{0})} \right) r = a \eval{ \dv{r}{r} }_{c(t_{0})} %
+	= a \, \dv{r}{r} %
+	= a
+\end{equation}
 
 e per il primo membro
 
-\begin{align}
-	\begin{split}
-		c'(t_{0})(r) &= c_{*t_{0}} \left( \left. \dfrac{\operatorname{d}}{\operatorname{dt}} \right|_{t_{0}} \right)(r)\\
-		&= \left. \dfrac{\operatorname{d}}{\operatorname{dt}} \right|_{t_{0}} (r \circ c)\\
-		&= \left. \dfrac{\operatorname{d}}{\operatorname{dt}} \right|_{t_{0}} c\\
-		&= \dot{c}(t_{0})
-	\end{split}
-\end{align}
+\begin{equation}
+	c'(t_{0})(r) = c_{*t_{0}} \left( \eval{ \ddv{t} }_{t_{0}} \right)(r) %
+	= \eval{ \ddv{t} }_{t_{0}} (r \circ c) %
+	= \eval{ \ddv{t} }_{t_{0}} c %
+	= \dot{c}(t_{0})
+\end{equation}
 
 perciò
 
 \begin{equation}
-	c'(t_{0}) = \dot{c}(t_{0}) \left. \dfrac{\operatorname{d}}{\operatorname{dr}} \right|_{c(t_{0})}
+	c'(t_{0}) = \dot{c}(t_{0}) \eval{ \dv{r} }_{c(t_{0})}
 \end{equation}
 
 nel caso in cui il codominio sia $ \R $.
@@ -3373,75 +3377,75 @@ nel caso in cui il codominio sia $ \R $.
 \begin{definition}[Espressione locale del vettore tangente a una curva liscia]\label{loc-exp-tan-cur}
 	Siano $ c : (a,b) \to N $ una curva liscia e $ (U,\phi) \in N $ una carta con $ \phi = (x^{1},\dots,x^{n}) $ tale che $ c((a,b)) \in U $.
 	
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=0.5\textwidth,keepaspectratio]{img25}
-	\end{figure}
+	\img{0.5}{img25}
 	
-	Siano $ c^{i} : (a,b) \to \R $ le componenti di $ c $ rispetto alla carta fissata, cioè $ c^{i} = x^{i} \circ c $ per $ \forall i=1,\dots,n $. Il vettore tangente alla curva si scrive come
+	Siano $ c^{i} $ le componenti di $ c $ rispetto alla carta fissata
 	
 	\begin{equation}
-		c'(t_{0}) = \sum_{i=1}^{n} \dot{c}_{i}(t_{0}) \left. \dfrac{\partial}{\partial x^{i}} \right|_{c(t_{0})}
+		c^{i} = x^{i} \circ c : (a,b) \to \R \qcomma i=1,\dots,n
+	\end{equation}
+	
+	Il vettore tangente alla curva si scrive come
+	
+	\begin{equation}
+		c'(t_{0}) = \sum_{i=1}^{n} \dot{c}_{i}(t_{0}) \eval{ \pdv{x^{i}} }_{c(t_{0})}
 	\end{equation}
 
 	In particolare, se $ N = \R^{n} $ allora
 	
 	\begin{equation}
-		c'(t_{0}) = \sum_{i=1}^{n} \dot{c}_{i}(t_{0}) \left. \dfrac{\partial}{\partial r^{i}} \right|_{c(t_{0})}
+		c'(t_{0}) = \sum_{i=1}^{n} \dot{c}_{i}(t_{0}) \eval{ \pdv{r^{i}} }_{c(t_{0})}
 	\end{equation}
 
-	dove $ \dot{c}_{i}(t_{0}) $ può essere identificato con il vettore colonna $ [\dot{c}_{1}(t_{0}),\dots,\dot{c}_{n}(t_{0})]^{T} $.
+	dove $ \dot{c}_{i}(t_{0}) $ può essere identificato con il vettore colonna $ \bmqty{ \dot{c}_{1}(t_{0}) & \cdots & \dot{c}_{n}(t_{0}) }^{T} $.
 \end{definition}
 
 Un esempio potrebbe essere la curva
 
-\begin{align}
-	\begin{split}
-		c : \R &\to \R^{2}\\
-		t &\mapsto (t,t^{3})
-	\end{split}
-\end{align}
+\map{c}
+	{\R}{\R^{2}}
+	{t}{(t,t^{3})}
 
-da cui $ c'(t_{0}) = (1, 3 t_{0}^{2}) $, nella quale espressione si identifica il vettore tangente con il vettore di $ \R^{2} $ al secondo membro.
+da cui $ c'(t_{0}) = (1, 3 t_{0}^{2}) $, nella quale espressione si identifica il vettore tangente con il punto di $ \R^{2} $ al secondo membro.
 
 \begin{proof}
-	Per definizione $ c'(t_{0}) \in T_{c(t_{0})}(N) $ dunque
+	Per definizione $ c'(t_{0}) \in T_{c(t_{0})}(N) $, dunque
 	
 	\begin{equation}
-		c'(t_{0}) = \sum_{i=1}^{n} a^{i} \left. \dfrac{\partial}{\partial x^{i}} \right|_{c(t_{0})}
+		c'(t_{0}) = \sum_{i=1}^{n} a_{i} \eval{ \pdv{x^{i}} }_{c(t_{0})}
 	\end{equation}
 
-	con $ a^{i} \in \R $ per $ i=1,\dots,n $, in quanto $ \langle \sfrac{\partial}{\partial x^{i}} |_{c(t_{0})} \rangle = T_{c(t_{0})}(N) $.\\
+	con $ a^{i} \in \R $ per $ i=1,\dots,n $, in quanto $ \langle \eval{ \pdv*{x^{i}} }_{c(t_{0})} \rangle = T_{c(t_{0})}(N) $.\\
 	Valutiamo ora entrambi i membri applicati alla funzione coordinata
 	
-	\begin{align}
-		\begin{split}
-			x^{j} : U &\to \R\\
-			(x^{1},\dots,x^{n}) &\mapsto x^{j}
-		\end{split}
-	\end{align}
+	\map{x^{j}}
+		{U}{\R}
+		{(x^{1},\dots,x^{n})}{x^{j}}
 
+	per $ j=1,\dots,n $.\\
 	Per il secondo membro
 	
-	\begin{align}
-		\begin{split}
-			\left( \sum_{i=1}^{n} a_{i} \left. \dfrac{\partial}{\partial x^{i}} \right|_{c(t_{0})} \right) (x^{j}) &= \sum_{i=1}^{n} a^{i} \left. \dfrac{\partial x^{j}}{\partial x^{i}} \right|_{c(t_{0})}\\
-			&= \sum_{i=1}^{n} a^{i} \dfrac{\partial x^{j}}{\partial x^{i}}\\
-			&= \sum_{i=1}^{n} a^{i} \delta_{ij}\\
-			&= a^{j}
-		\end{split}
-	\end{align}
+	\begin{equation}
+		\left( \sum_{i=1}^{n} a_{i} \eval{ \pdv{x^{i}} }_{c(t_{0})} \right) (x^{j}) = \sum_{i=1}^{n} a_{i} \eval{ \pdv{x^{j}}{x^{i}} }_{c(t_{0})} %
+		= \sum_{i=1}^{n} a_{i} \pdv{x^{j}}{x^{i}} %
+		= \sum_{i=1}^{n} a_{i} \delta_{ij} %
+		= a_{j}
+	\end{equation}
 
-	e per il primo
+	mentre per il primo
 	
-	\begin{align}
-		\begin{split}
-			c'(t_{0})(x^{j}) &= c_{*t_{0}} \left( \left. \dfrac{\operatorname{d}}{\operatorname{dt}} \right|_{t_{0}} \right)(x^{j})\\
-			&= \left. \dfrac{\operatorname{d}}{\operatorname{dt}} \right|_{t_{0}} (x^{j} \circ c)\\
-			&= \left. \dfrac{\operatorname{d}}{\operatorname{dt}} \right|_{t_{0}} c^{j}\\
-			&= \dot{c}_{j}(t_{0})
-		\end{split}
-	\end{align}
+	\begin{equation}
+		c'(t_{0})(x^{j}) = c_{*t_{0}} \left( \eval{ \dv{t} }_{t_{0}} \right)(x^{j}) %
+		= \eval{ \dv{t} }_{t_{0}} (x^{j} \circ c) %
+		= \eval{ \dv{t} }_{t_{0}} c^{j} %
+		= \dot{c}_{j}(t_{0})
+	\end{equation}
+
+	dunque
+	
+	\begin{equation}
+		a_{j} = \dot{c}_{j}(t_{0})
+	\end{equation}
 \end{proof}
 
 \subsubsection{Spazio tangente e curve}
