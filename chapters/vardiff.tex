@@ -3524,17 +3524,15 @@ Questo insieme è più intuitivo, nonostante equivalente, dell'insieme delle der
 
 \subsection{Differenziale tramite curve}
 
-Siano $ X_{p} \in T_{p}(N) $ e $ f \in C^{\infty}(N) $, la notazione $ X_{p}(f) \in \R $ indica la derivata (direzionale) di $ f $ rispetto al vettore $ X_{p} $.\\
-Siccome lo spazio tangente è costituito da vettori velocità, esisterà una curva $ c : (-\varepsilon,\varepsilon) \to N $ con $ c(0) = p $ tale che $ X_{p} = c'(0) $: da queste premesse, possiamo scrivere la derivata direzionale in funzione della curva considerata
+Siano un vettore $ X_{p} \in T_{p}(N) $ e una funzione liscia $ f \in C^{\infty}(N) $, la notazione $ X_{p}(f) \in \R $ indica la derivata (direzionale) di $ f $ rispetto al vettore $ X_{p} $.\\
+Siccome lo spazio tangente può essere pensato come costituito da vettori velocità, esisterà una curva $ c : (-\varepsilon,\varepsilon) \to N $ con $ p = c(0) $ tale che $ X_{p} = c'(0) $: da queste premesse, possiamo scrivere la derivata direzionale in funzione della curva considerata
 
-\begin{align}
-	\begin{split}
-		X_{p} f &= c'(0) (f)\\
-		&= c_{*0} \left( \left. \dfrac{\operatorname{d}}{\operatorname{dt}} \right|_{0} \right) (f)\\
-		&= \left. \dfrac{\operatorname{d}}{\operatorname{dt}} \right|_{0} (f \circ c)\\
-		&= \dot{(f \circ c)}(0)
-	\end{split}
-\end{align}
+\begin{equation}
+	X_{p} f = c'(0) (f) %
+	= c_{*0} \left( \eval{ \dv{t} }_{0} \right) (f) %
+	= \eval{ \dv{t} }_{0} (f \circ c) %
+	= \dot{(f \circ c)}(0)
+\end{equation}
 
 dove $ f \circ c : (-\varepsilon,\varepsilon) \to \R $, perciò
 
@@ -3543,56 +3541,55 @@ dove $ f \circ c : (-\varepsilon,\varepsilon) \to \R $, perciò
 \end{equation}
 
 \begin{definition}[Differenziale tramite curve]
-	Siano $ F : N \to M $ un'applicazione liscia, $ p \in N $ e $ X_{p} \in T_{p}(N) $, allora il differenziale $ F_{*p} : T_{p}(N) \to T_{F(p)}(M) $ si può scrivere come
+	Siano un'applicazione liscia $ F : N \to M $, un punto $ p \in N $ e un vettore $ X_{p} \in T_{p}(N) $, allora il differenziale $ F_{*p} : T_{p}(N) \to T_{F(p)}(M) $ si può scrivere come
 	
 	\begin{equation}
 		F_{*p}(X_{p}) = (F \circ c)' (0)
 	\end{equation}
 
-	dove $ c : (-\varepsilon,\varepsilon) \to N $ con $ c(0) = p $ è una curva per il quale vale $ X_{p} = c'(0) $; la curva $ F \circ c : (-\varepsilon,\varepsilon) \to M $ è ancora una curva che passa per $ F(p) $, il cui vettore tangente in 0 equivale al differenziale $ F_{*p}(X_{p}) $.
+	dove $ c : (-\varepsilon,\varepsilon) \to N $ con $ p = c(0) $ è una curva per il quale vale $ X_{p} = c'(0) $; la curva $ F \circ c : (-\varepsilon,\varepsilon) \to M $ è ancora una curva che passa per $ F(p) = F(c(0)) $, il cui vettore tangente in $ F(p) $ equivale al differenziale $ F_{*p}(X_{p}) $.
 	
-	\img{0.7}{img27}
+	\img{0.9}{img27}
 \end{definition}
 
 \begin{proof}
 	\begin{align}
 		\begin{split}
 			F_{*p}(X_{p}) &= F_{*p}(c'(0))\\
-			&= F_{*p} \left( c_{*0} \left( \left. \dfrac{\operatorname{d}}{\operatorname{dt}} \right|_{0} \right) \right)\\
-			&= (F \circ c)_{*0} \left( \left. \dfrac{\operatorname{d}}{\operatorname{dt}} \right|_{0} \right)\\
+			&= F_{*p} \left( c_{*0} \left( \eval{ \dv{t} }_{0} \right) \right)\\
+			&= (F_{*c(0)} \circ c_{*0}) \left( \eval{ \dv{t} }_{0} \right)\\
+			&= (F \circ c)_{*0} \left( \eval{ \dv{t} }_{0} \right)\\
 			&= (F \circ c)' (0)
 		\end{split}
 	\end{align}
 
-	in quanto $ c(0)=p $.
+	in quanto $ p = c(0) $.
 \end{proof}
 
 \begin{corollary}
-	Nel caso in cui lo spazio ambiente siano i numeri reali, i.e. $ M = \R $, sia $ f : N \to \R $ tale che $ f \in C^{\infty}(N) $ e $ X_{p} \in T_{p}(N) $, allora
+	Consideriamo il caso in cui lo spazio ambiente siano i numeri reali. Siano un'applicazione liscia $ f : N \to \R $ e un vettore $ X_{p} \in T_{p}(N) $, allora
 	
 	\begin{equation}
-		f_{*p}(X_{p}) = (X_{p} f) \left. \dfrac{\operatorname{d}}{\operatorname{dr}} \right|_{f(p)}
+		f_{*p}(X_{p}) = (X_{p} f) \eval{ \dv{r} }_{f(p)}
 	\end{equation}
 
-	dove $ f_{*p} : T_{p}(N) \to T_{f(p)}(\R) $ e $ \langle \sfrac{\operatorname{d}}{\operatorname{dr}} |_{f(p)} \rangle = T_{f(p)}(\R) $.
+	dove $ f_{*p} : T_{p}(N) \to T_{f(p)}(\R) $ e $ \langle \eval{ \dv*{r} }_{f(p)} \rangle = T_{f(p)}(\R) $.
 \end{corollary}
 
 \begin{proof}
-	Sia $ c : (-\varepsilon,\varepsilon) \to N $ con $ c(0) = p $ una curva per il quale vale $ X_{p} = c'(0) $. Per le funzioni da $ \R $ in $ \R $ la composizione può essere scritta in funzione della derivata e, nel caso specifico di $ f \circ c : (-\varepsilon,\varepsilon) \to \R $, abbiamo
+	Sia $ c : (-\varepsilon,\varepsilon) \to N $ con $ p = c(0) $ una curva per il quale vale $ X_{p} = c'(0) $. Per le funzioni da $ \R $ in $ \R $ la composizione può essere scritta in funzione della derivata e, nel caso specifico di $ f \circ c : (-\varepsilon,\varepsilon) \to \R $, abbiamo che
 	
 	\begin{equation}
-		(f \circ c)'(0) = \dot{(f \circ c)}(0) \left. \dfrac{\operatorname{d}}{\operatorname{dr}} \right|_{f(p)}
+		(f \circ c)'(0) = \dot{(f \circ c)}(0) \eval{ \dv{r} }_{f(p)}
 	\end{equation}
 
-	a questo punto
+	a questo punto possiamo scrivere il differenziale come
 	
-	\begin{align}
-		\begin{split}
-			f_{*p}(X_{p}) &= (f \circ c)' (0)\\
-			&= \dot{(f \circ c)}(0) \left. \dfrac{\operatorname{d}}{\operatorname{dr}} \right|_{f(p)}\\
-			&= (X_{p} f) \left. \dfrac{\operatorname{d}}{\operatorname{dr}} \right|_{f(p)}
-		\end{split}
-	\end{align}
+	\begin{equation}
+		f_{*p}(X_{p}) = (f \circ c)' (0) %
+		= \dot{(f \circ c)}(0) \eval{ \dv{r} }_{f(p)} %
+		= (X_{p} f) \eval{ \dv{r} }_{f(p)}
+	\end{equation}
 \end{proof}
 
 \subsubsection{\textit{Esempi}}
