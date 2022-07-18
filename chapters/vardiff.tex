@@ -3450,72 +3450,73 @@ da cui $ c'(t_{0}) = (1, 3 t_{0}^{2}) $, nella quale espressione si identifica i
 
 \subsubsection{Spazio tangente e curve}
 
-Sia una curva liscia $ c : (a,b) \to N $ che inizi in $ c(0) = p \in N $, allora $ c'(0) \in T_{p}(N) $. Ogni vettore in $ T_{p}(N) $ è il vettore velocità di una curva liscia in $ N $ che inizia in $ p $.
+Sia una curva liscia $ c : (a,b) \to N $ che inizi in $ p = c(0) \in N $, allora $ c'(0) \in T_{p}(N) $. Ogni vettore in $ T_{p}(N) $ è il vettore velocità di una curva liscia in $ N $ che inizia in $ p $.
 
 \begin{definition}
-	Siano $ N $ una varietà differenziabile, un suo punto $ p \in N $ e un vettore $ X_{p} \in T_{p}(N) $, allora
+	Siano una varietà differenziabile $ N $, un suo punto $ p \in N $ e un vettore $ X_{p} \in T_{p}(N) $, allora
 	
 	\begin{equation}
-		\E c : (-\varepsilon,\varepsilon) \ni 0 \to N \text{ curva liscia} \qcomma c(0) = p \mid c'(0) = X_{p}
+		\E c : (-\varepsilon,\varepsilon) \ni 0 \to N \text{ curva liscia}, \, c(0) = p \mid c'(0) = X_{p}
 	\end{equation}
 
 	Questo mostra che
 	
 	\begin{equation}
-		T_{p}(N) = \{ c'(0) \mid c : (-\varepsilon,\varepsilon) \ni 0 \to N \text{ curva liscia} \qcomma c(0) = p \}
+		T_{p}(N) = \{ c'(0) \mid c : (-\varepsilon,\varepsilon) \ni 0 \to N \text{ curva liscia}, \, c(0) = p \}
 	\end{equation}
 \end{definition}
 
 Questo insieme è più intuitivo, nonostante equivalente, dell'insieme delle derivazioni puntali dell'algebra dei germi delle funzioni lisce in un punto $ p $, i.e. $ T_{p}(N) = \der_{p}(C_{p}^{\infty}(N)) $.
 
 \begin{proof}
-	Consideriamo il seguente schema
+	Consideriamo il seguente schema:
 	
-	\img{0.7}{img26}
+	\img{0.8}{img26}
 
-	Fissiamo una carta $ (U,\phi) \in N $ con $ \phi = (x^{1},\dots,x^{n}) $ e $ p \in U $ la quale fisserà a sua volta una base per lo spazio tangente $ \langle \sfrac{\partial}{\partial x^{i}} |_{p} \rangle = T_{p}(N) $, perciò possiamo scrivere
+	Fissiamo una carta $ (U,\phi) \in N $ con $ \phi = (x^{1},\dots,x^{n}) $, $ p \in U $ e $ \phi(p) = 0 $, la quale fisserà a sua volta una base per lo spazio tangente $ \langle \eval{ \pdv*{x^{i}} }_{p} \rangle = T_{p}(N) $. A questo punto possiamo scrivere un vettore dello spazio tangente come
 	
 	\begin{equation}
-		X_{p} = \sum_{i=1}^{n} a^{i} \left. \dfrac{\partial}{\partial x^{i}} \right|_{p} \qcomma i=1,\dots,n
+		X_{p} = \sum_{i=1}^{n} a^{i} \eval{ \pdv{x^{i}} }_{p} \qcomma i=1,\dots,n
 	\end{equation}
 
-	in quanto abbiamo dimostrato che
+	in quanto abbiamo dimostrato che\footnote{%
+		L'applicazione $ \phi $ è un omeomorfismo quindi porta basi in basi.%
+	}
 	
 	\begin{equation}
-		\phi_{*p} \left( \left. \dfrac{\partial}{\partial x^{i}} \right|_{p} \right) = \left. \dfrac{\partial}{\partial r^{i}} \right|_{\phi(p)}
+		\phi_{*p} \left( \eval{ \pdv{x^{i}} }_{p} \right) = \eval{ \pdv{r^{i}} }_{\phi(p)}
 	\end{equation}
 	
-	Prendiamo ora l'applicazione
+	Prendiamo ora $ \varepsilon \in \R^{+} $ da cui l'intervallo $ (-\varepsilon,\varepsilon) \ni 0 $. Scegliamo $ \varepsilon $ in modo tale che l'applicazione liscia
+	
+	\map{\alpha}
+		{(-\varepsilon,\varepsilon)}{\R^{n}}
+		{t}{(a^{1} t, \dots, a^{n} t)}
+
+	la quale associa all'intervallo sorgente una retta, risulti in $ \alpha((-\varepsilon,\varepsilon)) \subset \phi(U) $.\\
+	La curva $ c : (-\varepsilon,\varepsilon) \to N $ corrisponderà dunque a $ c = \phi^{-1} \circ \alpha $ la quale è liscia in quanto composizione di funzioni lisce.\\
+	Il vettore tangente alla curva in 0 è dunque uguale a
 	
 	\begin{align}
 		\begin{split}
-			\alpha : (-\varepsilon,\varepsilon) \ni 0 &\to \R^{n}\\
-			t &\mapsto (a^{1} t, \dots, a^{n} t)
-		\end{split}
-	\end{align}
-
-	la quale associa all'intervallo sorgente una retta: considerando $ \varepsilon $ opportuno, possiamo far in modo che $ \alpha((-\varepsilon,\varepsilon)) \subset \phi(U) $.\\
-	La curva $ c : (-\varepsilon,\varepsilon) \to N $ corrisponderà dunque a $ c(t) = (\phi^{-1} \circ \alpha)(t) $ la quale è liscia in quanto composizione di funzioni lisce.\\
-	Il vettore tangente alla curva in 0 è uguale a
-	
-	\begin{align}
-		\begin{split}
-			c'(0) &= c_{*0} \left( \left. \dfrac{\operatorname{d}}{\operatorname{dt}} \right|_{0} \right)\\
-			&= (\phi^{-1} \circ \alpha)_{*0} \left( \left. \dfrac{\operatorname{d}}{\operatorname{dt}} \right|_{0} \right)\\
-			&= (\phi^{-1}_{*\alpha(0)} \circ \alpha_{*0}) \left( \left. \dfrac{\operatorname{d}}{\operatorname{dt}} \right|_{0} \right)\\
-			&= (\phi^{-1}_{*0} \circ \alpha_{*0}) \left( \left. \dfrac{\operatorname{d}}{\operatorname{dt}} \right|_{0} \right)\\
-			&= \phi^{-1}_{*0} \left( \alpha_{*0} \left( \left. \dfrac{\operatorname{d}}{\operatorname{dt}} \right|_{0} \right) \right)\\
-			&= \phi^{-1}_{*0} \left( \sum_{i=1}^{n} a^{i} \left. \dfrac{\partial}{\partial r^{i}} \right|_{0} \right)\\
-			&= \sum_{i=1}^{n} a^{i} \phi^{-1}_{*0} \left( \left. \dfrac{\partial}{\partial r^{i}} \right|_{0} \right)\\
-			&= \sum_{i=1}^{n} a^{i} \left. \dfrac{\partial}{\partial x^{i}} \right|_{0}\\
+			c'(0) &= c_{*0} \left( \eval{ \dv{t} }_{0} \right)\\
+			&= (\phi^{-1} \circ \alpha)_{*0} \left( \eval{ \dv{t} }_{0} \right)\\
+			&= (\phi^{-1}_{*\alpha(0)} \circ \alpha_{*0}) \left( \eval{ \dv{t} }_{0} \right)\\
+			&= (\phi^{-1}_{*0} \circ \alpha_{*0}) \left( \eval{ \dv{t} }_{0} \right)\\
+			&= \phi^{-1}_{*0} \left( \alpha_{*0} \left( \eval{ \dv{t} }_{0} \right) \right)\\
+			&= \phi^{-1}_{*0} \left( \sum_{i=1}^{n} \dot{\alpha}_{i}(0) \eval{ \pdv{r^{i}} }_{0} \right)\\
+			&= \phi^{-1}_{*0} \left( \sum_{i=1}^{n} a^{i} \eval{ \pdv{r^{i}} }_{0} \right)\\
+			&= \sum_{i=1}^{n} a^{i} \phi^{-1}_{*0} \left( \eval{ \pdv{r^{i}} }_{0} \right)\\
+			&= \sum_{i=1}^{n} a^{i} \eval{ \pdv{x^{i}} }_{p}\\
 			&= X_{p}
 		\end{split}
 	\end{align}
 
-	dove $ \alpha_{*0} $ con $ 0 \in \R $ mentre $ \phi^{-1}_{*0} $ con $ 0 \in \R^{n} $, inoltre
+	dove $ \phi(p) = 0 $, $ \alpha_{*0} $ con $ 0 \in \R $ mentre $ \phi^{-1}_{*0} $ con $ \alpha(0) = 0 \in \R^{n} $, inoltre
 	
 	\begin{equation}
-		\alpha_{*0} \left( \left. \dfrac{\operatorname{d}}{\operatorname{dt}} \right|_{0} \right) = \sum_{i=1}^{n} a^{i} \left. \dfrac{\partial}{\partial r^{i}} \right|_{0}
+		\alpha_{*0} \left( \eval{ \dv{t} }_{0} \right) = \alpha'(0) %
+		= \sum_{i=1}^{n} a^{i} \eval{ \pdv{r^{i}} }_{0}
 	\end{equation}
 
 	per la Proposizione \ref{loc-exp-tan-cur} in quanto $ \alpha $ è anch'essa una curva liscia e possiamo portare $ \phi_{*0} $ dentro la sommatoria in quanto applicazione lineare.
