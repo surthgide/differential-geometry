@@ -471,7 +471,7 @@ dunque
 
 %
 
-\section{}\label{es2-10}
+\section{Vettore tangente a una curva}\label{es2-10}
 
 \begin{tcolorbox}
 	Sia $ p = (x,y) $ un punto di $ \R^{2} $. Allora
@@ -483,37 +483,38 @@ dunque
 	è una curva liscia in $ \R^{2} $ che inizia in $ p $. Calcolare $ c'(0) $.
 \end{tcolorbox}
 
-Considerando $ N = \R^{2} $ con carta $ (U,\phi) $ dove $ \phi = (x^{1},\dots,x^{n}) $, il vettore velocità della curva
+La curva considerata è la seguente:
 
 \map{c}
-{\R}{\R^{2}}
-{t}{A(t) \, p = \mqty( \cos(2t) & -\sin(2t) \\\\ \sin(2t) & \cos(2t) ) \mqty(x \\ y)}
+	{[0, 2 \pi)}{\R^{2}}
+	{t}{%
+		\bmqty{ \cos(2t) & - \sin(2t) \\\\ \sin(2t) & \cos(2t) } \bmqty{ x \\ y } %
+		= \bmqty{ \cos(2t) x - \sin(2t) y \\\\ \sin(2t) x + \cos(2t) y }}
 
-è dato da
+Dalla Proposizione \ref{loc-exp-tan-cur} considerando $ \R^{2} $ come varietà immagine, abbiamo che il vettore tangente alla curva in un punto $ c(t_{0}) $ con $ t_{0} = 0 $ è dato da
 
 \begin{equation}
-	c'(t_{0}) = \sum_{j=1}^{n} \dot{c}(t_{0}) \eval{\pdv{x^{j}}}_{t_{0}}%
-	\implies%
-	c'(0) = \dot{c}_{1}(0) \eval{\pdv{x}}_{0} + \dot{c}_{2}(0) \eval{\pdv{y}}_{0}
+	c'(0) = \sum_{i=1}^{n} \dot{c}_{i}(0) \eval{ \pdv{r^{i}} }_{c(0)} %
+	= \dot{c}_{1}(0) \eval{ \pdv{x} }_{p} + \dot{c}_{2}(0) \eval{ \pdv{y} }_{p}
 \end{equation}
+
+in quanto la curva inizia in $ p $, i.e. $ p = c(0) $.
 
 Calcoliamo dunque le componenti del vettore tangente:
 
 \begin{align}
 	\begin{split}
-		\dot{c}(0) &= \eval{\dv{t}}_{0}(A(t) \, p)\\
-		&= \left( \eval{\dv{t}}_{0} A(t) \right) p\\
-		&= \eval{ \dv{t} \left( \mqty( \cos(2t) & -\sin(2t) \\\\ \sin(2t) & \cos(2t) ) \right) }_{0} \mqty(x \\ y)\\
-		&= 2 \eval{ \mqty( -\sin(2t) & -\cos(2t) \\\\ \cos(2t) & -\sin(2t) ) }_{0} \mqty(x \\ y)\\
-		&= 2 \mqty( 0 & -1 \\ 1 & 0 ) \mqty(x \\ y)\\
-		&= \mqty(-2y \\ 2x)
+		\dot{c}(0) &= \eval{ \dv{t} }_{0} c(t)\\
+		&= \eval{ \dv{t} }_{0} \left( \bmqty{ \cos(2t) x - \sin(2t) y \\\\ \sin(2t) x + \cos(2t) y } \right)\\
+		&= \eval{ \bmqty{ - 2 \sin(2t) x - 2 \cos(2t) y \\\\ 2 \cos(2t) x - 2 \sin(2t) y } }_{0}\\
+		&= \bmqty{ - 2 y \\ 2x }
 	\end{split}
 \end{align}
 
 da cui
 
 \begin{equation}
-	c'(0) = -2y \eval{\pdv{x}}_{0} + 2x \eval{\pdv{y}}_{0}
+	c'(0) = - 2 y \eval{ \pdv{x} }_{0} + 2 x \eval{ \pdv{y} }_{0}
 \end{equation}
 
 %
