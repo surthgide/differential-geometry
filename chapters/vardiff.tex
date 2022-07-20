@@ -3604,122 +3604,120 @@ Consideriamo l'insieme delle matrici invertibili
 \end{equation}
 
 il quale è un aperto di $ M_{n}(\R) = \R^{n^{2}} $ e una varietà differenziabile di dimensione $ n^{2} $.\\
-Fissata una matrice $ g \in GL_{n}(\R) $, definiamo l'applicazione
+Fissata una matrice $ g \in GL_{n}(\R) $, definiamo l'applicazione liscia
 
-\begin{align}
-	\begin{split}
-		L_{g} : GL_{n}(\R) &\to GL_{n}(\R)\\
-		h &\mapsto g h
-	\end{split}
-\end{align}
+\map{L_{g}}
+	{GL_{n}(\R)}{GL_{n}(\R)}
+	{h}{g h}
 
-chiamata \textit{traslazione a sinistra tramite} $ g $. Questa applicazione è liscia, i.e. $ L_{g} \in C^{\infty} $.\\
+chiamata \textit{traslazione a sinistra tramite} $ g $.\\
 L'obbiettivo è calcolare il differenziale di questa applicazione sulla matrice identità\footnote{%
-	Considereremo il differenziale applicato alla matrice identità in quanto il differenziale è un'applicazione lineare.%
+	Considereremo il differenziale applicato alla matrice identità in quanto il differenziale è un'applicazione lineare, dunque da questo esempio è possibile derivare il risultato del differenziale applicato ad altre matrici.%
 } $ I \in GL_{n}(\R) $:
 
-\begin{align}
-	\begin{split}
-		L_{g_{*I}} : T_{I}(GL_{n}(\R)) &\to T_{g}(GL_{n}(\R))\\
-		X_{I} &\mapsto L_{g_{*I}}(X_{I})
-	\end{split}
-\end{align}
+\map{L_{g_{*I}}}
+	{T_{I}(GL_{n}(\R))}{T_{g}(GL_{n}(\R))}
+	{X_{I}}{L_{g_{*I}}(X_{I})}
 
 Innanzitutto, lo spazio di partenza è dato da
 
 \begin{equation}
-	T_{I}(GL_{n}(\R)) = \left\{ \sum_{i,j=1}^{n} X_{ij} \left. \dfrac{\partial}{\partial r_{ij}} \right|_{I} \st X=[X_{ij}] \in M_{n}(\R) \right\}
+	T_{I}(GL_{n}(\R)) = \left\{ \sum_{i,j=1}^{n} X_{ij} \eval{ \pdv{r_{ij}} }_{I} \st X=[X_{ij}] \in M_{n}(\R) \right\}
 \end{equation}
 
-dove $ \langle \sfrac{\partial}{\partial r_{ij}} |_{I} \rangle = T_{I}(GL_{n}(\R)) $; ad ogni vettore $ X_{I} \in T_{I}(GL_{n}(\R)) $ si può associare il vettore $ X \in M_{n}(\R) $ prendendo semplicemente $ X=[X_{ij}] $ dalla definizione dello spazio $ T_{I}(GL_{n}(\R)) $. Per quanto riguarda lo spazio di arrivo
+dove $ \langle \eval{ \pdv*{r_{ij}} }_{I} \rangle = T_{I}(GL_{n}(\R)) $; a ogni vettore $ X_{I} \in T_{I}(GL_{n}(\R)) $ si può associare il vettore $ X \in M_{n}(\R) $ prendendo semplicemente $ X=[X_{ij}] $ dalla definizione dello spazio $ T_{I}(GL_{n}(\R)) $. Per quanto riguarda lo spazio di arrivo
 
 \begin{equation}
-	T_{g}(GL_{n}(\R)) = \left\{ \sum_{i,j=1}^{n} X_{ij} \left. \dfrac{\partial}{\partial r_{ij}} \right|_{g} \st X=[X_{ij}] \in M_{n}(\R) \right\}
+	T_{g}(GL_{n}(\R)) = \left\{ \sum_{i,j=1}^{n} X_{ij} \eval{ \pdv{r_{ij}} }_{g} \st X=[X_{ij}] \in M_{n}(\R) \right\}
 \end{equation}
 
 esattamente come per lo spazio di partenza, anche questo si identifica con $ M_{n}(\R) $.\\
 Per calcolare il differenziale di $ L_{g} $, consideriamo una curva di matrici in $ GL_{n}(\R) $ il cui vettore tangente sia $ X_{I} $, i.e. $ c : (-\varepsilon,\varepsilon) \to GL_{n}(\R) $ con $ c(0)=I $ e 
 
 \begin{equation}
-	c'(0) = X_{I} = \sum_{i,j=1}^{n} X_{ij} \left. \dfrac{\partial}{\partial r_{ij}} \right|_{I}
+	c'(0) = X_{I} = \sum_{i,j=1}^{n} X_{ij} \eval{ \pdv{r_{ij}} }_{I}
 \end{equation}
 
 perciò
 
-\begin{align}
-	\begin{split}
-		L_{g_{*I}}(X_{I}) &= (L_{g} \circ c)'(0)\\
-		&= (g \, c(t))'(0)\\
-		&= \sum_{i,j=1}^{n} \dot{(g \, c(t))}_{ij}(0) \left. \dfrac{\partial}{\partial r_{ij}} \right|_{g}
-	\end{split}
-\end{align}
+\begin{equation}
+	L_{g_{*I}}(X_{I}) = (L_{g} \circ c)'(0) %
+	= (g \, c(t))'(0) %
+	= \sum_{i,j=1}^{n} \dot{(g \, c(t))}_{ij}(0) \eval{ \pdv{r_{ij}} }_{g}
+\end{equation}
 
 dove $ g \, c(t) $ indica la moltiplicazione tra matrici e ricordando che un vettore tangente può essere scritto come
 
 \begin{equation}
-	c'(t_{0}) = \sum_{i=1}^{n} \dot{c}_{i}(t_{0}) \left. \dfrac{\partial}{\partial x^{i}} \right|_{t_{0}}
+	c'(t_{0}) = \sum_{i=1}^{n} \dot{c}_{i}(t_{0}) \eval{ \pdv{x^{i}} }_{t_{0}}
 \end{equation}
 
 considerando $ c : (a,b) \to N $ e $ (U,\phi) \in N $ con $ \phi=(x^{1},\dots,x^{n}) $ da cui $ c^{i} = x^{i} \circ c $.\\
-Sappiamo che vale la regola di Leibniz per le matrici\footnote{%
-	$ \dot{A(t) \, B(t)} = \dot{A}(t) \, B(t) + A(t) \, \dot{B}(t) \qquad \forall A(t),B(t) \in M_{n}(\R) $%
-} e $ g $ non dipende da $ t $, dunque
+Sappiamo che vale la regola di Leibniz per le matrici, i.e.
 
-\begin{align}
-	\begin{split}
-		L_{g_{*I}}(X_{I}) &= \sum_{i,j=1}^{n} \dot{(g \, c(t))}_{ij}(0) \left. \dfrac{\partial}{\partial r_{ij}} \right|_{g}\\
-		&= \sum_{i,j=1}^{n} (g \, \dot{c}(0))_{ij} \left. \dfrac{\partial}{\partial r_{ij}} \right|_{g}\\
-	\end{split}
-\end{align}
+\begin{equation}
+	\dot{A(t) \, B(t)} = \dot{A}(t) \, B(t) + A(t) \, \dot{B}(t) \qcomma \forall A(t),B(t) \in M_{n}(\R)
+\end{equation}
+
+e che $ g $ non dipende da $ t $, dunque
+
+\begin{equation}
+	L_{g_{*I}}(X_{I}) = \sum_{i,j=1}^{n} \dot{(g \, c(t))}_{ij}(0) \eval{ \pdv{r_{ij}} }_{g} %
+	= \sum_{i,j=1}^{n} (g \, \dot{c}(0))_{ij} \eval{ \pdv{r_{ij}} }_{g}
+\end{equation}
 
 Siccome
 
 \begin{align}
 	\begin{split}
 		c'(0) &= X_{I}\\
-		\sum_{i,j=1}^{n} \dot{c}(0)_{ij} \left. \dfrac{\partial}{\partial r_{ij}} \right|_{I} &= \sum_{i,j=1}^{n} X_{ij} \left. \dfrac{\partial}{\partial r_{ij}} \right|_{I}\\
+		\sum_{i,j=1}^{n} \dot{c}(0)_{ij} \eval{ \pdv{r_{ij}} }_{I} &= \sum_{i,j=1}^{n} X_{ij} \eval{ \pdv{r_{ij}} }_{I}\\
 		\dot{c}(0)_{ij} &= X_{ij}
 	\end{split}
 \end{align}
 
 abbiamo che $ \dot{c}(0) = X = [X_{ij}] $ perciò
 
-\begin{align}
-	\begin{split}
-		L_{g_{*I}}(X_{I}) &= \sum_{i,j=1}^{n} (g \, \dot{c}(0))_{ij} \left. \dfrac{\partial}{\partial r_{ij}} \right|_{g}\\
-		&= \sum_{i,j=1}^{n} (g \, X)_{ij} \left. \dfrac{\partial}{\partial r_{ij}} \right|_{g}
-	\end{split}
-\end{align}
+\begin{equation}
+	L_{g_{*I}}(X_{I}) = \sum_{i,j=1}^{n} (g \, \dot{c}(0))_{ij} \eval{ \pdv{r_{ij}} }_{g} %
+	= \sum_{i,j=1}^{n} (g \, X)_{ij} \eval{ \pdv{r_{ij}} }_{g}
+\end{equation}
 
-che può essere identificato naturalmente con la matrice $ g \, X $ quindi, tramite le identificazioni $ X_{I} \leftrightarrow X $ e $ L_{g_{*I}}(X_{I}) \leftrightarrow g \, X $, possiamo scrivere
+che può essere identificato naturalmente con la matrice $ g \, X $ quindi, tramite le identificazioni $ X_{I} \equiv X $ e $ L_{g_{*I}}(X_{I}) \equiv g \, X $ derivate dall'identificazione tra gli spazi $ T_{I}(GL_{n}(\R)) = T_{g}(GL_{n}(\R)) = M_{n}(\R) $, possiamo scrivere
 
 \begin{equation}
 	L_{g_{*I}}(X) = g \, X
 \end{equation}
 
-Il differenziale di $ L_{g} $ valutato nella matrice identità $ I $ corrisponde dunque alla moltiplicazione a sinistra per $ g $.
+Il differenziale di $ L_{g} $ valutato nella matrice identità $ I $ corrisponde dunque alla moltiplicazione a sinistra per $ g $, i.e. $ L_{g_{*I}} \equiv L_{g} $ in quanto la moltiplicazione a sinistra per $ g $ è un'applicazione lineare\footnote{%
+	$ L_{g_{*I}} $ e $ L_{g} $ hanno però dei domini differenti: la prima agisce sui vettori tangenti di $ T_{I}(GL_{n}(\R)) $ mentre la seconda sulle matrici invertibili $ GL_{n}(\R) $.%
+}.
 
 \paragraph{2) Differenziale della moltiplicazione e dell'inversione in un gruppo di Lie}
 
 Sia $ G $ un gruppo di Lie\footnote{%
 	Se $ G $ è un gruppo di Lie, allora è una varietà differenziale e un gruppo algebrico con operazioni lisce
 	
-	\begin{align*}
-		\mu : G \times G &\to G & i : G &\to G\nonumber\\
-		(g,h) &\mapsto g h & g &\mapsto g^{-1}
-	\end{align*}%
+	\sbs{0.45}{%
+				\maps{\mu}
+					{G \times G}{G}
+					{(g,h)}{g h}
+				}
+		{0.45}{%
+				\maps{i}
+				{G}{G}
+				{g}{g^{-1}}
+				}%
 } ed $ e \in G $ l'identità. L'obbiettivo è calcolare i differenziali:
 
-\begin{align}
-	\begin{split}
-		\mu_{*(e,e)} &: T_{(e,e)}(G \times G) \to T_{e}(G)\\
-		i_{*e} &: T_{e}(G) \to T_{e}(G)
-	\end{split}
-\end{align}
+\begin{gather}
+	\mu_{*(e,e)} : T_{(e,e)}(G \times G) \to T_{e}(G)\\
+	i_{*e} : T_{e}(G) \to T_{e}(G)
+\end{gather}
 
 Sappiamo che\footnote{%
 	Vedi Esercizio \ref{es2-11}.%
-}, prese $ N $ e $ M $ due varietà differenziali con $ p \in N $ e $ q \in M $, si ha
+}, prese $ N $ e $ M $ due varietà differenziali con $ p \in N $ e $ q \in M $, si ha che lo spazio tangente al prodotto delle varietà differenziali è isomorfo al prodotto degli spazi tangenti alle singole varietà, i.e.
 
 \begin{equation}
 	T_{(p,q)}(N \times M) \simeq T_{p}(N) \times T_{q}(M)
@@ -3728,25 +3726,23 @@ Sappiamo che\footnote{%
 Per calcolare $ \mu_{*(e,e)} $ prendiamo $ X_{e},Y_{e} \in T_{e}(G) $ e usiamo la curva liscia $ \gamma : (-\varepsilon,\varepsilon) \to G \times G $ con $ \gamma(0)=(e,e) $ e $ \gamma'(0) = (X_{e},Y_{e}) $. Inoltre sappiamo che il differenziale $ \mu_{*(e,e)} $ è lineare, dunque
 
 \begin{equation}
-	\mu_{*(e,e)}(X_{e},Y_{e}) = \mu_{*(e,e)}(X_{e},0) + \mu_{*(e,e)}(0,Y_{e})
+	\mu_{*(e,e)}(X_{e},Y_{e}) = \mu_{*(e,e)}(X_{e},0) + \mu_{*(e,e)}(0,Y_{e}) \qcomma 0 \in T_{e}(G)
 \end{equation}
 
-con $ 0 \in T_{e}(G) $. A questo punto, possiamo considerare i due addendi separatamente: prendiamo la curva liscia $ c : (-\varepsilon,\varepsilon) \to G $ con $ c(0)=e $ e $ c'(0) = X_{e} $, per il primo addendo
+A questo punto, possiamo considerare i due addendi separatamente: prendiamo la curva liscia $ c : (-\varepsilon,\varepsilon) \to G $ con $ c(0)=e $ e $ c'(0) = X_{e} $, da cui per il primo addendo
 
 \begin{equation}
 	\mu_{*(e,e)}(X_{e},0) = \mu'(c(t),e)(0)
 \end{equation}
 
-in quanto $ \gamma \doteq (c(t),e) $ è una curva per il quale vale $ \gamma(0) = (e,e) $ e $ \gamma'(0) = (c'(0),0) = (X_{e},0) $, ma $ \mu $ è la moltiplicazione dunque
+in quanto $ \gamma \doteq (c(t),e) $ è una curva per il quale vale $ \gamma(0) = (e,e) $ e $ \gamma'(0) = (c'(0),0) = (X_{e},0) $. Siccome  $ \mu $ è la moltiplicazione abbiamo che
 
-\begin{align}
-	\begin{split}
-		\mu_{*(e,e)}(X_{e},0) &= \mu'(c(t),e)(0)\\
-		&= (c(t) \, e)'(0)\\
-		&= c'(0)\\
-		&= X_{e}
-	\end{split}
-\end{align}
+\begin{equation}
+	\mu_{*(e,e)}(X_{e},0) = \mu'(c(t),e)(0) %
+	= (c(t) \, e)'(0) %
+	= c'(0) %
+	= X_{e}
+\end{equation}
 
 Il ragionamento è analogo per il secondo addendo, perciò
 
@@ -3754,7 +3750,7 @@ Il ragionamento è analogo per il secondo addendo, perciò
 	\mu_{*(e,e)}(X_{e},Y_{e}) = X_{e} + Y_{e}
 \end{equation}
 
-Per quanto riguarda il differenziale dell'inversione $ i_{*e}(X_{e}) $, prendiamo ancora la curva liscia $ c : (-\varepsilon,\varepsilon) \to G $ con $ c(0)=e $ e $ c'(0) = X_{e} $ da cui
+Per quanto riguarda il differenziale dell'inversione $ i_{*e}(X_{e}) $, prendiamo ancora una curva liscia $ c : (-\varepsilon,\varepsilon) \to G $ con $ c(0)=e $ e $ c'(0) = X_{e} $ da cui
 
 \begin{equation}
 	i_{*e}(X_{e}) = (i \circ c)'(0)
