@@ -3762,23 +3762,43 @@ Se consideriamo la moltiplicazione tra la curva e la sua inversa, otteniamo
 	\mu(c(t),i(c(t))) = e
 \end{equation}
 
-applicando il differenziale otteniamo
+Siccome valgono le relazioni
+
+\begin{equation}
+	\begin{cases}
+		(G \circ F)_{*p} = G_{*F(p)} \circ F_{*p}\\
+		(\id_{G})_{*e} = \id_{T_{e}(G)}\\
+		c(0) = e\\
+		c'(0) = X_{e}
+	\end{cases}
+\end{equation}
+
+possiamo scrivere l'azione del differenziale sulla moltiplicazione considerata sopra:
 
 \begin{align}
 	\begin{split}
-		\mu(c(t),i(c(t))) &= e\\
-		\mu_{*(e,e)}(c'(0),(i \circ c)'(0)) &= 0\\
-		\mu_{*(e,e)}(X_{e},(i \circ c)'(0)) &= 0\\
-		X_{e} + (i \circ c)'(0) &= 0\\
-		(i \circ c)'(0) &= - X_{e}
+		\mu(c(t),i(c(t))) &= (\mu \circ (\id_{G} \times i) \circ c) (t)\\
+		&\stackrel{\mathcal{F}}{\to} ( \mu \circ (\id_{G} \times i) \circ c )_{*0} \left( \eval{ \dv{t} }_{0} \right)\\
+		&= ( \mu_{*(\id_{G}(c(0)), i(c(0)))} \circ (\id_{G} \times i)_{*c(0)} \circ c_{*0} ) \left( \eval{ \dv{t} }_{0} \right)\\
+		&= ( \mu_{*(\id_{G}(e), i(e))} \circ (\id_{G} \times i)_{*e} ) \left( c_{*0} \left( \eval{ \dv{t} }_{0} \right) \right)\\
+		&= ( \mu_{*(e,e)} \circ ((\id_{G})_{*e} \times i_{*e}) ) (c'(0))\\
+		&= ( \mu_{*(e,e)} \circ (\id_{T_{e}(G)} \times i_{*e}) ) (X_{e})\\
+		&= \mu_{*(e,e)} (\id_{T_{e}(G)} (X_{e}), i_{*e} (X_{e}))\\
+		&= \mu_{*(e,e)} (X_{e}, i_{*e} (X_{e}))\\
+		&= X_{e} + i_{*e} (X_{e})
 	\end{split}
 \end{align}
 
-dunque
+dove $ \mathcal{F} $ indica il funtore differenziale.\\
+Applicando il differenziale all'elemento $ e $ otteniamo $ 0 \in G $, dunque
 
-\begin{equation}
-	i_{*e}(X_{e}) = - X_{e}
-\end{equation}
+\begin{gather}
+		\mu(c(t),i(c(t))) = e\\
+		\downarrow \mathcal{F} \nonumber\\
+		X_{e} + i_{*e} (X_{e}) = 0\\
+		\Downarrow \nonumber\\
+		i_{*e}(X_{e}) = - X_{e}
+\end{gather}
 
 \section{Immersioni, sommersioni e sottovarietà}
 
