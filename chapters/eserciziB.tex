@@ -523,20 +523,111 @@ da cui
 
 %
 
-\section{}\label{es2-11}
+\section{Isomorfismo prodotto spazi tangenti}\label{es2-11}
 
 \begin{tcolorbox}
 	Siano $ N $ e $ M $ varietà differenziabili e $ \pi_{N} : N \times M \to N $ e $ \pi_{M} : N \times M \to M $ le proiezioni naturali. Dimostrare che per $ (p,q) \in N \times M $ l'applicazione
 	
 	\begin{equation}
-		(\pi_{N_{*p}},\pi_{M_{*p}}) : T_{(p,q)}(N \times M) \to T_{p}(N) \times T_{q}(M)
+		(\pi_{N_{*p}},\pi_{M_{*q}}) : T_{(p,q)}(N \times M) \to T_{p}(N) \times T_{q}(M)
 	\end{equation}
 	
 	è un isomorfismo.
 \end{tcolorbox}
 
-qui
+% https://math.stackexchange.com/questions/413766/tangent-space-of-product-manifold
 
+Al fine di dimostrare questo isomorfismo, definiamo $ f \doteq (\pi_{N_{*p}},\pi_{M_{*p}}) $ e scriviamo la sua azione su un vettore del dominio
+
+\map{f}
+	{T_{(p,q)}(N \times M)}{T_{p}(N) \times T_{q}(M)}
+	{X_{(p,q)}}{\pi_{N_{*p}} (X_{(p,q)}), \pi_{M_{*q}} (X_{(p,q)})}
+	
+Questa applicazione è lineare in quanto composizione di differenziali, i quali sono essi stessi lineari.\\
+Consideriamo ora le inclusioni seguenti:
+
+\sbs{0.5}{%
+			\map{i_{N}}
+				{N}{N \times M}
+				{p}{(p,q)}
+			}
+	{0.5}{%
+			\map{i_{M}}
+				{M}{N \times M}
+				{q}{(p,q)}
+			}
+
+le cui azioni sugli spazi sono
+
+\begin{gather}
+	i_{N}(N) = N \times \{q\}\\
+	i_{M}(M) = \{p\} \times M
+\end{gather}
+
+Definiamo inoltre l'applicazione
+
+\map{g}
+	{T_{p}(N) \times T_{q}(M)}{T_{(p,q)}(N \times M)}
+	{(X_{p}, Y_{q})}{i_{N_{*p}} (X_{p}) + i_{M_{*q}} (Y_{q})}
+
+Consideriamo le seguenti composizioni:
+
+\begin{gather}
+	(\pi_{N} \circ i_{N}) (p) = \pi_{N} \circ (i_{N} (p)) = \pi_{N} (p,q) = p\\
+	(\pi_{M} \circ i_{M}) (q) = \pi_{M} \circ (i_{M} (q)) = \pi_{M} (p,q) = q
+\end{gather}
+
+da cui
+
+\begin{equation}
+	\begin{cases}
+		\pi_{N} \circ i_{N} = \id_{N}\\
+		\pi_{M} \circ i_{M} = \id_{M}
+	\end{cases}
+\end{equation}
+
+Il differenziale di queste composizioni risulta quindi nell'identità dei relativi spazi tangenti in quanto $ (\id_{N})_{*p} = \id_{T_{p}(N)} $. Le composizioni relative a spazi differenti, i.e. $ \pi_{N} \circ i_{M} $ e $ \pi_{M} \circ i_{N} $, sono delle mappe costanti quindi il loro differenziale è nullo.\\
+Calcoliamo ora la seguente composizione delle funzioni $ f $ e $ g $:
+
+\begin{align}
+	\begin{split}
+		(f \circ g) (X_{p}, Y_{q}) &= f ( i_{N_{*p}} (X_{p}) + i_{M_{*q}} (Y_{q}) )\\
+		&= (\pi_{N_{*p}} ( i_{N_{*p}} (X_{p}) + i_{M_{*q}} (Y_{q}) ), \pi_{M_{*q}} ( i_{N_{*p}} (X_{p}) + i_{M_{*q}} (Y_{q}) ))\\
+		&= (\pi_{N_{*p}} ( i_{N_{*p}} (X_{p}) ) + \pi_{N_{*p}} ( i_{M_{*q}} (Y_{q}) ), \pi_{M_{*q}} ( i_{N_{*p}} (X_{p})) + \pi_{M_{*q}} ( i_{M_{*q}} (Y_{q}) ))\\
+		&= ((\pi_{N} \circ i_{N})_{*p} (X_{p}) + \cancelto{0}{ (\pi_{N} \circ i_{M})_{*q} (Y_{q}) }, \cancelto{0}{ (\pi_{M} \circ i_{N})_{*p} (X_{p}) } + (\pi_{M} \circ i_{M})_{*q} (Y_{q}) )\\
+		&=(X_{p}, Y_{q})
+	\end{split}
+\end{align}
+
+dove i due $ 0 $ appartengono rispettivamente a $ T_{p}(N) $ e $ T_{q}(M) $, dunque
+
+\begin{equation}
+	f \circ g = \id_{T_{p}(N) \times T_{q}(M)}
+\end{equation}
+
+questo significa che la funzione $ f $ ha un'inversa destra dunque è suriettiva.\\
+Ricordando che la dimensione degli spazi tangenti considerati è la stessa, i.e.
+
+\begin{equation}
+	\dim(T_{(p,q)}(N \times M)) = \dim(T_{p}(N) \times T_{q}(M))
+\end{equation}
+
+possiamo invocare il teorema della dimensione
+
+\begin{align}
+	\begin{split}
+		\dim(\Im(f)) + \dim(\ker(f)) &= \dim(T_{p}(N) \times T_{q}(M))\\
+		\cancel{ \dim(T_{(p,q)}(N \times M)) } + \dim(\ker(f)) &= \cancel{ \dim(T_{p}(N) \times T_{q}(M)) }\\
+		\dim(\ker(f)) &= 0
+	\end{split}
+\end{align}
+
+perciò la funzione $ f = (\pi_{N_{*p}},\pi_{M_{*q}}) $ è anche iniettiva dunque è un isomorfismo, i.e.
+
+\begin{equation}
+	T_{(p,q)}(N \times M) \simeq T_{p}(N) \times T_{q}(M)
+\end{equation}
+ 
 % -----------------------
 
 % fine pdf 2.1-2.3
