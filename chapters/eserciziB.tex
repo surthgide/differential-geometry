@@ -605,19 +605,32 @@ dove i due $ 0 $ appartengono rispettivamente a $ T_{p}(N) $ e $ T_{q}(M) $, dun
 	f \circ g = \id_{T_{p}(N) \times T_{q}(M)}
 \end{equation}
 
-questo significa che la funzione $ f $ ha un'inversa destra dunque è suriettiva.\\
+questo significa che la funzione $ f $ ha un'inversa destra dunque è suriettiva: la suriettività comporta che l'immagine della funzione coincide con il codominio, da cui
+
+\begin{equation}
+	\dim(\Im(f)) = \dim(T_{p}(N) \times T_{q}(M))
+\end{equation}
+
 Ricordando che la dimensione degli spazi tangenti considerati è la stessa, i.e.
 
 \begin{equation}
 	\dim(T_{(p,q)}(N \times M)) = \dim(T_{p}(N) \times T_{q}(M))
 \end{equation}
 
-possiamo invocare il teorema della dimensione
+possiamo invocare il teorema della dimensione\footnote{%
+	Data un'applicazione lineare $ T : V \to W $, abbiamo che
+	
+	\begin{equation*}
+		\dim(T(V)) + \dim(\ker(T)) = \dim(V)
+	\end{equation*}
+	
+	dove $ \dim(T(V)) \doteq \rank(T) $ viene anche chiamato rango di $ T $.%
+}
 
 \begin{align}
 	\begin{split}
-		\dim(\Im(f)) + \dim(\ker(f)) &= \dim(T_{p}(N) \times T_{q}(M))\\
-		\cancel{ \dim(T_{(p,q)}(N \times M)) } + \dim(\ker(f)) &= \cancel{ \dim(T_{p}(N) \times T_{q}(M)) }\\
+		\dim(\Im(f)) + \dim(\ker(f)) &= \dim(T_{(p,q)}(N \times M))\\
+		\cancel{ \dim(T_{p}(N) \times T_{q}(M)) } + \dim(\ker(f)) &= \cancel{ \dim(T_{(p,q)}(N \times M)) }\\
 		\dim(\ker(f)) &= 0
 	\end{split}
 \end{align}
