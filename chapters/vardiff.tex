@@ -3964,58 +3964,72 @@ Il rango di un'applicazione liscia definito in questo modo è ben definito in qu
 
 \subsection{Punti e valori critici e regolari}
 
-Sia $ F : N \to M $ un'applicazione liscia, un punto $ p \in N $ è un \textit{punto critico per} $ F $ se il differenziale $ F_{*p} : T_{p}(N) \to T_{F(p)}(M) $ non è suriettivo mentre $ p \in N $ è un \textit{punto regolare per} $ F $ se il differenziale è suriettivo (equivalentemente $ F $ è una sommersione in $ p $).\\
-I punti critici e regolari appartengono al dominio della funzione.\\
-Come notazione
+Siano un'applicazione liscia tra varietà e il suo differenziale
 
-\begin{align}
-	\begin{split}
-		\mathcal{PC}_{F} &= \{ p \in N \mid p \text{ punto critico per } F \} \subset N\\
-		\mathcal{PR}_{F} &= \{ p \in N \mid p \text{ punto regolare per } F \} \subset N
-	\end{split}
-\end{align}
+\begin{gather}
+	F : N \to M\\
+	\downarrow \mathcal{F} \nonumber\\
+	F_{*p} : T_{p}(N) \to T_{F(p)}(M)
+\end{gather}
 
-dove valgono
+Un punto $ p \in N $ è detto:
+
+\begin{itemize}
+	\item \textit{punto critico per} $ F $ se il differenziale in quel punto non è suriettivo
+	
+	\item \textit{punto regolare per} $ F $ se il differenziale in quel punto è suriettivo ($ F $ è una sommersione in $ p $)
+\end{itemize}
+
+I punti critici e regolari appartengono al dominio della funzione. Come notazione
+
+\begin{gather}
+	\PC_{F} = \{ p \in N \mid p \text{ punto critico per } F \} \subset N\\
+	\PR_{F} = \{ p \in N \mid p \text{ punto regolare per } F \} \subset N
+\end{gather}
+
+dove valgono le relazioni
 
 \begin{equation}
 	\begin{cases}
-		N = \mathcal{PC}_{F} \cup \mathcal{PR}_{F}\\
-		\mathcal{PC}_{F} \cap \mathcal{PR}_{F} = \emptyset
+		N = \PC_{F} \cup \PR_{F}\\
+		\PC_{F} \cap \PR_{F} = \emptyset
 	\end{cases}
 \end{equation}
 
-Consideriamo l'insieme dei punti di $ N $ che hanno come immagine $ q \in M $ attraverso $ F $, i.e.
+Consideriamo l'insieme dei punti di $ N $ che hanno come immagine un punto $ q \in M $ attraverso $ F $, i.e.
 
 \begin{equation}
 	F^{-1}(q) = \{ p \in N \mid F(p) = q \}
 \end{equation}
 
-Un punto $ q \in M $ è un \textit{valore regolare per} $ F $ se ogni punto $ p \in F^{-1}(q) $ è un punto regolare. Un punto $ q \in M $ è un \textit{valore critico per} $ F $ se non è un valore regolare o, equivalentemente, se esiste un punto $ p \in F^{-1}(q) $ tale che $ p $ sia un punto critico.\\
-I valori critici e regolari appartengono al codominio della funzione.\\
-Come notazione
+Il punto $ q \in M $ è detto:
 
-\begin{align}
-	\begin{split}
-		\mathcal{VR}_{F} &= \{ q \in M \mid q \text{ valore regolare per } F \} \subset M\\
-		\mathcal{VC}_{F} &= \{ q \in M \mid q \text{ valore critico per } F \} \subset M
-	\end{split}
-\end{align}
+\begin{itemize}
+	\item \textit{valore regolare per} $ F $ se ogni punto $ p \in F^{-1}(q) $ è un punto regolare
+	
+	\item \textit{valore critico per} $ F $ se non è un valore regolare o, equivalentemente, se esiste un punto $ p \in F^{-1}(q) $ tale che $ p $ sia un punto critico
+\end{itemize}
 
-Perciò possiamo scrivere che
+I valori critici e regolari appartengono al codominio della funzione. Come notazione
 
-\begin{align}
-	\begin{split}
-		q \in \mathcal{VR}_{F} &\iff p \in \mathcal{PR}_{F}, \, \forall p \in F^{-1}(q)\\
-		q \in \mathcal{VC}_{F} &\iff \E p \in F^{-1}(q) \mid p \in \mathcal{PC}_{F}
-	\end{split}
-\end{align}
+\begin{gather}
+	\VR_{F} = \{ q \in M \mid q \text{ valore regolare per } F \} \subset M\\
+	\VC_{F} = \{ q \in M \mid q \text{ valore critico per } F \} \subset M
+\end{gather}
+
+Possiamo scrivere le definizioni usando la seguente notazione
+
+\begin{gather}
+	q \in \VR_{F} \iff p \in \PR_{F}, \, \forall p \in F^{-1}(q)\\
+	q \in \VC_{F} \iff \E p \in F^{-1}(q) \mid p \in \PC_{F}
+\end{gather}
 
 Analogamente ai punti regolari e critici, valgono le seguenti relazioni
 
 \begin{equation}
 	\begin{cases}
-		M = \mathcal{VC}_{F} \cup \mathcal{VR}_{F}\\
-		\mathcal{VC}_{F} \cap \mathcal{VR}_{F} = \emptyset
+		M = \VC_{F} \cup \VR_{F}\\
+		\VC_{F} \cap \VR_{F} = \emptyset
 	\end{cases}
 \end{equation}
 
@@ -4023,19 +4037,24 @@ Analogamente ai punti regolari e critici, valgono le seguenti relazioni
 	Se $ q \in M $ ma $ q \notin F(N) $ allora $ q $ è un valore regolare, i.e.
 	
 	\begin{equation}
-		M \setminus F(N) \subset \mathcal{VR}_{F}
+		M \setminus F(N) \subset \VR_{F}
 	\end{equation}
 \end{remark}
 
 \begin{remark}
+	Vale la relazione
+	
 	\begin{equation}
-		F(\mathcal{PC}_{F}) = \mathcal{VC}_{F}
+		F(\PC_{F}) = \VC_{F}
 	\end{equation}
 
 	ma in generale
 	
 	\begin{equation}
-		F(\mathcal{PR}_{F}) \not\subset \mathcal{VR}_{F} \wedge F(\mathcal{PR}_{F}) \not\supset \mathcal{VR}_{F}
+		\begin{cases}
+			F(\PR_{F}) \not\subset \VR_{F}\\
+			F(\PR_{F}) \not\supset \VR_{F}
+		\end{cases}
 	\end{equation}
 \end{remark}
 
