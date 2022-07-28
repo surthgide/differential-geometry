@@ -3804,31 +3804,93 @@ Applicando il differenziale all'elemento $ e $ otteniamo $ 0 \in G $, dunque
 
 \subsection{Immersioni e sommersioni}
 
-Un'applicazione liscia tra varietà $ F : N \to M $ è un'\textit{immersione} nel punto $ p \in N $ se il suo differenziale $ F_{*p} : T_{p}(N) \to T_{F(p)}(M) $ è iniettivo\footnote{%
-	Equivalentemente $ \ker(F_{*p}) = \{0\} \in T_{p}(N) $.%
-} mentre è una \textit{sommersione} in $ p $ se il suo differenziale $ F_{*p} : T_{p}(N) \to T_{F(p)}(M) $ è suriettivo.\\
-Un'applicazione liscia $ F : N \to M $ è un'immersione (risp. una sommersione) se lo è in ogni $ p \in N $.
+Siano un'applicazione liscia tra varietà e il suo differenziale
 
-\begin{remark}
-	Per i teoremi di algebra lineare\footnote{%
+\begin{gather}
+	F : N \to M\\
+	\downarrow \mathcal{F} \nonumber\\
+	F_{*p} : T_{p}(N) \to T_{F(p)}(M)
+\end{gather}
+
+L'applicazione $ F $ è detta:
+
+\begin{itemize}
+	\item \textit{immersione} nel punto $ p \in N $ se il suo differenziale è iniettivo\footnote{%
+		Equivalentemente $ \ker(F_{*p}) = \{0 \in T_{p}(N)\} $, in quanto il differenziale è lineare.%
+	}
+	
+	\item \textit{sommersione} nel punto $ p \in N $ se il suo differenziale è suriettivo
+\end{itemize}
+
+Un'applicazione liscia è un'immersione (risp. una sommersione) se lo è in ogni punto del suo dominio.
+
+\begin{definition}
+	Per il teorema della dimensione\footnote{%
 		Data un'applicazione lineare $ T : V \to W $, abbiamo che
 		
 		\begin{equation*}
-			\dim(V) + \dim(\ker(T)) = \dim(T(V))
+			\dim(T(V)) + \dim(\ker(T)) = \dim(V)
 		\end{equation*}
 		
-		dove quest'ultimo viene anche chiamato rango di $ T $, i.e. $ \dim(T(V)) \doteq \rank(T) $.%
+		dove $ \dim(T(V)) \doteq \rank(T) $ viene anche chiamato rango di $ T $.%
 	}, se $ F : N \to M $ è un'immersione $ \dim(N) \leqslant \dim(M) $ mentre se è una sommersione $ \dim(N) \geqslant \dim(M) $.
-\end{remark}
+\end{definition}
+
+\begin{proof}
+	Per l'immersione, l'iniettività del differenziale implica che il suo kernel ha dimensione nulla, i.e. $ \dim(\ker(F_{*p})) = 0 $, in quanto il differenziale è un'applicazione lineare.\\
+	Siccome la dimensione dello spazio tangente a una varietà coincide con la dimensione della varietà, i.e.
+	
+	\begin{equation}
+		\dim(T_{p}(N)) = \dim(\R^{n}) = \dim(N)
+	\end{equation}
+
+	e dato che, in generale, l'immagine di una funzione è contenuta nel codominio, i.e.
+	
+	\begin{equation}
+		\Im(F) \subseteq M %
+		\implies %
+		\dim(\Im(F)) \leqslant \dim(M)
+	\end{equation}
+	
+	tramite il teorema della dimensione otteniamo
+	
+	\begin{align}
+		\begin{split}
+			\dim(\Im(F_{*p})) + \cancelto{0}{ \dim(\ker(F_{*p})) } &= \dim(T_{F(p)}(M))\\
+			\dim(\Im(F_{*p})) &= \dim(M)\\
+			\dim(T_{p}(N)) &\leqslant \dim(M)\\
+			\dim(N) &\leqslant \dim(M)
+		\end{split}
+	\end{align}
+
+	Per la sommersione, la suriettività del differenziale implica che la sua immagine coincide con il codominio, i.e.
+	
+	\begin{equation}
+		\Im(F_{*p}) = T_{F(p)}(M) %
+		\implies %
+		\dim(\Im(F_{*p})) = \dim(T_{F(p)}(M))
+	\end{equation}
+
+	Siccome, in generale, la dimensione del kernel di una funzione suriettiva non è nulla, i.e. $ \dim(\ker(F_{*p})) \geqslant 0 $, tramite il teorema della dimensione otteniamo
+	
+	\begin{align}
+		\begin{split}
+			\dim(\Im(F_{*p})) + \dim(\ker(F_{*p})) &= \dim(T_{F(p)}(M))\\
+			\dim(T_{F(p)}(M)) + \dim(\ker(F_{*p})) &= \dim(M)\\
+			\dim(T_{F(p)}(M)) &\geqslant \dim(M)\\
+			\dim(N) &\geqslant \dim(M)
+		\end{split}
+	\end{align}
+\end{proof}
 
 \begin{remark}
-	Se $ F : N \to M $ è un'immersione e una sommersione in $ p $, i.e. $ \dim(N) = \dim(M) $ allora, per il teorema della funzione inversa\footnote{%
+	Se $ F : N \to M $ è un'immersione e una sommersione in $ p $, i.e. $ \dim(N) = \dim(M) $, allora, per il teorema della funzione inversa\footnote{%
 		Vedi Teorema \ref{ift}.%
 	}, avremo che il differenziale è invertibile, dunque $ F $ è un diffeomorfismo locale intorno a $ p $.
 \end{remark}
 
 \begin{remark}
-	In generale, un'immersione non è iniettiva e una sommersione non è suriettiva (lo sono necessariamente rispettivamente solo i loro differenziali).
+	In generale, un'immersione non è detto sia iniettiva e una sommersione non è detto sia suriettiva (lo sono necessariamente rispettivamente solo i loro differenziali).
 \end{remark}
 
 \subsubsection{\textit{Esempi}}
@@ -3837,12 +3899,9 @@ Un'applicazione liscia $ F : N \to M $ è un'immersione (risp. una sommersione) 
 
 Sia l'applicazione lineare (inclusione)
 
-\begin{align}
-	\begin{split}
-		i : \R^{n} &\to \R^{m}\\
-		(r^{1},\dots,r^{n}) &\mapsto (r^{1},\dots,r^{n},0,\dots,0)
-	\end{split}
-\end{align}
+\map{i}
+	{\R^{n}}{\R^{m}}
+	{(r^{1},\dots,r^{n})}{(r^{1},\dots,r^{n},0,\dots,0)}
 
 con $ n \leqslant m $ e con $ m-n $ zeri aggiunti nei punti dell'immagine.\\
 Essendo lineare, il differenziale coincide con l'applicazione stessa, i.e. $ i_{*p} = i $, la quale è iniettiva, dunque $ i $ è un'immersione.\\
@@ -3854,12 +3913,9 @@ Questa applicazione definisce la forma canonica delle immersioni, cioè ogni imm
 
 Sia l'applicazione lineare (proiezione)
 
-\begin{align}
-	\begin{split}
-		\pi : \R^{n} &\to \R^{m}\\
-		(r^{1},\dots,r^{n}) &\mapsto (r^{1},\dots,r^{m})
-	\end{split}
-\end{align}
+\map{\pi}
+	{\R^{n}}{\R^{m}}
+	{(r^{1},\dots,r^{n})}{(r^{1},\dots,r^{m})}
 
 con $ n \geqslant m $.\\
 Essendo lineare, il differenziale coincide con l'applicazione stessa, i.e. $ \pi_{*p} = \pi $, la quale è suriettiva, dunque $ \pi $ è una sommersione.\\
@@ -3871,37 +3927,33 @@ Questa applicazione definisce la forma canonica delle sommersioni, cioè ogni so
 
 Sia l'inclusione
 
-\begin{align}
-	\begin{split}
-		i : U &\to N\\
-		p &\mapsto p
-	\end{split}
-\end{align}
+\map{i}
+	{U}{N}
+	{p}{p}
 
 dove $ U \subset N $ aperto. Questa applicazione non è suriettiva se $ U \subsetneq N $ (è incluso ma non coincidente) ma il suo differenziale lo è, in quanto $ i_{*p} : T_{p}(U) = T_{p}(N) \to T_{p}(N) $ corrisponde all'identità (è anche iniettivo).\\
 Dunque l'inclusione considerata non è suriettiva ma è un'immersione e una sommersione.
 
 \subsubsection{Rango di un'applicazione liscia}
 
-Siano $ F : N \to M $ un'applicazione liscia, $ p \in N $ e $ (U,\phi) \in N $ con $ \phi = (x^{1},\dots,x^{n}) $ e $ (V,\psi) \in M $ con $ \psi = (y^{1},\dots,y^{m}) $ carte intorno a $ p $ e $ F(p) $ rispettivamente, tale che $ F(U) \subseteq V $. Definiamo il \textit{rango} di $ F $ nel punto $ p $ come
+Siano un'applicazione liscia $ F : N \to M $, un punto $ p \in N $ e due carte $ (U,\phi) \in N $ con $ \phi = (x^{1},\dots,x^{n}) $ e $ (V,\psi) \in M $ con $ \psi = (y^{1},\dots,y^{m}) $ rispettivamente intorno a $ p $ e $ F(p) $, tali che $ F(U) \subseteq V $. Definiamo il \textit{rango} di $ F $ nel punto $ p $ come
 
 \begin{equation}
-	\rank(F(p)) \doteq \rank\left( \left[ \dfrac{\partial F^{i}}{\partial x^{j}} (p) \right] \right) \equiv \rank(F_{*p})
+	\rank(F(p)) \doteq \rank\left( \left[ \pdv{F^{i}}{x^{j}} \, (p) \right] \right) %
+	\equiv \rank(F_{*p})
 \end{equation}
 
-dove $ F^{i} = y^{i} \circ F = r^{i} \circ \psi \circ F $, in quanto la matrice di $ F_{*p} $ rispetto alle basi
+dove $ F^{i} = y^{i} \circ F = r^{i} \circ \psi \circ F $; la seconda equazione è data dal fatto che la matrice di $ F_{*p} $ rispetto alle basi
 
-\begin{align}
-	\begin{split}
-		\mathcal{B}_{T_{p}(N)} &= \left\{ \eval{\pdv{x^{1}}}_{p}, \dots, \eval{\pdv{x^{n}}}_{p} \right\}\\
-		\mathcal{B}_{T_{F(p)}(M)} &= \left\{ \eval{\pdv{y^{1}}}_{F(p)}, \dots, \eval{\pdv{y^{m}}}_{F(p)} \right\}
-	\end{split}
-\end{align}
+\begin{gather}
+	\mathcal{B}_{T_{p}(N)} = \left\{ \eval{ \pdv{x^{1}} }_{p}, \dots, \eval{ \pdv{x^{n}} }_{p} \right\}\\
+	\mathcal{B}_{T_{F(p)}(M)} = \left\{ \eval{ \pdv{y^{1}} }_{F(p)}, \dots, \eval{ \pdv{y^{m}} }_{F(p)} \right\}
+\end{gather}
 
 è proprio lo jacobiano di $ F $ nel punto $ p $ associato alle carte definite sopra, i.e.
 
 \begin{equation}
-	J(F(p)) = \left[ \dfrac{\partial F^{i}}{\partial x^{j}} (p) \right] \in M_{m,n}(\R)
+	J(F)(p) = \left[ \pdv{F^{i}}{x^{j}} \, (p) \right] \in M_{m,n}(\R)
 \end{equation}
 
 Il rango di un'applicazione liscia definito in questo modo è ben definito in quanto lo è quello di un'applicazione lineare: il rango della matrice associata non dipende dalle basi scelte per calcolare la matrice stessa perché due matrici ottenute a partire da due basi diverse differiscono tra loro per la moltiplicazione di una matrice invertibile.
