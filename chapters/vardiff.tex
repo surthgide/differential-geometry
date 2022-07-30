@@ -4056,97 +4056,108 @@ Analogamente ai punti regolari e critici, valgono le seguenti relazioni
 			F(\PR_{F}) \not\supset \VR_{F}
 		\end{cases}
 	\end{equation}
+
+	La prima relazione è relativa al fatto che possono esserci dei punti regolari che, tramite $ F $, vengono mappati in valori critici; la seconda viene dai punti del codominio che non sono immagine del dominio tramite $ F $, i.e. per qualunque $ q \in M \setminus F(N) $ abbiamo che $ q \in \mathcal{VR}_{F} $ per definizione ma $ q \notin F(\mathcal{PR}_{F}) $ in quanto $ q \notin F(N) $.
 \end{remark}
 
 \subsubsection{Codominio $ \R $}
 
-Nel caso in cui $ M = \R $, consideriamo la funzione liscia $ f : N \to \R $.\\
-Se $ p \in \mathcal{PC}_{f} $ allora $ f_{*p} : T_{p}(N) \to T_{f(p)}(\R) $ non è suriettivo: perché il differenziale non sia suriettivo, essendo $ \dim(T_{f(p)}(\R)) = 1 $, è necessario che $ f_{*p} = 0 $ o, equivalentemente, che l'immagine di $ f_{*p} $ sia l'insieme nullo, i.e.
+Siano l'applicazione liscia $ f : N \to \R $ e un punto $ p \in N $, se $ p \in \PC_{f} $ allora il differenziale $ f_{*p} : T_{p}(N) \to T_{f(p)}(\R) $ non è suriettivo.\\
+Essendo il differenziale un'applicazione lineare, possiamo considerare il teorema della dimensione
+
+\begin{gather}
+	\dim(\Im(f_{*p})) + \dim(\ker(f_{*p})) = \dim(T_{f(p)}(\R)) = \dim(\R) = 1 \\%
+	\Downarrow \nonumber \\%
+	\begin{cases}
+		\dim(\Im(f_{*p})) = 1\\
+		\dim(\ker(f_{*p})) = 0
+	\end{cases} %
+	\wedge \quad
+	\begin{cases}
+		\dim(\Im(f_{*p})) = 0\\
+		\dim(\ker(f_{*p})) = 1
+	\end{cases}
+\end{gather}
+
+Il primo caso non può verificarsi in quanto imporrebbe la suriettività del differenziale, contraddicendo l'ipotesi, dunque abbiamo che $ f_{*p} = 0 $ o, equivalentemente, che l'immagine di $ f_{*p} $ sia l'insieme nullo, i.e.
 
 \begin{equation}
-	f_{*p}(T_{p}(N)) = \{0\}
+	f_{*p}(T_{p}(N)) = \{0 \in T_{f(p)}(\R)\}
 \end{equation}
 
-Questo significa che
+perciò
 
 \begin{equation}
 	f_{*p}(X_{p}) = 0 \in T_{f(p)}(\R) \qcomma \forall X_{p} \in T_{p}(N)
 \end{equation}
 
-e sappiamo che
+Sappiamo che
 
 \begin{equation}
-	f_{*p}(X_{p}) = (X_{p} f) \left. \dfrac{\operatorname{d}}{\operatorname{dr}} \right|_{f(p)}
+	f_{*p}(X_{p}) = (X_{p} f) \eval{ \dv{r} }_{f(p)}
 \end{equation}
 
-dove $ X_{p} f \in \R $ e $ \langle \sfrac{\operatorname{d}}{\operatorname{dr}} |_{f(p)} \rangle = T_{f(p)}(\R) $.\\
-Sia la carta $ (U,\phi) \in N $ con $ \phi = (x^{1},\dots,x^{n}) $ intorno a $ p $, allora
+dove $ X_{p} f \in \R $ e $ \langle \eval{ \dv*{r} }_{f(p)} \rangle = T_{f(p)}(\R) $, sia dunque la carta $ (U,\phi) \in N $ con $ \phi = (x^{1},\dots,x^{n}) $ intorno a $ p $, allora
 
 \begin{equation}
-	X_{p} = \sum_{i=1}^{n} a^{i} \left. \dfrac{\partial}{\partial x^{i}} \right|_{p}
+	X_{p} = \sum_{i=1}^{n} a^{i} \eval{ \pdv{x^{i}} }_{p}
 \end{equation}
 
-dunque
+perciò
 
 \begin{equation}
-	X_{p} f = \sum_{i=1}^{n} a^{i} \dfrac{\partial f}{\partial x^{i}} (p)
+	X_{p} f = \sum_{i=1}^{n} a^{i} \pdv{f}{x^{i}} \, (p)
 \end{equation}
 
-Perché $ f_{*p}(X_{p}) = 0 $ è necessario che $ X_{p} f = 0 $, il che implica
+Affinché $ f_{*p}(X_{p}) = 0 $, è necessario che $ X_{p} f = 0 $, il che implica
 
 \begin{equation}
-	\dfrac{\partial f}{\partial x^{i}} (p) = 0 \qcomma \forall i=1,\dots,n
+	\pdv{f}{x^{i}} \, (p) = 0 \qcomma \forall i=1,\dots,n
 \end{equation}
 
-Riassumendo, la condizione per cui un punto $ p \in N $ sia un punto critico per $ f : N \to \R $ è la seguente:
+A questo punto possiamo scrivere la condizione per cui un punto $ p \in N $ sia un punto critico per un'applicazione $ f : N \to \R $
 
 \begin{gather}
-	p \in \mathcal{PC}_{f}\nonumber\\
-	\Updownarrow\\
-	\dfrac{\partial f}{\partial x^{i}} (p) = 0, \, \forall i=1,\dots,n \wedge \forall (U,\phi) \in N \mid \phi = (x^{1},\dots,x^{n}) \wedge p \in (U,\phi)\nonumber
+	p \in \PC_{f} %
+	\iff %
+	\dpdv{f}{x^{i}} \, (p) = 0 \qcomma %
+	\begin{cases}
+		\forall i=1,\dots,n\\
+		\forall (U,\phi) \in N \mid \phi = (x^{1},\dots,x^{n}) \, \wedge \, p \in (U,\phi)
+	\end{cases}
 \end{gather}
 
 In particolare, se $ N = (a,b) $, la condizione per cui un punto $ t_{0} \in (a,b) $ sia un punto critico è
 
 \begin{equation}
-	t_{0} \in \mathcal{PC}_{f} \iff \dot{f}(t_{0}) = 0
+	t_{0} \in \PC_{f} \iff \dot{f}(t_{0}) = 0
 \end{equation}
 
-\subsubsection{\textit{Esempi}}
+\subsubsection{\textit{Esempio}}
 
-\paragraph{1)}
-
-Sia la funzione
-
-\begin{align}
-	\begin{split}
-		f : \R &\to \R\\
-		x &\mapsto x^{4} - 2 x^{2}
-	\end{split}
-\end{align}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.6\textwidth,keepaspectratio]{img28}
-\end{figure}
+\sbs{0.4}{%
+			Sia la funzione
+			
+			\map{f}
+				{\R}{\R}
+				{x}{x^{4} - 2 x^{2}}
+			}
+	{0.6}{%
+			\img{1}{img28}
+			}
 
 Abbiamo che
 
 \begin{equation}
 	\begin{cases}
-		\mathcal{PC}_{f} = \{ x \in \R \mid \dot{f}(x) = 4 x^{3} - 4 x = 0 \} = \{ -1, 0, 1 \}\\
-		\mathcal{PR}_{f} = \R \setminus \mathcal{PC}_{f} = \R \setminus \{ -1, 0, 1 \}\\
-		\mathcal{VC}_{f} = f(\mathcal{PC}_{f}) = \{ -1, 0 \}\\
-		\mathcal{VR}_{f} = \R \setminus \mathcal{VC}_{f} = \R \setminus \{ -1, 0 \}
+		\PC_{f} = \{ x \in \R \mid \dot{f}(x) = 4 x^{3} - 4 x = 0 \} = \{ -1, 0, 1 \}\\
+		\PR_{f} = \R \setminus \PC_{f} = \R \setminus \{ -1, 0, 1 \}\\
+		\VC_{f} = f(\PC_{f}) = \{ -1, 0 \}\\
+		\VR_{f} = \R \setminus \VC_{f} = \R \setminus \{ -1, 0 \}
 	\end{cases}
 \end{equation}
 
-Sappiamo inoltre che $ f(\mathcal{PR}_{f}) \not\subset \mathcal{VR}_{f} $ in quanto, ad esempio, $ \sqrt{2} \in \mathcal{PR}_{f} $ ma $ f(\sqrt{2}) = 0 \notin \mathcal{VC}_{f} $.
-
-\paragraph{2)}
-
-Sia $ F : N \to M $ un'applicazione liscia non suriettiva. Per qualunque $ q \in M \setminus F(N) $ abbiamo che $ q \in \mathcal{VR}_{F} $ per definizione ma $ q \notin F(\mathcal{PR}_{F}) $ in quanto $ q \notin F(N) $.\\
-Riassumendo $ F(\mathcal{PR}_{F}) \not\supset \mathcal{VR}_{F} $.
+Sappiamo inoltre che $ f(\PR_{f}) \not\subset \VR_{f} $ in quanto, ad esempio, $ \sqrt{2} \in \PR_{f} $ ma $ f(\sqrt{2}) = 0 \notin \VR_{f} $.
 
 \subsubsection{Massimi e minimi relativi}
 
@@ -8735,29 +8746,3 @@ Questo teorema asserisce che il commutatore tra due campi viene preservato trami
 		F_{*} ([X_{1},X_{2}]) = [F_{*} (X_{1}),F_{*} (X_{2})]
 	\end{equation}
 \end{proof}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
