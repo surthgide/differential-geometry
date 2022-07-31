@@ -4117,7 +4117,7 @@ Affinché $ f_{*p}(X_{p}) = 0 $, è necessario che $ X_{p} f = 0 $, il che impli
 
 A questo punto possiamo scrivere la condizione per cui un punto $ p \in N $ sia un punto critico per un'applicazione $ f : N \to \R $
 
-\begin{gather}
+\begin{equation}
 	p \in \PC_{f} %
 	\iff %
 	\dpdv{f}{x^{i}} \, (p) = 0 \qcomma %
@@ -4125,7 +4125,7 @@ A questo punto possiamo scrivere la condizione per cui un punto $ p \in N $ sia 
 		\forall i=1,\dots,n\\
 		\forall (U,\phi) \in N \mid \phi = (x^{1},\dots,x^{n}) \, \wedge \, p \in (U,\phi)
 	\end{cases}
-\end{gather}
+\end{equation}
 
 In particolare, se $ N = (a,b) $, la condizione per cui un punto $ t_{0} \in (a,b) $ sia un punto critico è
 
@@ -4161,8 +4161,8 @@ Sappiamo inoltre che $ f(\PR_{f}) \not\subset \VR_{f} $ in quanto, ad esempio, $
 
 \subsubsection{Massimi e minimi relativi}
 
-In analisi, per una funzione $ f : \R \to \R $ il punto $ x_{0} \in \R $ è un massimo (risp. minimo) locale se esiste un intorno $ I $ contenente $ x_{0} $ tale che $ f(x) \leqslant f(x_{0}) $ (risp. $ f(x) \geqslant f(x_{0}) $) per $ \forall x \in I $. Se $ x_{0} $ è un punto di massimo o minimo relativo allora\footnote{%
-	Per definizione
+In analisi, per una funzione $ f : \R \to \R $ il punto $ x_{0} \in \R $ è un massimo (risp. minimo) locale per $ f $ se esiste un intorno $ I $ contenente $ x_{0} $ tale che $ f(x) \leqslant f(x_{0}) $ (risp. $ f(x) \geqslant f(x_{0}) $) per $ \forall x \in I $. Se $ x_{0} $ è un punto di massimo o minimo relativo allora la derivata della funzione nel punto è nulla\footnote{%
+	La derivata della funzione $ f $ nel punto $ x_{0} $ è definita come
 	
 	\begin{equation*}
 		\dot{f}(x_{0}) = \lim_{x \to x_{0}} \dfrac{f(x) - f(x_{0})}{x - x_{0}}
@@ -4178,55 +4178,62 @@ In analisi, per una funzione $ f : \R \to \R $ il punto $ x_{0} \in \R $ è un m
 	\end{align*}
 
 	perciò $ \dot{f}(x_{0}) = 0 $.%
-} $ \dot{f}(x_{0}) = 0 $, dunque $ x_{0} \in \mathcal{PC}_{f} $.\\\\
-%
-Sia $ N $ una varietà differenziabile e $ f \in C^{\infty}(N) $, un punto $ p \in N $ è un \textit{massimo locale} (risp. \textit{minimo locale}) per $ f $ se esiste un intorno $ U \in N $ di $ p $ tale che $ f(q) \leqslant f(p) $ (risp. $ f(q) \geqslant f(p) $ ) per $ \forall q \in U $.
+}, i.e. $ \dot{f}(x_{0}) = 0 $, dunque $ x_{0} \in \PC_{f} $.\\
+Siano una varietà differenziabile $ N $ e una funzione $ f \in C^{\infty}(N) $, un punto $ p \in N $ è un \textit{massimo locale} (risp. \textit{minimo locale}) per $ f $ se esiste un intorno $ U \subset N $ di $ p $ tale che $ f(q) \leqslant f(p) $ (risp. $ f(q) \geqslant f(p) $ ) per $ \forall q \in U $.
 
 \begin{definition}
-	Se $ p $ è un punto di massimo locale (risp. minimo locale) per $ f $ allora $ p \in \mathcal{PC}_{f} $.
+	Se $ p $ è un punto di massimo locale (risp. minimo locale) per $ f : N \to \R $ allora $ p \in \PC_{f} $.
 \end{definition}
 
 \begin{proof}
 	Ricordiamo che
 	
-	\begin{gather}
-		p \in \mathcal{PC}_{f}\nonumber\\
-		\Updownarrow\nonumber\\
-		\dfrac{\partial f}{\partial x^{i}} (p) = 0, \, \forall i=1,\dots,n \wedge \forall (U,\phi) \in N \mid \phi = (x^{1},\dots,x^{n}) \wedge p \in (U,\phi)\nonumber\\
-		\Updownarrow\\
-		f_{*p}(X_{p}) = 0, \, \forall X_{p} \in T_{p}(N)\nonumber
-	\end{gather}
+	\begin{equation}
+		p \in \PC_{f} %
+		\iff %
+		\begin{cases}
+			\dpdv{f}{x^{i}} \, (p) = 0\\\\
+			\forall i=1,\dots,n
+		\end{cases} %
+		\iff %
+		f_{*p}(X_{p}) = 0, \, \forall X_{p} \in T_{p}(N)
+	\end{equation}
 
 	con
 	
 	\begin{equation}
-		f_{*p}(X_{p}) = (X_{p} f) \left. \dfrac{\operatorname{d}}{\operatorname{dr}} \right|_{f(p)}
+		f_{*p}(X_{p}) = (X_{p} f) \eval{ \dv{r} }_{f(p)}
+	\end{equation}
+	
+	La derivata direzionale si può calcolare usando le curve su varietà, dunque presa la curva liscia
+				
+	\begin{equation}
+		c : (-\varepsilon,\varepsilon) \to N \qcomma %
+		\begin{cases}
+			c(0) = p\\
+			c'(0) = X_{p}
+		\end{cases}
 	\end{equation}
 
-	La derivata direzionale si può calcolare usando curve su varietà, dunque presa $ c : (-\varepsilon,\varepsilon) \to N $ con $ c(0) = p $ e $ c'(0) = X_{p} $ abbiamo che
+	abbiamo che
 	
 	\begin{equation}
 		X_{p} f = \dot{(f \circ c)}(0)
 	\end{equation}
-
+	
 	quindi
 	
 	\begin{equation}
-		f_{*p}(X_{p}) = \dot{(f \circ c)}(0)
+		f_{*p}(X_{p}) = \dot{(f \circ c)}(0) \eval{ \dv{r} }_{f(p)}
 	\end{equation}
-
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=0.6\textwidth,keepaspectratio]{img29}
-	\end{figure}
 	
-	Sappiamo che $ f(q) \leqslant f(p) $ per $ \forall q \in U $ intorno, quindi prendiamo $ \varepsilon $ in modo tale che $ c((-\varepsilon,\varepsilon)) \subset U $. Se $ p $ è un massimo locale per $ f $ allora 0 è un massimo locale per $ f \circ c $ cioè
+	Sappiamo che, preso $ U $ intorno di $ p $, per un massimo locale in $ p $ abbiamo che $ f(q) \leqslant f(p) $ per $ \forall q \in U $, quindi prendiamo $ \varepsilon $ in modo tale che $ c((-\varepsilon,\varepsilon)) \subset U $. Se $ p $ è un massimo locale per $ f $ allora 0 è un massimo locale per $ f \circ c $ cioè
 	
 	\begin{equation}
-		(f \circ c)(t) \leqslant (f \circ c)(0) = f(p), \, \forall t \in (-\varepsilon,\varepsilon)
+		(f \circ c)(t) \leqslant (f \circ c)(0) = f(p) \qcomma \forall t \in (-\varepsilon,\varepsilon)
 	\end{equation}
 
-	Dall'analisi otteniamo che $ \dot{(f \circ c)}(0) = 0 $ dunque $ f_{*p}(X_{p}) = 0 $ e perciò $ p \in \mathcal{PC}_{f} $.\\	
+	Dall'analisi, affinché $ p $ sia un massimo, è necessario che $ \dot{(f \circ c)}(0) = 0 $, il che implica che $ f_{*p}(X_{p}) = 0 $ e perciò $ p \in \PC_{f} $.\\	
 	La dimostrazione per il minimo locale è analoga.
 \end{proof}
 
