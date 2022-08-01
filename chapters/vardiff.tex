@@ -4239,36 +4239,49 @@ Siano una varietà differenziabile $ N $ e una funzione $ f \in C^{\infty}(N) $,
 
 \subsubsection{Matrice hessiana}
 
-Sia $ N $ una varietà compatta dove $ \dim(N)=2 $. Un punto $ p \in N $  è detto punto critico \textit{non degenere} se $ p \in \mathcal{PC} $ e se, presa una carta $ (U\,\phi) \in N $ con $ \phi = (x^{1},x^{2}) $, il determinante della \textit{matrice hessiana} associata a $ f $ in $ p $ è diverso da zero, i.e.
+Siano una varietà compatta $ N $ con $ \dim(N) = 2 $ e una funzione $ f : N \to \R $. Un punto $ p \in N $  è detto punto critico \textit{non degenere} per $ f $ se $ p \in \PC_{f} $ e se, presa una carta $ (U\,\phi) \in N $ con $ \phi = (x^{1},x^{2}) $, il determinante della \textit{matrice hessiana} associata a $ f $ in $ p $ è diverso da zero, i.e.
 
 \begin{equation}
-	\det(\mathcal{H}(f)(p)) \doteq \det (\begin{bmatrix} \dfrac{\partial^{2} f}{\partial (x^{1})^{2}} & \dfrac{\partial^{2} f}{\partial x^{1} \partial x^{2}} \\\\ \dfrac{\partial^{2} f}{\partial x^{2} \partial x^{1}} & \dfrac{\partial^{2} f}{\partial (x^{2})^{2}} \end{bmatrix}) \neq 0
+	\det(\mathcal{H}(f)(p)) \doteq \det( \bmqty{ \dpdv[2]{f}{(x^{1})} & \dpdv[2]{f}{x^{1}}{x^{2}} \\\\ \dpdv[2]{f}{x^{2}}{x^{1}} & \dpdv[2]{f}{(x^{2})} } ) %
+	\neq 0
 \end{equation}
 
 La maggior parte delle funzioni possiedono punti critici non degeneri.\\
-Analogamente come in analisi, si possono classificare i punti critici non degeneri in base alla loro matrice hessiana:
+Analogamente all'analisi, si possono classificare i punti critici non degeneri in base alla loro matrice hessiana:
 
 \begin{itemize}
-	\item $ \mathcal{H}(f)(p) < 0 \text{ definita negativa} \implies p \text{ massimo locale} $
+	\item $ \mathcal{H}(f)(p) < 0 \text{ definita negativa\footnotemark} \implies p \text{ massimo locale} $
 	
 	\item $ \mathcal{H}(f)(p) > 0 \text{ definita positiva} \implies p \text{ minimo locale} $
 	
 	\item $ \mathcal{H}(f)(p) \gtreqqless 0 \text{ semidefinita} \implies p \text{ punto di sella} $
 \end{itemize}
+\footnotetext{%
+	Siano una matrice $ A \in M_{n,n}(\R) $ e un vettore riga $ v \in M_{1,n}(\R) $, la matrice $ A $ è \textit{definita positiva} se il prodotto $ v A v^{T} \in \R $ è positivo per qualsiasi vettore $ v $ diverso dal vettore nullo i.e.
+	
+	\begin{equation*}
+		v A v^{T} > 0 \qcomma \forall v \in M_{1,n}(\R) \, \wedge \, v \neq 0
+	\end{equation*}
+
+	Analogamente, per una matrice \textit{definita negativa} deve verificarsi $ v A v^{T} < 0 $, mentre per una \textit{semidefinita} (positiva o negativa) abbiamo che $ v A v^{T} \geqslant 0 $ oppure $ v A v^{T} \leqslant 0 $. Infine, la matrice si dirà \textit{indefinita} se esistono due vettori non nulli $ v_{1} $ e $ v_{2} $ tali che
+	
+	\begin{equation*}
+		v_{1} A v_{1}^{T} > 0 \, \wedge \, v_{2} A v_{2}^{T} < 0
+	\end{equation*}
+
+	Per determinare la definitezza di una matrice si possono usare, ad esempio, il criterio di Sylvester o la regola di Cartesio.%
+}
 
 Ad esempio, il paraboloide $ z^{2} = - x^{2} - y^{2} $ ha come massimo locale il punto $ (0,0) $, per la funzione
 
-\begin{align}
-	\begin{split}
-		f : \R^{2} &\to \R\\
-		(x,y) &\mapsto - x^{2} - y^{2}
-	\end{split}
-\end{align}
+\map{f}
+	{\R^{2}}{\R}
+	{(x,y)}{- x^{2} - y^{2}}
 
 dove
 
 \begin{equation}
-	\mathcal{H}(f)(p) = \begin{bmatrix} -2 & 0 \\ 0 & -2 \end{bmatrix} < 0
+	\mathcal{H}(f)(p) = \bmqty{ -2 & 0 \\ 0 & -2 } < 0
 \end{equation}
 
 Il paraboloide $ z^{2} = x^{2} + y^{2} $ ha $ (0,0) $ come minimo locale mentre il paraboloide iperbolico $ z^{2} = x^{2} - y^{2} $ ha $ (0,0) $ come punto di sella.
