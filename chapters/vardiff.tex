@@ -4347,7 +4347,7 @@ Se consideriamo la sfera $ \S^{2} $ tramite la funzione altezza, otteniamo invec
 
 \subsection{Sottovarietà}
 
-Siano $ N $ una varietà differenziabile con $ \dim(N)=n $ e $ S \subset N $ sottospazio topologico di $ N $ (con la topologia indotta da $ N $), allora $ S $ è una \textit{sottovarietà di} $ N $ di dimensione $ \dim(S) = k \leqslant n $ se per ogni punto $ p \in S $ esiste una carta $ (U,\phi) $ con $ \phi = (x^{1},\dots,x^{n}) $ intorno a $ p $ tale che l'aperto $ U \cap S $ sia costituito dai punti di $ U $ che abbiano le ultime $ n-k $ funzioni coordinate nulle\footnote{%
+Siano $ N $ una varietà differenziabile con $ \dim(N) = n $ e $ S \subset N $ sottospazio topologico di $ N $ (con la topologia indotta da $ N $), allora $ S $ è una \textit{sottovarietà di} $ N $ di dimensione $ \dim(S) = k \leqslant n $ se per ogni punto $ p \in S $ esiste una carta $ (U,\phi) \in N $ con $ \phi = (x^{1},\dots,x^{n}) $ intorno a $ p $ tale che l'aperto $ U \cap S $ sia costituito dai punti di $ U $ che abbiano le ultime $ n-k $ funzioni coordinate nulle\footnote{%
 	Due carte che hanno le stesse coordinate ma invertite sono identiche, i.e. $ (U;x^{1},x^{2}) \equiv (U;x^{2},x^{1}) $.%
 }, i.e.
 
@@ -4357,16 +4357,16 @@ Siano $ N $ una varietà differenziabile con $ \dim(N)=n $ e $ S \subset N $ sot
 	\forall p \in S, \, \E (U,\phi) \in N \mid (U,\phi) \ni p \wedge U \cap S = \{ q \in U \mid x^{k+1}(q) = \dots = x^{n}(q) = 0 \}\nonumber
 \end{gather}
 
-Ad esempio, se consideriamo $ N = \R^{2} $ con carta $ (x,y) $ e $ S = \R \times \{0\} $ allora
+Ad esempio, se consideriamo $ N = \R^{2} $ con carta $ (\R^{2};x,y) $ e $ S = \R \times \{0\} $ allora
 
 \begin{equation}
 	\R^{2} \cap S = S = \{ (x,y) \in \R^{2} \mid y=0 \}
 \end{equation}
 
-mentre per $ N = \R^{3} $ con carta $ (x,y,z) $ e $ S = \R \times \{0\} $ allora
+mentre per $ N = \R^{3} $ con carta $ (\R^{3};x,y,z) $ e $ S = \R \times \{(0,0)\} $ allora
 
 \begin{equation}
-	\R^{3} \cap S = S = \{ (x,y,z) \in \R^{2} \mid y=0 \wedge z=0 \}
+	\R^{3} \cap S = S = \{ (x,y,z) \in \R^{3} \mid y = 0 \wedge z = 0 \}
 \end{equation}
 
 \begin{remark}\label{subvar-open}
@@ -4378,7 +4378,7 @@ mentre per $ N = \R^{3} $ con carta $ (x,y,z) $ e $ S = \R \times \{0\} $ allora
 	\end{equation}
 
 	si verifica per $ k=n $, i.e. 0 coordinate si annullano in $ U \cap S $.\\
-	Ad esempio, non potrebbe essere che
+	Ad esempio, non potrebbe essere che solo una coordinata si annulla
 	
 	\begin{equation}
 		U \cap S = \{ q \in U \mid x^{i}(q) = 0 \}
@@ -4387,7 +4387,7 @@ mentre per $ N = \R^{3} $ con carta $ (x,y,z) $ e $ S = \R \times \{0\} $ allora
 	in quanto $ U \simeq \R^{n} $ tramite $ \phi $, $ U \cap S \simeq \R^{n-1} $ e $ U \cap S \simeq U $ ma i diffeomorfismi conservano la dimensione.
 \end{remark}
 
-Siano $ N $ una varietà differenziabile con $ \dim(N)=n $, $ S \subset N $ una sottovarietà con $ \dim(S)=k $ e $ p \in S $, allora una carta $ (U,\phi) \in N $ con $ \phi = (x^{1},\dots,x^{n}) $ tale che $ (U,\phi) \ni p $ è chiamata \textit{carta adattata di} $ N $ \textit{intorno a} $ p $ \textit{relativamente a} $ S $ se vale la condizione per la sottovarietà, i.e.
+Siano $ N $ una varietà differenziabile con $ \dim(N)=n $, $ S \subset N $ una sottovarietà con $ \dim(S)=k $ e $ p \in S $ un punto della sottovarietà, allora una carta $ (U,\phi) \in N $ con $ \phi = (x^{1},\dots,x^{n}) $ tale che $ (U,\phi) \ni p $ è chiamata \textit{carta adattata di} $ N $ \textit{intorno a} $ p $ \textit{relativamente a} $ S $ se vale la condizione per la sottovarietà, i.e.
 
 \begin{equation}
 	U \cap S = \{ q \in U \mid x^{k+1}(q) = \dots = x^{n}(q) = 0 \}
@@ -4415,7 +4415,7 @@ Consideriamo $ N = \R^{2} $ con carta $ V = (0,2) \times (-1,1) $ (quadrato di l
 
 \paragraph{3)}
 
-Consideriamo $ N = \R^{n} $ con carta $ (U,\phi) = (\R;r^{1},\dots,r^{n}) $ e $ S = \R^{k} \times \{0\} \subset N $. La carta $ (U,\phi) $ è una carta adattata intorno ad ogni punto $ p \in S $ relativamente a $ S $ in quanto
+Consideriamo $ N = \R^{n} $ con carta $ (U,\phi) = (\R^{n}; r^{1},\dots,r^{n}) $ e $ S = \R^{k} \times \{0\} \subset N $. La carta $ (U,\phi) $ è una carta adattata intorno ad ogni punto $ p \in S $ relativamente a $ S $ in quanto
 
 \begin{equation}
 	U \cap S = S = \{ q \in \R^{n} \mid r^{k+1}(q) = \dots = r^{n}(q) = 0 \}
