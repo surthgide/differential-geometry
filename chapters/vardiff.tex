@@ -4423,107 +4423,107 @@ Consideriamo $ N = \R^{n} $ con carta $ (U,\phi) = (\R^{n}; r^{1},\dots,r^{n}) $
 
 \subsubsection{Sottovarietà come varietà differenziabile}
 
-Osserviamo che se definiamo
+Possiamo definire l'applicazione
 
-\begin{align}
-	\begin{split}
-		\phi_{S} : U \cap S &\to \R^{k}\\
-		q &\mapsto (x^{1}(q),\dots,x^{k}(q))
-	\end{split}
-\end{align}
+\map{\phi_{S}}
+	{U \cap S}{\R^{k}}
+	{q}{(x^{1}(q),\dots,x^{k}(q))}
 
-dove $ (U,\phi) $ è una carta adattata di $ N $ intorno a $ p $ relativamente a $ S $, come la restrizione della funzione
+dove $ (U,\phi) $ è una carta adattata di $ N $ intorno a $ p $ relativamente a $ S $, come restrizione a $ S $ dell'applicazione
 
-\begin{align}
-	\begin{split}
-		\phi_{| U \cap S} : U \cap S &\to \R^{n}\\
-		q &\mapsto (x^{1}(q),\dots,x^{k}(q),0,\dots,0)
-	\end{split}
-\end{align}
+\map{\eval{ \phi }_{U \cap S}}
+	{U \cap S}{\R^{n}}
+	{q}{(x^{1}(q),\dots,x^{k}(q),0,\dots,0)}
 
 Siccome $ \phi $ è un omeomorfismo, allora lo è anche $ \phi_{S} $ in quanto restrizione di un omeomorfismo.\\
-Deduciamo dunque che $ S $ è una varietà topologica con $ \dim(S)=k $ poiché $ S $ è $ N_{2}+T_{2} $ dal fatto che $ S \subset N $ sottospazio e inoltre per $ \forall p \in S $ si può definire una carta $ (U \cap S,\phi_{S}) $ intorno a $ p $ dal quale si ottiene un atlante topologico per $ S $.
+Deduciamo dunque che $ S $ è una varietà topologica con $ \dim(S) = k $:
+
+\begin{itemize}
+	\item $ S $ è $ N_{2}+T_{2} $ in quanto $ S \subset N $ è un sottospazio topologico
+	
+	\item per un qualunque $ p \in S $ si può definire una carta $ (U \cap S,\phi_{S}) $ intorno a $ p $ dal quale si ottiene un atlante topologico per $ S $
+\end{itemize}
 
 \begin{definition}
-	Sia $ S $ una sottovarietà con $ \dim(S)=k $ di una varietà differenziabile $ N $ con $ \dim(N)=n $, allora $ S $ è una varietà differenziabile con $ \dim(S)=k $.\\
-	Chiameremo la struttura differenziabile costruita nella proposizione la \textit{struttura differenziale indotta da} $ N $.
+	Sia $ S $ una sottovarietà di una varietà differenziabile $ N $ rispettivamente con $ \dim(S) = k $ e $ \dim(N) = n $, allora $ S $ è una varietà differenziabile con $ \dim(S) = k $.
 \end{definition}
 
+Chiameremo la struttura differenziabile costruita nella proposizione \textit{struttura differenziale indotta da} $ N $.
+
 \begin{proof}
-	Per dimostrare che $ S $ sia una varietà differenziabile, dobbiamo far vedere che per $ \forall p \in S $ e per $ \forall (U \cap S,\phi_{S}),(V \cap S,\psi_{S}) $ carte indotte da carte adattate $ (U,\phi) $ e $ (V,\psi) $ allora $ (U \cap S,\phi_{S}) $ è $ C^{\infty} $-compatibile con $ (V \cap S,\psi_{S}) $.\\
-	Sia la carta adattata $ (U,\phi) $ con $ \phi = (x^{1},\dots,x^{n}) $ tale che
+	Per dimostrare che $ S $ sia una varietà differenziabile, dobbiamo far vedere che per qualsiasi punto $ p \in S $ e qualsiasi coppia di carte $ (U \cap S,\phi_{S}) $ e $ (V \cap S,\psi_{S}) $ indotte da carte adattate $ (U,\phi) $ e $ (V,\psi) $ si abbia che $ (U \cap S,\phi_{S}) $ sia $ C^{\infty} $-compatibile con $ (V \cap S,\psi_{S}) $.\\
+	Essendo $ (U,\phi) $ e $ (V,\psi) $ carte di $ N $, queste sono $ C^{\infty} $-compatibili, i.e. sono lisci i seguenti cambi di carta
+	
+	\begin{gather}
+		\psi \circ \phi^{-1} : \phi(U \cap V) \to \psi(U \cap V)\\
+		\phi \circ \psi^{-1} : \psi(U \cap V) \to \phi(U \cap V)
+	\end{gather}
+
+	Scrivendo queste applicazioni su coordinate euclidee
+	
+	\begin{align}
+		\begin{split}
+			(\psi \circ \phi^{-1}) \left( r^{1}(\phi(q)),\dots,r^{n}(\phi(q)) \right) &= \left( r^{1}(\psi(q)),\dots,r^{n}(\psi(q)) \right)\\
+			(\psi \circ \phi^{-1}) \left( x^{1}(q),\dots,x^{n}(q) \right) &= \left( y^{1}(q),\dots,y^{n}(q) \right)
+		\end{split}
+	\end{align}
+
+	\begin{align}
+		\begin{split}
+			(\phi \circ \psi^{-1}) \left( r^{1}(\psi(q)),\dots,r^{n}(\psi(q)) \right) &= \left( r^{1}(\phi(q)),\dots,r^{n}(\phi(q)) \right)\\
+			(\phi \circ \psi^{-1}) \left( y^{1}(q),\dots,y^{n}(q) \right) &= \left( x^{1}(q),\dots,x^{n}(q) \right)
+		\end{split}
+	\end{align}
+
+	otteniamo che le funzioni $ x^{i} $ e $ y^{i} $ per $ \forall i=1,\dots,n $ sono lisce rispetto a $ (y^{1},\dots,y^{n}) $ e $ (x^{1},\dots,x^{n}) $ rispettivamente\footnote{%
+		Le funzioni $ x^{i} $ e $ y^{i} $ dipendono da $ (y^{1},\dots,y^{n}) $ e $ (x^{1},\dots,x^{n}) $ rispettivamente tramite i cambi di carta ($ f(x) = y $ dunque $ y $ dipende da $ x $ tramite $ f $).%
+	}, in quanto immagini dei cambi di carte, i quali sono lisci per definizione di varietà differenziabile.\\
+	Siano le carte adattate $ (U,\phi) $ con $ \phi = (x^{1},\dots,x^{n}) $ tale che
 	
 	\begin{equation}
 		U \cap S = \{ q \in U \mid x^{k+1}(q) = \dots = x^{n}(q) = 0 \}
 	\end{equation}
-
-	e analogamente $ (V,\psi) $ con $ \psi = (y^{1},\dots,y^{n}) $ tale che
+	
+	e $ (V,\psi) $ con $ \psi = (y^{1},\dots,y^{n}) $ tale che
 	
 	\begin{equation}
 		V \cap S = \{ q \in V \mid y^{k+1}(q) = \dots = y^{n}(q) = 0 \}
 	\end{equation}
 
-	Essendo $ (U,\phi) $ e $ (V,\psi) $ carte di $ N $ queste sono $ C^{\infty} $-compatibili, i cambi di carta
-	
-	\begin{align}
-		\begin{split}
-			\psi \circ \phi^{-1} &: \phi(U \cap V) \to \psi(U \cap V)\\
-			\phi \circ \psi^{-1} &: \psi(U \cap V) \to \phi(U \cap V)
-		\end{split}
-	\end{align}
-
-	sono lisci, quindi abbiamo le loro applicazioni su coordinate euclidee
-	
-	\begin{align}
-		\begin{split}
-			(\psi \circ \phi^{-1}) (\, (\, r^{1}(\phi(q)),\dots,r^{n}(\phi(q)) \,) \,) &= (\, (\, r^{1}(\psi(q)),\dots,r^{n}(\psi(q)) \,) \,)\\
-			(\psi \circ \phi^{-1}) (\, (\, x^{1}(q),\dots,x^{n}(q) \,) \,) &= (\, (\, y^{1}(q),\dots,y^{n}(q) \,) \,)\\\\
-			%
-			(\phi \circ \psi^{-1}) (\, (\, r^{1}(\psi(q)),\dots,r^{n}(\psi(q)) \,) \,) &= (\, (\, r^{1}(\phi(q)),\dots,r^{n}(\phi(q)) \,) \,)\\
-			(\phi \circ \psi^{-1}) (\, (\, y^{1}(q),\dots,y^{n}(q) \,) \,) &= (\, (\, x^{1}(q),\dots,x^{n}(q) \,) \,)
-		\end{split}
-	\end{align}
-
-	da cui otteniamo che le funzioni $ x^{i}((y^{1},\dots,y^{n})) $ e $ y^{i}((x^{1},\dots,x^{n})) $ per $ \forall i=1,\dots,n $ sono lisce rispetto a $ (y^{1},\dots,y^{n}) $ e $ (x^{1},\dots,x^{n}) $ rispettivamente.\\
 	Prendiamo ora le applicazioni
 	
-	\begin{align}
-		\begin{split}
-			\phi_{S} : U \cap S &\to \R^{k}\\
-			q &\mapsto (x^{1}(q),\dots,x^{k}(q))\\\\
-			%
-			\psi_{S} :V \cap S &\to \R^{k}\\
-			q &\mapsto (y^{1}(q),\dots,y^{k}(q))
-		\end{split}
-	\end{align}
+	\map{\phi_{S}}
+		{U \cap S}{\R^{k}}
+		{q}{(x^{1}(q),\dots,x^{k}(q))}
+
+	\map{\psi_{S}}
+		{V \cap S}{\R^{k}}
+		{q}{(y^{1}(q),\dots,y^{k}(q))}
 
 	i loro cambi di carte
 	
-	\begin{align}
-		\begin{split}
-			\psi_{S} \circ \phi_{S}^{-1} : \phi_{S}(U \cap V \cap S) &\to \psi_{S}(U \cap V \cap S)\\
-			(\, r^{1}(\phi_{S}(q)),\dots,r^{k}(\phi_{S}(q)) \,) &\mapsto (\, r^{1}(\psi_{S}(q)),\dots,r^{k}(\psi_{S}(q)) \,)\\
-			(x^{1}(q),\dots,x^{k}(q)) &\mapsto (y^{1}(q),\dots,y^{k}(q))\\\\
-			%
-			\phi_{S} \circ \psi_{S}^{-1} : \psi_{S}(U \cap V \cap S) &\to \phi_{S}(U \cap V \cap S)\\
-			(\, r^{1}(\psi_{S}(q)),\dots,r^{k}(\psi_{S}(q)) \,) &\mapsto (\, r^{1}(\phi_{S}(q)),\dots,r^{k}(\phi_{S}(q)) \,)\\
-			(y^{1}(q),\dots,y^{k}(q)) &\mapsto (x^{1}(q),\dots,x^{k}(q))
-		\end{split}
-	\end{align}
+	\map{\psi_{S} \circ \phi_{S}^{-1}}
+		{\phi_{S}(U \cap V \cap S)}{\psi_{S}(U \cap V \cap S)}
+		{\left( r^{1}(\phi_{S}(q)),\dots,r^{k}(\phi_{S}(q)) \right)}{%
+			\left( r^{1}(\psi_{S}(q)),\dots,r^{k}(\psi_{S}(q)) \right)\\
+			(x^{1}(q),\dots,x^{k}(q)) &\mapsto (y^{1}(q),\dots,y^{k}(q))}
+	
+	\map{\phi_{S} \circ \psi_{S}^{-1}}
+		{\psi_{S}(U \cap V \cap S)}{\phi_{S}(U \cap V \cap S)}
+		{\left( r^{1}(\psi_{S}(q)),\dots,r^{k}(\psi_{S}(q)) \right)}{%
+			\left( r^{1}(\phi_{S}(q)),\dots,r^{k}(\phi_{S}(q)) \right)\\
+			(y^{1}(q),\dots,y^{k}(q)) &\mapsto (x^{1}(q),\dots,x^{k}(q))}
 
-	sono ancora lisci in quanto le applicazioni $ x^{i} $ e $ y^{i} $, essendo lisce per $ (y^{1},\dots,y^{n}) $ e $ (x^{1},\dots,x^{n}) $ rispettivamente, saranno ancora lisce per la restrizione a $ k<n $ coordinate.\\
+	sono ancora lisci in quanto le applicazioni $ x^{i} $ e $ y^{i} $, essendo lisce per $ (y^{1},\dots,y^{n}) $ e $ (x^{1},\dots,x^{n}) $ rispettivamente, saranno ancora lisce per la restrizione a $ k < n $ coordinate.\\
 	Dimostrando che i cambi di carta sono lisci, otteniamo che $ S $ è una varietà differenziabile.
 \end{proof}
 
 \begin{definition}
 	Siano $ N $ una varietà differenziabile con $ \dim(N)=n $ e $ S \subset N $ una sottovarietà di $ N $ con $ \dim(S)=k<n $, allora l'inclusione naturale
 	
-	\begin{align}
-		\begin{split}
-			i : S &\to N\\
-			q &\mapsto q
-		\end{split}
-	\end{align}
+	\map{i}
+		{S}{N}
+		{q}{q}
 
 	è un'immersione.\\
 	La sottovarietà $ S $ è dotata della struttura differenziabile di dimensione $ k $ descritta dalla proposizione precedente.
@@ -4531,16 +4531,13 @@ Deduciamo dunque che $ S $ è una varietà topologica con $ \dim(S)=k $ poiché 
 
 \begin{proof}
 	Innanzitutto, dobbiamo mostrare che $ i $ sia liscia: per fare ciò, scegliamo due carte arbitrarie di dominio e codominio rispettivamente e dimostriamo che la composizione delle applicazioni di queste carte con l'inclusione sia ancora un'applicazione liscia.\\
-	Siano $ p \in S $, $ (U,\phi) \in N $ con $ \phi = (x^{1},\dots,x^{n}) $ una carta adattata di $ N $ intorno a $ p $ relativamente a $ S $ e la corrispondente applicazione su $ S $
+	Siano un punto $ p \in S $, $ (U,\phi) \in N $ con $ \phi = (x^{1},\dots,x^{n}) $ una carta adattata di $ N $ intorno a $ p $ relativamente a $ S $ e la corrispondente applicazione su $ S $
 	
-	\begin{align}
-		\begin{split}
-			\phi_{S} : U \cap S &\to \R^{k}\\
-			q &\mapsto (x^{1}(q),\dots,x^{k}(q))
-		\end{split}
-	\end{align}
+	\map{\phi_{S}}
+		{U \cap S}{\R^{k}}
+		{q}{(x^{1}(q),\dots,x^{k}(q))}
 	
-	Sappiamo inoltre che
+	Sappiamo che
 	
 	\begin{equation}
 		U \cap S = \{ q \in U \mid x^{k+1}(q) = \dots = x^{n}(q) = 0 \}
@@ -4548,30 +4545,26 @@ Deduciamo dunque che $ S $ è una varietà topologica con $ \dim(S)=k $ poiché 
 
 	La composizione
 	
-	\begin{align}
-		\begin{split}
-			\phi \circ i \circ \phi_{S}^{-1} : \phi_{S}(U \cap S) &\to \R^{n}\\
-			\phi_{S}(q) = (\, r^{1}(\phi(q)),\dots,r^{k}(\phi(q)) \,) &\mapsto (\, r^{1}(\phi(q)),\dots,r^{k}(\phi(q)),0,\dots,0 \,)
-		\end{split}
-	\end{align}
+	\map{\phi \circ i \circ \phi_{S}^{-1}}
+		{\phi_{S}(U \cap S)}{\R^{n}}
+		{\phi_{S}(q) = (\, r^{1}(\phi(q)),\dots,r^{k}(\phi(q)) \,)}{(\, r^{1}(\phi(q)),\dots,r^{k}(\phi(q)),0,\dots,0 \,)}
 	
-	aggiungendo $ n-k $ zeri, dunque
+	aggiunge $ n-k $ zeri all'immagine, dunque
 	
 	\begin{equation}
-		(\phi \circ i \circ \phi_{S}^{-1}) (\, (r^{1},\dots,r^{k}) \,) = (r^{1},\dots,r^{k},0,\dots,0)
+		(\phi \circ i \circ \phi_{S}^{-1}) (r^{1},\dots,r^{k}) = (r^{1},\dots,r^{k},0,\dots,0)
 	\end{equation}
 
 	è un'applicazione liscia.\\	
-	Essendo $ p \in S $ e le carte arbitrarie, la dimostrazione vale per ogni punto in $ S $ e quindi $ i $ è un'applicazione liscia.\\\\
-	%
+	Essendo $ p \in S $ e le carte scelte arbitrariamente, la dimostrazione vale per ogni punto in $ S $ e quindi $ i $ è un'applicazione liscia.\\
 	Deduciamo anche che $ \phi \circ i \circ \phi_{S}^{-1} $ è un'immersione in quanto immersione canonica localmente (e quindi globalmente).\\
-	Il differenziale alla composizione, tramite la regola della catena, si può scrivere come
+	Il differenziale della composizione, tramite la regola della catena, si può scrivere come
 	
 	\begin{equation}
 		(\phi \circ i \circ \phi_{S}^{-1})_{*\phi_{S}(p)} = \phi_{*p} \circ i_{*p} \circ (\phi_{S}^{-1})_{*\phi_{S}(p)}
 	\end{equation}
 
-	siccome il differenziale porta isomorfismi in isomorfismi (lo sono $ \phi \circ i \circ \phi_{S}^{-1} $, $ \phi_{*p} $ e $ (\phi_{S}^{-1})_{*\phi_{S}(p)} $ in quanto applicazioni di carte) e $ \phi \circ i \circ \phi_{S}^{-1} $ è iniettiva in quanto immersione, allora $ i_{*p} $ è un'immersione in $ p $. Essendo $ p $ arbitrario, l'inclusione $ i $ è un'immersione.
+	siccome il differenziale porta isomorfismi in isomorfismi (lo sono $ \phi \circ i \circ \phi_{S}^{-1} $, $ \phi_{*p} $ e $ (\phi_{S}^{-1})_{*\phi_{S}(p)} $ in quanto applicazioni appartenenti a carte) e $ \phi \circ i \circ \phi_{S}^{-1} $ è iniettiva in quanto immersione, allora $ i_{*p} $ è iniettiva in $ p $. Essendo $ p $ arbitrario, l'inclusione $ i $ è un'immersione.
 \end{proof}
 
 \subsubsection{\textit{Esempi}}
