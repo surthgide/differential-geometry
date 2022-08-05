@@ -4519,7 +4519,7 @@ Chiameremo la struttura differenziabile costruita nella proposizione \textit{str
 \end{proof}
 
 \begin{definition}
-	Siano $ N $ una varietà differenziabile con $ \dim(N)=n $ e $ S \subset N $ una sottovarietà di $ N $ con $ \dim(S)=k<n $, allora l'inclusione naturale
+	Siano $ N $ una varietà differenziabile con $ \dim(N) = n $ e $ S \subset N $ una sottovarietà di $ N $ con $ \dim(S)=k<n $, se e solo se l'inclusione naturale
 	
 	\map{i}
 		{S}{N}
@@ -4571,67 +4571,61 @@ Chiameremo la struttura differenziabile costruita nella proposizione \textit{str
 
 \paragraph{1) Seno del topologo}
 
-Consideriamo l'applicazione
+Siano un'applicazione $ f $ e il suo grafico $ \Gamma(f) $ definiti come:
 
-\begin{align}
-	\begin{split}
-		f : (0,1) &\to \R\\
-		x &\mapsto \sin(\dfrac{1}{x})
-	\end{split}
-\end{align}
+\sbs{0.5}{%
+			\map{f}
+			{(0,1)}{\R}
+			{x}{\sin(\dfrac{1}{x})}
+			
+			\begin{equation}
+				\Gamma(f) = \{ (x,f(x)) \mid x \in (0,1) \}
+			\end{equation}
+			}
+	{0.5}{%
+			\img{0.8}{img32}
+			}
 
-e il suo grafico
-
-\begin{equation}
-	\Gamma(f) = \{ (x,f(x)) \mid x \in (0,1) \}
-\end{equation}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.5\textwidth,keepaspectratio]{img32}
-\end{figure}
-
-Sia $ S = \Gamma(f) \cup I $ dove
+Sia inoltre l'insieme $ S = \Gamma(f) \cup I $ dove
 
 \begin{equation}
 	I = \{ (x,y) \in \R^{2} \mid x=0 \wedge y \in (-1,1) \}
 \end{equation}
 
 Consideriamo dunque $ S \subset \R^{2} $ con la topologia indotta da $ \R^{2} $ e verifichiamo se $ S $ sia una sottovarietà di $ \R^{2} $.\\
-L'insieme $ S $ con la struttura topologica indotta da $ \R^{2} $ non è una sottovarietà di $ \R^{2} $ in quanto non è nemmeno una varietà differenziabile: preso un punto $ p \in I $ e un intorno circolare $ U \ni p $, otteniamo che l'insieme $ U \cap S $ non è connesso in quanto costituito da infiniti segmenti disgiunti e dunque non può essere localmente euclideo poiché $ \R^{n} $ è connesso, quindi $ S $ non è una varietà.\\
+L'insieme $ S $ con la struttura topologica indotta da $ \R^{2} $ non è una sottovarietà di $ \R^{2} $ in quanto non è nemmeno una varietà differenziabile. Preso un punto $ p \in I $ e un intorno circolare $ U \ni p $, otteniamo che l'insieme $ U \cap S $ non è connesso in quanto costituito da infiniti segmenti disgiunti: a questo punto, $ S $ non può essere localmente euclideo poiché $ \R^{n} $ è connesso, quindi $ S $ non è una varietà differenziabile.\\
 Naturalmente, non è nemmeno possibile trovare una carta adattata che renda $ S $ una sottovarietà.
 
-\paragraph{2) Cuspide cubica}
+\sbs{0.5}{%
+			\paragraph{2) Cuspide cubica}
+	
+			L'insieme definito come	
+	
+			\begin{equation}
+				S = \{ (x,y) \in \R^{2} \mid y^{2}=x^{3} \}
+			\end{equation}
 
-Sia l'insieme
+			con la struttura topologica indotta da $ \R^{2} $ non è una sottovarietà di $ \R^{2} $ ma è una varietà di dimensione unitaria (curva) rispetto alla struttura topologica indotta da $ \R^{2} $.
+			}
+	{0.5}{%
+			\img{0.75}{img33}
+			}
 
-\begin{equation}
-	S = \{ (x,y) \in \R^{2} \mid y^{2}=x^{3} \}
-\end{equation}
+Possiamo definire l'applicazione che proietta i punti di $ S $ lungo l'asse verticale, i.e.
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.3\textwidth,keepaspectratio]{img33}
-\end{figure}
+\map{\psi}
+	{S}{\R}
+	{(x,y)}{y}
 
-L'insieme $ S $ con la struttura topologica indotta da $ \R^{2} $ non è una sottovarietà di $ \R^{2} $ ma è una varietà di dimensione unitaria (curva) rispetto alla struttura topologica indotta da $ \R^{2} $. Possiamo definire l'applicazione che proietta i punti di $ S $ lungo l'asse verticale, i.e.
-
-\begin{align}
-	\begin{split}
-		\psi : S &\to \R\\
-		(x,y) &\mapsto y
-	\end{split}
-\end{align}
-
-la quale individua un'unica carta per $ S $ che definisce una struttura differenziabile (è compatibile con sé stessa).\\\\
-%
+la quale individua un'unica carta $ (S,\psi) $ per $ S $ che definisce una struttura differenziabile (è compatibile con sé stessa).\\
 Mostriamo ora che $ S $ non è una sottovarietà di $ \R^{2} $ attraverso il fatto che l'inclusione $ i : S \to \R^{2} $ non è un'immersione nel punto 0 e dunque non può esserlo per $ \forall p \in S $.\\
-Supponiamo per assurdo che questa inclusione sia un'immersione e sia $ (U,\phi) $ una carta di $ S $ intorno a 0 con $ \phi : U \to (a,b) \subset \R $ tale che $ \phi^{-1}(0)=(0,0) $ e $ \phi $ sia un diffeomorfismo
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.4\textwidth,keepaspectratio]{img34}
-\end{figure}
+\sbs{0.4}{%
+			Supponiamo per assurdo che questa inclusione sia un'immersione e sia $ (U,\phi) $ una carta di $ S $ intorno a 0 con $ \phi : U \to (a,b) \subset \R $ tale che $ \phi^{-1}(0) = (0,0) $ e $ \phi $ sia un diffeomorfismo.
+			}
+	{0.6}{%
+			\img{0.7}{img34}
+			}
 
 Definiamo l'applicazione liscia
 
@@ -4639,8 +4633,8 @@ Definiamo l'applicazione liscia
 	h = i \circ \phi^{-1} : (a,b) \to \R^{2}
 \end{equation}
 
-la quale è un'immersione in quanto composizione di un isomorfismo e di un'immersione\footnote{%
-	La composizione di immersioni è ancora un'immersione: questo fatto deriva dal fatto che la composizione di funzioni iniettive (in questo caso differenziali) è ancora una funzione iniettiva.%
+la quale è un'immersione in quanto composizione di un diffeomorfismo e di un'immersione\footnote{%
+	La composizione di immersioni è ancora un'immersione: questo deriva dal fatto che la composizione di funzioni iniettive (in questo caso differenziali) è ancora una funzione iniettiva. In questo caso, il differenziale $ (i \circ \phi^{-1})_{*t} $ è iniettivo in quanto composizione del differenziale dell'immersione $ i $ (iniettivo) e dal differenziale del diffeomorfismo $ \phi $ (il quale è un isomorfismo), i.e. $ (i \circ \phi^{-1})_{*t} = i_{*\phi^{-1}(t)} \circ (\phi^{-1})_{*t} $.%
 }, tale che $ h(0)=(0,0) $. Scrivendo $ h(t) = (h_{1}(t),h_{2}(t)) $, sappiamo che
 
 \begin{equation}
@@ -4660,40 +4654,30 @@ Deriviamo l'ultima equazione rispetto a $ t $
 
 per $ t \to 0 $ abbiamo che
 
-\begin{align}
-	\begin{split}
-		\dot{h}_{1}(0) &= \dfrac{2}{3} \, (h_{2}(0))^{-\sfrac{1}{3}} \, \dot{h}_{2}(0)\\
-		&= \dfrac{2 \, \dot{h}_{2}(0)}{3 \, (h_{2}(0))^{\sfrac{1}{3}}}
-	\end{split}	
-\end{align}
+\begin{equation}
+		\dot{h}_{1}(0) = \dfrac{2}{3} \, (h_{2}(0))^{-\sfrac{1}{3}} \, \dot{h}_{2}(0) %
+		= \dfrac{2 \, \dot{h}_{2}(0)}{3 \, (h_{2}(0))^{\sfrac{1}{3}}}
+\end{equation}
 
 siccome $ h_{2}(0)=0 $, otteniamo che $ \dot{h}_{2}(0) $ deve tendere a 0 per far sì che $ \dot{h}_{1}(0) $ sia finito.\\
 Sappiamo inoltre che $ \dot{h}_{1}(0) \neq 0 $ perché se consideriamo la funzione $ h $ come una curva
 
-\begin{align}
-	\begin{split}
-		h : (a,b) &\to \R^{2}\\
-		t &\mapsto (h_{1}(t),h_{2}(t))
-	\end{split}	
-\end{align}
+\map{h}
+	{(a,b)}{\R^{2}}
+	{t}{(h_{1}(t),h_{2}(t))}
 
-e la differenziamo
+e la differenziamo in $ 0 $
 
-\begin{align}
-	\begin{split}
-		h'(0) &= h_{*0} \left( \left. \dfrac{\operatorname{d}}{\operatorname{dt}} \right|_{0} \right) \\
-		&= \dot{h}_{1}(0) \left. \dfrac{\partial}{\partial x} \right|_{(0,0)} + \dot{h}_{2}(0) \left. \dfrac{\partial}{\partial y} \right|_{(0,0)}
-	\end{split}
-\end{align}
+\begin{equation}
+	h'(0) = h_{*0} \left( \eval{ \dv{t} }_{0} \right) %
+	= \dot{h}_{1}(0) \eval{ \pdv{x} }_{(0,0)} + \dot{h}_{2}(0) \eval{ \pdv{y} }_{(0,0)}
+\end{equation}
 
-e se $ \dot{h}_{1}(0) = \dot{h}_{2}(0) = 0 $ allora $ h'(0) = 0 $ e quindi $ h_{*0} (\sfrac{\operatorname{d}}{\operatorname{dt}} |_{0} ) = 0 $, i.e.
+e se $ \dot{h}_{1}(0) = \dot{h}_{2}(0) = 0 $ allora $ h'(0) = 0 $ e quindi $ h_{*0} ( \eval{ \dv*{t} }_{0} ) = 0 $, i.e.
 
-\begin{align}
-	\begin{split}
-		h_{*0} : T_{0}((a,b)) &\to T_{(0,0)}(\R^{2})\\
-		\left. \dfrac{\operatorname{d}}{\operatorname{dt}} \right|_{0} &\mapsto 0
-	\end{split}
-\end{align}
+\map{h_{*0}}
+	{T_{0}((a,b))}{T_{(0,0)}(\R^{2})}
+	{\eval{ \dv{t} }_{0}}{0}
 
 ma questo non è possibile in quanto $ h $ è un'immersione quindi il suo differenziale deve essere iniettivo.\\
 Da questo ragionamento, sappiamo ora che $ \dot{h}_{2}(0)=0 $ e $ \dot{h}_{1}(0) \neq 0 $:
@@ -4726,80 +4710,66 @@ La sfera $ \S^{2} $ è definita come
 
 L'idea alla base è quella di sfruttare la seguente applicazione liscia
 
-\begin{align}
-	\begin{split}
-		f : \R^{3} &\to \R\\
-		(x,y,z) &\mapsto x^{2} + y^{2} + z^{2} - 1
-	\end{split}
-\end{align}
+\map{f}
+	{\R^{3}}{\R}
+	{(x,y,z)}{x^{2} + y^{2} + z^{2} - 1}
 
 in modo tale da avere la sfera come controimmagine del punto 0, i.e.
 
 \begin{equation}
-\S^{2} = f^{-1}(\{0\}) \doteq f^{-1}(0)
+\S^{2} = f^{-1}(0)
 \end{equation}
 
-Osserviamo che $ 0 \in \mathcal{VR}_{f} $, cioè la controimmagine di 0, i.e. la sfera, è costituita da tutti e soli punti regolari, cioè punti in cui il differenziale di $ f $ è suriettivo. In simboli
+Osserviamo che $ 0 \in \mathcal{VR}_{f} $, cioè la controimmagine di 0, i.e. la sfera, è costituita da tutti e soli punti regolari tramite $ f $, cioè punti in cui il differenziale di $ f $ è suriettivo. In simboli
 
 \begin{gather}
 	p \in \mathcal{PR}_{f}, \, \forall p \in f^{-1}(0) = \S^{2}\nonumber\\
 	\Updownarrow\\
-	f_{*p} : T_{p}(\R^{3}) \to T_{0}(\R) \text{ suriettiva}\nonumber
+	f_{*p} : T_{p}(\R^{3}) \to T_{0}(\R) \text{ suriettivo}\nonumber
 \end{gather}
 
-Sappiamo inoltre che queste condizioni sono equivalenti al fatto che le derivate parziali
-
-\begin{equation}
-	\dfrac{\partial f}{\partial x} (p), \, \dfrac{\partial f}{\partial y} (p), \, \dfrac{\partial f}{\partial z} (p)
-\end{equation}
-
-non si annullano contemporaneamente, in quanto per la sfera
+Sappiamo inoltre che queste condizioni sono equivalenti al fatto che le derivate parziali di $ f $ rispetto a $ (x,y,z) $ non si annullano contemporaneamente nei punti della sfera, i.e.
 
 \begin{equation}
 	\begin{cases}
-		\dfrac{\partial f}{\partial x} (p) = 2x(p)\\\\
+		\dpdv{f}{x} \, (p) = 2x(p)\\\\
 		%
-		\dfrac{\partial f}{\partial y} (p) = 2y(p)\\\\
+		\dpdv{f}{y} \, (p) = 2y(p)\\\\
 		%
-		\dfrac{\partial f}{\partial z} (p) = 2z(p)
+		\dpdv{f}{z} \, (p) = 2z(p)
 	\end{cases}
 \end{equation}
 
-si annullano solo per $ p=0 $ ma $ (0,0,0) \notin \S^{2} $ quindi $ 0 \in \mathcal{VR}_{f} $.
-Sia $ p \in \S^{2} $ e supponiamo che $ x(p) \neq 0 $ (i.e. la prima coordinata di $ p $ on è nulla) e sia l'applicazione liscia
+si annullano solo per $ p = (0,0,0) $, il quale non appartiene alla sfera, i.e. $ (0,0,0) \notin \S^{2} $, quindi $ 0 \in \mathcal{VR}_{f} $.\\
+Sia $ p \in \S^{2} $ e supponiamo che $ x(p) \neq 0 $ (i.e. la prima coordinata di $ p $ non è nulla) e sia l'applicazione liscia
 
-\begin{align}
-	\begin{split}
-		g : \R^{3} &\to \R^{3}\\
-		(x,y,z) &\mapsto (f(x,y,z),y,z)
-	\end{split}
-\end{align}
+\map{g}
+	{\R^{3}}{\R^{3}}
+	{(x,y,z)}{(f(x,y,z),y,z)}
 
-Lo jacobiano della funzione appena definita è pari a
+Essendo questa applicazione definita tra due spazi della stessa dimensione, possiamo calcolarne lo jacobiano, il quale vale
 
 \begin{equation}
-	J(g)(p) = \begin{bmatrix} \dfrac{\partial f}{\partial x} (p) & \dfrac{\partial f}{\partial y} (p) & \dfrac{\partial f}{\partial z} (p) \\\\ 0 & 1 & 0 \\\\ 0 & 0 & 1 \end{bmatrix} = \begin{bmatrix} 2x(p) & 2y(p) & 2z(p) \\\\ 0 & 1 & 0 \\\\ 0 & 0 & 1 \end{bmatrix}
+	J(g)(p) = \bmqty{ \dpdv{f}{x} \, (p) & \dpdv{f}{y} \, (p) & \dpdv{f}{z} \, (p) \\\\ 0 & 1 & 0 \\\\ 0 & 0 & 1 } %
+	= \bmqty{ 2x(p) & 2y(p) & 2z(p) \\\\ 0 & 1 & 0 \\\\ 0 & 0 & 1 }
 \end{equation}
 
 il cui determinante è
 
-\begin{align}
-	\begin{split}
-		\det(J(g)(p)) &= \dfrac{\partial f}{\partial x} (p)\\
-		&= 2x(p) \neq 0
-	\end{split}
-\end{align}
+\begin{equation}
+	\det(J(g)(p)) = \pdv{f}{x} \, (p) = 2x(p) \neq 0
+\end{equation}
 
 Per il corollario del teorema della funzione inversa\footnote{%
 	Vedi Corollario \ref{ift-cor}.%
-}, esiste un intorno aperto $ U \subset \R^{3} $ di $ p $ tale che $ g_{|U} : U \to g(U) $ sia un diffeomorfismo e dunque $ (U,g_{|U}) $ è una carta di $ \R^{3} $: in questo caso, $ (U,g_{|U}) $ con $ g_{|U} = (f,y,z) $ è una carta adatta di $ \R^{3} $ intorno a $ p $ relativamente a $ \S^{2} $. La verifica, è necessario che $ U \cap \S^{2} $ sia un'insieme dato dall'annullarsi di una coordinata:
+}, esiste un intorno aperto $ U \subset \R^{3} $ di $ p $ tale che $ \eval{g}_{U} : U \to g(U) $ sia un diffeomorfismo e dunque $ (U,\eval{g}_{U}) $ è una carta di $ \R^{3} $: in questo caso, $ (U,\eval{g}_{U}) $ con $ \eval{g}_{U} = (f(x,y,z),y,z) $ è una carta adatta di $ \R^{3} $ intorno a $ p $ relativamente a $ \S^{2} $. Per verificare quest'ultima proposizione, è necessario che $ U \cap \S^{2} $ sia un'insieme dato dall'annullarsi di una coordinata:
 
 \begin{equation}
-	U \cap \S^{2} = \{ q \in U \mid f(q) = 0 \} \equiv \S^{2}
+	U \cap \S^{2} = \{ q \in U \mid g^{1}(q) = f(q) = 0 \} \equiv \S^{2}
 \end{equation}
 
 A questo punto, intorno a tutti i punti $ p $ che hanno $ x(p) \neq 0 $ esiste una carta adattata. Il ragionamento è analogo per le altre due coordinate.\\
-In conclusione, per definizione, $ \S^{2}$ è una sottovarietà di $\R^{3} $ con $ \dim(\S^{2})=2 $.
+In conclusione, per definizione, $ \S^{2}$ è una sottovarietà di $\R^{3} $ con $ \dim(\S^{2}) = 2 $, in quanto solo una coordinata delle carte adattate si annulla.
 
 \subsubsection{Preimmagini e sottovarietà}
 
