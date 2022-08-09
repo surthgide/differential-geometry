@@ -4774,70 +4774,78 @@ In conclusione, per definizione, $ \S^{2}$ è una sottovarietà di $\R^{3} $ con
 \subsubsection{Preimmagini e sottovarietà}
 
 \begin{theorem}[Preimmagine di un valore regolare (caso $ M = \R $)]
-	Siano $ N $ una varietà differenziabile con $ \dim(N)=n $, $ f : N \to \R $ un'applicazione liscia e $ c \in \mathcal{VR}_{f} \cap f(N) $\footnote{%
-		$ q \notin f(N) \implies q \in \mathcal{VR}_{f}, \, \forall q \in N $%
-	}, i.e. $ f^{-1}(c) \neq 0 $, allora $ f^{-1}(c) $ è una sottovarietà di $ N $ con $ \dim(f^{-1}(c)) = n-1 $.
+	Siano $ N $ una varietà differenziabile con $ \dim(N) = n $, $ f : N \to \R $ un'applicazione liscia e $ c \in \VR_{f} \cap f(N) $ un valore regolare che risiede nell'immagine della funzione\footnote{%
+		$ q \notin f(N) \implies q \in \VR_{f}, \, \forall q \in N \implies f(\PR_{f}) \not\supset \VR_{f}$%
+	}, i.e. $ f^{-1}(c) \neq \emptyset $, allora $ f^{-1}(c) $ è una sottovarietà di $ N $ con $ \dim(f^{-1}(c)) = n-1 $.
 \end{theorem}
 
 \begin{proof}
-	Possiamo sempre supporre che $ c = 0 \in \R $\footnote{%
-		Se consideriamo $ h : N \to \R $ con $ h(x) \doteq f(x) - c $, abbiamo che $ h^{-1}(0) = f^{-1}(0) $ e $ c \in \mathcal{VR}_{f} \iff 0 \in \mathcal{VR}_{h} $, perché $ \sfrac{\partial f}{\partial x} = \sfrac{\partial h}{\partial x} $.%
-	}.\\
-	Sia $ p \in f^{-1}(0) $, vogliamo quindi trovare una carta adattata di $ N $ intorno a $ p $ relativamente a $ f^{-1}(0) $. Il fatto che $ 0 \in \mathcal{VR}_{f} $ implica che almeno una delle derivate parziali di $ f $
-	
-	\begin{equation}
-		\dfrac{\partial f}{\partial x^{1}} (p), \dots, \dfrac{\partial f}{\partial x^{n}} (p)
-	\end{equation}
-	
-	non si annulli, per qualsiasi carta $ (U,\phi) $ con $ \phi = (x^{1},\dots,x^{n}) $ intorno a $ p $.\\
-	Supponiamo che non si annulli la prima derivata\footnote{%
-		Nel caso in cui lo fosse, possiamo permutare le coordinate della carta ottenendo una carta identica.%
+	Possiamo sempre supporre che\footnote{%
+		Se consideriamo
+		%		
+		\maps{h}
+			{N}{\R}
+			{x}{f(x) - c}
+		
+		abbiamo che $ h^{-1}(0) = f^{-1}(0) $ e $ c \in \VR_{f} \iff 0 \in \VR_{h} $, perché $ \pdv*{f}{x} = \pdv*{h}{x} $.%
+	} $ c = 0 \in \R $.\\
+	Sia un punto $ p \in f^{-1}(0) $, vogliamo quindi trovare una carta adattata di $ N $ intorno a $ p $ relativamente a $ f^{-1}(0) $. Il fatto che $ 0 \in \VR_{f} $ implica che almeno una delle derivate parziali di $ f $, i.e. $ \pdv*{f}{x^{i}} \, (p) $, non si annulli se consideriamo una qualsiasi carta $ (U,\phi) $ con $ \phi = (x^{1},\dots,x^{n}) $ intorno a $ p $.\\
+	Supponiamo ora che non si annulli la prima derivata\footnote{%
+		Nel caso in cui la prima derivata fosse nulla, possiamo permutare le coordinate della carta ottenendo una carta identica per cui la prima derivata è diversa da zero.%
 	} e consideriamo l'applicazione liscia
 
-	\begin{align}
-		\begin{split}
-			g : U &\to \R^{n}\\
-			q &\mapsto (f(q),x^{2}(q),\dots,x^{n}(q))
-		\end{split}
-	\end{align}
+	\map{g}
+		{U}{\R^{n}}
+		{q}{(f(q),x^{2}(q),\dots,x^{n}(q))}
 
 	Il determinante dello jacobiano di $ g $ nel punto $ p $ vale
-	
+
 	\begin{equation}
-		\det(J(g)(p)) = \det ( \begin{bmatrix} \dfrac{\partial f}{\partial x^{1}} (p) & \cdots & \cdots & \dfrac{\partial f}{\partial x^{n}} (p) \\\\ 0 & 1 & \cdots & 0 \\\\ \vdots & & \ddots & \vdots \\\\ 0 & \cdots & 0 & 1 \end{bmatrix} ) = \dfrac{\partial f}{\partial x^{1}} (p) \neq 0
+		\det(J(g)(p)) = \det( \bmqty{%
+			\dpdv{f}{x^{1}} \, (p) & \cdots & \cdots & \dpdv{f}{x^{n}} \, (p) \\\\ %
+			0 & 1 & \cdots & 0 \\\\ %
+			\vdots & & \ddots & \vdots \\\\ %
+			0 & \cdots & 0 & 1
+			} ) %
+		= \dpdv{f}{x^{1}} \, (p) \neq 0
 	\end{equation}
 
-	dunque, dal corollario del teorema della funzione inversa, esiste un aperto $ U_{p} $ di $ U $ (quindi di $ N $) tale che $ (U_{p},g_{|U_{p}}) $ è una carta di $ N $ intorno a $ p $. Prendendo l'intersezione
+	dunque, dal corollario del teorema della funzione inversa, esiste un aperto $ U_{p} $ di $ U $ (quindi di $ N $) tale che $ (U_{p},\eval{g}_{U_{p}}) $ è una carta di $ N $ intorno a $ p $. Prendendo l'intersezione
 	
 	\begin{equation}
 		U_{p} \cap f^{-1}(0) = \{ q \in U_{p} \mid f(q)=0 \} \equiv f^{-1}(0)
 	\end{equation}
 
-	otteniamo che $ (U_{p},g_{|U_{p}}) $ è una carta adattata e quindi, siccome il punto $ p \in f^{-1}(0) $ è arbitrario, ogni punto di $ f^{-1}(0) $ ammette una carta adattata: questo dimostra che $ f^{-1}(0) $ è una sottovarietà di $ N $ con $ \dim(f^{-1}(0)) = n-1 $, in quanto solo una delle coordinate in $ U_{p} \cap f^{-1}(0) $ si annulla.
+	otteniamo che $ (U_{p},\eval{g}_{U_{p}}) $ è una carta adattata e quindi, siccome il punto $ p \in f^{-1}(0) $ è arbitrario, ogni punto di $ f^{-1}(0) $ ammette una carta adattata: questo dimostra che $ f^{-1}(0) $ è una sottovarietà di $ N $ con $ \dim(f^{-1}(0)) = n-1 $, in quanto solo una delle coordinate in $ U_{p} \cap f^{-1}(0) $ si annulla.
 \end{proof}
 
 \begin{definition}
 	Siano $ N $ una varietà con $ \dim(N)=n $ e $ S $ una sottovarietà di $ N $ con $ \dim(S)=k \leqslant n $. La \textit{codimensione} di $ S $ in $ N $ è definita come
 	
 	\begin{equation}
-		\operatorname{cod}_{N}(S) = n-k
+		\operatorname{cod}_{N}(S) \doteq n-k
 	\end{equation}
 
 	e rappresenta il numero di variabili che si annullano in una carta adattata di $ N $ relativamente a $ S $.
 \end{definition}
 
+Possiamo dimostrare ora il teorema della preimmagine di un valore regolare nel caso di un'applicazione tra varietà.
+
 \begin{theorem}[Preimmagine di un valore regolare]
-	Siano due varietà differenziabili $ N $ e $ M $ rispettivamente con $ \dim(N)=n $ e $ \dim(M)=m $, $ F : N \to M $ un'applicazione liscia tra varietà e $ c \in \mathcal{VR}_{f} \cap F(N) $, i.e. $ F^{-1}(c) \neq \emptyset $, allora $ F^{-1}(c) $ è una sottovarietà di $ N $ con $ \dim(F^{-1}(c)) = n-m $ o equivalentemente $ \operatorname{cod}_{N}(F^{-1}(c)) = m $.\\
-	Inoltre $ T_{p}(F^{-1}(c)) = \ker(F_{*p}) $ per $ \forall p \in F^{-1}(c) $, i.e. lo spazio tangente coincide con l'insieme dei vettori di $ T_{p}(N) $ che si annullano tramite il differenziale.
+	Siano $ N $ e $ M $ due varietà differenziabili rispettivamente con $ \dim(N)=n $ e $ \dim(M)=m $, $ F : N \to M $ un'applicazione liscia tra varietà e $ c \in \VR_{f} \cap F(N) $ un valore regolare che risiede nell'immagine della funzione, i.e. $ F^{-1}(c) \neq \emptyset $, allora $ F^{-1}(c) $ è una sottovarietà di $ N $ con $ \dim(F^{-1}(c)) = n-m $ o equivalentemente $ \operatorname{cod}_{N}(F^{-1}(c)) = m $.\\
+	Inoltre
+	
+	\begin{equation}
+		T_{p}(F^{-1}(c)) = \ker(F_{*p}) \qcomma \forall p \in F^{-1}(c)
+	\end{equation} 
+
+	il che significa che lo spazio tangente coincide con l'insieme dei vettori di $ T_{p}(N) $ che si annullano tramite il differenziale.
 \end{theorem}
 
 \begin{proof}
-	Fissiamo un punto $ p \in F^{-1}(c) $ e scegliamo due carte $ (U,\phi) \in N $ intorno a $ p $ con $ \phi = (x^{1},\dots,x^{n}) $ e $ (V,\psi) \in M $ intorno a $ c $ con $ \psi = (y^{1},\dots,y^{m}) $ tale che $ \psi(c)=0 \in \R^{m} $ e $ F(U) \subseteq V $+ (in quanto $ F $ è continua).
+	Fissiamo un punto $ p \in F^{-1}(c) $ e scegliamo due carte $ (U,\phi) \in N $ intorno a $ p $ con $ \phi = (x^{1},\dots,x^{n}) $ e $ (V,\psi) \in M $ intorno a $ c $ con $ \psi = (y^{1},\dots,y^{m}) $ tale che $ \psi(c)=0 \in \R^{m} $ e $ F(U) \subseteq V $ (in quanto $ F $ è continua).
 	
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=0.7\textwidth,keepaspectratio]{img35}
-	\end{figure}
+	\img{0.8}{img35}
 
 	Localmente possiamo scrivere l'applicazione $ F $ come
 	
@@ -4846,78 +4854,70 @@ In conclusione, per definizione, $ \S^{2}$ è una sottovarietà di $\R^{3} $ con
 	\end{equation}
 
 	dove $ \phi(U) \subset \R^{n} $ e $ \psi(V) \subset \R^{m} $.\\
-	Siccome $ c \in \mathcal{VR}_{f} $, il differenziale $ F_{*p} : T_{p}(N) \to T_{F(p)}(M) $ è suriettiva o equivalentemente $ p \in \mathcal{PR}_{F} $ o ancora $ F $ è una sommersione in $ p $. Da questo sappiamo anche che $ \rank(F(p)) = m \leqslant n $ per cui, localmente, è il rango dello jacobiano
+	Siccome $ c \in \VR_{f} $, il differenziale $ F_{*p} : T_{p}(N) \to T_{F(p)}(M) $ è suriettivo o equivalentemente $ p \in \PR_{F} $ o ancora $ F $ è una sommersione in $ p $. Da questo sappiamo anche che $ \rank(F(p)) = m \leqslant n $ per cui, localmente, è anche il rango dello jacobiano di $ F $ calcolato in $ p $
 	
 	\begin{equation}
-		\rank(J(F)(p)) = \rank \left( \left[ \dfrac{\partial F^{i}}{\partial x^{j}} (p) \right] \right) = m
+		\rank(J(F)(p)) = \rank \left( \left[ \pdv{F^{i}}{x^{j}} \, (p) \right] \right) = m
 	\end{equation}
 
-	dove $ F^{i} = y^{i} \circ F = r^{i} \circ \psi \circ F $, e quindi esiste un minore di ordine $ m $ il quale determinante è diverso da zero: possiamo sempre supporre che il minore in questione sia quello formato dalle prime $ m $ righe e $ m $ colonne, in quanto la permutazione di coordinate all'interno delle carte le lascia invariate, i.e.
+	dove $ F^{i} = y^{i} \circ F = r^{i} \circ \psi \circ F $, e quindi esiste un minore di ordine $ m $ il cui determinante è diverso da zero: possiamo sempre supporre che il minore in questione sia quello formato dalle prime $ m $ righe e $ m $ colonne, in quanto la permutazione di coordinate all'interno delle carte le lascia invariate, i.e.
 	
 	\begin{equation}
-		\det( \left[ \dfrac{\partial F^{i}}{\partial x^{j}} (p) \right] ) \neq 0
+		\det( \left[ \pdv{F^{i}}{x^{j}} \, (p) \right] ) \neq 0 \qcomma i,j=1,\dots,m
 	\end{equation}
 
-	con $ i,j=1,\dots,m $.\\
-	Definisco l'applicazione liscia
+	Definiamo ora l'applicazione liscia
 	
-	\begin{align}
-		\begin{split}
-			g : U &\to \R^{n}\\
-			q &\mapsto (F^{1}(q),\dots,F^{m}(q),x^{m+1}(q),\dots,x^{n}(q))
-		\end{split}
-	\end{align}
+	\map{g}
+		{U}{\R^{n}}
+		{q}{(F^{1}(q),\dots,F^{m}(q),x^{m+1}(q),\dots,x^{n}(q))}
 
-	dove abbiamo sostituito le prime $ m $ coordinate con l'immagine di $ q $ tramite $ (F^{1},\dots,F^{m}) $, il cui jacobiano è
+	dove abbiamo sostituito le prime $ m $ coordinate con l'immagine di $ q $ tramite $ (F^{1},\dots,F^{m}) $. Lo jacobiano dell'applicazione $ g $ è dato da
 	
-	\begin{align}
-		\begin{split}
-			J(g)(p) &= %
-			\begin{bmatrix}
-				\dfrac{\partial F^{1}}{\partial x^{1}} (p) & \dfrac{\partial F^{1}}{\partial x^{1}} (p) & \cdots & \dfrac{\partial F^{1}}{\partial x^{m}} (p) & \dfrac{\partial F^{1}}{\partial x^{m+1}} (p) & \dfrac{\partial F^{2}}{\partial x^{m+2}} (p) & \cdots & \dfrac{\partial F^{1}}{\partial x^{n}} (p) \\\\
-				%
-				\dfrac{\partial F^{2}}{\partial x^{1}} (p) & \dfrac{\partial F^{2}}{\partial x^{1}} (p) & \cdots & \dfrac{\partial F^{2}}{\partial x^{m}} (p) & \dfrac{\partial F^{2}}{\partial x^{m+1}} (p) & \dfrac{\partial F^{2}}{\partial x^{m+2}} (p) & \cdots & \dfrac{\partial F^{2}}{\partial x^{n}} (p) \\\\
-				%
-				\vdots & \vdots & \ddots & \vdots & \vdots & \vdots & \ddots & \vdots \\\\
-				%
-				\dfrac{\partial F^{m}}{\partial x^{1}} (p) & \dfrac{\partial F^{m}}{\partial x^{1}} (p) & \cdots & \dfrac{\partial F^{m}}{\partial x^{m}} (p) & \dfrac{\partial F^{m}}{\partial x^{m+1}} (p) & \dfrac{\partial F^{2}}{\partial x^{m+2}} (p) & \cdots & \dfrac{\partial F^{m}}{\partial x^{n}} (p) \\\\
-				%
-				0 & 0 & \cdots & 0 & 1 & 0 & \cdots & 0 \\\\
-				%
-				0 & 0 & \cdots & 0 & 0 & 1 & \cdots & 0 \\\\
-				%
-				\vdots & \vdots & \ddots & \vdots & \vdots & \vdots & \ddots & \vdots \\\\
-				%
-				0 & 0 & \cdots & 0 & 0 & 0 & \cdots & 1
-			\end{bmatrix}\\\\%
-			&= %
-			\begin{bmatrix}
-				J(F)(p) & \left[ \dfrac{\partial F^{k}}{\partial x^{h}} (p) \right] \\\\
-				0 & \bigone
-			\end{bmatrix}
-		\end{split}
-	\end{align}
+	\begin{equation}
+		J(g)(p) = %
+		\bmqty{ %
+			\dpdv{F^{1}}{x^{1}} \, (p) & \cdots & \dpdv{F^{1}}{x^{m}} \, (p) & \dpdv{F^{1}}{x^{m+1}} \, (p) & \cdots & \dpdv{F^{1}}{x^{n}} \, (p) \\\\ %
+			\vdots & \ddots & \vdots & \vdots & \ddots & \vdots \\\\ %
+			\dpdv{F^{m}}{x^{1}} \, (p) & \cdots & \dpdv{F^{m}}{x^{m}} \, (p) & \dpdv{F^{m}}{x^{m+1}} \, (p) & \cdots & \dpdv{F^{m}}{x^{n}} \, (p) \\\\ %
+			0 & \cdots & 0 & 1 & \cdots & 0 \\\\ %
+			\vdots & \ddots & \vdots & \vdots & \ddots & \vdots \\\\ %
+			0 & \cdots & 0 & 0 & \cdots & 1 %
+		 } %
+	 	= \bmqty{ %
+	 		J(F)(p) & \left[ \dpdv{F^{i}}{x^{k}} \, (p) \right] \\\\ %
+	 		0_{n-(m+1),m} & \bigone_{n-(m+1),m} %
+	 		}
+	\end{equation}
 
-	Essendo una matrice a blocchi, il determinante di questa matrice è ottenuto dai determinanti dei blocchi, i.e.
+	dove $ i=1,\dots,m $ e $ k=m+1,\dots,n $.\\
+	Essendo una matrice a blocchi, il determinante di questa matrice è ottenuto dai determinanti dei blocchi, i.e.\footnote{%
+		Le dimensioni delle matrici nulla e unitaria sono state rimosse in quanto ininfluenti nel calcolo dei loro determinanti.%
+	}
 	
-	\begin{align}
-		\begin{split}
-			\det(J(g)(p)) &= \det \left( \begin{bmatrix} J(F)(p) & \left[ \dfrac{\partial F^{k}}{\partial x^{h}} (p) \right] \\\\ 0 & \bigone \end{bmatrix} \right)\\\\
-			&= \begin{bmatrix} \det(J(F)(p)) & \det( \left[ \dfrac{\partial F^{k}}{\partial x^{h}} (p) \right] ) \\\\ \det(0) & \det(\bigone) \end{bmatrix}\\\\
-			&= \det(J(F)(p)) \neq 0
-		\end{split}
-	\end{align}
+	\begin{equation}
+		\det(J(g)(p)) = %
+		\bmqty{ %
+			\det( J(F)(p) ) & \det( \left[ \dpdv{F^{i}}{x^{k}} \, (p) \right] ) \\\\ %
+			\det( 0 ) & \det( \bigone ) %
+			} %
+		= \det( J(F)(p) ) \neq 0
+	\end{equation}
 
-	con $ i,j=1,\dots,m $.\\
-	Per il corollario del teorema della funzione inversa, esiste un aperto $ U_{p} \in N $ tale che $ (U_{p},g_{|U_{p}}) $ sia una carta di $ N $ intorno a $ p $. Siccome
+	Per il corollario del teorema della funzione inversa, esiste un aperto $ U_{p} \in N $ tale che $ (U_{p},\eval{g}_{U_{p}}) $ sia una carta di $ N $ intorno a $ p $. Siccome
 	
 	\begin{equation}
 		U_{p} \cap F^{-1}(c) = \{ q \in U_{p} \mid F^{1}(q) = \dots = F^{m}(q) = 0 \} \equiv F^{-1}(c)
 	\end{equation}
 
-	quindi $ (U_{p},g_{|U_{p}}) $ è una carta adattata di $ N $ intorno a $ p $ relativamente a $ F^{-1}(c) $, ma $ p $ è un punto arbitrario, quindi esiste una carta adattata intorno ad ogni punto. Siccome si annullano $ m $ coordinate, $ F^{-1}(c) $ è una sottovarietà di $ N $ con $ \dim(F^{-1}(c)) = n-m $ o equivalentemente $ \operatorname{cod}_{N}(F^{-1}(c)) = m $.\\\\
-	%
-	Dobbiamo ora dimostrare che $ T_{p}(F^{-1}(c)) = \ker(F_{*p}) $ per $ \forall p \in F^{-1}(c) $: per farlo, dimostriamo le due inclusioni
+	quindi $ (U_{p},\eval{g}_{U_{p}}) $ è una carta adattata di $ N $ intorno a $ p $ relativamente a $ F^{-1}(c) $, ma $ p $ è un punto arbitrario, quindi esiste una carta adattata intorno ad ogni punto. Siccome si annullano $ m $ coordinate, $ F^{-1}(c) $ è una sottovarietà di $ N $ con $ \dim(F^{-1}(c)) = n-m $ o equivalentemente $ \operatorname{cod}_{N}(F^{-1}(c)) = m $.\\
+	Dobbiamo ora dimostrare che
+	
+	\begin{equation}
+		T_{p}(F^{-1}(c)) = \ker(F_{*p}) \qcomma \forall p \in F^{-1}(c)
+	\end{equation} 
+	
+	Questa uguaglianza equivale a dimostrare le due inclusioni seguenti:
 	
 	\begin{equation}
 		\begin{cases}
@@ -4926,24 +4926,32 @@ In conclusione, per definizione, $ \S^{2}$ è una sottovarietà di $\R^{3} $ con
 		\end{cases}
 	\end{equation}
 	
-	Per la prima, ricordiamo che il vettore tangente a una varietà può essere descritto come il vettore velocità di una curva (liscia) che passa per il punto della varietà considerato, definita come $ \gamma : (-\varepsilon,\varepsilon) \to F^{-1}(c) $ con $ \gamma(0) = p $ e $ \gamma'(0) = X_{p} \in T_{p}(F^{-1}(c)) $. Per definizione di controimmagine e dalla definizione della curva $ \gamma $, abbiamo che
+	Per la prima, ricordiamo che il vettore tangente a una varietà può essere descritto come il vettore velocità di una curva liscia che passa per il punto della varietà considerato, i.e.
 	
 	\begin{equation}
-		F(\gamma(t)) = (F \circ \gamma)(t) = c
+		\begin{cases}
+			\gamma : (-\varepsilon,\varepsilon) \to F^{-1}(c)\\
+			\gamma(0) = p\\
+			\gamma'(0) = X_{p} \in T_{p}(F^{-1}(c))
+		\end{cases}
+	\end{equation}
+
+	Per definizione di controimmagine e dalla definizione della curva $ \gamma $, abbiamo che
+	
+	\begin{equation}
+		F(\gamma(t)) = (F \circ \gamma)(t) = c \qcomma \forall t \in (-\varepsilon,\varepsilon)
 	\end{equation}
 	
-	per $ \forall t \in (-\varepsilon,\varepsilon) $, ma allora il differenziale
+	dunque il differenziale di $ F $ nel punto $ p $ è dato da
 	
-	\begin{align}
-		\begin{split}
-			F_{*p}(X_{p}) &= (F \circ \gamma)'(0)\\
-			&= c'(0)\\
-			&= 0 \in T_{F(p)}(M)
-		\end{split}
-	\end{align}
+	\begin{equation}
+		F_{*p}(X_{p}) = (F \circ \gamma)'(0) %
+		= c'(0) %
+		= 0 \in T_{F(p)}(M)
+	\end{equation}
 
-	dove $ c $ è intesa come l'applicazione costante, il cui vettore tangente è il vettore nullo, dunque $ X_{p} \in \ker(F_{*p}) $ e la prima inclusione è dimostrata.\\
-	Per la seconda, è sufficiente verificare che
+	dove $ c $ è intesa come l'applicazione costante, il cui vettore tangente è il vettore nullo, perciò $ X_{p} \in \ker(F_{*p}) $ e la prima inclusione è dimostrata.\\
+	Per la seconda inclusione è sufficiente verificare che
 	
 	\begin{equation}
 		\dim(T_{p}(F^{-1}(c))) = \dim(\ker(F_{*p}))
@@ -4955,23 +4963,32 @@ In conclusione, per definizione, $ \S^{2}$ è una sottovarietà di $\R^{3} $ con
 		\dim(T_{p}(F^{-1}(c))) = \dim(F^{-1}(c)) = n-m
 	\end{equation}
 
-	e il differenziale $ F_{*p} : T_{p}(N) \to T_{F(p)}(M) $ è suriettivo in quanto $ p \in \mathcal{PR}_{F} $ dunque, tramite il teorema della dimensione in algebra lineare
-	
+	e il differenziale $ F_{*p} : T_{p}(N) \to T_{F(p)}(M) $ è suriettivo in quanto $ p \in \PR_{F} $ dunque, tramite il teorema della dimensione in algebra lineare
 	\begin{align}
 		\begin{split}
-			\dim(\ker(F_{*p})) + \dim(\Im(F_{*p})) &= \dim(T_{p}(N))\\
-			\dim(\ker(F_{*p})) + \dim(T_{F(p)}(M)) &= \dim(N)\\
-			\dim(\ker(F_{*p})) + \dim(M) &= n\\
-			\dim(\ker(F_{*p})) + m &= n\\
+			\dim(\Im(F_{*p})) + \dim(\ker(F_{*p})) &= \dim(T_{p}(N))\\
+			\dim(T_{F(p)}(M)) + \dim(\ker(F_{*p})) &= \dim(N)\\
+			\dim(M) + \dim(\ker(F_{*p})) &= n\\
+			m + \dim(\ker(F_{*p})) &= n\\
 			\dim(\ker(F_{*p})) &= n-m
 		\end{split}		
 	\end{align}
 
-	dove $ \dim(\Im(F_{*p})) = \dim(T_{F(p)}(M)) $ proprio perché il differenziale $ F_{*p} $ è suriettivo, perciò $ T_{p}(F^{-1}(c)) = \ker(F_{*p}) $.
+	dove $ \dim(\Im(F_{*p})) = \dim(T_{F(p)}(M)) $ proprio perché il differenziale $ F_{*p} $ è suriettivo, perciò $ T_{p}(F^{-1}(c)) = \ker(F_{*p}) $.\\
+	A questo punto
+	
+	\begin{equation}
+		\begin{cases}
+			T_{p}(F^{-1}(c)) \subset \ker(F_{*p})\\
+			\ker(F_{*p}) \subset T_{p}(F^{-1}(c))
+		\end{cases}%
+		\implies %
+		T_{p}(F^{-1}(c)) = \ker(F_{*p}) \qcomma \forall p \in F^{-1}(c)
+	\end{equation}
 \end{proof}
 
 \begin{remark}
-	Il teorema della preimmagine di un valore regolare dà una condizione sufficiente affinché si possa individuare una sottovarietà, i.e. $ F^{-1}(c) $ come sottovarietà con $ c \in \mathcal{VR}_{F} $, ma è possibile che anche la preimmagine di un valore critico sia una sottovarietà.
+	Il teorema della preimmagine di un valore regolare dà una condizione sufficiente affinché si possa individuare una sottovarietà, i.e. $ F^{-1}(c) $ come sottovarietà con $ c \in \VR_{F} $, ma è possibile che anche la preimmagine di un valore critico sia una sottovarietà.
 \end{remark}
 
 \subsubsection{\textit{Esempi}}
