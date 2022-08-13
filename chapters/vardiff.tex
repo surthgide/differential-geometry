@@ -4708,7 +4708,7 @@ La sfera $ \S^{2} $ è definita come
 	\S^{2} = \{ (x,y,z) \in \R^{3} \mid x^{2} + y^{2} + z^{2} = 1 \}
 \end{equation}
 
-L'idea alla base è quella di sfruttare la seguente applicazione liscia
+L'idea di base è quella di sfruttare la seguente applicazione liscia
 
 \map{f}
 	{\R^{3}}{\R}
@@ -4723,9 +4723,9 @@ in modo tale da avere la sfera come controimmagine del punto 0, i.e.
 Osserviamo che $ 0 \in \VR_{f} $, cioè la controimmagine di 0, i.e. la sfera, è costituita da tutti e soli punti regolari tramite $ f $, cioè punti in cui il differenziale di $ f $ è suriettivo. In simboli
 
 \begin{gather}
-	p \in \PR_{f}, \, \forall p \in f^{-1}(0) = \S^{2}\nonumber\\
+	p \in \PR_{f}, \, \forall p \in f^{-1}(0) = \S^{2} \nonumber\\
 	\Updownarrow\\
-	f_{*p} : T_{p}(\R^{3}) \to T_{0}(\R) \text{ suriettivo}\nonumber
+	f_{*p} : T_{p}(\R^{3}) \to T_{0}(\R) \text{ suriettivo} \nonumber
 \end{gather}
 
 Sappiamo inoltre che queste condizioni sono equivalenti al fatto che le derivate parziali di $ f $ rispetto a $ (x,y,z) $ non si annullano contemporaneamente nei punti della sfera, i.e.
@@ -4754,7 +4754,7 @@ Essendo questa applicazione definita tra due spazi della stessa dimensione, poss
 	= \bmqty{ 2x(p) & 2y(p) & 2z(p) \\\\ 0 & 1 & 0 \\\\ 0 & 0 & 1 }
 \end{equation}
 
-il cui determinante è
+Il determinante dello jacobiano non si annulla in quanto la coordinata $ x(p) $ non si annulla per ipotesi:
 
 \begin{equation}
 	\det(J(g)(p)) = \pdv{f}{x} \, (p) = 2x(p) \neq 0
@@ -4762,7 +4762,7 @@ il cui determinante è
 
 Per il corollario del teorema della funzione inversa\footnote{%
 	Vedi Corollario \ref{ift-cor}.%
-}, esiste un intorno aperto $ U \subset \R^{3} $ di $ p $ tale che $ \eval{g}_{U} : U \to g(U) $ sia un diffeomorfismo e dunque $ (U,\eval{g}_{U}) $ è una carta di $ \R^{3} $: in questo caso, $ (U,\eval{g}_{U}) $ con $ \eval{g}_{U} = (f(x,y,z),y,z) $ è una carta adatta di $ \R^{3} $ intorno a $ p $ relativamente a $ \S^{2} $. Per verificare quest'ultima proposizione, è necessario che $ U \cap \S^{2} $ sia un'insieme dato dall'annullarsi di una coordinata:
+}, esiste un intorno aperto $ U \subset \R^{3} $ di $ p $ tale che $ \eval{g}_{U} : U \to g(U) $ sia un diffeomorfismo e dunque $ (U,\eval{g}_{U}) $ è una carta di $ \R^{3} $. In questo caso, $ (U,\eval{g}_{U}) $ con $ \eval{g}_{U} = (f(x,y,z),y,z) $ è una carta adatta di $ \R^{3} $ intorno a $ p $ relativamente a $ \S^{2} $. Per verificare quest'ultima proposizione, è necessario che $ U \cap \S^{2} $ sia un'insieme dato dall'annullarsi di alcune coordinate:
 
 \begin{equation}
 	U \cap \S^{2} = \{ q \in U \mid g^{1}(q) = f(q) = 0 \} \equiv \S^{2}
@@ -4775,7 +4775,7 @@ In conclusione, per definizione, $ \S^{2}$ è una sottovarietà di $\R^{3} $ con
 
 \begin{theorem}[Preimmagine di un valore regolare (caso $ M = \R $)]
 	Siano $ N $ una varietà differenziabile con $ \dim(N) = n $, $ f : N \to \R $ un'applicazione liscia e $ c \in \VR_{f} \cap f(N) $ un valore regolare che risiede nell'immagine della funzione\footnote{%
-		$ q \notin f(N) \implies q \in \VR_{f}, \, \forall q \in N \implies f(\PR_{f}) \not\supset \VR_{f}$%
+		$ q \notin f(N) \implies q \in \VR_{f} \implies f(\PR_{f}) \not\supset \VR_{f}$%
 	}, i.e. $ f^{-1}(c) \neq \emptyset $, allora $ f^{-1}(c) $ è una sottovarietà di $ N $ con $ \dim(f^{-1}(c)) = n-1 $.
 \end{theorem}
 
@@ -4789,7 +4789,7 @@ In conclusione, per definizione, $ \S^{2}$ è una sottovarietà di $\R^{3} $ con
 		
 		abbiamo che $ h^{-1}(0) = f^{-1}(0) $ e $ c \in \VR_{f} \iff 0 \in \VR_{h} $, perché $ \pdv*{f}{x} = \pdv*{h}{x} $.%
 	} $ c = 0 \in \R $.\\
-	Sia un punto $ p \in f^{-1}(0) $, vogliamo quindi trovare una carta adattata di $ N $ intorno a $ p $ relativamente a $ f^{-1}(0) $. Il fatto che $ 0 \in \VR_{f} $ implica che almeno una delle derivate parziali di $ f $, i.e. $ \pdv*{f}{x^{i}} \, (p) $, non si annulli se consideriamo una qualsiasi carta $ (U,\phi) $ con $ \phi = (x^{1},\dots,x^{n}) $ intorno a $ p $.\\
+	Sia dunque un punto $ p \in f^{-1}(0) $, vogliamo trovare una carta adattata di $ N $ intorno a $ p $ relativamente a $ f^{-1}(0) $. Il fatto che $ 0 \in \VR_{f} $ implica che almeno una delle derivate parziali di $ f $, i.e. $ \pdv*{f}{x^{i}} \, (p) $, non si annulli se consideriamo una qualsiasi carta $ (U,\phi) $ con $ \phi = (x^{1},\dots,x^{n}) $ intorno a $ p $.\\
 	Supponiamo ora che non si annulli la prima derivata\footnote{%
 		Nel caso in cui la prima derivata fosse nulla, possiamo permutare le coordinate della carta ottenendo una carta identica per cui la prima derivata è diversa da zero.%
 	} e consideriamo l'applicazione liscia
@@ -5279,7 +5279,7 @@ ma
 	m_{ij} = 0, \, \forall i,j=1,\dots,n \implies \det(A) = 0
 \end{equation}
 
-Siccome quindi $ 1 \notin \mathcal{VC}_{f} $ allora $ 1 \in \mathcal{VR}_{f} $, in quanto $ \mathcal{VC}_{f} \cap \mathcal{VR}_{f} = \emptyset $: questo prova che $ f^{-1}(1) = SL_{n}(\R) $ è una sottovarietà di $ GL_{n}(\R) $ di dimensione $ n^{2}-1 $.\\
+Siccome quindi $ 1 \notin \VC_{f} $ allora $ 1 \in \VR_{f} $, in quanto $ \VC_{f} \cap \VR_{f} = \emptyset $: questo prova che $ f^{-1}(1) = SL_{n}(\R) $ è una sottovarietà di $ GL_{n}(\R) $ di dimensione $ n^{2}-1 $.\\
 Dimostreremo che\footnote{%
 	Vedi Sottosezione \ref{SL-sublie}.}
 
