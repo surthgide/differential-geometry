@@ -4775,21 +4775,27 @@ In conclusione, per definizione, $ \S^{2}$ è una sottovarietà di $\R^{3} $ con
 
 \begin{theorem}[Preimmagine di un valore regolare (caso $ M = \R $)]
 	Siano $ N $ una varietà differenziabile con $ \dim(N) = n $, $ f : N \to \R $ un'applicazione liscia e $ c \in \VR_{f} \cap f(N) $ un valore regolare che risiede nell'immagine della funzione\footnote{%
-		$ q \notin f(N) \implies q \in \VR_{f} \implies f(\PR_{f}) \not\supset \VR_{f}$%
+		Siccome valgono le implicazioni
+		
+		\begin{equation*}
+			q \notin f(N) \implies q \in \VR_{f} \implies f(\PR_{f}) \not\supset \VR_{f}
+		\end{equation*}
+	
+		è necessario includere l'appartenenza all'immagine della funzione.%
 	}, i.e. $ f^{-1}(c) \neq \emptyset $, allora $ f^{-1}(c) $ è una sottovarietà di $ N $ con $ \dim(f^{-1}(c)) = n-1 $.
 \end{theorem}
 
 \begin{proof}
 	Possiamo sempre supporre che\footnote{%
-		Se consideriamo
+		Se consideriamo l'applicazione
 		%		
 		\maps{h}
 			{N}{\R}
 			{x}{f(x) - c}
 		
-		abbiamo che $ h^{-1}(0) = f^{-1}(0) $ e $ c \in \VR_{f} \iff 0 \in \VR_{h} $, perché $ \pdv*{f}{x} = \pdv*{h}{x} $.%
+		abbiamo che $ h^{-1}(0) = f^{-1}(c) $ e $ c \in \VR_{f} \iff 0 \in \VR_{h} $, perché $ \pdv*{f}{x} = \pdv*{h}{x} $; questo ci permette di considerare l'applicazione $ h $ al posto di $ f $ ottenendo gli stessi risultati.%
 	} $ c = 0 \in \R $.\\
-	Sia dunque un punto $ p \in f^{-1}(0) $, vogliamo trovare una carta adattata di $ N $ intorno a $ p $ relativamente a $ f^{-1}(0) $. Il fatto che $ 0 \in \VR_{f} $ implica che almeno una delle derivate parziali di $ f $, i.e. $ \pdv*{f}{x^{i}} \, (p) $, non si annulli se consideriamo una qualsiasi carta $ (U,\phi) $ con $ \phi = (x^{1},\dots,x^{n}) $ intorno a $ p $.\\
+	Sia dunque un punto $ p \in f^{-1}(0) $, vogliamo trovare una carta adattata di $ N $ intorno a $ p $ relativamente a $ f^{-1}(0) $. Il fatto che $ 0 \in \VR_{f} $ implica che almeno una delle derivate parziali di $ f $ non si annulli se consideriamo una qualsiasi carta $ (U,\phi) $ con $ \phi = (x^{1},\dots,x^{n}) $ intorno a $ p $.\\
 	Supponiamo ora che non si annulli la prima derivata\footnote{%
 		Nel caso in cui la prima derivata fosse nulla, possiamo permutare le coordinate della carta ottenendo una carta identica per cui la prima derivata è diversa da zero.%
 	} e consideriamo l'applicazione liscia
@@ -4804,13 +4810,13 @@ In conclusione, per definizione, $ \S^{2}$ è una sottovarietà di $\R^{3} $ con
 		\det(J(g)(p)) = \det( \bmqty{%
 			\dpdv{f}{x^{1}} \, (p) & \cdots & \cdots & \dpdv{f}{x^{n}} \, (p) \\\\ %
 			0 & 1 & \cdots & 0 \\\\ %
-			\vdots & & \ddots & \vdots \\\\ %
-			0 & \cdots & 0 & 1
+			\vdots & \vdots & \ddots & \vdots \\\\ %
+			0 & 0 & \cdots & 1
 			} ) %
 		= \dpdv{f}{x^{1}} \, (p) \neq 0
 	\end{equation}
 
-	dunque, dal corollario del teorema della funzione inversa, esiste un aperto $ U_{p} $ di $ U $ (quindi di $ N $) tale che $ (U_{p},\eval{g}_{U_{p}}) $ è una carta di $ N $ intorno a $ p $. Prendendo l'intersezione
+	dunque, dal corollario del teorema della funzione inversa, esiste un aperto $ U_{p} \subset U \subset N $ tale che $ (U_{p},\eval{g}_{U_{p}}) $ è una carta di $ N $ intorno a $ p $. Prendendo l'intersezione
 	
 	\begin{equation}
 		U_{p} \cap f^{-1}(0) = \{ q \in U_{p} \mid f(q)=0 \} \equiv f^{-1}(0)
@@ -4854,7 +4860,7 @@ Possiamo dimostrare ora il teorema della preimmagine di un valore regolare nel c
 	\end{equation}
 
 	dove $ \phi(U) \subset \R^{n} $ e $ \psi(V) \subset \R^{m} $.\\
-	Siccome $ c \in \VR_{f} $, il differenziale $ F_{*p} : T_{p}(N) \to T_{F(p)}(M) $ è suriettivo o equivalentemente $ p \in \PR_{F} $ o ancora $ F $ è una sommersione in $ p $. Da questo sappiamo anche che $ \rank(F(p)) = m \leqslant n $ per cui, localmente, è anche il rango dello jacobiano di $ F $ calcolato in $ p $
+	Siccome $ c \in \VR_{f} $, il differenziale $ F_{*p} : T_{p}(N) \to T_{F(p)}(M) $ è suriettivo o equivalentemente $ p \in \PR_{F} $ o ancora $ F $ è una sommersione in $ p $. Da questo sappiamo anche che $ \rank(F(p)) = m \leqslant n $ il quale, localmente, è anche il rango dello jacobiano di $ F $ calcolato in $ p $
 	
 	\begin{equation}
 		\rank(J(F)(p)) = \rank \left( \left[ \pdv{F^{i}}{x^{j}} \, (p) \right] \right) = m
@@ -4863,19 +4869,19 @@ Possiamo dimostrare ora il teorema della preimmagine di un valore regolare nel c
 	dove $ F^{i} = y^{i} \circ F = r^{i} \circ \psi \circ F $, e quindi esiste un minore di ordine $ m $ il cui determinante è diverso da zero: possiamo sempre supporre che il minore in questione sia quello formato dalle prime $ m $ righe e $ m $ colonne, in quanto la permutazione di coordinate all'interno delle carte le lascia invariate, i.e.
 	
 	\begin{equation}
-		\det( \left[ \pdv{F^{i}}{x^{j}} \, (p) \right] ) \neq 0 \qcomma i,j=1,\dots,m
+		\det( \left[ \pdv{F^{i}}{x^{j}} \, (p) \right] ) = J(F)(p) \neq 0 \qcomma i,j=1,\dots,m
 	\end{equation}
 
 	Definiamo ora l'applicazione liscia
 	
-	\map{g}
+	\map{G}
 		{U}{\R^{n}}
 		{q}{(F^{1}(q),\dots,F^{m}(q),x^{m+1}(q),\dots,x^{n}(q))}
 
 	dove abbiamo sostituito le prime $ m $ coordinate con l'immagine di $ q $ tramite $ (F^{1},\dots,F^{m}) $. Lo jacobiano dell'applicazione $ g $ è dato da
 	
 	\begin{equation}
-		J(g)(p) = %
+		J(G)(p) = %
 		\bmqty{ %
 			\dpdv{F^{1}}{x^{1}} \, (p) & \cdots & \dpdv{F^{1}}{x^{m}} \, (p) & \dpdv{F^{1}}{x^{m+1}} \, (p) & \cdots & \dpdv{F^{1}}{x^{n}} \, (p) \\\\ %
 			\vdots & \ddots & \vdots & \vdots & \ddots & \vdots \\\\ %
@@ -4896,21 +4902,21 @@ Possiamo dimostrare ora il teorema della preimmagine di un valore regolare nel c
 	}
 	
 	\begin{equation}
-		\det(J(g)(p)) = %
-		\bmqty{ %
+		\det(J(G)(p)) = %
+		\det ( \bmqty{ %
 			\det( J(F)(p) ) & \det( \left[ \dpdv{F^{i}}{x^{k}} \, (p) \right] ) \\\\ %
 			\det( 0 ) & \det( \bigone ) %
-			} %
+			} ) %
 		= \det( J(F)(p) ) \neq 0
 	\end{equation}
 
-	Per il corollario del teorema della funzione inversa, esiste un aperto $ U_{p} \in N $ tale che $ (U_{p},\eval{g}_{U_{p}}) $ sia una carta di $ N $ intorno a $ p $. Siccome
+	Per il corollario del teorema della funzione inversa, esiste un aperto $ U_{p} \in N $ tale che $ (U_{p},\eval{G}_{U_{p}}) $ sia una carta di $ N $ intorno a $ p $. Considerando la seguente intersezione
 	
 	\begin{equation}
 		U_{p} \cap F^{-1}(c) = \{ q \in U_{p} \mid F^{1}(q) = \dots = F^{m}(q) = 0 \} \equiv F^{-1}(c)
 	\end{equation}
 
-	quindi $ (U_{p},\eval{g}_{U_{p}}) $ è una carta adattata di $ N $ intorno a $ p $ relativamente a $ F^{-1}(c) $, ma $ p $ è un punto arbitrario, quindi esiste una carta adattata intorno ad ogni punto. Siccome si annullano $ m $ coordinate, $ F^{-1}(c) $ è una sottovarietà di $ N $ con $ \dim(F^{-1}(c)) = n-m $ o equivalentemente $ \operatorname{cod}_{N}(F^{-1}(c)) = m $.\\
+	abbiamo che $ (U_{p},\eval{G}_{U_{p}}) $ è una carta adattata di $ N $ intorno a $ p $ relativamente a $ F^{-1}(c) $, ma $ p $ è un punto arbitrario, quindi esiste una carta adattata intorno ad ogni punto. Siccome si annullano $ m $ coordinate, $ F^{-1}(c) $ è una sottovarietà di $ N $ con $ \dim(F^{-1}(c)) = n-m $ o equivalentemente $ \operatorname{cod}_{N}(F^{-1}(c)) = m $.\\
 	Dobbiamo ora dimostrare che
 	
 	\begin{equation}
@@ -4957,7 +4963,8 @@ Possiamo dimostrare ora il teorema della preimmagine di un valore regolare nel c
 		\dim(T_{p}(F^{-1}(c))) = \dim(\ker(F_{*p}))
 	\end{equation}
 
-	in quanto, se due spazi vettoriali (uno incluso nell'altro) hanno la stessa dimensione, allora vale l'uguaglianza tra i due: sappiamo che
+	in quanto, se due spazi vettoriali (uno incluso nell'altro) hanno la stessa dimensione, allora vale l'uguaglianza tra i due.\\
+	Sappiamo che
 	
 	\begin{equation}
 		\dim(T_{p}(F^{-1}(c))) = \dim(F^{-1}(c)) = n-m
