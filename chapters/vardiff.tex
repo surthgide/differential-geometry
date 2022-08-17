@@ -5014,14 +5014,14 @@ Il punto $ (0,0) \in \R^{2} $ annulla entrambe le derivate parziali
 	\pdv{f}{x} \, (0,0) = \pdv{f}{y} \, (0,0) = 0
 \end{equation}
 
-dunque $ (0,0) \in \PC_{f} $ e perciò $ 0 \in \VC_{f} $, nonostante ciò la sua controimmagine è una sottovarietà di $ \R^{2} $, i.e. l'asse delle ascisse $ f^{-1}(0) = \{(x,0)\} $.
+dunque $ (0,0) \in \PC_{f} $ e perciò $ f(0,0) = 0 \in \VC_{f} $, nonostante ciò la sua controimmagine è una sottovarietà di $ \R^{2} $, i.e. l'asse delle ascisse $ f^{-1}(0) = \{(x,0)\} $.
 
 \paragraph{2) Sfera}
 
 La sfera unitaria è definita come
 
 \begin{equation}
-	\S^{n} = \{ (x^{1},\dots,x^{n}) \in \R^{n} \mid (x^{1})^{2} + \cdots + (x^{n+1})^{2} = 1 \} \subset \R^{n+1}
+	\S^{n} = \{ (x^{1},\dots,x^{n+1}) \in \R^{n+1} \mid (x^{1})^{2} + \cdots + (x^{n+1})^{2} = 1 \} \subset \R^{n+1}
 \end{equation}
 
 Sia l'applicazione liscia
@@ -5030,8 +5030,14 @@ Sia l'applicazione liscia
 	{\R^{n+1}}{\R}
 	{(x^{1},\dots,x^{n+1})}{(x^{1})^{2} + \cdots + (x^{n+1})^{2} - 1}
 
-in modo tale che $ f^{-1}(0) = \S^{n} $, dove $ 0 \in \VR_{f} $, in quanto le derivate parziali $ \pdv*{f}{x^{i}} \, (p) $ non si annullano tutte contemporaneamente se non nell'origine (la quale non è inclusa nella sfera) dunque $ \S^{n} $ è una sottovarietà di $ \R^{n+1} $ con $ \dim(\S^{n}) = n+1-1 = n $.\\
-Lo spazio tangente di $ \S^{n} $, dal teorema della preimmagine, è pari a $ T_{p}(\S^{n}) = \ker(f_{*p}) $: per calcolarlo consideriamo una curva liscia definita come
+in modo tale che $ f^{-1}(0) = \S^{n} $, dove $ 0 \in \VR_{f} $, in quanto le derivate parziali di $ f $ non si annullano tutte contemporaneamente se non nell'origine (la quale non è inclusa nella sfera) dunque $ \S^{n} $ è una sottovarietà di $ \R^{n+1} $ con $ \dim(\S^{n}) = n+1-1 = n $.\\
+Lo spazio tangente di $ \S^{n} $, dal teorema della preimmagine, è dato dal $ \ker $ del differenziale di $ f $, i.e. 
+
+\begin{equation}
+	T_{p}(\S^{n}) = \ker(f_{*p})
+\end{equation}
+
+Per calcolarlo consideriamo una curva liscia definita come
 
 \begin{equation}
 	\begin{cases}
@@ -5047,29 +5053,29 @@ e il differenziale della funzione $ f $ nel punto $ p $
 	f_{*p} : T_{p}(\R^{n+1}) \to T_{f(p)}(\R)
 \end{equation}
 
-siccome $ \gamma(t) = (x^{1}(t),\dots,x^{n}(t)) $, abbiamo che
+siccome $ \gamma(t) = (x^{1}(t),\dots,x^{n+1}(t)) $, abbiamo che
 
 \begin{align}
 	\begin{split}
 		f_{*p}(X_{p}) &= (f \circ \gamma)'(0)\\
 		&= ((x^{1}(t))^{2} + \cdots + (x^{n+1}(t))^{2} - 1)'(0)\\
-		&= \dot{((x^{1}(t))^{2} + \cdots + (x^{n+1}(t))^{2} - 1)}(0) \eval{ \dv{t} }_{f(p)}\\
-		&= (2 x^{1}(t) \, \dot{x}^{1}(t) + \cdots + 2 x^{n+1}(t) \, \dot{x}^{n+1}(t))(0)\\
-		&= (2 x^{1}(0) \, \dot{x}^{1}(0) + \cdots + 2 x^{n+1}(0) \, \dot{x}^{n+1}(0))\\
-		&= 2 (x^{1}(0), \dots, x^{n+1}(0)) \cdot (\dot{x}^{1}(0), \dots, \dot{x}^{n+1}(0))\\
-		&= 2 \, \gamma(0) \cdot X_{p}\\
-		&= 2 \, p \cdot X_{p}
+		&= \dot{((x^{1}(t))^{2} + \cdots + (x^{n+1}(t))^{2} - 1)}(0) \eval{ \dv{r} }_{f(p)}\\
+		&= (2 x^{1}(t) \, \dot{x}^{1}(t) + \cdots + 2 x^{n+1}(t) \, \dot{x}^{n+1}(t))(0) \eval{ \dv{r} }_{f(p)}\\
+		&= (2 x^{1}(0) \, \dot{x}^{1}(0) + \cdots + 2 x^{n+1}(0) \, \dot{x}^{n+1}(0)) \eval{ \dv{r} }_{f(p)}\\
+		&= (2 (x^{1}(0), \dots, x^{n+1}(0)) \cdot (\dot{x}^{1}(0), \dots, \dot{x}^{n+1}(0))) \eval{ \dv{r} }_{f(p)}\\
+		&= (2 \, \gamma(0) \cdot X_{p}) \eval{ \dv{r} }_{f(p)}\\
+		&= (2 \, p \cdot X_{p}) \eval{ \dv{r} }_{f(p)}
 	\end{split}
 \end{align}
 
-dove nel terzo passaggio è presente una derivata (indicata dal puntino sopra l'intera parentesi), il vettore $ X_{p} $ può essere rappresentato come un punto in $ \R^{n+1} $, i.e. $ X_{p} = (\dot{x}^{1}(t),\dots,\dot{x}^{n+1}(t)) $, e il punto in $ p \cdot X_{p} $ indica il prodotto scalare in $ \R^{n+1} $.\\
-Siccome il differenziale è dato da
+dove nel terzo passaggio è presente una derivata (indicata dal puntino sopra l'intera parentesi), il vettore $ X_{p} $ può essere rappresentato come un punto in $ \R^{n+1} $, i.e. $ X_{p} = (\dot{x}^{1}(0),\dots,\dot{x}^{n+1}(0)) $, e il punto in $ p \cdot X_{p} $ indica il prodotto scalare in $ \R^{n+1} $.\\
+Abbiamo perciò derivato la forma del differenziale:
 
 \map{f_{*p}}
 	{T_{p}(\R^{n+1})}{T_{f(p)}(\R)}
-	{X_{p}}{2 \, p \cdot X_{p}}
+	{X_{p}}{(2 \, p \cdot X_{p}) \eval{ \dv{r} }_{f(p)}}
 	
-il suo $ \ker $, e dunque lo spazio tangente alla sfera $ \S^{n} $, è costituito da tutti i vettori $ X_{p} $ di $ \R^{n+1} $ che sono ortogonali al punto $ p $, i.e. $ p \cdot X_{p} = 0 $. In altre parole, presa la sfera e un piano tangente ad essa in un punto, tutti i vettori complanari al piano tangente sono tangenti alla sfera in quel punto.
+A questo punto, il suo $ \ker $, e dunque lo spazio tangente alla sfera $ \S^{n} $, è costituito da tutti i vettori $ X_{p} $ di $ \R^{n+1} $ che sono ortogonali al punto $ p $, i.e. $ p \cdot X_{p} = 0 $. In altre parole, presa la sfera e un piano tangente a essa in un punto, tutti i vettori complanari al piano tangente sono tangenti alla sfera in quel punto.
 
 \paragraph{3)}
 
@@ -5079,7 +5085,9 @@ Sia l'insieme
 	S = \{ (x,y,z) \in \R^{3} \mid x^{3} + y^{3} + z^{3} = 1 \wedge x+y+z=0 \} \subset \R^{3}
 \end{equation}
 
-vogliamo dimostrare che $ S $ sia una sottovarietà di $ \R^{3} $ di dimensione unitaria e lo facciamo cercando un'applicazione la cui controimmagine dell'origine sia $ S $, tale che l'origine sia un valore regolare per l'applicazione.\\
+Vogliamo dimostrare che $ S $ sia una sottovarietà di $ \R^{3} $ di dimensione unitaria e lo facciamo cercando un'applicazione la cui controimmagine del punto\footnote{%
+	La dimensione del punto $ (0,\dots,0) \in \Im(f) $ dipende dal numero di condizioni che vengono poste all'interno della definizione dello spazio $ S $; in questo caso ci sono due condizioni, dunque $ (0,0) \in \Im(f) \subset \R^{2} $.%
+} $ (0,\dots,0) $ sia $ S $, tale che questo punto sia un valore regolare per l'applicazione.\\
 Sia dunque l'applicazione
 
 \map{F}
@@ -5092,7 +5100,9 @@ dove $ F^{-1}(0,0) = S $. Verificare che $ (0,0) \in \VR_{F} $ è equivalente a 
 	J(F)(x,y,x) = \bmqty{ 3x^{2} & 3y^{2} & 3z^{2} \\\\ 1 & 1 & 1 }\in M_{2,3}(\R)
 \end{equation}
 
-I punti che rendono unitario (e quindi minore di 2) il rango di $ F $ sono i punti critici di $ F $:
+I punti che rendono unitario (e quindi minore di 2) il rango\footnote{%
+	Ricordiamo che, per il calcolo del rango, si considerano i determinanti dei minori quadrati della matrice.%
+} di $ F $ sono i punti critici di $ F $:
 
 \begin{equation}
 	\PC_{F} = \{ (x,y,z) \in \R^{3} \mid x^{2}-y^{2}=0 \lor y^{2}-z^{2}=0 \}
@@ -5104,7 +5114,7 @@ A questo punto
 	(0,0) \in \VR_{F} \iff S \cap \PC_{F} = \emptyset
 \end{equation}
 
-Per verificare questa condizione, costruiamo il seguente sistema la cui soluzione indica l'intersezione tra lo spazio $ S $ e i punti critici di $ F $
+Per verificare questa condizione, costruiamo un sistema la cui soluzione indica l'intersezione tra lo spazio $ S $ e i punti critici di $ F $:
 
 \begin{equation}
 	\begin{cases}
@@ -5115,7 +5125,7 @@ Per verificare questa condizione, costruiamo il seguente sistema la cui soluzion
 	\end{cases}
 \end{equation}
 
-il quale non ha soluzione\footnote{%
+Questo sistema non ha soluzione\footnote{%
 	Perché abbia soluzione, per la seconda equazione si deve avere che una delle tre coordinate sia nulla e le altre due siano una l'opposta dell'altra, ma questa situazione non è permessa dalla prima equazione.%
 } o, equivalentemente, $ S \cap \mathcal{PC}_{F} = \emptyset $ e dunque $ S $ è una sottovarietà di $ \R^{3} $.\\
 Per il calcolo dello spazio tangente alla varietà $ S $, vedi Esercizio \ref{BONUS2-3}.
@@ -5146,7 +5156,7 @@ la cui inversa è liscia
 dunque $ \phi $ è un diffeomorfismo: questo significa che $ (\R^{n+1},\phi) $ è una carta di $ \R^{n+1} $ con la struttura euclidea standard. Questa carta può anche essere pensata come carta adattata di $ \R^{n+1} $ relativamente a $ \Gamma(F) $ per qualsiasi punto $ p \in \Gamma(F) $: questo è vero in quanto l'insieme
 
 \begin{equation}
-	\R^{n+1} \cap \Gamma(F) = \{ q \in \R^{n+1} \mid y - F(x^{1},\dots,x^{n}) = 0 \}
+	\R^{n+1} \cap \Gamma(F) = \{ q \in \R^{n+1} \mid y - F(x^{1},\dots,x^{n}) = 0 \} = \Gamma(F)
 \end{equation}
 
 rispetta la condizione per le sottovarietà; siccome una sola coordinata si annulla nelle carte adattate, la dimensione del grafico di $ F $ è pari a
@@ -5191,8 +5201,12 @@ Di seguito i tre casi per le tre carte:
 	\map{f}
 		{\R^{2}}{\R}
 		{(x,y)}{x^{2} - y^{2} - 1}
-
-	i.e. $ \phi_{0}(S) = f^{-1}(0) $;
+	
+	A questo punto, $ S $ è una sottovarietà di $ \rp{2} $ in quanto controimmagine del valore regolare $ 0 \in \R $ tramite la composizione dell'applicazione $ f $	e il diffeomorfismo $ \phi_{0} $, i.e.
+	
+	\begin{equation}
+		S = \phi_{0}^{-1} (f^{-1}(0)) = (f \circ \phi_{0})^{-1} (0)
+	\end{equation}
 	
 	\item Prendiamo la carta $ (U_{1},\phi_{1}) $ dove
 	
@@ -5218,7 +5232,11 @@ Di seguito i tre casi per le tre carte:
 	{\R^{2}}{\R}
 	{(x,y)}{x^{2} + y^{2} - 1}
 	
-	i.e. $ \phi_{1}(S) = f^{-1}(0) $;
+	A questo punto, $ S $ è una sottovarietà di $ \rp{2} $ in quanto controimmagine del valore regolare $ 0 \in \R $ tramite la composizione dell'applicazione $ f $	e il diffeomorfismo $ \phi_{1} $, i.e.
+	
+	\begin{equation}
+		S = \phi_{1}^{-1} (f^{-1}(0)) = (f \circ \phi_{1})^{-1} (0)
+	\end{equation}
 	
 	\item Prendiamo la carta $ (U_{2},\phi_{2}) $ dove
 	
@@ -5242,7 +5260,11 @@ Di seguito i tre casi per le tre carte:
 		{\R^{2}}{\R}
 		{(x,y)}{y^{2} - x^{2} - 1}
 	
-	i.e. $ \phi_{2}(S) = f^{-1}(0) $.
+	A questo punto, $ S $ è una sottovarietà di $ \rp{2} $ in quanto controimmagine del valore regolare $ 0 \in \R $ tramite la composizione dell'applicazione $ f $	e il diffeomorfismo $ \phi_{2} $, i.e.
+	
+	\begin{equation}
+		S = \phi_{2}^{-1} (f^{-1}(0)) = (f \circ \phi_{2})^{-1} (0)
+	\end{equation}
 \end{itemize}
 
 \paragraph{6) Gruppo delle matrici con determinante unitario}\label{SL-subvar}
@@ -5261,13 +5283,13 @@ Sia l'applicazione liscia
 	{GL_{n}(\R)}{\R}
 	{A}{\det(A)}
 
-Siccome $ f^{-1}(1) = SL_{n}(\R) $, dobbiamo mostrare che $ 1 \in \VR_{f} $ perché $ SL_{n}(\R) $ sia una sottovarietà di $ GL_{n}(\R) $: siccome il codominio di $ f $ è $ \R $, un punto è critico per $ f $ se e solo se le derivate parziali di $ f $ si annullano in quel punto. Usiamo come coordinate le componenti della matrice, i.e. $ A = (a_{ij}) $ con $ i,j=1,\dots,n $, e per scrivere il determinante lo sviluppo di Laplace
+Siccome $ f^{-1}(1) = SL_{n}(\R) $, dobbiamo mostrare che $ 1 \in \VR_{f} $ perché $ SL_{n}(\R) $ sia una sottovarietà di $ GL_{n}(\R) $: siccome il codominio di $ f $ è $ \R $, un punto è critico per $ f $ se e solo se le derivate parziali di $ f $ si annullano in quel punto. Usiamo come coordinate le componenti della matrice, i.e. $ A = (a_{ij}) $ con $ i,j=1,\dots,n $, e per scrivere il determinante lo sviluppo di Laplace:
 
 \begin{equation}
-	\det(A) = \sum_{j=1}^{n} (-1)^{i+j} \, a_{ij} \, m_{ij}
+	\det(A) = \sum_{i=1}^{n} (-1)^{i+j} \, a_{ij} \, m_{ij}
 \end{equation}
 
-dove gli $ m^{ij} = \det(A_{ij}) $ sono i minori di $ A $ e le $ A_{ij} $ sono le sottomatrici ricavate da $ A $ rimuovendo la $ i $-esima riga e la $ j $-esima colonna.\\
+dove gli $ m_{ij} = \det(A_{ij}) $ sono i minori di $ A $ e le $ A_{ij} $ sono le sottomatrici ricavate da $ A $ rimuovendo la $ i $-esima riga e la $ j $-esima colonna.\\
 A questo punto, calcoliamo la derivata di $ f $ rispetto alle coordinate $ a_{ij} $
 
 \begin{equation}
