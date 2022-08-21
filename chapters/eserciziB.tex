@@ -653,13 +653,70 @@ perciò la funzione $ f = (\pi_{N_{*p}},\pi_{M_{*q}}) $ è anche iniettiva dunqu
 
 %
 
-\section{}\label{es2-12}
+\section{Prodotto di sottovarietà}\label{es2-12}
 
 \begin{tcolorbox}
-	Siano $ S_{1} $ e $ S_{2} $ due sottovarietà di due varietà differenziabili $ M_{1} $ e $ M_{2} $ rispettivamente. Dimostrare che $ S_{1} \times S_{2} $ è una sottovarietà di $ M_{1} \times M_{2} $.
+	Siano $ S $ e $ P $ due sottovarietà di due varietà differenziabili $ N $ e $ M $ rispettivamente. Dimostrare che $ S \times P $ è una sottovarietà di $ N \times M $.
 \end{tcolorbox}
 
-qui
+Poniamo le dimensioni delle varietà $ N $ e $ M $ pari a $ n $ e $ m $ rispettivamente.\\
+Essendo $ S $ e $ P $ sottovarietà rispettivamente di $ N $ e $ M $, possiamo scrivere
+
+\begin{gather}
+	S \text{ sottovarietà di } N \nonumber\\
+	\Updownarrow\\
+	\forall s \in S, \, \E (U,\phi) = (U; x^{1},\dots,x^{n}) \in N \mid (U,\phi) \ni s \, \wedge \nonumber\\
+	\wedge \, U \cap S = \{ r \in U \mid x^{k+1}(r) = \dots = x^{n}(r) = 0 \} \nonumber
+\end{gather}
+%
+\begin{gather}
+	P \text{ sottovarietà di } M \nonumber\\
+	\Updownarrow\\
+	\forall p \in P, \, \E (V,\psi) = (V; y^{1},\dots,y^{m}) \in M \mid (V,\psi) \ni p \, \wedge \nonumber\\
+	\wedge \, V \cap P = \{ t \in V \mid y^{j+1}(t) = \dots = y^{m}(t) = 0 \} \nonumber
+\end{gather}
+
+dove quindi
+
+\begin{equation}
+	\begin{cases}
+		\dim(S) = n - k\\
+		\dim(S) = m - j
+	\end{cases} %
+	\iff %
+	\begin{cases}
+		\operatorname{cod}_{N}(S) = k\\
+		\operatorname{cod}_{M}(P) = j
+	\end{cases}
+\end{equation}
+
+Essendo $ N \times M $ ancora una varietà differenziabile, il prodotto delle carte considerate sopra è ancora una carta per la struttura differenziale di $ N \times M $, i.e.
+
+\begin{equation}
+	\begin{cases}
+		\{(U_{\alpha},\phi_{\alpha})\}_{\alpha \in A} \in N \\
+		\{(V_{\beta},\psi_{\beta})\}_{\beta \in B} \in M
+	\end{cases} %
+	\implies %
+	\{(U_{\alpha} \times V_{\beta}, \phi_{\alpha} \times \psi_{\beta})\}_{\alpha \in A, \beta \in B} \in N \times M
+\end{equation}
+
+A questo punto, possiamo usare queste carte per definire una carta adattata di $ N \times M $ intorno a un qualsiasi punto $ (s,p) $ relativamente a $ S \times P $, rendendo perciò $ S \times P $ una sottovarietà di $ N \times M $; di seguito la condizione:
+
+\begin{gather}
+	\forall (s,p) \in S \times P, \, \E (U \times V, \phi \times \psi) = (U \times V; x^{1},\dots,x^{n}, y^{1},\dots,y^{m}) \in N \times M \mid \nonumber\\
+	\begin{cases}
+		(U \times V, \phi \times \psi) \ni (s,p)\\
+		(U \times V) \cap (S \times P) = \{ (r,t) \in U \times V \mid x^{k+1}(r) = \dots = x^{n}(r) = y^{j+1}(t) = \dots = y^{m}(t) = 0 \}
+	\end{cases}
+\end{gather}
+
+La dimensione e codimensione della sottovarietà prodotto sono dunque pari a
+
+\begin{gather}
+	\dim(S \times P) = (n - k) + (m - j) = (n + m) - (k + j)\\
+	\operatorname{cod}_{N \times M}(S \times P) = k + j
+\end{gather}
 
 %
 
