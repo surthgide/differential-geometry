@@ -729,17 +729,47 @@ La dimensione e codimensione della sottovarietà prodotto sono dunque pari a
 \begin{tcolorbox}
 	Sia l'applicazione
 	
-	\begin{align}
-		\begin{split}
-			F : \R^{2} &\to \R\\
-			(x,y) &\mapsto x^{2}-6xy+y^{2}
-		\end{split}
-	\end{align}
+	\map{F}
+		{\R^{2}}{\R}
+		{(x,y)}{x^{2}-6xy+y^{2}}
 	
 	Trovare i $ c \in \R $ tali che $ F^{-1}(c) $ sia una sottovarietà di $ \R^{2} $.
 \end{tcolorbox}
 
-qui
+Tramite il teorema della preimmagine\footnote{%
+	Vedi Teorema \ref{thm:preimg}.%
+}, perché $ F^{-1}(c) $ sia una sottovarietà di $ \R^{2} $ è necessario che $ c \in \VR_{F} \cap \Im(F) $: questa condizione è equivalente a dire che almeno una delle derivate parziali di $ F $ non si annulli se calcolata nei punti che formano la controimmagine di $ c $ attraverso $ F $ (e dunque che tutti questi punti siano punti regolari per $ F $), i.e.
+
+\begin{gather}
+	c \in \VR_{F} \cap \Im(F) \nonumber\\
+	\Updownarrow \nonumber\\
+	\E \pdv{F}{x^{i}} \, (p) \neq 0 \qcomma \forall p \in F^{-1}(c), \, i=1,2\\
+	\Updownarrow \nonumber\\
+	p \in \PR_{F} \qcomma \forall p \in F^{-1}(c) \nonumber
+\end{gather}
+
+dove $ (x^{1},x^{2}) = (x,y) $.\\
+Siccome $ \PC_{F} \cap \PR_{F} = \emptyset $, escludendo i punti critici per $ F $ rimangono quelli regolari tra i quali individueremo la controimmagine di $ c $. Per trovare i punti critici, cerchiamo dunque i punti $ p = (x,y) $ che annulla contemporaneamente le derivate di $ F $:
+
+\begin{equation}
+	\begin{cases}
+		\dpdv{F}{x} \, (x,y) = 2 x - 6 y = 0\\\\
+		\dpdv{F}{y} \, (x,y) = - 6 x + 2 y = 0
+	\end{cases} %
+	\implies %
+	(x,y) = (0,0)
+\end{equation}
+
+A questo punto possiamo derivare l'insieme dei punti regolari:
+
+\begin{equation}
+	\PC_{F} = \{(0,0)\} %
+	\implies %
+	\PR_{F} = \R^{2} \setminus \{(0,0)\}
+\end{equation}
+
+L'unico punto che ha come controimmagine il punti $ (0,0) $ è $ 0 $, i.e. $ F^{-1}(0) = (0,0) $ dunque $ \VR_{F} = \R \setminus \{0\} $: questo permette di scegliere per $ c $ un qualsiasi numero reale non nullo.\\
+Il grafico di $ F $ è un paraboloide iperbolico e le controimmagini dei valori regolari di $ F $ sono intersezioni di questo con piani perpendicolari all'asse $ z $ e dunque iperboli.
 
 %
 
