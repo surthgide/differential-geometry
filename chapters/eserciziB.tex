@@ -856,13 +856,86 @@ Questo sistema non ha soluzioni\footnote{%
 	Sia la sottovarietà di $ \R^{3} $
 	
 	\begin{equation}
-		S = \{ (x,y,z) \in \R^{3} \mid x^{3} + y^{3} + z^{3} = 1 \wedge x+y+z=0 \} \subset \R^{3}
+		S = \{ (x,y,z) \in \R^{3} \mid x^{3} + y^{3} + z^{3} = 1 \, \wedge \, x + y + z = 0 \} \subset \R^{3}
 	\end{equation}
 	
 	Calcolare lo spazio tangente $ T_{p}(S) $ con $ p \in S $.
 \end{tcolorbox}
 
-qui
+Costruiamo l'applicazione
+
+\map{F}
+	{\R^{3}}{\R^{2}}
+	{(x,y,z)}{(x^{3} + y^{3} + z^{3} - 1, x + y + z)}
+
+tale che $ S = F^{-1}(0,0) $.\\
+Tramite il teorema della preimmagine\footnote{%
+	Vedi Teorema \ref{thm:preimg}.%
+}, sappiamo che
+
+\begin{equation}
+	T_{p}(S) = \ker(F_{*p})
+\end{equation}
+
+Dunque calcoliamo quali sono i vettori che hanno immagine il vettore nullo tramite il differenziale
+
+\begin{equation}
+	F_{*p} : T_{p}(\R^{3}) \to T_{F(p)}(\R^{2})
+\end{equation}
+
+Consideriamo una curva liscia $ \gamma (t) = (x(t), y(t), z(t)) $ che rispetta le condizioni:
+
+\begin{equation}
+	\begin{cases}
+		\gamma (- \varepsilon, \varepsilon) \to S \\
+		\gamma (0) = p = (x(0), y(0), z(0)) \\
+		\gamma' (0) = (\dot{x}(0), \dot{y}(0), \dot{z}(0)) = X_{p}
+	\end{cases}
+\end{equation}
+
+e le basi per $ T_{p}(\R^{3}) $ e $ T_{F(p)}(\R^{2}) $
+
+\begin{gather}
+	\B_{T_{p}(\R^{3})} = \left\{ \eval{ \pdv{x} }_{p}, \eval{ \pdv{y} }_{p}, \eval{ \pdv{z} }_{p} \right\} \\
+	\B_{T_{F(p)}(\R^{2})} = \left\{ \eval{ \pdv{u} }_{F(p)}, \eval{ \pdv{v} }_{F(p)} \right\}
+\end{gather}
+
+Tramite questa, calcoliamo l'immagine del differenziale:
+
+\begin{align}
+	\begin{split}
+		F_{*p}(X_{p}) &= (F \circ \gamma)' (0) \\
+		&= ((x(t))^{3} + (y(t))^{3} + (z(t))^{3} - 1, x(t) + y(t) + z(t))' (0) \\
+		&= \dot{ ((x(t))^{3} + (y(t))^{3} + (z(t))^{3} - 1) } (0) \eval{ \pdv{u} }_{F(p)} + \dot{ (x(t) + y(t) + z(t)) } (0) \eval{ \pdv{v} }_{F(p)} \\
+		&= (3 (x(0))^{2} \dot{x}(0) + 3 (y(0))^{2} \dot{y}(0) + 3 (z(0))^{2} \dot{z}(0)) \eval{ \pdv{u} }_{F(p)} + (\dot{x}(0) + \dot{y}(0) + \dot{z}(0)) \eval{ \pdv{v} }_{F(p)} \\
+		&= ( 3 (x(0), y(0), z(0))^{2} \cdot (\dot{x}(0), \dot{y}(0), \dot{z}(0)) \eval{ \pdv{u} }_{F(p)} + ( (1,1,1) \cdot (\dot{x}(0), \dot{y}(0), \dot{z}(0)) ) \eval{ \pdv{v} }_{F(p)} \\
+		&= ( 3 p^{2} \cdot X_{p} ) \eval{ \pdv{u} }_{F(p)} + ( (1,1,1) \cdot X_{p} ) \eval{ \pdv{v} }_{F(p)}
+	\end{split}
+\end{align}
+
+Ponendo
+
+\begin{equation}
+	X_{p} = a \eval{ \pdv{x} }_{p} + b \eval{ \pdv{y} }_{p} + c \eval{ \pdv{z} }_{p} %
+	\equiv (a,b,c)
+\end{equation}
+
+possiamo scrivere
+
+\begin{equation}
+	F_{*p}(a,b,c) = ( 3 (a x^{2} + b y^{2} + c z^{2}), a + b + c ) \in T_{F(p)}(\R^{2})
+\end{equation}
+
+da cui lo spazio tangente
+
+\begin{equation}
+	T_{p}(S) = \left\{ (a,b,c) \in T_{p}(\R^{3}) \st p = (x,y,z) \, \wedge \, %
+		\begin{cases}
+			a x^{2} + b y^{2} + c z^{2} = 0 \\
+			a + b + c = 0
+		\end{cases} %
+	\right\}
+\end{equation}
 
 %
 
