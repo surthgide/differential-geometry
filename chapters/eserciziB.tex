@@ -777,14 +777,14 @@ Il grafico di $ F $ è un paraboloide iperbolico e le controimmagini dei valori 
 
 %
 
-\section{}\label{es2-14}
+\section{Sottovarietà tramite condizioni}\label{es2-14}
 
 \begin{tcolorbox}
-	Dire se le soluzione del sistema
+	Dire se le soluzioni del sistema
 	
 	\begin{equation}
 		\begin{cases}
-			x^{3} + y^{3} + z^{3} = 1\\
+			x^{3} + y^{3} + z^{3} = 1 \\
 			z = xy
 		\end{cases}
 	\end{equation}
@@ -792,7 +792,57 @@ Il grafico di $ F $ è un paraboloide iperbolico e le controimmagini dei valori 
 	costituiscono una sottovarietà di $ \R^{3} $.
 \end{tcolorbox}
 
-qui
+La soluzione di questo esercizio segue l'Esempio \ref{ex:subvar-cond}.\\
+Il sistema in esame può essere riscritto come l'insieme seguente
+
+\begin{equation}
+	S = \{ (x,y,z) \in \R^{3} \mid x^{3} + y^{3} + z^{3} = 1 \, \wedge \, z = xy \}
+\end{equation}
+
+Costruiamo ora l'applicazione
+%
+\map{F}
+	{\R^{3}}{\R^{2}}
+	{(x,y,z)}{(x^{3} + y^{3} + z^{3} - 1, z - xy)}
+
+la quale porta all'equazione $ S = F^{-1}(0,0) $.\\
+Perché $ S $ sia dunque una sottovarietà di $ \R^{3} $ verifichiamo che $ (0,0) \in \VR_{F} $: per fare ciò, dimostriamo che tutti i punti della preimmagine di $ (0,0) $ siano punti regolari, i.e. $ S \cap \PC_{F} = \emptyset $.\\
+Siccome $ \PC_{F} \cap \PR_{F} = \emptyset $, cerchiamo i punti critici di $ F $ per escluderli dalla preimmagine: questi sono i punti per cui il differenziale $ F_{*(x,y,z)} $  non è suriettivo dunque, usando lo jacobiano, poniamo le condizioni per cui il rango di $ F $ sia minore del massimo (i.e. 2).
+
+\begin{equation}
+	J(F)(x,y,z) = \bmqty{ %
+			 	3 x^{2} & 3 y^{2} & 3 z^{2} \\\\
+			 	- y 	& - x	  & 1 %
+	 		}
+\end{equation}
+
+A questo punto, possiamo scrivere le condizioni:
+
+\begin{equation}
+	\rank(F_{*(x,y,z)}) < 2 %
+	\implies %
+	\begin{cases}
+		- 3 x^{3} + 3 y^{3} = 0 \\
+		3 x^{2} + 3 y z^{2} = 0 \\
+		3 y^{2} + 3 x z^{2} = 0
+	\end{cases}
+\end{equation}
+
+Consideriamo quindi l'intersezione tra i punti critici di $ F $ e l'insieme $ S $:
+
+\begin{equation}
+	\begin{cases}
+		- 3 x^{3} + 3 y^{3} = 0 \\
+		3 x^{2} + 3 y z^{2} = 0 \\
+		3 y^{2} + 3 x z^{2} = 0 \\
+		x^{3} + y^{3} + z^{3} = 1 \\
+		z = xy
+	\end{cases}
+\end{equation}
+
+Questo sistema non ha soluzioni\footnote{%
+	La soluzione del sistema è stata trovata utilizzando un calcolatore online (\href{https://www.wolframalpha.com/input?i=solve+\%7B+-+3+x\%5E3+\%2B+3+y\%5E3+\%3D+0+\%2C+3+x\%5E2+\%2B+3+y+z\%5E2+\%3D+0+\%2C+3+y\%5E2+\%2B+3+x+z\%5E2+\%3D+0+\%2C+x\%5E3+\%2B+y\%5E3+\%2B+z\%5E3+\%3D+1+\%2C+z+\%3D+xy+\%7D}{link a WolframAlpha}).%
+}, i.e. $ S \cap \PC_{F} = \emptyset $, dunque $ (0,0) \in \VR_{F} $ e $ S $ è una sottovarietà di $ \R^{3} $ con $ \dim(S) = 1 $ (in quanto le condizioni dell'insieme sono due).
 
 %
 
