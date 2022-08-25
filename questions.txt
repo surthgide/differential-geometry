@@ -34,7 +34,13 @@ online ho trovato che f|_S^1 \circ \phi^{-1} = f \circ \phi^{-1} ma non capisco 
 diffeomorfismi tra varietà: non sono sicuro di aver capito al 100% come S^1 possa essere una 
 varietà differenziale di dimensione 307 (o qualsiasi altro numero che non sia 1)
 
-esercizio c.1: non sono sicuro sia necessario utilizzare la composizione delle operazioni 
+esercizio C.1: non sono sicuro sia necessario utilizzare la composizione delle operazioni 
 tramite le proiezioni, forse basta dire che le operazioni di \Omega sono composizioni di 
 operazioni lisce
+
+esercizio B.15: non so come dimostrare la prima formula, non capisco bene come orientarmi con 
+lo spazio dei polinomi, non so se la dimostrazione della sottovarietà vada fatta effettivamente 
+così, non so come dimostrare la dimensione della sottovarietà (non so cosa usare per trovarla--
+nel senso di carte, condizioni o altro), non so come dimostrare i diffeomorfismi perché non ho 
+nemmeno ben capito come siano fatte le sottovarietà
 

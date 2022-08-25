@@ -946,21 +946,73 @@ da cui lo spazio tangente
 \section{}\label{es2-15}
 
 \begin{tcolorbox}
-	Un polinomio $ F(x_{0},\dots,x_{n}) \in \R[x_{0},\dots,x_{n}] $ è omogeneo di grado $ k $ se è combinazione lineare di monomi $ x_{0}^{i_{1}} \cdots x_{n}^{i_{m}} $ di grado $ k $ tale che $ \sum_{j=1}^{m} i_{j} = k $. Dimostrare che
+	Un polinomio $ F(x_{1},\dots,x_{n}) \in \R[x_{1},\dots,x_{n}] $ è omogeneo di grado $ k $ se è combinazione lineare di monomi $ x_{1}^{i_{1}} \cdots x_{n}^{i_{m}} $ di grado $ k $ tale che $ \sum_{j=1}^{m} i_{j} = k $. Dimostrare che
 	
 	\begin{equation}
-		\sum_{i=0}^{n} x^{i} \, \dfrac{\partial F}{\partial x^{i}} = k F
+		\sum_{i=1}^{n} x^{i} \, \pdv{F}{x_{i}} = k F
 	\end{equation}
 	
-	Dedurre che $ F^{-1}(c) $ con $ c \neq 0 $ è una sottovarietà di $ \R^{n} $ di dimensione $ n-1 $. Dimostrare inoltre che per $ c,d>0 $ si ha che $ F^{-1}(c) \simeq F^{-1}(d) $ diffeomorfe e lo stesso vale per $ c,d<0 $.\\\\
-	Suggerimento per la prima parte: usare l'uguaglianza
+	Dedurre che $ F^{-1}(c) $ con $ c \neq 0 $ è una sottovarietà di $ \R^{n} $ di dimensione $ n-1 $. Dimostrare inoltre che per $ c,d>0 $ si ha che $ F^{-1}(c) \simeq F^{-1}(d) $ diffeomorfe e lo stesso vale per $ c,d<0 $.\\
+	\textit{Suggerimento per la prima parte: usare l'uguaglianza}
 	
 	\begin{equation}
-		F(\lambda x_{0},\dots,\lambda x_{n}) = \lambda^{k} F(x_{0},\dots,x_{n})
+		F(\lambda x_{1},\dots,\lambda x_{n}) = \lambda^{k} F(x_{1},\dots,x_{n}) \qcomma \forall \lambda \in \R
 	\end{equation}
-	
-	valida per ogni $ \lambda \in \R $.
 \end{tcolorbox}
+
+\paragraph{Dimostrazione formula}
+
+qui
+
+\paragraph{Sottovarietà}
+
+Perché $ F^{-1}(c) $ con $ c \neq 0 $ sia una sottovarietà, è necessario che l'applicazione $ F $ sia liscia e che $ c \in \VR_{F} \cap \Im(F) $: l'applicazione
+
+\map{F}
+	{\R^{n}}{\R[x_{1},\dots,x^{n}]}
+	{(x_{1},\dots,x^{n})}{F(x_{1},\dots,x^{n})}
+
+dove $ \R[x_{1},\dots,x^{n}] $ indica lo spazio dei polinomi in $ n $ variabili con coefficienti reali, è liscia in quanto l'immagine è un polinomio; per la seconda condizione, consideriamo le seguenti condizioni equivalenti
+
+\begin{gather}
+	c \in \VR_{F} \nonumber \\
+	\Updownarrow \nonumber \\
+	p \in \PR_{F} \qcomma \forall p \in \R^{n} \\
+	\Updownarrow \nonumber \\
+	\E \pdv{F}{x^{i}} \, (p) \neq 0 \qcomma i=1,\dots,n \nonumber
+\end{gather}
+
+Siccome vale la relazione
+
+\begin{equation}
+	\sum_{i=1}^{n} x^{i} \, \pdv{F}{x_{i}} = k F
+\end{equation}
+
+esisterà una derivata di $ F $ non nulla per qualsiasi punto che sia controimmagine di un polinomio non nullo: considerando le condizioni
+
+\begin{equation}
+	\begin{cases}
+		c \notin \R[0,\dots,0]\\
+		k \neq 0
+	\end{cases} %
+	\implies %
+	k F(p) \neq 0 \qcomma \forall p \in F^{-1}(c)
+\end{equation}
+
+dunque
+
+\begin{equation}
+	\begin{cases}
+		\displaystyle \sum_{i=1}^{n} x^{i} \, \pdv{F}{x_{i}} \, (p) \neq 0 \\\\
+		p = (x^{1},\dots,x^{n}) \neq (0,\dots,0)
+	\end{cases} %
+	\implies %
+	\E \pdv{F}{x^{i}} \, (p) \neq 0 \qcomma i=1,\dots,n
+\end{equation}
+
+e perciò $ F^{-1}(c) $ è una sottovarietà di $ \R^{n} $ con $ \dim(F^{-1}(c)) = ??? $
+
+\paragraph{Diffeomorfismi}
 
 qui
 
