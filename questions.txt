@@ -44,3 +44,5 @@ così, non so come dimostrare la dimensione della sottovarietà (non so cosa usa
 nel senso di carte, condizioni o altro), non so come dimostrare i diffeomorfismi perché non ho 
 nemmeno ben capito come siano fatte le sottovarietà
 
+esercizio B.16: nelle condizioni di SL_n(C) intendeva scrivere det(A) = 1 ?
+

@@ -1022,19 +1022,36 @@ qui
 
 %
 
-\section{}\label{es2-16}
+\section{Gruppo lineare speciale complesso come sottovarietà}\label{es2-16}
 
 \begin{tcolorbox}
 	Dimostrare che
 	
 	\begin{equation}
-		\mathbb{SL}_{n}(\C) = \{ A \in M_{n}(\C) \mid \det(A) \neq 0 \} \subset M_{n}(\C)
+		SL_{n}(\C) = \{ A \in M_{n}(\C) \mid \det(A) = 1 \} \subset M_{n}(\C)
 	\end{equation}
 	
-	è una sottovarietà di $ M_{n}(\C) $ con $ \dim(\mathbb{SL}_{n}(\C)) = 2n^{2}-2  $
+	è una sottovarietà di $ M_{n}(\C) $ con $ \dim(SL_{n}(\C)) = 2n^{2}-2  $
 \end{tcolorbox}
 
-qui
+Il procedimento è analogo a quello presentato nell'Esempio \ref{es:sl-subman} con le differenze introdotte dal campo dei numeri complessi.\\
+In particolare, la funzione usata per considerare la preimmagine del valore $ 1 = 1 + 0 i \in \C $ è la seguente
+
+\map{f}
+	{GL_{n}(\C)}{\C}
+	{A}{\det(A) = \sum_{i=1}^{n} (-1)^{i+j} \, a_{ij} \, m_{ij}}
+
+dove $ A = (a_{ij}) $ con $ i,j=1,\dots,n $, gli $ m_{ij} = \det(A_{ij}) $ sono i minori di $ A $ e le $ A_{ij} $ sono le sottomatrici ricavate da $ A $ rimuovendo la $ i $-esima riga e la $ j $-esima colonna.\\
+Siccome la dimensione del gruppo lineare speciale in campo complesso è doppia rispetto al caso reale e dato che il valore $ 1 $ in $ f^{-1}(1) = SL_{n}(\C) $ è complesso e quindi di dimensione 2 in campo reale (i.e. è come se rappresentasse due condizioni in campo reale), otteniamo che
+
+\begin{gather}
+	\begin{cases}
+		\dim(GL_{n}(\C)) = 2 \dim(GL_{n}(\R)) = 2 n^{2}\\
+		\dim(1) = \dim(1 + 0 i) = 2
+	\end{cases} \nonumber \\
+	\Downarrow \\ %
+	\dim(SL_{n}(\C)) = 2 \dim(SL_{n}(\R)) = 2(n^{2} - 1) = 2 n^{2} - 2 \nonumber
+\end{gather}
 
 %
 
