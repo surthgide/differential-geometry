@@ -5333,51 +5333,56 @@ Per il caso complesso, vedi Esercizio \ref{es2-16}.
 \subsubsection{Teorema del rango costante}
 
 \begin{theorem}[Rango costante in analisi]
-	Siano $ F : W \to \R^{m} $ con $ W \subset \R^{n} $ aperto e supponiamo che esista un intorno $ I_{1} $ di un punto $ p \in W $ tale che il rango dello jacobiano della funzione $ J(F) $ in $ I_{1} $ sia pari a un valore costante $ k $, i.e.
+	Sia un'applicazione $ F : W \to \R^{m} $ con $ W \subset \R^{n} $ aperto e supponiamo che esista un intorno $ I_{1} $ di un punto $ p \in W $ tale che il rango dello jacobiano dell'applicazione in $ I_{1} $ sia pari a un valore costante $ k $, i.e.
 	
 	\begin{equation}
-		\rank(J(F)(q)) = \rank \left[ \dfrac{\partial F^{i}}{\partial x^{j}} (q) \right] = k \leqslant \min\{n,m\}, \qquad \forall q \in I_{1}
+		\rank(J(F)(q)) = \rank \left[ \pdv{F^{i}}{x^{j}} \, (q) \right] = k \leqslant \min\{n,m\} \qcomma \forall q \in I_{1}
 	\end{equation}
 
 	Allora esistono due diffeomorfismi
 	
-	\begin{align}
-		\begin{split}
-			g : I_{1} &\to \R^{n} \, \mid \, g(p)=0\\
-			h : I_{2} &\to \R^{m} \, \mid \, h(F(p))=0
-		\end{split}
-	\end{align}
+	\begin{gather}
+		g : I_{1} \to \R^{n} \, \mid \, g(p) = 0 \\
+		h : I_{2} \to \R^{m} \, \mid \, h(F(p)) = 0
+	\end{gather}
 	
 	dove $ I_{2} \ni F(p) $ è un intorno di $ F(p) $ in $ \R^{m} $ tale che $ F(I_{1}) \subset I_{2} $, la cui composizione con $ F $
 	
-	\begin{align}
-		\begin{split}
-			h \circ F \circ g^{-1} : \R^{n} &\to \R^{m}\\
-			(r^{1},\dots,r^{n}) &\mapsto (r^{1},\dots,r^{k},0,\dots,0)
-		\end{split}
-	\end{align}
+	\map{h \circ F \circ g^{-1}}
+		{\R^{n}}{\R^{m}}
+		{(r^{1},\dots,r^{n})}{(r^{1},\dots,r^{k},0,\dots,0)}
 
 	è chiamata \textit{forma canonica} di $ F $, scritta solitamente nella forma
 	
 	\begin{equation}
 		(h \circ F \circ g^{-1})(r^{1},\dots,r^{n}) = (r^{1},\dots,r^{k},0,\dots,0)
 	\end{equation}
-
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=0.7\textwidth,keepaspectratio]{img36}
-	\end{figure}
+	
+	\img{0.7}{img36}
 \end{theorem}
 
 \begin{theorem}[Rango costante in geometria differenziale]
-	Siano $ F : N \to N $ un'applicazione liscia tra le varietà $ N $ ed $ M $ di dimensione rispettivamente $ n $ ed $ m $ e un intorno $ I $ di un punto $ p \in N $ tale che $ \rank(F(q)) = k \leqslant \min\{n,m\} $ per $ \forall q \in I $, allora esistono due carte $ (U,\phi) \in N $ centrata in $ p $ con $ \phi(p)=0 $ e $ (V,\psi) \in M $ centrata in $ F(p) $ con $ \psi(F(p))=0 $ tali che $ F(U) \subseteq V $ e la composizione tra le applicazioni delle carte ed $ F $ sia
+	Siano $ F : N \to M $ un'applicazione liscia tra varietà $ N $ e $ M $ di dimensione rispettivamente $ n $ e $ m $, e $ I $ un intorno di un punto $ p \in N $ tale che
 	
-	\begin{align}
-		\begin{split}
-			\psi \circ F \circ \phi^{-1} : \phi(U) &\to \psi(V)\\
-			(r^{1},\dots,r^{n}) &\mapsto (r^{1},\dots,r^{k},0,\dots,0)
-		\end{split}
-	\end{align}
+	\begin{equation}
+		\rank(F(q)) = k \leqslant \min\{n,m\} \qcomma \forall q \in I
+	\end{equation}
+
+	allora esistono due carte con condizioni
+	
+	\begin{equation}
+		\begin{cases}
+			(U,\phi) \in N \qcomma \phi(p) = 0 \\
+			(V,\psi) \in M \qcomma \psi(F(p)) = 0 \\
+			F(U) \subseteq V
+		\end{cases}
+	\end{equation}
+
+	tali che la composizione tra le applicazioni delle carte ed $ F $ sia
+	
+	\map{\psi \circ F \circ \phi^{-1}}
+		{\phi(U)}{\psi(V)}
+		{(r^{1},\dots,r^{n})}{(r^{1},\dots,r^{k},0,\dots,0)}
 
 	dove $ \phi(U) \subset \R^{n} $ e $ \psi(V) \subset \R^{m} $, alternativamente scritta come
 	
@@ -5392,12 +5397,25 @@ Questi teoremi derivano dal teorema della funzione inversa come caso particolare
 	La dimostrazione si basa sull'idea di restringere gli aperti considerati in modo tale che si possa applicare il teorema del rango costante in analisi.\\
 	Consideriamo il seguente schema:
 	
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=\textwidth,keepaspectratio]{img37}
-	\end{figure}
+	\img{1}{img37}
 
-	Nell'intorno $ W \in N $ di $ p $ il rango di $ F $ è costante, i.e. $ \rank(F(q)) = k $ per $ \forall q \in W $. Consideriamo due carte arbitrarie $ (\tilde{U},\tilde{\phi}) \in N $ e $ (\tilde{V},\tilde{\psi}) \in M $ tali che $ F(\tilde{U}) \subseteq \tilde{V} $ e $ \tilde{\phi}(p) = 0 $ e $ \tilde{\psi}(F(p)) = 0 $, possiamo dunque scrivere la composizione
+	Nell'intorno $ W \subset N $ di $ p $ il rango di $ F $ è costante, i.e.
+	
+	\begin{equation}
+		\rank(F(q)) = k \qcomma \forall q \in W
+	\end{equation}
+
+	Consideriamo due carte arbitrarie
+	
+	\begin{equation}
+		\begin{cases}
+			(\tilde{U},\tilde{\phi}) \in N \qcomma \tilde{\phi}(p) = 0 \\
+			(\tilde{V},\tilde{\psi}) \in M \qcomma \tilde{\psi}(F(p)) = 0 \\
+			F(\tilde{U}) \subseteq \tilde{V}
+		\end{cases}
+	\end{equation}
+
+	 possiamo dunque scrivere la composizione
 	
 	\begin{equation}
 		f = \tilde{\psi} \circ F \circ \tilde{\phi}^{-1} : \tilde{\phi}(\tilde{U}) \to \tilde{\psi}(\tilde{V})
@@ -5407,35 +5425,28 @@ Questi teoremi derivano dal teorema della funzione inversa come caso particolare
 	Essendo dominio e codominio di quest'applicazione due aperti di spazi euclidei, possiamo applicare il teorema del rango costante in analisi: sappiamo che
 	
 	\begin{equation}
-		\rank(\tilde{\psi} \circ F \circ \tilde{\phi}^{-1})(\tilde{\phi}(q)) = k, \qquad \forall q \in \tilde{U}
+		\rank(\tilde{\psi} \circ F \circ \tilde{\phi}^{-1})(\tilde{\phi}(q)) = k \qcomma \forall q \in \tilde{U}
 	\end{equation}
 
 	perciò esistono due aperti $ I_{1} \subset \tilde{\phi}(\tilde{U}) $ e $ I_{2} \subset \tilde{\psi}(\tilde{V}) $ entrambi centrati in nella rispettiva origine e due diffeomorfismi
 	
-	\begin{align}
-		\begin{split}
-			g : I_{1} &\to g(I_{1}) \subset \R^{n}\\
-			h : I_{2} &\to h(I_{2}) \subset \R^{m}
-		\end{split}
-	\end{align}
+	\begin{gather}
+		g : I_{1} \to g(I_{1}) \subset \R^{n}\\
+		h : I_{2} \to h(I_{2}) \subset \R^{m}
+	\end{gather}
 
-	tali che $ g(0)=0 $ e $ h(0)=0 $, per i quali l'applicazione $ f $ può essere scirtta nella forma canonica
+	tali che $ g(0) = 0 $ e $ h(0) = 0 $, per i quali l'applicazione $ f $ può essere scritta nella forma canonica
 	
-	\begin{align}
-		\begin{split}
-			h \circ f \circ g^{-1} : g(I_{1}) &\to h(I_{2})\\
-			(r^{1},\dots,r^{n}) &\mapsto (r^{1},\dots,r^{k},0,\dots,0)
-		\end{split}
-	\end{align}
+	\map{h \circ f \circ g^{-1}}
+		{g(I_{1})}{h(I_{2})}
+		{(r^{1},\dots,r^{n})}{(r^{1},\dots,r^{k},0,\dots,0)}
 
 	A questo punto, possiamo considerare le carte
 	
-	\begin{align}
-		\begin{split}
-			(U,\phi) = (\tilde{\phi}(I_{1}),g \circ \tilde{\phi})\\
-			(V,\psi) = (\tilde{\psi}(I_{2}),h \circ \tilde{\psi})
-		\end{split}
-	\end{align}
+	\begin{gather}
+		(U,\phi) = (\tilde{\phi}(I_{1}),g \circ \tilde{\phi})\\
+		(V,\psi) = (\tilde{\psi}(I_{2}),h \circ \tilde{\psi})
+	\end{gather}
 
 	centrate rispettivamente in $ p $ e $ F(p) $: esplicitando la composizione
 	
@@ -5445,22 +5456,19 @@ Questi teoremi derivano dal teorema della funzione inversa come caso particolare
 
 	otteniamo dunque
 	
-	\begin{align}
-		\begin{split}
-			\psi \circ F \circ \phi^{-1} : \phi(U) &\to \psi(V)\\
-			(r^{1},\dots,r^{n}) &\mapsto (r^{1},\dots,r^{k},0,\dots,0)
-		\end{split}
-	\end{align}
+	\map{\psi \circ F \circ \phi^{-1}}
+		{\phi(U)}{\psi(V)}
+		{(r^{1},\dots,r^{n})}{(r^{1},\dots,r^{k},0,\dots,0)}
 \end{proof}
 
 \begin{theorem}[Preimmagine di un'applicazione di rango costante]
-	Siano un'applicazione liscia $ F : N \to M $ tra le varietà differenziabili $ N $ e $ M $ di dimensione rispettivamente $ n $ ed $ m $ e un punto $ c \in M $ tale che $ F^{-1}(c) \neq \emptyset $ e supponiamo esista un aperto $ W \subset N $ tale che $ F^{-1}(c) \subset W $ nel quale il rango di $ F $ sia costante, i.e.
+	Siano un'applicazione liscia $ F : N \to M $ tra varietà differenziabili $ N $ e $ M $ di dimensione rispettivamente $ n $ ed $ m $, e un punto $ c \in M $ tale che $ F^{-1}(c) \neq \emptyset $ e supponiamo esista un aperto $ W \subset N $ tale che $ F^{-1}(c) \subset W $ nel quale il rango di $ F $ sia costante, i.e.
 	
 	\begin{equation}
-		\rank(F(q))=k, \qquad \forall q \in W
+		\rank(F(q)) = k \qcomma \forall q \in W
 	\end{equation}
 
-	Allora $ F^{-1}(c) $ è una sottovarietà di $ N $ con $ \operatorname{cod}_{N}(F^{-1}(c)) = k $ o equivalentemente $ \dim(F^{-1}(c)) = n-k $.
+	Allora $ F^{-1}(c) $ è una sottovarietà di $ N $ con $ \dim(F^{-1}(c)) = n-k $ o, equivalentemente, $ \operatorname{cod}_{N}(F^{-1}(c)) = k $.
 \end{theorem}
 
 \begin{proof}
@@ -5472,14 +5480,19 @@ Questi teoremi derivano dal teorema della funzione inversa come caso particolare
 		\item $ (V,\psi) \in M $ con $ \psi = (y^{1},\dots,y^{m}) $ centrata in $ F(p) = c $, i.e. $ \psi(F(p)) = 0 \in \R^{m} $
 	\end{itemize}
 
-	tali che $ F(U) \subseteq V $ (in quanto $ F $ è continua) e
+	\begin{equation}
+		\begin{cases}
+			(U,\phi) = (U; x^{1},\dots,x^{n}) \in N \qcomma \phi(p) = 0 \in \R^{n} \\
+			(V,\psi) = (V; y^{1},\dots,y^{m}) \in M \qcomma \psi(F(p)) = 0  \in \R^{m} \\
+			F(U) \subseteq V
+		\end{cases}
+	\end{equation}
+
+	e la composizione
 	
-	\begin{align}
-		\begin{split}
-			\psi \circ F \circ \phi^{-1} : \phi(U) &\to \psi(V)\\
-			(r^{1},\dots,r^{n}) &\mapsto (r^{1},\dots,r^{k},0,\dots,0)
-		\end{split}
-	\end{align}
+	\map{\psi \circ F \circ \phi^{-1}}
+		{\phi(U)}{\psi(V)}
+		{(r^{1},\dots,r^{n})}{(r^{1},\dots,r^{k},0,\dots,0)}
 
 	dove $ \phi(U) \subset \R^{n} $ e $ \psi(V) \subset \R^{m} $. Questa carte esistono perché possiamo supporre che $ U \subset W $ dove $ W $ è un intorno di $ p $ in cui il rango di $ F $ è costante con valore $ k $.\\
 	Osserviamo che
@@ -5491,16 +5504,16 @@ Questi teoremi derivano dal teorema della funzione inversa come caso particolare
 		\end{split}
 	\end{align}
 
-	siccome $ F \equiv F_{|U} $
+	siccome $ F \equiv \eval{F}_{U} $
 	
 	\begin{align}
 		\begin{split}
-			(\psi \circ F \circ \phi^{-1})^{-1}(0) &= (\psi \circ F_{|U} \circ \phi^{-1})^{-1}(0) \\
-			&= (\phi \circ F_{|U}^{-1} \circ \psi^{-1})(0)\\
-			&= \phi( \, F_{|U}^{-1}(\psi^{-1}(0)) \, )\\
-			&= \phi( \, F_{|U}^{-1}(F(p)) \, )\\
-			&= \phi( F_{|U}^{-1}(c) )\\
-			&= \phi( U \cap F^{-1}(c) )
+			(\psi \circ F \circ \phi^{-1})^{-1}(0) &= \left( \psi \circ \eval{F}_{U} \circ \phi^{-1} \right)^{-1}(0) \\
+			&= \left( \phi \circ \left( \eval{F}_{U} \right)^{-1} \circ \psi^{-1} \right)(0) \\
+			&= \phi \left( \left( \eval{F}_{U} \right)^{-1}(\psi^{-1}(0)) \right) \\
+			&= \phi \left( \left( \eval{F}_{U} \right)^{-1}(F(p)) \right) \\
+			&= \phi \left( \left( \eval{F}_{U} \right)^{-1}(c) \right) \\
+			&= \phi \left( U \cap F^{-1}(c) \right)
 		\end{split}
 	\end{align}
 
