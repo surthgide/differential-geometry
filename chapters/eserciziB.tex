@@ -1165,13 +1165,40 @@ questo è un intorno aperto di $ p $ in cui $ G(\phi(p)) $ è suriettiva: prende
 
 %
 
-\section{}\label{es2-18}
+\section{Valori regolari come aperto del codominio}\label{es2-18}
 
 \begin{tcolorbox}
-	Sia $ F : N \to M $ un'applicazione liscia tra varietà differenziabili. Dimostrare che se $ F $ è chiusa allora  l'insieme $ \mathcal{VR}_{F} $ dei valori regolari di $ F $ è un aperto in $ M $.
+	Sia $ F : N \to M $ un'applicazione liscia tra varietà differenziabili. Dimostrare che se $ F $ è chiusa allora l'insieme $ \mathcal{VR}_{F} $ dei valori regolari di $ F $ è un aperto in $ M $.
 \end{tcolorbox}
 
-qui
+Tramite l'Esercizio \ref{es2-17}, sappiamo che l'insieme dei punti regolari di $ F $ è aperto in $ N $: questo implica che l'insieme dei punti critici sia chiuso, i.e.
+
+\begin{equation}
+	\begin{cases}
+		\PR_{F} \text{ aperto}\\
+		N \setminus \PR_{F} = \PC_{F}
+	\end{cases} %
+	\implies %
+	\PC_{F} \text{ chiuso}
+\end{equation}
+
+Siccome vale la relazione
+
+\begin{equation}
+	F(\PC_{F}) = \VC_{F}
+\end{equation}
+
+se supponiamo che l'applicazione $ F $ sia chiusa (porta chiusi in chiusi), l'immagine del chiuso $ \PC_{F} $ sarà un chiuso, i.e. $ \VC_{F} \subset M $ è chiuso.\\
+Sappiamo ora che l'insieme dei valori regolari è il complementare dell'insieme dei valori critici, dunque
+
+\begin{equation}
+	\begin{cases}
+		\VC_{F} \text{ chiuso}\\
+		M \setminus \VC_{F} = \VR_{F}
+	\end{cases} %
+	\implies %
+	\VR_{F} \text{ aperto}
+\end{equation}
 
 %
 
