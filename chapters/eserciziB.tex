@@ -1059,13 +1059,105 @@ Siccome la dimensione del gruppo lineare speciale in campo complesso è doppia r
 
 %
 
-\section{}\label{es2-17}
+\section{Punti regolari come aperto del dominio}\label{es2-17}
 
 \begin{tcolorbox}
-	Sia $ F : N \to M $ un'applicazione liscia tra varietà differenziabili. Dimostrare che l'insieme $ \mathcal{PR}_{F} $ dei punti regolari di $ F $ è un aperto di $ N $.
+	Sia $ F : N \to M $ un'applicazione liscia tra varietà differenziabili. Dimostrare che l'insieme $ \PR_{F} $ dei punti regolari di $ F $ è un aperto di $ N $.
 \end{tcolorbox}
 
-qui
+% soluzione presa da:
+% https://math.stackexchange.com/questions/2324431/the-set-of-all-regular-points-of-a-smooth-map-is-open
+
+Siano le dimensioni delle varietà
+
+\begin{equation}
+	\begin{cases}
+		\dim(N) = n\\
+		\dim(M) = m
+	\end{cases}
+\end{equation}
+
+Se un punto $ p \in N $ è un punto regolare per la funzione $ F $, le seguenti affermazioni sono equivalenti
+
+\begin{itemize}
+	\item $ F $ è una sommersione in $ p $
+	
+	\item $ F_{*p} $ è suriettiva
+	
+	\item  $ \rank(F_{*p}) = k $ con $ k = \min \{n,m\} $
+\end{itemize}
+
+Consideriamo le seguenti carte e condizioni:
+
+\begin{equation}
+	\begin{cases}
+		(U,\phi) \in N \qcomma (U,\phi) \ni p\\
+		(V,\psi) \in M \qcomma (V,\psi) \ni F(p)\\
+		F(U) \subseteq V
+	\end{cases}
+\end{equation}
+
+Consideriamo inoltre l'applicazione continua\footnote{%
+	Siano due spazi vettoriali topologici $ V $ e $ W $, una funzione lineare $ L : V \to W $ è continua se $ V $ è finito dimensionale e di Hausdorff; in questo caso, $ G $ è lineare perché un differenziale e dominio e codominio rispettano le condizioni in quanto varietà differenziabili.%
+}
+
+\map{G}
+	{\phi(U)}{M_{n \times m}(\R)}
+	{x}{(\psi \circ F \circ \phi^{-1})_{*x}}
+
+Siccome
+
+\begin{equation}
+	G(x) = (\psi \circ F \circ \phi^{-1})_{*x} %
+	= \psi_{F(\phi^{-1}(x))} \circ F_{*\phi^{-1}(x)} \circ (\phi^{-1})_{*x}
+\end{equation}
+
+se prendiamo $ x = \phi(p) $ con $ p \in \PR_{F} $, abbiamo che
+
+\begin{equation}
+	G(\phi(p)) = \psi_{F(p)} \circ F_{*p} \circ (\phi^{-1})_{*\phi(p)}
+\end{equation}
+
+dove i differenziali $ \psi_{F(p)} $ e $ (\phi^{-1})_{*\phi(p)} $ sono isomorfismi perché le applicazioni delle carte sono diffeomorfismi e $ F_{*p} $ è suriettiva perché $ p $ è un punto regolare: queste condizioni implicano che $ G $ sia suriettiva in $ \phi(p) $ e dunque che abbia rango massimo, i.e.
+
+\begin{equation}
+	\rank(G(\phi(p))) = k
+\end{equation}
+
+Questo implica anche che esiste una sottomatrice $ g(\phi(p)) $ di dimensione $ k \times k $ di $ G(\phi(p)) $ che abbia determinante diverso non nullo, i.e.
+
+\begin{equation}
+	\E g(\phi(p)) \in M_{k \times k}(\R) \mid \det(g(\phi(p))) \neq 0
+\end{equation}
+
+Consideriamo ora l'applicazione continua $ H $ e lo schema riassuntivo delle applicazioni utilizzate:
+
+\sbs{0.4}{%
+			\map{H}
+				{M_{k \times k}(\R)}{\R}
+				{A}{\det(A)}
+			}
+	{0.6}{%
+			\diagr{%
+					N \arrow[dd, "\phi"] \arrow[rr, "F"]                               \&  \& M \arrow[dd, "\psi"] \\
+					\&  \&                      \\
+					\R^{n} \arrow[dd, "G"] \arrow[rr, "\psi \circ F \circ \phi^{-1}"'] \&  \& \R^{m}               \\
+					\&  \&                      \\
+					M_{n \times m}(\R) \supset M_{k \times k}(\R) \arrow[rr, "H"]      \&  \& \R                  
+					}
+			}
+
+A questo punto, considerando l'insieme
+
+\begin{equation}
+	(H \circ G \circ \phi^{-1}) (\R \setminus \{0\}) \subset N
+\end{equation}
+
+questo è un intorno aperto di $ p $ in cui $ G(\phi(p)) $ è suriettiva: prendendo l'unione degli intorni aperti di tutti i punti regolari, otteniamo un aperto che coincide con l'insieme dei punti regolari di $ F $, i.e.
+
+\begin{equation}
+	\sum_{p \in \PR_{F}} (H \circ G \circ \phi^{-1}) (\R \setminus \{0\}) = \PR_{F}
+\end{equation}
 
 %
 
