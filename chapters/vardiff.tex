@@ -5336,7 +5336,7 @@ Per il caso complesso, vedi Esercizio \ref{es2-16}.
 	Sia un'applicazione $ F : W \to \R^{m} $ con $ W \subset \R^{n} $ aperto e supponiamo che esista un intorno $ I_{1} $ di un punto $ p \in W $ tale che il rango dello jacobiano dell'applicazione in $ I_{1} $ sia pari a un valore costante $ k $, i.e.
 	
 	\begin{equation}
-		\rank(J(F)(q)) = \rank \left[ \pdv{F^{i}}{x^{j}} \, (q) \right] = k \leqslant \min\{n,m\} \qcomma \forall q \in I_{1}
+		\rank(J(F)(q)) = \rank \left( \left[ \pdv{F^{i}}{x^{j}} \, (q) \right] \right) = k \leqslant \min\{n,m\} \qcomma \forall q \in I_{1}
 	\end{equation}
 
 	Allora esistono due diffeomorfismi
@@ -5346,7 +5346,7 @@ Per il caso complesso, vedi Esercizio \ref{es2-16}.
 		h : I_{2} \to \R^{m} \, \mid \, h(F(p)) = 0
 	\end{gather}
 	
-	dove $ I_{2} \ni F(p) $ è un intorno di $ F(p) $ in $ \R^{m} $ tale che $ F(I_{1}) \subset I_{2} $, la cui composizione con $ F $
+	dove $ I_{2} $ è un intorno di $ F(p) $ in $ \R^{m} $ tale che $ F(I_{1}) \subset I_{2} $, la cui composizione con $ F $
 	
 	\map{h \circ F \circ g^{-1}}
 		{\R^{n}}{\R^{m}}
@@ -5361,7 +5361,7 @@ Per il caso complesso, vedi Esercizio \ref{es2-16}.
 	\img{0.7}{img36}
 \end{theorem}
 
-\begin{theorem}[Rango costante in geometria differenziale]
+\begin{theorem}[Rango costante in geometria differenziale]\label{thrm:const-rank}
 	Siano $ F : N \to M $ un'applicazione liscia tra varietà $ N $ e $ M $ di dimensione rispettivamente $ n $ e $ m $, e $ I $ un intorno di un punto $ p \in N $ tale che
 	
 	\begin{equation}
@@ -5372,8 +5372,8 @@ Per il caso complesso, vedi Esercizio \ref{es2-16}.
 	
 	\begin{equation}
 		\begin{cases}
-			(U,\phi) \in N \qcomma \phi(p) = 0 \\
-			(V,\psi) \in M \qcomma \psi(F(p)) = 0 \\
+			(U,\phi) \in N, & \phi(p) = 0 \\
+			(V,\psi) \in M, & \psi(F(p)) = 0 \\
 			F(U) \subseteq V
 		\end{cases}
 	\end{equation}
@@ -5409,8 +5409,8 @@ Questi teoremi derivano dal teorema della funzione inversa come caso particolare
 	
 	\begin{equation}
 		\begin{cases}
-			(\tilde{U},\tilde{\phi}) \in N \qcomma \tilde{\phi}(p) = 0 \\
-			(\tilde{V},\tilde{\psi}) \in M \qcomma \tilde{\psi}(F(p)) = 0 \\
+			(\tilde{U},\tilde{\phi}) \in N, & \tilde{\phi}(p) = 0 \\
+			(\tilde{V},\tilde{\psi}) \in M, & \tilde{\psi}(F(p)) = 0 \\
 			F(\tilde{U}) \subseteq \tilde{V}
 		\end{cases}
 	\end{equation}
@@ -5425,10 +5425,10 @@ Questi teoremi derivano dal teorema della funzione inversa come caso particolare
 	Essendo dominio e codominio di quest'applicazione due aperti di spazi euclidei, possiamo applicare il teorema del rango costante in analisi: sappiamo che
 	
 	\begin{equation}
-		\rank(\tilde{\psi} \circ F \circ \tilde{\phi}^{-1})(\tilde{\phi}(q)) = k \qcomma \forall q \in \tilde{U}
+		\rank(f(q)) = \rank(\tilde{\psi} \circ F \circ \tilde{\phi}^{-1})(\tilde{\phi}(q)) = k \qcomma \forall q \in \tilde{U}
 	\end{equation}
 
-	perciò esistono due aperti $ I_{1} \subset \tilde{\phi}(\tilde{U}) $ e $ I_{2} \subset \tilde{\psi}(\tilde{V}) $ entrambi centrati in nella rispettiva origine e due diffeomorfismi
+	perciò esistono due aperti $ I_{1} \subset \tilde{\phi}(\tilde{U}) $ e $ I_{2} \subset \tilde{\psi}(\tilde{V}) $ entrambi centrati nella rispettiva origine e due diffeomorfismi
 	
 	\begin{gather}
 		g : I_{1} \to g(I_{1}) \subset \R^{n}\\
@@ -5443,12 +5443,14 @@ Questi teoremi derivano dal teorema della funzione inversa come caso particolare
 
 	A questo punto, possiamo considerare le carte
 	
-	\begin{gather}
-		(U,\phi) = (\tilde{\phi}(I_{1}),g \circ \tilde{\phi})\\
-		(V,\psi) = (\tilde{\psi}(I_{2}),h \circ \tilde{\psi})
-	\end{gather}
-
-	centrate rispettivamente in $ p $ e $ F(p) $: esplicitando la composizione
+	\begin{equation}
+		\begin{cases}
+			(U,\phi) \doteq (\tilde{\phi}^{-1}(I_{1}), g \circ \tilde{\phi}) \in N, & \phi(p) = 0 \\
+			(V,\psi) \doteq (\tilde{\psi}^{-1}(I_{2}), h \circ \tilde{\psi}) \in M, & \psi(F(p)) = 0
+		\end{cases}
+	\end{equation}
+	
+	Esplicitando la composizione
 	
 	\begin{equation}
 		h \circ f \circ g^{-1} = h \circ \tilde{\psi} \circ F \circ \tilde{\phi}^{-1} \circ g^{-1} = \psi \circ F \circ \phi^{-1}
@@ -5461,24 +5463,23 @@ Questi teoremi derivano dal teorema della funzione inversa come caso particolare
 		{(r^{1},\dots,r^{n})}{(r^{1},\dots,r^{k},0,\dots,0)}
 \end{proof}
 
-\begin{theorem}[Preimmagine di un'applicazione di rango costante]\label{thm:preimg-rank}
+\begin{theorem}[Preimmagine di un'applicazione di rango costante]
 	Siano un'applicazione liscia $ F : N \to M $ tra varietà differenziabili $ N $ e $ M $ di dimensione rispettivamente $ n $ ed $ m $, e un punto $ c \in M $ tale che $ F^{-1}(c) \neq \emptyset $ e supponiamo esista un aperto $ W \subset N $ tale che $ F^{-1}(c) \subset W $ nel quale il rango di $ F $ sia costante, i.e.
 	
 	\begin{equation}
 		\rank(F(q)) = k \qcomma \forall q \in W
 	\end{equation}
 
-	Allora $ F^{-1}(c) $ è una sottovarietà di $ N $ con $ \dim(F^{-1}(c)) = n-k $ o, equivalentemente, $ \operatorname{cod}_{N}(F^{-1}(c)) = k $.
+	Allora $ F^{-1}(c) $ è una sottovarietà di $ N $ con dimensione e codimensione
+	
+	\begin{gather}
+		\dim(F^{-1}(c)) = n - k \\
+		\operatorname{cod}_{N}(F^{-1}(c)) = k
+	\end{gather}
 \end{theorem}
 
 \begin{proof}
 	Sia un punto $ p \in F^{-1}(c) $, costruiamo dunque una carta di $ N $ intorno a $ p $ relativamente a $ F^{-1}(c) $. Siano le carte
-	
-	\begin{itemize}
-		\item $ (U,\phi) \in N $ con $ \phi = (x^{1},\dots,x^{n}) $ centrata in $ p $, i.e. $ \phi(p) = 0 \in \R^{n} $;
-		
-		\item $ (V,\psi) \in M $ con $ \psi = (y^{1},\dots,y^{m}) $ centrata in $ F(p) = c $, i.e. $ \psi(F(p)) = 0 \in \R^{m} $
-	\end{itemize}
 
 	\begin{equation}
 		\begin{cases}
@@ -5488,13 +5489,13 @@ Questi teoremi derivano dal teorema della funzione inversa come caso particolare
 		\end{cases}
 	\end{equation}
 
-	e la composizione
+	e la composizione ricavata dal Teorema \ref{thrm:const-rank}
 	
 	\map{\psi \circ F \circ \phi^{-1}}
 		{\phi(U)}{\psi(V)}
 		{(r^{1},\dots,r^{n})}{(r^{1},\dots,r^{k},0,\dots,0)}
 
-	dove $ \phi(U) \subset \R^{n} $ e $ \psi(V) \subset \R^{m} $. Questa carte esistono perché possiamo supporre che $ U \subset W $ dove $ W $ è un intorno di $ p $ in cui il rango di $ F $ è costante con valore $ k $.\\
+	dove $ \phi(U) \subset \R^{n} $ e $ \psi(V) \subset \R^{m} $. Queste carte esistono perché possiamo sempre supporre che $ U \subset W $, dove $ W $ è un intorno di $ p $ in cui il rango di $ F $ è costante con valore $ k $.\\
 	Osserviamo che
 	
 	\begin{align}
@@ -5543,23 +5544,27 @@ Dimostriamo che l'insieme delle matrici ortogonali
 è una sottovarietà di $ GL_{n}(\R) $.\\
 Sia l'applicazione
 
-\map{F}
-	{GL_{n}(\R)}{GL_{n}(\R)}
-	{A}{A^{T} A}
+\begin{align}
+	\begin{split}
+		F : GL_{n}(\R) &\to GL_{n}(\R)\\
+		A &\mapsto A^{T} A
+	\end{split}
+\end{align}
 
-dunque $ O(n) = F^{-1}(I) $ dove $ I = I_{n} $.\\
+dunque $ O(n) = F^{-1}(I) $, dove identifichiamo $ I \equiv I_{n} $.\\
 Introduciamo le applicazioni traslazione a sinistra e a destra:
 
-\map{L_{C}}
-	{GL_{n}(\R)}{GL_{n}(\R)}
-	{A}{C A}
-%
-\map{R_{C}}
-	{GL_{n}(\R)}{GL_{n}(\R)}
-	{A}{A C}
+\begin{align}
+	\begin{split}
+		L_{C} : GL_{n}(\R) &\to GL_{n}(\R)\\
+		A &\mapsto C A\\\\
+		%
+		R_{C} : GL_{n}(\R) &\to GL_{n}(\R)\\
+		A &\mapsto A C
+	\end{split}
+\end{align}
 
-le quali sono diffeomorfismi con inverse $ L_{C}^{-1} = L_{C^{-1}} $ e $ R_{C}^{-1} = R_{C^{-1}} $.\\
-Vale la seguente equazione
+le quali sono diffeomorfismi con inverse $ L_{C}^{-1} = L_{C^{-1}} $ e $ R_{C}^{-1} = R_{C^{-1}} $. Vale la seguente equazione
 
 \begin{equation}
 	L_{C^{T}} \circ R_{C} \circ F = F \circ R_{C}
@@ -5582,7 +5587,7 @@ Considerando $ A \in GL_{n}(\R) $, calcoliamo il differenziale dell'equazione
 \begin{align}
 	\begin{split}
 		(L_{C^{T}} \circ R_{C} \circ F)_{*A} &= (F \circ R_{C})_{*A}\\
-		(L_{C^{T}})_{*A^{T} A C} \circ (R_{C})_{*A^{T} A} \circ F_{*A} &= F_{*A C} \circ R_{C_{*A}}
+		L_{C^{T}_{*A^{T} A C}} \circ R_{C_{*A^{T} A}} \circ F_{*A} &= F_{*A C} \circ R_{C_{*A}}
 	\end{split}
 \end{align}
 
@@ -5595,11 +5600,11 @@ Siccome le traslazioni a sinistra e a destra sono diffeomorfismi, i loro differe
 da cui, essendo $ C $ arbitrario, possiamo scrivere $ A C = B $ e
 
 \begin{equation}
-	\rank(F(A)) = \rank(F(B)) \qcomma \forall A,B \in GL_{n}(\R)
+	\rank(F(A)) = \rank(F(B)), \qquad \forall A,B \in GL_{n}(\R)
 \end{equation}
 
 dunque il rango di $ F $ non dipende dalla matrice a cui si applica, i.e. il rango di $ F $ è costante in tutto $ GL_{n}(\R) $.\\
-Applicando dunque il Teorema \ref{thm:preimg-rank}, $ O(n) $ è una sottovarietà di $ GL_{n}(\R) $.
+Applicando dunque il teorema, $ O(n) $ è una sottovarietà di $ GL_{n}(\R) $.
 
 \subsection{Teoremi di immersione e sommersione locale}
 
