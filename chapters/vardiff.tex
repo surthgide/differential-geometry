@@ -3906,7 +3906,7 @@ Sia l'applicazione lineare (inclusione)
 con $ n \leqslant m $ e con $ m-n $ zeri aggiunti nei punti dell'immagine.\\
 Essendo lineare, il differenziale coincide con l'applicazione stessa, i.e. $ i_{*p} = i $, la quale è iniettiva, dunque $ i $ è un'immersione.\\
 Questa applicazione definisce la forma canonica delle immersioni, cioè ogni immersione è localmente analoga all'inclusione sopra considerata\footnote{%
-	Vedi Teorema \ref{loc-imm}.%
+	Vedi Teorema \ref{thrm:loc-imm}.%
 }.
 
 \paragraph{2) Sommersione canonica}
@@ -3920,7 +3920,7 @@ Sia l'applicazione lineare (proiezione)
 con $ n \geqslant m $.\\
 Essendo lineare, il differenziale coincide con l'applicazione stessa, i.e. $ \pi_{*p} = \pi $, la quale è suriettiva, dunque $ \pi $ è una sommersione.\\
 Questa applicazione definisce la forma canonica delle sommersioni, cioè ogni sommersione è localmente analoga alla proiezione sopra considerata\footnote{%
-	Vedi Teorema \ref{loc-sub}.%
+	Vedi Teorema \ref{thrm:loc-sub}.%
 }.
 
 \paragraph{3)}
@@ -5614,21 +5614,40 @@ Un'applicazione liscia $ F : N \to M $ tra varietà differenziabili di dimension
 	\rank(F(p)) = k = \min\{n,m\}
 \end{equation}
 
-Se $ k = m \leqslant n $ allora $ F $ è una sommersione ($ F_{*p} $ suriettivo) in $ p $ invece se $ k = n \leqslant m $ allora $ F $ è un'immersione ($ F_{*p} $ iniettivo) in $ p $.
+Se $ k = m \leqslant n $ allora $ F $ è una sommersione in $ p $ ($ F_{*p} $ suriettivo) invece se $ k = n \leqslant m $ allora $ F $ è un'immersione in $ p $ ($ F_{*p} $ iniettivo).
 
 \begin{lemma}
 	Sia un'applicazione liscia $ F : N \to M $ e sia $ p \in N $ tale che il rango di $ F $ in $ p $ sia massimale, allora esiste un intorno di $ p $ dove il rango di $ F $ è massimale. Equivalentemente, la condizione di \textit{rango massimale} è una \textit{condizione aperta}.
 \end{lemma}
 
 \begin{proof}
-	Siano le carte $ (U,\phi) \in N $ con $ \phi = (x^{1},\dots,x^{n}) $ centrata in $ p $ e $ (V,\psi) \in M $ con $ \psi = (y^{1},\dots,y^{m}) $ centrata in $ F(p) $ tali che $ F(U) \subseteq V $ e definiamo l'insieme
+	Siano le carte
 	
 	\begin{equation}
-		W \doteq \{ q \in U \mid \rank(J(F)(q)) = \rank \left( \left[ \dfrac{\partial F^{i}}{\partial x^{j}} (q) \right] \right) = k \}
+		\begin{cases}
+			(U,\phi) = (U; x^{1},\dots,x^{n}) \in N \qcomma \phi(p) = 0 \in \R^{n} \\
+			(V,\psi) = (V; y^{1},\dots,y^{m}) \in M \qcomma \psi(F(p)) = 0  \in \R^{m} \\
+			F(U) \subseteq V
+		\end{cases}
 	\end{equation}
 
-	Per ipotesi $ p \in W $ e dunque $ W \neq \emptyset $. Mostriamo che $ W $ è aperto in $ U $: siccome $ U $ è aperto in $ N $, allora anche $ W $ sarà aperto in $ N $.\\
-	Possiamo riscrivere $ W $ con $ \rank(J(F)(q)) \geqslant k $ perché il rango è massimale e non può essere $ >k $, dunque le condizioni sono equivalenti, i.e.
+	Definiamo l'insieme
+	
+	\begin{equation}
+		W \doteq \left\{ q \in U \st \rank(J(F)(q)) = \rank \left( \left[ \pdv{F^{i}}{x^{j}} \, (q) \right] \right) = k \right\}
+	\end{equation}
+
+	Per ipotesi $ p \in W $ e dunque $ W \neq \emptyset $.\\
+	Per mostrare che $ W $ sia aperto in $ N $, mostriamo prima che sia aperto in $ U $: siccome $ U $ è aperto in $ N $, allora anche $ W $ sarà aperto in $ N $.\\
+	Possiamo riscrivere la condizione dell'insieme $ W $ inserendo una diseguaglianza per il rango dello jacobiano:
+	
+	\begin{equation}
+		\rank(J(F)(q)) = k %
+		\implies %
+		\rank(J(F)(q)) \geqslant k
+	\end{equation}
+
+	Siccome il rango è massimale e non può essere maggiore di $ k $, le condizioni sono equivalenti, i.e. possiamo riscrivere $ W $ nel seguente modo
 	
 	\begin{equation}
 		W = \{ q \in U \mid \rank(J(F)(q)) \geqslant k \}
@@ -5638,7 +5657,7 @@ Se $ k = m \leqslant n $ allora $ F $ è una sommersione ($ F_{*p} $ suriettivo)
 	
 	\begin{align}
 		\begin{split}
-			U \setminus W &= \{ q \in U \mid \rank(J(F)(q)) < k \}\\
+			U \setminus W &= \{ q \in U \mid \rank(J(F)(q)) < k \} \\
 			&= \{ q \in U \mid m_{1}(q) = \cdots = m_{t}(q) = 0 \}
 		\end{split}
 	\end{align}
@@ -5646,11 +5665,11 @@ Se $ k = m \leqslant n $ allora $ F $ è una sommersione ($ F_{*p} $ suriettivo)
 	dove i $ m_{i}(q) $ sono i minori di ordine $ k $ di $ J(F)(q) $ e
 	
 	\begin{equation}
-		t =%
-			\begin{cases}
-				\binom{m}{k} & k = n\\\\
-				\binom{n}{k} & k = m
-			\end{cases}
+		t = %
+		\begin{cases}
+			\displaystyle \binom{m}{k}, & k = n \\\\
+			\displaystyle \binom{n}{k}, & k = m
+		\end{cases}
 	\end{equation}
 
 	Essendo i minori delle funzioni continue e $ U \setminus W $ la controimmagine di 0 (chiuso) del sistema finito di $ t $ funzioni continue
@@ -5665,75 +5684,83 @@ Se $ k = m \leqslant n $ allora $ F $ è una sommersione ($ F_{*p} $ suriettivo)
 
 	o equivalentemente la controimmagine di 0 della funzione continua
 	
-	\begin{align}
-		\begin{split}
-			f : U &\to \R^{t}\\
-			q &\mapsto (m_{1}(q),\dots,m_{t}(q))
-		\end{split}
-	\end{align}
+	\map{f}
+		{U}{\R^{t}}
+		{q}{(m_{1}(q),\dots,m_{t}(q))}
 
 	allora l'insieme $ U \setminus W = f^{-1}(0) $ è chiuso e dunque il suo complementare $ W $ è aperto.
 \end{proof}
 
 \begin{remark}
-	Preso un intorno $ I $ di un punto $ p $, abbiamo che
+	Preso un intorno $ I $ di un punto $ p $, abbiamo che valgono le seguenti implicazioni
 	
-	\begin{align}
-		\begin{split}
-			\rank(F(p)) = k \text{ massimale} &\implies \rank(F(q)) = k \text{ costante}\\
-			\rank(F(p)) = k \text{ costante} &\notimplies \rank(F(p)) = k \text{ massimale}
-		\end{split}
-	\end{align}
-
-	per $ \forall q \in I $.
+	\begin{gather}
+		\rank(F(p)) = k \text{ massimale} \implies \rank(F(q)) = k \text{ costante}, \; \forall q \in I \\
+		\nonumber \\
+		\rank(F(p)) = k \text{ costante} \notimplies \rank(F(p)) = k \text{ massimale}, \; \forall q \in I
+	\end{gather}
 \end{remark}
 
 \begin{corollary}
 	Sia $ F : N \to M $ un'immersione in $ p \in N $ ($ F_{*p} $ iniettivo), allora $ F $ è un'immersione in un intorno di $ p $. Analogamente, se $ F $ è una sommersione in $ p $, allora $ F $ è una sommersione in un intorno di $ p $.\\
-	Questo significa che la condizione per un'applicazione di essere un'immersione o una sommersione è una condizione aperta.
+	Equivalentemente, la condizione per un'applicazione di essere un'immersione o una sommersione è una condizione aperta.
 \end{corollary}
 
 \begin{proof}
-	Essendo il rango dell'applicazione $ F $ massimale in $ p $ per un'immersione (risp. sommersione), esiste un intorno di $ p $ in cui il rango è costantemente uguale al massimo, dunque l'applicazione continua ad essere un'immersione (risp. sommersione) anche in questo intorno.
+	Essendo il rango dell'applicazione $ F $ massimale in $ p $ per un'immersione (risp. sommersione), esiste un intorno di $ p $ in cui il rango è costantemente uguale al massimo, dunque l'applicazione continua a essere un'immersione (risp. sommersione) anche in questo intorno.
 \end{proof}
 
 Combinando questo corollario con il teorema del rango costante si ottengono i teoremi di immersione e sommersione locale.
 
-\begin{theorem}[Immersione locale]\label{loc-imm}
-	Sia $ F : N \to M $ ($ n \leqslant m $) un'immersione in $ p \in N $, allora esistono due carte $ (U,\phi) \in N $ con $ \phi = (x^{1},\dots,x^{n}) $ e $ \phi(p)=0 $ e $ (V,\psi) \in M $ con $ \psi = (y^{1},\dots,y^{m}) $ e $ \psi(F(p))=0 $ tali che $ F(U) \subseteq V $ e la funzione può essere scritta come \textit{immersione canonica} (inclusione)
+\begin{theorem}[Immersione locale]\label{thrm:loc-imm}
+	Sia $ F : N \to M $ un'immersione in $ p \in N $ le cui dimensioni delle varietà rispettano $ n \leqslant m $, allora esistono due carte
 	
-	\begin{align}
-		\begin{split}
-			\psi \circ F \circ \phi^{-1} : \phi(U) &\to \psi(V)\\
-			(r^{1},\dots,r^{n}) &\mapsto (r^{1},\dots,r^{n},0,\dots,0)
-		\end{split}
-	\end{align}
+	\begin{equation}
+		\begin{cases}
+			(U,\phi) = (U; x^{1},\dots,x^{n}) \in N \qcomma \phi(p) = 0 \in \R^{n} \\
+			(V,\psi) = (V; y^{1},\dots,y^{m}) \in M \qcomma \psi(F(p)) = 0  \in \R^{m} \\
+			F(U) \subseteq V
+		\end{cases}
+	\end{equation}
+	
+	tali che l'applicazione possa essere scritta come \textit{immersione canonica} (inclusione)
+	
+	\map{\psi \circ F \circ \phi^{-1}}
+		{\phi(U)}{\psi(V)}
+		{(r^{1},\dots,r^{n})}{(r^{1},\dots,r^{n},0,\dots,0)}
 
 	dove nell'immagine ci sono $ m-n $ zeri.
 \end{theorem}
 
-\begin{theorem}[Sommersione locale]\label{loc-sub}
-	Sia $ F : N \to M $ ($ n \geqslant m $) una sommersione in $ p \in N $, allora esistono due carte $ (U,\phi) \in N $ con $ \phi = (x^{1},\dots,x^{n}) $ e $ \phi(p)=0 $ e $ (V,\psi) \in M $ con $ \psi = (y^{1},\dots,y^{m}) $ e $ \psi(F(p))=0 $ tali che $ F(U) \subseteq V $ e la funzione può essere scritta come \textit{sommersione canonica} (proiezione)
+\begin{theorem}[Sommersione locale]\label{thrm:loc-sub}
+	Sia $ F : N \to M $ una sommersione in $ p \in N $ le cui dimensioni delle varietà rispettano $ n \geqslant m $, allora esistono due carte
 	
-	\begin{align}
-		\begin{split}
-			\psi \circ F \circ \phi^{-1} : \phi(U) &\to \psi(V)\\
-			(r^{1},\dots,r^{n}) &\mapsto (r^{1},\dots,r^{m})
-		\end{split}
-	\end{align}
+	\begin{equation}
+		\begin{cases}
+			(U,\phi) = (U; x^{1},\dots,x^{n}) \in N \qcomma \phi(p) = 0 \in \R^{n} \\
+			(V,\psi) = (V; y^{1},\dots,y^{m}) \in M \qcomma \psi(F(p)) = 0  \in \R^{m} \\
+			F(U) \subseteq V
+		\end{cases}
+	\end{equation}
+	
+	tali che l'applicazione possa essere scritta come \textit{sommersione canonica} (proiezione)
+	
+	\map{\psi \circ F \circ \phi^{-1}}
+		{\phi(U)}{\psi(V)}
+		{(r^{1},\dots,r^{n})}{(r^{1},\dots,r^{m})}
 	
 	dove nell'immagine ci sono le prime $ m $ coordinate del punto del dominio.
 \end{theorem}
 
-\begin{corollary}[1]\label{th-somm-loc-cor}
+\begin{corollary}\label{th-somm-loc-cor}
 	Sia $ F : N \to M $ una sommersione, allora $ F $ è un'applicazione aperta.
 \end{corollary}
 
 \begin{proof}
-	La sommersione è localmente aperta in quanto la sommersione canonica è un'applicazione aperta, ma un'applicazione localmente aperta è anche aperta. Infatti, se $ U \subset N $ è aperto e $ F $ è localmente aperta, allora
+	La sommersione è localmente aperta in quanto la sommersione canonica è un'applicazione aperta, ma un'applicazione localmente aperta è anche aperta. Infatti, se $ U \subset N $ è aperto ed $ F $ è localmente aperta, allora
 	
 	\begin{equation}
-		\forall p \in U, \, \E U_{p} \text{ intorno} \mid F_{|U_{p}} \text{ aperta}
+		\forall p \in U, \, \E U_{p} \text{ intorno} \mid \eval{F}_{U} \text{ aperta}
 	\end{equation}
 
 	ma $ U $ si può scrivere come
@@ -5745,31 +5772,32 @@ Combinando questo corollario con il teorema del rango costante si ottengono i te
 	e applicando $ F $ si ottiene
 	
 	\begin{align}
-		F(U) = F \left( \bigcup_{p \in U} U_{p} \right) = \bigcup_{p \in U} F(U_{p})
+		F(U) = F \left( \bigcup_{p \in U} U_{p} \right) %
+		= \bigcup_{p \in U} F(U_{p})
 	\end{align}
 
 	che è aperto in quanto unione di aperti.
 \end{proof}
 
-\begin{corollary}[2]
+\begin{corollary}
 	Sia $ F : N \to M $ una sommersione tra varietà $ N $ compatta e $ M $ connessa, allora $ F $ è suriettiva.
 \end{corollary}
 
 \begin{proof}
-	Per il primo corollario, $ F $ è aperta in quanto sommersione, mentre per il lemma dell'applicazione chiusa\footnote{%
+	Per il primo corollario, $ F $ è aperta in quanto sommersione mentre, per il lemma dell'applicazione chiusa\footnote{%
 		Vedi Lemma \ref{lemma-clos-app}.%
-	} $ F $ è anche chiusa. A questo punto, l'immagine di $ N $ attraverso $ F $ è sia aperta che chiusa ma è sottoinsieme di $ M $ che è compatto ($ F(N) \subseteq M $): l'unico sottoinsieme di un compatto che è sia aperto che chiuso è il compatto stesso, dunque $ F(N) = M $ e perciò $ F $ è suriettiva.
+	}, $ F $ è anche chiusa. A questo punto, l'immagine di $ N $ attraverso $ F $ è sia aperta che chiusa ma è sottoinsieme di $ M $ che è compatto ($ F(N) \subseteq M $): l'unico sottoinsieme di un compatto che è sia aperto che chiuso è il compatto stesso, dunque $ F(N) = M $ e perciò $ F $ è suriettiva.
 \end{proof}
 
-\begin{corollary}[3]
-	Siano $ N $ una varietà differenziabile compatta e $ F : N \to \R^{m} $ un'applicazione liscia, allora deve esistere almeno un punto critico, i.e. $ \mathcal{PC}_{F} \neq \emptyset $.
+\begin{corollary}
+	Siano $ N $ una varietà differenziabile compatta e $ F : N \to \R^{m} $ un'applicazione liscia, allora deve esistere almeno un punto critico, i.e. $ \PC_{F} \neq \emptyset $.
 \end{corollary}
 
 \begin{proof}
-	Se per assurdo $ \mathcal{PC}_{F} = \emptyset $ allora $ N = \mathcal{PR}_{F} $ e quindi $ F $ è una sommersione: per il secondo corollario $ F(N) = \R^{m} $ ma questo è assurdo in quanto $ N $ è compatta e dunque la sua immagine è compatta mentre $ \R^{m} $ non lo è (un'applicazione suriettiva porta compatti in compatti).
+	Se per assurdo $ \PC_{F} = \emptyset $ allora $ N = \PR_{F} $ e quindi $ F $ è una sommersione: per il secondo corollario $ F(N) = \R^{m} $ ma questo è assurdo in quanto $ N $ è compatta e dunque la sua immagine è compatta mentre $ \R^{m} $ non lo è (un'applicazione suriettiva porta compatti in compatti).
 \end{proof}
 
-\begin{corollary}[4]\label{imm_sph}
+\begin{corollary}\label{imm_sph}
 	Non esiste un'immersione dalla sfera $ \S^{n} $ a $ \R^{n} $.
 \end{corollary}
 
@@ -5779,49 +5807,68 @@ Combinando questo corollario con il teorema del rango costante si ottengono i te
 
 \begin{remark}
 	L'affermazione
-	
+
 	\begin{equation}
-		F : N \to M \text{ liscia} \wedge c \in \mathcal{VR}_{F} \cap F(N) \implies F^{-1}(c) \text{ sottovarietà di } N
+		\begin{cases}
+			F : N \to M \text{ liscia} \\
+			c \in \VR_{F} \cap F(N)
+		\end{cases} %
+		\implies %
+		F^{-1}(c) \text{ sottovarietà di } N
 	\end{equation}
 
 	segue dall'affermazione
 	
-	\begin{gather}
-		F : N \to M \text{ liscia} \wedge \rank(F(q)) = k, \, \forall q \in W \supset F^{-1}(c)\nonumber\\
-		\Downarrow\\
-		F^{-1}(c) \text{ sottovarietà di } N\nonumber
-	\end{gather}
+	\begin{equation}
+		\begin{cases}
+			F : N \to M \text{ liscia} \\
+			\rank(F(q)) = k, & \forall q \in W \supset F^{-1}(c)
+		\end{cases} %
+		\implies %
+		F^{-1}(c) \text{ sottovarietà di } N
+	\end{equation}
 \end{remark}
 
 \begin{proof}
-	Consideriamo la funzione $ F : N \to M $ il punto $ c \in \mathcal{VR}_{F} \cap F(N) $ dunque un punto $ p $ della controimmagine di $ c $ apparterrà a $ p \in \mathcal{PR}_{F} \cap F^{-1}(c) $. Siccome $ p $ è un punto regolare, $ F $ è una sommersione in $ p $ ($ n \geqslant m $): essendo la condizione di sommersione in un punto una condizione aperta, esiste un intorno $ U_{p} \subset N $ di $ p $ tale che
+	Consideriamo le varietà differenziabili $ N $ ed $ M $ rispettivamente di dimensione $ n $ ed $ m $. Siccome $ c \in \VR_{F} \cap F(N) $, un punto $ p $ della controimmagine di $ c $ apparterrà a $ p \in \PR_{F} \cap F^{-1}(c) $, i.e.
 	
 	\begin{equation}
-		\rank(F(q)) = m, \qquad \forall q \in U_{p}
+		\begin{cases}
+			c \in \VR_{F} \cap F(N) \\
+			p \in F^{-1}(c)
+		\end{cases} %
+		\implies %
+		p \in \PR_{F} \cap F^{-1}(c)
 	\end{equation}
 	
-	Il rango della funzione $ F $ è massimale ($ m = \dim(M) $) in quanto F è una sommersione ed è costante nell'aperto $ U_{p} $ in quanto massimale in $ p $ (la condizione di rango massimale è aperta).\\
+	Siccome $ p $ è un punto regolare, $ F $ è una sommersione in $ p $ ($ n \geqslant m $): essendo la condizione di sommersione in un punto una condizione aperta, esiste un intorno $ U_{p} \subset N $ di $ p $ tale che
+	
+	\begin{equation}
+		\rank(F(q)) = m \qcomma \forall q \in U_{p}
+	\end{equation}
+	
+	Il rango della funzione $ F $ è massimale in quanto F è una sommersione ed è costante nell'aperto $ U_{p} $ in quanto massimale in $ p $ (la condizione di rango massimale è aperta).\\
 	A questo punto, al variare di $ p $, abbiamo diversi aperti di cui consideriamo l'unione
 	
 	\begin{equation}
-		W = \bigcup_{p \in \mathcal{PR}_{F} \cap F^{-1}(c)} U_{p}
+		W = \bigcup_{p \in \PR_{F} \cap F^{-1}(c)} U_{p}
 	\end{equation}
 	
 	la quale contiene $ F^{-1}(c) $, i.e. $ W \supset F^{-1}(c) $.\\
 	Avendo considerato l'unione di aperti in cui il rango è costante (e massimale), questo sarà ancora costante (e massimale) in tutto $ W $, i.e.
 	
 	\begin{equation}
-		\rank(F(q)) = m, \qquad \forall q \in W
+		\rank(F(q)) = m \qcomma \forall q \in W
 	\end{equation}
 
 	il che implica
 	
 	\begin{equation}
-		\rank(F(q)) = m, \qquad \forall q \in F^{-1}(c)
+		\rank(F(q)) = m \qcomma \forall q \in F^{-1}(c)
 	\end{equation}
 	
-	in quanto $ F^{-1}(c) \subset W $: per il teorema della preimmagine di un'applicazione di rango costante, otteniamo dunque che $ F^{-1}(c) $ è una sottovarietà di $ N $.\\	
-	Questo dimostra l'implicazione in quanto abbiamo mostrato che il teorema della preimmagine di un valore regolare segue dal teorema della preimmagine di un'applicazione di rango costante, in quanto abbiamo usato il secondo teorema per dimostrare il primo.
+	in quanto $ F^{-1}(c) \subset W $. Per il teorema della preimmagine di un'applicazione di rango costante, otteniamo dunque che $ F^{-1}(c) $ è una sottovarietà di $ N $.\\	
+	Questo dimostra l'implicazione poiché abbiamo mostrato che il teorema della preimmagine di un valore regolare segue dal teorema della preimmagine di un'applicazione di rango costante, in quanto abbiamo usato il secondo teorema per dimostrare il primo.
 \end{proof}
 
 \subsection{Immagini di applicazioni lisce}
