@@ -5463,7 +5463,7 @@ Questi teoremi derivano dal teorema della funzione inversa come caso particolare
 		{(r^{1},\dots,r^{n})}{(r^{1},\dots,r^{k},0,\dots,0)}
 \end{proof}
 
-\begin{theorem}[Preimmagine di un'applicazione di rango costante]
+\begin{theorem}[Preimmagine di un'applicazione di rango costante]\label{thm:preimg-rank}
 	Siano un'applicazione liscia $ F : N \to M $ tra varietà differenziabili $ N $ e $ M $ di dimensione rispettivamente $ n $ ed $ m $, e un punto $ c \in M $ tale che $ F^{-1}(c) \neq \emptyset $ e supponiamo esista un aperto $ W \subset N $ tale che $ F^{-1}(c) \subset W $ nel quale il rango di $ F $ sia costante, i.e.
 	
 	\begin{equation}
@@ -5544,27 +5544,23 @@ Dimostriamo che l'insieme delle matrici ortogonali
 è una sottovarietà di $ GL_{n}(\R) $.\\
 Sia l'applicazione
 
-\begin{align}
-	\begin{split}
-		F : GL_{n}(\R) &\to GL_{n}(\R)\\
-		A &\mapsto A^{T} A
-	\end{split}
-\end{align}
+\map{F}
+	{GL_{n}(\R)}{GL_{n}(\R)}
+	{A}{A^{T} A}
 
 dunque $ O(n) = F^{-1}(I) $, dove identifichiamo $ I \equiv I_{n} $.\\
 Introduciamo le applicazioni traslazione a sinistra e a destra:
 
-\begin{align}
-	\begin{split}
-		L_{C} : GL_{n}(\R) &\to GL_{n}(\R)\\
-		A &\mapsto C A\\\\
-		%
-		R_{C} : GL_{n}(\R) &\to GL_{n}(\R)\\
-		A &\mapsto A C
-	\end{split}
-\end{align}
+\map{L_{C}}
+	{GL_{n}(\R)}{GL_{n}(\R)}
+	{A}{C A}
+%
+\map{R_{C}}
+	{GL_{n}(\R)}{GL_{n}(\R)}
+	{A}{A C}
 
-le quali sono diffeomorfismi con inverse $ L_{C}^{-1} = L_{C^{-1}} $ e $ R_{C}^{-1} = R_{C^{-1}} $. Vale la seguente equazione
+le quali sono diffeomorfismi con inverse $ L_{C}^{-1} = L_{C^{-1}} $ e $ R_{C}^{-1} = R_{C^{-1}} $.\\
+Vale la seguente equazione
 
 \begin{equation}
 	L_{C^{T}} \circ R_{C} \circ F = F \circ R_{C}
@@ -5587,7 +5583,7 @@ Considerando $ A \in GL_{n}(\R) $, calcoliamo il differenziale dell'equazione
 \begin{align}
 	\begin{split}
 		(L_{C^{T}} \circ R_{C} \circ F)_{*A} &= (F \circ R_{C})_{*A}\\
-		L_{C^{T}_{*A^{T} A C}} \circ R_{C_{*A^{T} A}} \circ F_{*A} &= F_{*A C} \circ R_{C_{*A}}
+		(L_{C^{T}})_{*A^{T} A C} \circ (R_{C})_{*A^{T} A} \circ F_{*A} &= F_{*A C} \circ R_{C_{*A}}
 	\end{split}
 \end{align}
 
@@ -5600,11 +5596,11 @@ Siccome le traslazioni a sinistra e a destra sono diffeomorfismi, i loro differe
 da cui, essendo $ C $ arbitrario, possiamo scrivere $ A C = B $ e
 
 \begin{equation}
-	\rank(F(A)) = \rank(F(B)), \qquad \forall A,B \in GL_{n}(\R)
+	\rank(F(A)) = \rank(F(B)) \qcomma \forall A,B \in GL_{n}(\R)
 \end{equation}
 
 dunque il rango di $ F $ non dipende dalla matrice a cui si applica, i.e. il rango di $ F $ è costante in tutto $ GL_{n}(\R) $.\\
-Applicando dunque il teorema, $ O(n) $ è una sottovarietà di $ GL_{n}(\R) $.
+Applicando dunque il Teorema \ref{thm:preimg-rank}, $ O(n) $ è una sottovarietà di $ GL_{n}(\R) $.
 
 \subsection{Teoremi di immersione e sommersione locale}
 
