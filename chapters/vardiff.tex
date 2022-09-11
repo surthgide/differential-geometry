@@ -3833,7 +3833,7 @@ Un'applicazione liscia è un'immersione (risp. una sommersione) se lo è in ogni
 		\end{equation*}
 		
 		dove $ \dim(T(V)) \doteq \rank(T) $ viene anche chiamato rango di $ T $.%
-	}, se $ F : N \to M $ è un'immersione $ \dim(N) \leqslant \dim(M) $ mentre se è una sommersione $ \dim(N) \geqslant \dim(M) $.
+	}, se $ F : N \to M $ è un'immersione allora $ \dim(N) \leqslant \dim(M) $, mentre se è una sommersione allora $ \dim(N) \geqslant \dim(M) $.
 \end{definition}
 
 \begin{proof}
@@ -5613,7 +5613,8 @@ Un'applicazione liscia $ F : N \to M $ tra varietà differenziabili di dimension
 Se $ k = m \leqslant n $ allora $ F $ è una sommersione in $ p $ ($ F_{*p} $ suriettivo) invece se $ k = n \leqslant m $ allora $ F $ è un'immersione in $ p $ ($ F_{*p} $ iniettivo).
 
 \begin{lemma}
-	Sia un'applicazione liscia $ F : N \to M $ e sia $ p \in N $ tale che il rango di $ F $ in $ p $ sia massimale, allora esiste un intorno di $ p $ dove il rango di $ F $ è massimale. Equivalentemente, la condizione di \textit{rango massimale} è una \textit{condizione aperta}.
+	Sia un'applicazione liscia $ F : N \to M $ e sia $ p \in N $ tale che il rango di $ F $ in $ p $ sia massimale, allora esiste un intorno di $ p $ dove il rango di $ F $ è massimale.\\
+	Equivalentemente, la condizione di \textit{rango massimale} è una \textit{condizione aperta}.
 \end{lemma}
 
 \begin{proof}
@@ -5630,12 +5631,12 @@ Se $ k = m \leqslant n $ allora $ F $ è una sommersione in $ p $ ($ F_{*p} $ su
 	Definiamo l'insieme
 	
 	\begin{equation}
-		W \doteq \left\{ q \in U \st \rank(J(F)(q)) = \rank \left( \left[ \pdv{F^{i}}{x^{j}} \, (q) \right] \right) = k \right\}
+		W \doteq \left\{ q \in U \st \rank(J(F)(q)) = \rank \left( \left[ \pdv{F^{i}}{x^{j}} \, (q) \right] \right) = k \right\} \subset U \subset N
 	\end{equation}
 
 	Per ipotesi $ p \in W $ e dunque $ W \neq \emptyset $.\\
 	Per mostrare che $ W $ sia aperto in $ N $, mostriamo prima che sia aperto in $ U $: siccome $ U $ è aperto in $ N $, allora anche $ W $ sarà aperto in $ N $.\\
-	Possiamo riscrivere la condizione dell'insieme $ W $ inserendo una diseguaglianza per il rango dello jacobiano:
+	Possiamo riscrivere la condizione che definisce l'insieme $ W $ inserendo una diseguaglianza per il rango dello jacobiano:
 	
 	\begin{equation}
 		\rank(J(F)(q)) = k %
@@ -5643,7 +5644,7 @@ Se $ k = m \leqslant n $ allora $ F $ è una sommersione in $ p $ ($ F_{*p} $ su
 		\rank(J(F)(q)) \geqslant k
 	\end{equation}
 
-	Siccome il rango è massimale e non può essere maggiore di $ k $, le condizioni sono equivalenti, i.e. possiamo riscrivere $ W $ nel seguente modo
+	Siccome il rango è massimale e non può essere maggiore di $ k $, le condizioni sono equivalenti al fine della definizione di $ W $, i.e. possiamo riscrivere $ W $ nel seguente modo
 	
 	\begin{equation}
 		W = \{ q \in U \mid \rank(J(F)(q)) \geqslant k \}
@@ -5658,7 +5659,9 @@ Se $ k = m \leqslant n $ allora $ F $ è una sommersione in $ p $ ($ F_{*p} $ su
 		\end{split}
 	\end{align}
 
-	dove i $ m_{i}(q) $ sono i minori di ordine $ k $ di $ J(F)(q) $ e
+	dove i $ m_{i}(q) $ sono i minori\footnote{%
+		Un minore di ordine $ k $ di una matrice di dimensione $ n \times m $ è il determinante di una sottomatrice quadrata $ k \times k $ ricavata dalla prima.%
+	} di ordine $ k $ di $ J(F)(q) $ e
 	
 	\begin{equation}
 		t = %
@@ -5688,7 +5691,7 @@ Se $ k = m \leqslant n $ allora $ F $ è una sommersione in $ p $ ($ F_{*p} $ su
 \end{proof}
 
 \begin{remark}
-	Preso un intorno $ I $ di un punto $ p $, abbiamo che valgono le seguenti implicazioni
+	Preso un intorno $ I $ di un punto $ p $, valgono le seguenti implicazioni
 	
 	\begin{gather}
 		\rank(F(p)) = k \text{ massimale} \implies \rank(F(q)) = k \text{ costante}, \; \forall q \in I \\
@@ -5698,7 +5701,7 @@ Se $ k = m \leqslant n $ allora $ F $ è una sommersione in $ p $ ($ F_{*p} $ su
 \end{remark}
 
 \begin{corollary}
-	Sia $ F : N \to M $ un'immersione in $ p \in N $ ($ F_{*p} $ iniettivo), allora $ F $ è un'immersione in un intorno di $ p $. Analogamente, se $ F $ è una sommersione in $ p $, allora $ F $ è una sommersione in un intorno di $ p $.\\
+	Sia $ F : N \to M $ un'immersione in $ p \in N $ ($ F_{*p} $ iniettivo), allora $ F $ è un'immersione in un intorno di $ p $. Analogamente, se $ F $ è una sommersione in $ p $ ($ F_{*p} $ suriettivo), allora $ F $ è una sommersione in un intorno di $ p $.\\
 	Equivalentemente, la condizione per un'applicazione di essere un'immersione o una sommersione è una condizione aperta.
 \end{corollary}
 
@@ -5709,7 +5712,7 @@ Se $ k = m \leqslant n $ allora $ F $ è una sommersione in $ p $ ($ F_{*p} $ su
 Combinando questo corollario con il teorema del rango costante si ottengono i teoremi di immersione e sommersione locale.
 
 \begin{theorem}[Immersione locale]\label{thrm:loc-imm}
-	Sia $ F : N \to M $ un'immersione in $ p \in N $ le cui dimensioni delle varietà rispettano $ n \leqslant m $, allora esistono due carte
+	Sia $ F : N \to M $ un'immersione in $ p \in N $, le cui dimensioni delle varietà rispettano $ n \leqslant m $, allora esistono due carte
 	
 	\begin{equation}
 		\begin{cases}
@@ -5729,7 +5732,7 @@ Combinando questo corollario con il teorema del rango costante si ottengono i te
 \end{theorem}
 
 \begin{theorem}[Sommersione locale]\label{thrm:loc-sub}
-	Sia $ F : N \to M $ una sommersione in $ p \in N $ le cui dimensioni delle varietà rispettano $ n \geqslant m $, allora esistono due carte
+	Sia $ F : N \to M $ una sommersione in $ p \in N $, le cui dimensioni delle varietà rispettano $ n \geqslant m $, allora esistono due carte
 	
 	\begin{equation}
 		\begin{cases}
@@ -5826,7 +5829,7 @@ Combinando questo corollario con il teorema del rango costante si ottengono i te
 \end{remark}
 
 \begin{proof}
-	Consideriamo le varietà differenziabili $ N $ ed $ M $ rispettivamente di dimensione $ n $ ed $ m $. Siccome $ c \in \VR_{F} \cap F(N) $, un punto $ p $ della controimmagine di $ c $ apparterrà a $ p \in \PR_{F} \cap F^{-1}(c) $, i.e.
+	Consideriamo le varietà differenziabili $ N $ ed $ M $ rispettivamente di dimensione $ n $ ed $ m $. Siccome $ c \in \VR_{F} \cap F(N) $, un punto $ p $ della controimmagine di $ c $ apparterrà a $ \PR_{F} \cap F^{-1}(c) $, i.e.
 	
 	\begin{equation}
 		\begin{cases}
