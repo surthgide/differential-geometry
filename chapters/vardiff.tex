@@ -4861,7 +4861,15 @@ Possiamo dimostrare ora il teorema della preimmagine di un valore regolare nel c
 \end{theorem}
 
 \begin{proof}
-	Fissiamo un punto $ p \in F^{-1}(c) $ e scegliamo due carte $ (U,\phi) \in N $ intorno a $ p $ con $ \phi = (x^{1},\dots,x^{n}) $ e $ (V,\psi) \in M $ intorno a $ c $ con $ \psi = (y^{1},\dots,y^{m}) $ tale che $ \psi(c)=0 \in \R^{m} $ e $ F(U) \subseteq V $ (in quanto $ F $ è continua).
+	Fissiamo un punto $ p \in F^{-1}(c) $ e scegliamo due carte
+	
+	\begin{equation}
+		\begin{cases}
+			(U,\phi) = (U; x^{1},\dots,x^{n}) \in N, & \phi(p) = 0 \in \R^{n} \\
+			(V,\psi) = (V; y^{1},\dots,y^{n}) \in M, & \psi(F(p)) = \psi(c) = 0 \in \R^{m} \\
+			F(U) \subseteq V, & F \text{ continua}
+		\end{cases}
+	\end{equation}
 	
 	\img{0.8}{img35}
 
@@ -5613,7 +5621,7 @@ Un'applicazione liscia $ F : N \to M $ tra varietà differenziabili di dimension
 Se $ k = m \leqslant n $ allora $ F $ è una sommersione in $ p $ ($ F_{*p} $ suriettivo) invece se $ k = n \leqslant m $ allora $ F $ è un'immersione in $ p $ ($ F_{*p} $ iniettivo).
 
 \begin{lemma}
-	Sia un'applicazione liscia $ F : N \to M $ e sia $ p \in N $ tale che il rango di $ F $ in $ p $ sia massimale, allora esiste un intorno di $ p $ dove il rango di $ F $ è massimale.\\
+	Sia un'applicazione liscia $ F : N \to M $ e sia un punto $ p \in N $ tale che il rango di $ F $ in $ p $ sia massimale, allora esiste un intorno di $ p $ dove il rango di $ F $ è massimale.\\
 	Equivalentemente, la condizione di \textit{rango massimale} è una \textit{condizione aperta}.
 \end{lemma}
 
@@ -5751,7 +5759,7 @@ Combinando questo corollario con il teorema del rango costante si ottengono i te
 	dove nell'immagine ci sono le prime $ m $ coordinate del punto del dominio.
 \end{theorem}
 
-\begin{corollary}\label{th-somm-loc-cor}
+\begin{corollary}\label{cor:sub-open}
 	Sia $ F : N \to M $ una sommersione, allora $ F $ è un'applicazione aperta.
 \end{corollary}
 
@@ -5759,7 +5767,7 @@ Combinando questo corollario con il teorema del rango costante si ottengono i te
 	La sommersione è localmente aperta in quanto la sommersione canonica è un'applicazione aperta, ma un'applicazione localmente aperta è anche aperta. Infatti, se $ U \subset N $ è aperto ed $ F $ è localmente aperta, allora
 	
 	\begin{equation}
-		\forall p \in U, \, \E U_{p} \text{ intorno} \mid \eval{F}_{U} \text{ aperta}
+		\forall p \in U, \, \E U_{p} \text{ intorno di } p \mid U_{p} \subset U \, \wedge \, \eval{F}_{U_{p}} \text{ aperta}
 	\end{equation}
 
 	ma $ U $ si può scrivere come
@@ -5778,22 +5786,22 @@ Combinando questo corollario con il teorema del rango costante si ottengono i te
 	che è aperto in quanto unione di aperti.
 \end{proof}
 
-\begin{corollary}
-	Sia $ F : N \to M $ una sommersione tra varietà $ N $ compatta e $ M $ connessa, allora $ F $ è suriettiva.
+\begin{corollary}\label{cor:sub-comp-conn-surj}
+	Sia $ F : N \to M $ una sommersione tra varietà $ N $ compatta e $ M $ compatta e connessa, allora $ F $ è suriettiva.
 \end{corollary}
 
 \begin{proof}
-	Per il primo corollario, $ F $ è aperta in quanto sommersione mentre, per il lemma dell'applicazione chiusa\footnote{%
+	Per il Corollario \ref{cor:sub-open}, $ F $ è aperta in quanto sommersione mentre, per il lemma dell'applicazione chiusa\footnote{%
 		Vedi Lemma \ref{lemma-clos-app}.%
 	}, $ F $ è anche chiusa. A questo punto, l'immagine di $ N $ attraverso $ F $ è sia aperta che chiusa ma è sottoinsieme di $ M $ che è compatto ($ F(N) \subseteq M $): l'unico sottoinsieme di un compatto che è sia aperto che chiuso è il compatto stesso, dunque $ F(N) = M $ e perciò $ F $ è suriettiva.
 \end{proof}
 
 \begin{corollary}
-	Siano $ N $ una varietà differenziabile compatta e $ F : N \to \R^{m} $ un'applicazione liscia, allora deve esistere almeno un punto critico, i.e. $ \PC_{F} \neq \emptyset $.
+	Siano $ N $ una varietà differenziabile compatta e $ F : N \to \R^{m} $ un'applicazione liscia, allora deve esistere almeno un punto critico per l'applicazione, i.e. $ \PC_{F} \neq \emptyset $.
 \end{corollary}
 
 \begin{proof}
-	Se per assurdo $ \PC_{F} = \emptyset $ allora $ N = \PR_{F} $ e quindi $ F $ è una sommersione: per il secondo corollario $ F(N) = \R^{m} $ ma questo è assurdo in quanto $ N $ è compatta e dunque la sua immagine è compatta mentre $ \R^{m} $ non lo è (un'applicazione suriettiva porta compatti in compatti).
+	Se per assurdo $ \PC_{F} = \emptyset $ allora $ N = \PR_{F} $ e quindi $ F $ è una sommersione: per il Corollario \ref{cor:sub-comp-conn-surj}, $ F(N) = \R^{m} $ ($ F $ suriettiva) ma questo è assurdo in quanto $ N $ è compatta e dunque la sua immagine è compatta mentre $ \R^{m} $ non lo è (un'applicazione suriettiva porta compatti in compatti).
 \end{proof}
 
 \begin{corollary}\label{imm_sph}
@@ -5801,11 +5809,11 @@ Combinando questo corollario con il teorema del rango costante si ottengono i te
 \end{corollary}
 
 \begin{proof}
-	Se per assurdo esistesse un'immersione $ F : \S^{n} \to \R^{n} $ allora, siccome le dimensioni di dominio e codominio sono uguali, questa sarebbe anche una sommersione, in contrasto con il terzo corollario.
+	Se per assurdo esistesse un'immersione $ F : \S^{n} \to \R^{n} $ allora, siccome le dimensioni di dominio e codominio sono uguali, questa sarebbe anche una sommersione, in contrasto con il Corollario \ref{cor:sub-comp-conn-surj}.
 \end{proof}
 
 \begin{remark}
-	L'affermazione
+	Il Teorema \ref{thm:preimg}
 
 	\begin{equation}
 		\begin{cases}
@@ -5816,7 +5824,7 @@ Combinando questo corollario con il teorema del rango costante si ottengono i te
 		F^{-1}(c) \text{ sottovarietà di } N
 	\end{equation}
 
-	segue dall'affermazione
+	segue dal Teorema \ref{thm:preimg-rank}
 	
 	\begin{equation}
 		\begin{cases}
