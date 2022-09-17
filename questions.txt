@@ -46,3 +46,5 @@ nemmeno ben capito come siano fatte le sottovarietà
 
 esercizio B.16: nelle condizioni di SL_n(C) intendeva scrivere det(A) = 1 ?
 
+2.4.5: perché un embedding topologico (e quindi anche differenziale) è iniettivo?
+

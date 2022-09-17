@@ -5880,21 +5880,17 @@ Combinando questo corollario con il teorema del rango costante si ottengono i te
 
 \subsection{Immagini di applicazioni lisce}
 
-Ci chiediamo sotto quali ipotesi l'immagine di una varietà differenziabile $ N $ attraverso un'applicazione liscia $ F : N \to M $, i.e. F(N), è una sottovarietà di $ M $.\\
+Sia un'applicazione liscia $ F : N \to M $: ci chiediamo sotto quali ipotesi l'immagine $ F(N) $ della varietà differenziabile $ N $ attraverso $ F $ sia una sottovarietà di $ M $.\\
+Definiamo innanzitutto l'\textit{embedding topologico} come un'applicazione $ f : N \to M $ che individua un omeomorfismo tra $ N $ e $ f(N) $, dove quest'ultimo ha la topologia ereditata da $ M $.\\
 Supponiamo che $ N \subset M $ sia una sottovarietà, allora l'inclusione canonica
 
-\begin{align}
-	\begin{split}
-		i : N &\to M\\
-		q &\mapsto q
-	\end{split}
-\end{align}
+\map{i}
+	{N}{M}
+	{q}{q}
 
-è un'immersione iniettiva e un \textit{embedding topologico}\footnote{%
-	Un embedding topologico è un'applicazione $ f : N \to M $ che individua un omeomorfismo tra $ N $ e $ f(N) $ dove quest'ultimo ha la topologia ereditata da $ M $.%
-} (la condizione di embedding topologico implica l'iniettività).\\
+è un'immersione iniettiva e un embedding topologico (la condizione di embedding topologico implica l'iniettività).\\
 Da questa inclusione, possiamo definire l'\textit{embedding differenziale}\footnote{%
-	L'"embedding differenziale" verrà indicato semplicemente come "embedding", altrimenti verrà esplicitato "embedding topologico" nel caso in cui saremo interessati solo agli aspetti topologici.%
+	L'\textit{embedding differenziale} verrà indicato semplicemente come \textit{embedding} o \textit{embedding liscio}, altrimenti verrà esplicitato \textit{embedding topologico} nel caso in cui saremo interessati solo agli aspetti topologici.%
 } come un'applicazione liscia $ F : N \to M $ che soddisfa le seguenti due condizioni:
 
 \begin{itemize}
@@ -5905,19 +5901,32 @@ Da questa inclusione, possiamo definire l'\textit{embedding differenziale}\footn
 
 il che implica che un embedding è iniettivo. Ad esempio, come visto sopra, l'inclusione canonica è un embedding.
 
+\begin{remark}
+	Come l'embedding topologico induce un omeomorfismo tra il dominio e l'immagine del dominio tramite l'applicazione, l'embedding differenziale induce un diffeomorfismo tra il dominio e l'immagine del dominio tramite l'applicazione.
+\end{remark}
+
 \begin{theorem}\label{emb-subv}
-	Sia $ F : N \to M $ un embedding differenziabile, allora $ F(N) $ è una sottovarietà di $ M $ con $ \dim(N) = \dim(F(N)) $, dove $ F(N) \stackrel{diff.}{\simeq} N $ in quanto l'embedding induce un diffeomorfismo.
+	Sia $ F : N \to M $ un embedding differenziabile, allora $ F(N) $ è una sottovarietà di $ M $ con $ \dim(F(N)) = \dim(N) $, dove $ F(N) \stackrel{diff.}{\simeq} N $.
 \end{theorem}
 
 \begin{proof}
-	La dimostrazione sfrutta il teorema di immersione locale: essendo $ F : N \to M $ un'immersione ($ n \leqslant m $), dato $ p \in N $, esistono due carte $ (U,\phi) \in N $ con $ \phi = (x^{1},\dots,x^{n}) $ e $ \phi(p)=0 $ e $ (V,\psi) \in M $ con $ \psi = (y^{1},\dots,y^{m}) $ e $ \psi(F(p))=0 $ tali che $ F(U) \subseteq V $ e
+	La dimostrazione sfrutta il teorema di immersione locale\footnote{%
+		Vedi Teorema \ref{thrm:loc-imm}.%
+	}: essendo $ F : N \to M $ un'immersione ($ n \leqslant m $), dato $ p \in N $, esistono due carte
 	
-	\begin{align}
-		\begin{split}
-			\psi \circ F \circ \phi^{-1} : \phi(U) &\to \psi(V)\\
-			(r^{1},\dots,r^{n}) &\mapsto (r^{1},\dots,r^{n},0,\dots,0)
-		\end{split}
-	\end{align}
+	\begin{equation}
+		\begin{cases}
+			(U,\phi) = (U; x^{1},\dots,x^{n}) \in N, & \phi(p) = 0 \\
+			(V,\psi) = (V; y^{1},\dots,y^{m}) \in M, & \psi(F(p)) = 0 \\
+			F(U) \subseteq V
+		\end{cases}
+	\end{equation}
+	
+	tali che
+	
+	\map{\psi \circ F \circ \phi^{-1}}
+		{\phi(U)}{\psi(V)}
+		{(r^{1},\dots,r^{n})}{(r^{1},\dots,r^{n},0,\dots,0)}
 
 	dove $ \phi(U) \subset \R^{n} $, $ \psi(V) \subset \R^{m} $ e nell'immagine ci sono $ m-n $ zeri.\\
 	Applicando la funzione a $ \phi(U) $ otteniamo
@@ -5930,12 +5939,10 @@ il che implica che un embedding è iniettivo. Ad esempio, come visto sopra, l'in
 		\end{split}
 	\end{align}
 
-	Avremmo che $ (V,\psi) $ è una carta adattata di $ M $ intorno a $ F(p) $ relativamente a $ F(N) $ se $ F(N) \cap V = F(U) $ ma, in generale questa uguaglianza è falsa: può capitare semplicemente che $ F(U) \subsetneqq F(N) \cap V $ e questa condizione non è sufficiente perché $ V $ sia una carta adattata. Ad esempio, considerando lo schema
+	Nel caso in cui $ F(N) \cap V = F(U) $, avremmo che $ (V,\psi) $ è una carta adattata di $ M $ intorno a $ F(p) $ relativamente a $ F(N) $: in generale però questa uguaglianza è falsa in quanto $ F(U) \subsetneq F(N) \cap V $ e questa condizione non è sufficiente perché $ V $ sia una carta adattata.\\
+	Ad esempio, considerando lo schema
 	
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=0.7\textwidth,keepaspectratio]{img38}
-	\end{figure}
+	\img{0.9}{img38}
 	
 	vediamo che, siccome un'estremità di $ F(N) $ si avvicina indefinitamente a $ F(p) $ senza toccarlo, $ F(U) \subset F(N) \cap V $ ma non è possibile trovare un aperto $ V \in \R^{2} $ tale che $ F(U) = F(N) \cap V $.\\
 	Sfruttando ora il fatto che $ F $ sia anche un'embedding topologico, sappiamo che $ F(U) $ è un aperto di $ F(N) \subset M $, cioè esiste un aperto $ V' \subset M $ tale che $ F(U) = F(N) \cap V' $ (questo perché la topologia di $ F(N) $ è indotta da $ M $). Intersecando l'uguaglianza con l'aperto $ V $ della carta e chiamando $ W \doteq V \cap V' $, otteniamo
@@ -5950,16 +5957,18 @@ il che implica che un embedding è iniettivo. Ad esempio, come visto sopra, l'in
 		F(N) \cap W = \{ q \in V \mid y^{n+1}(q) = \cdots = y^{m}(q) = 0 \}
 	\end{equation}
 
-	dalla definizione di $ F(U) $ sopra e dunque $ (W,\psi_{|W}) $ è una carta adattata di $ M $ intorno a $ F(p) $ relativamente a $ F(N) $ (restringendo l'aperto da $ V $ e $ W $, si ottiene la definizione per le sottovarietà). A questo punto, dato che il punto $ p $ è arbitrario, $ F(N) $ è una sottovarietà di $ M $ di dimensione $ n $.
+	dalla definizione di $ F(U) $ sopra e dunque $ \left( W,\eval{\psi}_{W} \right) $ è una carta adattata di $ M $ intorno a $ F(p) $ relativamente a $ F(N) $ (restringendo l'aperto da $ V $ e $ W $, si ottiene la definizione per le sottovarietà). A questo punto, dato che il punto $ p $ è arbitrario, $ F(N) $ è una sottovarietà di $ M $ di dimensione $ n $.
 \end{proof}
 
-\begin{remark}[1]
+Per un esempio, vedi Esercizio \ref{es2-23}.
+
+\begin{remark}
 	Se $ F : N \to M $ è un'immersione iniettiva, questo non implica che $ F(N) $ sia una sottovarietà di $ M $. Chiameremo dunque $ F(N) \subset M $ \textit{sottovarietà immersa}\footnote{%
 		Una sottovarietà immersa non è necessariamente una sottovarietà.%
 	}, la quale è diffeomorfa a $ N $ ma non ha la struttura differenziale ereditata da $ M $.
 \end{remark}
 
-\begin{remark}[2]
+\begin{remark}
 	Se $ F : N \to M $ è un'immersione iniettiva ed $ N $ è compatta allora $ F $ è un embedding. Per il lemma dell'applicazione chiusa\footnote{%
 		Vedi Lemma \ref{lemma-clos-app}.%
 	}, essendo $ F $ continua e $ M $ compatta segue che $ F : N \to F(N) $ è un omeomorfismo e quindi un embedding topologico.
@@ -5974,10 +5983,9 @@ il che implica che un embedding è iniettivo. Ad esempio, come visto sopra, l'in
 	Se $ N $ è una varietà differenziabile di dimensione $ n>1 $ allora esiste esiste $ F : N \to \R^{2n-1} $ immersione iniettiva.
 \end{theorem}
 
-Nel caso in cui $ n=1 $, non esiste un'immersione iniettiva tra $ N $ e $ \R $, e.g. tra $ \S^{1} $ e $ \R $\footnote{%
+Nel caso in cui $ n=1 $, non esiste un'immersione iniettiva tra $ N $ e $ \R $, e.g.\footnote{%
 	Vedi Corollario \ref{imm_sph}.%
-}.\\
-Vedi Esercizio \ref{es2-23}.
+} tra $ \S^{1} $ e $ \R $.
 
 \subsubsection{\textit{Esempi}}
 
