@@ -5940,12 +5940,12 @@ il che implica che un embedding è iniettivo. Ad esempio, come visto sopra, l'in
 	\end{align}
 
 	Nel caso in cui $ F(N) \cap V = F(U) $, avremmo che $ (V,\psi) $ è una carta adattata di $ M $ intorno a $ F(p) $ relativamente a $ F(N) $: in generale però questa uguaglianza è falsa in quanto $ F(U) \subsetneq F(N) \cap V $ e questa condizione non è sufficiente perché $ V $ sia una carta adattata.\\
-	Ad esempio, considerando lo schema
+	Ad esempio, considerando lo schema per un'applicazione $ F : N \to M $
 	
 	\img{0.9}{img38}
 	
 	vediamo che, siccome un'estremità di $ F(N) $ si avvicina indefinitamente a $ F(p) $ senza toccarlo, $ F(U) \subset F(N) \cap V $ ma non è possibile trovare un aperto $ V \in \R^{2} $ tale che $ F(U) = F(N) \cap V $.\\
-	Sfruttando ora il fatto che $ F $ sia anche un'embedding topologico, sappiamo che $ F(U) $ è un aperto di $ F(N) \subset M $, cioè esiste un aperto $ V' \subset M $ tale che $ F(U) = F(N) \cap V' $ (questo perché la topologia di $ F(N) $ è indotta da $ M $). Intersecando l'uguaglianza con l'aperto $ V $ della carta e chiamando $ W \doteq V \cap V' $, otteniamo
+	Sfruttando ora il fatto che $ F $ sia anche un'embedding topologico, sappiamo che $ F(U) $ è un aperto di $ F(N) \subset M $, cioè esiste un aperto $ V' \subset M $ tale che $ F(U) = F(N) \cap V' $ (questo perché la topologia di $ F(N) $ è indotta da $ M $). Intersecando quest'ultima uguaglianza con l'aperto $ V $ della carta e chiamando $ W \doteq V \cap V' $, otteniamo
 	
 	\begin{equation}
 		F(U) \cap V = F(N) \cap V' \cap V = F(N) \cap W
@@ -5960,8 +5960,6 @@ il che implica che un embedding è iniettivo. Ad esempio, come visto sopra, l'in
 	dalla definizione di $ F(U) $ sopra e dunque $ \left( W,\eval{\psi}_{W} \right) $ è una carta adattata di $ M $ intorno a $ F(p) $ relativamente a $ F(N) $ (restringendo l'aperto da $ V $ e $ W $, si ottiene la definizione per le sottovarietà). A questo punto, dato che il punto $ p $ è arbitrario, $ F(N) $ è una sottovarietà di $ M $ di dimensione $ n $.
 \end{proof}
 
-Per un esempio, vedi Esercizio \ref{es2-23}.
-
 \begin{remark}
 	Se $ F : N \to M $ è un'immersione iniettiva, questo non implica che $ F(N) $ sia una sottovarietà di $ M $. Chiameremo dunque $ F(N) \subset M $ \textit{sottovarietà immersa}\footnote{%
 		Una sottovarietà immersa non è necessariamente una sottovarietà.%
@@ -5971,7 +5969,7 @@ Per un esempio, vedi Esercizio \ref{es2-23}.
 \begin{remark}
 	Se $ F : N \to M $ è un'immersione iniettiva ed $ N $ è compatta allora $ F $ è un embedding. Per il lemma dell'applicazione chiusa\footnote{%
 		Vedi Lemma \ref{lemma-clos-app}.%
-	}, essendo $ F $ continua e $ M $ compatta segue che $ F : N \to F(N) $ è un omeomorfismo e quindi un embedding topologico.
+	}, essendo $ F $ continua, $ N $ compatta ed $ M $ di Hausdorff (in quanto varietà differenziabile), segue che $ F : N \to F(N) $ è un omeomorfismo e quindi un embedding topologico.
 \end{remark}
 
 \begin{theorem}[Whitney]
@@ -6241,6 +6239,8 @@ Supponiamo per assurdo che $ F $ sia un embedding: l'applicazione $ f : \R \to F
 \begin{remark}
 	Si dimostra che $ F(\R) $ è denso in $ \T^{2} $, cioè il toro è completamente ricoperto dall'immagine della funzione o equivalentemente ogni intorno di ogni punto del toro ha al suo interno un punto dell'immagine (per dimostrare questo, viene utilizzata la teoria dei numeri).
 \end{remark}
+
+Per altri esempi, vedi Esercizi \ref{es2-19}, \ref{es2-20}, \ref{es2-21}, \ref{es2-22}, \ref{es2-23}, \ref{es2-24}.
 
 \subsubsection{Immagini di applicazioni lisce contenute in varietà}
 
