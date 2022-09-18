@@ -5989,101 +5989,101 @@ Nel caso in cui $ n=1 $, non esiste un'immersione iniettiva tra $ N $ e $ \R $, 
 
 \paragraph{1)}
 
-Nell'esempio della dimostrazione del Teorema \ref{emb-subv}, $ F(N) $ non può essere una sottovarietà di $ \R^{2} $ in quanto, avendo la topologia indotta da quest'ultima, non è localmente euclideo: un qualunque intorno di $ F(p) $ non è omeomorfo a $ \R^{n} $ in quanto il primo, togliendo il punto $ F(p) $, è formato da tre componenti connesse mentre il secondo può essere o formato da due componenti connesse (per $ \R $) o è connesso.
+Nell'esempio della dimostrazione del Teorema \ref{emb-subv}, $ F(N) $ non può essere una sottovarietà di $ \R^{2} $ in quanto, avendo la topologia indotta da quest'ultima, non è localmente euclideo: un qualunque intorno di $ F(p) $ non è omeomorfo a $ \R^{n} $ in quanto il primo, togliendo il punto $ F(p) $, è formato da tre componenti connesse mentre il secondo può essere o formato da due componenti connesse (per $ \R $) oppure connesso.
 
 \paragraph{2) Cuspide cubica}
 
 Sia l'applicazione della cuspide cubica $ y^{2} = x^{3} $ (cubica)
 
-\begin{align}
-	\begin{split}
-		F : \R &\to \R^{2}\\
-		t &\mapsto (x,y) = (t^{2},t^{3})
-	\end{split}
-\end{align}
+\map{F}
+	{\R}{\R^{2}}
+	{t}{(t^{2},t^{3})}
 
 Questa è iniettiva perché per due punti dell'immagine uguali otteniamo che
 
 \begin{equation}
-	(t_{1}^{2},t_{1}^{3}) = (t_{2}^{2},t_{2}^{3})%
-	\implies%
+	(t_{1}^{2},t_{1}^{3}) = (t_{2}^{2},t_{2}^{3}) %
+	\implies %
 	\begin{cases}
-		t_{1}^{2} = t_{2}^{2}\\
+		t_{1}^{2} = t_{2}^{2} \\
 		t_{1}^{3} = t_{2}^{3}
-	\end{cases}%
-	\implies%
+	\end{cases} %
+	\implies %
 	\begin{cases}
-		t_{1} = \pm t_{2}\\
+		t_{1} = \pm t_{2} \\
 		t_{1} = t_{2}
-	\end{cases}%
-	\implies%
+	\end{cases} %
+	\implies %
 	t_{1} = t_{2}
 \end{equation}
 
 Per controllare se sia un'immersione, dobbiamo controllare che il differenziale sia iniettivo e dunque che lo jacobiano abbia rango massimale (unitario in questo caso):
 
 \begin{equation}
-	J(F) = \begin{pmatrix} 2t \\ 3t^{2} \end{pmatrix}
+	J(F) = \bmqty{ 2t \\ 3t^{2} }
 \end{equation}
 
-dunque non è un'immersione perché nell'origine per $ t=0 $ il differenziale non è iniettivo.\\
+dunque non è un'immersione perché nell'origine ($ t = 0 $) il differenziale non è iniettivo.\\
 Non è nemmeno un embedding in quanto la cuspide cubica non è una sottovarietà di $ \R^{2} $.\\
 Con un abuso di nomenclatura, si potrebbe dire che la cuspide cubica è una "sottovarietà topologica" di $ \R^{2} $ in quanto totalmente omeomorfa (anche nell'origine) a $ \R $ e questo rende $ F $ un embedding topologico.
 
-\paragraph{3) Cubica nodale}
-
-Sia l'applicazione della cubica nodale $ y^{2} = x^{3} + x^{2} $ (cubica)
-
-\begin{align}
-	\begin{split}
-		F : \R &\to \R^{2}\\
-		t &\mapsto (x,y) = (t^{2}-1,t^{3}-t)
-	\end{split}
-\end{align}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.5\textwidth,keepaspectratio]{img39}
-\end{figure}
+\sbs{0.5}{%
+			\paragraph{3) Cubica nodale}
+			
+			Sia l'applicazione della cubica nodale $ y^{2} = x^{3} + x^{2} $
+			
+			\map{F}
+				{\R}{\R^{2}}
+				{t}{(t^{2}-1,t^{3}-t)}
+			}
+	{0.5}{%
+			\img{0.9}{img39}
+			}
 
 Questa non è iniettiva perché per esempio $ F(\pm 1) $ = 0, dunque non è nemmeno un embedding topologico.\\
 Per controllare se sia un'immersione, cerchiamo un punto che annulla contemporaneamente le derivate di $ F $ rispetto a $ t $:
 
 \begin{equation}
-	\dot{F}(t) = (2t, 3 t^{2} - 1) \neq (0,0), \qquad \forall t \in \R
+	\dot{F}(t) = (2t, 3 t^{2} - 1) \neq (0,0) \qcomma \forall t \in \R
 \end{equation}
 
 dunque $ F $ è un'immersione.\\
 Anche la cuspide cubica non è localmente euclidea nell'origine, dunque non può essere una sottovarietà di $ \R^{2} $.
 
 \paragraph{4) Lemniscata di Bernoulli}
-
+				
 Sia l'applicazione della lemniscata di Bernoulli $ x^{2} = 4 y^{2} (1-y^{2}) $ (quartica)
+				
+\map{F}
+	{(-\pi,\pi)}{\R^{2}}
+	{t}{(\sin(2t),\sin(t))}
 
-\begin{align}
-	\begin{split}
-		F : (-\pi,\pi) &\to \R^{2}\\
-		t &\mapsto (x,y) = (\sin(2t),\sin(t))
-	\end{split}
-\end{align}
+\img{0.7}{img40}
+			
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.7\textwidth,keepaspectratio]{img40}
-\end{figure}
-
-Questa è iniettiva perché per due punti dell'immagine uguali $ (\sin(2t_{1}),\sin(t_{1})) = (\sin(2t_{2}),\sin(2t_{2})) $ otteniamo che
+Questa è iniettiva perché per due punti dell'immagine uguali otteniamo che
 
 \begin{equation}
-	\sin(t_{1}) = \sin(t_{2}) = 0 \implies t_{1} = t_{2} = 0 \because t \in (-\pi,\pi)
+	(\sin(2t_{1}),\sin(t_{1})) = (\sin(2t_{2}),\sin(2t_{2})) %
+	\implies %
+	\begin{cases}
+		\sin(t_{1}) = \sin(t_{2}) = 0 \\
+		\sin(t_{1}) = \sin(t_{2}) \neq 0
+	\end{cases}
 \end{equation}
 
-oppure $ \sin(t_{1}) = \sin(t_{2}) \neq 0 $ il che implica
+Nel primo caso
+
+\begin{equation}
+	t_{1} = t_{2} = 0 \, \because \, t \in (-\pi,\pi)
+\end{equation}
+
+mentre nel secondo
 
 \begin{align}
 	\begin{split}
-		\sin(2t_{1}) &= \sin(2t_{2})\\
-		2 \sin(t_{1}) \cos(t_{1}) &= 2 \sin(t_{2}) \cos(t_{2})\\
+		\sin(2t_{1}) &= \sin(2t_{2}) \\
+		2 \sin(t_{1}) \cos(t_{1}) &= 2 \sin(t_{2}) \cos(t_{2}) \\
 		\cos(t_{1}) &= \cos(t_{2})
 	\end{split}		
 \end{align}
@@ -6092,15 +6092,15 @@ perciò
 
 \begin{equation}
 	\begin{cases}
-		\sin(t_{1}) = \sin(t_{2})\\
+		\sin(t_{1}) = \sin(t_{2}) \\
 		\cos(t_{1}) = \cos(t_{2})
-	\end{cases}%
-	\implies%
-	\begin{aligned}
-		t_{1} = t_{2} &+ 2 k \pi\\
-		\forall k &\in \Z
-	\end{aligned}
-	\implies%
+	\end{cases} %
+	\implies %
+	\begin{cases}
+		t_{1} = t_{2} + 2 k \pi \\
+		\forall k \in \Z
+	\end{cases} %
+	\implies %
 	t_{1} = t_{2}
 \end{equation}
 
@@ -6108,40 +6108,34 @@ in quanto qualsiasi valore di $ k $ diverso da 0 esce dall'intervallo del domini
 Questa applicazione è un'immersione in quanto
 
 \begin{equation}
-	\dot{F}(t) = (2 \cos(2t), \cos(t)) \neq (0,0), \qquad \forall t \in \R
+	\dot{F}(t) = (2 \cos(2t), \cos(t)) \neq (0,0) \qcomma \forall t \in \R
 \end{equation}
 
 Nonostante sia un'immersione iniettiva, non è un embedding (né topologico né differenziabile) in quanto $ F((-\pi,\pi)) $ non è localmente euclidea nell'origine.
 
-\paragraph{5)}
+\paragraph{5) Toro}
 
 Sia l'applicazione
 
-\begin{align}
-	\begin{split}
-		F : \R &\to \S^{1} \times \S^{1} = \T^{2}\\
-		t &\mapsto (x,y) = (e^{2 \pi i t}, e^{2 \pi i \alpha t})
-	\end{split}
-\end{align}
+\map{F}
+	{\R}{\S^{1} \times \S^{1} = \T^{2}}
+	{t}{(e^{2 \pi i t}, e^{2 \pi i \alpha t})}
 
-dove $ \alpha \in \R \setminus \Q $ ($ \alpha $ irrazionale); siccome il toro $ \T^{2} $ è incluso in $ \R^{4} $, possiamo riscrivere la funzione come
+dove $ \alpha \in \R \setminus \Q $ (i.e. $ \alpha $ irrazionale); siccome il toro $ \T^{2} $ è incluso in $ \R^{4} $, possiamo riscrivere la funzione come
 
-\begin{align}
-	\begin{split}
-		F : \R &\to \R^{4}\\
-		t &\mapsto (x,y) = (\cos(2 \pi t), \sin(2 \pi t), \cos(2 \pi \alpha t), \sin(2 \pi \alpha t))
-	\end{split}
-\end{align}
+\map{F}
+	{\R}{\R^{4}}
+	{t}{(\cos(2 \pi t), \sin(2 \pi t), \cos(2 \pi \alpha t), \sin(2 \pi \alpha t))}
 
 in quanto abbiamo considerato $ \S^{1} \subset \R^{2} = \C $.\\
 Verifichiamo se $ F $ sia iniettiva tramite la dimostrazione dell'implicazione
 
 \begin{equation}
 	\begin{cases}
-		e^{2 \pi i t_{1}} = e^{2 \pi i t_{2}}\\
+		e^{2 \pi i t_{1}} = e^{2 \pi i t_{2}} \\
 		e^{2 \pi i \alpha t_{1}} = e^{2 \pi i \alpha t_{2}}
-	\end{cases}%
-	\implies%
+	\end{cases} %
+	\implies %
 	t_{1} = t_{2}
 \end{equation}
 
@@ -6149,17 +6143,17 @@ Quindi possiamo scrivere
 
 \begin{equation}
 	\begin{cases}
-		e^{2 \pi i t_{1}} = e^{2 \pi i t_{2}}\\
+		e^{2 \pi i t_{1}} = e^{2 \pi i t_{2}} \\
 		e^{2 \pi i \alpha t_{1}} = e^{2 \pi i \alpha t_{2}}
-	\end{cases}%
-	\implies%
+	\end{cases} %
+	\implies %
 	\begin{cases}
-		t_{1} - t_{2} = m & m \in \Z\\
-		t_{1} - t_{2} = \alpha n & \alpha,n \in \Z
-	\end{cases}%
-	\implies%
-	\alpha n = m%
-	\implies%
+		t_{1} - t_{2} = m & m \in \Z \\
+		t_{1} - t_{2} = \alpha n & \alpha, n \in \Z
+	\end{cases} %
+	\implies %
+	\alpha n = m %
+	\implies %
 	\alpha \in \Q
 \end{equation}
 
@@ -6172,7 +6166,7 @@ Per verificare se sia un'immersione, consideriamo la derivata di $ F $ in $ \R^{
 
 la quale non si annulla per $ \forall t \in \R $.\\
 Nonostante $ F $ sia un'immersione iniettiva, questa non è un embedding in quanto la sua immagine non è una sottovarietà di $ \R^{4} $.\\
-Dimostriamo questo fatto mediante il seguente lemma
+Dimostriamo questo fatto mediante il seguente lemma:
 
 
 \begin{lemma}
@@ -6192,10 +6186,12 @@ Dimostriamo questo fatto mediante il seguente lemma
 \end{lemma}
 
 \begin{proof}
+	Possiamo riscrivere la condizione del lemma nel seguente modo:
+	
 	\begin{align}
 		\begin{split}
-			\left| (e^{2 \pi i k}, e^{2 \pi i \alpha k}) - (1,1) \right| &< \varepsilon\\
-			\left| (1, e^{2 \pi i \alpha k}) - (1,1) \right| &< \varepsilon\\
+			\left| (e^{2 \pi i k}, e^{2 \pi i \alpha k}) - (1,1) \right| &< \varepsilon \\
+			\left| (1, e^{2 \pi i \alpha k}) - (1,1) \right| &< \varepsilon \\
 			\left| e^{2 \pi i \alpha k} - 1 \right| &< \varepsilon
 		\end{split}
 	\end{align}
@@ -6203,26 +6199,28 @@ Dimostriamo questo fatto mediante il seguente lemma
 	Sappiamo che $ \S^{1} $ è compatto quindi la successione di punti del cerchio
 	
 	\begin{equation}
-		z_{n} = e^{2 \pi i \alpha k}, \qquad n \in \Z
+		z_{n} = e^{2 \pi i \alpha k} \qcomma n \in \Z
 	\end{equation}
 
 	ammette una sottosuccessione convergente: possiamo supporre che (a meno di cambiare semplicemente gli indici della successione) la successione stessa converga a un punto $ z_{n} \to z_{0} \in \S^{1} $ e ciò significa che esistono due numeri (diversi) $ n_{1},n_{2} \in \Z $ tali che si possa scrivere
 	
 	\begin{equation}
-		\left| e^{2 \pi i \alpha n_{1}} - 1 \right| < \dfrac{\varepsilon}{2} \quad \wedge \quad \left| e^{2 \pi i \alpha n_{2}} - 1 \right| < \dfrac{\varepsilon}{2}
+		\left| e^{2 \pi i \alpha n_{1}} - 1 \right| < \dfrac{\varepsilon}{2} %
+		\quad \wedge \quad %
+		\left| e^{2 \pi i \alpha n_{2}} - 1 \right| < \dfrac{\varepsilon}{2}
 	\end{equation}
 
 	ponendo dunque $ k = n_{1} - n_{2} \neq 0 $ e sfruttando la diseguaglianza triangolare
 	
 	\begin{align}
 		\begin{split}
-			\left| e^{2 \pi i \alpha k} - 1 \right| &= \left| e^{2 \pi i \alpha (n_{1} - n_{2})} - 1 \right|\\
-			&= \left| e^{ -2 \pi i \alpha n_{2}} \left( e^{2 \pi i \alpha n_{1}} - e^{2 \pi i \alpha n_{2}} \right) \right|\\
-			&= \left| e^{ -2 \pi i \alpha n_{2}} \right| \left| e^{2 \pi i \alpha n_{1}} - e^{2 \pi i \alpha n_{2}} \right|\\
-			&= \left| e^{2 \pi i \alpha n_{1}} - e^{2 \pi i \alpha n_{2}} \right|\\
-			&= \left| e^{2 \pi i \alpha n_{1}} - e^{2 \pi i \alpha n_{2}} +1 -1 \right|\\
-			&\leqslant \left| e^{2 \pi i \alpha n_{1}} - 1 \right| + \left| e^{2 \pi i \alpha n_{2}} - 1 \right|\\
-			&= \sfrac{\varepsilon}{2} + \sfrac{\varepsilon}{2}\\
+			\left| e^{2 \pi i \alpha k} - 1 \right| &= \left| e^{2 \pi i \alpha (n_{1} - n_{2})} - 1 \right| \\
+			&= \left| e^{ -2 \pi i \alpha n_{2}} \left( e^{2 \pi i \alpha n_{1}} - e^{2 \pi i \alpha n_{2}} \right) \right| \\
+			&= \left| e^{ -2 \pi i \alpha n_{2}} \right| \left| e^{2 \pi i \alpha n_{1}} - e^{2 \pi i \alpha n_{2}} \right| \\
+			&= \left| e^{2 \pi i \alpha n_{1}} - e^{2 \pi i \alpha n_{2}} \right| \\
+			&= \left| e^{2 \pi i \alpha n_{1}} - e^{2 \pi i \alpha n_{2}} +1 -1 \right| \\
+			&\leqslant \left| e^{2 \pi i \alpha n_{1}} - 1 \right| + \left| e^{2 \pi i \alpha n_{2}} - 1 \right| \\
+			&= \sfrac{\varepsilon}{2} + \sfrac{\varepsilon}{2} \\
 			&= \varepsilon
 		\end{split}
 	\end{align}
