@@ -5987,9 +5987,11 @@ Nel caso in cui $ n=1 $, non esiste un'immersione iniettiva tra $ N $ e $ \R $, 
 
 \subsubsection{\textit{Esempi}}
 
+Per altri esempi, vedi Esercizi \ref{es2-19}, \ref{es2-20}, \ref{es2-21}, \ref{es2-22}, \ref{es2-23}, \ref{es2-24}.
+
 \paragraph{1)}
 
-Nell'esempio della dimostrazione del Teorema \ref{emb-subv}, $ F(N) $ non può essere una sottovarietà di $ \R^{2} $ in quanto, avendo la topologia indotta da quest'ultima, non è localmente euclideo: un qualunque intorno di $ F(p) $ non è omeomorfo a $ \R^{n} $ in quanto il primo, togliendo il punto $ F(p) $, è formato da tre componenti connesse mentre il secondo può essere o formato da due componenti connesse (per $ \R $) oppure connesso.
+Nell'esempio della dimostrazione del Teorema \ref{emb-subv}, $ F(N) $ non può essere una sottovarietà di $ \R^{2} $ perché non è localmente euclideo. Questo perché possiede la topologia indotta da $ \R^{2} $ in quanto $ F $ è un embedding topologico: un qualunque intorno di $ F(p) $ non è omeomorfo a $ \R^{n} $ in quanto il primo, togliendo il punto $ F(p) $, è formato da tre componenti connesse mentre il secondo può essere o formato da due componenti connesse (per $ \R $) oppure connesso (per $ n > 1 $).
 
 \paragraph{2) Cuspide cubica}
 
@@ -6017,15 +6019,16 @@ Questa è iniettiva perché per due punti dell'immagine uguali otteniamo che
 	t_{1} = t_{2}
 \end{equation}
 
-Per controllare se sia un'immersione, dobbiamo controllare che il differenziale sia iniettivo e dunque che lo jacobiano abbia rango massimale (unitario in questo caso):
+Per controllare se sia un'immersione, dobbiamo controllare che il differenziale sia iniettivo e dunque che lo jacobiano abbia rango massimale (unitario in questo caso) ovunque nel dominio:
 
 \begin{equation}
-	J(F) = \bmqty{ 2t \\ 3t^{2} }
+	J(F)(t) = \bmqty{ 2t \\ 3t^{2} }
 \end{equation}
 
 dunque non è un'immersione perché nell'origine ($ t = 0 $) il differenziale non è iniettivo.\\
-Non è nemmeno un embedding in quanto la cuspide cubica non è una sottovarietà di $ \R^{2} $.\\
-Con un abuso di nomenclatura, si potrebbe dire che la cuspide cubica è una "sottovarietà topologica" di $ \R^{2} $ in quanto totalmente omeomorfa (anche nell'origine) a $ \R $ e questo rende $ F $ un embedding topologico.
+Non è nemmeno un embedding in quanto la cuspide cubica non è una sottovarietà\footnote{%
+	Con un abuso di nomenclatura, si potrebbe dire che la cuspide cubica è una "sottovarietà topologica" di $ \R^{2} $ in quanto totalmente omeomorfa (anche nell'origine) a $ \R $ e questo rende $ F $ un embedding topologico.%
+} di $ \R^{2} $.
 
 \sbs{0.5}{%
 			\paragraph{3) Cubica nodale}
@@ -6037,10 +6040,10 @@ Con un abuso di nomenclatura, si potrebbe dire che la cuspide cubica è una "sot
 				{t}{(t^{2}-1,t^{3}-t)}
 			}
 	{0.5}{%
-			\img{0.9}{img39}
+			\img{1}{img39}
 			}
 
-Questa non è iniettiva perché per esempio $ F(\pm 1) $ = 0, dunque non è nemmeno un embedding topologico.\\
+Questa non è iniettiva perché per esempio $ F(\pm 1) = (0,0) $, dunque non è nemmeno un embedding topologico.\\
 Per controllare se sia un'immersione, cerchiamo un punto che annulla contemporaneamente le derivate di $ F $ rispetto a $ t $:
 
 \begin{equation}
@@ -6059,12 +6062,11 @@ Sia l'applicazione della lemniscata di Bernoulli $ x^{2} = 4 y^{2} (1-y^{2}) $ (
 	{t}{(\sin(2t),\sin(t))}
 
 \img{0.7}{img40}
-			
 
 Questa è iniettiva perché per due punti dell'immagine uguali otteniamo che
 
 \begin{equation}
-	(\sin(2t_{1}),\sin(t_{1})) = (\sin(2t_{2}),\sin(2t_{2})) %
+	(\sin(2t_{1}), \sin(t_{1})) = (\sin(2t_{2}), \sin(t_{2})) %
 	\implies %
 	\begin{cases}
 		\sin(t_{1}) = \sin(t_{2}) = 0 \\
@@ -6075,7 +6077,12 @@ Questa è iniettiva perché per due punti dell'immagine uguali otteniamo che
 Nel primo caso
 
 \begin{equation}
-	t_{1} = t_{2} = 0 \, \because \, t \in (-\pi,\pi)
+	\begin{cases}
+		\sin(t_{1}) = \sin(t_{2}) = 0 \\
+		t \in (-\pi,\pi)
+	\end{cases} %
+	\implies %
+	t_{1} = t_{2} = 0
 \end{equation}
 
 mentre nel secondo
@@ -6097,8 +6104,8 @@ perciò
 	\end{cases} %
 	\implies %
 	\begin{cases}
-		t_{1} = t_{2} + 2 k \pi \\
-		\forall k \in \Z
+		t_{1} = t_{2} + 2 k \pi, & k \in \Z \\
+		t \in (-\pi,\pi)
 	\end{cases} %
 	\implies %
 	t_{1} = t_{2}
@@ -6111,6 +6118,7 @@ Questa applicazione è un'immersione in quanto
 	\dot{F}(t) = (2 \cos(2t), \cos(t)) \neq (0,0) \qcomma \forall t \in \R
 \end{equation}
 
+e dunque non sono presenti punti critici, i.e. $ \PC_{F} = \emptyset $.\\
 Nonostante sia un'immersione iniettiva, non è un embedding (né topologico né differenziabile) in quanto $ F((-\pi,\pi)) $ non è localmente euclidea nell'origine.
 
 \paragraph{5) Toro}
@@ -6118,28 +6126,30 @@ Nonostante sia un'immersione iniettiva, non è un embedding (né topologico né 
 Sia l'applicazione
 
 \map{F}
-	{\R}{\S^{1} \times \S^{1} = \T^{2}}
+	{\R}{\T^{2}}
 	{t}{(e^{2 \pi i t}, e^{2 \pi i \alpha t})}
 
-dove $ \alpha \in \R \setminus \Q $ (i.e. $ \alpha $ irrazionale); siccome il toro $ \T^{2} $ è incluso in $ \R^{4} $, possiamo riscrivere la funzione come
+dove $ \alpha \in \R \setminus \Q $ (i.e. $ \alpha $ irrazionale) e
+
+\begin{equation}
+	\T^{2} = \S^{1} \times \S^{1} \subset \C^{2} = \R^{4}
+\end{equation}
+
+Siccome il toro $ \T^{2} $ è incluso in $ \R^{4} $, possiamo riscrivere la funzione come
 
 \map{F}
 	{\R}{\R^{4}}
 	{t}{(\cos(2 \pi t), \sin(2 \pi t), \cos(2 \pi \alpha t), \sin(2 \pi \alpha t))}
 
-in quanto abbiamo considerato $ \S^{1} \subset \R^{2} = \C $.\\
-Verifichiamo se $ F $ sia iniettiva tramite la dimostrazione dell'implicazione
+Verifichiamo se $ F $ sia iniettiva tramite la dimostrazione dell'implicazione:
 
 \begin{equation}
-	\begin{cases}
-		e^{2 \pi i t_{1}} = e^{2 \pi i t_{2}} \\
-		e^{2 \pi i \alpha t_{1}} = e^{2 \pi i \alpha t_{2}}
-	\end{cases} %
+	(e^{2 \pi i t_{1}}, e^{2 \pi i \alpha t_{1}}) = (e^{2 \pi i t_{2}}, e^{2 \pi i \alpha t_{2}}) %
 	\implies %
 	t_{1} = t_{2}
 \end{equation}
 
-Quindi possiamo scrivere
+Possiamo scrivere
 
 \begin{equation}
 	\begin{cases}
@@ -6148,31 +6158,42 @@ Quindi possiamo scrivere
 	\end{cases} %
 	\implies %
 	\begin{cases}
-		t_{1} - t_{2} = m & m \in \Z \\
-		t_{1} - t_{2} = \alpha n & \alpha, n \in \Z
+		t_{1} - t_{2} = n, & n \in \Z \\
+		t_{1} - t_{2} = \alpha m, & m \in \Z
 	\end{cases} %
 	\implies %
-	\alpha n = m %
+	\alpha m = n %
 	\implies %
 	\alpha \in \Q
 \end{equation}
 
-ma questo non è possibile in quanto abbiamo posto $ \alpha \in \R \setminus \Q $, dunque l'applicazione è iniettiva.\\
+ma questo non è possibile in quanto abbiamo posto $ \alpha \in \R \setminus \Q $, dunque
+
+\begin{equation}
+	n = m = 0 \implies t_{1} = t_{2}
+\end{equation}
+
+perciò l'applicazione è iniettiva.\\
 Per verificare se sia un'immersione, consideriamo la derivata di $ F $ in $ \R^{4} $
 
 \begin{equation}
-	\dot{F}(t) = (- 2 \pi \sin(2 \pi t), 2 \pi \cos(2 \pi t), - 2 \pi \alpha \sin(2 \pi \alpha t), 2 \pi \alpha \cos(2 \pi \alpha t))
+	\dot{F}(t) = 2 \pi (- \sin(2 \pi t), \cos(2 \pi t), - \alpha \sin(2 \pi \alpha t), \alpha \cos(2 \pi \alpha t))
 \end{equation}
 
-la quale non si annulla per $ \forall t \in \R $.\\
+la quale non si annulla per nessun $ t \in \R $, dunque $ F $ è un'immersione.\\
 Nonostante $ F $ sia un'immersione iniettiva, questa non è un embedding in quanto la sua immagine non è una sottovarietà di $ \R^{4} $.\\
 Dimostriamo questo fatto mediante il seguente lemma:
 
-
 \begin{lemma}
 	Chiamando $ \mathcal{D}(A) $ l'insieme dei punti di accumulazione\footnote{%
-		Per un punto di accumulazione di un insieme, ogni intorno di questo punto contiene un punto dell'insieme diverso da sé stesso.%
-	} di un insieme $ A $, possiamo affermare che
+		Per un punto di accumulazione $ x_{0} $ di un insieme $ U $, ogni intorno del punto $ x_{0} $ contiene almeno un punto dell'insieme $ U $ diverso da sé stesso.
+		
+		\begin{equation}
+			x_{0} \text{ punto di accumulazione per } U %
+			\implies %
+			\forall I \ni x_{0}, \, \E x \in U \mid x \in I \subset U \, \wedge \, x \neq x_{0}
+		\end{equation} %
+	} di un insieme $ A $, possiamo affermare che, per l'applicazione $ F $ considerata in precedenza, vale la seguente relazione:
 	
 	\begin{equation}
 		F(0) = (1,1) \in \mathcal{D}(F(\Z))
@@ -6181,7 +6202,7 @@ Dimostriamo questo fatto mediante il seguente lemma:
 	Cioè qualunque intorno di $ (1,1) \in \T^{2} $ include almeno un punto di $ F(\Z) $ o equivalentemente
 	
 	\begin{equation}
-		\forall \varepsilon > 0, \, \E k \in \Z \setminus 0 \mid \left| (e^{2 \pi i k}, e^{2 \pi i \alpha k}) - (1,1) \right| < \varepsilon
+		\forall \varepsilon > 0, \, \E k \in \Z \setminus \{0\} \mid \left| (e^{2 \pi i k}, e^{2 \pi i \alpha k}) - (1,1) \right| < \varepsilon
 	\end{equation}
 \end{lemma}
 
@@ -6216,11 +6237,11 @@ Dimostriamo questo fatto mediante il seguente lemma:
 		\begin{split}
 			\left| e^{2 \pi i \alpha k} - 1 \right| &= \left| e^{2 \pi i \alpha (n_{1} - n_{2})} - 1 \right| \\
 			&= \left| e^{ -2 \pi i \alpha n_{2}} \left( e^{2 \pi i \alpha n_{1}} - e^{2 \pi i \alpha n_{2}} \right) \right| \\
-			&= \left| e^{ -2 \pi i \alpha n_{2}} \right| \left| e^{2 \pi i \alpha n_{1}} - e^{2 \pi i \alpha n_{2}} \right| \\
+			&= \cancelto{1}{ \left| e^{ -2 \pi i \alpha n_{2}} \right| } \left| e^{2 \pi i \alpha n_{1}} - e^{2 \pi i \alpha n_{2}} \right| \\
 			&= \left| e^{2 \pi i \alpha n_{1}} - e^{2 \pi i \alpha n_{2}} \right| \\
 			&= \left| e^{2 \pi i \alpha n_{1}} - e^{2 \pi i \alpha n_{2}} +1 -1 \right| \\
 			&\leqslant \left| e^{2 \pi i \alpha n_{1}} - 1 \right| + \left| e^{2 \pi i \alpha n_{2}} - 1 \right| \\
-			&= \sfrac{\varepsilon}{2} + \sfrac{\varepsilon}{2} \\
+			&< \dfrac{\varepsilon}{2} + \dfrac{\varepsilon}{2} \\
 			&= \varepsilon
 		\end{split}
 	\end{align}
@@ -6232,13 +6253,11 @@ Dimostriamo questo fatto mediante il seguente lemma:
 	\end{equation}
 \end{proof}
 
-Supponiamo per assurdo che $ F $ sia un embedding: l'applicazione $ f : \R \to F(\R) $ con la topologia di $ F(\R) $ indotta dal toro $ \T^{2} $ è un diffeomorfismo e dunque anche un omeomorfismo. Per le proprietà degli omeomorfismi, esiste una bigezione tra i punti di accumulazione del dominio e quelli del codominio, i.e. $ \mathcal{D}(\Z) \to \mathcal{D}(F(\Z)) $, però $ \mathcal{D}(\Z) = \emptyset $ in quanto i numeri interi sono isolati in $ \R $ mentre $ \mathcal{D}(F(\Z)) \ni (1,1) $. Questa contraddizione porta a dire che $ F $ non è un embedding e quindi $ F(\R) $ non è una sottovarietà di $ \T^{2} $.
+Supponiamo per assurdo che $ F $ sia un embedding: l'applicazione $ f : \R \to F(\R) $, dove $ F(\R) $ ha la topologia indotta dal toro $ \T^{2} $, è un diffeomorfismo e dunque anche un omeomorfismo. Per le proprietà degli omeomorfismi, esiste una bigezione tra i punti di accumulazione del dominio e quelli del codominio, i.e. $ \mathcal{D}(\Z) \to \mathcal{D}(F(\Z)) $, però $ \mathcal{D}(\Z) = \emptyset $ in quanto i numeri interi sono isolati in $ \R $ mentre $ \mathcal{D}(F(\Z)) \ni (1,1) $. Questa contraddizione porta a dire che $ F $ non è un embedding e quindi $ F(\R) $ non è una sottovarietà di $ \T^{2} $.
 
 \begin{remark}
 	Si dimostra che $ F(\R) $ è denso in $ \T^{2} $, cioè il toro è completamente ricoperto dall'immagine della funzione o equivalentemente ogni intorno di ogni punto del toro ha al suo interno un punto dell'immagine (per dimostrare questo, viene utilizzata la teoria dei numeri).
 \end{remark}
-
-Per altri esempi, vedi Esercizi \ref{es2-19}, \ref{es2-20}, \ref{es2-21}, \ref{es2-22}, \ref{es2-23}, \ref{es2-24}.
 
 \subsubsection{Immagini di applicazioni lisce contenute in varietà}
 
