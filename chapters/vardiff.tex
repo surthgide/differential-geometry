@@ -6263,13 +6263,27 @@ Supponiamo per assurdo che $ F $ sia un embedding: l'applicazione $ f : \R \to F
 \subsubsection{Immagini di applicazioni lisce contenute in varietà}
 
 \begin{theorem}
-	Siano $ F : N \to M $ un'applicazione liscia tra varietà e $ S \subset M $ una sottovarietà di $ M $ e supponiamo che $ F(N) \subseteq S $, allora la restrizione del codominio della funzione al sottoinsieme $ S $ è ancora un'applicazione liscia, i.e. $ \tilde{F} : N \to S $ con $ \tilde{F}(q) = F(q) $ per $ \forall q \in N $.
+	Siano $ F : N \to M $ un'applicazione liscia tra varietà e $ S \subset M $ una sottovarietà di $ M $, e supponiamo che $ F(N) \subseteq S $, allora la restrizione del codominio della funzione al sottoinsieme $ S $ è ancora un'applicazione liscia, i.e.
+	
+	\begin{equation}
+		\tilde{F} : N \to S \mid \tilde{F}(q) = F(q) \qcomma \forall q \in N
+	\end{equation}
 \end{theorem}
 
 \begin{proof}
 	Sappiamo che $ \tilde{F} $ è continua in quanto $ S $ è un sottospazio topologico di $ M $.\\
-	Siano $ p \in N $ un punto e due carte $ (U,\phi) \in N $ intorno a $ p $ con $ \phi = (x^{1},\dots,x^{n}) $ e $ (V,\psi) \in M $ intorno a $ F(p) $ con $ \psi = (y^{1},\dots,y^{m}) $ tali che $ F(U) \subseteq V $ e tale che $ (V,\psi) $ sia una carta adattata intorno a $ F(p) $ relativamente a $ S $.\\
-	Se $ \dim(S)=s $, possiamo scrivere la condizione per le sottovarietà
+	Siano $ p \in N $ un punto e due carte
+	
+	\begin{equation}
+		\begin{cases}
+			(U,\phi) = (U; x^{1},\dots,x^{n}) \in N, & \phi(p) = 0 \\
+			(V,\psi) = (V; y^{1},\dots,y^{m}) \in M, & \psi(F(p)) = 0 \\
+			F(U) \subseteq V
+		\end{cases}
+	\end{equation}
+	
+	tale che $ (V,\psi) $ sia una carta adattata intorno a $ F(p) $ relativamente a $ S $.\\
+	Se $ \dim(S) = s $, possiamo scrivere la condizione per le sottovarietà
 	
 	\begin{equation}
 		V \cap S = \{ q \in V \mid y^{s+1}(q) = \cdots = y^{m}(q) = 0 \}
@@ -6277,30 +6291,22 @@ Supponiamo per assurdo che $ F $ sia un embedding: l'applicazione $ f : \R \to F
 
 	e la restrizione dell'applicazione della carta adattata
 	
-	\begin{align}
-		\begin{split}
-			\psi_{|V \cap S} = \psi_{S} : V \cap S &\to \psi(V \cap S) \subset \R^{s}\\
-			q &\mapsto (y^{1}(q),\dots,y^{s}(q))
-		\end{split}
-	\end{align}
+	\map{\eval{\psi}{V \cap S} \doteq \psi_{S}}
+		{V \cap S}{\psi(V \cap S) \subset \R^{s}}
+		{q}{(y^{1}(q),\dots,y^{s}(q))}
 
-	Osserviamo che, dalle carte, $ F(U) \subseteq V $ e che, dalle ipotesi, $ F(N) \subseteq S $ da cui $ F(U) \subseteq S $ perciò $ F(U) \subseteq V \cap S $. Consideriamo la composizione
+	Osserviamo che, dalle carte, $ F(U) \subseteq V $ e che, dalle ipotesi, $ F(N) \subseteq S $ da cui $ F(U) \subseteq S $ perciò $ F(U) \subseteq V \cap S $.\\
+	Consideriamo ora la composizione
 	
-	\begin{align}
-		\begin{split}
-			\psi \circ F : U &\to V \subset \R^{m}\\
-			q &\mapsto ( \, y^{1}(F(q)), \dots, y^{s}(F(q)), 0,\dots, 0 \, )
-		\end{split}
-	\end{align}
+	\map{\psi \circ F}
+		{U}{V \subset \R^{m}}
+		{q}{( \, y^{1}(F(q)), \dots, y^{s}(F(q)), 0,\dots,0)}
 
 	e poi la restrizione a $ S $
 	
-	\begin{align}
-		\begin{split}
-			\psi_{S} \circ \tilde{F} : U &\to V \cap S\\
-			q &\mapsto ( \, y^{1}(F(q)), \dots, y^{s}(F(q)) \, )
-		\end{split}
-	\end{align}
+	\map{\psi_{S} \circ \tilde{F}}
+		{U}{V \cap S}
+		{q}{( \, y^{1}(F(q)), \dots, y^{s}(F(q)))}
 
 	Siccome le $ y^{i} $, $ F $ e $ \psi_{S} $ sono tutte applicazioni lisce rispetto a $ q $, anche la composizione $ \psi_{S} \circ \tilde{F} $ sarà liscia, il che implica che la restrizione $ \tilde{F} $ è liscia.
 \end{proof}
@@ -6311,59 +6317,59 @@ Supponiamo per assurdo che $ F $ sia un embedding: l'applicazione $ f : \R \to F
 
 Consideriamo le seguenti due varianti della lemniscata di Bernoulli tramite le applicazioni lisce
 
-\begin{align}
-	\begin{split}
-		F : (-\pi,\pi) &\to \R^{2}\\
-		t &\mapsto (\sin(2t),\sin(t))\\\\
-		%
-		G : (-\pi,\pi) &\to \R^{2}\\
-		t &\mapsto (\sin(2t),-\sin(t))
-	\end{split}
-\end{align}
+\sbs{0.5}{%
+			\map{F}
+				{(-\pi,\pi)}{\R^{2}}
+				{t}{(\sin(2t), \sin(t))}
+			}
+	{0.5}{%
+			\map{G}
+				{(-\pi,\pi)}{\R^{2}}
+				{t}{(\sin(2t), -\sin(t))}
+			}
 
-e chiamiamo le loro immagini $ F((-\pi,\pi)) = \mathfrak{8}_{F} $ e $ G((-\pi,\pi)) = \mathfrak{8}_{G} $, le quali sono varietà differenziabili la cui struttura è indotta rispettivamente da $ F $ o da $ G $ (bigezioni), ma non sono sottovarietà di $ \R^{2} $. Le funzioni che hanno lo stesso dominio e come codominio le immagini del dominio sono diffeomorfismi, i.e.
+e chiamiamo le loro immagini
 
-\begin{align}
-	\begin{split}
-		\tilde{F} : (-\pi,\pi) &\to \mathfrak{8}_{F}\\
-		t &\mapsto (\sin(2t),\sin(t))\\\\
-		%
-		\tilde{G} : (-\pi,\pi) &\to \mathfrak{8}_{G}\\
-		t &\mapsto (\sin(2t),-\sin(t))
-	\end{split}
-\end{align}
+\begin{gather}
+	F((-\pi,\pi)) \doteq \mathfrak{8}_{F} \\
+	G((-\pi,\pi)) \doteq \mathfrak{8}_{G}
+\end{gather}
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.8\textwidth,keepaspectratio]{img41}
-\end{figure}
+le quali sono varietà differenziabili la cui struttura è indotta rispettivamente da $ F $ o da $ G $ (bigezioni), ma non sono sottovarietà di $ \R^{2} $. Le funzioni che hanno lo stesso dominio e come codominio le immagini del dominio sono diffeomorfismi, i.e.
+
+\sbs{0.5}{%
+			\map{\tilde{F}}
+				{(-\pi,\pi)}{\mathfrak{8}_{F}}
+				{t}{(\sin(2t), \sin(t))}
+			}
+	{0.5}{%
+			\map{\tilde{G}}
+				{(-\pi,\pi)}{\mathfrak{8}_{G}}
+				{t}{(\sin(2t), -\sin(t))}
+			}
+		
+		\img{0.8}{img41}
 
 Consideriamo ora l'applicazione $ H $ che mappa i punti come $ G $ ma nell'immagine di $ F $, i.e.
 
-\begin{align}
-	\begin{split}
-		H : (-\pi,\pi) &\to \mathfrak{8}_{F}\\
-		t &\mapsto (\sin(2t),-\sin(t))
-	\end{split}
-\end{align}
+\map{\tilde{H}}
+	{(-\pi,\pi)}{\mathfrak{8}_{F}}
+	{t}{(\sin(2t), -\sin(t))}
 
-il cui codominio possiede la struttura differenziabile indotta da $ G $. Nonostante la funzione $ G $ sia liscia e l'immagine di $ H $ sia contenuta in $ \R^{2} $, $ \mathfrak{8}_{F} $ non è una sottovarietà di $ \R^{2} $ e $ H $ non è nemmeno continua (perciò non liscia): per dimostrarlo è necessario considerare un aperto nel codominio e dimostrare che la sua controimmagine non è aperta nel dominio. Consideriamo dunque l'aperto (segmento) $ U = (a,b) \in \mathfrak{8}_{F} $: la sua controimmagine tramite $ F $ è aperta in $ (-\pi,\pi) $, mentre non è aperta se si prende la sua controimmagine tramite $ H $, i.e.
+il cui codominio possiede la struttura differenziabile indotta da $ G $. Nonostante la funzione $ G $ sia liscia e l'immagine di $ H $ sia contenuta in $ \R^{2} $, $ \mathfrak{8}_{F} $ non è una sottovarietà di $ \R^{2} $ e $ H $ non è nemmeno continua (perciò non liscia): per dimostrarlo è necessario considerare un aperto nel codominio e dimostrare che la sua controimmagine non è aperta nel dominio. Consideriamo dunque il segmento aperto $ U = (a,b) \in \mathfrak{8}_{F} $: la sua controimmagine tramite $ F $ è aperta in $ (-\pi,\pi) $, mentre non è aperta se si prende la sua controimmagine tramite $ H $, i.e.
 
 \begin{equation}
-	U = (a,b) \in \mathfrak{8}_{F}%
-	\rightarrow%
+	U = (a,b) \in \mathfrak{8}_{F} %
+	\rightarrow %
 	\begin{cases}
-		F^{-1}(U) = (F^{-1}(a),F^{-1}(b)) & \text{aperta}\\
-		H^{-1}(U) = (-\pi,H^{-1}(a)) \cup 0 \cup (H^{-1}(b),\pi) & \text{non aperta}
+		F^{-1}(U) = (F^{-1}(a),F^{-1}(b)), & \text{aperta} \\
+		H^{-1}(U) = (-\pi,H^{-1}(a)) \cup 0 \cup (H^{-1}(b),\pi), & \text{non aperta}
 	\end{cases}
 \end{equation}
 
 Il fatto che immagine e preimmagine non siano entrambe aperte rende $ H $ non continua.
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.8\textwidth,keepaspectratio]{img42}
-\end{figure}
+\img{0.8}{img42}
 
 Questo esempio mostra come, presa una funzione liscia tra varietà differenziabili, la restrizione del codominio da una varietà a un sottoinsieme (varietà) di questa varietà non è ancora una funzione liscia, a meno che il sottoinsieme della varietà non sia una sottovarietà di questa (quindi con la relativa struttura ereditata): in questo caso, restringere il codominio $ \R^{2} $ della funzione $ G $ alla varietà $ \mathfrak{8}_{F} \subset \R^{2} $ (la quale non è una sottovarietà di $ \R^{2} $) non rende la funzione $ H $ nemmeno continua. Quest'ultimo risultato può essere derivato anche dal fatto che la lemniscata di Bernoulli non sia un sottospazio topologico di $ \R^{2} $.
 
