@@ -6247,11 +6247,7 @@ Dimostriamo questo fatto mediante il seguente lemma:
 		\end{split}
 	\end{align}
 
-	dunque
-	
-	\begin{equation}
-		\left| e^{2 \pi i \alpha k} - 1 \right| < \varepsilon
-	\end{equation}
+	dunque $ \left| e^{2 \pi i \alpha k} - 1 \right| < \varepsilon $.
 \end{proof}
 
 Supponiamo per assurdo che $ F $ sia un embedding: l'applicazione $ f : \R \to F(\R) $, dove $ F(\R) $ ha la topologia indotta dal toro $ \T^{2} $, è un diffeomorfismo e dunque anche un omeomorfismo. Per le proprietà degli omeomorfismi, esiste una bigezione tra i punti di accumulazione del dominio e quelli del codominio, i.e. $ \mathcal{D}(\Z) \to \mathcal{D}(F(\Z)) $, però $ \mathcal{D}(\Z) = \emptyset $ in quanto i numeri interi sono isolati in $ \R $ mentre $ \mathcal{D}(F(\Z)) \ni (1,1) $. Questa contraddizione porta a dire che $ F $ non è un embedding e quindi $ F(\R) $ non è una sottovarietà di $ \T^{2} $.
@@ -6262,17 +6258,18 @@ Supponiamo per assurdo che $ F $ sia un embedding: l'applicazione $ f : \R \to F
 
 \subsubsection{Immagini di applicazioni lisce contenute in varietà}
 
-\begin{theorem}
-	Siano $ F : N \to M $ un'applicazione liscia tra varietà e $ S \subset M $ una sottovarietà di $ M $, e supponiamo che $ F(N) \subseteq S $, allora la restrizione del codominio della funzione al sottoinsieme $ S $ è ancora un'applicazione liscia, i.e.
+\begin{theorem}\label{thrm:smooth-restriction-subman}
+	Siano $ F : N \to M $ un'applicazione liscia tra varietà e $ S \subset M $ una sottovarietà di $ M $, e supponiamo che $ F(N) \subseteq S $, allora la restrizione del codominio della funzione al sottoinsieme $ S $, i.e. $ \tilde{F} : N \to S $, è ancora un'applicazione liscia.\\
+	Possiamo considerare questa restrizione del codominio grazie alla condizione $ F(N) \subseteq S $, la quale rende le due applicazioni identiche dal punto di vista dell'immagine risultante, i.e.
 	
 	\begin{equation}
-		\tilde{F} : N \to S \mid \tilde{F}(q) = F(q) \qcomma \forall q \in N
+		\tilde{F}(p) = F(p) \qcomma \forall p \in N
 	\end{equation}
 \end{theorem}
 
 \begin{proof}
-	Sappiamo che $ \tilde{F} $ è continua in quanto $ S $ è un sottospazio topologico di $ M $.\\
-	Siano $ p \in N $ un punto e due carte
+	Sappiamo che $ \tilde{F} $ è continua in quanto $ S $ è un sottospazio topologico di $ M $ in quanto sottovarietà.\\
+	Siano un punto $ p \in N $ e due carte
 	
 	\begin{equation}
 		\begin{cases}
@@ -6283,32 +6280,32 @@ Supponiamo per assurdo che $ F $ sia un embedding: l'applicazione $ f : \R \to F
 	\end{equation}
 	
 	tale che $ (V,\psi) $ sia una carta adattata intorno a $ F(p) $ relativamente a $ S $.\\
-	Se $ \dim(S) = s $, possiamo scrivere la condizione per le sottovarietà
+	Poniamo $ \dim(S) = s $, possiamo dunque scrivere la condizione per le sottovarietà
 	
 	\begin{equation}
 		V \cap S = \{ q \in V \mid y^{s+1}(q) = \cdots = y^{m}(q) = 0 \}
 	\end{equation}
-
+	
 	e la restrizione dell'applicazione della carta adattata
 	
-	\map{\eval{\psi}{V \cap S} \doteq \psi_{S}}
+	\map{\eval{\psi}_{V \cap S} \doteq \psi_{S}}
 		{V \cap S}{\psi(V \cap S) \subset \R^{s}}
 		{q}{(y^{1}(q),\dots,y^{s}(q))}
 
 	Osserviamo che, dalle carte, $ F(U) \subseteq V $ e che, dalle ipotesi, $ F(N) \subseteq S $ da cui $ F(U) \subseteq S $ perciò $ F(U) \subseteq V \cap S $.\\
-	Consideriamo ora la composizione
+	Consideriamo ora la composizione ristretta a $ U $
 	
 	\map{\psi \circ F}
 		{U}{V \subset \R^{m}}
-		{q}{( \, y^{1}(F(q)), \dots, y^{s}(F(q)), 0,\dots,0)}
+		{p}{\left( y^{1}(F(p)), \dots, y^{s}(F(p)), 0,\dots,0 \right)}
 
-	e poi la restrizione a $ S $
+	in cui sono presenti $ m - s $ zeri in quanto $ F(U) \subseteq V \cap S $, e poi la restrizione di questa a $ S $
 	
 	\map{\psi_{S} \circ \tilde{F}}
-		{U}{V \cap S}
-		{q}{( \, y^{1}(F(q)), \dots, y^{s}(F(q)))}
+		{U}{\psi_{S}(V \cap S)}
+		{p}{\left( y^{1}(F(p)), \dots, y^{s}(F(p)) \right)}
 
-	Siccome le $ y^{i} $, $ F $ e $ \psi_{S} $ sono tutte applicazioni lisce rispetto a $ q $, anche la composizione $ \psi_{S} \circ \tilde{F} $ sarà liscia, il che implica che la restrizione $ \tilde{F} $ è liscia.
+	Siccome le $ y^{i} $, $ F $ e $ \psi_{S} $ sono tutte applicazioni lisce rispetto a $ p $, anche la composizione $ \psi_{S} \circ \tilde{F} $ sarà liscia, il che implica che la restrizione $ \tilde{F} $ è liscia.
 \end{proof}
 
 \subsubsection{\textit{Esempi}}
@@ -6378,52 +6375,40 @@ Questo esempio mostra come, presa una funzione liscia tra varietà differenziabi
 Sia l'insieme
 
 \begin{equation}
-	SL_{n}(\R) = \{ A \in GL_{n}(\R) \mid \det(A)=1 \} \subset GL_{n}(\R)
+	SL_{n}(\R) = \{ A \in GL_{n}(\R) \mid \det(A) = 1 \} \subset GL_{n}(\R)
 \end{equation}
 
 il quale è una sottovarietà di $ GL_{n}(\R) $.\\
 Consideriamo l'applicazione del prodotto tra matrici di $ SL_{n}(\R) $
 
-\begin{align}
-	\begin{split}
-		\mu : SL_{n}(\R) \times SL_{n}(\R) &\to SL_{n}(\R)\\
-		(A,B) &\mapsto A B
-	\end{split}
-\end{align}
+\map{\mu}
+	{SL_{n}(\R) \times SL_{n}(\R)}{SL_{n}(\R)}
+	{(A,B)}{A B}
 
-e verifichiamo che $ \mu $ sia liscia.\\
-Moltiplicare due matrici di $ SL_{n}(\R) $ non è banale, lo sarebbe in $ GL_{n}(\R) $ che ha le carte con gli omeomorfismi verso $ \R^{n^{2}} $, rendendo dunque il prodotto tra matrici una semplice concatenazione di somme e prodotti tra numeri reali.\\
+e verifichiamo che sia liscia.\\
+La moltiplicazione tra matrici è liscia in $ GL_{n}(\R) $, la quale ha una carta globale con l'omeomorfismo verso $ \R^{n^{2}} $, rendendo dunque il prodotto tra matrici una semplice concatenazione di somme e prodotti tra numeri reali. Questo però non implica automaticamente che la moltiplicazione tra matrici in $ SL_{n}(\R) $ sia liscia, a meno che non si utilizzi la proprietà di quest'ultima di essere una sottovarietà di $ GL_{n}(\R) $.\\
 Sia l'applicazione liscia del prodotto tra matrici di $ GL_{n}(\R) $
 
-\begin{align}
-	\begin{split}
-		F : GL_{n}(\R) \times GL_{n}(\R) &\to GL_{n}(\R)\\
-		(A,B) &\mapsto A B
-	\end{split}
-\end{align}
+\map{F}
+	{GL_{n}(\R) \times GL_{n}(\R)}{GL_{n}(\R)}
+	{(A,B)}{A B}
 
 se restringiamo il dominio a $ SL_{n}(\R) \times SL_{n}(\R) $, otteniamo l'applicazione
 
-\begin{align}
-	\begin{split}
-		G : SL_{n}(\R) \times SL_{n}(\R) &\to GL_{n}(\R)\\
-		(A,B) &\mapsto A B
-	\end{split}
-\end{align}
+\map{G}
+	{SL_{n}(\R) \times SL_{n}(\R)}{GL_{n}(\R)}
+	{(A,B)}{A B}
 
-definita come $ G = F \circ (i \times i) $ dove $ i : SL_{n}(\R) \to GL_{n}(\R) $ indica l'inclusione: essendo $ F $ e $ i $ lisce (e dunque anche $ i \times i $\footnote{%
+definita come $ G = F \circ (i \times i) $ dove $ i : SL_{n}(\R) \to GL_{n}(\R) $ indica l'inclusione naturale: essendo $ F $ e $ i $ lisce (e dunque\footnote{%
 	Vedi Esercizio \ref{es2-12}.%
-}), anche $ G $ è liscia.\\
+} anche $ i \times i $), allora anche $ G $ è liscia.\\
 Siccome la moltiplicazione di due matrici con determinante unitario è ancora una matrice con determinante unitario, abbiamo che $ G(SL_{n}(\R) \times SL_{n}(\R)) \subset SL_{n}(\R) $ e quindi possiamo restringere il codominio, ottenendo la funzione
 
-\begin{align}
-	\begin{split}
-		\tilde{G} : SL_{n}(\R) \times SL_{n}(\R) &\to SL_{n}(\R)\\
-		(A,B) &\mapsto A B
-	\end{split}
-\end{align}
+\map{\mu}
+	{SL_{n}(\R) \times SL_{n}(\R)}{SL_{n}(\R)}
+	{(A,B)}{A B}
 
-la quale è ancora liscia dal teorema. Dalle definizioni, sappiamo che $ \mu \equiv \tilde{G} $ perciò $ \mu $ è liscia.
+la quale è ancora liscia dal Teorema \ref{thrm:smooth-restriction-subman}.
 
 \section{Il fibrato tangente e i campi di vettori}
 
