@@ -6356,11 +6356,11 @@ Consideriamo ora l'applicazione $ H $ che mappa i punti come $ G $ ma nell'immag
 il cui codominio possiede la struttura differenziabile indotta da $ G $. Nonostante la funzione $ G $ sia liscia e l'immagine di $ H $ sia contenuta in $ \R^{2} $, $ \mathfrak{8}_{F} $ non è una sottovarietà di $ \R^{2} $ e $ H $ non è nemmeno continua (perciò non liscia): per dimostrarlo è necessario considerare un aperto nel codominio e dimostrare che la sua controimmagine non è aperta nel dominio. Consideriamo dunque il segmento aperto $ U = (a,b) \in \mathfrak{8}_{F} $: la sua controimmagine tramite $ F $ è aperta in $ (-\pi,\pi) $, mentre non è aperta se si prende la sua controimmagine tramite $ H $, i.e.
 
 \begin{equation}
-	U = (a,b) \in \mathfrak{8}_{F} %
+	U = (a,b) \subset \mathfrak{8}_{F} %
 	\rightarrow %
 	\begin{cases}
 		F^{-1}(U) = (F^{-1}(a),F^{-1}(b)), & \text{aperta} \\
-		H^{-1}(U) = (-\pi,H^{-1}(a)) \cup 0 \cup (H^{-1}(b),\pi), & \text{non aperta}
+		H^{-1}(U) = (-\pi,H^{-1}(a)) \cup \{0\} \cup (H^{-1}(b),\pi), & \text{non aperta}
 	\end{cases}
 \end{equation}
 
@@ -6368,7 +6368,7 @@ Il fatto che immagine e preimmagine non siano entrambe aperte rende $ H $ non co
 
 \img{0.8}{img42}
 
-Questo esempio mostra come, presa una funzione liscia tra varietà differenziabili, la restrizione del codominio da una varietà a un sottoinsieme (varietà) di questa varietà non è ancora una funzione liscia, a meno che il sottoinsieme della varietà non sia una sottovarietà di questa (quindi con la relativa struttura ereditata): in questo caso, restringere il codominio $ \R^{2} $ della funzione $ G $ alla varietà $ \mathfrak{8}_{F} \subset \R^{2} $ (la quale non è una sottovarietà di $ \R^{2} $) non rende la funzione $ H $ nemmeno continua. Quest'ultimo risultato può essere derivato anche dal fatto che la lemniscata di Bernoulli non sia un sottospazio topologico di $ \R^{2} $.
+Questo esempio mostra come, presa una funzione liscia tra varietà differenziabili, la restrizione del codominio da una varietà a un sottoinsieme (varietà) di questa varietà non è ancora una funzione liscia, a meno che il sottoinsieme della varietà non sia una sottovarietà di questa (quindi con la relativa struttura differenziale ereditata): in questo caso, restringere il codominio $ \R^{2} $ della funzione $ G $ alla varietà $ \mathfrak{8}_{F} \subset \R^{2} $ (la quale non è una sottovarietà di $ \R^{2} $) non rende la funzione $ H $ nemmeno continua. Quest'ultimo risultato può essere derivato anche dal fatto che la lemniscata di Bernoulli non sia un sottospazio topologico di $ \R^{2} $.
 
 \paragraph{2) Gruppo lineare speciale}\label{ex-slnr}
 
@@ -6399,7 +6399,7 @@ se restringiamo il dominio a $ SL_{n}(\R) \times SL_{n}(\R) $, otteniamo l'appli
 	{SL_{n}(\R) \times SL_{n}(\R)}{GL_{n}(\R)}
 	{(A,B)}{A B}
 
-definita come $ G = F \circ (i \times i) $ dove $ i : SL_{n}(\R) \to GL_{n}(\R) $ indica l'inclusione naturale: essendo $ F $ e $ i $ lisce (e dunque\footnote{%
+definita come $ G \doteq F \circ (i \times i) $ dove $ i : SL_{n}(\R) \to GL_{n}(\R) $ indica l'inclusione naturale: essendo $ F $ e $ i $ lisce (e dunque\footnote{%
 	Vedi Esercizio \ref{es2-12}.%
 } anche $ i \times i $), allora anche $ G $ è liscia.\\
 Siccome la moltiplicazione di due matrici con determinante unitario è ancora una matrice con determinante unitario, abbiamo che $ G(SL_{n}(\R) \times SL_{n}(\R)) \subset SL_{n}(\R) $ e quindi possiamo restringere il codominio, ottenendo la funzione
@@ -6408,7 +6408,7 @@ Siccome la moltiplicazione di due matrici con determinante unitario è ancora un
 	{SL_{n}(\R) \times SL_{n}(\R)}{SL_{n}(\R)}
 	{(A,B)}{A B}
 
-la quale è ancora liscia dal Teorema \ref{thrm:smooth-restriction-subman}.
+la quale è ancora liscia per il Teorema \ref{thrm:smooth-restriction-subman}.
 
 \section{Il fibrato tangente e i campi di vettori}
 
