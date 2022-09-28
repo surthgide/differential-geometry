@@ -2420,7 +2420,7 @@ Questa estensione alle varietà è naturale in quanto possiamo scrivere l'applic
 	sono lisci poiché $ F $ è un diffeomorfismo nei domini considerati, perciò $ (W,F) $ è ancora una carta per la varietà differenziabile, dunque le $ F^{1},\dots,F^{n} $ sono un sistema di coordinate attorno a $ p $.
 \end{proof}
 
-\section{Lo spazio tangente a una varietà differenziale in un suo punto}
+\section{Spazio tangente a una varietà differenziale in un suo punto}
 
 Negli aperti di $ \R^{n} $ possiamo definire lo spazio tangente in un punto come l'insieme dei vettori di $ n $ componenti uscenti da quel punto. Considerando un aperto $ U \subset \R^{n} $, per lo spazio tangente vale
 
@@ -6410,7 +6410,7 @@ Siccome la moltiplicazione di due matrici con determinante unitario è ancora un
 
 la quale è ancora liscia per il Teorema \ref{thrm:smooth-restriction-subman}.
 
-\section{Il fibrato tangente e i campi di vettori}
+\section{Fibrato tangente e i campi di vettori}
 
 \subsection{Fibrato tangente}
 
@@ -6422,12 +6422,9 @@ Sia $ M $ una varietà differenziabile di dimensione $ n $. Il \textit{fibrato t
 
 La proiezione naturale è definita come
 
-\begin{align}
-	\begin{split}
-		\pi : T(M) &\to M\\
-		v &\mapsto p
-	\end{split}
-\end{align}
+\map{\pi}
+	{T(M)}{M}
+	{v}{p}
 
 dove notazioni alternative per $ v \in T_{p}(M) $ sono $ (p,v) $ (per evidenziare il collegamento con il punto $ p \in M $) e $ X_{p} $.\\
 Costruiamo ora una struttura differenziabile sul fibrato tangente in modo tale da rendere liscia la proiezione.
@@ -6437,30 +6434,51 @@ Costruiamo ora una struttura differenziabile sul fibrato tangente in modo tale d
 Siano $ U \subset M $ un aperto coordinato, i.e. abbiamo fissato una carta $ (U,\phi) \in M $ intorno a $ p $ con $ \phi = (x^{1},\dots,x^{n}) $, e $ T(U) $ il fibrato tangente a $ U $, dunque
 
 \begin{equation}
+	(U,\phi) = (U; x^{1},\dots,x^{n}) \in M \qcomma \phi(p) = 0
+\end{equation}
+
+\begin{equation}
 	T(U) = \bigsqcup_{p \in M} T_{p}(U) = \bigsqcup_{p \in M} T_{p}(M)
 \end{equation}
 
-questo perché $ T_{p}(U) = \der_{p}(C_{p}^{\infty}(U)) $ ma siccome il concetto di germe di funzione è locale
+Sia $ T(U) $ il fibrato tangente a un aperto coordinato $ U \subset M $, i.e. l'aperto di una carta definita come
+
+\begin{equation}
+	(U,\phi) = (U; x^{1},\dots,x^{n}) \in M \qcomma \phi(p) = 0
+\end{equation}
+
+dunque
+
+\begin{equation}
+	T(U) = \bigsqcup_{p \in M} T_{p}(U) = \bigsqcup_{p \in M} T_{p}(M)
+\end{equation}
+
+questo perché $ T_{p}(U) = \der_{p}(C_{p}^{\infty}(U)) $ ma, siccome il concetto di germe di funzione è locale, possiamo scrivere
 
 \begin{equation}
 	T_{p}(U) = \der_{p}(C_{p}^{\infty}(U)) = \der_{p}(C_{p}^{\infty}(M)) = T_{p}(M)
 \end{equation}
 
-Esiste una bigezione naturale tra $ T(U) $ a $ \R^{2n} $: prendendo $ v \in T_{p}(M) $ e sapendo che $ \langle \sfrac{\partial}{\partial x^{i}} |_{p} \rangle = T_{p}(M) $, possiamo scrivere
+Esiste una bigezione naturale $ \eta $ tra $ T(U) $ e $ \R^{2n} $: prendendo $ v \in T_{p}(M) $ e sapendo che le derivate parziali rispetto a $ x^{i} $ in $ p $ generano lo spazio tangente, i.e.
 
 \begin{equation}
-	v = \sum_{i=1}^{n} c^{i}(v) \left. \dfrac{\partial}{\partial x^{i}} \right|_{p}
+	\left\langle \eval{ \pdv{x^{i}} }_{p} \right\rangle = T_{p}(M)
 \end{equation}
 
-e chiamiamo $ c(v) = (c^{1}(v),\dots,c^{n}(v)) $; a questo punto, la bigezione può essere scritta come
+possiamo scrivere
 
-\begin{align}
-	\begin{split}
-		\tilde{\phi} : T(U) &\to \phi(U) \times \R^{n} = \R^{2n}\\
-		v &\mapsto (\phi(p),c(v))\\
+\begin{equation}
+	v = \sum_{i=1}^{n} c^{i}(v) \eval{ \pdv{x^{i}} }_{p}
+\end{equation}
+
+dove $ c(v) = (c^{1}(v),\dots,c^{n}(v)) \in \R^{n} $.\\
+A questo punto, la bigezione può essere scritta come
+
+\map{\eta}
+	{T(U)}{\phi(U) \times \R^{n} = \R^{2n}}
+	{v}{(\phi(p),c(v)) \\
 		&\mapsto (x^{1}(p),\dots,x^{n}(p),c^{1}(v),\dots,c^{n}(v))
-	\end{split}
-\end{align}
+		}
 
 dove $ \phi(U) \subset \R^{n} $. Per poter scrivere l'immagine in funzione di solo $ v $, consideriamo l'applicazione
 
