@@ -1206,22 +1206,93 @@ Sappiamo ora che l'insieme dei valori regolari è il complementare dell'insieme 
 
 %
 
-\section{}\label{es2-19}
+\section{Embedding liscio (1)}\label{es2-19}
 
 \begin{tcolorbox}
 	Dimostrare che l'applicazione
 	
-	\begin{align}
-		\begin{split}
-			F : \R &\to \R^{3}\\
-			t &\mapsto (t,t^{2},t^{3})
-		\end{split}
-	\end{align}
+	\map{F}
+		{\R}{\R^{3}}
+		{t}{(t,t^{2},t^{3})}
 	
 	è un embedding liscio e scrivere $ F(\R) $ come zero di funzioni.
 \end{tcolorbox}
 
-qui
+Perché l'applicazione $ F $ sia un embedding liscio è necessario dimostrare che sia un embedding topologico e un'immersione.
+
+\paragraph{Embedding topologico}
+
+Consideriamo l'applicazione indotta da $ F $
+
+\map{f}
+	{\R}{F(\R)}
+	{t}{(t,t^{2},t^{3})}
+
+dove
+
+\begin{equation}
+	F(\R) = \{ (a,b,c) \in \R^{3} \mid a \in \R , \, b = a^{2} \, \wedge \, c = a^{3} \} \subset \R^{3}
+\end{equation}
+
+Perché $ F $ sia un embedding topologico è necessario che $ f $ sia un omeomorfismo, i.e. continua, invertibile e con inversa continua: è continua in quanto prodotto diretto di polinomi; l'inversa è data dall'applicazione
+
+\map{f^{-1}}
+	{F(\R)}{\R}
+	{(a,b,c)}{a}
+
+in quanto
+
+\begin{gather}
+	(f^{-1} \circ f) (t) = f^{-1}(t,t^{2},t^{3}) = t \\
+	(f \circ f^{-1}) (a,b,c) = f(a) = (a,a^{2},a^{3}) \equiv (a,b,c)
+\end{gather}
+
+dove nella dimostrazione per l'inversa destra vale la seguente implicazione
+
+\begin{equation}
+	(a,b,c) \in F(\R) %
+	\implies %
+	b = a^{2} \, \wedge \, c = a^{3} %
+	\implies %
+	(a,a^{2},a^{3}) \equiv (a,b,c)
+\end{equation}
+
+Anche l'inversa è continua (proiezione), dunque $ f $ è un omeomorfismo e $ F $ un embedding topologico.
+
+\paragraph{Immersione}
+
+Per dimostrare che $ F $ sia un'immersione, consideriamo la derivata rispetto a $ t $ di $ F $
+
+\begin{equation}
+	\dot{F}(t) = (1, 2 t, 3 t^{2}) \neq (0,0,0) \qcomma \forall t \in \R
+\end{equation}
+
+Non annullandosi mai la derivata, non esistono punti critici per l'applicaizone:
+
+\begin{equation}
+	\PC_{F} = \emptyset \implies \PR_{F} = \R
+\end{equation}
+
+dunque il differenziale dell'applicazione è suriettivo in ogni punto del dominio $ T_{\R} $, i.e. l'applicazione è un'immersione.
+
+\paragraph{Embedding liscio}
+
+Essendo un embedding topologico e un'immersione, l'applicazione $ F $ è un embedding liscio: questo porta a due conclusioni riguardanti l'immagine dell'applicazione
+
+\begin{gather}
+	F(\R) \stackrel{diff}{\simeq} \R \\
+	F(\R) \text{ sottovarietà di } \R^{3} \qcomma \operatorname{cod}_{\R^{3}} (F(\R)) = 2
+\end{gather}
+
+\paragraph{Zero di funzione}
+
+Possiamo riscrivere l'insieme $ F(\R) $ come controimmagine dell'origine di $ \R^{2} $ tramite l'applicazione
+
+\map{G}
+	{\R^{3}}{\R^{2}}
+	{(a,b,c)}{(b - a^{2}, c - a^{3})}
+
+i.e. $ F(\R) = G^{-1}(0,0) $.
 
 %
 

@@ -48,3 +48,6 @@ esercizio B.16: nelle condizioni di SL_n(C) intendeva scrivere det(A) = 1 ?
 
 2.4.5: perché un embedding topologico (e quindi anche differenziale) è iniettivo?
 
+esercizio B.19: scrivere la sottovarietà come zero di funzioni è equivalente a cercare 
+un'applicazione la cui controimmagine dell'origine del codominio sia la sottovarietà?
+
