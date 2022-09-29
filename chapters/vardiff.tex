@@ -6459,7 +6459,7 @@ questo perché $ T_{p}(U) = \der_{p}(C_{p}^{\infty}(U)) $ ma, siccome il concett
 	T_{p}(U) = \der_{p}(C_{p}^{\infty}(U)) = \der_{p}(C_{p}^{\infty}(M)) = T_{p}(M)
 \end{equation}
 
-Esiste una bigezione naturale $ \eta $ tra $ T(U) $ e $ \R^{2n} $: prendendo $ v \in T_{p}(M) $ e sapendo che le derivate parziali rispetto a $ x^{i} $ in $ p $ generano lo spazio tangente, i.e.
+Esiste una bigezione naturale $ \tilde{\phi} $ tra $ T(U) $ e $ \R^{2n} $: prendendo $ v \in T_{p}(M) $ e sapendo che le derivate parziali rispetto a $ x^{i} $ in $ p $ generano lo spazio tangente, i.e.
 
 \begin{equation}
 	\left\langle \eval{ \pdv{x^{i}} }_{p} \right\rangle = T_{p}(M)
@@ -6474,7 +6474,7 @@ possiamo scrivere
 dove $ c(v) = (c^{1}(v),\dots,c^{n}(v)) \in \R^{n} $.\\
 A questo punto, la bigezione può essere scritta come
 
-\map{\eta}
+\map{\tilde{\phi}}
 	{T(U)}{\phi(U) \times \R^{n} = \R^{2n}}
 	{v}{(\phi(p),c(v)) \\
 		&\mapsto (x^{1}(p),\dots,x^{n}(p),c^{1}(v),\dots,c^{n}(v))
@@ -6482,24 +6482,20 @@ A questo punto, la bigezione può essere scritta come
 
 dove $ \phi(U) \subset \R^{n} $. Per poter scrivere l'immagine in funzione di solo $ v $, consideriamo l'applicazione
 
-\begin{align}
-	\begin{split}
-		\phi_{*} = \phi_{*p} : T_{p}(U) &\to T_{\phi(p)}(\phi(U)) =  T_{\phi(p)}(\R^{n})\\
-		\left. \dfrac{\partial}{\partial x^{i}} \right|_{p} &\mapsto \left. \dfrac{\partial}{\partial r^{i}} \right|_{p}
-	\end{split}
-\end{align}
+\map{\phi_{*} = \phi_{*p}}
+	{T_{p}(U)}{T_{\phi(p)}(\phi(U)) =  T_{\phi(p)}(\R^{n})}
+	{\eval{ \pdv{x^{i}} }_{p}}{\eval{ \pdv{r^{i}} }_{p}}
 
 che applicata a $ v $
 
-\begin{align}
-	\begin{split}
-		\phi_{*}(v) &= \phi_{*} \left( \sum_{i=1}^{n} c^{i}(v) \left. \dfrac{\partial}{\partial x^{i}} \right|_{p} \right)\\
-		&= \sum_{i=1}^{n} c^{i}(v) \phi_{*} \left( \left. \dfrac{\partial}{\partial x^{i}} \right|_{p} \right)\\
-		&= \sum_{i=1}^{n} c^{i}(v) \left. \dfrac{\partial}{\partial r^{i}} \right|_{p}
-	\end{split}
-\end{align}
+\begin{equation}
+	\phi_{*}(v) = \phi_{*} \left( \sum_{i=1}^{n} c^{i}(v) \eval{ \pdv{x^{i}} }_{p} \right) %
+	= \sum_{i=1}^{n} c^{i}(v) \, \phi_{*} \left( \eval{ \pdv{x^{i}} }_{p} \right) %
+	= \sum_{i=1}^{n} c^{i}(v) \eval{ \pdv{r^{i}} }_{p}
+\end{equation}
 
-il quale risultato può essere identificato con $ c(v) = (c^{1}(v),\dots,c^{n}(v)) $ in $ \R^{n} $. Da tutto ciò e considerando $ p = \pi(v) $, si può riscrivere $ \tilde{\phi} $ come
+il quale risultato può essere identificato con $ c(v) = (c^{1}(v),\dots,c^{n}(v)) \in \R^{n} $.\\
+Considerando $ p = \pi(v) $, si può riscrivere $ \tilde{\phi} $ come
 
 \begin{equation}
 	\tilde{\phi}(v) = (\phi \circ \pi,\phi_{*})(v) = (\phi(\pi(v)),\phi_{*}(v))
@@ -6507,12 +6503,9 @@ il quale risultato può essere identificato con $ c(v) = (c^{1}(v),\dots,c^{n}(v
 
 Questa applicazione è invertibile (essendo una bigezione) e la sua inversa è
 
-\begin{align}
-	\begin{split}
-		\tilde{\phi}^{-1} : \phi(U) \times \R^{n} &\to T(U)\\
-		(\phi(p),c(v)) &\mapsto v = \sum_{i=1}^{n} c^{i}(v) \left. \dfrac{\partial}{\partial x^{i}} \right|_{p}
-	\end{split}
-\end{align}
+\map{\tilde{\phi}^{-1}}
+	{\phi(U) \times \R^{n}}{T(U)}
+	{(\phi(p),c(v))}{v = \sum_{i=1}^{n} c^{i}(v) \eval{ \pdv{x^{i}} }_{p}}
 
 Definiamo dunque la topologia su $ T(U) $ (indotta dall'applicazione $ \tilde{\phi} $) come
 
@@ -6520,87 +6513,82 @@ Definiamo dunque la topologia su $ T(U) $ (indotta dall'applicazione $ \tilde{\p
 	A \subset T(U) \text{ aperto} \iff \tilde{\phi}(A) \text{ aperto in } \phi(U) \times \R^{n}
 \end{equation}
 
-Abbiamo le seguenti conseguenze:
+Da questi risultati, possiamo dunque trarre le seguenti conseguenze:
 
 \begin{itemize}
 	\item $ \tilde{\phi} : T(U) \to \phi(U) \times \R^{n} $ è un omeomorfismo;
 	
-	\item Preso $ V \subset U $, la topologia indotta da $ T(U) $ su $ T(V) $ ($ T(V) \subset T(V) $) è la stessa della topologia indotta su $ T(V) $ dall'applicazione $ \tilde{\phi}_{|T(V)} : T(V) \to \phi(V) \times \R^{n} $.
+	\item Preso $ V \subset U $, la topologia indotta da $ T(U) $ su $ T(V) $, dove $ T(V) \subset T(V) $, è la stessa della topologia indotta su $ T(V) $ dall'applicazione $ \eval{\tilde{\phi}}_{T(V)} : T(V) \to \phi(V) \times \R^{n} $.
 \end{itemize}
 
 Per costruire una topologia su $ T(M) $ consideriamo dunque l'insieme
 
 \begin{equation}
-	\mathcal{B}_{T(M)} = \bigcup_{\alpha} \{ A \subset T(U_{\alpha}) \text{ aperti} \}
+	\B_{T(M)} = \bigcup_{\alpha} \{ A \subset T(U_{\alpha}) \text{ aperti} \}
 \end{equation}
 
 cioè l'unione di tutti gli aperti $ A $ contenuti nei rispettivi $ T(U_{\alpha}) $ al variare di $ \alpha $, dove $ U_{\alpha} $ è un aperto coordinato dell'atlante massimale di $ M $.
 
 \begin{definition}
-	L'insieme $ \mathcal{B}_{T(M)} $ è una base per una topologia su $ T(M) $.
+	L'insieme $ \B_{T(M)} $ è una base per una topologia su $ T(M) $.
 \end{definition}
 
 \begin{proof}
 	Per la dimostrazione è necessario che
 	
 	\begin{itemize}
-		\item $ \mathcal{B}_{T(M)} $ sia un ricoprimento di $ T(M) $;
+		\item $ \B_{T(M)} $ sia un ricoprimento di $ T(M) $;
 		
-		\item L'intersezione di due elementi di $ \mathcal{B}_{T(M)} $ si può scrivere come unione di elementi di $ \mathcal{B}_{T(M)} $.
+		\item L'intersezione di due elementi di $ \B_{T(M)} $ si può scrivere come unione di elementi di $ \B_{T(M)} $.
 	\end{itemize}
 
-	Per definizione $ T(U_{\alpha}) \in \mathcal{B}_{T(M)} $ in quanto aperto; abbiamo anche che vale la seguente implicazione
+	Per definizione $ T(U_{\alpha}) \in \B_{T(M)} $ in quanto aperto; abbiamo anche che vale la seguente implicazione
 	
 	\begin{equation}
-		\bigcup_{\alpha} U_{\alpha} = M \implies \bigcup_{\alpha} T(U_{\alpha}) = T(M)
+		\bigcup_{\alpha} U_{\alpha} = M %
+		\implies %
+		\bigcup_{\alpha} T(U_{\alpha}) = T(M)
 	\end{equation}
 
-	perciò $ \mathcal{B}_{T(M)} $ è un ricoprimento di $ T(M) $.\\
-	Siano due aperti $ A \subset T(U) $ e $ B \subset T(V) $, i.e. $ A,B \in \mathcal{B}_{T(M)} $, con $ U $ e $ V $ due aperti coordinati (i.e. fanno parte di carte di $ T(U) $ e $ T(V) $ rispettivamente). Dimostrando che $ T(U) \cap T(V) = T(U \cap V) $ tramite
+	perciò $ \B_{T(M)} $ è un ricoprimento di $ T(M) $.\\
+	Siano due aperti $ A \subset T(U) $ e $ B \subset T(V) $, i.e. $ A,B \in \B_{T(M)} $, con $ U $ e $ V $ due aperti coordinati (i.e. fanno parte di carte di $ T(U) $ e $ T(V) $ rispettivamente). Dimostriamo che
+	
+	\begin{equation}
+		T(U) \cap T(V) = T(U \cap V)
+	\end{equation}
+
+	tramite
 	
 	\begin{align}
 		\begin{split}
-			T(U) \cap T(V) &= \left( \bigsqcup_{p \in U} T_{p}(U) \right) \cap \left( \bigsqcup_{q \in V} T_{p}(V) \right)\\
-			&= \left( \bigsqcup_{p \in U} T_{p}(M) \right) \cap \left( \bigsqcup_{q \in V} T_{p}(M) \right)\\
+			T(U) \cap T(V) &= \left( \bigsqcup_{p \in U} T_{p}(U) \right) \cap \left( \bigsqcup_{q \in V} T_{q}(V) \right)\\
+			&= \left( \bigsqcup_{p \in U} T_{p}(M) \right) \cap \left( \bigsqcup_{q \in V} T_{q}(M) \right)\\
 			&= \bigsqcup_{r \in U \cap V} T_{r}(M)\\
 			&= \bigsqcup_{r \in U \cap V} T_{r}(U \cap V)\\
 			&= T(U \cap V)
 		\end{split}
 	\end{align}
 	
-	possiamo scrivere che
+	da cui ricaviamo che
 	
 	\begin{equation}
 		A \cap B \subset T(U) \cap T(V) = T(U \cap V)
 	\end{equation}
 
-	dove $ U \cap V $ è ancora un aperto coordinato della carta $ (U \cap V,\phi_{|U \cap V}) $. Dobbiamo verificare ora che $ A \cap B \subset T(U \cap V) $ sia aperto in $ T(U \cap V) $ (l'intersezione di due elementi della base si può scrivere come unione di elementi della base) perché $ \mathcal{B}_{T(M)} $ sia effettivamente una base: osserviamo che
+	dove $ U \cap V $ è ancora un aperto coordinato della carta $ \left( U \cap V,\eval{\phi}_{U \cap V} \right) $. Dobbiamo verificare ora che $ A \cap B \subset T(U \cap V) $ sia aperto in $ T(U \cap V) $ (i.e. che l'intersezione di due elementi della base si possa scrivere come unione di elementi della base) perché $ \B_{T(M)} $ sia effettivamente una base: osserviamo che
 	
-	\begin{align}
-		\begin{split}
-			A \cap B &= (A \cap B) \cap T(U \cap V)\\
-			&= (A \cap T(U \cap V)) \cap (B \cap T(U \cap V))
-		\end{split}
-	\end{align}
+	\begin{equation}
+		A \cap B = (A \cap B) \cap T(U \cap V) %
+		= (A \cap T(U \cap V)) \cap (B \cap T(U \cap V))
+	\end{equation}
 
 	perciò, perché $ A \cap B $ sia aperto in $ T(U \cap V) $, è sufficiente che $ A \cap T(U \cap V) $ sia aperto in $ T(U \cap V) $ (risp. per $ B $). Questo è vero perché $ T(U \cap V) \subset T(U) $ e ha la topologia indotta da $ T(U) $ (perché $ U \cap V \subset U $) e i suoi aperti sono gli aperti di $ T(U) $ (e.g. $ A $) intersecati con $ T(U \cap V) $ stesso, i.e. $ A \cap T(U \cap V) $; il ragionamento è analogo per $ B $.
 \end{proof}
 
-A questo punto $ T(M) $ è uno spazio topologico con la topologia che ha $ \mathcal{B}_{T(M)} $ come base.\footnote{%
+A questo punto $ T(M) $ è uno spazio topologico con la topologia che ha $ \B_{T(M)} $ come base.\footnote{%
 	Questa topologia per $ T(M) $ è l'unica possibile.%
 }\\
-Dobbiamo far vedere ora che $ T(M) $ è una varietà topologica e per farlo dobbiamo mostrare che sia $ N_{2} $, $ T_{2} $ e localmente euclideo.\\
-Useremo il seguente lemma per dimostrare il secondo criterio di numerabilità $ N_{2} $:
-
-\begin{lemma}
-	Ogni varietà differenziabile ha una base numerabile di insiemi coordinati o equivalentemente esiste un atlante differenziabile numerabile.
-\end{lemma}
-
-\begin{proof}
-	Siano $ \{(U_{\alpha},\phi_{\alpha})\} $ l'atlante massimale di $ M $ che definisce la struttura differenziabile di $ M $ e $ \mathfrak{U} = \{U_{i}\}_{i \in I} $ una base numerabile per la topologia di $ M $ (questa esiste in quanto $ M $ è $ N_{2} $).\\
-	Presi un punto $ p \in M $ e un aperto $ U_{\alpha} $ di una carta dell'atlante, esiste sempre $ B_{p,\alpha} \in \mathfrak{U} $ tale che $ p \in B_{p,\alpha} \subset U_{\alpha} $, in quanto $ \mathfrak{U} $ è una base. Consideriamo ora la famiglia di aperti $ \mathfrak{B} = \{B_{p,\alpha}\} $ senza duplicati, la quale sarà una sottofamiglia di $ \mathfrak{U} $ e, in quanto tale, sarà numerabile perché $ \mathfrak{U} $ è numerabile. Inoltre $ (B_{p,\alpha}, \phi_{|B_{p,\alpha}}) $ è una carta di $ M $ e dunque $ \{(B_{p,\alpha}, \phi_{|B_{p,\alpha}})\} $ è un atlante differenziabile numerabile per $ M $.\\
-	Resta da dimostrare che $ \mathfrak{B} $ sia una base (già numerabile) per $ M $: siano $ p \in M $ e $ U \ni p $ aperto di $ M $, siccome esiste sempre un aperto di una carta che sia contenuto in un aperto della varietà, possiamo scrivere $ p \in U_{\alpha} \subset U $, dove la carta considerata dell'atlante è $ (U \cap U_{\alpha},\phi_{U \cap U_{\alpha}}) $; sappiamo anche che esiste $ B_{p,\alpha} $ tale che $ p \in B_{p,\alpha} \subset U_{\alpha} $, dunque $ p \in B_{p,\alpha} \subset U $. Questo significa che esiste sempre un aperto $ B_{p,\alpha} \in \mathfrak{B} $ che si interponga tra ogni punto della varietà e ogni aperto che contiene il punto stesso, i.e. $ \mathfrak{B} $ è una base per $ M $.
-\end{proof}
+Dobbiamo far vedere ora che $ T(M) $ è una varietà topologica e per farlo dobbiamo mostrare che sia $ N_{2} $, $ T_{2} $ e localmente euclideo.
 
 \paragraph{Localmente euclideo}
 
@@ -6616,12 +6604,25 @@ e le applicazioni
 	\tilde{\phi}_{\alpha} : T(U_{\alpha}) \to \phi_{\alpha}(U_{\alpha}) \times \R^{n}
 \end{equation}
 
-sono omeomorfismi in aperti di $ \R^{2n} $, dunque $ \dim(T(M)) = 2 \dim(M) = 2n $.
+sono omeomorfismi in aperti di $ \R^{2n} $, dunque
+
+\begin{equation}
+	\dim(T(M)) = 2 \dim(M) = 2 n
+\end{equation}
 
 \paragraph{$ T_{2} $ o di Hausdorff}
 
 Per definizione, un insieme è di Hausdorff se, dati due punti, esistono due intorni disgiunti che contengono questi due punti.\\
-Siano $ (p,v) \in T_{p}(M) $ e $ (q,w) \in T_{q}(M) $ due punti distinti di $ T(M) $: presi $ v \neq w $, abbiamo due casi
+Siano due punti distinti di $ T(M) $
+
+\begin{equation}
+	\begin{cases}
+		(p,v) \in T_{p}(M) \\
+		(q,w) \in T_{q}(M)
+	\end{cases}
+\end{equation}
+
+Presi $ v \neq w $, abbiamo due casi
 
 \begin{itemize}
 	\item se $ p = q $ allora $ T_{p}(M) = T_{q}(M) \subset T(U) $ dove $ U $ è un aperto coordinato di $ (U,\phi) \ni p=q $, ma $ T(U) \simeq \phi(U) \times \R^{n} $ dunque $ T(U) $ eredita la proprietà $ T_{2} $ da $ \phi(U) \times \R^{n} $ e a sua volta $ T_{p}(M) = T_{q}(M) $ la eredita da $ T(U) $, i.e.
@@ -6645,7 +6646,19 @@ Siano $ (p,v) \in T_{p}(M) $ e $ (q,w) \in T_{q}(M) $ due punti distinti di $ T(
 	abbiamo che $ T(M) $ è di Hausdorff.
 \end{itemize}
 
-\paragraph{$ N_{2} $}
+\paragraph{$ N_{2} $ o a base numerabile}
+
+Al fine di dimostrare il secondo criterio di numerabilità $ N_{2} $ per $ T(M) $, utilizziamo il seguente lemma:
+
+\begin{lemma}
+	Ogni varietà differenziabile ha una base numerabile di insiemi coordinati o equivalentemente esiste un atlante differenziabile numerabile.
+\end{lemma}
+
+\begin{proof}
+	Siano $ \{(U_{\alpha},\phi_{\alpha})\} $ l'atlante massimale di $ M $ che definisce la struttura differenziabile di $ M $ e $ \mathfrak{U} = \{U_{i}\}_{i \in I} $ una base numerabile per la topologia di $ M $ (questa esiste in quanto $ M $ è $ N_{2} $).\\
+	Presi un punto $ p \in M $ e un aperto $ U_{\alpha} $ di una carta dell'atlante, esiste sempre $ B_{p,\alpha} \in \mathfrak{U} $ tale che $ p \in B_{p,\alpha} \subset U_{\alpha} $, in quanto $ \mathfrak{U} $ è una base. Consideriamo ora la famiglia di aperti $ \mathfrak{B} = \{B_{p,\alpha}\} $ senza duplicati, la quale sarà una sottofamiglia di $ \mathfrak{U} $ e, in quanto tale, sarà numerabile perché $ \mathfrak{U} $ è numerabile. Inoltre $ \left( B_{p,\alpha}, \eval{\phi}_{B_{p,\alpha}} \right) $ è una carta di $ M $ e dunque $ \left\{ \left( B_{p,\alpha}, \eval{\phi}_{B_{p,\alpha}} \right) \right\} $ è un atlante differenziabile numerabile per $ M $.\\
+	Resta da dimostrare che $ \mathfrak{B} $ sia una base (già numerabile) per $ M $: siano $ p \in M $ e $ U \ni p $ aperto di $ M $, siccome esiste sempre un aperto di una carta che sia contenuto in un aperto della varietà, possiamo scrivere $ p \in U_{\alpha} \subset U $, dove la carta considerata dell'atlante è $ \left( U \cap U_{\alpha}, \eval{\phi}_{U \cap U_{\alpha}} \right) $; sappiamo anche che esiste $ B_{p,\alpha} $ tale che $ p \in B_{p,\alpha} \subset U_{\alpha} $, dunque $ p \in B_{p,\alpha} \subset U $. Questo significa che esiste sempre un aperto $ B_{p,\alpha} \in \mathfrak{B} $ che si interponga tra ogni punto della varietà e ogni aperto che contiene il punto stesso, i.e. $ \mathfrak{B} $ è una base per $ M $.
+\end{proof}
 
 Sia $ \{(U_{i},\phi_{i})\} $ un atlante differenziabile numerabile di $ M $ (la sua esistenza segue dal lemma dimostrato sopra), allora gli omeomorfismi
 
@@ -6653,8 +6666,8 @@ Sia $ \{(U_{i},\phi_{i})\} $ un atlante differenziabile numerabile di $ M $ (la 
 	\tilde{\phi}_{i} : T(U_{i}) \to \phi_{i}(U_{i}) \times \R^{n}
 \end{equation}
 
-permettono di dire, siccome $ T(U_{i}) \simeq \phi(U_{i}) \times \R^{n} $ e $ \phi(U_{i}) \times \R^{n} $ è $ N_{2} $, che $ T(U_{i}) $ sia $ N_{2} $.\\
-Fissato $ i In I $, sia $ \{B_{ij}\}_{j \in J} $ una base numerabile (con $ I $ e $ J $ numerabili) per $ T(U_{i}) $, allora l'unione
+permettono di dire che $ T(U_{i}) $ sia $ N_{2} $, in quanto $ T(U_{i}) \simeq \phi(U_{i}) \times \R^{n} $ e $ \phi(U_{i}) \times \R^{n} $ è $ N_{2} $.\\
+Fissato $ i \in I $, sia $ \{B_{ij}\}_{j \in J} $ una base numerabile per $ T(U_{i}) $ (con $ I $ e $ J $ numerabili), allora l'unione
 
 \begin{equation}
 	\bigcup_{i \in I, j \in J} \{B_{ij}\}
