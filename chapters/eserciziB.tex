@@ -1300,17 +1300,14 @@ i.e. $ F(\R) = G^{-1}(0,0) $.
 
 %
 
-\section{}\label{es2-20}
+\section{Embedding liscio (2)}\label{es2-20}
 
 \begin{tcolorbox}
 	Dimostrare che l'applicazione
 	
-	\begin{align}
-		\begin{split}
-			F : \R &\to \R^{3}\\
-			t &\mapsto (\cosh(t),\sinh(t))
-		\end{split}
-	\end{align}
+	\map{F}
+		{\R}{\R^{2}}
+		{t}{(\cosh(t),\sinh(t))}
 	
 	è un embedding liscio e che
 	
@@ -1319,7 +1316,137 @@ i.e. $ F(\R) = G^{-1}(0,0) $.
 	\end{equation}
 \end{tcolorbox}
 
-qui
+Perché l'applicazione $ F $ sia un embedding liscio è necessario dimostrare che sia un embedding topologico e un'immersione.
+
+\paragraph{Embedding topologico}
+
+Consideriamo la forma esponenziale delle funzioni iperboliche
+
+\begin{gather}
+	\cosh(t) = \dfrac{e^{t} + e^{-t}}{2} \\
+	\sinh(t) = \dfrac{e^{t} - e^{-t}}{2}
+\end{gather}
+
+Tramite queste, scriviamo l'applicazione indotta da $ F $ come
+
+\map{f}
+	{\R}{F(\R)}
+	{t}{\dfrac{1}{2} (e^{t} + e^{-t},e^{t} - e^{-t})}
+	
+dove
+
+\begin{equation}
+	F(\R) = \{ (x,y) \in \R^{2} \mid x^{2} - y^{2} = 1 \} \subset \R^{2}
+\end{equation}
+
+in quanto
+
+\begin{gather}
+	\begin{cases}
+		x = \cosh(t) \\
+		y = \sinh(t)
+	\end{cases} %
+	\implies %
+	\begin{cases}
+		2 x = e^{t} + e^{-t} \\
+		2 y = e^{t} - e^{-t}
+	\end{cases} %
+	\implies %
+	\begin{cases}
+	e^{t} = 2 x - e^{-t} \\
+	e^{t} = 2 y + e^{-t}
+	\end{cases} %
+	\implies %
+	x - y = e^{-t} \\
+	%
+	\begin{cases}
+		x = \cosh(t) \\
+		y = \sinh(t)
+	\end{cases} %
+	\implies %
+	\begin{cases}
+		2 x = e^{t} + e^{-t} \\
+		2 y = e^{t} - e^{-t}
+	\end{cases} %
+	\implies %
+	\begin{cases}
+		e^{-t} = 2 x - e^{t} \\
+		e^{-t} = e^{t} - 2 y
+	\end{cases} %
+	\implies %
+	x + y = e^{t}
+\end{gather}
+
+da cui
+
+\begin{align}
+	\begin{split}
+		(x - y)(x + y) &= e^{-t} e^{t} \\
+		x^{2} - y^{2} &= 1
+	\end{split}
+\end{align}
+
+Perché $ F $ sia un embedding topologico è necessario che $ f $ sia un omeomorfismo, i.e. continua, invertibile e con inversa continua: è continua in quanto prodotto diretto di somme di esponenziali; l'inversa è data dall'applicazione
+
+\map{f^{-1}}
+	{F(\R)}{\R}
+	{(x,y)}{\operatorname{arccosh}(x) = \ln(x + \sqrt{x^{2} - 1})}
+
+in quanto
+
+\begin{gather}
+	(f^{-1} \circ f) (t) = f^{-1}(\cosh(t),\sinh(t)) = \operatorname{arccosh}(\cosh(t)) = t \\
+	(f \circ f^{-1}) (x,y) = f \left( \ln(x + \sqrt{x^{2} - 1}) \right) = \left( x, x - \dfrac{1}{x + \sqrt{x^{2} - 1}} \right) \equiv (x,y)
+\end{gather}
+
+dove nella dimostrazione per l'inversa destra vale la seguente implicazione
+
+\begin{equation}
+	(x,y) \in F(\R) %
+	\implies %
+	x^{2} - y^{2} = 1 %
+	\implies %
+	\left( a, a - \dfrac{1}{a + \sqrt{a^{2} - 1}} \right) \equiv (a,b)
+\end{equation}
+
+poiché
+
+\begin{equation}
+	a^{2} - \left( a - \dfrac{1}{a + \sqrt{a^{2} - 1}} \right)^{2} = 1
+\end{equation}
+
+Anche l'inversa è continua (composizione di proiezione e funzioni continue), dunque $ f $ è un omeomorfismo e $ F $ un embedding topologico.
+
+\paragraph{Immersione}
+
+Per dimostrare che $ F $ sia un'immersione, consideriamo la derivata rispetto a $ t $ di $ F $
+
+\begin{equation}
+	\dot{F}(t) = (\sinh(t),\cosh(t)) \neq (0,0) \qcomma \forall t \in \R
+\end{equation}
+
+in quanto
+
+\begin{equation}
+	\cosh(t) \geq 1 \qcomma \forall t \in \R
+\end{equation}
+
+Non annullandosi mai la derivata, non esistono punti critici per l'applicaizone:
+
+\begin{equation}
+	\PC_{F} = \emptyset \implies \PR_{F} = \R
+\end{equation}
+
+dunque il differenziale dell'applicazione è suriettivo in ogni punto del dominio $ T_{\R} $, i.e. l'applicazione è un'immersione.
+
+\paragraph{Embedding liscio}
+
+Essendo un embedding topologico e un'immersione, l'applicazione $ F $ è un embedding liscio: questo porta a due conclusioni riguardanti l'immagine dell'applicazione
+
+\begin{gather}
+	F(\R) \stackrel{diff}{\simeq} \R \\
+	F(\R) \text{ sottovarietà di } \R^{2} \qcomma \operatorname{cod}_{\R^{2}} (F(\R)) = 1
+\end{gather}
 
 %
 
