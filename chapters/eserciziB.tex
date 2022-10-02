@@ -1454,13 +1454,136 @@ Essendo un embedding topologico e un'immersione, l'applicazione $ F $ è un embe
 
 %
 
-\section{}\label{es2-21}
+\section{Composizione e prodotto cartesiano di immersioni}\label{es2-21}
 
 \begin{tcolorbox}
 	Dimostrare che la composizione di immersioni è un’immersione e che il prodotto cartesiano di due immersioni è un’immersione.
 \end{tcolorbox}
 
-qui
+Un'applicazione è definita immersione se il suo differenziale è iniettivo in ogni punto del suo dominio. i.e.
+
+\begin{equation}
+	F : N \to M \text{ immersione} %
+	\implies %
+	F_{*p} : T_{p}(N) \to T_{F(p)}(M) \text{ iniettivo} \qcomma \forall p \in N
+\end{equation}
+
+Useremo le due seguenti affermazioni per esprimere l'iniettività:
+
+\begin{gather}
+	\E (F_{*p})^{-1} \mid (F_{*p})^{-1} \circ F_{*p} = \bigone_{T_{p}(N)} \\
+	F_{*p}(X_{p}) = F_{*p}(Y_{p}) \implies X_{p} = Y_{p}
+\end{gather}
+
+le quali valgono per qualsiasi $ p \in N $.
+
+\paragraph{Composizione}
+
+Siano le immersioni
+
+\begin{equation}
+	\begin{cases}
+		F : N \to M \\
+		G : M \to P
+	\end{cases}
+\end{equation}
+
+I loro differenziali sono iniettivi
+
+\begin{equation}
+	\begin{cases}
+		F_{*p} : T_{p}(N) \to T_{F(p)}(M) \\
+		G_{*q} : T_{q}(M) \to T_{G(q)}(P)
+	\end{cases}
+\end{equation}
+
+rispettivamente per qualsiasi $ p \in N $ e $ q \in M $.\\
+Considerando la prima affermazione per esprimere l'iniettività, abbiamo che
+
+\begin{equation}
+	\begin{cases}
+		\E (F_{*p})^{-1} \mid (F_{*p})^{-1} \circ F_{*p} = \bigone_{T_{p}(N)} \\
+		\E (G_{*q})^{-1} \mid (G_{*q})^{-1} \circ G_{*q} = \bigone_{T_{q}(M)}
+	\end{cases}
+\end{equation}
+
+Sia la composizione
+
+\begin{equation}
+	(G \circ F)_{*p} = G_{*F(p)} \circ F_{*p} : T_{p}(N) \to T_{G(F(p))}(P)
+\end{equation}
+
+e consideriamo la seguente espressione:
+
+\begin{align}
+	\begin{split}
+		((G \circ F)_{*p})^{-1} \circ (G \circ F)_{*p} &= (F_{*p})^{-1} \circ (G_{*F(p)})^{-1} \circ G_{*F(p)} \circ F_{*p} \\
+		&= (F_{*p})^{-1} \circ \bigone_{T_{F(p)}(M)} \circ F_{*p} \\
+		&= (F_{*p})^{-1} \circ F_{*p} \\
+		&= \bigone_{T_{p}(N)}
+	\end{split}
+\end{align}
+
+Questo significa che esiste un'applicazione che sia l'inversa sinistra della composizione $ (G \circ F)_{*p} $, i.e.
+
+\begin{equation}
+	\E ((G \circ F)_{*p})^{-1} \mid ((G \circ F)_{*p})^{-1} \circ (G \circ F)_{*p} = \bigone_{T_{p}(N)}
+\end{equation}
+
+da cui otteniamo che il differenziale $ (G \circ F)_{*p} $ è iniettivo per qualsiasi $ p \in N $ e dunque che $ G \circ F $ è un'immersione.
+
+\paragraph{Prodotto cartesiano}
+
+Siano le immersioni
+
+\begin{equation}
+	\begin{cases}
+		F : N_{1} \to M_{1} \\
+		G : N_{2} \to M_{2}
+	\end{cases}
+\end{equation}
+
+I loro differenziali sono iniettivi
+
+\begin{equation}
+	\begin{cases}
+		F_{*p} : T_{p}(N_{1}) \to T_{F(p)}(M_{1}) \\
+		G_{*q} : T_{q}(N_{2}) \to T_{G(q)}(M_{2})
+	\end{cases}
+\end{equation}
+
+rispettivamente per qualsiasi $ p \in N_{1} $ e $ q \in N_{1} $.\\
+Considerando la seconda affermazione per esprimere l'iniettività, abbiamo che
+
+\begin{equation}
+	\begin{cases}
+		F_{*p}(X_{p}) = F_{*p}(W_{p}) \implies X_{p} = W_{p}, & \forall p \in N_{1} \\
+		G_{*q}(Y_{q}) = G_{*q}(Z_{q}) \implies Y_{q} = Z_{q}, & \forall q \in N_{2}
+	\end{cases}
+\end{equation}
+
+Sia il prodotto cartesiano
+
+\map{F \times G}
+	{(N_{1} \times N_{2}}{M_{1} \times M_{2}}
+	{(p,q)}{(F(p), G(q))}
+
+e il suo differenziale in $ (p,q) \in N_{1} \times N_{2} $
+
+\map{(F \times G)_{*(p,q)} = F_{*p} \times G_{*q}}
+	{T_{p}(N_{1}) \times T_{q}(N_{2})}{T_{F(p)}(M_{1}) \times T_{G(q)}(M_{2})}
+	{(X_{p}, Y_{q})}{(F_{*p}(X_{p}), G_{*q}(Y_{q}))}
+
+Vale l'implicazione
+
+\begin{equation}
+	(F_{*p}(X_{p}), G_{*q}(Y_{q})) = (F_{*p}(W_{p}), G_{*q}(Z_{q})) %
+	\implies %
+	(X_{p}, Y_{q}) = (W_{p}, Z_{q}) %
+	\qcomma \forall (p,q) \in N_{1} \times N_{2}
+\end{equation}
+
+perciò il differenziale $ (F \times G)_{*(p,q)} $ è iniettivo per qualsiasi $ (p,q) \in N_{1} \times N_{2} $ e dunque $ F \times G $ è un'immersione.
 
 %
 
