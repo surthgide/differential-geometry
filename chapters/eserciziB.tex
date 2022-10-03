@@ -1591,13 +1591,34 @@ perciò il differenziale $ (F \times G)_{*(p,q)} $ è iniettivo per qualsiasi $ 
 
 %
 
-\section{}\label{es2-22}
+\section{Dominio di immersione ristretto a sottovarietà}\label{es2-22}
 
 \begin{tcolorbox}
-	Dimostrare che se $ F : N \to M $ è un'immersione e $ Z \subset N $ è una sottovarietà di $ N $ allora $ F_{|Z} : Z \to M $ è un'immersione.
+	Dimostrare che se $ F : N \to M $ è un'immersione e $ Z \subset N $ è una sottovarietà di $ N $ allora $ \eval{F}_{Z} : Z \to M $ è un'immersione.
 \end{tcolorbox}
 
-qui
+Essendo $ F : N \to M $ un'immersione, il suo differenziale
+
+\begin{equation}
+	F_{*p} : T_{p}(N) \to T_{F(p)}(M)
+\end{equation}
+
+è iniettivo per qualsiasi $ p \in N $.\\
+Per il Proposizione \ref{prop:subman-incl-immersion}, abbiamo che
+
+\begin{equation}
+	Z \subset N \text{ sottovarietà} %
+	\implies %
+	i : Z \to N \text{ immersione}
+\end{equation}
+
+Consideriamo dunque l'eguaglianza
+
+\begin{equation}
+	\eval{F}_{Z} = F \circ i
+\end{equation}
+
+Nell'Esercizio \ref{es2-21} abbiamo dimostrato che la composizione di immersioni è ancora un'immersione, dunque $ \eval{F}_{Z} $ è un'immersione.
 
 %
 

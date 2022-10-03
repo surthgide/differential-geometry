@@ -4536,8 +4536,8 @@ Chiameremo la struttura differenziabile costruita nella proposizione \textit{str
 	Dimostrando che i cambi di carta sono lisci, otteniamo che $ S $ è una varietà differenziabile.
 \end{proof}
 
-\begin{definition}
-	Siano $ N $ una varietà differenziabile con $ \dim(N) = n $ e $ S \subset N $ una sottovarietà di $ N $ con $ \dim(S)=k<n $, se e solo se l'inclusione naturale
+\begin{definition}\label{prop:subman-incl-immersion}
+	Sia $ N $ una varietà differenziabile con $ \dim(N) = n $, $ S \subset N $ è una sottovarietà di $ N $ con $ \dim(S) = k < n $ se e solo se l'inclusione naturale
 	
 	\map{i}
 		{S}{N}
@@ -4584,6 +4584,12 @@ Chiameremo la struttura differenziabile costruita nella proposizione \textit{str
 
 	siccome il differenziale porta isomorfismi in isomorfismi (lo sono $ \phi \circ i \circ \phi_{S}^{-1} $, $ \phi_{*p} $ e $ (\phi_{S}^{-1})_{*\phi_{S}(p)} $ in quanto applicazioni appartenenti a carte) e $ \phi \circ i \circ \phi_{S}^{-1} $ è iniettiva in quanto immersione, allora $ i_{*p} $ è iniettiva in $ p $. Essendo $ p $ arbitrario, l'inclusione $ i $ è un'immersione.
 \end{proof}
+
+\begin{remark}
+	Se $ F : N \to M $ è un'immersione e $ Z \subset N $ è una sottovarietà di $ N $ allora $ \eval{F}_{Z} : Z \to M $ è un'immersione\footnote{%
+		Vedi Esercizio \ref{es2-22}.%
+	}.
+\end{remark}
 
 \subsubsection{\textit{Esempi}}
 
@@ -5993,7 +5999,7 @@ Nel caso in cui $ n=1 $, non esiste un'immersione iniettiva tra $ N $ e $ \R $, 
 
 \subsubsection{\textit{Esempi}}
 
-Per altri esempi, vedi Esercizi \ref{es2-19}, \ref{es2-20}, \ref{es2-22}, \ref{es2-23}, \ref{es2-24}.
+Per altri esempi, vedi Esercizi \ref{es2-19}, \ref{es2-20}, \ref{es2-23}, \ref{es2-24}.
 
 \paragraph{1)}
 
