@@ -1626,22 +1626,164 @@ Nell'Esercizio \ref{es2-21} abbiamo dimostrato che la composizione di immersioni
 
 %
 
-\section{}\label{es2-23}
+\section{Embedding liscio (proiettivo reale)}\label{es2-23}
 
 \begin{tcolorbox}
 	Dimostrare che l'applicazione
 	
-	\begin{align}
-		\begin{split}
-			F : \S^{2} &\to \R^{4}\\
-			(x,y,z) &\mapsto (x^{2}-y^{2},xy,xz,yz)
-		\end{split}
-	\end{align}
+	\map{F}
+		{\S^{2}}{\R^{4}}
+		{(x,y,z)}{(x^{2}-y^{2},xy,xz,yz)}
 	
 	induce un embedding liscio da $ \rp{2} $ a $ \R^{4} $.
 \end{tcolorbox}
 
-qui
+Dall'applicazione vediamo che
+
+\begin{equation}
+	F(-x,-y,-z) = F(x,y,z)
+\end{equation}
+
+Per questo motivo, possiamo considerare la restrizione del dominio dell'applicazione alla sfera quozientata all'equivalenza antipodale\footnote{%
+	Vedi Paragrafo \ref{ss-sec:homeo-rp-qsph}.%
+}, i.e. l'applicazione
+
+\map{G}
+	{\sfrac{\S^{2}}{\sim_{a}}}{\R^{4}}
+	{[(x,y,z)]_{a}}{(x^{2}-y^{2},xy,xz,yz)}
+
+ottenuta tramite la composizione con la proiezione
+
+\map{\pi_{a}}
+	{\S^{2}}{\sfrac{\S^{2}}{\sim_{a}}}
+	{(x,y,z)}{[(x,y,z)]_{a}}
+
+in quanto
+
+\begin{equation}
+	G \doteq F \circ (\pi_{a})^{-1}
+\end{equation}
+
+Sappiamo inoltre che la sfera quozientata e il proiettivo reale sono omeomorfi tramite
+
+\map{f}
+	{\rp{2}}{\sfrac{\S^{2}}{\sim_{a}}}
+	{[(x,y,z)]}{[(x,y,z)]_{a}}
+
+A questo punto possiamo considerare l'applicazione che mappa le classi di equivalenza del proiettivo reale in $ \R^{4} $, i.e.
+
+\map{H}
+	{\rp{2}}{\R^{4}}
+	{[(x,y,z)]}{(x^{2}-y^{2},xy,xz,yz)}
+
+ottenuta componendo l'omeomorfismo con l'applicazione considerata in precedenza
+
+\begin{equation}
+	H \doteq G \circ f = F \circ (\pi_{a})^{-1} \circ f
+\end{equation}
+
+Riassumendo tramite uno schema:
+
+\diagr{%
+		\S^{2} \arrow[dd, "\pi_{a}"] \arrow[rr, "F"] \&  \& \R^{4}                                  \&  \& {(x,y,z)} \arrow[rr, "F", maps to] \arrow[dd, "\pi_{a}", maps to] \&  \& {(x^{2}-y^{2},xy,xz,yz)}                                      \\
+		\&  \&                                         \&  \&                                                                   \&  \&                                                               \\
+		\sfrac{\S^{2}}{\sim_{a}} \arrow[rruu, "G"]   \&  \& \rp{2} \arrow[ll, "f"] \arrow[uu, "H"'] \&  \& {[(x,y,z)]_{a}} \arrow[rruu, "G", maps to]                        \&  \& {[(x,y,z)]} \arrow[uu, "H", maps to] \arrow[ll, "f", maps to]
+		}
+	
+Perché l'applicazione $ H $ sia un embedding liscio è necessario che sia un'immersione e un embedding topologico.
+
+\paragraph{Immersione}
+
+Per dimostrare che $ H $ sia un'immersione, calcoliamone lo jacobiano
+
+\begin{equation}
+	J(H)(x,y,z) = \left[ \pdv{H^{i}}{u^{j}} \, (x,y,z) \right] %
+	= \bmqty{ %
+				2 x & y & z & 0 \\ %
+				- 2 y & x & 0 & z \\ %
+				0 & 0 & x & y %
+			}
+\end{equation}
+
+dove abbiamo considerato le seguenti carte e relazioni:
+
+\begin{equation}
+	\begin{cases}
+		(U, \phi) = (U; u^{1}, u^{2}, u^{3}) \in \rp{2}, & (U,\phi) \ni (x,y,z) \\
+		(\R^{4}, \id_{\R^{4}}) \in \R^{4} \\
+		H^{i} = r^{i} \circ H
+	\end{cases}
+\end{equation}
+
+Essendo il rango dello jacobiano pari a 2, quindi uguale alla dimensione del proiettivo reale $ \rp{2} $ in ogni punto del dominio\footnote{%
+	L'unico punto che rende il rango inferiore a 2 è l'origine di $ \R^{3} $, ma $ (0,0,0) \notin \rp{2} $.%
+}, $ H $ è un'immersione.
+
+\paragraph{Embedding topologico}
+
+Perché $ H $ sia un embedding topologico è necessario che induca un omeomorfismo tra il dominio e l'immagine di questo, dunque che l'applicazione
+
+\map{\tilde{H}}
+	{\rp{2}}{H(\rp{2}) \subset \R^{4}}
+	{[(x,y,z)]}{(x^{2}-y^{2},xy,xz,yz)}
+
+sia una bigezione continua.\\
+Siccome per definizione $ \Im(\tilde{H}) = H(\rp{2}) $, l'applicazione $ \tilde{H} $ è suriettiva; essendo inoltre questa immagine una combinazione lineare  di potenze intere (polinomi), l'applicazione è anche continua. Per l'iniettività, dimostriamo la seguente implicazione
+
+\begin{equation}
+	(x^{2}-y^{2},xy,xz,yz) = (u^{2}-v^{2},uv,uw,vw) \implies (x,y,z) = (u,v,w)
+\end{equation}
+
+Consideriamo dunque dei punti di $ \rp{2} $, per il quale valgono
+
+\begin{equation}
+	\begin{cases}
+		z > 0 \\
+		x^{2} + y^{2} + z^{2} = 1, & \rp{2} \stackrel{omeo.}{\simeq} \sfrac{\S^{2}}{\sim_{a}}
+	\end{cases}
+\end{equation}
+
+perciò
+
+\begin{gather}
+	\begin{split}
+		\begin{cases}
+			x^{2} - y^{2} = u^{2} - v^{2} \\
+			xy = uv \\
+			xz = uw \\
+			yz = vw
+		\end{cases} %
+		\implies %
+		\begin{cases}
+			x = \dfrac{uv}{y} \\
+			\dfrac{uv}{y} z = uw \\
+			yz = vw
+		\end{cases} %
+		\implies %
+		\begin{cases}
+			y = \dfrac{vz}{w} \\
+			yz = vw
+		\end{cases} %
+		\implies \\\\
+		\implies %
+		z^{2} = w^{2}
+		\implies %
+		z = w
+		\implies %
+		(x,y,z) = (u,v,w)
+	\end{split}
+\end{gather}
+
+dunque $ \tilde{H} $ è una bigezione continua, il che la rende un omeomorfismo e $ H $ un embedding topologico
+
+\paragraph{Embedding liscio}
+
+Essendo un embedding topologico e un'immersione, l'applicazione $ H $ è un embedding liscio: questo porta a due conclusioni riguardanti l'immagine dell'applicazione
+
+\begin{gather}
+	H(\rp{2}) \stackrel{diff}{\simeq} \rp{2} \\
+	H(\rp{2}) \text{ sottovarietà di } \R^{4} \qcomma \operatorname{cod}_{\R^{4}} (H(\rp{2})) = 2
+\end{gather}
 
 %
 
