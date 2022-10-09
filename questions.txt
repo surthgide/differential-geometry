@@ -51,3 +51,10 @@ esercizio B.16: nelle condizioni di SL_n(C) intendeva scrivere det(A) = 1 ?
 esercizio B.19: scrivere la sottovarietà come zero di funzioni è equivalente a cercare 
 un'applicazione la cui controimmagine dell'origine del codominio sia la sottovarietà?
 
+esercizio B.24: sono riuscito a capire che un'immersione iniettiva propria è un'applicazione 
+chiusa e un embedding liscio, ma non so come dimostrarlo; per la seconda parte basta dire che 
+se l'embedding liscio non è chiuso, allora non è proprio; la dimostrazione dovrebbe passare 
+per un concetto che non è presente negli appunti (il concetto di bordo--boundary in inglese-- 
+per una varietà), quindi non sono sicuro che sia la via giusta; vedi preposizione 4.22 di 
+introduction to smooth manifolds di Lee
+
