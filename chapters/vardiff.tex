@@ -6699,142 +6699,139 @@ Considerando che $ U_{\alpha} \cap U_{\beta} = U_{\alpha \beta} $,
 
 possiamo scrivere i cambi di carta come
 
-\begin{align}
-	\begin{split}
-		\tilde{\phi}_{\beta} \circ \tilde{\phi}_{\alpha}^{-1} : \tilde{\phi}_{\alpha}(T(U_{\alpha \beta})) &\to \tilde{\phi}_{\beta}(T(U_{\alpha \beta}))\\
-		\tilde{\phi}_{\alpha} \circ \tilde{\phi}_{\beta}^{-1} : \tilde{\phi}_{\beta}(T(U_{\alpha \beta})) &\to \tilde{\phi}_{\alpha}(T(U_{\alpha \beta}))
-	\end{split}
-\end{align}
+\begin{gather}
+	\tilde{\phi}_{\beta} \circ \tilde{\phi}_{\alpha}^{-1} : \tilde{\phi}_{\alpha}(T(U_{\alpha \beta})) \to \tilde{\phi}_{\beta}(T(U_{\alpha \beta})) \\
+	\tilde{\phi}_{\alpha} \circ \tilde{\phi}_{\beta}^{-1} : \tilde{\phi}_{\beta}(T(U_{\alpha \beta})) \to \tilde{\phi}_{\alpha}(T(U_{\alpha \beta}))
+\end{gather}
 
-i quali devono essere lisci per $ \forall \alpha,\beta \in A $, dove i $ T(U_{\alpha \beta}) $ sono aperti di $ \R^{2n} $.\\
+i quali devono essere lisci per qualsiasi $ \alpha,\beta \in A $, dove i $ T(U_{\alpha \beta}) $ sono aperti di $ \R^{2n} $.\\
 Scriviamo le singole applicazioni come
 
-\begin{align}
-	\begin{split}
-		\tilde{\phi}_{\alpha} : T(U_{\alpha}) &\to \phi_{\alpha}(U_{\alpha}) \times \R^{n}\\
-		v &\mapsto (\phi_{\alpha} \circ \pi, \phi_{*p})(v)
-	\end{split}
-\end{align}
+\map{\tilde{\phi}_{\alpha}}
+	{T(U_{\alpha})}{\phi_{\alpha}(U_{\alpha}) \times \R^{n}}
+	{v}{(\phi_{\alpha} \circ \pi, \phi_{*p})(v)}
 
 dove\footnote{%
-Il simbolo $ \longleftrightarrow $ indica l'identificazione.%
+	Qui il simbolo $ \longleftrightarrow $ indica l'identificazione.%
 }
 
 \begin{equation}
 	\begin{cases}
-		v = \sum_{i=1}^{n} a^{i}(v) \left. \dfrac{\partial}{\partial x^{i}} \right|_{p}\\
-		\pi(v) = p\\
-		\phi_{*}(v) = \sum_{i=1}^{n} a^{i}(v) \left. \dfrac{\partial}{\partial r^{i}} \right|_{p} \longleftrightarrow a(v) = (a^{1}(v),\dots,a^{n}(v)) \in \R^{n}
+		(U_{\alpha},\phi_{\alpha}) = (U_{\alpha}; x^{1},\dots,x^{n}) \in M \\\\
+		v = \displaystyle \sum_{i=1}^{n} a^{i}(v) \eval{ \pdv{x^{i}} }_{p} \\\\
+		\pi(v) = p \\\\
+		\phi_{*}(v) = \displaystyle \sum_{i=1}^{n} a^{i}(v) \eval{ \pdv{r^{i}} }_{p} \longleftrightarrow a(v) = (a^{1}(v),\dots,a^{n}(v)) \in \R^{n}
 	\end{cases}	
 \end{equation}
 
-e la carta utilizzata è $ (U_{\alpha},\phi_{\alpha}) $ con $ \phi_{\alpha} = (x^{1},\dots,x^{n}) $. A questo possiamo riscrivere l'applicazione
+A questo possiamo riscrivere l'applicazione come
 
-\begin{align}
-	\begin{split}
-		\tilde{\phi}_{\alpha} : T(U_{\alpha}) &\to \phi_{\alpha}(U_{\alpha}) \times \R^{n}\\
-		v &\mapsto (\phi_{\alpha} \circ \pi, \phi_{*p})(v)\\
-		&\mapsto ( \, x^{1}(\pi(v)),\dots,x^{n}(\pi(v)), a^{1}(v),\dots,a^{n}(v))
-	\end{split}
-\end{align}
+\map{\tilde{\phi}_{\alpha}}
+	{T(U_{\alpha})}{\phi_{\alpha}(U_{\alpha}) \times \R^{n}}
+	{v}{(\phi_{\alpha} \circ \pi, \phi_{*p})(v) \\
+		&\mapsto \left( x^{1}(\pi(v)),\dots,x^{n}(\pi(v)), a^{1}(v),\dots,a^{n}(v) \right)}
 
 e la sua inversa
 
-\begin{align}
-	\begin{split}
-		\tilde{\phi}_{\alpha}^{-1} : \phi_{\alpha}(U_{\alpha}) \times \R^{n} &\to T(U_{\alpha})\\
-		(\phi_{\alpha}(p), a^{1},\dots,a^{n}) &\mapsto \sum_{i=1}^{n} a^{i}(v) \left. \dfrac{\partial}{\partial x^{i}} \right|_{p}
-	\end{split}
-\end{align}
+\map{\tilde{\phi}_{\alpha}^{-1}}
+	{\phi_{\alpha}(U_{\alpha}) \times \R^{n}}{T(U_{\alpha})}
+	{(\phi_{\alpha}(p), a^{1},\dots,a^{n})}{\sum_{i=1}^{n} a^{i}(v) \eval{ \pdv{x^{i}} }_{p}}
 
-Per la funzione $ \tilde{\phi}_{\beta} $ usiamo la carta $ (U_{\beta},\phi_{\beta}) $ con $ \phi_{\beta} = (y^{1},\dots,y^{n}) $ e
+Per la funzione $ \tilde{\phi}_{\beta} $ abbiamo
 
 \begin{equation}
 	\begin{cases}
-		v = \sum_{i=1}^{n} b^{i}(v) \left. \dfrac{\partial}{\partial y^{i}} \right|_{p}\\
-		\pi(v) = p\\
-		\phi_{*}(v) = \sum_{i=1}^{n} b^{i}(v) \left. \dfrac{\partial}{\partial r^{i}} \right|_{p} \longleftrightarrow b(v) = (b^{1}(v),\dots,b^{n}(v)) \in \R^{n}
+		(U_{\beta},\phi_{\beta}) = (U_{\beta}; y^{1},\dots,y^{n}) \in M \\\\
+		v = \displaystyle \sum_{i=1}^{n} b^{i}(v) \eval{ \pdv{y^{i}} }_{p} \\\\
+		\pi(v) = p \\\\
+		\phi_{*}(v) = \displaystyle \sum_{i=1}^{n} b^{i}(v) \eval{ \pdv{r^{i}} }_{p} \longleftrightarrow b(v) = (b^{1}(v),\dots,b^{n}(v)) \in \R^{n}
 	\end{cases}	
 \end{equation}
 
 da cui
 
-\begin{align}
-	\begin{split}
-		\tilde{\phi}_{\beta} : T(U_{\beta}) &\to \phi_{\beta}(U_{\beta}) \times \R^{n}\\
-		v &\mapsto (\phi_{\beta} \circ \pi, \phi_{*p})(v)\\
-		&\mapsto ( \, y^{1}(\pi(v)),\dots,y^{n}(\pi(v)), b^{1}(v),\dots,b^{n}(v))\\\\
-		%
-		\tilde{\phi}_{\beta}^{-1} : \phi_{\beta}(U_{\beta}) \times \R^{n} &\to T(U_{\beta})\\
-		(\phi_{\beta}(p), b^{1},\dots,b^{n}) &\mapsto \sum_{i=1}^{n} b^{i}(v) \left. \dfrac{\partial}{\partial y^{i}} \right|_{p}
-	\end{split}
-\end{align}
+\map{\tilde{\phi}_{\beta}}
+	{T(U_{\beta})}{\phi_{\beta}(U_{\beta}) \times \R^{n}}
+	{v}{(\phi_{\beta} \circ \pi, \phi_{*p})(v) \\
+		&\mapsto \left( y^{1}(\pi(v)),\dots,y^{n}(\pi(v)), b^{1}(v),\dots,b^{n}(v) \right)}
+
+con inversa
+
+\map{\tilde{\phi}_{\beta}^{-1}}
+	{\phi_{\beta}(U_{\beta}) \times \R^{n}}{T(U_{\beta})}
+	{(\phi_{\beta}(p), b^{1},\dots,b^{n})}{\sum_{i=1}^{n} b^{i}(v) \eval{ \pdv{y^{i}} }_{p}}
 
 In $ T(U_{\alpha \beta}) $, il vettore $ v $ può essere scritto nei seguenti due modi
 
 \begin{equation}
-	v = \sum_{j=1}^{n} a^{j}(v) \left. \dfrac{\partial}{\partial x^{j}} \right|_{p} = \sum_{k=1}^{n} b^{k}(v) \left. \dfrac{\partial}{\partial y^{k}} \right|_{p}
+	v = \sum_{j=1}^{n} a^{j}(v) \eval{ \pdv{x^{j}} }_{p} = %
+	\sum_{k=1}^{n} b^{k}(v) \eval{ \pdv{y^{k}} }_{p}
 \end{equation}
 
 da cui otteniamo
 
-\begin{align}
-	\begin{split}
-		v(y^{i}) &= \sum_{j=1}^{n} a^{j}(v) \, \dfrac{\partial y^{i}}{\partial x^{j}} (p)\\
-		&= \sum_{k=1}^{n} b^{k}(v) \, \dfrac{\partial y^{i}}{\partial y^{k}} (p)\\
-		&= \sum_{k=1}^{n} b^{k}(v) \, \delta^{ik}\\
-		&= b^{i}(v)\\\\
-		%
-		v(x^{i}) &= \sum_{k=1}^{n} b^{k}(v) \, \dfrac{\partial x^{i}}{\partial y^{k}} (p)\\
-		&= \sum_{j=1}^{n} a^{j}(v) \, \dfrac{\partial x^{i}}{\partial x^{j}} (p)\\
-		&= \sum_{k=1}^{n} a^{j}(v) \, \delta^{ij}\\
-		&= a^{i}(v)
-	\end{split}
-\end{align}
+\sbs{0.5}{%
+			\begin{align}
+				\begin{split}
+					v(y^{i}) &= \sum_{j=1}^{n} a^{j}(v) \, \pdv{y^{i}}{x^{j}} \, (p) \\
+					&= \sum_{k=1}^{n} b^{k}(v) \, \pdv{y^{i}}{y^{k}} \, (p) \\
+					&= \sum_{k=1}^{n} b^{k}(v) \, \delta^{ik} \\
+					&= b^{i}(v)
+				\end{split}
+			\end{align}
+			}
+	{0.5}{%
+			\begin{align}
+				\begin{split}
+					v(x^{i}) &= \sum_{k=1}^{n} b^{k}(v) \, \pdv{x^{i}}{y^{k}} \, (p) \\
+					&= \sum_{j=1}^{n} a^{j}(v) \, \pdv{x^{i}}{x^{j}} \, (p) \\
+					&= \sum_{k=1}^{n} a^{j}(v) \, \delta^{ij} \\
+					&= a^{i}(v)
+				\end{split}
+			\end{align}
+			}
 
 perciò
 
-\begin{align}
-	\begin{split}
-		b^{i}(v) &= \sum_{k=1}^{n} a^{k}(v) \, \dfrac{\partial y^{i}}{\partial x^{k}} (p)\\
-		%
-		a^{i}(v) &= \sum_{k=1}^{n} b^{k}(v) \, \dfrac{\partial x^{i}}{\partial y^{k}} (p)
-	\end{split}
-\end{align}
+\begin{gather}
+		b^{i}(v) = \sum_{k=1}^{n} a^{k}(v) \, \pdv{y^{i}}{x^{k}} \, (p) \\
+		a^{i}(v) = \sum_{k=1}^{n} b^{k}(v) \, \pdv{x^{i}}{y^{k}} \, (p)
+\end{gather}
 
-Possiamo dunque scrivere i cambi di carte
+Possiamo dunque scrivere i cambi di carte come
 
 \begin{align}
 	\begin{split}
-		(\tilde{\phi}_{\beta} \circ \tilde{\phi}_{\alpha}^{-1}) (\phi_{\alpha}(p), a^{1},\dots,a^{n}) &= \tilde{\phi}_{\beta} \left( p, \sum_{i=1}^{n} a^{i}(v) \left. \dfrac{\partial}{\partial x^{i}} \right|_{p} \right)\\
-		&= \tilde{\phi}_{\beta} \left( p, v = \sum_{i=1}^{n} a^{i}(v) \left. \dfrac{\partial}{\partial x^{i}} \right|_{p} \right)\\
-		&= ( \phi_{\beta}(p), b^{1}(v),\dots,b^{n}(v) )\\
-		&= \left( (\phi_{\beta} \circ \phi_{\alpha}^{-1})(\phi_{\alpha}(p)), \sum_{i=1}^{n} a^{k}(v) \, \dfrac{\partial y^{1}}{\partial x^{k}} (p) ,\dots, \sum_{i=1}^{n} a^{k}(v) \, \dfrac{\partial y^{n}}{\partial x^{k}} (p) \right)
+		(\tilde{\phi}_{\beta} \circ \tilde{\phi}_{\alpha}^{-1}) (\phi_{\alpha}(p), a^{1},\dots,a^{n}) &= \tilde{\phi}_{\beta} \left( \sum_{i=1}^{n} a^{i}(v) \eval{ \pdv{x^{i}} }_{p} \right) \\
+		&= \tilde{\phi}_{\beta}(v) \\
+		&= (\phi_{\beta} \circ \pi, \phi_{*p})(v) \\
+		&= ( \phi_{\beta}(p), b^{1}(v),\dots,b^{n}(v) ) \\
+		&= \left( (\phi_{\beta} \circ \phi_{\alpha}^{-1})(\phi_{\alpha}(p)), \sum_{i=1}^{n} a^{k}(v) \, \pdv{y^{1}}{x^{k}} \, (p) ,\dots, \sum_{i=1}^{n} a^{k}(v) \, \pdv{y^{n}}{x^{k}} \, (p) \right)
 	\end{split}
 \end{align}
 
 ricordando che le entrate della matrice jacobiana sono equivalenti a
 
 \begin{equation}
-	\dfrac{\partial y^{j}}{\partial x^{k}} (p) = \dfrac{\partial (\phi_{\beta} \circ \phi_{\alpha}^{-1})^{j}}{\partial r^{k}} (\phi(p))
+	\pdv{y^{j}}{x^{k}} \, (p) = \pdv{(\phi_{\beta} \circ \phi_{\alpha}^{-1})^{j}}{r^{k}} \, (\phi(p))
 \end{equation}
 
 otteniamo, applicando un ragionamento analogo per il cambio di carte inverso, le seguenti uguaglianze
 
 \begin{multline}
-	(\tilde{\phi}_{\beta} \circ \tilde{\phi}_{\alpha}^{-1}) (\phi_{\alpha}(p), a^{1},\dots,a^{n}) =\\
-	= \left( (\phi_{\beta} \circ \phi_{\alpha}^{-1})(\phi_{\alpha}(p)), \sum_{i=1}^{n} a^{k}(v) \, \dfrac{\partial (\phi_{\beta} \circ \phi_{\alpha}^{-1})^{1}}{\partial r^{k}} (\phi_{\alpha}(p)) ,\dots, \sum_{i=1}^{n} a^{k}(v) \, \dfrac{\partial (\phi_{\beta} \circ \phi_{\alpha}^{-1})^{n}}{\partial r^{k}} (\phi_{\alpha}(p)) \right)
+	(\tilde{\phi}_{\beta} \circ \tilde{\phi}_{\alpha}^{-1}) (\phi_{\alpha}(p), a^{1},\dots,a^{n}) = \\
+	= \left( (\phi_{\beta} \circ \phi_{\alpha}^{-1})(\phi_{\alpha}(p)), \sum_{i=1}^{n} a^{k}(v) \, \pdv{(\phi_{\beta} \circ \phi_{\alpha}^{-1})^{1}}{r^{k}} \, (\phi_{\alpha}(p)) ,\dots, \sum_{i=1}^{n} a^{k}(v) \, \pdv{(\phi_{\beta} \circ \phi_{\alpha}^{-1})^{n}}{r^{k}} \, (\phi_{\alpha}(p)) \right)
 \end{multline}
 
 \begin{multline}
-	(\tilde{\phi}_{\alpha} \circ \tilde{\phi}_{\beta}^{-1}) (\phi_{\beta}(p), b^{1},\dots,b^{n}) =\\
-	= \left( (\phi_{\alpha} \circ \phi_{\beta}^{-1})(\phi_{\beta}(p)), \sum_{i=1}^{n} b^{k}(v) \, \dfrac{\partial (\phi_{\alpha} \circ \phi_{\beta}^{-1})^{1}}{\partial r^{k}} (\phi_{\beta}(p)) ,\dots, \sum_{i=1}^{n} b^{k}(v) \, \dfrac{\partial (\phi_{\alpha} \circ \phi_{\beta}^{-1})^{n}}{\partial r^{k}} (\phi_{\beta}(p)) \right)
+	(\tilde{\phi}_{\alpha} \circ \tilde{\phi}_{\beta}^{-1}) (\phi_{\beta}(p), b^{1},\dots,b^{n}) = \\
+	= \left( (\phi_{\alpha} \circ \phi_{\beta}^{-1})(\phi_{\beta}(p)), \sum_{i=1}^{n} b^{k}(v) \, \pdv{(\phi_{\alpha} \circ \phi_{\beta}^{-1})^{1}}{r^{k}} \, (\phi_{\beta}(p)) ,\dots, \sum_{i=1}^{n} b^{k}(v) \, \pdv{(\phi_{\alpha} \circ \phi_{\beta}^{-1})^{n}}{r^{k}} \, (\phi_{\beta}(p)) \right)
 \end{multline}
 
 Questi cambi di carte sono lisci perché
 
 \begin{itemize}
-	\item per le prime $ n $ componenti $ (\phi_{\alpha} \circ \phi_{\beta}^{-1})(\phi_{\beta}(p)) $: $ \phi_{\beta} \circ \phi_{\alpha}^{-1} $ e $ \phi_{\alpha} \circ \phi_{\beta}^{-1} $ sono i cambi di carte in $ M $ tra $ (U_{\alpha},\phi_{\alpha}) $ e $ (U_{\beta},\phi_{\beta}) $;
+	\item per le prime $ n $ componenti identificate da $ (\phi_{\alpha} \circ \phi_{\beta}^{-1})(\phi_{\beta}(p)) $: $ \phi_{\beta} \circ \phi_{\alpha}^{-1} $ e $ \phi_{\alpha} \circ \phi_{\beta}^{-1} $ sono i cambi di carte in $ M $ tra $ (U_{\alpha},\phi_{\alpha}) $ e $ (U_{\beta},\phi_{\beta}) $;
 	
 	\item per le seconde $ n $ componenti: le derivate parziali dei cambi di carte applicate ai punti $ \phi_{\alpha}(p) $ e $ \phi_{\beta}(p) $ moltiplicate per numeri reali $ a^{i} $ e $ b^{i} $ e sommate tra loro sono ancora lisce
 \end{itemize}
@@ -6843,23 +6840,31 @@ Questo mostra che $ T(M) $ è una varietà differenziabile di dimensione $ 2n $.
 
 \subsubsection{Proiezione dal fibrato tangente}
 
-Dimostriamo ora che la proiezione dal fibrato tangente di una varietà alla varietà stessa, i.e.
+Dimostriamo che sia liscia la proiezione dal fibrato tangente di una varietà alla varietà stessa
 
-\begin{align}
-	\begin{split}
-		\pi : T(M) &\to M\\
-		(p,v) &\mapsto p
-	\end{split}
-\end{align}
+\map{\pi}
+	{T(M)}{M}
+	{(p,v)}{p}
 
-è liscia: per mostrarlo, prendiamo due carte arbitrarie e facciamo vedere che l'espressione locale è liscia.\\
-Siano le carte $ (U,\phi) \in M $ intorno a $ p $ con $ \phi = (x^{1},\dots,x^{n}) $ e $ (T(U),\tilde{\phi}) \in T(M) $ intorno a $ (p,v) \in T_{p}(M) $, dove
+Per mostrarlo, prendiamo due carte arbitrarie e facciamo vedere che l'espressione locale della proiezione è liscia.\\
+Siano le carte
 
 \begin{equation}
-	v = \sum_{i=1}^{n} c^{i}(v) \left. \dfrac{\partial}{\partial x^{i}} \right|_{p}
+	\begin{cases}
+		(U,\phi) = (U; x^{1},\dots,x^{n}) \in M, & \phi(p) = 0 \in \R^{n} \\
+		(T(U),\tilde{\phi}) \in T(M), & \tilde{\phi}(p,v) = 0 \in \R^{n}, \, (p,v) \in T_{p}(M)
+	\end{cases}
 \end{equation}
 
-con $ c(v) = (c^{1}(v),\dots,c^{n}(v)) $. Ricordando l'applicazione $ \tilde{\phi} $
+dove
+
+\begin{gather}
+	v = \displaystyle \sum_{i=1}^{n} c^{i}(v) \eval{ \pdv{x^{i}} }_{p} \\
+	\nonumber \\
+	c(v) = (c^{1}(v),\dots,c^{n}(v))
+\end{gather}
+
+Ricordando l'applicazione $ \tilde{\phi} $
 
 \begin{equation}
 	\tilde{\phi}(p,v) = (\phi(p),c(v)) = (x^{1}(p),\dots,x^{n}(p),c^{1}(v),\dots,c^{n}(v))
@@ -6868,10 +6873,10 @@ con $ c(v) = (c^{1}(v),\dots,c^{n}(v)) $. Ricordando l'applicazione $ \tilde{\ph
 abbiamo che
 
 \begin{equation}
-	(\phi \circ \pi \circ \tilde{\phi}^{-1}) (\phi(p),c^{1},\dots,c^{n}) = (\phi \circ \pi) \left( p, \sum_{i=1}^{n} c^{i} \left. \dfrac{\partial}{\partial x^{i}} \right|_{p} \right) = \phi(p)
+	(\phi \circ \pi \circ \tilde{\phi}^{-1}) (\phi(p),c^{1},\dots,c^{n}) = (\phi \circ \pi) \left( p, \sum_{i=1}^{n} c^{i} \eval{ \pdv{x^{i}} }_{p} \right) = \phi(p)
 \end{equation}
 
-dunque $ \pi $ è localmente liscia (e anche lineare) in quanto proiezione sulle prime $ n $ coordinate e perciò è liscia dappertutto.
+dunque $ \pi $ è localmente liscia (e anche lineare) in quanto proiezione sulle prime $ n $ coordinate e perciò liscia dappertutto.
 
 \subsection{Funzioni a campana}
 
