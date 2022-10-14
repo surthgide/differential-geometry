@@ -2800,7 +2800,7 @@ conseguentemente
 	Essendo la derivata parziale in $ r^{i} $ un elemento di base per $ T_{\phi(p)}(\R^{n}) $ e $ \phi_{*p} $ un isomorfismo che, in quanto tale, porta basi in basi, le derivate parziali in $ x^{i} $ sono quindi una base per $ T_{p}(N) $, i.e.
 	
 	\begin{equation}
-		\expval{ \eval{ \pdv{x^{i}} }_{p} } = T_{p}(N)
+		\ev{ \eval{ \pdv{x^{i}} }_{p} } = T_{p}(N)
 	\end{equation}
 \end{proof}
 
@@ -3343,7 +3343,7 @@ Siccome $ c'(t_{0}) \in T_{c(t_{0})}(\R) $, possiamo scrivere il vettore tangent
 	c'(t_{0}) = a \eval{ \dv{r} }_{c(t_{0})}
 \end{equation}
 
-dove $ a \in \R $ e $ \expval{ \eval{ \dv*{r} }_{c(t_{0})} } = T_{c(t_{0})}(\R) $.\\
+dove $ a \in \R $ e $ \ev{ \eval{ \dv*{r} }_{c(t_{0})} } = T_{c(t_{0})}(\R) $.\\
 Per determinare $ a $, applichiamo entrambi i membri dell'equazione alla funzione identità
 
 \map{r}
@@ -3417,7 +3417,7 @@ Per un altro esempio, vedi Esercizio \ref{es2-10}.
 		c'(t_{0}) = \sum_{i=1}^{n} a_{i} \eval{ \pdv{x^{i}} }_{c(t_{0})}
 	\end{equation}
 
-	con $ a^{i} \in \R $ per $ i=1,\dots,n $, in quanto $ \expval{ \eval{ \pdv*{x^{i}} }_{c(t_{0})} } = T_{c(t_{0})}(N) $.\\
+	con $ a^{i} \in \R $ per $ i=1,\dots,n $, in quanto $ \ev{ \eval{ \pdv*{x^{i}} }_{c(t_{0})} } = T_{c(t_{0})}(N) $.\\
 	Valutiamo ora entrambi i membri applicati alla funzione coordinata
 	
 	\map{x^{j}}
@@ -3475,7 +3475,7 @@ Questo insieme è più intuitivo, nonostante equivalente, dell'insieme delle der
 	
 	\img{0.8}{img26}
 
-	Fissiamo una carta $ (U,\phi) \in N $ con $ \phi = (x^{1},\dots,x^{n}) $, $ p \in U $ e $ \phi(p) = 0 $, la quale fisserà a sua volta una base per lo spazio tangente $ \expval{ \eval{ \pdv*{x^{i}} }_{p} } = T_{p}(N) $. A questo punto possiamo scrivere un vettore dello spazio tangente come
+	Fissiamo una carta $ (U,\phi) \in N $ con $ \phi = (x^{1},\dots,x^{n}) $, $ p \in U $ e $ \phi(p) = 0 $, la quale fisserà a sua volta una base per lo spazio tangente $ \ev{ \eval{ \pdv*{x^{i}} }_{p} } = T_{p}(N) $. A questo punto possiamo scrivere un vettore dello spazio tangente come
 	
 	\begin{equation}
 		X_{p} = \sum_{i=1}^{n} a^{i} \eval{ \pdv{x^{i}} }_{p} \qcomma i=1,\dots,n
@@ -3575,7 +3575,7 @@ dove $ f \circ c : (-\varepsilon,\varepsilon) \to \R $, perciò
 		f_{*p}(X_{p}) = (X_{p} f) \eval{ \dv{r} }_{f(p)}
 	\end{equation}
 
-	dove $ f_{*p} : T_{p}(N) \to T_{f(p)}(\R) $ e $ \expval{ \eval{ \dv*{r} }_{f(p)} } = T_{f(p)}(\R) $.
+	dove $ f_{*p} : T_{p}(N) \to T_{f(p)}(\R) $ e $ \ev{ \eval{ \dv*{r} }_{f(p)} } = T_{f(p)}(\R) $.
 \end{corollary}
 
 \begin{proof}
@@ -3626,7 +3626,7 @@ Innanzitutto, lo spazio di partenza è dato da
 	T_{I}(GL_{n}(\R)) = \left\{ \sum_{i,j=1}^{n} X_{ij} \eval{ \pdv{r_{ij}} }_{I} \st X=[X_{ij}] \in M_{n}(\R) \right\}
 \end{equation}
 
-dove $ \expval{ \eval{ \pdv*{r_{ij}} }_{I} } = T_{I}(GL_{n}(\R)) $; a ogni vettore $ X_{I} \in T_{I}(GL_{n}(\R)) $ si può associare il vettore $ X \in M_{n}(\R) $ prendendo semplicemente $ X=[X_{ij}] $ dalla definizione dello spazio $ T_{I}(GL_{n}(\R)) $. Per quanto riguarda lo spazio di arrivo
+dove $ \ev{ \eval{ \pdv*{r_{ij}} }_{I} } = T_{I}(GL_{n}(\R)) $; a ogni vettore $ X_{I} \in T_{I}(GL_{n}(\R)) $ si può associare il vettore $ X \in M_{n}(\R) $ prendendo semplicemente $ X=[X_{ij}] $ dalla definizione dello spazio $ T_{I}(GL_{n}(\R)) $. Per quanto riguarda lo spazio di arrivo
 
 \begin{equation}
 	T_{g}(GL_{n}(\R)) = \left\{ \sum_{i,j=1}^{n} X_{ij} \eval{ \pdv{r_{ij}} }_{g} \st X=[X_{ij}] \in M_{n}(\R) \right\}
@@ -4116,7 +4116,7 @@ Sappiamo che
 	f_{*p}(X_{p}) = (X_{p} f) \eval{ \dv{r} }_{f(p)}
 \end{equation}
 
-dove $ X_{p} f \in \R $ e $ \expval{ \eval{ \dv*{r} }_{f(p)} } = T_{f(p)}(\R) $, sia dunque la carta $ (U,\phi) \in N $ con $ \phi = (x^{1},\dots,x^{n}) $ intorno a $ p $, allora
+dove $ X_{p} f \in \R $ e $ \ev{ \eval{ \dv*{r} }_{f(p)} } = T_{f(p)}(\R) $, sia dunque la carta $ (U,\phi) \in N $ con $ \phi = (x^{1},\dots,x^{n}) $ intorno a $ p $, allora
 
 \begin{equation}
 	X_{p} = \sum_{i=1}^{n} a^{i} \eval{ \pdv{x^{i}} }_{p}
@@ -6475,7 +6475,7 @@ questo perché $ T_{p}(U) = \der_{p}(C_{p}^{\infty}(U)) $ ma, siccome il concett
 Esiste una bigezione naturale $ \tilde{\phi} $ tra $ T(U) $ e $ \R^{2n} $: prendendo $ v \in T_{p}(M) $ e sapendo che le derivate parziali rispetto a $ x^{i} $ in $ p $ generano lo spazio tangente, i.e.
 
 \begin{equation}
-	\expval{ \eval{ \pdv{x^{i}} }_{p} } = T_{p}(M)
+	\ev{ \eval{ \pdv{x^{i}} }_{p} } = T_{p}(M)
 \end{equation}
 
 possiamo scrivere
@@ -8649,7 +8649,7 @@ perché la rispetta $ [X,Y] \in Der(C^{\infty}(U)) $ ed è effettivamente un cam
 Sia $ M $ una varietà differenziabile di dimensione $ n $, una \textit{distribuzione} $ r $\textit{-dimensionale} ($ r \leqslant n $) è un'assegnazione $ \forall p \in M $ di un sottospazio $ D_{p} \subseteq T_{p}(M) $ tale che $ \dim(D_{p}) = r $; una distribuzione è, in sostanza, una famiglia di sottospazi dello spazio tangente punto per punto. Una distribuzione $ r $-dimensionale è liscia se per $ \forall p \in M $ esistono un intorno aperto $ U \subset M $ di $ p $ e un'insieme di $ r $ campi di vettori lisci $ X_{1},\dots,X_{r} \in \chi(M) $ tali che
 
 \begin{equation}
-	D_{p} = \expval{ (X_{1})_{p}, \dots, (X_{r})_{p} }_{\R}
+	D_{p} = \ev{ (X_{1})_{p}, \dots, (X_{r})_{p} }_{\R}
 \end{equation}
 
 Una distribuzione è liscia perché varia in tale modo rispetto al punto a cui è legata.\\
@@ -8700,7 +8700,7 @@ Se $ X_{p} = 0 $ allora la curva integrale per $ X $ che inizia in $ p $ è cost
 	D = \{ \lambda X \mid \lambda \in \R \}
 \end{equation}
 
-dove $ D_{p} = \expval{ X_{p} }_{\R} $. L'esistenza di una curva integrale che passa per $ p $ è verificata se $ D $ è involutoria, i.e. (per il teorema di Frobenius) $ D $ è completamente integrabile e quindi esiste la curva integrale ricercata.\\
+dove $ D_{p} = \ev{ X_{p} }_{\R} $. L'esistenza di una curva integrale che passa per $ p $ è verificata se $ D $ è involutoria, i.e. (per il teorema di Frobenius) $ D $ è completamente integrabile e quindi esiste la curva integrale ricercata.\\
 Per dimostrare che $ D $ sia involutoria è necessario che, presi due campi di vettori della distribuzione $ Y,Z \in D $, il commutatore di questi appartiene ancora alla distribuzione, i.e. $ [Y,Z] \in D $: per la distribuzione considerata in precedenza
 
 \begin{equation}
