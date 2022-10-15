@@ -6608,27 +6608,33 @@ Dobbiamo far vedere ora che $ T(M) $ è una varietà topologica e per farlo dobb
 
 \paragraph{Localmente euclideo}
 
-Sia $ \{(U_{\alpha},\phi_{\alpha})\} $ un atlante topologico per $ M $, allora $ \{(T(U_{\alpha}),\tilde{\phi}_{\alpha})\} $ è un atlante topologico per $ T(M) $. Questo è vero perché i $ T(U_{\alpha}) $ sono un ricoprimento di $ T(M) $, i.e.
+\begin{definition}
+	Sia $ \{(U_{\alpha},\phi_{\alpha})\} $ un atlante topologico per $ M $, allora $ \{(T(U_{\alpha}),\tilde{\phi}_{\alpha})\} $ è un atlante topologico per $ T(M) $.
+\end{definition}
 
-\begin{equation}
-	\bigcup_{\alpha} T(U_{\alpha}) = T(M)
-\end{equation}
-
-e le applicazioni
-
-\begin{equation}
-	\tilde{\phi}_{\alpha} : T(U_{\alpha}) \to \phi_{\alpha}(U_{\alpha}) \times \R^{n}
-\end{equation}
-
-sono omeomorfismi in aperti di $ \R^{2n} $, dunque
-
-\begin{equation}
-	\dim(T(M)) = 2 \dim(M) = 2 n
-\end{equation}
+\begin{proof}
+	L'insieme $ \{(T(U_{\alpha}),\tilde{\phi}_{\alpha})\} $ è un atlante topologico per $ T(M) $ in quanto i $ T(U_{\alpha}) $ sono un ricoprimento di $ T(M) $, i.e.
+	
+	\begin{equation}
+		\bigcup_{\alpha} T(U_{\alpha}) = T(M)
+	\end{equation}
+	
+	e le applicazioni
+	
+	\begin{equation}
+		\tilde{\phi}_{\alpha} : T(U_{\alpha}) \to \phi_{\alpha}(U_{\alpha}) \times \R^{n}
+	\end{equation}
+	
+	sono omeomorfismi in aperti di $ \R^{2n} $, dunque
+	
+	\begin{equation}
+		\dim(T(M)) = 2 \dim(M) = 2 n
+	\end{equation}
+\end{proof}
 
 \paragraph{$ T_{2} $ o di Hausdorff}
 
-Per definizione, un insieme è di Hausdorff se, dati due punti, esistono due intorni disgiunti che contengono questi due punti.\\
+Per definizione, un insieme è di Hausdorff se, dati due punti qualsiasi dell'insieme, esistono sempre due intorni disgiunti che contengono questi due punti.\\
 Siano due punti distinti di $ T(M) $
 
 \begin{equation}
@@ -6641,16 +6647,16 @@ Siano due punti distinti di $ T(M) $
 Presi $ v \neq w $, abbiamo due casi
 
 \begin{itemize}
-	\item se $ p = q $ allora $ T_{p}(M) = T_{q}(M) \subset T(U) $ dove $ U $ è un aperto coordinato di $ (U,\phi) \ni p=q $, ma $ T(U) \simeq \phi(U) \times \R^{n} $ dunque $ T(U) $ eredita la proprietà $ T_{2} $ da $ \phi(U) \times \R^{n} $ e a sua volta $ T_{p}(M) = T_{q}(M) $ la eredita da $ T(U) $, i.e.
+	\item se $ p = q $, allora $ T_{p}(M) = T_{q}(M) \subset T(U) $ dove $ U $ è un aperto coordinato di $ (U,\phi) \ni p=q $, ma $ T(U) \simeq \phi(U) \times \R^{n} $ dunque $ T(U) $ eredita la proprietà $ T_{2} $ da $ \phi(U) \times \R^{n} $ e a sua volta anche $ T_{p}(M) = T_{q}(M) $ la ereditano da $ T(U) $, i.e.
 	
 	\begin{equation}
-		\E A,B \in T(U) = T(M) \text{ aperti}, \, A \ni (p,v) \wedge B \ni (q,w) \mid A \cap B = \emptyset
+		\E A,B \subset T(U) = T(M) \text{ aperti}, \, A \ni (p,v) \wedge B \ni (q,w) \mid A \cap B = \emptyset
 	\end{equation}
 	
 	\item se $ p \neq q $, siccome $ M $ è $ T_{2} $ esisteranno due aperti disgiunti coordinati che contengono $ p $ e $ q $, i.e.
 	
 	\begin{equation}
-		\E U,V \in M, \, U \ni p \wedge V \ni q, \, (U,\phi),(V,\psi) \in M \mid U \cap V = \emptyset
+		\E (U,\phi),(V,\psi) \in M, \, (U,\phi) \ni p \wedge (V,\psi) \ni q \mid U \cap V = \emptyset
 	\end{equation}
 
 	per cui, siccome $ T(U) \ni (p,v) $ e $ T(V) \ni (q,w) $ e
@@ -6659,7 +6665,7 @@ Presi $ v \neq w $, abbiamo due casi
 		T(U) \cap T(V) = T(U \cap V) = \emptyset \quad \because \quad U \cap V = \emptyset
 	\end{equation}
 
-	abbiamo che $ T(M) $ è di Hausdorff.
+	in quanto il fibrato tangente è definito come unione disgiunta, abbiamo che $ T(M) $ è di Hausdorff.
 \end{itemize}
 
 \paragraph{$ N_{2} $ o a base numerabile}
@@ -6676,7 +6682,7 @@ Al fine di dimostrare il secondo criterio di numerabilità $ N_{2} $ per $ T(M) 
 	Resta da dimostrare che $ \mathfrak{B} $ sia una base (già numerabile) per $ M $: siano $ p \in M $ e $ U \ni p $ aperto di $ M $, siccome esiste sempre un aperto di una carta che sia contenuto in un aperto della varietà, possiamo scrivere $ p \in U_{\alpha} \subset U $, dove la carta considerata dell'atlante è $ \left( U \cap U_{\alpha}, \eval{\phi}_{U \cap U_{\alpha}} \right) $; sappiamo anche che esiste $ B_{p,\alpha} $ tale che $ p \in B_{p,\alpha} \subset U_{\alpha} $, dunque $ p \in B_{p,\alpha} \subset U $. Questo significa che esiste sempre un aperto $ B_{p,\alpha} \in \mathfrak{B} $ che si interponga tra ogni punto della varietà e ogni aperto che contiene il punto stesso, i.e. $ \mathfrak{B} $ è una base per $ M $.
 \end{proof}
 
-Sia $ \{(U_{i},\phi_{i})\} $ un atlante differenziabile numerabile di $ M $ (la sua esistenza segue dal lemma dimostrato sopra), allora gli omeomorfismi
+Sia $ \{(U_{i},\phi_{i})\}_{i \in I} $ un atlante differenziabile numerabile di $ M $ (la sua esistenza segue dal lemma dimostrato sopra), allora gli omeomorfismi
 
 \begin{equation}
 	\tilde{\phi}_{i} : T(U_{i}) \to \phi_{i}(U_{i}) \times \R^{n}
@@ -6686,21 +6692,27 @@ permettono di dire che $ T(U_{i}) $ sia $ N_{2} $, in quanto $ T(U_{i}) \simeq \
 Fissato $ i \in I $, sia $ \{B_{ij}\}_{j \in J} $ una base numerabile per $ T(U_{i}) $ (con $ I $ e $ J $ numerabili), allora l'unione
 
 \begin{equation}
-	\bigcup_{i \in I, j \in J} \{B_{ij}\}
+	\mathfrak{B}_{T(M)} = \bigcup_{\substack{ i \in I \\ j \in J }} \{B_{ij}\}
 \end{equation}
 
 è una base numerabile per $ T(M) $ e dunque $ T(M) $ è $ N_{2} $.
 
 \subsubsection{Struttura differenziabile sul fibrato tangente}
 
-Dopo aver dimostrato che $ T(M) $ è una varietà topologica, dimostriamo che è anche una varietà differenziabile con atlante differenziabile $ \{(T(U_{\alpha}),\tilde{\phi}_{\alpha})\}_{\alpha \in A} $ dove $ \{(U_{\alpha},\phi_{\alpha})\}_{\alpha \in A} $ è un atlante differenziabile per $ M $. L'unico fatto da verificare è che le carte siano $ C^{\infty} $-compatibili o equivalentemente che i cambi di carte siano lisci.\\
-Considerando che $ U_{\alpha} \cap U_{\beta} = U_{\alpha \beta} $, 
+Dopo aver dimostrato che $ T(M) $ è una varietà topologica, dimostriamo che è anche una varietà differenziabile con atlante differenziabile $ \{(T(U_{\alpha}),\tilde{\phi}_{\alpha})\}_{\alpha \in A} $ dove $ \{(U_{\alpha},\phi_{\alpha})\}_{\alpha \in A} $ è un atlante differenziabile per $ M $. L'unico fatto da verificare è che le carte siano $ C^{\infty} $-compatibili, i.e. i cambi di carte siano lisci.\\
+Definiamo
 
 \begin{equation}
-	T(U_{\alpha}) \cap T(U_{\beta}) = T(U_{\alpha} \cap U_{\beta}) \doteq T(U_{\alpha \beta})
+	U_{\alpha \beta} \doteq U_{\alpha} \cap U_{\beta}
 \end{equation}
 
-possiamo scrivere i cambi di carta come
+da cui
+
+\begin{equation}
+	T(U_{\alpha \beta}) \doteq T(U_{\alpha} \cap U_{\beta}) = T(U_{\alpha}) \cap T(U_{\beta})
+\end{equation}
+
+Possiamo quindi scrivere i cambi di carta come
 
 \begin{gather}
 	\tilde{\phi}_{\beta} \circ \tilde{\phi}_{\alpha}^{-1} : \tilde{\phi}_{\alpha}(T(U_{\alpha \beta})) \to \tilde{\phi}_{\beta}(T(U_{\alpha \beta})) \\
@@ -6740,7 +6752,7 @@ e la sua inversa
 	{\phi_{\alpha}(U_{\alpha}) \times \R^{n}}{T(U_{\alpha})}
 	{(\phi_{\alpha}(p), a^{1},\dots,a^{n})}{\sum_{i=1}^{n} a^{i}(v) \eval{ \pdv{x^{i}} }_{p}}
 
-Per la funzione $ \tilde{\phi}_{\beta} $ abbiamo
+Per la funzione $ \tilde{\phi}_{\beta} $ abbiamo invece
 
 \begin{equation}
 	\begin{cases}
@@ -6801,7 +6813,7 @@ perciò
 		a^{i}(v) = \sum_{k=1}^{n} b^{k}(v) \, \pdv{x^{i}}{y^{k}} \, (p)
 \end{gather}
 
-Possiamo dunque scrivere i cambi di carte come
+Possiamo dunque scrivere l'azione i cambi di carte come
 
 \begin{align}
 	\begin{split}
@@ -6825,18 +6837,18 @@ otteniamo, applicando un ragionamento analogo per il cambio di carte inverso, le
 	(\tilde{\phi}_{\beta} \circ \tilde{\phi}_{\alpha}^{-1}) (\phi_{\alpha}(p), a^{1},\dots,a^{n}) = \\
 	= \left( (\phi_{\beta} \circ \phi_{\alpha}^{-1})(\phi_{\alpha}(p)), \sum_{i=1}^{n} a^{k}(v) \, \pdv{(\phi_{\beta} \circ \phi_{\alpha}^{-1})^{1}}{r^{k}} \, (\phi_{\alpha}(p)) ,\dots, \sum_{i=1}^{n} a^{k}(v) \, \pdv{(\phi_{\beta} \circ \phi_{\alpha}^{-1})^{n}}{r^{k}} \, (\phi_{\alpha}(p)) \right)
 \end{multline}
-
+%
 \begin{multline}
 	(\tilde{\phi}_{\alpha} \circ \tilde{\phi}_{\beta}^{-1}) (\phi_{\beta}(p), b^{1},\dots,b^{n}) = \\
 	= \left( (\phi_{\alpha} \circ \phi_{\beta}^{-1})(\phi_{\beta}(p)), \sum_{i=1}^{n} b^{k}(v) \, \pdv{(\phi_{\alpha} \circ \phi_{\beta}^{-1})^{1}}{r^{k}} \, (\phi_{\beta}(p)) ,\dots, \sum_{i=1}^{n} b^{k}(v) \, \pdv{(\phi_{\alpha} \circ \phi_{\beta}^{-1})^{n}}{r^{k}} \, (\phi_{\beta}(p)) \right)
 \end{multline}
 
-Questi cambi di carte sono lisci perché
+Questi cambi di carte sono lisci poiché:
 
 \begin{itemize}
 	\item per le prime $ n $ componenti identificate da $ (\phi_{\alpha} \circ \phi_{\beta}^{-1})(\phi_{\beta}(p)) $: $ \phi_{\beta} \circ \phi_{\alpha}^{-1} $ e $ \phi_{\alpha} \circ \phi_{\beta}^{-1} $ sono i cambi di carte in $ M $ tra $ (U_{\alpha},\phi_{\alpha}) $ e $ (U_{\beta},\phi_{\beta}) $;
 	
-	\item per le seconde $ n $ componenti: le derivate parziali dei cambi di carte applicate ai punti $ \phi_{\alpha}(p) $ e $ \phi_{\beta}(p) $ moltiplicate per numeri reali $ a^{i} $ e $ b^{i} $ e sommate tra loro sono ancora lisce
+	\item per le seconde $ n $ componenti: le derivate parziali dei cambi di carte applicate nei punti $ \phi_{\alpha}(p) $ e $ \phi_{\beta}(p) $ moltiplicate per numeri reali $ a^{i}(v) $ e $ b^{i}(v) $ e sommate tra loro sono ancora lisce.
 \end{itemize}
 
 Questo mostra che $ T(M) $ è una varietà differenziabile di dimensione $ 2n $.
@@ -6870,13 +6882,13 @@ dove
 Ricordando l'applicazione $ \tilde{\phi} $
 
 \begin{equation}
-	\tilde{\phi}(p,v) = (\phi(p),c(v)) = (x^{1}(p),\dots,x^{n}(p),c^{1}(v),\dots,c^{n}(v))
+	\tilde{\phi}(v) = (\phi(p),c(v)) = (x^{1}(p),\dots,x^{n}(p),c^{1}(v),\dots,c^{n}(v))
 \end{equation}
 
 abbiamo che
 
 \begin{equation}
-	(\phi \circ \pi \circ \tilde{\phi}^{-1}) (\phi(p),c^{1},\dots,c^{n}) = (\phi \circ \pi) \left( p, \sum_{i=1}^{n} c^{i} \eval{ \pdv{x^{i}} }_{p} \right) = \phi(p)
+	(\phi \circ \pi \circ \tilde{\phi}^{-1}) (\phi(p),c^{1}(v),\dots,c^{n}(v)) = (\phi \circ \pi)(v) = (\phi \circ \pi) \left( \sum_{i=1}^{n} c^{i}(v) \eval{ \pdv{x^{i}} }_{p} \right) = \phi(p)
 \end{equation}
 
 dunque $ \pi $ è localmente liscia (e anche lineare) in quanto proiezione sulle prime $ n $ coordinate e perciò liscia dappertutto.
