@@ -6895,7 +6895,7 @@ dunque $ \pi $ è localmente liscia (e anche lineare) in quanto proiezione sulle
 
 \subsection{Funzioni a campana}
 
-Siano $ M $ una varietà differenziabile e $ f : M \to \R $ un'applicazione su varietà (non necessariamente liscia). Definiamo il \textit{supporto di} $ f $, indicato con $ \operatorname{supp}(f) $, come il sottoinsieme di $ M $ costituito dalla chiusura dell'insieme dei punti dove $ f $ non si annulla, i.e. preso l'insieme dei punti dove la funzione si annulla
+Siano $ M $ una varietà differenziabile e $ f : M \to \R $ un'applicazione su varietà (non necessariamente liscia). Definiamo il \textit{supporto di} $ f $, indicato con $ \supp(f) $, come il sottoinsieme di $ M $ costituito dalla chiusura dell'insieme dei punti dove $ f $ non si annulla, i.e. preso l'insieme dei punti dove la funzione si annulla
 
 \begin{equation}
 	Z(f) = \{ p \in M \mid f(p) = 0 \}
@@ -6904,7 +6904,7 @@ Siano $ M $ una varietà differenziabile e $ f : M \to \R $ un'applicazione su v
 se $ M \setminus Z(f) \doteq Z(f)^{C} $, possiamo scrivere
 
 \begin{equation}
-	\operatorname{supp}(f) = \overline{Z(f)^{C}}
+	\supp(f) = \overline{Z(f)^{C}}
 \end{equation}
 
 Ad esempio, per la funzione 
@@ -6917,7 +6917,7 @@ Ad esempio, per la funzione
 \begin{gather}
 	Z(f) = (-\infty,-1] \cup [1,+\infty)\\
 	Z(f)^{C} = (-1,-1)\\
-	\operatorname{supp}(f) = \overline{Z(f)^{C}} = [-1,1]
+	\supp(f) = \overline{Z(f)^{C}} = [-1,1]
 \end{gather}
 
 O ancora per la funzione
@@ -6937,7 +6937,7 @@ O ancora per la funzione
 \begin{gather}
 	Z(f) = \{0\}\\
 	Z(f)^{C} = (-1,0) \cup (0,1)\\
-	\operatorname{supp}(f) = \overline{Z(f)^{C}} = (-1,1)
+	\supp(f) = \overline{Z(f)^{C}} = (-1,1)
 \end{gather}
 
 In quanto $ (-1,1) = M $ è chiuso in $ M $.\\\\
@@ -6951,7 +6951,7 @@ Siano $ M $ una varietà differenziabile, $ U \subset M $ un aperto della variet
 	
 	\item $ f \equiv 1 $ in un intorno di $ q $
 	
-	\item $ \operatorname{supp}(f) \subset U $
+	\item $ \supp(f) \subset U $
 \end{itemize}
 
 Il primo esempio descritto sopra è una funzione a campana in un qualsiasi punto appartenente a $ (-1,1) $ con supporto in qualunque aperto $ U \supset [-1,1] $.\\\\
@@ -7129,7 +7129,7 @@ Per la generalizzazione di questo procedimento a funzioni a campana su varietà,
 			\sigma : \R^{n} \to \R\\
 			\sigma(x) = 1 & \forall x \in \overline{D_{a}(0)}\\
 			\sigma(x) = 0 & \forall x \in \R^{n} \setminus D_{b}(0)\\
-			\operatorname{supp}(\sigma) = \overline{D_{b}(0)}
+			\supp(\sigma) = \overline{D_{b}(0)}
 		\end{cases}
 	\end{equation}
 
@@ -7186,13 +7186,13 @@ Per la generalizzazione di questo procedimento a funzioni a campana su varietà,
 		\item Abbiamo che
 		
 		\begin{equation}
-			\operatorname{supp}(\sigma) = \overline{D_{b}(0)}
+			\supp(\sigma) = \overline{D_{b}(0)}
 		\end{equation}
 	
 		e che $ \phi $ è un diffeomorfismo, dunque il supporto di $ \rho $ sarà
 		
 		\begin{equation}
-			\operatorname{supp}(\rho) = \phi \left( \overline{D_{b}(0)} \right) = \overline{V_{b}} \subset V_{r} \subset U
+			\supp(\rho) = \phi \left( \overline{D_{b}(0)} \right) = \overline{V_{b}} \subset V_{r} \subset U
 		\end{equation}
 	\end{itemize}
 	
@@ -7215,7 +7215,7 @@ In generale non si può estendere una funzione oltre al dominio in cui essa è l
 			p &\mapsto %
 			\begin{cases}
 				(\rho \circ f)(p) & p \in U\\
-				0 & p \in M \setminus \operatorname{supp}(\rho)
+				0 & p \in M \setminus \supp(\rho)
 			\end{cases}
 		\end{split}
 	\end{align}
@@ -7223,19 +7223,19 @@ In generale non si può estendere una funzione oltre al dominio in cui essa è l
 	Perché sia liscia è necessario che lo sia nei due casi della definizione e che questi coincidano nella loro intersezione: per quest'ultima richiesta, possiamo scrivere l'intersezione come
 	
 	\begin{equation}
-		U \cap (M \setminus \operatorname{supp}(\rho)) = U \setminus \operatorname{supp}(\rho)
+		U \cap (M \setminus \supp(\rho)) = U \setminus \supp(\rho)
 	\end{equation}
 
 	la quale è aperta perché il supporto è un chiuso, dunque resta verificare che i casi coincidano, ricordando che
 	
 	\begin{equation}
-		\rho(p) = 0, \qquad \forall p \in M \setminus \operatorname{supp}(\rho)
+		\rho(p) = 0, \qquad \forall p \in M \setminus \supp(\rho)
 	\end{equation}
 
 	perciò
 	
 	\begin{equation}
-		\tilde{f}(p) = (\rho \circ f)(p) = 0, \qquad \forall p \in U \setminus \operatorname{supp}(\rho)
+		\tilde{f}(p) = (\rho \circ f)(p) = 0, \qquad \forall p \in U \setminus \supp(\rho)
 	\end{equation}
 
 	dunque la funzione è liscia dappertutto.\\
@@ -7786,7 +7786,7 @@ Per la dimostrazione, è necessario il seguente lemma:
 \end{lemma}
 
 \begin{proof}[Dimostrazione (lemma)]
-	Siano $ p \in U $ e $ \rho \in C^{\infty}(M) $ una funzione a campana in $ p $ con supporto in $ U $, i.e. $ \operatorname{supp}(\rho) \subset U $, (esiste per il Teorema \ref{bump-fun}). Consideriamo la funzione $ f = \rho \tilde{f} \in C^{\infty}(M) $ la quale è nulla dappertutto perché in $ U $ abbiamo che $ \tilde{f}_{|U} = 0 $ mentre in $ M \setminus U $ abbiamo che $ \rho_{|M \setminus U} = 0 $. Applichiamo ora $ D $ a $ f $, il cui risultato sarà nullo in quanto $ f \equiv 0 $ e $ D $ è lineare
+	Siano $ p \in U $ e $ \rho \in C^{\infty}(M) $ una funzione a campana in $ p $ con supporto in $ U $, i.e. $ \supp(\rho) \subset U $, (esiste per il Teorema \ref{bump-fun}). Consideriamo la funzione $ f = \rho \tilde{f} \in C^{\infty}(M) $ la quale è nulla dappertutto perché in $ U $ abbiamo che $ \tilde{f}_{|U} = 0 $ mentre in $ M \setminus U $ abbiamo che $ \rho_{|M \setminus U} = 0 $. Applichiamo ora $ D $ a $ f $, il cui risultato sarà nullo in quanto $ f \equiv 0 $ e $ D $ è lineare
 	
 	\begin{align}
 		\begin{split}
