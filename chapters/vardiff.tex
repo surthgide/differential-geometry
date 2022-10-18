@@ -6901,47 +6901,50 @@ Siano $ M $ una varietà differenziabile e $ f : M \to \R $ un'applicazione su v
 	Z(f) = \{ p \in M \mid f(p) = 0 \}
 \end{equation}
 
-se $ M \setminus Z(f) \doteq Z(f)^{C} $, possiamo scrivere
+e il complementare di questo
 
 \begin{equation}
-	\supp(f) = \overline{Z(f)^{C}}
+	Z(f)^{C} \doteq M \setminus Z(f)
 \end{equation}
 
-Ad esempio, per la funzione 
+possiamo scrivere
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.7\textwidth,keepaspectratio]{img43}
-\end{figure}
+\begin{equation}
+	\supp(f) \doteq \overline{Z(f)^{C}}
+\end{equation}
 
-\begin{gather}
-	Z(f) = (-\infty,-1] \cup [1,+\infty)\\
-	Z(f)^{C} = (-1,-1)\\
-	\supp(f) = \overline{Z(f)^{C}} = [-1,1]
-\end{gather}
+\sbs{0.6}{%
+			Ad esempio, per la funzione
+			
+			\img{1}{img43}
+			}
+	{0.4}{%
+			\begin{gather}
+				Z(f) = (-\infty,-1] \cup [1,+\infty) \\
+				Z(f)^{C} = (-1,-1) \\
+				\supp(f) = \overline{Z(f)^{C}} = [-1,1]
+			\end{gather}
+			}
 
-O ancora per la funzione
+\sbs{0.5}{%
+			O ancora per la funzione
+			
+			\img{0.8}{img44}
+			}
+	{0.5}{%
+			\map{f}
+				{(-1,1)}{\R}
+				{x}{\tan(\dfrac{\pi x}{2})}
+			
+			\begin{gather}
+				Z(f) = \{0\} \\
+				Z(f)^{C} = (-1,0) \cup (0,1) \\
+				\supp(f) = \overline{Z(f)^{C}} = (-1,1)
+			\end{gather}
+		
+			In quanto $ (-1,1) = M $ è chiuso in $ M $.
+			}
 
-\begin{align}
-	\begin{split}
-		f : (-1,1) &\to \R\\
-		x &\mapsto \tan(\dfrac{\pi x}{2})
-	\end{split}
-\end{align}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.3\textwidth,keepaspectratio]{img44}
-\end{figure}
-
-\begin{gather}
-	Z(f) = \{0\}\\
-	Z(f)^{C} = (-1,0) \cup (0,1)\\
-	\supp(f) = \overline{Z(f)^{C}} = (-1,1)
-\end{gather}
-
-In quanto $ (-1,1) = M $ è chiuso in $ M $.\\\\
-%
 Siano $ M $ una varietà differenziabile, $ U \subset M $ un aperto della varietà e $ q \in U $ un suo punto, l'applicazione $ f : M \to \R $ è una \textit{funzione a campana}\footnote{%
 	In inglese "bump function".%
 } in $ q $ con supporto in $ U $ se
@@ -6954,39 +6957,37 @@ Siano $ M $ una varietà differenziabile, $ U \subset M $ un aperto della variet
 	\item $ \supp(f) \subset U $
 \end{itemize}
 
-Il primo esempio descritto sopra è una funzione a campana in un qualsiasi punto appartenente a $ (-1,1) $ con supporto in qualunque aperto $ U \supset [-1,1] $.\\\\
-%
-Partendo da una funzione liscia da $ \R $ in $ \R $, costruiremo una funzione a campana liscia da $ \R^{n} $ a $ \R $.\\
-Consideriamo quindi la funzione liscia
+Il primo esempio descritto sopra è una funzione a campana in un qualsiasi punto appartenente a $ (-1/2,1/2) $ con supporto in qualunque aperto $ U \supset [-1,1] $.
 
-\begin{align}
-	\begin{split}
-		f : \R &\to \R\\
-		x &\mapsto%
-		\begin{cases}
-			e^{\sfrac{-1}{x}} & x > 0\\
-			0 & x \leqslant 0
-		\end{cases}
-	\end{split}
-\end{align}
+\paragraph{Funzione a campana da $ \R^{n} $ a $ \R $}
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.5\textwidth,keepaspectratio]{img45}
-\end{figure}
+Partendo da una funzione liscia da $ \R $ in $ \R $, costruiremo una funzione a campana liscia da $ \R^{n} $ a $ \R $. Consideriamo quindi la funzione liscia
+
+\sbs{0.4}{%
+			\map{f}
+				{\R}{\R}
+				{x}{%
+					\begin{cases}
+						e^{\sfrac{-1}{x}}, & x > 0\\
+						0, & x \leqslant 0
+					\end{cases}
+					}
+			}
+	{0.6}{%
+			\img{0.9}{img45}
+			}
 
 Il primo passo è definire una nuova funzione $ g $ a partire da $ f $ come
 
-
 \begin{equation}
-	g(x) = \dfrac{f(x)}{f(x) + f(1-x)}
+	g(x) \doteq \dfrac{f(x)}{f(x) + f(1-x)}
 \end{equation}
 
 questa sarà ancora liscia se il denominatore non si annulla, in quanto
 
 \begin{equation}
 	\begin{cases}
-		x \leqslant 0 \implies f(x) + f(1-x) = f(1-x) \neq 0 \quad \because \quad 1-x \geqslant 0\\
+		x \leqslant 0 \implies f(x) + f(1-x) = f(1-x) \neq 0 \quad \because \quad 1-x \geqslant 0 \\
 		x > 0 \implies f(x) + f(1-x) \geqslant f(x) > 0
 	\end{cases}
 \end{equation}
@@ -6994,86 +6995,74 @@ questa sarà ancora liscia se il denominatore non si annulla, in quanto
 Se consideriamo il caso
 
 \begin{equation}
-	x \geqslant 1 \implies 1-x \leqslant 0 \implies f(1-x)=0 \implies g(x) = \dfrac{f(x)}{f(x)} \equiv 1
+	x \geqslant 1 %
+	\implies %
+	1-x \leqslant 0 %
+	\implies %
+	f(1-x) = 0 %
+	\implies %
+	g(x) = \dfrac{f(x)}{f(x)} \equiv 1
 \end{equation}
 
 perciò il grafico di $ g(x) $ avrà la forma
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.5\textwidth,keepaspectratio]{img46}
-\end{figure}
+\img{0.5}{img46}
 
 In modo tale da poter spostare i punti di contatto, introduciamo la seguente modifica
 
 \begin{equation}
-	h(x) = g \left( \dfrac{x - a^{2}}{b^{2} - a^{2}} \right)
+	h(x) \doteq g \left( \dfrac{x - a^{2}}{b^{2} - a^{2}} \right)
 \end{equation}
 
 dove $ a,b \in \R $ e $ 0 < a < b $, perciò
 
 \begin{equation}
 	\begin{cases}
-		h(x) = 1 & x \geqslant b^{2}\\
-		h(x) = 0 & x \leqslant a^{2}
+		h(x) = 1, & x \geqslant b^{2} \\
+		h(x) = 0, & x \leqslant a^{2}
 	\end{cases}
 \end{equation}
 
 da cui la forma "spostata"
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.5\textwidth,keepaspectratio]{img47}
-\end{figure}
+\img{0.5}{img47}
 
 Il prossimo passo è rendere la funzione simmetrica
 
 \begin{equation}
-	k(x) = h(x^{2})
+	k(x) \doteq h(x^{2})
 \end{equation}
 
 perciò
 
 \begin{equation}
 	\begin{cases}
-		k(x) = 1 & x \leqslant -b \wedge x \geqslant b\\
-		k(x) = 0 & -a \leqslant x \leqslant a
+		k(x) = 1, & x \leqslant - b \wedge x \geqslant b \\
+		k(x) = 0, & -a \leqslant x \leqslant a
 	\end{cases}
 \end{equation}
 
 da cui la forma a "scodella"
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.5\textwidth,keepaspectratio]{img48}
-\end{figure}
+\img{0.5}{img48}
 
 Considerando ora l'immagine speculare rispetto all'asse $ x $ e spostata di un'unità verso l'alto
 
 \begin{equation}
-	\sigma(x) = 1 - k(x)
+	\sigma(x) \doteq 1 - k(x)
 \end{equation}
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.5\textwidth,keepaspectratio]{img49}
-\end{figure}
+\img{0.5}{img49}
 
 A questo punto, generalizziamo al dominio in $ \R^{n} $ considerando $ x = (x^{1},\dots,x^{n}) $ e poi la norma di $ x $
 
-\begin{align}
-	\begin{split}
-		\rho : \R^{n} &\to \R\\
-		x &\mapsto \sigma(\norm{x})
-	\end{split}
-\end{align}
+\map{\rho}
+	{\R^{n}}{\R}
+	{x}{\sigma(\norm{x})}
 
 da cui la forma in $ n+1 $ dimensioni:
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.5\textwidth,keepaspectratio]{img50}
-\end{figure}
+\img{0.5}{img50}
 
 Considerando il disco centrato in $ q $ di raggio $ r $
 
@@ -7085,8 +7074,8 @@ abbiamo che $ \rho $ è una funzione a campana liscia in qualsiasi punto in $ D_
 
 \begin{equation}
 	\begin{cases}
-		\rho(x) = 1 & \forall x \in \overline{D_{a}(0)}\\\\
-		\rho(x) = 0 & \forall x \in \R^{n} \setminus D_{b}(0)
+		\rho(x) = 1, & \forall x \in \overline{D_{a}(0)} \\\\
+		\rho(x) = 0, & \forall x \in \R^{n} \setminus D_{b}(0)
 	\end{cases}
 \end{equation}
 
@@ -7099,7 +7088,7 @@ Si può spostare il centro della funzione in un punto $ q \in \R^{n} $ tramite l
 Per la generalizzazione di questo procedimento a funzioni a campana su varietà, consideriamo il seguente teorema:
 
 \begin{theorem}\label{bump-fun}
-	Siano $ M $ una varietà differenziabile di dimensione $ n $, $ U \subset M $ un aperto della varietà e $ q \in U $ un suo punto, allora esiste una funzione a campana liscia $ \rho : M \to \R $ in $ q $ con supporto contenuto in $ U $.
+	Siano $ M $ una varietà differenziabile di dimensione $ n $, $ U \subset M $ un aperto della varietà e $ q \in U $ un suo punto qualsiasi, allora esiste una funzione a campana liscia $ \rho : M \to \R $ in $ q $ con supporto contenuto in $ U $.
 \end{theorem}
 
 \begin{proof}
@@ -7115,36 +7104,41 @@ Per la generalizzazione di questo procedimento a funzioni a campana su varietà,
 	\end{equation}
 
 	ricordando che $ \phi $ è un diffeomorfismo e che è sempre possibile restringere l'aperto $ V_{r} $ in modo tale da avere come immagine il disco considerato.\\
-	Consideriamo ora due numeri reali $ a < b < r $ e i dischi in $ \R^{n} $ centrati in 0 che hanno questi come raggio, i.e. $ D_{a}(0) \subset D_{b}(0) \subset D_{r}(0) $ dove $ \phi^{-1}(D_{a}(0)) = V_{a} $ e $ \phi^{-1}(D_{b}(0)) = V_{b} $ da cui $ V_{a} \subset V_{b} \subset V_{r} $.
+	Consideriamo ora due numeri reali $ a < b < r $ e i dischi in $ \R^{n} $ centrati in 0 che hanno questi come raggio, i.e. $ D_{a}(0) \subset D_{b}(0) \subset D_{r}(0) $ dove
 	
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=0.8\textwidth,keepaspectratio]{img51}
-	\end{figure}	
+	\begin{equation}
+		\begin{cases}
+			\phi^{-1}(D_{a}(0)) = V_{a} \\
+			\phi^{-1}(D_{b}(0)) = V_{b} \\
+			\phi^{-1}(D_{r}(0)) = V_{r}
+		\end{cases} %
+		\implies %
+		V_{a} \subset V_{b} \subset V_{r}
+	\end{equation}
+	
+	\img{0.8}{img51}
 	
 	Presa la funzione a campana su $ \R^{n} $
 	
 	\begin{equation}
 		\begin{cases}
-			\sigma : \R^{n} \to \R\\
-			\sigma(x) = 1 & \forall x \in \overline{D_{a}(0)}\\
-			\sigma(x) = 0 & \forall x \in \R^{n} \setminus D_{b}(0)\\
+			\sigma : \R^{n} \to \R \\
+			\sigma(x) = 1, & \forall x \in \overline{D_{a}(0)} \\
+			\sigma(x) = 0, & \forall x \in \R^{n} \setminus D_{b}(0) \\
 			\supp(\sigma) = \overline{D_{b}(0)}
 		\end{cases}
 	\end{equation}
 
 	possiamo definire la funzione su $ M $ per $ p \in M $
 	
-	\begin{align}
-		\begin{split}
-			\rho : M &\to \R\\
-			p &\mapsto %
+	\map{\rho}
+		{M}{\R}
+		{p}{%
 			\begin{cases}
-				(\sigma \circ \phi)(p) & p \in V_{r}\\
-				0 & p \in M \setminus \overline{V_{b}}
+				(\sigma \circ \phi)(p), & p \in V_{r} \\
+				0, & p \in M \setminus \overline{V_{b}}
 			\end{cases}
-		\end{split}
-	\end{align}
+			}
 
 	A questo punto dimostriamo che $ \rho $ sia una funzione a campana liscia in $ q $ con supporto contenuto in $ U $: è necessario che l'applicazione sia liscia, che esista un intorno in cui questa è pari a 1 e che il suo supporto sia contenuto in $ U $.
 	
@@ -7155,7 +7149,7 @@ Per la generalizzazione di questo procedimento a funzioni a campana su varietà,
 			\begin{cases}
 				\sigma \circ \phi \in C^{\infty}(V_{r})\\
 				0 \in C^{\infty} \left( M \setminus \overline{V_{b}} \right)\\
-				(\sigma \circ \phi)(p) = 0 & \forall p \in V_{r} \cap (M \setminus \overline{V_{b}})
+				(\sigma \circ \phi)(p) = 0, & \forall p \in V_{r} \cap (M \setminus \overline{V_{b}})
 			\end{cases}
 		\end{equation}
 		
@@ -7165,10 +7159,10 @@ Per la generalizzazione di questo procedimento a funzioni a campana su varietà,
 			V_{r} \cap \left( M \setminus \overline{V_{b}} \right) = V_{r} \setminus \overline{V_{b}}
 		\end{equation}
 		
-		essendo $ \sigma(x) = 0 $ per $ \forall x \in \R^{n} \setminus D_{b}(0) $, possiamo dunque scrivere
+		essendo $ \sigma(x) = 0 $ per qualunque $ x \in \R^{n} \setminus D_{b}(0) $, possiamo dunque scrivere
 		
 		\begin{equation}
-			(\sigma \circ \phi)(p) = 0, \qquad \forall p \in V_{r} \setminus \overline{V_{b}}
+			(\sigma \circ \phi)(p) = 0 \qcomma \forall p \in V_{r} \setminus \overline{V_{b}}
 		\end{equation}
 		
 		%
@@ -7176,7 +7170,7 @@ Per la generalizzazione di questo procedimento a funzioni a campana su varietà,
 		\item Abbiamo che $ V_{a} \ni q $ e che
 		
 		\begin{equation}
-			\rho(p) \equiv 1, \qquad \forall p \in V_{a}
+			\rho(p) \equiv 1 \qcomma \forall p \in V_{a}
 		\end{equation}
 	
 		perciò esiste un intorno di $ q $ (in questo caso $ V_{a} $) in cui la funzione è pari a 1
@@ -7200,25 +7194,23 @@ Per la generalizzazione di questo procedimento a funzioni a campana su varietà,
 \end{proof}
 
 \begin{corollary}[Estensione di funzioni lisce]\label{cor-est-smooth}
-	Siano $ M $ una varietà differenziabile, un punto $ p \in M $, un aperto $ U \subset M $ che sia intorno di $ p $ e una funzione $ f : M \to \R $ liscia solo su $ U $, i.e. $ f \in C^{\infty}(U) $, allora esistono un aperto $ V \subseteq U $ intorno di $ q $ e una funzione $ \tilde{f} : M \to \R $ liscia in tutta la varietà $ \tilde{f} \in C^{\infty}(M) $ tale che $ \tilde{f} \equiv f $ in $ V $; in pratica, $ \tilde{f} $ è un'estensione di $ f_{|V} $.
+	Siano una varietà differenziabile $ M $, un punto $ p \in M $, un aperto $ U \subset M $ che sia intorno di $ p $ e una funzione $ f : M \to \R $ liscia solo su $ U $, i.e. $ f \in C^{\infty}(U) $, allora esistono un aperto $ V \subseteq U $ intorno di $ q $ e una funzione $ \tilde{f} : M \to \R $ liscia in tutta la varietà, i.e. $ \tilde{f} \in C^{\infty}(M) $, tale che $ \tilde{f} \equiv f $ in $ V $; in pratica, $ \tilde{f} $ è un'estensione di $ \eval{f}_{V} $.
 \end{corollary}
 
-In generale non si può estendere una funzione oltre al dominio in cui essa è liscia però, tramite questo corollario, è possibile considerare la restrizione a un aperto di questa funzione ed estenderla in modo liscio. Un esempio è la funzione $ f(x) = \tan(\sfrac{x}{2}) $ la quale ha due asintoti verticali in $ \pm \pi $: prendendo un aperto $ V \subset [-\pi,\pi] $ e la restrizione di $ f $ ad esso, è possibile "incollare" in modo liscio alla funzione due estensioni di questa oltre il suo dominio.
+In generale non si può estendere una funzione oltre al dominio in cui essa è liscia però, tramite questo corollario, è possibile considerare la restrizione a un aperto di questa funzione ed estenderla in modo liscio. Un esempio è la funzione $ f(x) = \tan(x/2) $ la quale ha due asintoti verticali in $ \pm \pi $: prendendo un aperto $ V \subset [-\pi,\pi] $ e la restrizione di $ f $ ad esso, è possibile "incollare" in modo liscio alla funzione due estensioni di questa oltre il suo dominio.
 
 \begin{proof}
 	Sia $ \rho : M \to \R $ una funzione liscia a campana in $ q $ con supporto contenuto in $ U $ (esiste per il teorema precedente) che sia uguale a 1 nell'aperto $ V $.\\
 	Definiamo
 	
-	\begin{align}
-		\begin{split}
-			\tilde{f} : M &\to \R\\
-			p &\mapsto %
+	\map{\tilde{f}}
+		{M}{\R}
+		{p}{%
 			\begin{cases}
-				(\rho \circ f)(p) & p \in U\\
-				0 & p \in M \setminus \supp(\rho)
+				(\rho \circ f)(p), & p \in U \\
+				0, & p \in M \setminus \supp(\rho)
 			\end{cases}
-		\end{split}
-	\end{align}
+			}
 
 	Perché sia liscia è necessario che lo sia nei due casi della definizione e che questi coincidano nella loro intersezione: per quest'ultima richiesta, possiamo scrivere l'intersezione come
 	
@@ -7229,20 +7221,20 @@ In generale non si può estendere una funzione oltre al dominio in cui essa è l
 	la quale è aperta perché il supporto è un chiuso, dunque resta verificare che i casi coincidano, ricordando che
 	
 	\begin{equation}
-		\rho(p) = 0, \qquad \forall p \in M \setminus \supp(\rho)
+		\rho(p) = 0 \qcomma \forall p \in M \setminus \supp(\rho)
 	\end{equation}
 
 	perciò
 	
 	\begin{equation}
-		\tilde{f}(p) = (\rho \circ f)(p) = 0, \qquad \forall p \in U \setminus \supp(\rho)
+		\tilde{f}(p) = (\rho \circ f)(p) = 0 \qcomma \forall p \in U \setminus \supp(\rho)
 	\end{equation}
 
 	dunque la funzione è liscia dappertutto.\\
 	L'altra richiesta è che $ \tilde{f} \equiv f $ in $ V $: anche questo è verificato perché
 	
 	\begin{equation}
-		\rho(p) \equiv 1, \quad \forall p \in V \implies \tilde{f}(p) = (\rho \circ f)(p) \equiv f(p), \quad \forall p \in V
+		\rho(p) \equiv 1 \qcomma \forall p \in V \implies \tilde{f}(p) = (\rho \circ f)(p) \equiv f(p) \qcomma \forall p \in V
 	\end{equation}
 \end{proof}
 
