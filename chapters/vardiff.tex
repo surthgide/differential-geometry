@@ -6904,10 +6904,10 @@ Siano $ M $ una varietà differenziabile e $ f : M \to \R $ un'applicazione su v
 e il complementare di questo
 
 \begin{equation}
-	Z(f)^{C} \doteq M \setminus Z(f)
+	Z(f)^{C} = M \setminus Z(f)
 \end{equation}
 
-possiamo scrivere
+definiamo
 
 \begin{equation}
 	\supp(f) \doteq \overline{Z(f)^{C}}
@@ -6945,9 +6945,7 @@ possiamo scrivere
 			In quanto $ (-1,1) = M $ è chiuso in $ M $.
 			}
 
-Siano $ M $ una varietà differenziabile, $ U \subset M $ un aperto della varietà e $ q \in U $ un suo punto, l'applicazione $ f : M \to \R $ è una \textit{funzione a campana}\footnote{%
-	In inglese "bump function".%
-} in $ q $ con supporto in $ U $ se
+Siano $ M $ una varietà differenziabile, $ U \subset M $ un aperto della varietà e $ q \in U $ un suo punto, l'applicazione $ f : M \to \R $ è una \textit{funzione a campana} in $ q $ con supporto in $ U $ se
 
 \begin{itemize}
 	\item $ f $ è continua
@@ -6959,7 +6957,7 @@ Siano $ M $ una varietà differenziabile, $ U \subset M $ un aperto della variet
 
 Il primo esempio descritto sopra è una funzione a campana in un qualsiasi punto appartenente a $ (-1/2,1/2) $ con supporto in qualunque aperto $ U \supset [-1,1] $.
 
-\paragraph{Funzione a campana da $ \R^{n} $ a $ \R $}
+\paragraph{Funzione a campana liscia da $ \R^{n} $ a $ \R $}
 
 Partendo da una funzione liscia da $ \R $ in $ \R $, costruiremo una funzione a campana liscia da $ \R^{n} $ a $ \R $. Consideriamo quindi la funzione liscia
 
@@ -7011,10 +7009,15 @@ perciò il grafico di $ g(x) $ avrà la forma
 In modo tale da poter spostare i punti di contatto, introduciamo la seguente modifica
 
 \begin{equation}
-	h(x) \doteq g \left( \dfrac{x - a^{2}}{b^{2} - a^{2}} \right)
+	h(x) \doteq g \left( \dfrac{x - a^{2}}{b^{2} - a^{2}} \right) %
+	\qcomma %
+	\begin{cases}
+		a,b \in \R \\
+		0 < a < b
+	\end{cases}
 \end{equation}
 
-dove $ a,b \in \R $ e $ 0 < a < b $, perciò
+perciò
 
 \begin{equation}
 	\begin{cases}
@@ -7070,12 +7073,18 @@ Considerando il disco centrato in $ q $ di raggio $ r $
 	D_{r}(q) = \{ x \in \R^{n} \mid \norm{x - q} < r \}
 \end{equation}
 
-abbiamo che $ \rho $ è una funzione a campana liscia in qualsiasi punto in $ D_{a}(0) $ con supporto $ U $, dove $ U $ è un qualunque aperto tale che $ U \supset \overline{D_{b}(0)} $. I valori principali assunti dalla funzione sono per
+abbiamo che $ \rho $ è una funzione a campana liscia in qualsiasi punto in $ D_{a}(0) $ con supporto $ U $, dove $ U $ è un qualunque aperto tale che contenga il supporto di $ \rho $, i.e.
+
+\begin{equation}
+	U \supset \supp(\rho) = \overline{D_{b}(0)} = \{ x \in \R^{n} \mid \norm{x} \leqslant b \}
+\end{equation}
+
+I valori principali assunti dalla funzione sono
 
 \begin{equation}
 	\begin{cases}
-		\rho(x) = 1, & \forall x \in \overline{D_{a}(0)} \\\\
-		\rho(x) = 0, & \forall x \in \R^{n} \setminus D_{b}(0)
+		\rho(x) = 1, & x \in \overline{D_{a}(0)} \\\\
+		\rho(x) = 0, & x \in \R^{n} \setminus D_{b}(0)
 	\end{cases}
 \end{equation}
 
