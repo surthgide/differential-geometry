@@ -7503,64 +7503,61 @@ dove le funzioni $ f a^{j} $ sono lisce. Essendo quindi $ \chi(M) $ un $ C^{\inf
 
 \subsubsection{Derivata di una funzione rispetto a un campo di vettori}
 
-Siano $ X \in \chi(M) $ e $ f \in C^{\infty}(M) $, allora la derivata della funzione $ f $ rispetto al campo di vettori $ X $ è definita come la funzione
+Siano un campo di vettori liscio $ X \in \chi(M) $ e una funzione liscia $ f \in C^{\infty}(M) $, allora la derivata della funzione $ f $ rispetto al campo di vettori $ X $ è definita come la funzione
 
-\begin{align}
-	\begin{split}
-		X f : M &\to \R\\
-		p &\mapsto (X f)(p) = X_{p} f
-	\end{split}
-\end{align}
+\map{X f}
+	{M}{\R}
+	{p}{(X f)(p) = X_{p} f}
 
-La derivata può anche essere definita si germi delle funzioni in quanto tutte le funzioni di uno stesso germe coincidono in un intorno del punto, i.e.
+La derivata può anche essere definita su germi delle funzioni in quanto tutte le funzioni di uno stesso germe coincidono in un intorno del punto, i.e.
 
 \begin{equation}
-	X_{p} f = X_{p} [f], \qquad f \in [f] \in C_{p}^{\infty}(M)
+	X_{p} f = X_{p} [f] \qcomma f \in [f] \in C_{p}^{\infty}(M)
 \end{equation}
 
 \begin{definition}
 	Fissato un campo di vettori $ X \in \chi(M) $, l'immagine della funzione
 	
-	\begin{align}
-		\begin{split}
-			\Phi(X) : C^{\infty}(M) &\to C^{\infty}(M)\\
-			f &\mapsto X f
-		\end{split}
-	\end{align}
+	\map{\Phi(X)}
+		{C^{\infty}(M)}{C^{\infty}(M)}
+		{f}{X f}
 
 	è una funzione liscia, i.e. $ X f \in C^{\infty}(M) $.
 \end{definition}
 
 \begin{proof}
-	\`{E} sufficiente dimostrare che la funzione
+	È sufficiente dimostrare che la funzione
 	
-	\begin{align}
-		\begin{split}
-			X f : M &\to \R\\
-			p &\mapsto X_{p} f
-		\end{split}
-	\end{align}
+	\map{X f}
+		{M}{\R}
+		{p}{X_{p} f}
 
 	sia liscia.\\
-	Siano $ p \in M $ un punto della varietà e $ (U,\phi) \in M $ con $ \phi = (x^{1},\dots,x^{n}) $ intorno a $ p $ una carta di $ M $, allora
+	Siano un punto della varietà $ p \in M $ e una carta
 	
 	\begin{equation}
-		X_{|U} = \sum_{j=1}^{n} a^{j} \dfrac{\partial}{\partial x^{j}}
+		(U,\phi) = (U; x^{1},\dots,x^{n}) \in M \qcomma \phi(p) = 0
+	\end{equation}
+	
+	allora
+	
+	\begin{equation}
+		\eval{X}_{U} = \sum_{j=1}^{n} a^{j} \, \pdv{x^{j}}
 	\end{equation}
 
 	perciò
 	
 	\begin{equation}
-		(X f)_{|U} = \sum_{j=1}^{n} a^{j} \dfrac{\partial f}{\partial x^{j}}
+		\eval{(X f)}_{U} = \sum_{j=1}^{n} a^{j} \, \pdv{f}{x^{j}}
 	\end{equation}
 
 	in quanto
 	
 	\begin{equation}
-		X_{p} f = \sum_{j=1}^{n} a^{j}(p) \dfrac{\partial f}{\partial x^{j}} (p)
+		X_{p} f = \sum_{j=1}^{n} a^{j}(p) \, \pdv{f}{x^{j}} \, (p)
 	\end{equation}
 
-	i quali sono lisci perché le $ a^{j} $ e le derivate parziali $ \sfrac{\partial f}{\partial x^{j}} $ sono lisce.\\
+	i quali sono lisci perché le $ a^{j} $ e le derivate parziali $ \pdv*{f}{x^{j}} $ sono lisce.\\
 	Avendo fatto vedere che $ X f $ è localmente liscia, allora lo è anche globalmente.
 \end{proof}
 
@@ -7580,31 +7577,37 @@ La derivata può anche essere definita si germi delle funzioni in quanto tutte l
 	Supponiamo che
 	
 	\begin{equation}
-		X f \in C^{\infty}(M), \qquad \forall f \in C^{\infty}(M)
+		X f \in C^{\infty}(M) \qcomma \forall f \in C^{\infty}(M)
 	\end{equation}
 
-	Sia $ (U,\phi) \in M $ con $ \phi = (x^{1},\dots,x^{n}) $ intorno a $ p $ una carta di $ M $, allora
+	Sia una carta
 	
 	\begin{equation}
-		X_{|U} = \sum_{j=1}^{n} a^{j} \dfrac{\partial}{\partial x^{j}}
+		(U,\phi) = (U; x^{1},\dots,x^{n}) \in M \qcomma \phi(p) = 0
+	\end{equation}
+	
+	allora
+	
+	\begin{equation}
+		\eval{X}_{U} = \sum_{j=1}^{n} a^{j} \, \pdv{x^{j}}
 	\end{equation}
 
-	con $ a^{j} : U \to \R $ per $ \forall j=1,\dots,n $. Perché $ X \in \chi(M) $ dobbiamo dimostrare che $ a^{j} \in C^{\infty}(U) $.\\
+	con $ a^{j} : U \to \R $ per $ j=1,\dots,n $. Perché $ X \in \chi(M) $ dobbiamo dimostrare che $ a^{j} \in C^{\infty}(U) $.\\
 	Per il corollario di estensione di funzioni\footnote{%
 		Vedi Corollario \ref{cor-est-smooth}.%
-	}, esistono un aperto $ V \subset U \ni p $ e delle funzioni $ \tilde{x}^{k} \in C^{\infty}(M) $ tali che $ \tilde{x}^{k}_{|V} \equiv x^{k} $ per $ \forall k=1,\dots,n $ (dalla carta, $ x^{k} \in C^{\infty}(U) $ per $ \forall k=1,\dots,n $). Applichiamo ora la derivata a queste estensioni
+	}, esistono un aperto $ V \subset U \ni p $ e delle funzioni $ \tilde{x}^{k} \in C^{\infty}(M) $ tali che $ \eval{\tilde{x}^{k}}_{V} \equiv x^{k} $ per $ k=1,\dots,n $ (dalla carta, $ x^{k} \in C^{\infty}(U) $ per $ k=1,\dots,n $). Applichiamo ora la derivata a queste estensioni
 	
 	\begin{align}
 		\begin{split}
-			(X \tilde{x}^{k})_{|V} &= \left( \sum_{j=1}^{n} a^{j} \dfrac{\partial}{\partial x^{j}} \right) (\tilde{x}^{k})_{|V}\\
-			&= \left( \sum_{j=1}^{n} a^{j} \dfrac{\partial}{\partial x^{j}} \right) (x^{k})\\
-			&= \sum_{j=1}^{n} a^{j} \dfrac{\partial x^{k}}{\partial x^{j}}\\
-			&= a^{j} \delta^{kj}\\
+			\eval{(X \tilde{x}^{k})}_{V} &= \left( \sum_{j=1}^{n} a^{j} \, \pdv{x^{j}} \right) \eval{(\tilde{x}^{k})}_{V} \\
+			&= \left( \sum_{j=1}^{n} a^{j} \, \pdv{x^{j}} \right) (\tilde{x}^{k}) \\
+			&= \sum_{j=1}^{n} a^{j} \, \pdv{x^{k}}{x^{j}} \\
+			&= a^{j} \delta^{kj} \\
 			&= a^{k}
 		\end{split}
 	\end{align}
 
-	Essendo $ (X \tilde{x}^{k})_{|V} $ liscio per ipotesi, abbiamo che le $ a^{k} \in C^{\infty}(V) $ da cui si ottiene che queste sono lisce in tutto $ M $, in quanto il punto $ p $ considerato è arbitrario, e dunque $ X \in \chi(M) $.
+	Essendo $ \eval{(X \tilde{x}^{k})}_{V} $ liscio per ipotesi, abbiamo che le $ a^{k} \in C^{\infty}(V) $ per $ k=1,\dots,n $ da cui si ottiene che queste sono lisce in tutto $ M $, in quanto il punto $ p $ considerato è arbitrario, e dunque $ X \in \chi(M) $.
 \end{proof}
 
 \subsubsection{Proprietà}
