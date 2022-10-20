@@ -7615,33 +7615,37 @@ La derivata può anche essere definita su germi delle funzioni in quanto tutte l
 Riassumendo, sono presenti tre metodi equivalenti per determinare se un campo $ X $ su $ M $ sia liscio, i.e. $ X \in \chi(M) $:
 
 \begin{enumerate}
-	\item Considerata $ (U,\phi) \in M $ con $ \phi = (x^{1},\dots,x^{n}) $ intorno a $ p \in M $ una carta di $ M $, è possibile scrivere il campo localmente come
+	\item Presa una carta
 	
 	\begin{equation}
-		X_{|U} = \sum_{j=1}^{n} a^{j} \dfrac{\partial}{\partial x^{j}}
+		(U,\phi) = (U; x^{1},\dots,x^{n}) \in M \qcomma \phi(p) = 0
+	\end{equation}
+	
+	è possibile scrivere il campo localmente come
+	
+	\begin{equation}
+		\eval{X}_{U} = \sum_{j=1}^{n} a^{j} \, \pdv{x^{j}}
 	\end{equation}
 
-	dove le $ a^{j} \in C^{\infty}(U) $ per $ \forall j=1,\dots,n $;
+	dove le $ a^{j} \in C^{\infty}(U) $ per $ j=1,\dots,n $;
+	
+	%
 	
 	\item Si può vedere il campo come un'applicazione liscia
 	
-	\begin{align}
-		\begin{split}
-			X : M &\to T(M)\\
-			p &\mapsto X_{p} \in T_{p}(M)
-		\end{split}
-	\end{align}
+	\map{X}
+		{M}{T(M)}
+		{p}{X_{p} \in T_{p}(M)}
 	
-	tale che $ \pi \circ X = \id_{M} $ dove $ \pi(X_{p})=p $;
+	tale che $ \pi \circ X = \id_{M} $ dove $ \pi(X_{p}) = p $;
+	
+	%
 	
 	\item La derivata direzionale di una funzione è liscia per ogni funzione liscia, i.e. l'immagine dell'applicazione
 	
-	\begin{align}
-		\begin{split}
-			\Phi(X) : C^{\infty}(M) &\to C^{\infty}(M)\\
-			f &\mapsto X f
-		\end{split}
-	\end{align}
+	\map{\Phi(X)}
+		{C^{\infty}(M)}{C^{\infty}(M)}
+		{f}{X f}
 
 	è liscia.
 \end{enumerate}
