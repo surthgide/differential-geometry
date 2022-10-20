@@ -299,7 +299,7 @@ Siano $ G $ un gruppo di Lie e $ H \neq \emptyset $ un suo sottoinsieme, diremo 
 Se $ H \subset G $ sottogruppo algebrico ed $ H $ è una sottovarietà di $ G $, diremo che $ H $ un \textit{sottogruppo di Lie embedded}.\\
 Ad esempio, $ SL_{n}(\R) $ e $ O(n) $ sono sottogruppi di Lie embedded di $ GL_{n}(\R) $, perché sottovarietà di quest'ultimo.
 
-\begin{theorem}\label{th-liesub-var}
+\begin{theorem}\label{thm:liesub-var}
 	Siano $ G $ e $ H $ varietà differenziabili, se $ H < G $ sottogruppo algebrico e $ H $ è chiuso in $ G $ (come sottospazio topologico) allora $ H $ è un sottogruppo embedded di $ G $.
 \end{theorem}
 
@@ -1658,7 +1658,7 @@ Inoltre, $ SL_{n}(\R) $ è connesso (e quindi connesso per archi in quanto varie
 %
 Per dimostrare che sia un sottogruppo di Lie senza usare la proprietà di sottovarietà, dovremmo dimostrare che $ SL_{n}(\R) $ sia un sottogruppo algebrico di $ GL_{n}(\R) $, che sia una sottovarietà immersa e che le sue operazioni siano lisce; usando invece il teorema della preimmagine, possiamo dimostrare che $ SL_{n}(\R) $ è una sottovarietà di $ GL_{n}(\R) $\footnote{%
 	Vedi Esempio \ref{es:sl-subman}.%
-} e dunque, per il Teorema \ref{th-liesub-var}, che è un sottogruppo di Lie embedded di $ GL_{n}(\R) $.\\
+} e dunque, per il Teorema \ref{thm:liesub-var}, che è un sottogruppo di Lie embedded di $ GL_{n}(\R) $.\\
 Per (ri)dimostrare che $ SL_{n}(\R) $ sia una sottovarietà di $ GL_{n}(\R) $, consideriamo sempre la funzione determinante
 
 \map{f = \det}%
@@ -4855,7 +4855,7 @@ nel seguente modo
 	\end{align}
 	
 	Questo rende il differenziale in un punto qualsiasi $ A \in SU(2) $ un isomorfismo in quanto composizione di isomorfismi: questo rende $ R $ una sommersione (in quanto il suo differenziale, essendo un isomorfismo, è suriettivo) da cui, per il corollario del teorema di sommersione locale\footnote{%
-		Vedi Corollario \ref{th-somm-loc-cor}.%
+		Vedi Corollario \ref{thm:somm-loc-cor}.%
 	}, abbiamo che $ R $ è un'applicazione aperta\footnote{%
 		Alternativamente, per il teorema della funzione inversa (vedi Teorema \ref{ift}) $ R $ è un diffeomorfismo locale e dunque un'applicazione aperta.%
 	}. Questa applicazione però è anche chiusa per il lemma dell'applicazione chiusa\footnote{%
