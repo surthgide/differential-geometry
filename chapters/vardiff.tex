@@ -7460,26 +7460,23 @@ L'insieme dei campi di vettori lisci verrà indicato come
 \end{definition}
 
 \begin{proof}
-	Vedi Teorema \ref{chi-mod}.
+	La dimostrazione segue dal Teorema \ref{thm:chi-mod} tramite la generalizzazione di questo alle varietà differenziabili.
 \end{proof}
 
 Perché $ \chi(M) $ sia un $ C^{\infty}(M) $-modulo è necessario che sia uno spazio vettoriale sul campo dei reali, i.e.
 
 \begin{equation}
 	\begin{cases}
-		\lambda X + \mu Y \in \chi(M) & \forall X,Y \in \chi(M), \, \forall \lambda,\mu \in \R\\
+		\lambda X + \mu Y \in \chi(M), & \forall X,Y \in \chi(M), \, \forall \lambda,\mu \in \R\\
 		(\lambda X + \mu Y)_{p} = \lambda X_{p} + \mu Y_{p}
 	\end{cases}
 \end{equation}
 
 Inoltre, si deve poter moltiplicare il campo per una funzione liscia: usiamo per questo la seguente applicazione
 
-\begin{align}
-	\begin{split}
-		K : C^{\infty}(M) \times \chi(M) &\to \chi(M)\\
-		(f,X) &\mapsto f X
-	\end{split}
-\end{align}
+\map{K}
+	{C^{\infty}(M) \times \chi(M)}{\chi(M)}
+	{(f,X)}{f X}
 
 con la condizione che
 
@@ -7491,11 +7488,11 @@ da cui
 
 \begin{equation}
 	\begin{cases}
-		f X \in \chi(M)\\
-		X_{|U} = \sum_{j=1}^{n} a^{j} \dfrac{\partial}{\partial x^{j}}
-	\end{cases}%
-	\implies%
-	f X_{|U} = \sum_{j=1}^{n} f a^{j} \dfrac{\partial}{\partial x^{j}}
+		f X \in \chi(M) \\\\
+		\displaystyle \eval{X}_{U} = \sum_{j=1}^{n} a^{j} \, \pdv{x^{j}}
+	\end{cases} %
+	\implies %
+	\eval{f X}_{U} = \sum_{j=1}^{n} f a^{j} \, \pdv{x^{j}}
 \end{equation}
 
 dove le funzioni $ f a^{j} $ sono lisce. Essendo quindi $ \chi(M) $ un $ C^{\infty}(M) $-modulo, sono possibili tutte le combinazioni lineari con campi e funzioni, i.e.
