@@ -7083,7 +7083,7 @@ I valori principali assunti dalla funzione sono
 
 \begin{equation}
 	\begin{cases}
-		\rho(x) = 1, & x \in \overline{D_{a}(0)} \\\\
+		\rho(x) = 1, & x \in \overline{D_{a}(0)} \\
 		\rho(x) = 0, & x \in \R^{n} \setminus D_{b}(0)
 	\end{cases}
 \end{equation}
@@ -7097,7 +7097,7 @@ Si può spostare il centro della funzione in un punto $ q \in \R^{n} $ tramite l
 Per la generalizzazione di questo procedimento a funzioni a campana su varietà, consideriamo il seguente teorema:
 
 \begin{theorem}\label{bump-fun}
-	Siano $ M $ una varietà differenziabile di dimensione $ n $, $ U \subset M $ un aperto della varietà e $ q \in U $ un suo punto qualsiasi, allora esiste una funzione a campana liscia $ \rho : M \to \R $ in $ q $ con supporto contenuto in $ U $.
+	Siano $ M $ una varietà differenziabile di dimensione $ n $, $ U \subset M $ un aperto della varietà e $ q \in U $ un suo punto, allora esiste una funzione a campana liscia $ \rho : M \to \R $ in $ q $ con supporto contenuto in $ U $.
 \end{theorem}
 
 \begin{proof}
@@ -7117,8 +7117,8 @@ Per la generalizzazione di questo procedimento a funzioni a campana su varietà,
 	
 	\begin{equation}
 		\begin{cases}
-			\phi^{-1}(D_{a}(0)) = V_{a} \\
-			\phi^{-1}(D_{b}(0)) = V_{b} \\
+			\phi^{-1}(D_{a}(0)) \doteq V_{a} \\
+			\phi^{-1}(D_{b}(0)) \doteq V_{b} \\
 			\phi^{-1}(D_{r}(0)) = V_{r}
 		\end{cases} %
 		\implies %
@@ -7132,13 +7132,13 @@ Per la generalizzazione di questo procedimento a funzioni a campana su varietà,
 	\begin{equation}
 		\begin{cases}
 			\sigma : \R^{n} \to \R \\
-			\sigma(x) = 1, & \forall x \in \overline{D_{a}(0)} \\
-			\sigma(x) = 0, & \forall x \in \R^{n} \setminus D_{b}(0) \\
+			\sigma(x) = 1, & x \in \overline{D_{a}(0)} \\
+			\sigma(x) = 0, & x \in \R^{n} \setminus D_{b}(0) \\
 			\supp(\sigma) = \overline{D_{b}(0)}
 		\end{cases}
 	\end{equation}
 
-	possiamo definire la funzione su $ M $ per $ p \in M $
+	possiamo definire la funzione su $ M $ per $ p \in M $ come
 	
 	\map{\rho}
 		{M}{\R}
@@ -7162,7 +7162,7 @@ Per la generalizzazione di questo procedimento a funzioni a campana su varietà,
 			\end{cases}
 		\end{equation}
 		
-		La seconda richiesta è banale e la prima è soddisfatta in quanto composizione di funzioni lisce; per la terza, possiamo scrivere
+		La prima richiesta è soddisfatta in quanto composizione di funzioni lisce mentre la seconda richiesta è banale; per la terza, possiamo scrivere
 		
 		\begin{equation}
 			V_{r} \cap \left( M \setminus \overline{V_{b}} \right) = V_{r} \setminus \overline{V_{b}}
@@ -7179,7 +7179,7 @@ Per la generalizzazione di questo procedimento a funzioni a campana su varietà,
 		\item Abbiamo che $ V_{a} \ni q $ e che
 		
 		\begin{equation}
-			\rho(p) \equiv 1 \qcomma \forall p \in V_{a}
+			\rho(p) = 1 \qcomma \forall p \in V_{a}
 		\end{equation}
 	
 		perciò esiste un intorno di $ q $ (in questo caso $ V_{a} $) in cui la funzione è pari a 1
@@ -7195,7 +7195,8 @@ Per la generalizzazione di questo procedimento a funzioni a campana su varietà,
 		e che $ \phi $ è un diffeomorfismo, dunque il supporto di $ \rho $ sarà
 		
 		\begin{equation}
-			\supp(\rho) = \phi \left( \overline{D_{b}(0)} \right) = \overline{V_{b}} \subset V_{r} \subset U
+			\supp(\rho) = \phi^{-1} \left( \overline{D_{b}(0)} \right) %
+			= \overline{V_{b}} \subset V_{r} \subset U
 		\end{equation}
 	\end{itemize}
 	
@@ -7203,10 +7204,11 @@ Per la generalizzazione di questo procedimento a funzioni a campana su varietà,
 \end{proof}
 
 \begin{corollary}[Estensione di funzioni lisce]\label{cor-est-smooth}
-	Siano una varietà differenziabile $ M $, un punto $ p \in M $, un aperto $ U \subset M $ che sia intorno di $ p $ e una funzione $ f : M \to \R $ liscia solo su $ U $, i.e. $ f \in C^{\infty}(U) $, allora esistono un aperto $ V \subseteq U $ intorno di $ q $ e una funzione $ \tilde{f} : M \to \R $ liscia in tutta la varietà, i.e. $ \tilde{f} \in C^{\infty}(M) $, tale che $ \tilde{f} \equiv f $ in $ V $; in pratica, $ \tilde{f} $ è un'estensione di $ \eval{f}_{V} $.
+	Siano una varietà differenziabile $ M $, un punto $ p \in M $, un aperto $ U \subset M $ che sia intorno di $ p $ e una funzione $ f : M \to \R $ liscia solo su $ U $, i.e. $ f \in C^{\infty}(U) $, allora esistono un aperto $ V \subseteq U $ intorno di $ q $ e una funzione $ \tilde{f} : M \to \R $ liscia in tutta la varietà, i.e. $ \tilde{f} \in C^{\infty}(M) $, tale che $ \tilde{f} \equiv f $ in $ V $.
 \end{corollary}
 
-In generale non si può estendere una funzione oltre al dominio in cui essa è liscia però, tramite questo corollario, è possibile considerare la restrizione a un aperto di questa funzione ed estenderla in modo liscio. Un esempio è la funzione $ f(x) = \tan(x/2) $ la quale ha due asintoti verticali in $ \pm \pi $: prendendo un aperto $ V \subset [-\pi,\pi] $ e la restrizione di $ f $ ad esso, è possibile "incollare" in modo liscio alla funzione due estensioni di questa oltre il suo dominio.
+Attraverso questo corollario, in pratica, $ \tilde{f} $ è un'estensione liscia di $ \eval{f}_{V} $.\\
+In generale non si può estendere una funzione oltre al dominio in cui essa è liscia però, tramite questo corollario, è possibile considerare la restrizione a un aperto di questa funzione ed estendere questa restrizione in modo liscio oltre il dominio della prima funzione. Un esempio è la funzione $ f(x) = \tan(x/2) $ la quale ha due asintoti verticali in $ \pm \pi $: prendendo un aperto $ V \subset [-\pi,\pi] $ e la restrizione di $ f $ ad esso, è possibile "incollare" in modo liscio alla funzione due estensioni di questa oltre il suo dominio.
 
 \begin{proof}
 	Sia $ \rho : M \to \R $ una funzione liscia a campana in $ q $ con supporto contenuto in $ U $ (esiste per il teorema precedente) che sia uguale a 1 nell'aperto $ V $.\\
@@ -7216,35 +7218,42 @@ In generale non si può estendere una funzione oltre al dominio in cui essa è l
 		{M}{\R}
 		{p}{%
 			\begin{cases}
-				(\rho \circ f)(p), & p \in U \\
+				\rho(p) \cdot f(p), & p \in U \\
 				0, & p \in M \setminus \supp(\rho)
 			\end{cases}
 			}
-
-	Perché sia liscia è necessario che lo sia nei due casi della definizione e che questi coincidano nella loro intersezione: per quest'ultima richiesta, possiamo scrivere l'intersezione come
 	
-	\begin{equation}
-		U \cap (M \setminus \supp(\rho)) = U \setminus \supp(\rho)
-	\end{equation}
-
-	la quale è aperta perché il supporto è un chiuso, dunque resta verificare che i casi coincidano, ricordando che
+	dove $ \cdot $ indica il prodotto tra numeri reali.\\
+	Perché sia liscia è necessario che lo sia nei due casi della definizione e che questi coincidano nella loro intersezione:
 	
-	\begin{equation}
-		\rho(p) = 0 \qcomma \forall p \in M \setminus \supp(\rho)
-	\end{equation}
-
-	perciò
-	
-	\begin{equation}
-		\tilde{f}(p) = (\rho \circ f)(p) = 0 \qcomma \forall p \in U \setminus \supp(\rho)
-	\end{equation}
-
-	dunque la funzione è liscia dappertutto.\\
-	L'altra richiesta è che $ \tilde{f} \equiv f $ in $ V $: anche questo è verificato perché
-	
-	\begin{equation}
-		\rho(p) \equiv 1 \qcomma \forall p \in V \implies \tilde{f}(p) = (\rho \circ f)(p) \equiv f(p) \qcomma \forall p \in V
-	\end{equation}
+	\begin{itemize}
+		\item La prima condizione richiede che $ \tilde{f} \equiv f $ in $ V $. Questa è verificata in quanto
+		
+		\begin{equation}
+			\rho(p) \equiv 1 \qcomma \forall p \in V \implies \tilde{f}(p) = (\rho \circ f)(p) \equiv f(p) \qcomma \forall p \in V
+		\end{equation}
+		
+		\item Per la seconda richiesta, possiamo scrivere l'intersezione come
+		
+		\begin{equation}
+			U \cap (M \setminus \supp(\rho)) = U \setminus \supp(\rho)
+		\end{equation}
+		
+		la quale è aperta perché il supporto è un chiuso, dunque resta verificare che i casi coincidano.\\
+		Ricordando che
+		
+		\begin{equation}
+			\rho(p) = 0 \qcomma \forall p \in M \setminus \supp(\rho)
+		\end{equation}
+		
+		perciò
+		
+		\begin{equation}
+			\tilde{f}(p) = (\rho \circ f)(p) = 0 \qcomma \forall p \in U \setminus \supp(\rho)
+		\end{equation}
+		
+		dunque la funzione è liscia dappertutto.
+	\end{itemize}
 \end{proof}
 
 \subsection{Campi di vettori su varietà}
