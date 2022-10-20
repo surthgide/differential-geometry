@@ -7258,146 +7258,199 @@ In generale non si può estendere una funzione oltre al dominio in cui essa è l
 
 \subsection{Campi di vettori su varietà}
 
-Sia $ M $ una varietà differenziabile di dimensione $ m $. Ricordando la definizione del fibrato tangente
+Sia $ M $ una varietà differenziabile di dimensione $ n $. Ricordando la definizione del fibrato tangente
 
 \begin{equation}
 	T(U) = \bigsqcup_{p \in M} T_{p}(M)
 \end{equation}
 
-e della proiezione preso un vettore $ (p,v) \equiv X_{p} \in T_{p}(M) $
+e, preso un vettore $ (p,v) \equiv X_{p} \in T_{p}(M) $, della proiezione sulla varietà
 
-\begin{align}
-	\begin{split}
-		\pi : T(M) &\to M\\
-		X_{p} &\mapsto p
-	\end{split}
-\end{align}
+\map{\pi}
+	{T(M)}{M}
+	{X_{p}}{p}
 
 un \textit{campo di vettori} è un'applicazione
 
-\begin{align}
-	\begin{split}
-		X : M &\to T(M)\\
-		p &\mapsto X_{p}
-	\end{split}
-\end{align}
+\map{X}
+	{M}{T(M)}
+	{p}{X_{p}}
 
-e dunque $ \pi \circ X = \id_{M} $.\\\\
-%
-Localmente, un campo di vettori $ X $ su una varietà $ M $ è \textit{liscio} se per $ \forall p \in M $ esiste una carta $ (U,\phi) \in M $ con $ \phi = (x^{1},\dots,x^{n}) $ intorno a $ p $ tale che, scrivendo il vettore $ X_{p} \in T_{p}(M) $ tangente alla varietà $ M $ nel punto $ p \in U $ come
+e dunque l'inverso della proiezione, i.e.
 
 \begin{equation}
-	X_{p} = \sum_{j=1}^{n} a^{j}(p) \left. \dfrac{\partial}{\partial x^{j}} \right|_{p} 
+	\pi \circ X = \id_{M}
 \end{equation}
 
-le funzioni $ a^{j} : U \to \R $ sono lisce in $ U $, da cui l'espressione locale dei vettori del campo
+Un campo di vettori $ X $ su una varietà $ M $ è \textit{liscio} se per qualsiasi punto $ p \in M $ esiste una carta
 
 \begin{equation}
-	X_{|U} = \sum_{j=1}^{n} a^{j} \dfrac{\partial}{\partial x^{j}}
+	\begin{cases}
+		(U,\phi) = (U; x^{1},\dots,x^{n}) \in M \qcomma \phi(p) = 0 \\
+		U \ni p
+	\end{cases}
 \end{equation}
 
-La definizione non dipende dalla carta scelta: presa un'altra carta $ (V,\psi) \in M $ con $ \psi = (y^{1},\dots,y^{n}) $ intorno a $ p $, $ X_{p} $ si scriverà come
+tale che, scrivendo il vettore $ X_{p} $ tangente alla varietà $ M $ nel punto $ p \in U $ scritto come
 
 \begin{equation}
-	X_{|V} = \sum_{j=1}^{n} b^{j} \dfrac{\partial}{\partial y^{j}} 
+	X_{p} = \sum_{j=1}^{n} a^{j}(p) \eval{ \pdv{x^{j}} }_{p} \in T_{p}(M)
 \end{equation}
 
-nell'intersezione degli aperti delle carte, i.e. $ U \cap V $, possiamo dunque scrivere che
-
-\begin{align}
-	\begin{split}
-		a^{j} &= \sum_{j=1}^{n} b^{k} \, \dfrac{\partial x^{j}}{\partial y^{k}}\\
-		b^{j} &= \sum_{j=1}^{n} a^{k} \, \dfrac{\partial y^{j}}{\partial x^{k}}
-	\end{split}
-\end{align}
-
-per $ \forall j=1,\dots,n $, da cui
+le funzioni $ a^{j} : U \to \R $ siano lisce in $ U $.\\
+L'espressione locale dei vettori del campo è la seguente
 
 \begin{equation}
-	a^{j} \in C^{\infty}(U) \iff b^{j} \in C^{\infty}(V)
+	\eval{X}_{U} = \sum_{j=1}^{n} a^{j} \, \pdv{x^{j}}
 \end{equation}
 
-perché lo sono le entrate delle matrici jacobiane sono lisce.\\\\
-%
-\`{E} possibile definire un campo liscio anche mediante la seguente proposizione:
+La definizione non dipende dalla carta scelta: presa un'altra carta
+
+\begin{equation}
+	\begin{cases}
+		(V,\psi) = (V; y^{1},\dots,y^{n}) \in M \qcomma \psi(p) = 0 \\
+		V \ni p
+	\end{cases}
+\end{equation}
+
+il campo di vettori si scriverà come
+
+\begin{equation}
+	\eval{X}_{V} = \sum_{j=1}^{n} b^{j} \, \pdv{y^{j}}
+\end{equation}
+
+Nell'intersezione degli aperti delle carte possiamo dunque scrivere
+
+\begin{equation}
+	\eval{X}_{U \cap V} = \sum_{j=1}^{n} a^{j} \, \pdv{x^{j}} = \sum_{j=1}^{n} b^{j} \, \pdv{y^{j}}
+\end{equation}
+
+Applicando questo alle applicazioni $ x^{j} $ e $ y^{j} $
+
+\begin{equation}
+	\begin{cases}
+		\displaystyle \eval{X}_{U \cap V} (x^{j}) = \sum_{j=1}^{n} a^{k} \, \pdv{x^{j}}{x^{k}} = a^{j} = \sum_{j=1}^{n} b^{k} \, \pdv{x^{j}}{y^{k}} \\\\
+		\displaystyle \eval{X}_{U \cap V} (y^{j}) = \sum_{j=1}^{n} a^{k} \, \pdv{y^{j}}{x^{k}} = \sum_{j=1}^{n} b^{k} \, \pdv{y^{j}}{y^{k}} = b^{j}
+	\end{cases} %
+	\qquad \forall j=1,\dots,n
+\end{equation}
+
+otteniamo
+
+\begin{equation}
+	\begin{cases}
+		\displaystyle a^{j} = \sum_{j=1}^{n} b^{k} \, \pdv{x^{j}}{y^{k}} \\\\
+		\displaystyle b^{j} = \sum_{j=1}^{n} b^{k} \, \pdv{y^{j}}{y^{k}}
+	\end{cases} %
+	\qquad \forall j=1,\dots,n
+\end{equation}
+
+perciò
+
+\begin{equation}
+	a^{j} \in C^{\infty}(U) \iff b^{j} \in C^{\infty}(V) \qcomma \forall j=1,\dots,n
+\end{equation}
+
+perché le entrate delle matrici jacobiane sono lisce.
 
 \begin{definition}
 	Sia $ X $ un campo di vettori su $ M $, allora $ X : M \to T(M) $ è un'applicazione liscia se e solo se il campo di vettori è liscio, i.e. se scrivendo
 	
 	\begin{equation}
-		X_{|U} = \sum_{j=1}^{n} a^{j} \dfrac{\partial}{\partial x^{j}}
+		\eval{X}_{U} = \sum_{j=1}^{n} a^{j} \, \pdv{x^{j}}
 	\end{equation}
 
-	si ha che $ a^{j} \in C^{\infty}(U) $.
+	si ha che
+	
+	\begin{equation}
+		a^{j} \in C^{\infty}(U) \qcomma \forall j=1,\dots,n
+	\end{equation}
 \end{definition}
 
 \begin{proof}[Dimostrazione ($ \implies $)]
-	Siano $ X : M \to T(M) $ un'applicazione liscia e $ (U,\phi) \in M $ con $ \phi = (x^{1},\dots,x^{n}) $ intorno a $ p $ una carta di $ M $. Possiamo scrivere il campo di vettori come
+	Siano un'applicazione liscia $ X : M \to T(M) $ e una carta
 	
 	\begin{equation}
-		X_{|U} = \sum_{j=1}^{n} a^{j} \dfrac{\partial}{\partial x^{j}}
+		(U,\phi) = (U; x^{1},\dots,x^{n}) \in M \qcomma \phi(p) = 0
+	\end{equation}
+	
+	Possiamo scrivere il campo di vettori come
+	
+	\begin{equation}
+		\eval{X}_{U} = \sum_{j=1}^{n} a^{j} \, \pdv{x^{j}}
 	\end{equation}
 
 	con $ a^{j} : U \to \R $.\\
 	Sia una carta $ (T(U),\tilde{\phi}) \in T(M) $ con il diffeomorfismo
 	
-	\begin{align}
-		\begin{split}
-			\tilde{\phi} : T(U) &\to \phi(U) \times \R^{n}\\
-			X_{p} &\mapsto (\phi(p),c(X_{p}))\\
+	\map{\tilde{\phi}}
+		{T(U)}{\phi(U) \times \R^{n}}
+		{%
+			X_{p} = \sum_{j=1}^{n} c^{j}(X_{p}) \eval{ \pdv{x^{j}} }_{p}
+			}
+		{%
+			(\phi(p),c(X_{p})) \\
 			&\mapsto (x^{1}(p),\dots,x^{n}(p),c^{1}(X_{p}),\dots,c^{n}(X_{p}))
-		\end{split}
-	\end{align}
+			}
 
-	dove $ c(X_{p}) = (c^{1}(X_{p}),\dots,c^{n}(X_{p})) $ con $ c^{j} \in C^{\infty}(T(U)) $ e
+	dove
 	
 	\begin{equation}
-		X_{p} = \sum_{j=1}^{n} c^{j}(X_{p}) \left. \dfrac{\partial}{\partial x^{j}} \right|_{p}
+		\begin{cases}
+			c(X_{p}) = (c^{1}(X_{p}),\dots,c^{n}(X_{p})) \\
+			c^{j} \in C^{\infty}(T(U)), & \forall j=1,\dots,n
+		\end{cases}
 	\end{equation}
 
 	da cui possiamo considerare la restrizione
 	
 	\begin{equation}
-		X_{|U} = \sum_{j=1}^{n} c^{j} \dfrac{\partial}{\partial x^{j}}
+		\eval{X}_{U} = \sum_{j=1}^{n} c^{j} \, \pdv{x^{j}}
 	\end{equation}
 
-	e dunque $ c^{j} \circ \pi = a^{j} $, il che implica che $ a^{j} \in C^{\infty}(U) $.
+	e dunque $ c^{j} \circ \pi = a^{j} $, il che implica che
+	
+	\begin{equation}
+		a^{j} \in C^{\infty}(U) \qcomma \forall j=1,\dots,n
+	\end{equation}
+	
+	e quindi il campo di vettori è liscio.
 \end{proof}
 
 \begin{proof}[Dimostrazione ($ \impliedby $)]
 	Supponiamo di poter scrivere
 	
 	\begin{equation}
-		X_{|U} = \sum_{j=1}^{n} a^{j} \dfrac{\partial}{\partial x^{j}}
+		\eval{X}_{U} = \sum_{j=1}^{n} a^{j} \, \pdv{x^{j}}
 	\end{equation}
 	
-	con $ a^{j} \in C^{\infty}(U) $.\\
+	con
+	
+	\begin{equation}
+		a^{j} \in C^{\infty}(U) \qcomma \forall j=1,\dots,n
+	\end{equation}
+
 	Consideriamo la composizione
 	
-	\begin{align}
-		\begin{split}
-			\tilde{\phi} \circ X_{|U} : U &\to T(U) \to \phi(U) \times \R^{n}\\
-			p &\mapsto (\phi(p),c(X_{p}))
-		\end{split}
-	\end{align}
+	\map{\tilde{\phi} \circ \eval{X}_{U}}
+		{U}{\phi(U) \times \R^{n}}
+		{p}{(\phi(p),c(X_{p}))}
 
 	da cui
 	
-	\begin{align}
-		\begin{split}
-			(\tilde{\phi} \circ X_{|U})(p) &= \tilde{\phi}(X_{p})\\
-			&= (\phi(p),c(X_{p}))\\
-			&= (\phi(p),a(p))
-		\end{split}
-	\end{align}
+	\begin{equation}
+		\left( \tilde{\phi} \circ \eval{X}_{U} \right)(p) = \tilde{\phi}(X_{p}) %
+		= (\phi(p),c(X_{p})) %
+		= (\phi(p),a(p))
+	\end{equation}
 
-	Da questo risultato, siccome $ \phi $  un diffeomorfismo e le $ a^{j} $ sono lisce, abbiamo che la composizione $ \tilde{\phi} \circ X_{|U} $ è liscia: essendo anche $ \tilde{\phi} $ un diffeomorfismo, $ X_{|U} $ è liscio localmente e dunque lo è anche globalmente, i.e. $ X \in C^{\infty}(M) $.
+	Da questo risultato, siccome $ \phi $  un diffeomorfismo e le $ a^{j} $ sono lisce, abbiamo che la composizione $ \tilde{\phi} \circ \eval{X}_{U} $ è liscia: essendo anche $ \tilde{\phi} $ un diffeomorfismo, il campo di vettori $ \eval{X}_{U} $ è liscio localmente e dunque lo è anche globalmente, i.e. $ X \in C^{\infty}(M) $.
 \end{proof}
 
 L'insieme dei campi di vettori lisci verrà indicato come
 
 \begin{equation}
-	\chi(M) = \{ \text{campi di vettori } X \text{ su } M \}
+	\chi(M) = \{ \text{campi di vettori lisci } X \text{ su } M \}
 \end{equation}
 
 \subsubsection{$ \chi(M) $ come $ C^{\infty}(M) $-modulo}
