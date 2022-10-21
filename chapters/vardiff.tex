@@ -7264,7 +7264,7 @@ Sia $ M $ una varietà differenziabile di dimensione $ n $. Ricordando la defini
 	T(U) = \bigsqcup_{p \in M} T_{p}(M)
 \end{equation}
 
-e, preso un vettore $ (p,v) \equiv X_{p} \in T_{p}(M) $, della proiezione sulla varietà
+e, preso un vettore $ (p,v) \equiv X_{p} \in T_{p}(M) $, la definizione della proiezione sulla varietà
 
 \map{\pi}
 	{T(M)}{M}
@@ -7279,19 +7279,22 @@ un \textit{campo di vettori} è un'applicazione
 e dunque l'inverso della proiezione, i.e.
 
 \begin{equation}
-	\pi \circ X = \id_{M}
+	\begin{cases}
+		\pi \circ X = \id_{M} \\
+		X \circ \pi = \id_{T(M)}
+	\end{cases}
 \end{equation}
 
 Un campo di vettori $ X $ su una varietà $ M $ è \textit{liscio} se per qualsiasi punto $ p \in M $ esiste una carta
 
 \begin{equation}
 	\begin{cases}
-		(U,\phi) = (U; x^{1},\dots,x^{n}) \in M \qcomma \phi(p) = 0 \\
+		(U,\phi) = (U; x^{1},\dots,x^{n}) \in M, & \phi(p) = 0 \\
 		U \ni p
 	\end{cases}
 \end{equation}
 
-tale che, scrivendo il vettore $ X_{p} $ tangente alla varietà $ M $ nel punto $ p \in U $ scritto come
+tale che, esplicitando nel seguente modo il vettore $ X_{p} $ tangente alla varietà $ M $ nel punto $ p \in U $
 
 \begin{equation}
 	X_{p} = \sum_{j=1}^{n} a^{j}(p) \eval{ \pdv{x^{j}} }_{p} \in T_{p}(M)
@@ -7304,16 +7307,16 @@ L'espressione locale dei vettori del campo è la seguente
 	\eval{X}_{U} = \sum_{j=1}^{n} a^{j} \, \pdv{x^{j}}
 \end{equation}
 
-La definizione non dipende dalla carta scelta: presa un'altra carta
+La definizione di campo di vettori liscio non dipende dalla carta scelta: presa un'altra carta
 
 \begin{equation}
 	\begin{cases}
-		(V,\psi) = (V; y^{1},\dots,y^{n}) \in M \qcomma \psi(p) = 0 \\
+		(V,\psi) = (V; y^{1},\dots,y^{n}) \in M, & \psi(p) = 0 \\
 		V \ni p
 	\end{cases}
 \end{equation}
 
-il campo di vettori si scriverà come
+il campo di vettori si scriverà localmente come
 
 \begin{equation}
 	\eval{X}_{V} = \sum_{j=1}^{n} b^{j} \, \pdv{y^{j}}
@@ -7340,7 +7343,7 @@ otteniamo
 \begin{equation}
 	\begin{cases}
 		\displaystyle a^{j} = \sum_{j=1}^{n} b^{k} \, \pdv{x^{j}}{y^{k}} \\\\
-		\displaystyle b^{j} = \sum_{j=1}^{n} b^{k} \, \pdv{y^{j}}{y^{k}}
+		\displaystyle b^{j} = \sum_{j=1}^{n} a^{k} \, \pdv{y^{j}}{x^{k}}
 	\end{cases} %
 	\qquad \forall j=1,\dots,n
 \end{equation}
@@ -7348,10 +7351,10 @@ otteniamo
 perciò
 
 \begin{equation}
-	a^{j} \in C^{\infty}(U) \iff b^{j} \in C^{\infty}(V) \qcomma \forall j=1,\dots,n
+	a^{j} \in C^{\infty}(U \cap V) \iff b^{j} \in C^{\infty}(U \cap V) \qcomma \forall j=1,\dots,n
 \end{equation}
 
-perché le entrate delle matrici jacobiane sono lisce.
+poiché le entrate delle matrici jacobiane sono lisce.
 
 \begin{definition}
 	Sia $ X $ un campo di vettori su $ M $, allora $ X : M \to T(M) $ è un'applicazione liscia se e solo se il campo di vettori è liscio, i.e. se scrivendo
@@ -7393,28 +7396,19 @@ perché le entrate delle matrici jacobiane sono lisce.
 			&\mapsto (x^{1}(p),\dots,x^{n}(p),c^{1}(X_{p}),\dots,c^{n}(X_{p}))
 			}
 
-	dove
-	
-	\begin{equation}
-		\begin{cases}
-			c(X_{p}) = (c^{1}(X_{p}),\dots,c^{n}(X_{p})) \\
-			c^{j} \in C^{\infty}(T(U)), & \forall j=1,\dots,n
-		\end{cases}
-	\end{equation}
-
-	da cui possiamo considerare la restrizione
+	dove $ c^{j} \in C^{\infty}(T(U)) $ per $ j=1,\dots,n $, da cui possiamo considerare la restrizione
 	
 	\begin{equation}
 		\eval{X}_{U} = \sum_{j=1}^{n} c^{j} \, \pdv{x^{j}}
 	\end{equation}
 
-	e dunque $ c^{j} \circ \pi = a^{j} $, il che implica che
+	e dunque $ c^{j} = a^{j} \circ \pi $, il che implica che
 	
 	\begin{equation}
 		a^{j} \in C^{\infty}(U) \qcomma \forall j=1,\dots,n
 	\end{equation}
 	
-	e quindi il campo di vettori è liscio.
+	in quanto $ \pi \in C^{\infty}(T(U)) $, e quindi il campo di vettori è liscio.
 \end{proof}
 
 \begin{proof}[Dimostrazione ($ \impliedby $)]
@@ -7432,7 +7426,7 @@ perché le entrate delle matrici jacobiane sono lisce.
 
 	Consideriamo la composizione
 	
-	\map{\tilde{\phi} \circ \eval{X}_{U}}
+	\map{\eval{\tilde{\phi} \circ X}_{U}}
 		{U}{\phi(U) \times \R^{n}}
 		{p}{(\phi(p),c(X_{p}))}
 
