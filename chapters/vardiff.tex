@@ -7822,17 +7822,14 @@ definendo l'azione dell'immagine di questa funzione come
 
 La dimostrazione è la stessa fatta per aperti di $ \R^{n} $.
 
-\subsubsection{$ \chi(M) \simeq Der(C^{\infty}(M)) $}
+\subsubsection{Isomorfismo $ \chi(M) \simeq Der(C^{\infty}(M)) $}
 
 \begin{theorem}
 	Sia l'applicazione
 	
-	\begin{align}
-		\begin{split}
-			\Phi : \chi(M) &\to Der(C^{\infty}(M))\\
-			X &\mapsto \Phi(X)
-		\end{split}
-	\end{align}
+	\map{\Phi}
+		{\chi(M)}{Der(C^{\infty}(M))}
+		{X}{\Phi(X)}
 
 	dove l'azione dell'immagine è quella dell'applicazione definita in precedenza per i campi di vettori, i.e.
 	
@@ -7846,25 +7843,24 @@ La dimostrazione è la stessa fatta per aperti di $ \R^{n} $.
 Per la dimostrazione, è necessario il seguente lemma:
 
 \begin{lemma}
-	Siano $ D \in Der(C^{\infty}(M)) $ e $ \tilde{f} \in C^{\infty}(M) $ tale che $ \tilde{f}_{|U} = 0 $ dove $ U \subset M $ è un aperto della varietà, allora
+	Siano una derivazione $ D \in Der(C^{\infty}(M)) $ e un'applicazione liscia $ \tilde{f} \in C^{\infty}(M) $ tale che $ \eval{\tilde{f}}_{U} = 0 $ dove $ U \subset M $ è un aperto della varietà, allora
 	
 	\begin{equation}
-		(D \tilde{f})_{|U} = 0
+		\eval{(D \tilde{f})}_{U} = 0
 	\end{equation}
 \end{lemma}
 
 \begin{proof}[Dimostrazione (lemma)]
-	Siano $ p \in U $ e $ \rho \in C^{\infty}(M) $ una funzione a campana in $ p $ con supporto in $ U $, i.e. $ \supp(\rho) \subset U $, (esiste per il Teorema \ref{bump-fun}). Consideriamo la funzione $ f = \rho \tilde{f} \in C^{\infty}(M) $ la quale è nulla dappertutto perché in $ U $ abbiamo che $ \tilde{f}_{|U} = 0 $ mentre in $ M \setminus U $ abbiamo che $ \rho_{|M \setminus U} = 0 $. Applichiamo ora $ D $ a $ f $, il cui risultato sarà nullo in quanto $ f \equiv 0 $ e $ D $ è lineare
+	Siano $ p \in U $ un punto e $ \rho \in C^{\infty}(M) $ una funzione a campana in $ p $ con supporto in $ U $, i.e. $ \supp(\rho) \subset U $, (esiste per il Teorema \ref{bump-fun}). Consideriamo la funzione $ f = \rho \tilde{f} \in C^{\infty}(M) $ la quale è nulla dappertutto perché in $ U $ abbiamo che $ \eval{\tilde{f}}_{U} = 0 $ mentre in $ M \setminus U $ abbiamo che $ \eval{\rho}_{M \setminus U} = 0 $. Applichiamo ora $ D $ a $ f $, il cui risultato sarà nullo in quanto $ f \equiv 0 $ e $ D $ è lineare
 	
-	\begin{align}
-		\begin{split}
-			0 &= D(f)\\
-			&= D (\rho \tilde{f})\\
-			&= (D \rho) \tilde{f} + \rho (D \tilde{f})
-		\end{split}
-	\end{align}
+	\begin{equation}
+		0 = D(f) %
+		= D (\rho \tilde{f}) %
+		= (D \rho) \tilde{f} + \rho (D \tilde{f})
+	\end{equation}
 
-	in quanto $ D $ soddisfa anche Leibniz. Preso un punto $ p \in U $, abbiamo che $ 0(p) = 0 \in \R $ e
+	in quanto $ D $ soddisfa anche Leibniz.\\
+	Preso un punto $ p \in U $, abbiamo che $ 0(p) = 0 \in \R $ e
 	
 	\begin{align}
 		\begin{split}
@@ -7877,7 +7873,7 @@ Per la dimostrazione, è necessario il seguente lemma:
 	perciò
 	
 	\begin{equation}
-		(D \tilde{f})(p) = 0, \quad \forall p \in U \implies (D \tilde{f})_{|U} = 0
+		(D \tilde{f})(p) = 0 \qcomma \forall p \in U \implies \eval{(D \tilde{f})}_{U} = 0
 	\end{equation}
 \end{proof}
 
@@ -7885,7 +7881,7 @@ Per la dimostrazione, è necessario il seguente lemma:
 	Perché $ \Phi $ sia un isomorfismo, dobbiamo dimostrare che l'applicazione sia iniettiva, suriettiva e che
 	
 	\begin{equation}
-		\Phi(g X + h Y) = g \Phi(X) + h \Phi(Y), \qquad \forall g,h \in C^{\infty}(M), \, \forall X,Y \in \chi(M)
+		\Phi(g X + h Y) = g \Phi(X) + h \Phi(Y) \qcomma \forall g,h \in C^{\infty}(M), \, \forall X,Y \in \chi(M)
 	\end{equation}
 
 \begin{itemize}
@@ -7897,29 +7893,26 @@ Per la dimostrazione, è necessario il seguente lemma:
 
 	dove
 	
-	\begin{align}
-		\begin{split}
-			0 : C^{\infty}(M) &\to C^{\infty}(M)\\
-			f &\mapsto 0
-		\end{split}
-	\end{align}
+	\map{0}
+		{C^{\infty}(M)}{C^{\infty}(M)}
+		{f}{0}
 
 	contenga solo il campo di vettori nullo. Per gli elementi del nucleo vale
 	
 	\begin{equation}
-		X \in \ker(\Phi) \iff \Phi(X)(f) = 0 \in C^{\infty}(M), \quad \forall f \in C^{\infty}(M)
+		X \in \ker(\Phi) \iff \Phi(X)(f) = 0 \in C^{\infty}(M) \qcomma \forall f \in C^{\infty}(M)
 	\end{equation}
 
 	il quale accade per la condizione
 	
 	\begin{equation}
 		\begin{aligned}
-			\Phi(X)(f) = 0\\
+			\Phi(X)(f) = 0 \\
 			\forall f \in C^{\infty}(M)
-		\end{aligned}%
+		\end{aligned} %
 		\iff %
 		\begin{aligned}
-			X f &= 0\\
+			X f &= 0 \\
 			\forall f \in &C^{\infty}(M)
 		\end{aligned}
 	\end{equation}
@@ -7928,12 +7921,9 @@ Per la dimostrazione, è necessario il seguente lemma:
 	
 	\item Perché sia suriettiva, è necessario che per qualunque derivazione $ D $ esista un campo di vettori $ X $ tale che l'immagine della del campo tramite  sia la derivazione di quel campo. Definiamo l'applicazione
 	
-	\begin{align}
-		\begin{split}
-			X : M \to T(M)\\
-			p \mapsto X_{p}
-		\end{split}
-	\end{align}
+	\map{X}
+		{M}{T(M)}
+		{p}{X_{p}}
 
 	per cui
 	
@@ -7948,7 +7938,7 @@ Per la dimostrazione, è necessario il seguente lemma:
 		
 		\begin{align}
 			\begin{split}
-				(D (\tilde{g} - \tilde{f}))(p) &= 0\\
+				(D (\tilde{g} - \tilde{f}))(p) &= 0 \\
 				(D \tilde{g})(p) &= (D \tilde{f})(p)
 			\end{split}
 		\end{align}
@@ -7978,22 +7968,20 @@ Per la dimostrazione, è necessario il seguente lemma:
 			\end{split}
 		\end{align}
 	
-		dunque $ X_{p} \in T_{p}(M) $; per mostrare che $ X \in \chi(M) $ mostriamo che $ X f \in C^{\infty}(M) $ per $ \forall f \in C^{\infty}(M) $
+		dunque $ X_{p} \in T_{p}(M) $; per mostrare che $ X \in \chi(M) $ mostriamo che $ X f \in C^{\infty}(M) $ per $ f \in C^{\infty}(M) $
 		
-		\begin{align}
-			\begin{split}
-				(X f)(p) &= X_{p} f\\
-				&= X_{p} [f]\\
-				&\doteq (D f)(p) \in C^{\infty}(M)
-			\end{split}
-		\end{align}
+		\begin{equation}
+			(X f)(p) = X_{p} f %
+			= X_{p} [f] %
+			\doteq (D f)(p) \in C^{\infty}(M)
+		\end{equation}
 	
 		da cui otteniamo inoltre che $ X f = D f $.
 		
 		\item A questo punto, possiamo scrivere
 		
 		\begin{equation}
-			\Phi(X)(f) = X f = D f, \quad \forall f \in C^{\infty}(M) \implies \Phi(X) = D
+			\Phi(X)(f) = X f = D f \qcomma \forall f \in C^{\infty}(M) \implies \Phi(X) = D
 		\end{equation}
 	\end{itemize}
 	
@@ -8014,25 +8002,22 @@ Abbiamo dunque che $ \Phi $ è un isomorfismo.
 \end{proof}
 
 \begin{lemma}
-	Siano $ N \subset M $ una sottovarietà di $ M $ e $ X \in \chi(M) $ tale che $ X_{p} \in T_{p}(N) $ per $ \forall p \in N $, allora $ X_{|N} \in \chi(N) $.
+	Siano $ N \subset M $ una sottovarietà di $ M $ e $ X \in \chi(M) $ tale che $ X_{p} \in T_{p}(N) $ per $ \forall p \in N $, allora $ \eval{X}_{N} \in \chi(N) $.
 \end{lemma}
 
 \begin{proof}
 	Per ipotesi
 	
-	\begin{align}
-		\begin{split}
-			X_{|N} : N &\to T(N)\\
-			p &\mapsto X_{p} \in T_{p}(N)
-		\end{split}
-	\end{align}
+	\map{\eval{X}_{N}}
+		{N}{T(N)}
+		{p}{X_{p} \in T_{p}(N)}
 	
 	dunque $ X_{|N} $ è un campo di vettori in $ N $, dobbiamo ora dimostrare che questo sia liscio in $ N $.\\
 	Per verificarlo, consideriamo il fatto che $ N $ sia una sottovarietà di $ M $, la quale implica che $ T(N) $ sia una sottovarietà di $ T(M) $\footnote{%
 		Vedi Esercizio \ref{es2-25}.%
 	} con $ T(N) \subset T(M) $. La composizione dell'inclusione $ i : N \to M $ (la quale è un'immersione) con il campo di vettori $ F = X \circ i : N \to T(M) $ è un'applicazione liscia perché composizione di applicazioni lisce e $ F(N) \subset T(N) $, in quanto ogni punto di $ N $ viene prima mandato nello stesso punto in $ M $ tramite l'inclusione e poi, tramite $ X $, nel vettore $ X_{p} \in T_{p}(N) $.\\
-	Sapendo che la restrizione del codominio di una funzione liscia a una sottovarietà del codominio originale produce ancora una funzione liscia, consideriamo la restrizione $ \tilde{F} : N \to T(N) $ con $ \tilde{F}(p) = F(p) $, la quale coincide con $ X_{|N} \equiv \tilde{F} $ e rende dunque liscia la restrizione del campo.\\
-	Questo prova che $ X_{|N} \in \chi(N) $.
+	Sapendo che la restrizione del codominio di una funzione liscia a una sottovarietà del codominio originale produce ancora una funzione liscia, consideriamo la restrizione $ \tilde{F} : N \to T(N) $ con $ \tilde{F}(p) = F(p) $, la quale coincide con $ \eval{X}_{N} \equiv \tilde{F} $ e rende dunque liscia la restrizione del campo.\\
+	Questo prova che $ \eval{X}_{N} \in \chi(N) $.
 \end{proof}
 
 \subsubsection{\textit{Esempi}}
