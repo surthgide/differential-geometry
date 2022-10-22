@@ -7497,7 +7497,7 @@ dove le funzioni $ f a^{j} $ sono lisce. Essendo quindi $ \chi(M) $ un $ C^{\inf
 
 \subsubsection{Derivata di una funzione rispetto a un campo di vettori}
 
-Siano un campo di vettori liscio $ X \in \chi(M) $ e una funzione liscia $ f \in C^{\infty}(M) $, allora la derivata della funzione $ f $ rispetto al campo di vettori $ X $ è definita come la funzione
+Siano un campo di vettori liscio $ X \in \chi(M) $ e una funzione liscia $ f \in C^{\infty}(M) $, allora la derivata della funzione $ f $ rispetto al campo di vettori $ X $ è definita come
 
 \map{X f}
 	{M}{\R}
@@ -7510,7 +7510,7 @@ La derivata può anche essere definita su germi delle funzioni in quanto tutte l
 \end{equation}
 
 \begin{definition}
-	Fissato un campo di vettori $ X \in \chi(M) $, l'immagine della funzione
+	Fissato un campo di vettori liscio $ X \in \chi(M) $, l'immagine della funzione
 	
 	\map{\Phi(X)}
 		{C^{\infty}(M)}{C^{\infty}(M)}
@@ -7556,7 +7556,7 @@ La derivata può anche essere definita su germi delle funzioni in quanto tutte l
 \end{proof}
 
 \begin{definition}
-	Un campo di vettori $ X $ è liscio se e solo se la derivata $ X f $ è liscia per ogni funzione $ f $, i.e.
+	Un campo di vettori $ X $ è liscio se e solo se la derivata $ X f $ è liscia per qualsiasi funzione liscia $ f $, i.e.
 	
 	\begin{equation}
 		X \in \chi(M) \iff X f \in C^{\infty}(M), \, \forall f \in C^{\infty}(M)
@@ -7589,12 +7589,12 @@ La derivata può anche essere definita su germi delle funzioni in quanto tutte l
 	con $ a^{j} : U \to \R $ per $ j=1,\dots,n $. Perché $ X \in \chi(M) $ dobbiamo dimostrare che $ a^{j} \in C^{\infty}(U) $.\\
 	Per il corollario di estensione di funzioni\footnote{%
 		Vedi Corollario \ref{cor-est-smooth}.%
-	}, esistono un aperto $ V \subset U \ni p $ e delle funzioni $ \tilde{x}^{k} \in C^{\infty}(M) $ tali che $ \eval{\tilde{x}^{k}}_{V} \equiv x^{k} $ per $ k=1,\dots,n $ (dalla carta, $ x^{k} \in C^{\infty}(U) $ per $ k=1,\dots,n $). Applichiamo ora la derivata a queste estensioni
+	}, esistono un aperto $ V \subset U $ tale che $ V \ni p $ e delle funzioni $ \tilde{x}^{k} \in C^{\infty}(M) $ tali che $ \eval{\tilde{x}^{k}}_{V} \equiv x^{k} $ per $ k=1,\dots,n $ (dalla carta, $ x^{k} \in C^{\infty}(U) $ per $ k=1,\dots,n $). Applichiamo ora la derivata a queste estensioni
 	
 	\begin{align}
 		\begin{split}
 			\eval{(X \tilde{x}^{k})}_{V} &= \left( \sum_{j=1}^{n} a^{j} \, \pdv{x^{j}} \right) \eval{(\tilde{x}^{k})}_{V} \\
-			&= \left( \sum_{j=1}^{n} a^{j} \, \pdv{x^{j}} \right) (\tilde{x}^{k}) \\
+			&= \left( \sum_{j=1}^{n} a^{j} \, \pdv{x^{j}} \right) (x^{k}) \\
 			&= \sum_{j=1}^{n} a^{j} \, \pdv{x^{k}}{x^{j}} \\
 			&= a^{j} \delta^{kj} \\
 			&= a^{k}
