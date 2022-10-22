@@ -7701,8 +7701,8 @@ in quanto $ f \in [f] \in C_{p}^{\infty}(M) $ e la derivata non dipende dal rapp
 		\end{aligned} %
 		 \iff %
 		 \begin{aligned}
-			 X_{p} [h] &= Y_{p} [h] \\
-			 \forall p \in M,& \quad \forall [h] \in C_{p}^{\infty}(M)
+			 X_{p} [g] &= Y_{p} [g] \\
+			 \forall p \in M,& \quad \forall [g] \in C_{p}^{\infty}(M)
 		 \end{aligned}
 	\end{equation}
 
@@ -7710,33 +7710,34 @@ in quanto $ f \in [f] \in C_{p}^{\infty}(M) $ e la derivata non dipende dal rapp
 	
 	\begin{equation}
 		\begin{aligned}
-			X_{p} [h] &= Y_{p} [h] \\
-			\forall p \in M,& \quad \forall [h] \in C_{p}^{\infty}(M)
+			X_{p} [g] &= Y_{p} [g] \\
+			\forall p \in M,& \quad \forall [g] \in C_{p}^{\infty}(M)
 		\end{aligned}%
 		\iff %
 		\begin{aligned}
-			X_{p} h &= Y_{p} h \\
-			\forall p \in M,& \quad \forall h \in C^{\infty}(U)
+			X_{p} g &= Y_{p} g \\
+			\forall p \in M,& \quad \forall g \in C^{\infty}(U)
 		\end{aligned}
 	\end{equation}
 	
-	dove $ h \in [h] $ e $ U \ni p $.\\
+	dove $ g \in [g] $ e $ p \in U \subset M $.\\
 	L'ipotesi però comprende funzioni qualsiasi $ f \in C^{\infty}(M) $ dunque, tramite il corollario di estensione di funzioni lisce\footnote{%
 		Vedi Corollario \ref{cor-est-smooth}.%
-	}, consideriamo un aperto $ V \subset U $ che contenga $ p $ e $ \tilde{h} \in C^{\infty}(M) $ tale che $ \tilde{h} \equiv h $ nell'aperto $ V $.\\
-	Applichiamo l'ipotesi a questa funzione
+	}, consideriamo un aperto $ V \subset U $ che contenga $ p $ e una funzione $ \tilde{g} \in C^{\infty}(M) $ tale che $ \eval{\tilde{g}}_{V} \equiv g $.\\
+	Applichiamo l'ipotesi a questa funzione ottenendo
 	
 	\begin{equation}
-		X \tilde{h} = Y \tilde{h} \iff (X \tilde{h})(p) = (Y \tilde{h})(p) \qcomma \forall p \in M
+		X \tilde{g} = Y \tilde{g} \iff (X \tilde{g})(p) = (Y \tilde{g})(p) \qcomma \forall p \in M
 	\end{equation}
 
 	e dunque
 	
 	\begin{equation}
-		X_{p} \tilde{h} = Y_{p} \tilde{h} \iff X_{p} h = Y_{p} h
+		X_{p} \tilde{g} = Y_{p} \tilde{g} \iff X_{p} g = Y_{p} g
 	\end{equation}
 
-	perché $ \tilde{h} \equiv h $ in $ V $ (equivalentemente $ \tilde{h} \sim h $) e questo, tramite i passaggi iniziali, porta all'uguaglianza $ X = Y $.
+	poiché $ \eval{\tilde{g}}_{V} \equiv g $ (equivalentemente $ \tilde{g} \sim g $).\\
+	Seguendo le implicazioni al contrario, arriviamo dunque all'uguaglianza $ X = Y $.
 \end{proof}
 
 \paragraph{$ \R $-linearità}
