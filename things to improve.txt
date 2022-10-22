@@ -2,3 +2,6 @@ cambia tutte i \phi in \varphi alla fine della revisione degli appunti
 
 aggiungi capitolo/sezione di spiegazione dei simboli e della notazione
 
+cambia tutte le istanze di "funzion*" in "applicazion*" alla fine della revisione degli appunti?
+
+
