@@ -1133,7 +1133,7 @@ questo significa che
 dove ancora $ f a^{i} \in C^{\infty}(U) $ per $ \forall i=1,\dots,n $.\\
 Le prime due operazioni dotano l'insieme di $ \chi(U) $ della proprietà di spazio vettoriale; osserviamo inoltre che $ C^{\infty}(U) $ è un anello commutativo unitario.
 
-\subsection{$ \chi(U) $ come $ C^{\infty}(U) $-modulo}
+\subsection{$ \chi(U) $ come $ C^{\infty}(U) $-modulo}\label{ssec:chi-c-inf-mod}
 
 \subsubsection{$ \R $-modulo sinistro}
 
@@ -1265,24 +1265,25 @@ perciò anche l'applicazione $ X $ soddisfa la regola di Leibniz:
 
 \subsubsection{Derivazione di un'algebra}
 
-Sia $ A $ un'algebra su campo $ \K $\footnote{%
-	Ricordiamo che un'algebra $ A $ su campo $ \K $ è una coppia $ (V, \cdot) $ dove $ V $ è uno spazio vettoriale e l'operazione
-	
-	\maps{\cdot}
-		{A \times A}{A}
-		{(a,b)}{a \cdot b}
-	soddisfa le proprietà
-	
-	\begin{equation*}
-		\begin{cases}
-			\begin{split}
-				(a + b) \cdot c = a \cdot c + b \cdot c\\
-				c \cdot (a + b) = c \cdot a + c \cdot b
-			\end{split} & \text{distributività}\\
-			\lambda (a \cdot b) = (\lambda a) \cdot b = a \cdot (\lambda b) & \text{omogeneità}
-		\end{cases}
-	\end{equation*}
-	per $ \forall a,b,c \in A $ e $ \forall \lambda \in \K $.%
+Sia $ A $ un'algebra su campo $ \K $
+	\footnote{%
+		Ricordiamo che un'algebra $ A $ su campo $ \K $ è una coppia $ (V, \cdot) $ dove $ V $ è uno spazio vettoriale e l'operazione
+		
+		\maps{\cdot}
+			{A \times A}{A}
+			{(a,b)}{a \cdot b}
+		soddisfa le proprietà
+		
+		\begin{equation*}
+			\begin{cases}
+				\begin{split}
+					(a + b) \cdot c = a \cdot c + b \cdot c\\
+					c \cdot (a + b) = c \cdot a + c \cdot b
+				\end{split} & \text{distributività}\\
+				\lambda (a \cdot b) = (\lambda a) \cdot b = a \cdot (\lambda b) & \text{omogeneità}
+			\end{cases}
+		\end{equation*}
+		per $ \forall a,b,c \in A $ e $ \forall \lambda \in \K $.%
 }, un'applicazione $ D : A \to A $ che sia $ \K $-lineare e tale che soddisfi la regola di Leibniz
 
 \begin{equation}
