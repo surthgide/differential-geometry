@@ -7828,8 +7828,20 @@ definendo l'azione dell'immagine di questa funzione come
 	(f D)(g) \doteq f (D(g)) \qcomma \forall g \in C^{\infty}(M)
 \end{equation}
 
+in modo tale che $ K $ rispetti le seguenti proprietà:
+
+\begin{equation}
+	\begin{cases}
+		1_{C^{\infty}(U)} D = D & \text{ 1. elemento neutro (somma) } \\
+		f (g D) = (f g) X & \text{ 2. compatibilità (moltiplicazione) } \\
+		f (D_{1} + D_{2}) = f D_{1} + f D_{2} & \text{ 3. distributività (somma vettoriale) } \\
+		(f + g) D = f D + g D & \text{ 4. distributività (somma scalare) }
+	\end{cases}
+\end{equation}
+
+per $ \forall f,g \in C^{\infty}(U) $ e $ \forall D,D_{1},D_{2} \in Der(C^{\infty}(M)) $.\\
 La dimostrazione\footnote{%
-	Essendo $ \chi(M) $ un $ C^{\infty} $-modulo e tramite l'isomorfismo $ \chi(M) \simeq Der(C^{\infty}(M)) $ dimostrato nella sezione successiva, è sufficiente vedere la dimostrazione che $ \chi(U) $ sia un $ C^{\infty} $-modulo nella Sottosezione \ref{ssec:chi-c-inf-mod}.%
+	Essendo $ \chi(M) $ un $ C^{\infty} $-modulo e tramite l'isomorfismo $ \chi(M) \simeq Der(C^{\infty}(M)) $ dimostrato nella sezione successiva, è sufficiente vedere la dimostrazione che $ \chi(U) $ sia un $ C^{\infty} $-modulo nell'Esercizio \ref{es1-9}.%
 } è la stessa fatta per aperti di $ \R^{n} $.
 
 \subsubsection{Isomorfismo $ \chi(M) \simeq Der(C^{\infty}(M)) $}
