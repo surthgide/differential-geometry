@@ -7801,25 +7801,25 @@ I campi di vettori lisci rispettano la regola di Leibniz:
 A questo punto, possiamo scrivere l'insieme delle derivazioni dell'algebra $ C^{\infty}(M) $
 
 \begin{equation}
-	Der(C^{\infty}(M)) = \{ D : C^{\infty}(M) \to C^{\infty}(M) \mid D \text{ è } \R-\text{lineare e soddisfa Leibniz} \}
+	\der(C^{\infty}(M)) = \{ D : C^{\infty}(M) \to C^{\infty}(M) \mid D \text{ è } \R-\text{lineare e soddisfa Leibniz} \}
 \end{equation}
 
 il quale è uno spazio vettoriale su $ \R $ con operazioni
 
 \begin{equation}
 	\begin{cases}
-		(D_{1} + D_{2})(f) = D_{1}(f) + D_{2}(f), & \forall D_{1},D_{2} \in Der(C^{\infty}(M)) \\
-		(\lambda D)(f) = \lambda (D f), & \forall \lambda \in \R, \, \forall D \in Der(C^{\infty}(M))
+		(D_{1} + D_{2})(f) = D_{1}(f) + D_{2}(f), & \forall D_{1},D_{2} \in \der(C^{\infty}(M)) \\
+		(\lambda D)(f) = \lambda (D f), & \forall \lambda \in \R, \, \forall D \in \der(C^{\infty}(M))
 	\end{cases}
 \end{equation}
 
 La dimostrazione\footnote{%
 	Vedi Esercizio \ref{es1-8}.%
 } è la stessa fatta per aperti di $ \R^{n} $.\\
-Le derivazioni $ Der(C^{\infty}(M)) $ sono anche un $ C^{\infty}(M) $-modulo: il primo requisito è che siano uno spazio vettoriale e il secondo è che si possa moltiplicare una derivazione per una funzione liscia, come dalla seguente applicazione
+Le derivazioni $ \der(C^{\infty}(M)) $ sono anche un $ C^{\infty}(M) $-modulo: il primo requisito è che siano uno spazio vettoriale e il secondo è che si possa moltiplicare una derivazione per una funzione liscia, come dalla seguente applicazione
 
 \map{K}
-	{C^{\infty}(M) \times Der(C^{\infty}(M))}{Der(C^{\infty}(M))}
+	{C^{\infty}(M) \times \der(C^{\infty}(M))}{\der(C^{\infty}(M))}
 	{(f,D)}{f D}
 
 definendo l'azione dell'immagine di questa funzione come
@@ -7839,18 +7839,18 @@ in modo tale che $ K $ rispetti le seguenti proprietà:
 	\end{cases}
 \end{equation}
 
-per $ \forall f,g \in C^{\infty}(U) $ e $ \forall D,D_{1},D_{2} \in Der(C^{\infty}(M)) $.\\
+per $ \forall f,g \in C^{\infty}(U) $ e $ \forall D,D_{1},D_{2} \in \der(C^{\infty}(M)) $.\\
 La dimostrazione\footnote{%
-	Essendo $ \chi(M) $ un $ C^{\infty} $-modulo e tramite l'isomorfismo $ \chi(M) \simeq Der(C^{\infty}(M)) $ dimostrato nella sezione successiva, è sufficiente vedere la dimostrazione che $ \chi(U) $ sia un $ C^{\infty} $-modulo nell'Esercizio \ref{es1-9}.%
+	Essendo $ \chi(M) $ un $ C^{\infty} $-modulo e tramite l'isomorfismo $ \chi(M) \simeq \der(C^{\infty}(M)) $ dimostrato nella sezione successiva, è sufficiente vedere la dimostrazione che $ \chi(U) $ sia un $ C^{\infty} $-modulo nell'Esercizio \ref{es1-9}.%
 } è la stessa fatta per aperti di $ \R^{n} $.
 
-\subsubsection{Isomorfismo $ \chi(M) \simeq Der(C^{\infty}(M)) $}
+\subsubsection{Isomorfismo $ \chi(M) \simeq \der(C^{\infty}(M)) $}
 
 \begin{theorem}
 	Sia l'applicazione
 	
 	\map{\Phi}
-		{\chi(M)}{Der(C^{\infty}(M))}
+		{\chi(M)}{\der(C^{\infty}(M))}
 		{X}{\Phi(X)}
 
 	dove l'azione dell'immagine è quella dell'applicazione definita in precedenza per i campi di vettori, i.e.
@@ -7865,7 +7865,7 @@ La dimostrazione\footnote{%
 Per la dimostrazione, è necessario il seguente lemma:
 
 \begin{lemma}
-	Siano una derivazione $ D \in Der(C^{\infty}(M)) $ e un'applicazione liscia $ \tilde{f} \in C^{\infty}(M) $ tale che $ \eval{\tilde{f}}_{U} = 0 $ dove $ U \subset M $ è un aperto della varietà, allora
+	Siano una derivazione $ D \in \der(C^{\infty}(M)) $ e un'applicazione liscia $ \tilde{f} \in C^{\infty}(M) $ tale che $ \eval{\tilde{f}}_{U} = 0 $ dove $ U \subset M $ è un aperto della varietà, allora
 	
 	\begin{equation}
 		\eval{(D \tilde{f})}_{U} = 0
@@ -7910,7 +7910,7 @@ Per la dimostrazione, è necessario il seguente lemma:
 	\item Perché sia iniettiva, siccome è $ \R $-lineare, è necessario che il nucleo dell'applicazione
 	
 	\begin{equation}
-		\ker(\Phi) = \{ X \in \chi(M) \mid \Phi(X) = 0 \in Der(C^{\infty}(M)) \}
+		\ker(\Phi) = \{ X \in \chi(M) \mid \Phi(X) = 0 \in \der(C^{\infty}(M)) \}
 	\end{equation}
 
 	dove
@@ -8564,13 +8564,13 @@ supponendo che $ t+s $ sia definito.
 
 \subsection{Commutatore tra due campi di vettori}
 
-Consideriamo le identificazioni tra i campi di vettori e le derivazioni $ \chi(M) = Der(C^{\infty}(M)) $ e tra una funzione liscia e la sua derivata tramite un campo di vettori
+Consideriamo le identificazioni tra i campi di vettori e le derivazioni $ \chi(M) = \der(C^{\infty}(M)) $ e tra una funzione liscia e la sua derivata tramite un campo di vettori
 
 \begin{equation}
 	f \in C^{\infty}(M) \to X f \in C^{\infty}(M)
 \end{equation}
 
-Presi $ X,Y \in \chi(M) = Der(C^{\infty}(M)) $, l'applicazione liscia
+Presi $ X,Y \in \chi(M) = \der(C^{\infty}(M)) $, l'applicazione liscia
 
 \begin{align}
 	\begin{split}
@@ -8588,7 +8588,7 @@ Presi $ X,Y \in \chi(M) = Der(C^{\infty}(M)) $, l'applicazione liscia
 	\end{split}
 \end{align}
 
-ma $ XY \notin Der(C^{\infty}(M)) $, i.e. non rispetta la regola di Leibniz
+ma $ XY \notin \der(C^{\infty}(M)) $, i.e. non rispetta la regola di Leibniz
 
 \begin{align}
 	\begin{split}
@@ -8603,7 +8603,7 @@ Definiamo quindi il \textit{commutatore o "bracket" tra due campi di vettori} co
 %	rifai questa applicazione con \maps{}{}{}{}{}
 	\begin{align}
 		\begin{split}
-			[\cdot,\cdot] : Der(C^{\infty}(M)) \times Der(C^{\infty}(M)) &\to Der(C^{\infty}(M))\\
+			[\cdot,\cdot] : \der(C^{\infty}(M)) \times \der(C^{\infty}(M)) &\to \der(C^{\infty}(M))\\
 			(X,Y) &\mapsto XY-YX
 		\end{split}
 	\end{align}%
@@ -8619,7 +8619,7 @@ Definiamo quindi il \textit{commutatore o "bracket" tra due campi di vettori} co
 e dunque, siccome questo rispetta anche la regola di Leibniz
 
 \begin{equation}
-	[X,Y] = XY-YX \in Der(C^{\infty}(M))
+	[X,Y] = XY-YX \in \der(C^{\infty}(M))
 \end{equation}
 
 Di seguito, la verifica:
@@ -8663,7 +8663,7 @@ perché lo è $ X_{p} $, rispetta la regola di Leibniz
 	\end{split}
 \end{align}
 
-perché la rispetta $ [X,Y] \in Der(C^{\infty}(U)) $ ed è effettivamente un campo di vettori liscio in quanto è liscia la composizione $ XY-YX $, i.e.
+perché la rispetta $ [X,Y] \in \der(C^{\infty}(U)) $ ed è effettivamente un campo di vettori liscio in quanto è liscia la composizione $ XY-YX $, i.e.
 
 \begin{align}
 	\begin{split}
