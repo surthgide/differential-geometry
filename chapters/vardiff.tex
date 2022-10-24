@@ -7868,15 +7868,15 @@ Per la dimostrazione, è necessario il seguente lemma:
 	Siano una derivazione $ D \in \der(C^{\infty}(M)) $ e un'applicazione liscia $ \tilde{f} \in C^{\infty}(M) $ tale che $ \eval{\tilde{f}}_{U} = 0 $ dove $ U \subset M $ è un aperto della varietà, allora
 	
 	\begin{equation}
-		\eval{(D \tilde{f})}_{U} = 0
+		\eval{(D \tilde{f})}_{U} = 0 \in C^{\infty}(M)
 	\end{equation}
 \end{lemma}
 
 \begin{proof}[Dimostrazione (lemma)]
-	Siano $ p \in U $ un punto e $ \rho \in C^{\infty}(M) $ una funzione a campana in $ p $ con supporto in $ U $, i.e. $ \supp(\rho) \subset U $, (esiste per il Teorema \ref{bump-fun}). Consideriamo la funzione $ f = \rho \tilde{f} \in C^{\infty}(M) $ la quale è nulla dappertutto perché in $ U $ abbiamo che $ \eval{\tilde{f}}_{U} = 0 $ mentre in $ M \setminus U $ abbiamo che $ \eval{\rho}_{M \setminus U} = 0 $. Applichiamo ora $ D $ a $ f $, il cui risultato sarà nullo in quanto $ f \equiv 0 $ e $ D $ è lineare
+	Siano $ p \in U $ un punto e $ \rho \in C^{\infty}(M) $ una funzione a campana liscia in $ p $ con supporto in $ U $, i.e. $ \supp(\rho) \subset U $, (esiste per il Teorema \ref{bump-fun}). Consideriamo la funzione $ f = \rho \tilde{f} \in C^{\infty}(M) $ (le funzioni sono moltiplicate tra loro) la quale è nulla dappertutto perché in $ U $ abbiamo che $ \eval{\tilde{f}}_{U} = 0 $ mentre in $ M \setminus U $ abbiamo che $ \eval{\rho}_{M \setminus U} = 0 $. Applichiamo ora $ D $ a $ f $, il cui risultato sarà nullo in quanto $ f \equiv 0 $ e $ D $ è lineare
 	
 	\begin{equation}
-		0 = D(f) %
+		0 = D f %
 		= D (\rho \tilde{f}) %
 		= (D \rho) \tilde{f} + \rho (D \tilde{f})
 	\end{equation}
@@ -7895,7 +7895,9 @@ Per la dimostrazione, è necessario il seguente lemma:
 	perciò
 	
 	\begin{equation}
-		(D \tilde{f})(p) = 0 \qcomma \forall p \in U \implies \eval{(D \tilde{f})}_{U} = 0
+		(D \tilde{f})(p) = 0 \qcomma \forall p \in U %
+		\implies %
+		\eval{(D \tilde{f})}_{U} = 0
 	\end{equation}
 \end{proof}
 
@@ -7907,7 +7909,7 @@ Per la dimostrazione, è necessario il seguente lemma:
 	\end{equation}
 
 \begin{itemize}
-	\item Perché sia iniettiva, siccome è $ \R $-lineare, è necessario che il nucleo dell'applicazione
+	\item Perché sia iniettiva, siccome è $ \R $-lineare, è necessario e sufficiente che il nucleo dell'applicazione
 	
 	\begin{equation}
 		\ker(\Phi) = \{ X \in \chi(M) \mid \Phi(X) = 0 \in \der(C^{\infty}(M)) \}
@@ -7934,14 +7936,26 @@ Per la dimostrazione, è necessario il seguente lemma:
 		\end{aligned} %
 		\iff %
 		\begin{aligned}
-			X f &= 0 \\
-			\forall f \in &C^{\infty}(M)
+			& X f = 0 \\
+			\forall f &\in C^{\infty}(M)
 		\end{aligned}
 	\end{equation}
 
-	il quale, per il teorema di uguaglianza, $ X = 0 \in \chi(M) $ e dunque $ \Phi $ è iniettiva perché $ \ker(\Phi) = \{ X = 0 \in \chi(M) \} $.
+	da cui, per il teorema di uguaglianza, $ X = 0 \in \chi(M) $ e dunque $ \Phi $ è iniettiva poiché
 	
-	\item Perché sia suriettiva, è necessario che per qualunque derivazione $ D $ esista un campo di vettori $ X $ tale che l'immagine della del campo tramite  sia la derivazione di quel campo. Definiamo l'applicazione
+	\begin{equation}
+		\ker(\Phi) = \{ X = 0 \in \chi(M) \}
+	\end{equation}
+
+	%
+	
+	\item Perché sia suriettiva, è necessario che per qualunque derivazione $ D $ esista un campo di vettori $ X $ tale che l'immagine del campo tramite $ \Phi $ sia la derivazione $ D $, i.e.
+	
+	\begin{equation}
+		\forall D \in \der(C^{\infty}(M)), \, \E X \in \chi(M) \, \mid \, \Phi(X)(f) = D f \qcomma \forall f \in C^{\infty}(M)
+	\end{equation}
+	
+	Definiamo l'applicazione
 	
 	\map{X}
 		{M}{T(M)}
@@ -7953,10 +7967,10 @@ Per la dimostrazione, è necessario il seguente lemma:
 		X_{p} [f] \doteq (D \tilde{f})(p)
 	\end{equation}
 
-	dove $ [f] \in C_{p}^{\infty}(M) $ di cui prendiamo un rappresentante $ f \in [f] $ il quale è liscio in un aperto $ U \subset M $, i.e. $ f \in C^{\infty}(U) $, di cui a sua volta prendiamo l'estensione $ \tilde{f} $ tale che $ \tilde{f} \equiv f $ in $ V \subset U $ con $ V \ni p $. Dobbiamo verificare che $ X_{p} $ sia ben definito, che $ X $ sia un campo di vettori liscio e che $ \Phi(X) = D $:
+	dove $ [f] \in C_{p}^{\infty}(M) $ di cui prendiamo un rappresentante $ f \in [f] $ il quale è liscio in un aperto $ U \subset M $, i.e. $ f \in C^{\infty}(U) $, di cui a sua volta prendiamo l'estensione $ \tilde{f} \in C^{\infty}(M) $ tale che $ \eval{\tilde{f}}_{V} \equiv f $ con $ p \in V \subset U $. Dobbiamo verificare che $ X_{p} $ sia ben definito, che $ X $ sia un campo di vettori liscio e che $ \Phi(X) = D $:
 	
 	\begin{itemize}
-		\item Perché $ X_{p} $ sia ben definito, prendiamo $ g \in [f] $ (equivalentemente $ g \sim f $) tale che $ g \in C^{\infty}(U') $ con $ U' \ni p $. Prendiamone ora l'estensione $ \tilde{g} \in C^{\infty}(M) $ tale che $ \tilde{g} \equiv g $ in $ V' \subset U' $ con $ V' \ni p $ e verifichiamo che $ (D \tilde{g})(p) = (D \tilde{f})(p) $, il quale prova che la scelta del rappresentante per $ X_{p} [f] $ sia irrilevante. Siccome $ \tilde{g} - \tilde{f} \equiv 0 $ in un intorno di $ p $, abbiamo che (per il lemma dimostrato sopra)
+		\item Perché $ X_{p} $ sia ben definito, prendiamo $ g \in [f] $ (equivalentemente $ g \sim f $) tale che $ g \in C^{\infty}(U') $ con $ U' \ni p $. Prendiamone ora l'estensione $ \tilde{g} \in C^{\infty}(M) $ tale che $ \eval{\tilde{g}}_{V'} \equiv g $ con $ p \in V' \subset U' $ e verifichiamo che $ (D \tilde{g})(p) = (D \tilde{f})(p) $, il quale prova che la scelta del rappresentante per $ X_{p} [f] $ sia irrilevante. Siccome $ \tilde{g} - \tilde{f} \equiv 0 $ in un intorno di $ p $, abbiamo che (per il lemma dimostrato sopra e per la linearità di $ D $)
 		
 		\begin{align}
 			\begin{split}
@@ -7967,7 +7981,7 @@ Per la dimostrazione, è necessario il seguente lemma:
 		
 		e dunque $ X_{p} $ è ben definito.
 		
-		\item Verifichiamo prima che $ X $ sia un campo di vettori, i.e. $ X_{p} \in \der_{p}(C_{p}^{\infty}(M)) = T_{p}(M) $ per $ \forall p \in M $, e poi che $ X \in \chi(M) $. Perché sia un campo di vettori, è necessario che sia $ \R $-lineare, i.e. considerata la classe $ [\lambda f + \mu g] $ ne consideriamo un'estensione da un aperto in cui entrambe le funzioni sono definite, scriviamo
+		\item Verifichiamo prima che $ X $ sia un campo di vettori, i.e. $ X_{p} \in \der_{p}(C_{p}^{\infty}(M)) = T_{p}(M) $ per qualsiasi $ p \in M $, e poi che $ X \in \chi(M) $. Perché sia un campo di vettori, è necessario che sia $ \R $-lineare: presa la classe $ [\lambda f + \mu g] $ ne consideriamo un'estensione da un aperto in cui entrambe le funzioni sono definite, da cui otteniamo
 		
 		\begin{align}
 			\begin{split}
@@ -7978,7 +7992,7 @@ Per la dimostrazione, è necessario il seguente lemma:
 			\end{split}
 		\end{align}
 	
-		e poi dobbiamo verificare che soddisfi la regola di Leibniz
+		Dobbiamo poi verificare che soddisfi la regola di Leibniz:
 		
 		\begin{align}
 			\begin{split}
@@ -7986,16 +8000,17 @@ Per la dimostrazione, è necessario il seguente lemma:
 				&= X (\tilde{f g})(p)\\
 				&= X (\tilde{f} \tilde{g})(p)\\
 				&= X (\tilde{f})(p) \, \tilde{g}(p) + \tilde{f}(p) \, X (\tilde{g})(p)\\
-				&= X_{p} [f] \, g(p) + f(p) \, X_{p} [g]
+				&= (X_{p} [f]) \, g(p) + f(p) \, (X_{p} [g])
 			\end{split}
 		\end{align}
 	
-		dunque $ X_{p} \in T_{p}(M) $; per mostrare che $ X \in \chi(M) $ mostriamo che $ X f \in C^{\infty}(M) $ per $ f \in C^{\infty}(M) $
+		dunque $ X_{p} \in T_{p}(M) $; per mostrare che $ X \in \chi(M) $ mostriamo che $ X f \in C^{\infty}(M) $ per qualsiasi $ f \in C^{\infty}(M) $
 		
 		\begin{equation}
 			(X f)(p) = X_{p} f %
 			= X_{p} [f] %
-			\doteq (D f)(p) \in C^{\infty}(M)
+			\doteq (D f)(p) \in C^{\infty}(M) %
+			\qcomma \forall p \in M
 		\end{equation}
 	
 		da cui otteniamo inoltre che $ X f = D f $.
@@ -8006,16 +8021,18 @@ Per la dimostrazione, è necessario il seguente lemma:
 			\Phi(X)(f) = X f = D f \qcomma \forall f \in C^{\infty}(M) \implies \Phi(X) = D
 		\end{equation}
 	\end{itemize}
+
+	%
 	
-	\item Sia $ f \in C^{\infty}(M) $
+	\item Per l'ultima condizione, sia $ f \in C^{\infty}(M) $
 	
 	\begin{align}
 		\begin{split}
-			\Phi(g X + h Y)(f) &= (g X + h Y)(f)\\
-			&= (g X)(f) + (h Y)(f)\\
-			&= g (X f) + h (Y f)\\
-			&= g \Phi(X)(f) + h \Phi(Y)(f)\\
-			&= (g \Phi(X) + h \Phi(Y))(f)
+			\Phi(g X + h Y)(f) &= (g X + h Y)(f) \\
+			&= (g X)(f) + (h Y)(f) \\
+			&= g \, (X f) + h \, (Y f) \\
+			&= g \, \Phi(X)(f) + h \, \Phi(Y)(f) \\
+			&= (g \, \Phi(X) + h \, \Phi(Y))(f)
 		\end{split}
 	\end{align}
 \end{itemize}
@@ -8024,7 +8041,7 @@ Abbiamo dunque che $ \Phi $ è un isomorfismo.
 \end{proof}
 
 \begin{lemma}
-	Siano $ N \subset M $ una sottovarietà di $ M $ e $ X \in \chi(M) $ tale che $ X_{p} \in T_{p}(N) $ per $ \forall p \in N $, allora $ \eval{X}_{N} \in \chi(N) $.
+	Siano $ N \subset M $ una sottovarietà di $ M $ e $ X \in \chi(M) $ un campo di vettori liscio tale che $ X_{p} \in T_{p}(N) $ per qualsiasi $ p \in N $, allora $ \eval{X}_{N} \in \chi(N) $.
 \end{lemma}
 
 \begin{proof}
@@ -8034,11 +8051,19 @@ Abbiamo dunque che $ \Phi $ è un isomorfismo.
 		{N}{T(N)}
 		{p}{X_{p} \in T_{p}(N)}
 	
-	dunque $ X_{|N} $ è un campo di vettori in $ N $, dobbiamo ora dimostrare che questo sia liscio in $ N $.\\
+	dunque $ \eval{X}_{N} $ è un campo di vettori in $ N $, dobbiamo ora dimostrare che questo sia liscio in $ N $.\\
 	Per verificarlo, consideriamo il fatto che $ N $ sia una sottovarietà di $ M $, la quale implica che $ T(N) $ sia una sottovarietà di $ T(M) $\footnote{%
 		Vedi Esercizio \ref{es2-25}.%
-	} con $ T(N) \subset T(M) $. La composizione dell'inclusione $ i : N \to M $ (la quale è un'immersione) con il campo di vettori $ F = X \circ i : N \to T(M) $ è un'applicazione liscia perché composizione di applicazioni lisce e $ F(N) \subset T(N) $, in quanto ogni punto di $ N $ viene prima mandato nello stesso punto in $ M $ tramite l'inclusione e poi, tramite $ X $, nel vettore $ X_{p} \in T_{p}(N) $.\\
-	Sapendo che la restrizione del codominio di una funzione liscia a una sottovarietà del codominio originale produce ancora una funzione liscia, consideriamo la restrizione $ \tilde{F} : N \to T(N) $ con $ \tilde{F}(p) = F(p) $, la quale coincide con $ \eval{X}_{N} \equiv \tilde{F} $ e rende dunque liscia la restrizione del campo.\\
+	} con $ T(N) \subset T(M) $. La composizione $ F $ tra l'inclusione $ i : N \to M $ (la quale è un'immersione) e il campo di vettori $ X $
+
+	\begin{equation}
+		F \doteq X \circ i : N \to T(M)
+	\end{equation}
+
+	è un'applicazione liscia perché composizione di applicazioni lisce e $ F(N) \subset T(N) $, in quanto ogni punto di $ N $ viene prima mandato nello stesso punto in $ M $ tramite l'inclusione e poi, tramite $ X $, nel vettore $ X_{p} \in T_{p}(N) $.\\
+	Sapendo che la restrizione del codominio di una funzione liscia a una sottovarietà del codominio originale produce ancora una funzione liscia\footnote{%
+		Vedi Teorema \ref{thm:smooth-restriction-subman}.%
+	}, consideriamo la restrizione $ \tilde{F} : N \to T(N) $ con $ \tilde{F}(p) = F(p) $, la quale coincide con $ \eval{X}_{N} \equiv \tilde{F} $ e rende dunque liscia la restrizione del campo.\\
 	Questo prova che $ \eval{X}_{N} \in \chi(N) $.
 \end{proof}
 
