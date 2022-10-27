@@ -1320,12 +1320,18 @@ Perché l'applicazione $ F $ sia un embedding liscio è necessario dimostrare ch
 
 \paragraph{Embedding topologico}
 
-Consideriamo la forma esponenziale delle funzioni iperboliche
+Consideriamo la forma esponenziale delle funzioni iperboliche \\
 
-\begin{gather}
-	\cosh(t) = \dfrac{e^{t} + e^{-t}}{2} \\
-	\sinh(t) = \dfrac{e^{t} - e^{-t}}{2}
-\end{gather}
+\sbs{0.5}{%
+			\begin{equation}
+				\cosh(t) = \dfrac{e^{t} + e^{-t}}{2}
+			\end{equation}
+			}
+	{0.5}{%
+			\begin{equation}
+				\sinh(t) = \dfrac{e^{t} - e^{-t}}{2}
+			\end{equation}
+			}
 
 Tramite queste, scriviamo l'applicazione indotta da $ F $ come
 
@@ -1341,7 +1347,7 @@ dove
 
 in quanto
 
-\begin{gather}
+\begin{equation}
 	\begin{cases}
 		x = \cosh(t) \\
 		y = \sinh(t)
@@ -1357,8 +1363,10 @@ in quanto
 	e^{t} = 2 y + e^{-t}
 	\end{cases} %
 	\implies %
-	x - y = e^{-t} \\
-	%
+	x - y = e^{-t}
+\end{equation}
+
+\begin{equation}
 	\begin{cases}
 		x = \cosh(t) \\
 		y = \sinh(t)
@@ -1375,7 +1383,7 @@ in quanto
 	\end{cases} %
 	\implies %
 	x + y = e^{t}
-\end{gather}
+\end{equation}
 
 da cui
 
@@ -1812,13 +1820,13 @@ qui
 
 %
 
-\section{}\label{es2-25}
+\section{Fibrato tangente di sottovarietà come sottovarietà}\label{es2-25}
 
 \begin{tcolorbox}
 	Sia $ N $ una sottovarietà di una varietà differenziabile $ M $. Dimostrare che $ T(N) $ è una sottovarietà di $ T(M) $.
 \end{tcolorbox}
 
-qui
+\ref{prop:subman-incl-immersion}
 
 %
 

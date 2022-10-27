@@ -58,3 +58,11 @@ per un concetto che non è presente negli appunti (il concetto di bordo--boundar
 per una varietà), quindi non sono sicuro che sia la via giusta; vedi preposizione 4.22 di 
 introduction to smooth manifolds di Lee
 
+esercizio B.25: devo dimostrare in qualche modo che sia iniettivo il differenziale del 
+differenziale (differenziale secondo?) dell'inclusione tra la sottovarietà e la sua varietà; 
+non riesco a capire come dimostrare che esista l'inversa sinistra del differenziale secondo 
+dell'inclusione né so bene come usare la condizione f(x)=f(y) => x=y in quanto non riesco 
+a definire le gli elementi e le mappe di TT(M); è possibile che debba usare il teorema della 
+dimensione in quanto il differenziale secondo (come il differenziale normale) è lineare; 
+sono sicuro di dover passare per il fatto che l'inclusione i:T(N)->T(M) è un'immersione
+
