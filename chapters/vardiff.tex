@@ -3188,10 +3188,8 @@ rispettando l'identità e la composizione, i.e.
 	Sia $ \mathcal{F} : \mathfrak{C} \to \mathfrak{D} $ un funtore (covariante o controvariante), allora
 	
 	\begin{equation}
-		A \simeq B \implies \mathcal{F}(A) \simeq \mathcal{F}(B)
+		A \simeq B \implies \mathcal{F}(A) \simeq \mathcal{F}(B) \qcomma \forall A,B \in \mathfrak{C}
 	\end{equation}
-	
-	per $ \forall A,B \in \mathfrak{C} $.
 \end{remark}
 
 \begin{proof}
@@ -3269,19 +3267,19 @@ e la composizione
 \begin{align}
 	\mathcal{F}(g \circ f) = (g \circ f)^{*} %
 	= f^{*} \circ g^{*} %
-	= \mathcal{F}(f) \circ \mathcal{F}(g)
+	= \mathcal{F}(f) \circ \mathcal{F}(g) %
+	\qcomma f \in Mor(V,W), \, g \in Mor(W,Z)
 \end{align}
 
-per qualsiasi $ f \in Mor(V,W) $ e $ g \in Mor(W,Z) $, in quanto
+in quanto
 
 \begin{equation}
 	(g \circ f)^{*}(\alpha) = \alpha \circ g \circ f %
 	= f^{*} (\alpha \circ g) %
 	= f^{*} (g^{*}(\alpha)) %
-	= f^{*} \circ g^{*} \circ \alpha
+	= f^{*} \circ g^{*} \circ \alpha %
+	\qcomma \forall \alpha \in W^{*}
 \end{equation}
-
-per $ \forall \alpha \in W^{*} $.
 
 \paragraph{2) Varietà puntate e isomorfismi}
 
@@ -3289,7 +3287,7 @@ Siano $ \mathfrak{C} $ la categoria delle varietà puntate e $ \mathfrak{D} $ la
 
 \begin{equation}
 	\begin{cases}
-		\mathcal{F}((N,p)) = T_{p}(N), & \forall (N,p) \in Ob(\mathfrak{C}), \, T_{p}(N) \in Ob(\mathfrak{D})\\
+		\mathcal{F}((N,p)) = T_{p}(N), & \forall (N,p) \in Ob(\mathfrak{C}), \, T_{p}(N) \in Ob(\mathfrak{D}) \\
 		\mathcal{F}(F) = F_{*p} & \forall F \in Mor((N,p),(M,q)), \, F_{*p} \in Mor(T_{p}(N),T_{q=F(p)}(M))
 	\end{cases}
 \end{equation}
@@ -3330,7 +3328,7 @@ Il vettore tangente $ c'(t_{0}) $ è dunque l'immagine del vettore $ \eval{ \dv*
 	
 	\begin{equation}
 		\begin{cases}
-			\dot{c}(t_{0}) \doteq \eval{ \ddv{t} }_{t_{0}} c(t) \in \R & \text{derivata}\\\\
+			\dot{c}(t_{0}) \doteq \eval{ \ddv{t} }_{t_{0}} c(t) \in \R & \text{derivata} \\\\
 			%
 			c'(t_{0}) \in T_{c(t_{0})}(\R) & \text{vettore tangente}
 		\end{cases}
