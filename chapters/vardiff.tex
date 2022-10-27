@@ -8067,7 +8067,7 @@ Abbiamo dunque che $ \Phi $ è un isomorfismo.
 
 \subsubsection{\textit{Esempi}}
 
-Tramite il lemma dimostrato sopra, è possibile trovare campi di vettori lisci sulla sfera semplicemente prendendo campi di vettori lisci in $ \R^{n} $ e verificando che questi sono ancora campi di vettori nella sfera, la quale è una sottovarietà di $ \R^{n} $, il che rende anche i campi lisci.
+Tramite il lemma dimostrato sopra, è possibile trovare campi di vettori lisci sulla sfera $ \S^{n} $ semplicemente prendendo campi di vettori lisci in $ \R^{n+1} $ e verificando che questi siano ancora campi di vettori nella sfera, la quale è una sottovarietà di $ \R^{n+1} $.
 
 \paragraph{1) Sfera di dimensione dispari}
 
@@ -8077,28 +8077,27 @@ Sia la sfera di dimensione dispari $ \S^{2n-1} \subset \R^{2n} $. Avendo le coor
 	\S^{2n-1} = \{ (x^{1},\dots,x^{n},y^{1},\dots,y^{n}) \in \R^{2n} \mid (x^{1})^{2} + \cdots + (x^{n})^{2} + (y^{1})^{2} + \cdots + (y^{n})^{2} = 1 \}
 \end{equation}
 
-Sia il campo di vettori su $ \R^{2n} $ e la sua forma dopo l'identificazione $ T(\R^{2n}) = \R^{2n} $:
+Siano il campo di vettori su $ \R^{2n} $ e la sua forma dopo l'identificazione $ T(\R^{2n}) \equiv \R^{2n} $:
 
 \begin{equation}
-	X = \sum_{j=1}^{n} - y^{j} \dfrac{\partial}{\partial x^{j}} + x^{j} \dfrac{\partial}{\partial y^{j}} = (-y^{1},\dots,-y^{n},x^{1},\dots,x^{n})
+	X = \sum_{j=1}^{n} - y^{j} \pdv{x^{j}} + x^{j} \pdv{y^{j}} %
+	\equiv (-y^{1},\dots,-y^{n},x^{1},\dots,x^{n})
 \end{equation}
 
 Per questo campo vale $ X \in \chi(\R^{2n}) $ e inoltre è possibile restringerlo alla sfera $ \S^{2n-1} $
 
-\begin{align}
-	\begin{split}
-		X_{|\S^{2n-1}} : \S^{2n-1} &\to T(\S^{2n-1})\\
-		p &\mapsto X_{p} \in T_{p}(\S^{2n-1})
-	\end{split}
-\end{align}
+\map{\eval{X}_{\S^{2n-1}}}
+	{\S^{2n-1}}{T(\S^{2n-1})}
+	{p}{X_{p} \in T_{p}(\S^{2n-1})}
 
-dove $ p = (x^{1},\dots,x^{n},y^{1},\dots,y^{n}) \in \S^{2n-1} $ e gli $ X_{p} $ sono quei vettori ortogonali al vettore normale all'ipersuperficie della sfera:
+dove $ p = (x^{1},\dots,x^{n},y^{1},\dots,y^{n}) \in \S^{2n-1} $ e gli $ X_{p} $ sono i vettori ortogonali al vettore normale all'ipersuperficie della sfera, i.e.
 
 \begin{equation}
-	X_{p} \cdot p = (-y^{1},\dots,-y^{n},x^{1},\dots,x^{n}) \cdot (x^{1},\dots,x^{n},y^{1},\dots,y^{n}) = 0
+	X_{p} \cdot p = (-y^{1},\dots,-y^{n},x^{1},\dots,x^{n}) \cdot (x^{1},\dots,x^{n},y^{1},\dots,y^{n}) = 0 %
+	\qcomma \forall p \in \S^{2n-1}
 \end{equation}
 
-e dunque è vero che $ X_{p} \in T_{p}(\S^{2n-1}) $.\\
+è dunque vero che $ X_{p} \in T_{p}(\S^{2n-1}) $.\\
 Per il lemma, essendo $ \S^{2n-1} \subset \R^{2n} $ una sottovarietà di $ \R^{2n} $, per il campo di vettori
 
 \begin{equation}
@@ -8110,43 +8109,55 @@ vale dunque $ X \in \chi(\S^{2n-1}) $.
 \paragraph{2) Sfera di dimensione pari}
 
 Non è possibile costruire un campo di vettori lisci su una sfera di dimensione pari in quanto non è possibile costruirne nemmeno uno continuo.\\
-Presa la sfera di dimensione pari $ \S^{2n} $, non esiste dunque un campo di vettori $ X \in \chi(\S^{2n}) $ tale che $ X_{p} \neq 0 $ per $ \forall p \in \S^{2n} $ o, equivalentemente, la sfera di dimensione pari non è \textit{pettinabile}.
+Presa la sfera di dimensione pari $ \S^{2n} $, non esiste dunque un campo di vettori $ X \in \chi(\S^{2n}) $ tale che $ X_{p} \neq 0 $ per qualsiasi $ p \in \S^{2n} $ o, equivalentemente, la sfera di dimensione pari non è \textit{pettinabile}.
 
 \subsubsection{Parallelizzabilità}
 
-Una varietà $ M $ di dimensione $ n $ è \textit{parallelizzabile} se esistono $ n $ campi di vettori $ X_{1},\dots,X_{n} \in \chi(M) $ tali che
+Una varietà $ M $ di dimensione $ n $ è \textit{parallelizzabile} se esistono $ n $ campi di vettori lisci $ X_{1},\dots,X_{n} \in \chi(M) $ tali che
 
 \begin{equation}
-	\mathfrak{B}_{T_{p}(M)} = \{ (X_{1})_{p},\dots,(X_{n})_{p} \}
+	\B_{T_{p}(M)} = \{ (X_{1})_{p},\dots,(X_{n})_{p} \}
 \end{equation}
 
-sia una base per $ T_{p}(M) $ per $ \forall p \in M $.\\
+sia una base per $ T_{p}(M) $ per qualsiasi $ p \in M $, i.e.
+
+\begin{equation}
+	T_{p}(M) = \expval{ (X_{i})_{p} }
+\end{equation}
+
 Siccome è necessario che tutti i vettori di $ \mathfrak{B}_{T_{p}(M)} $ siano linearmente indipendenti (in particolare nessuno di questi deve essere nullo), le sfere di dimensione pari non sono parallelizzabili.\\
-Le sfere di dimensione dispari che sono parallelizzabili sono solo tre: $ \S^{1} $\footnote{%
-	Vedi Esercizio \ref{BONUS2-4}.%
-}, $ \S^{3} $ ed $ \S^{7} $. Le altre sfere di dimensione dispari hanno un numero di campi di vettori linearmente indipendenti diverso dalla dimensione della sfera considerata.
+Le sfere di dimensione dispari che sono parallelizzabili sono solo tre\footnote{%
+	Per la sfera $ \S^{1} $, vedi Esercizio \ref{BONUS2-4}.%
+}: $ \S^{1} $, $ \S^{3} $ ed $ \S^{7} $. Le altre sfere di dimensione dispari hanno un numero di campi di vettori linearmente indipendenti diverso dalla dimensione della sfera considerata.
 
-\paragraph{$ \S^{3} $}
+\paragraph{Sfera $ \S^{3} $}
 
-Dimostriamo perché la sfera $ \S^{3} \subset \R^{4} $ sia parallelizzabile.\\
-Consideriamo i campi di vettori di $ \S^{3} $ e la loro identificazione in $ \R^{4} $ con coordinate $ (x^{1},x^{2},x^{3},x^{4}) $:
+Dimostriamo la parallelizzabilità della sfera $ \S^{3} \subset \R^{4} $.\\
+Consideriamo i seguenti campi di vettori di $ \S^{3} $ e la loro identificazione in $ \R^{4} $ con coordinate $ (x^{1},x^{2},x^{3},x^{4}) $:
 
-\begin{align}
-	\begin{split}
-		X = - x^{2} \dfrac{\partial}{\partial x^{1}} + x^{1} \dfrac{\partial}{\partial x^{2}} + x^{4} \dfrac{\partial}{\partial x^{3}} - x^{3} \dfrac{\partial}{\partial x^{4}} = (-x^{2}, +x^{1}, +x^{4}, -x^{3})\\
-		Y = - x^{3} \dfrac{\partial}{\partial x^{1}} - x^{4} \dfrac{\partial}{\partial x^{2}} + x^{1} \dfrac{\partial}{\partial x^{3}} + x^{2} \dfrac{\partial}{\partial x^{4}} = (-x^{3}, -x^{4}, +x^{1}, +x^{2})\\
-		Z = - x^{4} \dfrac{\partial}{\partial x^{1}} + x^{3} \dfrac{\partial}{\partial x^{2}} - x^{2} \dfrac{\partial}{\partial x^{3}} + x^{1} \dfrac{\partial}{\partial x^{4}} = (-x^{4}, +x^{3}, -x^{2}, +x^{1})
-	\end{split}
-\end{align}
+\begin{gather}
+	X = - x^{2} \pdv{x^{1}} + x^{1} \pdv{x^{2}} + x^{4} \pdv{x^{3}} - x^{3} \pdv{x^{4}} %
+	= (-x^{2}, +x^{1}, +x^{4}, -x^{3}) \\
+	%
+	Y = - x^{3} \pdv{x^{1}} - x^{4} \pdv{x^{2}} + x^{1} \pdv{x^{3}} + x^{2} \pdv{x^{4}} = (-x^{3}, -x^{4}, +x^{1}, +x^{2}) \\
+	%
+	Z = - x^{4} \pdv{x^{1}} + x^{3} \pdv{x^{2}} - x^{2} \pdv{x^{3}} + x^{1} \pdv{x^{4}} = (-x^{4}, +x^{3}, -x^{2}, +x^{1})
+\end{gather}
 
 dove $ X,Y,Z \in \chi(\S^{3}) $ per il lemma.\\
 Questi campi sono perpendicolari alla normale alla sfera e linearmente indipendenti:
 
 \begin{equation}
 	\begin{cases}
-		X \cdot p = Y \cdot p = Z \cdot p = 0 \in \R & \forall p \in \S^{3}\\
+		X \cdot p = Y \cdot p = Z \cdot p = 0 \in \R, & \forall p \in \S^{3}\\
 		X \cdot Y = X \cdot Z = Y \cdot Z = 0 \in \chi(\S^{3})
 	\end{cases}
+\end{equation}
+
+Costituiscono dunque una base per lo spazio tangente alla sfera, i.e.
+
+\begin{equation}
+	\B_{T_{p}(\S^{3})} = \{ X_{p}, Y_{p}, Z_{p} \} \qcomma \forall p \in \S^{3}
 \end{equation}
 
 \subsection{Curve integrali e flussi di campi di vettori}
