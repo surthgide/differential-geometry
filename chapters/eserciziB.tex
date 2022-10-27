@@ -1834,13 +1834,38 @@ qui
 
 %
 
-\section{}\label{BONUS2-4}
+\section{Parallelizzabilità sfera $ \S^{1} $}\label{BONUS2-4}
 
 \begin{tcolorbox}
 	Verificare che la sfera $ \S^{1} $ sia parallelizzabile.
 \end{tcolorbox}
 
-qui
+Per dimostrare la parallelizzabilità della sfera $ \S^{1} $ definita come
+
+\begin{equation}
+	\S^{1} = \{ (x,y) \in \R^{2} \mid x^{2} + y^{2} = 1 \} \subset \R^{2}
+\end{equation}
+
+consideriamo il campo di vettori liscio in $ X \in \chi(\R^{2}) $ identificato con il punto di $ \R^{2} $
+
+\begin{equation}
+	X = - y \pdv{x} + x \pdv{y} \equiv (-y,x)
+\end{equation}
+
+Questo campo di vettori è liscio anche nella sfera $ \S^{1} $ perché questa è sottovarietà\footnote{%
+	Vedi Lemma \ref{lemma:chi-subman-restr}.%
+} di $ \R^{2} $, dunque $ \eval{X}_{\S^{1}} \in \chi(\S^{1}) $.\\
+A questo punto, possiamo mostrare che la sfera $ \S^{1} $ sia parallelizzabile, i.e.
+
+\begin{equation}
+	\B_{T_{p}(\S^{1})} = \{ X_{p} \} \qcomma \forall p \in \S^{1}
+\end{equation}
+
+è una base per lo spazio tangente $ T_{p}(\S^{1}) $: questo perché il numero degli elementi della base $ \B_{T_{p}(\S^{1})} $ è unitario come la dimensione della sfera $ \S^{1} $ e questi appartengono al fibrato tangente della sfera in quanto perpendicolari alla normale in ogni punto della sfera, i.e.
+
+\begin{equation}
+	X_{p} \cdot p = (-y,x) \cdot (x,y) = 0 \qcomma \forall p \in \S^{1}
+\end{equation}
 
 %
 
