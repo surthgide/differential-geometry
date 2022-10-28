@@ -8166,45 +8166,51 @@ Siano $ M $ una varietà differenziabile di dimensione $ n $, $ p \in M $ un suo
 
 \begin{equation}
 	\begin{cases}
-		c'(t) = X_{c(t)} & \forall t \in (a,b)\\
+		c'(t) = X_{c(t)}, & \forall t \in (a,b) \\
 		c(0) = p
 	\end{cases}
 \end{equation}
 
-cioè il vettore tangente $ c'(t) $ alla curva $ c $ in ogni suo punto $ c(t) $ è uguale al vettore del campo di vettori $ X $ nello stesso punto $ X_{c(t)} $.\\
-Sia $ (U,\phi) \in M $ con $ \phi = (x^{1},\dots,x^{n}) $ intorno a $ p $ una carta di $ M $ e
+cioè il vettore tangente $ c'(t) $ alla curva $ c $ in ogni suo punto $ c(t) $ è uguale al vettore del campo di vettori $ X $ calcolato nello stesso punto $ X_{c(t)} $.\\
+Siano una carta
 
 \begin{equation}
-	X_{|U} = \sum_{i=1}^{n} a^{i} \dfrac{\partial}{\partial x^{i}}, \qquad a^{i} \in C^{\infty}(U)
+	(U,\phi) = (U; x^{1},\dots,x^{n}) \in M \qcomma \phi(p) = 0
 \end{equation}
 
-l'espressione locale del campo di vettori, possiamo dunque scrivere l'equazione del sistema in forma locale
+e l'espressione locale del campo di vettori
+
+\begin{equation}
+	\eval{X}_{U} = \sum_{i=1}^{n} a^{i} \, \pdv{x^{i}} \qcomma a^{i} \in C^{\infty}(U)
+\end{equation}
+
+possiamo dunque scrivere l'equazione del sistema in forma locale
 
 \begin{align}
 	\begin{split}
-		c'(t) &= X_{c(t)}\\\\
-		\sum_{i=1}^{n} \dot{c}^{i}(t) \left. \dfrac{\partial}{\partial x^{i}} \right|_{c(t)} &= \sum_{i=1}^{n} a^{i}(c(t)) \left. \dfrac{\partial}{\partial x^{i}} \right|_{c(t)}\\\\
+		c'(t) &= X_{c(t)} \\\\
+		\sum_{i=1}^{n} \dot{c}^{i}(t) \eval{ \pdv{x^{i}} }_{c(t)} &= \sum_{i=1}^{n} a^{i}(c(t)) \eval{ \pdv{x^{i}} }_{c(t)} \\\\
 		\dot{c}^{i}(t) &= a^{i}(c(t))
 	\end{split}
 \end{align}
 
-da cui il sistema di equazioni differenziali ordinarie (ODE)
+da cui il sistema di equazioni differenziali ordinarie (ODE) per $ i=1,\dots,n $
 
 \begin{equation}
 	\begin{cases}
-		\dot{c}^{i}(t) = a^{i}(c(t)) & \forall t \in (a,b)\\
-		c^{i}(0) = p^{i}
+		\dot{c}^{i}(t) = a^{i}(c(t)), & \forall t \in (a,b) \\
+		c^{i}(0) = p^{i} = x^{i} (p)
 	\end{cases}
 \end{equation}
 
-per $ \forall i=1,\dots,n $ dove $ p^{i} = x^{i} (p) $. L'esistenza di una curva integrale per il campo $ X $ deriva dalla soluzione $ c(t) = (c^{1}(t),\dots,c^{n}(t)) $ a questo sistema: per questo motivo, utilizziamo il seguente teorema
+L'esistenza e l'unicità di una curva integrale per il campo $ X $ deriva dalla soluzione $ c(t) = (c^{1}(t),\dots,c^{n}(t)) $ a questo sistema, dimostrata tramite il seguente teorema:
 
 \begin{theorem}[Esistenza e unicità della soluzione di un sistema di ODE (analisi)]
-	Siano un aperto $ V \in \R^{n} $, un punto $ p \in V $ e una funzione liscia $ f : V \to \R^{n} $, allora il sistema di ODE
+	Siano un aperto $ V \in \R^{n} $, un punto $ p \in V $ e un'applicazione liscia $ f : V \to \R^{n} $, allora il sistema di ODE
 	
 	\begin{equation}
 		\begin{cases}
-			\dot{y}(t) = f(c(t))\\
+			\dot{y}(t) = f(c(t)) \\
 			y(0) = p
 		\end{cases}
 	\end{equation}
@@ -8224,32 +8230,38 @@ per $ \forall i=1,\dots,n $ dove $ p^{i} = x^{i} (p) $. L'esistenza di una curva
 		\end{cases}
 	\end{equation}
 
-	allora $ (d,e) \subseteq (a(p),b(p)) $ e $ z \equiv y_{|(d,e)} $; la condizione di soluzione "massimale" indica che qualsiasi soluzione è definita all'interno dell'intervallo $ (a(p),b(p)) $.
+	allora
+	
+	\begin{equation}
+		\begin{cases}
+			(d,e) \subseteq (a(p),b(p)) \\
+			z = \eval{y}_{(d,e)}
+		\end{cases}
+	\end{equation}
+
+	 La condizione di soluzione "massimale" indica che qualsiasi soluzione è definita all'interno dell'intervallo $ (a(p),b(p)) $.
 \end{theorem}
 
-A questo punto è possibile applicare questo teorema al sistema
+Applichiamo ora questo teorema al sistema seguente
 
 \begin{equation}
 	\begin{cases}
-		\dot{c}^{i}(t) = a^{i}(c(t)) & \forall t \in (a,b)\\
+		\dot{c}^{i}(t) = a^{i}(c(t)), & \forall t \in (a,b) \\
 		c^{i}(0) = p^{i}
 	\end{cases}
 \end{equation}
 
-per $ \forall i=1,\dots,n $, e dunque esiste ed è unica la soluzione locale, i.e. una curva integrale $ c(t) $ per il campo di vettori $ X $.\\
+per $ i=1,\dots,n $: grazie al teorema, sappiamo che esiste ed è unica la soluzione locale, i.e. una curva integrale $ c(t) $ per il campo di vettori $ X $.\\
 Prendendo diverse carte della varietà, possiamo trovare una curva integrale per ogni aperto di esse: essendo la curva integrale unica per ogni carta, l'intersezione di aperti delle carte avrà come curva integrale la stessa curva, perciò esiste ed è unica la curva integrale massimale per un campo di vettori.
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.6\textwidth,keepaspectratio]{img52}
-\end{figure}
+\img{0.6}{img52}
 
 \begin{theorem}[Esistenza e unicità di curve integrali]
-	Siano $ X \in \chi(M) $ e $ p \in M $, allora esiste ed è unica la curva integrale massimale $ c : (a(p),b(p)) \to M $ per il campo $ X $, i.e.
+	Siano un campo di vettori liscio $ X \in \chi(M) $ e un punto $ p \in M $, allora esiste ed è unica la curva integrale massimale $ c : (a(p),b(p)) \to M $ per il campo $ X $, i.e.
 	
 	\begin{equation}
 		\begin{cases}
-			c'(t) = X_{c(t)} & \forall t \in (a,b)\\
+			c'(t) = X_{c(t)} & \forall t \in (a,b) \\
 			c(0) = p
 		\end{cases}
 	\end{equation}
@@ -8258,7 +8270,7 @@ Prendendo diverse carte della varietà, possiamo trovare una curva integrale per
 La curva integrale per un campo dipende dal punto $ p $ della varietà scelto: il seguente teorema asserisce che questa dipendenza è liscia
 
 \begin{theorem}
-	Siano un aperto $ V \in \R^{n} $ e una funzione liscia $ f : V \to \R^{n} $, allora per $ \forall p \in V $ esistono un intorno aperto $ W \subset V $ di $ p $, $ \varepsilon > 0 $ e una funzione liscia
+	Siano un aperto $ V \in \R^{n} $ e una funzione liscia $ f : V \to \R^{n} $, allora per qualsiasi punto $ p \in V $ esistono un intorno aperto $ W \subset V $ di $ p $, $ \varepsilon > 0 $ e una funzione liscia
 	
 	\begin{equation}
 		F : (-\varepsilon,\varepsilon) \times W \to V
@@ -8268,7 +8280,7 @@ La curva integrale per un campo dipende dal punto $ p $ della varietà scelto: i
 	
 	\begin{equation}
 		\begin{cases}
-			\dot{F}(t,q) = f(F(t,q)) & \forall (t,q) \in (-\varepsilon,\varepsilon) \times W\\
+			\dot{F}(t,q) = f(F(t,q)), & \forall (t,q) \in (-\varepsilon,\varepsilon) \times W \\
 			F(0,q) = q
 		\end{cases}
 	\end{equation}
@@ -8278,8 +8290,8 @@ La curva integrale per un campo dipende dal punto $ p $ della varietà scelto: i
 
 Questo teorema può dunque essere trasposto sulle varietà:
 
-\begin{theorem}\label{flux-var}
-	Siano $ X \in \chi(M) $ e $ p \in M $, allora esiste un aperto $ W \subset M $ di $ p $, $ \varepsilon > 0 $ e una funzione liscia
+\begin{theorem}\label{thm:flux-var}
+	Siano un campo di vettori liscio $ X \in \chi(M) $ e un punto $ p \in M $, allora esiste un aperto $ W \subset M $ di $ p $, $ \varepsilon > 0 $ e una funzione liscia
 	
 	\begin{equation}
 		F : (-\varepsilon,\varepsilon) \times W \to V
@@ -8289,7 +8301,7 @@ Questo teorema può dunque essere trasposto sulle varietà:
 	
 	\begin{equation}
 		\begin{cases}
-			F'(t,q) = X_{F(t,q)} & \forall (t,q) \in (-\varepsilon,\varepsilon) \times W\\
+			F'(t,q) = X_{F(t,q)}, & \forall (t,q) \in (-\varepsilon,\varepsilon) \times W \\
 			F(0,q) = q
 		\end{cases}
 	\end{equation}
@@ -8297,14 +8309,14 @@ Questo teorema può dunque essere trasposto sulle varietà:
 	L'applicazione $ F(t,q) $ si chiama \textit{flusso locale del campo di vettori} $ X $.
 \end{theorem}
 
-Come notazione per i flussi, verrà utilizzato $ F_{t}(q) \doteq F(t,q) $.\\
+Come notazione per i flussi, utilizzeremo $ F_{t}(q) \doteq F(t,q) $.\\
 La \textit{linea di flusso in} $ q $ è definita come $ F_{t}(q) $ al variare di $ t \in (-\varepsilon,\varepsilon) $ con $ q $ fissato: presa la curva integrale di $ X $ che inizia in $ q $ indicata come
 
 \begin{equation}
 	F(\cdot,q) : (-\varepsilon,\varepsilon) \to V
 \end{equation}
 
-la sua immagine è la linea di flusso. Questa curva integrale non è massimale per $ X $: il dominio non dipende dal punto ma è scelto perché la curva soddisfi la condizione per $ \forall q \in W $.\\
+la sua immagine è la linea di flusso. Questa curva integrale non è massimale per $ X $: il dominio non dipende dal punto ma è scelto perché la curva soddisfi la condizione per qualsiasi $ q \in W $.\\
 Se il flusso di $ X $ è \textit{globale}, i.e. definito in $ \R \times M $
 
 \begin{equation}
@@ -8314,7 +8326,7 @@ Se il flusso di $ X $ è \textit{globale}, i.e. definito in $ \R \times M $
 il campo di vettori $ X $ si dice \textit{completo}.
 
 \begin{definition}
-	Siano $ X \in \chi(M) $, $ F_{t}(q) $ il suo flusso locale e supponiamo che siano definiti $ F_{t} $, $ F_{s} $ e $ F_{t+s} $, allora
+	Siano $ X \in \chi(M) $ un campo di vettori liscio, $ F_{t}(q) $ il suo flusso locale e supponiamo che siano definiti $ F_{t} $, $ F_{s} $ e $ F_{t+s} $, allora
 	
 	\begin{equation}
 		F_{t}(F_{s}(q)) = (F_{t} \circ F_{s})(q) = F_{t+s}(q)
@@ -8326,7 +8338,7 @@ il campo di vettori $ X $ si dice \textit{completo}.
 	
 	\begin{equation}
 		\begin{cases}
-			F'_{t}(F_{s}(q)) = X_{F_{t}(F_{s}(q))} & \forall t \in (-\varepsilon,\varepsilon)\\
+			F'_{t}(F_{s}(q)) = X_{F_{t}(F_{s}(q))}, & \forall t \in (-\varepsilon,\varepsilon) \\
 			F_{0}(F_{s}(q)) = F(0,F_{s}(q)) = F_{s}(q)
 		\end{cases}
 	\end{equation}
@@ -8334,14 +8346,14 @@ il campo di vettori $ X $ si dice \textit{completo}.
 	d'altra parte, ponendo $ u = t+s $
 	
 	\begin{equation}
-		F'_{t+s}(q) = \dfrac{\operatorname{d}}{\operatorname{du}} F_{u}(q) = F'_{u}(q)
+		F'_{t+s}(q) = \dv{u} F_{u}(q) = F'_{u}(q)
 	\end{equation}
 
 	dunque
 	
 	\begin{equation}
 		\begin{cases}
-			F'_{t+s}(q) = F'_{u}(q) = X_{F_{u}(q)} = X_{F_{t+s}(q)} & \forall t \in (-\varepsilon,\varepsilon)\\
+			F'_{t+s}(q) = F'_{u}(q) = X_{F_{u}(q)} = X_{F_{t+s}(q)}, & \forall t \in (-\varepsilon,\varepsilon)\\
 			F_{0+s}(q) = F_{s}(q)
 		\end{cases}
 	\end{equation}
@@ -8356,7 +8368,7 @@ il campo di vettori $ X $ si dice \textit{completo}.
 Nel caso in cui un campo di vettori $ X $ ammetta un flusso globale $ F : \R \times M \to M $, abbiamo che
 
 \begin{equation}
-	F_{t} \circ F_{s} = F_{t+s}, \qquad \forall t,s \in \R
+	F_{t} \circ F_{s} = F_{t+s} \qcomma \forall t,s \in \R
 \end{equation}
 
 In particolare, se $ s = -t $ abbiamo che
@@ -8365,14 +8377,13 @@ In particolare, se $ s = -t $ abbiamo che
 	F_{t} \circ F_{-t} = F_{0} = \id_{M}
 \end{equation}
 
-i.e. $ F_{t} $ è invertibile con inversa $ (F_{t})^{-1} = F_{-t} $ e dunque $ F_{t} : M \to M $ è un diffeomorfismo per $ \forall t \in \R $: da questo è possibile ottenere un \textit{gruppo di diffeomorfismi a un parametro} tramite l'applicazione
+i.e. $ F_{t} $ è invertibile con inversa $ (F_{t})^{-1} = F_{-t} $ e dunque $ F_{t} : M \to M $ è un diffeomorfismo per qualsiasi $ t \in \R $: da questo è possibile ottenere un \textit{gruppo di diffeomorfismi a un parametro} tramite l'applicazione
 
-\begin{align}
-	\begin{split}
-		G : \R &\to \operatorname{Diff}(M)\\
-		t &\mapsto F_{t}
-	\end{split}
-\end{align}
+\map{G}
+	{\R}{\operatorname{Diff}(M)}
+	{t}{F_{t}}
+
+dove $ \operatorname{Diff}(M) $ indica l'insieme dei diffeomorfismi su $ M $.
 
 \subsubsection{\textit{Esempi}}
 
