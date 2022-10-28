@@ -8389,10 +8389,10 @@ dove $ \operatorname{Diff}(M) $ indica l'insieme dei diffeomorfismi su $ M $.
 
 \paragraph{1) Campo di vettori completo}
 
-Sia il campo di vettori liscio $ X \in chi(\R^{2}) $ con la sua identificazione in $ \R^{2} $ definito come
+Sia il campo di vettori liscio $ X \in \chi(\R^{2}) $ con la sua identificazione in $ \R^{2} $ definito come
 
 \begin{equation}
-	X = - y \dfrac{\partial}{\partial x} + x \dfrac{\partial}{\partial y} = (-y, x)
+	X = - y \, \pdv{x} + x \, \pdv{y} \equiv (-y,x)
 \end{equation}
 
 L'obiettivo è trovare la curva integrale passante per un generico punto $ p = (p^{1},p^{2}) \in \R^{2} $ e il flusso di $ X $.\\
@@ -8400,9 +8400,9 @@ Sia $ c : (a,b) \to \R^{2} $ una curva integrale per $ X $ con
 
 \begin{equation}
 	\begin{cases}
-		c(t) = (x(t),y(t))\\
-		c(0) = p\\
-		c'(t) = \dot{x}(t) \left. \dfrac{\partial}{\partial x} \right|_{c(t)} + \dot{y}(t) \left. \dfrac{\partial}{\partial y} \right|_{c(t)} = (\dot{x}(t),\dot{y}(t))		
+		c(t) = (x(t),y(t)) \\
+		c(0) = p \\
+		c'(t) = \dot{x}(t) \eval{ \dpdv{x} }_{c(t)} + \dot{y}(t) \eval{ \dpdv{y} }_{c(t)} \equiv (\dot{x}(t),\dot{y}(t))		
 	\end{cases}
 \end{equation}
 
@@ -8410,8 +8410,8 @@ per trovare la forma della curva, eguagliamo il vettore tangente alla curva con 
 
 \begin{align}
 	\begin{split}
-		c'(t) &= X_{c(t)}\\
-		\dot{x}(t) \left. \dfrac{\partial}{\partial x} \right|_{c(t)} + \dot{y}(t) \left. \dfrac{\partial}{\partial y} \right|_{c(t)} &= - y(t) \left. \dfrac{\partial}{\partial x} \right|_{c(t)} + x(t) \left. \dfrac{\partial}{\partial y} \right|_{c(t)}
+		c'(t) &= X_{c(t)} \\
+		\dot{x}(t) \eval{ \dpdv{x} }_{c(t)} + \dot{y}(t) \eval{ \dpdv{y} }_{c(t)} &= - y(t) \eval{ \dpdv{x} }_{c(t)} + x(t) \eval{ \dpdv{y} }_{c(t)}
 	\end{split}
 \end{align}
 
@@ -8419,9 +8419,9 @@ da cui otteniamo il sistema di ODE
 
 \begin{equation}
 	\begin{cases}
-		\dot{x}(t) = - y(t)\\
-		\dot{y}(t) = x(t)\\
-		x(0) = p^{1}\\
+		\dot{x}(t) = - y(t) \\
+		\dot{y}(t) = x(t) \\
+		x(0) = p^{1} \\
 		y(0) = p^{2}
 	\end{cases}
 \end{equation}
@@ -8432,7 +8432,7 @@ derivando la prima equazione rispetto a $ t $ otteniamo
 	\ddot{x}(t) = - \dot{y}(t) = - x(t) %
 	\implies %
 	\begin{cases}
-		\ddot{x}(t) + x(t) = 0\\
+		\ddot{x}(t) + x(t) = 0 \\
 		x(0) = p^{1}
 	\end{cases}
 \end{equation}
@@ -8441,9 +8441,9 @@ la cui soluzione è
 
 \begin{equation}
 	\begin{cases}
-		x(t) = A \cos(t) + B \sin(t), \qquad A,B \in \R\\
+		x(t) = A \cos(t) + B \sin(t), & A,B \in \R \\
 		x(0) = p^{1} = A
-	\end{cases}%
+	\end{cases} %
 	\implies %
 	x(t) = p^{1} \cos(t) + B \sin(t)
 \end{equation}
@@ -8452,9 +8452,9 @@ per trovare l'altra soluzione
 
 \begin{equation}
 	\begin{cases}
-		y(t) = - \dot{x}(t) = p^{1} \sin(t) - B \cos(t)\\
+		y(t) = - \dot{x}(t) = p^{1} \sin(t) - B \cos(t) \\
 		y(0) = p^{2} = - B
-	\end{cases}%
+	\end{cases} %
 	\implies %
 	y(t) = p^{1} \sin(t) + p^{2} \cos(t)
 \end{equation}
@@ -8468,59 +8468,47 @@ dunque
 o alternativamente possiamo scrivere $ c(t) $ come vettore colonna
 
 \begin{equation}
-	c(t) = %
-	\begin{bmatrix}
-		x(t) \\\\ y(t)
-	\end{bmatrix}%
-	= %
-	\begin{bmatrix}
-		\cos(t) & - \sin(t) \\\\%
-		\sin(t) & \cos(t)
-	\end{bmatrix}%
-	%
-	\begin{bmatrix}
-		p^{1} \\\\ p^{2}
-	\end{bmatrix}
+	c(t) = \bmqty{ x(t) \\\\ y(t) } %
+	= \bmqty{
+		\cos(t) & - \sin(t) \\\\
+		\sin(t) & \cos(t) %
+		} %
+		\bmqty{ p^{1} \\\\ p^{2} }
 \end{equation}
 
 Questo significa che le curve integrali, al variare del punto $ p $, sono cerchi concentrici di raggio $ \sqrt{(p^{1})^{2} + (p^{2})^{2}} $, i.e. la distanza del punto $ p $ dall'origine.\\
 Il flusso del campo di vettori $ X $ è globale
 
-\begin{align}
-	\begin{split}
-		F : \R \times \R^{2} &\to \R^{2}\\
-		(t,q) = (t,q^{1},q^{2}) &\mapsto F_{t}(q) = %
-		\begin{bmatrix}
-			\cos(t) & - \sin(t) \\\\%
-			\sin(t) & \cos(t)
-		\end{bmatrix}%
-		%
-		\begin{bmatrix}
-			q^{1} \\\\ q^{2}
-		\end{bmatrix}
-	\end{split}
-\end{align}
+\map{F}
+	{\R \times \R^{2}}{\R^{2}}
+	{(t,q) = (t,q^{1},q^{2})}{ %
+								F_{t}(q) = \bmqty{
+													\cos(t) & - \sin(t) \\\\
+													\sin(t) & \cos(t) %
+													} %
+											\bmqty{ p^{1} \\\\ p^{2} }
+								}
 
 dunque il campo $ X $ è completo.\\
 Verifichiamo ora che valga la legge di composizione dei flussi:
 
 \begin{align}
 	\begin{split}
-		F_{t+s} &= F_{t} \circ F_{s}\\\\
+		F_{t+s} &= F_{t} \circ F_{s} \\\\
 		%
-		\begin{bmatrix}
-			\cos(t+s) & - \sin(t+s) \\\\%
-			\sin(t+s) & \cos(t+s)
-		\end{bmatrix}%
+		\bmqty{
+				\cos(t+s) & - \sin(t+s) \\\\
+				\sin(t+s) & \cos(t+s) %
+				} %
 		&= %
-		\begin{bmatrix}
-			\cos(t) & - \sin(t) \\\\%
-			\sin(t) & \cos(t)
-		\end{bmatrix}%
-		\begin{bmatrix}
-			\cos(s) & - \sin(s) \\\\%
-			\sin(s) & \cos(s)
-		\end{bmatrix}
+		\bmqty{
+				\cos(t) & - \sin(t) \\\\
+				\sin(t) & \cos(t) %
+				} %
+		\bmqty{
+				\cos(s) & - \sin(s) \\\\
+				\sin(s) & \cos(s) %
+				}
 	\end{split}
 \end{align}
 
@@ -8528,18 +8516,18 @@ questo è vero in quanto le due matrici rappresentano rotazioni rispettivamente 
 
 \paragraph{2) Campo di vettori non completo}
 
-Sia il campo di vettori liscio $ X \in chi(\R \setminus \{0\}) $
+Sia il campo di vettori liscio $ X \in \chi(\R \setminus \{0\}) $
 
 \begin{equation}
-	X = x^{2} \dfrac{\partial}{\partial x}
+	X = x^{2} \, \pdv{x}
 \end{equation}
 
 L'obiettivo è trovare la curva integrale passante per un generico punto $ p \in \R \setminus \{0\} $ e il flusso di $ X $.\\
-Sia $ c : (a,b) \to \R \setminus \{0\} $ una curva integrale per $ X $, chiamando $ c(t) = x(t) $, abbiamo che
+Sia $ c : (a,b) \to \R \setminus \{0\} $ una curva integrale per $ X $: chiamando $ c(t) = x(t) $, abbiamo che
 
 \begin{equation}
 	\begin{cases}
-		\dot{x}(t) = x^{2}(t)\\
+		\dot{x}(t) = x^{2}(t) \\
 		x(0) = p
 	\end{cases}
 \end{equation}
@@ -8547,27 +8535,27 @@ Sia $ c : (a,b) \to \R \setminus \{0\} $ una curva integrale per $ X $, chiamand
 risolvendo la ODE
 
 \begin{equation}
-	\dfrac{\operatorname{dx}}{\operatorname{dt}} = x^{2} %
+	\dv{x}{t} = x^{2} %
 	\implies %
-	\dfrac{\operatorname{dx}}{x^{2}} = \operatorname{dt} %
+	\dfrac{\dd{x}}{x^{2}} = \operatorname{dt} %
 	\implies %
-	- \dfrac{1}{x} = t + c, \quad c \in \R
+	- \dfrac{1}{x} = t + c \qcomma c \in \R
 \end{equation}
 
 da cui
 
 \begin{equation}
 	\begin{cases}
-		x(t) = - \dfrac{1}{t + c}\\\\
+		x(t) = - \dfrac{1}{t + c} \\\\
 		x(0) = p = - \dfrac{1}{c}
-	\end{cases}%
+	\end{cases} %
 	\implies %
 	c = - \dfrac{1}{p} %
 	\implies %
 	x(t) = - \dfrac{1}{t - \dfrac{1}{p}}
 \end{equation}
 
-la soluzione è dunque la curva integrale
+La soluzione è dunque la curva integrale
 
 \begin{equation}
 	x(t) = \dfrac{p}{1 - t p}
@@ -8577,36 +8565,30 @@ Sappiamo, dal teorema, che esiste un intervallo massimale su cui è definita (ch
 
 \begin{equation}
 	\begin{cases}
-		c : \left( -\infty, \dfrac{1}{p} \right) \to \R \setminus \{0\} & p > 0\\\\
-		c : \left( -\dfrac{1}{p}, \infty \right) \to \R \setminus \{0\} & p < 0
+		c : \left( -\infty, \dfrac{1}{p} \right) \to \R \setminus \{0\}, & p > 0\\\\
+		c : \left( -\dfrac{1}{p}, \infty \right) \to \R \setminus \{0\}, & p < 0
 	\end{cases}
 \end{equation}
 
 siccome non è possibile estendere il dominio a tutto $ \R $, il campo di vettori $ X $ non è completo.\\
-Considerando $ p>0 $, i.e. $ t \in (-\infty, \sfrac{1}{p}) $, e $ q \in \R \setminus \{0\} $, otteniamo il flusso locale
+Considerando $ p>0 $, i.e. $ t \in (-\infty, 1/p) $, e $ q \in \R \setminus \{0\} $, otteniamo il flusso locale
+
+\map{F}
+	{\left( -\infty, \dfrac{1}{p} \right) \times \R \setminus \{0\}}{\R \setminus \{0\}}
+	{(t,q)}{\dfrac{q}{1 - t q}}
+
+Supponendo che $ t+s $ sia definito, verifichiamo ora che valga la legge di composizione dei flussi:
 
 \begin{align}
 	\begin{split}
-		F : \left( -\infty, \dfrac{1}{p} \right) \times \R \setminus \{0\} &\to \R \setminus \{0\}\\
-		(t,q) &\mapsto \dfrac{q}{1 - t q}
-	\end{split}
-\end{align}
-
-Verifichiamo ora che valga la legge di composizione dei flussi:
-
-\begin{align}
-	\begin{split}
-		(F_{t} \circ F_{s})(q) &= F_{t} \left( \dfrac{q}{1 - s q} \right)\\\\
-		&= \dfrac{\dfrac{q}{1 - s q}}{1 - t \left( \dfrac{q}{1 - s q} \right)}\\\\
-		&= \dfrac{q}{(1 - s q) \left(1 - \dfrac{t q}{1 - s q} \right)}\\\\
-		&= \dfrac{q}{1 - s q - t q}\\\\
-		&= \dfrac{q}{1 - (t+s) q}\\\\
+		(F_{t} \circ F_{s})(q) &= F_{t} \left( \dfrac{q}{1 - s q} \right) \\\\
+		&= \dfrac{\dfrac{q}{1 - s q}}{1 - t \left( \dfrac{q}{1 - s q} \right)} \\\\
+		&= \dfrac{q}{(1 - s q) \left(1 - \dfrac{t q}{1 - s q} \right)} \\\\
+		&= \dfrac{q}{1 - s q - t q} \\\\
+		&= \dfrac{q}{1 - (t+s) q} \\\\
 		&= F_{t+s}(q)
 	\end{split}
 \end{align}
-
-supponendo che $ t+s $ sia definito.
-
 \subsection{Commutatore tra due campi di vettori}
 
 Consideriamo le identificazioni tra i campi di vettori e le derivazioni $ \chi(M) = \der(C^{\infty}(M)) $ e tra una funzione liscia e la sua derivata tramite un campo di vettori
