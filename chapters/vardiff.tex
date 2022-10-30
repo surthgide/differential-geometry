@@ -8122,7 +8122,7 @@ Una varietà $ M $ di dimensione $ n $ è \textit{parallelizzabile} se esistono 
 sia una base per $ T_{p}(M) $ per qualsiasi $ p \in M $, i.e.
 
 \begin{equation}
-	T_{p}(M) = \expval{ (X_{i})_{p} }
+	T_{p}(M) = \ev{ (X_{i})_{p} }
 \end{equation}
 
 Siccome è necessario che tutti i vettori di $ \mathfrak{B}_{T_{p}(M)} $ siano linearmente indipendenti (in particolare nessuno di questi deve essere nullo), le sfere di dimensione pari non sono parallelizzabili.\\
@@ -8765,7 +8765,8 @@ Il commutatore $ [X,Y]_{p}(f) $ è ancora una funzione liscia in quanto:
 
 \subsection{Distribuzioni e teorema di Frobenius}
 
-Sia $ M $ una varietà differenziabile di dimensione $ n $, una \textit{distribuzione} $ r $\textit{-dimensionale} ($ r \leqslant n $) è un'assegnazione $ \forall p \in M $ di un sottospazio $ D_{p} \subseteq T_{p}(M) $ tale che $ \dim(D_{p}) = r $; una distribuzione è, in sostanza, una famiglia di sottospazi dello spazio tangente punto per punto. Una distribuzione $ r $-dimensionale è liscia se per $ \forall p \in M $ esistono un intorno aperto $ U \subset M $ di $ p $ e un'insieme di $ r $ campi di vettori lisci $ X_{1},\dots,X_{r} \in \chi(M) $ tali che
+Sia $ M $ una varietà differenziabile di dimensione $ n $, una \textit{distribuzione} $ r $\textit{-dimensionale} ($ r \leqslant n $) assegna a qualsiasi punto $ p \in M $ un sottospazio $ D_{p} \subseteq T_{p}(M) $ tale che $ \dim(D_{p}) = r $, i.e. una distribuzione è una famiglia di sottospazi dello spazio tangente punto per punto.\\
+Una distribuzione $ r $-dimensionale è liscia se per qualsiasi punto $ p \in M $ esistono un intorno aperto $ U \subset M $ di $ p $ e un'insieme di $ r $ campi di vettori lisci $ X_{1},\dots,X_{r} \in \chi(M) $ tali che
 
 \begin{equation}
 	D_{p} = \ev{ (X_{1})_{p}, \dots, (X_{r})_{p} }_{\R}
@@ -8775,34 +8776,34 @@ Una distribuzione è liscia perché varia in tale modo rispetto al punto a cui �
 Sia $ D $ una distribuzione liscia $ r $-dimensionale, una \textit{varietà integrale} di $ D $ è una varietà differenziabile $ S \subset M $ (non necessariamente una sottovarietà) tale che
 
 \begin{equation}
-	T_{p}(S) = D_{p}, \qquad \forall p \in M
+	T_{p}(S) = D_{p} \qcomma \forall p \in M
 \end{equation}
 
 con $ \dim(S) = r $, cioè che ha, in ogni suo punto, come spazio tangente una distribuzione liscia.\\
-Una distribuzione liscia $ r $-dimensionale $ D $ è \textit{completamente integrabile} se per $ \forall q \in M $ esiste una varietà integrale $ S $ per $ D $ tale che $ q \in S $, cioè se esiste una varietà integrabile per ogni punto della varietà.\\\\
+Una distribuzione liscia $ r $-dimensionale $ D $ è \textit{completamente integrabile} se per qualsiasi $ q \in M $ esiste una varietà integrale $ S $ per $ D $ tale che $ q \in S $, cioè se esiste una varietà integrabile per ogni punto della varietà.\\\\
 %
-Ad esempio, sia un campo di vettori $ X \in \chi(M) $ non nullo in un aperto $ U $, i.e. $ X \neq 0 $ in $ U \subset M $ e consideriamo la distribuzione liscia 1-dimensionale
+Ad esempio, sia un campo di vettori $ X \in \chi(M) $ non nullo in un aperto $ U $, i.e. $ X \neq 0 $ in $ U \subset M $, e consideriamo la distribuzione liscia $ 1 $-dimensionale
 
 \begin{equation}
 	D = \{ \lambda X \mid \lambda \in \R \} %
-	\implies%
+	\implies %
 	D_{p} = \{ \lambda X_{p} \mid \lambda \in \R \}
 \end{equation}
 
 ciò significa che, per ogni punto, la distribuzione individua la retta nella direzione del vettore $ X_{p} $.\\
-Questa distribuzione è completamente integrabile in quanto per $ \forall q \in M $ esiste la curva integrale di $ X $ che passa per $ q $: questo significa che la curva integrale è anche una varietà integrale.\\\\
+Questa distribuzione è completamente integrabile in quanto per qualsiasi $ q \in M $ esiste la curva integrale di $ X $ che passa per $ q $: questo significa che la curva integrale è anche una varietà integrale.\\\\
 %
-Data una distribuzione $ D $, un campo di vettori $ X \in \chi(M) $ appartiene alla distribuzione se $ X_{p} \in D_{p} $ per $ \forall p \in M $. Nella distribuzione dell'esempio precedente $ f X \in D $ per $ \forall f \in C^{\infty}(M) $ con $ f \neq 0 $.
+Data una distribuzione $ D $, un campo di vettori $ X \in \chi(M) $ appartiene alla distribuzione se $ X_{p} \in D_{p} $ per qualsiasi $ p \in M $. Nella distribuzione dell'esempio precedente, $ f X \in D $ per qualsiasi $ f \in C^{\infty}(M) $ con $ f \neq 0 $.
 
 \begin{theorem}[Frobenius]
-	Sia $ D $ una distribuzione $ r $-dimensionale liscia su una varietà differenziabile $ M $, allora $ D $ è completamente integrabile se e solo se $ D $ è involutoria, i.e.
+	Sia $ D $ una distribuzione $ r $-dimensionale liscia su una varietà differenziabile $ M $, allora $ D $ è completamente integrabile se e solo se $ D $ è \textit{involutoria}, i.e.
 	
 	\begin{equation}
 		\begin{cases}
-			D \text{ involutoria}\\
+			D \text{ involutoria} \\
 			X,Y \in D
 		\end{cases}
-		\implies%
+		\implies %
 		[X,Y] \in D
 	\end{equation}
 \end{theorem}
@@ -8813,25 +8814,25 @@ Data una distribuzione $ D $, un campo di vettori $ X \in \chi(M) $ appartiene a
 
 Se $ X_{p} = 0 $ allora la curva integrale per $ X $ che inizia in $ p $ è costante\footnote{%
 	Vedi Esercizio \ref{es2-32}.%
-}. A questo punto, supponiamo che $ X_{p} \neq 0 $ e consideriamo un intorno $ U $ di $ p $ dove $ X_{q} \neq 0 $ per $ \forall q \in U $ e la distribuzione liscia 1-dimensionale
+}. A questo punto, supponiamo che $ X_{p} \neq 0 $ e consideriamo un intorno $ U $ di $ p $ dove $ X_{q} \neq 0 $ per qualsiasi $ q \in U $ e la distribuzione liscia $ 1 $-dimensionale
 
 \begin{equation}
-	D = \{ \lambda X \mid \lambda \in \R \}
+	D = \{ \lambda X \mid \lambda \in \R \} \qcomma D_{p} = \ev{ X_{p} }_{\R}
 \end{equation}
 
-dove $ D_{p} = \ev{ X_{p} }_{\R} $. L'esistenza di una curva integrale che passa per $ p $ è verificata se $ D $ è involutoria, i.e. (per il teorema di Frobenius) $ D $ è completamente integrabile e quindi esiste la curva integrale ricercata.\\
-Per dimostrare che $ D $ sia involutoria è necessario che, presi due campi di vettori della distribuzione $ Y,Z \in D $, il commutatore di questi appartiene ancora alla distribuzione, i.e. $ [Y,Z] \in D $: per la distribuzione considerata in precedenza
+L'esistenza di una curva integrale che passa per $ p $ è verificata se $ D $ è involutoria, i.e. (per il teorema di Frobenius) $ D $ è completamente integrabile e quindi esiste la curva integrale ricercata.\\
+Per dimostrare che $ D $ sia involutoria è necessario che, presi due campi di vettori della distribuzione $ Y,Z \in D $, il commutatore di questi appartenga ancora alla distribuzione, i.e. $ [Y,Z] \in D $: per la distribuzione considerata in precedenza
 
 \begin{equation}
-	Y,Z \in D \iff Y = fX \wedge Z = gX \quad f,g \in C^{\infty}(U)
+	Y,Z \in D \iff Y = f X \wedge Z = g X \qcomma f,g \in C^{\infty}(U)
 \end{equation}
 
-in quanto la moltiplicazione di un campo di vettori liscio per una funzione liscia è ancora un vettore liscio (nella stessa direzione), calcolando ora il commutatore tra i due campi
+in quanto la moltiplicazione di un campo di vettori liscio per una funzione liscia è ancora un vettore liscio (nella stessa direzione). Calcolando ora il commutatore tra i due campi
 
 \begin{align}
 	\begin{split}
-		[Y,Z] &= [fX,gX]\\
-		&= fg [X,X] + (f \, X(g)) X - (g \, X(f)) X\\
+		[Y,Z] &= [fX,gX] \\
+		&= fg [X,X] + (f \, X(g)) X - (g \, X(f)) X \\
 		&= (f \, X(g) - g \, X(f)) X \in D
 	\end{split}
 \end{align}
