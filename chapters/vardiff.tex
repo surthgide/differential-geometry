@@ -8847,8 +8847,8 @@ Prendiamo $ \R^{3} $ e i campi di vettori lisci (con la loro identificazione)
 
 \begin{equation}
 	\begin{cases}
-		X = z \dfrac{\partial}{\partial x} + \dfrac{\partial}{\partial z} = (z,0,1)\\\\
-		Y = \dfrac{\partial}{\partial y} + \dfrac{\partial}{\partial z} = (0,1,1)
+		X = z \, \pdv{x} + \pdv{z} \equiv (z,0,1) \\\\
+		Y = \pdv{y} + \pdv{z} \equiv (0,1,1)
 	\end{cases}
 \end{equation}
 
@@ -8859,17 +8859,17 @@ Consideriamo la distribuzione liscia 2-dimensionale
 \end{equation}
 
 Se $ D $ fosse completamente integrabile, per ogni punto di $ \R^{3} $ esisterebbe una superficie il cui spazio tangente è generato da una combinazione lineare dei campi di vettori (definiti sopra) valutati in quello stesso punto.\\
-Verifichiamo ora che non sia completamente integrabile: per farlo, è sufficiente esibire un controesempio, i.e. un commutatore tra i campi della distribuzione che non sia appartenente alla distribuzione, prendiamo dunque semplicemente il commutatore tra i campi $ X $ e $ Y $
+Verifichiamo ora che non sia completamente integrabile: per farlo, è sufficiente esibire un controesempio, i.e. un commutatore tra i campi della distribuzione che non sia appartenente alla distribuzione, prendiamo dunque il commutatore tra i campi $ X $ e $ Y $
 
 \begin{align}
 	\begin{split}
-		[X,Y] &= \left[ z \dfrac{\partial}{\partial x} + \dfrac{\partial}{\partial z} , \dfrac{\partial}{\partial y} + \dfrac{\partial}{\partial z} \right]\\
-		&= \left[ z \dfrac{\partial}{\partial x}, \dfrac{\partial}{\partial y} \right] + \left[ z \dfrac{\partial}{\partial x}, \dfrac{\partial}{\partial z} \right] + \cancel{\left[ \dfrac{\partial}{\partial z}, \dfrac{\partial}{\partial y} \right]} + \cancel{\left[ \dfrac{\partial}{\partial z}, \dfrac{\partial}{\partial z} \right]}\\
-		&= \left[ z \dfrac{\partial}{\partial x}, \dfrac{\partial}{\partial y} \right] + \left[ z \dfrac{\partial}{\partial x}, \dfrac{\partial}{\partial z} \right]\\
-		&= (z \cdot 1) \cancel{\left[ \dfrac{\partial}{\partial x}, \dfrac{\partial}{\partial y} \right]} + \left( z \, \cancel{\dfrac{\partial 1}{\partial x}} \right) \dfrac{\partial}{\partial y} - \cancel{\left( \dfrac{\partial z}{\partial y} \right)} \dfrac{\partial}{\partial x} + \\
-		& \hal + (z \cdot 1) \cancel{\left[ \dfrac{\partial}{\partial x}, \dfrac{\partial}{\partial z} \right]} + \left( z \, \cancel{\dfrac{\partial 1}{\partial x}} \right) \dfrac{\partial}{\partial z} - \cancelto{1}{\left( \dfrac{\partial z}{\partial z} \right)} \dfrac{\partial}{\partial x}\\
+		[X,Y] &= \left[ z \, \pdv{x} + \pdv{z} , \pdv{y} + \pdv{z} \right] \\
+		&= \left[ z \pdv{x}, \pdv{y} \right] + \left[ z \pdv{x}, \pdv{z} \right] + \cancel{\left[ \pdv{z}, \pdv{y} \right]} + \cancel{\left[ \pdv{z}, \pdv{z} \right]} \\
+		&= \left[ z \pdv{x}, \pdv{y} \right] + \left[ z \pdv{x}, \pdv{z} \right] \\
+		&= (z \cdot 1) \cancel{\left[ \pdv{x}, \pdv{y} \right]} + \left( z \, \cancel{ \pdv{1}{x} } \right) \pdv{y} - \cancel{\left( \pdv{z}{y} \right)} \pdv{x} + \\
+		& \hal + (z \cdot 1) \cancel{\left[ \pdv{x}, \pdv{z} \right]} + \left( z \, \cancel{\pdv{1}{x}} \right) \pdv{z} - \cancelto{1}{\left( \pdv{z}{z} \right)} \pdv{x}\\
 		%
-		&= - \dfrac{\partial}{\partial x} \notin D
+		&= - \pdv{x} \notin D
 	\end{split}
 \end{align}
 
