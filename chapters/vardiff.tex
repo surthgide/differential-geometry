@@ -8883,36 +8883,35 @@ Siano $ N $ e $ M $ due varietà differenziabili di dimensione rispettivamente $
 	{T_{p}(N)}{T_{F(p)}(M)}
 	{X_{p}}{F_{*p}(X_{p})}
 
-ma questo non può essere esteso a tutto il campo di vettori in quanto, se l'applicazione non fosse iniettiva, esisterebbero $ p,q \in N $ tali che $ F(p) = F(q) $: a questo punto si presenta l'assegnazione del vettore in $ F(p) = F(q) $ e ci sarebbe ambiguità tra $ F_{*p}(X_{p}) $ e $ F_{*p}(X_{q}) $ e tra $ F_{*q}(X_{p}) $ e $ F_{*q}(X_{q}) $. Anche se fosse iniettiva ma comunque non suriettiva, non esisterebbe un vettore $ X_{p} \in \chi(N) $ in $ p \in N $ la cui immagine attraverso il differenziale $ F_{*p} $ sia un vettore in un punto $ r \in M \setminus F(N) $ (dove $ F(N) \subsetneqq M $ in quanto $ F $ non è suriettiva).\\\\
-%
-Supponiamo ora che l'applicazione $ F : N \to M $ sia un diffeomorfismo (quindi sia iniettiva che suriettiva) e definiamo
+ma questo non può essere esteso a tutto il campo di vettori in quanto, se l'applicazione non fosse iniettiva, esisterebbero $ p,q \in N $ tali che $ F(p) = F(q) $: a questo punto si presenta l'assegnazione del vettore in $ F(p) = F(q) $ e ci sarebbe ambiguità tra $ F_{*p}(X_{p}) $ e $ F_{*p}(X_{q}) $ e tra $ F_{*q}(X_{p}) $ e $ F_{*q}(X_{q}) $. Se l'applicazione fosse iniettiva ma non suriettiva, non esisterebbe un vettore $ X_{p} \in \chi(N) $ in $ p \in N $ la cui immagine attraverso il differenziale $ F_{*p} $ sia un vettore in un punto $ r \in M \setminus F(N) $ (dove $ F(N) \subsetneq M $ in quanto $ F $ non è suriettiva).\\
+Supponiamo ora che l'applicazione $ F : N \to M $ sia un diffeomorfismo (quindi iniettiva e suriettiva) e definiamo il \textit{pushforward di} $ X $ tramite il diffeomorfismo $ F $ come
 
 \begin{equation}
-	(F_{*} (X))_{q} = F_{*F^{-1}(q)} (X_{F^{-1}(q)})
+	(F_{*}(X))_{q} \doteq F_{*F^{-1}(q)} (X_{F^{-1}(q)}) \in T_{q}(M) \qcomma \forall q \in N
 \end{equation}
 
-per $ \forall q \in N $ e $ (F_{*} (X))_{q} \in T_{q}(M) $; la definizione utilizza $ F^{-1}(q) $ in quanto $ F $ è biettiva e dunque $ F^{-1}(q) $ è l'unico punto che viene mandato in $ q $ tramite $ F $.
+La definizione utilizza $ F^{-1}(q) $ in quanto $ F $ è biettiva e dunque $ F^{-1}(q) $ è l'unico punto che viene mandato in $ q $ tramite $ F $.
 
 \begin{definition}
-	$ F_{*}(X) $, chiamato \textit{pushforward di} $ X $ tramite il diffeomorfismo $ F $, è un campo di vettori liscio su $ M $, i.e. $ F_{*}(X) \in \chi(M) $.
+	Il pushforward $ F_{*}(X) $ di $ X $ tramite il diffeomorfismo $ F $ è un campo di vettori liscio su $ M $, i.e. $ F_{*}(X) \in \chi(M) $.
 \end{definition}
 
 \begin{proof}
-	Siccome $ (F_{*} (X))_{q} \in T_{q}(M) $ per $ \forall q \in N $, dobbiamo solo dimostrare che $ F_{*}(X) $ sia liscio, i.e.
+	Siccome $ (F_{*} (X))_{q} \in T_{q}(M) $ per qualsiasi $ q \in N $, dobbiamo solo dimostrare che $ F_{*}(X) $ sia liscio, i.e.
 	
 	\begin{equation}
-		(F_{*}(X))(g) \in C^{\infty}(M), \qquad g \in C^{\infty}(M)
+		(F_{*}(X))(g) \in C^{\infty}(M) \qcomma \forall g \in C^{\infty}(M)
 	\end{equation}
 
 	Prendendo $ q \in M $
 	
 	\begin{align}
 		\begin{split}
-			(F_{*}(X))(g)(q) &= (F_{*}(X))_{q}(g)\\
-			&\doteq F_{*F^{-1}(q)} (X_{F^{-1}(q)})(g)\\
-			&\doteq X_{F^{-1}(q)} (g \circ F)\\
-			&= X (g \circ F)(F^{-1}(q))\\
-			&= ((X (g \circ F)) \circ F^{-1})(g)
+			(F_{*}(X))(g)(q) &= (F_{*}(X))_{q}(g) \\
+			&\doteq F_{*F^{-1}(q)} (X_{F^{-1}(q)})(g) \\
+			&\doteq X_{F^{-1}(q)} (g \circ F) \\
+			&= X (g \circ F)(F^{-1}(q)) \\
+			&= ((X (g \circ F)) \circ F^{-1})(q)
 		\end{split}
 	\end{align}
 
