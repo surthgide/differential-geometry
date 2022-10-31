@@ -8923,7 +8923,7 @@ La definizione utilizza $ F^{-1}(q) $ in quanto $ F $ è biettiva e dunque $ F^{
 Siano $ F : N \to M $ una funzione liscia (non necessariamente un diffeomorfismo) e due campi di vettori lisci $ X \in \chi(N) $ e $ Y \in \chi(M) $, si dice che $ X $ è $ F $\textit{-related a} $ Y $ se
 
 \begin{equation}
-	F_{*p}(X_{p}) = Y_{F(p)}, \qquad p \in N
+	F_{*p}(X_{p}) = Y_{F(p)} \qcomma p \in N
 \end{equation}
 
 \begin{remark}
@@ -8932,7 +8932,7 @@ Siano $ F : N \to M $ una funzione liscia (non necessariamente un diffeomorfismo
 
 \begin{proof}
 	\begin{equation}
-		Y_{F(p)} = F_{*p}(X_{p}) = (F_{*}(X))_{F(p)}, \quad \forall p \in N %
+		Y_{F(p)} = F_{*p}(X_{p}) = (F_{*}(X))_{F(p)} \qcomma \forall p \in N %
 		\implies%
 		Y = F_{*}(X)
 	\end{equation}
@@ -8942,7 +8942,7 @@ Siano $ F : N \to M $ una funzione liscia (non necessariamente un diffeomorfismo
 	Siano $ F : N \to M $ una funzione liscia e due campi di vettori lisci $ X \in \chi(N) $ e $ Y \in \chi(M) $, allora $ X $ è $ F $-related a $ Y $ se e solo se
 	
 	\begin{equation}
-		X(g \circ F) = (Y g) \circ F, \qquad \forall g \in C^{\infty}(M)
+		X(g \circ F) = (Y g) \circ F \qcomma \forall g \in C^{\infty}(M)
 	\end{equation}
 
 	con $ g : M \to \R $ e quindi $ g \circ F \in C^{\infty}(N) $.
@@ -8952,17 +8952,17 @@ Siano $ F : N \to M $ una funzione liscia (non necessariamente un diffeomorfismo
 	Per definizione, $ X $ è $ F $-related a $ Y $ se e solo se
 	
 	\begin{equation}
-		F_{*p}(X_{p}) = Y_{F(p)}, \qquad p \in N
+		F_{*p}(X_{p}) = Y_{F(p)} \qcomma p \in N
 	\end{equation}
 
 	applicando la definizione a una funzione qualsiasi $ g \in C^{\infty}(M) $ e usando la definizione di differenziale, deve valere
 	
 	\begin{align}
 		\begin{split}
-			(F_{*p}(X_{p}))(g) &= Y_{F(p)}(g)\\
-			X_{p}(g \circ F) &= (Y g)(F(p))\\
-			X(g \circ F)(p) &= ((Y g) \circ F)(p)\\
-			X(g \circ F) = (Y g) \circ F
+			(F_{*p}(X_{p}))(g) &= Y_{F(p)}(g) \\
+			X_{p}(g \circ F) &= (Y g)(F(p)) \\
+			X(g \circ F)(p) &= ((Y g) \circ F)(p) \\
+			X(g \circ F) &= (Y g) \circ F
 		\end{split}
 	\end{align}
 \end{proof}
@@ -8972,7 +8972,7 @@ Siano $ F : N \to M $ una funzione liscia (non necessariamente un diffeomorfismo
 	
 	\begin{equation}
 		\begin{cases}
-			Y_{1} = F_{*}(X_{1})\\
+			Y_{1} = F_{*}(X_{1}) \\
 			Y_{2} = F_{*}(X_{2})
 		\end{cases}
 	\end{equation}
@@ -8980,31 +8980,31 @@ Siano $ F : N \to M $ una funzione liscia (non necessariamente un diffeomorfismo
 	allora il commutatore $ [X_{1},X_{2}] $ è $ F $-related a $ [Y_{1},Y_{2}] $.
 \end{theorem}
 
-Questo teorema asserisce che il commutatore tra due campi viene preservato tramite campi $ F $-related.
+In sostanza, questo teorema asserisce che il commutatore tra due campi viene preservato tramite campi $ F $-related.
 
 \begin{proof}
 	Usando il teorema precedente, $ [X_{1},X_{2}] $ è $ F $-related a $ [Y_{1},Y_{2}] $ se e solo se
 	
 	\begin{equation}
-		[X_{1},X_{2}](g \circ F) = ([Y_{1},Y_{2}] g) \circ F, \qquad \forall g \in C^{\infty}(M)
+		[X_{1},X_{2}](g \circ F) = ([Y_{1},Y_{2}] g) \circ F \qcomma \forall g \in C^{\infty}(M)
 	\end{equation}
 
 	Sempre usando il teorema precedente
 	
 	\begin{align}
 		\begin{split}
-			[X_{1},X_{2}](g \circ F) &= (X_{1} X_{2} - X_{2} X_{1})(g \circ F)\\
-			&= (X_{1} X_{2})(g \circ F) - (X_{2} X_{1})(g \circ F)\\
-			&= X_{1}((Y_{2} g) \circ F) - X_{2}((Y_{1} g) \circ F)\\
-			&= Y_{1}(Y_{2} g) \circ F - Y_{1}(Y_{2} g) \circ F\\
-			&= (Y_{1} Y_{2} - Y_{1} Y_{2})(g \circ F)\\
+			[X_{1},X_{2}](g \circ F) &= (X_{1} X_{2} - X_{2} X_{1})(g \circ F) \\
+			&= (X_{1} X_{2})(g \circ F) - (X_{2} X_{1})(g \circ F) \\
+			&= X_{1}((Y_{2} g) \circ F) - X_{2}((Y_{1} g) \circ F) \\
+			&= Y_{1}(Y_{2} g) \circ F - Y_{1}(Y_{2} g) \circ F \\
+			&= (Y_{1} Y_{2} - Y_{1} Y_{2})(g \circ F) \\
 			&= [Y_{1},Y_{2}](g \circ F)
 		\end{split}
 	\end{align}
 \end{proof}
 
 \begin{corollary}\label{frel-brack}
-	Siano $ F : N \to M $ un diffeomorfismo e i campi di vettori lisci $ X_{1},X_{2} \in \chi(N) $, allora il pushforward del commutatore è uguale al commutatore dei pushforward, i.e.
+	Siano $ F : N \to M $ un diffeomorfismo e $ X_{1},X_{2} \in \chi(N) $ due campi di vettori lisci, allora il pushforward del commutatore è uguale al commutatore dei pushforward, i.e.
 	
 	\begin{equation}
 		F_{*} ([X_{1},X_{2}]) = [F_{*} (X_{1}),F_{*} (X_{2})]
