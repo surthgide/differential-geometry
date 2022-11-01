@@ -8149,7 +8149,7 @@ Questi campi sono perpendicolari alla normale alla sfera e linearmente indipende
 
 \begin{equation}
 	\begin{cases}
-		X \cdot p = Y \cdot p = Z \cdot p = 0 \in \R, & \forall p \in \S^{3}\\
+		X \cdot p = Y \cdot p = Z \cdot p = 0 \in \R, & \forall p \in \S^{3} \\
 		X \cdot Y = X \cdot Z = Y \cdot Z = 0 \in \chi(\S^{3})
 	\end{cases}
 \end{equation}
@@ -8162,7 +8162,7 @@ Costituiscono dunque una base per lo spazio tangente alla sfera, i.e.
 
 \subsection{Curve integrali e flussi di campi di vettori}
 
-Siano $ M $ una varietà differenziabile di dimensione $ n $, $ p \in M $ un suo punto e $ X \in \chi(M) $ un campo di vettori liscio sulla varietà, un curva liscia $ c : (a,b) \to M $ con $ 0 \in (a,b) $ è una \textit{curva integrale per il campo} $ X $ \textit{che inizia in} $ p $ se
+Siano $ M $ una varietà differenziabile di dimensione $ n $, $ p \in M $ un suo punto e $ X \in \chi(M) $ un campo di vettori liscio sulla varietà, un curva liscia $ c : (a,b) \to M $ con $ 0 \in (a,b) \subset \R $ è una \textit{curva integrale per il campo} $ X $ \textit{che inizia in} $ p $ se
 
 \begin{equation}
 	\begin{cases}
@@ -8206,7 +8206,7 @@ da cui il sistema di equazioni differenziali ordinarie (ODE) per $ i=1,\dots,n $
 L'esistenza e l'unicità di una curva integrale per il campo $ X $ deriva dalla soluzione $ c(t) = (c^{1}(t),\dots,c^{n}(t)) $ a questo sistema, dimostrata tramite il seguente teorema:
 
 \begin{theorem}[Esistenza e unicità della soluzione di un sistema di ODE (analisi)]
-	Siano un aperto $ V \in \R^{n} $, un punto $ p \in V $ e un'applicazione liscia $ f : V \to \R^{n} $, allora il sistema di ODE
+	Siano un aperto $ V \subset \R^{n} $, un punto $ p \in V $ e un'applicazione liscia $ f : V \to \R^{n} $, allora il sistema di ODE
 	
 	\begin{equation}
 		\begin{cases}
@@ -8225,7 +8225,7 @@ L'esistenza e l'unicità di una curva integrale per il campo $ X $ deriva dalla 
 	
 	\begin{equation}
 		\begin{cases}
-			\dot{z}(t) = f(z(t))\\
+			\dot{z}(t) = f(z(t)) \\
 			z(0) = p
 		\end{cases}
 	\end{equation}
@@ -8288,13 +8288,13 @@ La curva integrale per un campo dipende dal punto $ p $ della varietà scelto: i
 	dove il punto indica la derivata rispetto a $ t $.
 \end{theorem}
 
-Questo teorema può dunque essere trasposto sulle varietà:
+Questo teorema può essere trasposto sulle varietà:
 
 \begin{theorem}\label{thm:flux-var}
-	Siano un campo di vettori liscio $ X \in \chi(M) $ e un punto $ p \in M $, allora esiste un aperto $ W \subset M $ di $ p $, $ \varepsilon > 0 $ e una funzione liscia
+	Siano un campo di vettori liscio $ X \in \chi(M) $ e un punto $ p \in M $, allora esistono un aperto $ W \subset M $ di $ p $, $ \varepsilon > 0 $ e una funzione liscia
 	
 	\begin{equation}
-		F : (-\varepsilon,\varepsilon) \times W \to V
+		F : (-\varepsilon,\varepsilon) \times W \to V \subset M
 	\end{equation}
 
 	tali che
@@ -8305,11 +8305,9 @@ Questo teorema può dunque essere trasposto sulle varietà:
 			F(0,q) = q
 		\end{cases}
 	\end{equation}
-
-	L'applicazione $ F(t,q) $ si chiama \textit{flusso locale del campo di vettori} $ X $.
 \end{theorem}
 
-Come notazione per i flussi, utilizzeremo $ F_{t}(q) \doteq F(t,q) $.\\
+L'applicazione $ F(t,q) $ è chiamata \textit{flusso locale del campo di vettori} $ X $; utilizzeremo la notazione $ F_{t}(q) \doteq F(t,q) $.\\
 La \textit{linea di flusso in} $ q $ è definita come $ F_{t}(q) $ al variare di $ t \in (-\varepsilon,\varepsilon) $ con $ q $ fissato: presa la curva integrale di $ X $ che inizia in $ q $ indicata come
 
 \begin{equation}
@@ -8334,7 +8332,7 @@ il campo di vettori $ X $ si dice \textit{completo}.
 \end{definition}
 
 \begin{proof}
-	Fissiamo il parametro $ s $ e il punto $ q $ e facciamo variare il parametro $ t $, per la definizione di flusso possiamo scrivere
+	Fissando il parametro $ s $ e il punto $ q $ e facendo variare il parametro $ t $, per la definizione di flusso possiamo scrivere
 	
 	\begin{equation}
 		\begin{cases}
