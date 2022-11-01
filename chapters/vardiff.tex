@@ -1280,22 +1280,21 @@ Le applicazioni inverse (anch'esse continue) sono
 
 \map{\phi_{i}^{-1}}
 	{\R^{n}}{U_{i}}
-	{(x^{1},\dots,x^{n})}{[(x^{1},\dots,x^{i-1},1,x^{i},\dots,x^{n})]}
+	{(x^{1},\dots,x^{n})}{[(x^{1},\dots,x^{i},1,x^{i+1},\dots,x^{n})]}
 
-siccome è presente la componente $ i $-esima uguale a 1, la classe $ [(x^{1},\dots,x^{i-1},1,x^{i},x^{i+1},\dots,x^{n})] $ appartiene a $ \rp{n} $ anche se tutte le altre coordinate sono nulle. Queste applicazioni sono le inverse di $ \phi_{i} $ perché
+siccome è presente la componente $ i $-esima uguale a 1, la classe $ [(x^{1},\dots,x^{i},1,x^{i+1},\dots,x^{n})] $ appartiene a $ \rp{n} $ anche se tutte le altre coordinate sono nulle. Queste applicazioni sono le inverse di $ \phi_{i} $ perché
 
-\begin{align}
-	\begin{split}
-		(\phi_{i} \circ \phi_{i}^{-1})(x^{1},\dots,x^{n}) &= \phi_{i}([(x^{1},\dots,x^{i-1},1,x^{i},\dots,x^{n})])\\
-		&= (x^{1},\dots,x^{n})
-	\end{split}	
-\end{align}
+\begin{equation}
+		(\phi_{i} \circ \phi_{i}^{-1})(x^{1},\dots,x^{n}) = \phi_{i}([(x^{1},\dots,x^{i},1,x^{i+1},\dots,x^{n})]) %
+		= (x^{1},\dots,x^{n})
+\end{equation}
 
 \begin{align}
 	\begin{split}
-		(\phi^{-1}_{i} \circ \phi_{i})([(a^{0},\dots,a^{n})]) &= \phi_{i}^{-1} \left( \dfrac{a^{0}}{a^{i}}, \dfrac{a^{1}}{a^{i}}, \dots, \dfrac{a^{i-1}}{a^{i}}, \dfrac{a^{i+1}}{a^{i}}, \dots, \dfrac{a^{n}}{a^{i}} \right)\\
-		&= \left[ \left( \dfrac{a^{0}}{a^{i}}, \dfrac{a^{1}}{a^{i}}, \dots, \dfrac{a^{i-1}}{a^{i}}, 1, \dfrac{a^{i+1}}{a^{i}}, \dots, \dfrac{a^{n}}{a^{i}} \right) \right]\\
-		&= [(a^{0},\dots,a^{i-1},a^{i},a^{i+1},\dots,a^{n})]\\
+		(\phi^{-1}_{i} \circ \phi_{i})([(a^{0},\dots,a^{n})]) &= \phi_{i}^{-1} \left( \dfrac{a^{0}}{a^{i}}, \dfrac{a^{1}}{a^{i}}, \dots, \dfrac{a^{i-1}}{a^{i}}, \dfrac{a^{i+1}}{a^{i}}, \dots, \dfrac{a^{n}}{a^{i}} \right) \\
+		&= \left[ \left( \dfrac{a^{0}}{a^{i}}, \dfrac{a^{1}}{a^{i}}, \dots, \dfrac{a^{i-1}}{a^{i}}, 1, \dfrac{a^{i+1}}{a^{i}}, \dots, \dfrac{a^{n}}{a^{i}} \right) \right] \\
+		&= \left[ a^{i}\left( \dfrac{a^{0}}{a^{i}}, \dfrac{a^{1}}{a^{i}}, \dots, \dfrac{a^{i-1}}{a^{i}}, 1, \dfrac{a^{i+1}}{a^{i}}, \dots, \dfrac{a^{n}}{a^{i}} \right) \right] \\
+		&= [(a^{0},\dots,a^{i-1},a^{i},a^{i+1},\dots,a^{n})] \\
 		&= [(a^{0},\dots,a^{n})]
 	\end{split}
 \end{align}
@@ -1304,7 +1303,7 @@ Dunque abbiamo dimostrato che le $ \phi_{i} $ sono omeomorfismi e quindi $ \math
 Dimostriamo ora che $ \mathfrak{M} $ è un atlante differenziabile di $ \rp{n} $: per fare ciò dobbiamo far vedere che le sue carte siano $ C^{\infty} $-compatibili tra loro. Siano $ i,j=0,\dots,n $ con $ i<j $ e consideriamo i cambi di carta
 
 \begin{gather}
-	\phi_{i} \circ \phi_{j}^{-1} : \phi_{j}(U_{i} \cap U_{j}) \to \phi_{i}(U_{i} \cap U_{j})\\
+	\phi_{i} \circ \phi_{j}^{-1} : \phi_{j}(U_{i} \cap U_{j}) \to \phi_{i}(U_{i} \cap U_{j}) \\
 	\phi_{j} \circ \phi_{i}^{-1} : \phi_{i}(U_{i} \cap U_{j}) \to \phi_{j}(U_{i} \cap U_{j})
 \end{gather}
 
@@ -1313,15 +1312,15 @@ Dunque
 
 \begin{align}
 	\begin{split}
-		(\phi_{i} \circ \phi_{j}^{-1})(x^{1},\dots,x^{n}) &= \phi_{i}([(x^{1},\dots,x^{j-1},1,x^{j},x^{j+1},\dots,x^{n})])\\
-		&= \left( \dfrac{x^{1}}{x_{i}}, \dots, \dfrac{x^{i-1}}{x_{i}}, \dfrac{x^{i+1}}{x_{i}}, \dots, \dfrac{x^{j-1}}{x_{i}}, \dfrac{1}{x_{i}}, \dfrac{x^{j+1}}{x_{i}}, \dots, \dfrac{x^{n}}{x_{i}} \right)
+		(\phi_{i} \circ \phi_{j}^{-1})(x^{1},\dots,x^{n}) &= \phi_{i}([(x^{1},\dots,x^{j},1,x^{j+1},\dots,x^{n})]) \\
+		&= \left( \dfrac{x^{1}}{x^{i+1}}, \dots, \dfrac{x^{i}}{x^{i+1}}, \dfrac{x^{i+2}}{x^{i+1}}, \dots, \dfrac{x^{j}}{x^{i+1}}, \dfrac{1}{x^{i+1}}, \dfrac{x^{j+1}}{x^{i+1}}, \dots, \dfrac{x^{n}}{x^{i+1}} \right)
 	\end{split}
 \end{align}
 
 \begin{align}
 	\begin{split}
-		(\phi_{j} \circ \phi_{i}^{-1})(x^{1},\dots,x^{n}) &= \phi_{j}([(x^{1},\dots,x^{i-1},1,x^{i},x^{i+1},\dots,x^{n})])\\
-		&= \left( \dfrac{x^{1}}{x_{i}}, \dots, \dfrac{x^{i-1}}{x_{j}}, \dfrac{1}{x_{j}}, \dfrac{x^{i+1}}{x_{j}}, \dots, \dfrac{x^{j-1}}{x_{j}}, \dfrac{x^{i+j}}{x_{j}}, \dots, \dfrac{x^{n}}{x_{j}} \right)
+		(\phi_{j} \circ \phi_{i}^{-1})(x^{1},\dots,x^{n}) &= \phi_{j}([(x^{1},\dots,x^{i},1,x^{i+1},\dots,x^{n})]) \\
+		&= \left( \dfrac{x^{1}}{x^{i}}, \dots, \dfrac{x^{i-1}}{x^{j}}, \dfrac{1}{x^{j}}, \dfrac{x^{i}}{x^{j}}, \dots, \dfrac{x^{j-1}}{x^{j}}, \dfrac{x^{j+1}}{x^{j}}, \dots, \dfrac{x^{n}}{x^{j}} \right)
 	\end{split}
 \end{align}
 
