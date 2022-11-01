@@ -8409,7 +8409,8 @@ per trovare la forma della curva, eguagliamo il vettore tangente alla curva con 
 \begin{align}
 	\begin{split}
 		c'(t) &= X_{c(t)} \\
-		\dot{x}(t) \eval{ \dpdv{x} }_{c(t)} + \dot{y}(t) \eval{ \dpdv{y} }_{c(t)} &= - y(t) \eval{ \dpdv{x} }_{c(t)} + x(t) \eval{ \dpdv{y} }_{c(t)}
+		\dot{x}(t) \eval{ \dpdv{x} }_{c(t)} + \dot{y}(t) \eval{ \dpdv{y} }_{c(t)} &= - y(t) \eval{ \dpdv{x} }_{c(t)} + x(t) \eval{ \dpdv{y} }_{c(t)} \\
+		(\dot{x}(t), \dot{y}(t)) &= (- y(t), x(t))
 	\end{split}
 \end{align}
 
@@ -8454,13 +8455,16 @@ per trovare l'altra soluzione
 		y(0) = p^{2} = - B
 	\end{cases} %
 	\implies %
-	y(t) = p^{1} \sin(t) + p^{2} \cos(t)
+	\begin{cases}
+		x(t) = p^{1} \cos(t) - p^{2} \sin(t) \\
+		y(t) = p^{1} \sin(t) + p^{2} \cos(t)
+	\end{cases}
 \end{equation}
 
 dunque
 
 \begin{equation}
-	c(t) = (p^{1} \cos(t) - p^{2} \sin(t),p^{1} \sin(t) + p^{2} \cos(t))
+	c(t) = (p^{1} \cos(t) - p^{2} \sin(t), p^{1} \sin(t) + p^{2} \cos(t))
 \end{equation}
 
 o alternativamente possiamo scrivere $ c(t) $ come vettore colonna
@@ -8510,7 +8514,7 @@ Verifichiamo ora che valga la legge di composizione dei flussi:
 	\end{split}
 \end{align}
 
-questo è vero in quanto le due matrici rappresentano rotazioni rispettivamente di angoli $ t $ ed $ s $ e queste rispettano la stessa legge di composizione dei flussi.
+questo è vero anche perché le due matrici rappresentano rotazioni rispettivamente di angoli $ t $ ed $ s $ e queste rispettano la stessa legge di composizione dei flussi.
 
 \paragraph{2) Campo di vettori non completo}
 
@@ -8564,7 +8568,7 @@ Sappiamo, dal teorema, che esiste un intervallo massimale su cui è definita (ch
 \begin{equation}
 	\begin{cases}
 		c : \left( -\infty, \dfrac{1}{p} \right) \to \R \setminus \{0\}, & p > 0\\\\
-		c : \left( -\dfrac{1}{p}, \infty \right) \to \R \setminus \{0\}, & p < 0
+		c : \left( -\dfrac{1}{p}, +\infty \right) \to \R \setminus \{0\}, & p < 0
 	\end{cases}
 \end{equation}
 
