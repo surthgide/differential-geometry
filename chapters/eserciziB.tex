@@ -1884,6 +1884,57 @@ A questo punto, possiamo mostrare che la sfera $ \S^{1} $ sia parallelizzabile, 
 	\end{enumerate}
 \end{tcolorbox}
 
+\paragraph{Proiettivo reale $ \rp{3} $}
+
+Possiamo ottenere il risultato per $ \rp{3} $ considerando la dimostrazione per $ \rp{n} $ e prendendo $ n = 3 $.\\
+Presa un'applicazione $ f \in C^{\infty}(\R^{n+1}) $ dove $ 0 \in \VR_{f} $, allora $ f^{-1}(0) $ è una sottovarietà di $ R^{n+1} $ orientabile; nello specifico, prendendo  l'applicazione liscia
+
+\map{f}
+	{\R^{n+1}}{\R}
+	{(x^{1},\dots,x^{n+1})}{x^{1} + \cdots + x^{n+1} - 1}
+
+abbiamo che $ \S^{n} = f^{-1}(0) $, dunque $ S^{n} $ è una sottovarietà di $ R^{n+1} $ orientabile.\\
+Sappiamo inoltre che il proiettivo reale può essere ricavato dal quoziente
+
+\begin{equation}
+	\rp{n} = \dfrac{\S^{n}}{\equiv_{a}}
+\end{equation}
+
+dove la relazione di equivalenza antipodale $ \equiv_{a} $ corrisponde alla condizione
+
+\begin{equation}
+	x \equiv_{a} y \iff x = \pm y \qcomma x,y \in \S^{n}
+\end{equation}
+
+Questa equivalenza può essere rappresentata tramite la riflessione antipodale
+
+\map{a}
+	{\R^{n+1}}{\R^{n+1}}
+	{(x^{1},\dots,x^{n+1})}{(-x^{1},\dots,-x^{n+1})}
+
+Possiamo riscrivere questa applicazione considerando l'identificazione $ \R^{n+1} = T_{p}(\R^{n+1}) $, dove un elemento di $ T_{p}(\R^{n+1}) $ è rappresentato come un vettore colonna dei coefficienti:
+
+\map{a}
+	{\R^{n+1}}{\R^{n+1}}
+	{\bmqty{ x^{1} \\ \vdots \\ x^{n+1} }}{%
+											- \bigone_{n+1,n+1} \bmqty{ x^{1} \\ \vdots \\ x^{n+1} } %
+											= \bmqty{ \dmat{-1,\ddots,-1} } \bmqty{ x^{1} \\ \vdots \\ x^{n+1} }
+											}
+
+Un'applicazione lineare conserva l'orientazione se il determinante della matrice che la identifica è positivo: per il caso della riflessione antipodale
+
+\begin{equation}
+	\det(a) \equiv \det( - \bigone_{n+1,n+1} ) = (-1)^{n+1} = %
+	\begin{cases}
+		+ 1, & n \text{ dispari} \\
+		- 1, & n \text{ pari}
+	\end{cases}
+\end{equation}
+
+A questo punto, per $ \rp{3} $, abbiamo che questo è orientabile in quanto $ n $ dispari.
+
+\paragraph{Fibrato tangente $ T(N) $}
+
 qui
 
 %

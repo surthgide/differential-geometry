@@ -66,3 +66,7 @@ a definire le gli elementi e le mappe di TT(M); è possibile che debba usare il 
 dimensione in quanto il differenziale secondo (come il differenziale normale) è lineare; 
 sono sicuro di dover passare per il fatto che l'inclusione i:T(N)->T(M) è un'immersione
 
+esercizio B.27: non riesco a dimostrare che \rp{3} sia orientabile tramite lo jacobiano dei 
+cambi di carta perché mi esce che il determinante è positivo solo per la metà delle 
+trasformazioni
+
