@@ -2065,8 +2065,8 @@ Essendo positivo, il fibrato tangente $ T(M) $ è orientabile.
 Sia $ \mathfrak{C} $ la categoria delle varietà differenziabili con
 
 \begin{gather}
-	Ob(\mathfrak{C}) = \{ \text{collezione di tutte le varietà differenziabili} \}\\
-	Mor(M,N) = \{ \text{applicazioni lisce } F : M \to N \} \qcomma \forall M,N \in Ob(\mathfrak{C})
+	\ob(\mathfrak{C}) = \{ \text{collezione di tutte le varietà differenziabili} \}\\
+	\mor(M,N) = \{ \text{applicazioni lisce } F : M \to N \} \qcomma \forall M,N \in \ob(\mathfrak{C})
 \end{gather}
 
 Scriviamo la coppia di applicazioni $ \mathcal{F}_{*} $ come
@@ -2089,10 +2089,10 @@ A questo punto, $ \mathcal{F}_{*} $ è un funtore covariante se
 
 \begin{equation}
 	\begin{cases}
-		\mathcal{F}_{*}(M) \in Ob(\mathfrak{C}), & \forall M \in Ob(\mathfrak{C}) \\
-		\mathcal{F}_{*}(F) \in Mor(\mathcal{F}_{*}(M),\mathcal{F}_{*}(N)), & \forall F \in Mor(M,N) \\
-		\mathcal{F}_{*}(\bigone_{M}) = \bigone_{\mathcal{F}_{*}(M)} \in Mor(\mathcal{F}_{*}(M),\mathcal{F}_{*}(M)), & \forall \bigone_{M} \in Mor(M,M) \\
-		\mathcal{F}_{*}(G \circ F) = \mathcal{F}_{*}(G) \circ \mathcal{F}_{*}(F), & \forall F \in Mor(M,N), \forall G \in Mor(N,P)
+		\mathcal{F}_{*}(M) \in \ob(\mathfrak{C}), & \forall M \in \ob(\mathfrak{C}) \\
+		\mathcal{F}_{*}(F) \in \mor(\mathcal{F}_{*}(M),\mathcal{F}_{*}(N)), & \forall F \in \mor(M,N) \\
+		\mathcal{F}_{*}(\bigone_{M}) = \bigone_{\mathcal{F}_{*}(M)} \in \mor(\mathcal{F}_{*}(M),\mathcal{F}_{*}(M)), & \forall \bigone_{M} \in \mor(M,M) \\
+		\mathcal{F}_{*}(G \circ F) = \mathcal{F}_{*}(G) \circ \mathcal{F}_{*}(F), & \forall F \in \mor(M,N), \forall G \in \mor(N,P)
 	\end{cases}
 \end{equation}
 
@@ -2101,7 +2101,7 @@ A questo punto, $ \mathcal{F}_{*} $ è un funtore covariante se
 Dalla definizione
 
 \begin{equation}
-	\mathcal{F}_{*}(M) = T(M) \in Ob(\mathfrak{C})
+	\mathcal{F}_{*}(M) = T(M) \in \ob(\mathfrak{C})
 \end{equation}
 
 in quanto $ T(M) $ è una varietà differenziabile.
@@ -2111,7 +2111,7 @@ in quanto $ T(M) $ è una varietà differenziabile.
 Dalla definizione abbiamo che $ \mathcal{F}_{*}(F) = F_{*} $: per dimostrare che
 
 \begin{equation}
-	F_{*} \in Mor(\mathcal{F}_{*}(M),\mathcal{F}_{*}(N)) = Mor(T(M),T(N))
+	F_{*} \in \mor(\mathcal{F}_{*}(M),\mathcal{F}_{*}(N)) = \mor(T(M),T(N))
 \end{equation}
 
 e quindi che $ F_{*} \in C^{\infty}(T(M)) $, consideriamo il seguente diagramma

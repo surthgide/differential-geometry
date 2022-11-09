@@ -2990,16 +2990,16 @@ Questo perché lo jacobiano è invertibile se e solo se il differenziale è un i
 
 Una \textit{categoria} $ \mathfrak{C} $ è definita come una collezione\footnote{%
 	Utilizzeremo il termine "collezione" al posto di "insieme" per evitare contraddizioni logiche, ad esempio in situazioni dove potrebbe essere presente la locuzione "insiemi di insiemi".%
-} $ Ob(\mathfrak{C}) $ di oggetti, e.g. insiemi, varietà differenziali o gruppi. Per ogni coppia di elementi $ A,B \in Ob(\mathfrak{C}) $ appartenenti alla categoria $ \mathfrak{C} $ esiste un insieme non vuoto $ Mor(A,B) $ dei \textit{morfismi}\footnote{%
+} $ \ob(\mathfrak{C}) $ di oggetti, e.g. insiemi, varietà differenziali o gruppi. Per ogni coppia di elementi $ A,B \in \ob(\mathfrak{C}) $ appartenenti alla categoria $ \mathfrak{C} $ esiste un insieme non vuoto $ \mor(A,B) $ dei \textit{morfismi}\footnote{%
 	Un morfismo è una mappa tra due oggetti che conserva la struttura dell'oggetto sorgente nell'oggetto obbiettivo; ad esempio, può essere pensato come la generalizzazione nella teoria delle categorie delle funzioni in teoria degli insiemi o delle funzioni continue in topologia.%
 } da $ A $ a $ B $ tale che siano soddisfatte le seguenti condizioni:
 
 \begin{equation}
 	\begin{cases}
-		\E g \circ f \in Mor(A,C), & \forall f \in Mor(A,B), \, \forall g \in Mor(B,C)\\
-		\E \bigone_{A} \in Mor(A,A) \mid f \circ \bigone_{A} = f, & \forall f \in Mor(A,B)\\
-		\E \bigone_{B} \in Mor(B,B) \mid \bigone_{B} \circ f = f, & \forall f \in Mor(A,B)\\
-		(f \circ g) \circ h = f \circ (g \circ h), & \forall f \in Mor(A,B), \forall g \in Mor(B,C), \forall h \in Mor(C,D)
+		\E g \circ f \in \mor(A,C), & \forall f \in \mor(A,B), \, \forall g \in \mor(B,C)\\
+		\E \bigone_{A} \in \mor(A,A) \mid f \circ \bigone_{A} = f, & \forall f \in \mor(A,B)\\
+		\E \bigone_{B} \in \mor(B,B) \mid \bigone_{B} \circ f = f, & \forall f \in \mor(A,B)\\
+		(f \circ g) \circ h = f \circ (g \circ h), & \forall f \in \mor(A,B), \forall g \in \mor(B,C), \forall h \in \mor(C,D)
 	\end{cases}
 \end{equation}
 
@@ -3014,8 +3014,8 @@ In tutti gli esempi che seguono tutte le proprietà delle categorie sono soddisf
 Sia $ \mathfrak{C} $ la categoria degli insiemi, allora la collezione di oggetti e l'insieme dei morfismi sono dati da:
 
 \begin{gather}
-	Ob(\mathfrak{C}) = \{ \text{collezione di tutti gli insiemi} \}\\
-	Mor(A,B) = \{ \text{applicazioni } f : A \to B \} \qcomma \forall A,B \in Ob(\mathfrak{C})
+	\ob(\mathfrak{C}) = \{ \text{collezione di tutti gli insiemi} \}\\
+	\mor(A,B) = \{ \text{applicazioni } f : A \to B \} \qcomma \forall A,B \in \ob(\mathfrak{C})
 \end{gather}
 
 \paragraph{1) Spazi vettoriali su $ \R $}
@@ -3023,8 +3023,8 @@ Sia $ \mathfrak{C} $ la categoria degli insiemi, allora la collezione di oggetti
 Sia $ \mathfrak{C} $ la categoria degli spazi vettoriali su $ \R $, allora la collezione di oggetti e l'insieme dei morfismi sono dati da:
 
 \begin{gather}
-	Ob(\mathfrak{C}) = \{ \text{collezione di tutti gli spazi vettoriali su } \R \}\\
-	Mor(V,W) \doteq Hom(V,W) = \{ \text{applicazioni $ \R $-lineari } f : V \to W \} \qcomma \forall V,W \in Ob(\mathfrak{C})
+	\ob(\mathfrak{C}) = \{ \text{collezione di tutti gli spazi vettoriali su } \R \}\\
+	\mor(V,W) \doteq Hom(V,W) = \{ \text{applicazioni $ \R $-lineari } f : V \to W \} \qcomma \forall V,W \in \ob(\mathfrak{C})
 \end{gather}
 
 \paragraph{2) Spazi topologici}
@@ -3032,8 +3032,8 @@ Sia $ \mathfrak{C} $ la categoria degli spazi vettoriali su $ \R $, allora la co
 Sia $ \mathfrak{Top} $ la categoria degli spazi topologici, allora la collezione di oggetti e l'insieme dei morfismi sono dati da:
 
 \begin{gather}
-	Ob(\mathfrak{Top}) = \{ \text{collezione di tutti gli spazi topologici} \}\\
-	Mor(X,Y) \doteq C^{0}(X,Y) = \{ \text{applicazioni continue } f : X \to Y \} \qcomma \forall X,Y \in Ob(\mathfrak{Top})
+	\ob(\mathfrak{Top}) = \{ \text{collezione di tutti gli spazi topologici} \}\\
+	\mor(X,Y) \doteq C^{0}(X,Y) = \{ \text{applicazioni continue } f : X \to Y \} \qcomma \forall X,Y \in \ob(\mathfrak{Top})
 \end{gather}
 
 \paragraph{3) Varietà differenziabili}
@@ -3041,8 +3041,8 @@ Sia $ \mathfrak{Top} $ la categoria degli spazi topologici, allora la collezione
 Sia $ \mathfrak{C} $ la categoria delle varietà differenziabili, allora la collezione di oggetti e l'insieme dei morfismi sono dati da:
 
 \begin{gather}
-	Ob(\mathfrak{C}) = \{ \text{collezione di tutte le varietà differenziabili} \}\\
-	Mor(N,M) = \{ \text{applicazioni lisce } F : N \to M \} \qcomma \forall N,M \in Ob(\mathfrak{C})
+	\ob(\mathfrak{C}) = \{ \text{collezione di tutte le varietà differenziabili} \}\\
+	\mor(N,M) = \{ \text{applicazioni lisce } F : N \to M \} \qcomma \forall N,M \in \ob(\mathfrak{C})
 \end{gather}
 
 \paragraph{4) Varietà differenziabili puntate}
@@ -3052,8 +3052,8 @@ Sia $ \mathfrak{C} $ la categoria delle varietà differenziabili puntate, i.e. v
 }, allora la collezione di oggetti e l'insieme dei morfismi sono dati da:
 
 \begin{gather}
-	Ob(\mathfrak{C}) = \{ \text{collezione di tutte le coppie } (M,p) \, \mid M \text{ varietà differenziabili}, \, p \in M \}\\
-		Mor((N,p),(M,q)) = \{ \text{applicazioni lisce } F : N \to M \, \mid \, F(p)=q \} \qcomma \forall (N,p),(M,q) \in Ob(\mathfrak{C})
+	\ob(\mathfrak{C}) = \{ \text{collezione di tutte le coppie } (M,p) \, \mid M \text{ varietà differenziabili}, \, p \in M \}\\
+		\mor((N,p),(M,q)) = \{ \text{applicazioni lisce } F : N \to M \, \mid \, F(p)=q \} \qcomma \forall (N,p),(M,q) \in \ob(\mathfrak{C})
 \end{gather}
 
 \subsubsection{Isomorfismi}
@@ -3063,10 +3063,10 @@ Data una categoria $ \mathfrak{C} $, la definizione di oggetti isomorfi è la se
 \begin{gather}
 	A \simeq B \text{ isomorfi} \nonumber \\
 	\Updownarrow\\ %
-	\E f \in Mor(A,B) \wedge g \in Mor(B,A) \, \mid \, g \circ f = \bigone_{A} \wedge f \circ g = \bigone_{B} \nonumber
+	\E f \in \mor(A,B) \wedge g \in \mor(B,A) \, \mid \, g \circ f = \bigone_{A} \wedge f \circ g = \bigone_{B} \nonumber
 \end{gather}
 
-dove $ A,B \in Ob(\mathfrak{C}) $, $ \bigone_{A} \in Mor(A,A) $ e $ \bigone_{B} \in Mor(B,B) $.\\
+dove $ A,B \in \ob(\mathfrak{C}) $, $ \bigone_{A} \in \mor(A,A) $ e $ \bigone_{B} \in \mor(B,B) $.\\
 Per esempio, per la categoria degli insiemi, due oggetti sono isomorfi se esistono due applicazioni che associno questi due oggetti tra loro e che siano l'una inversa dell'altra.
 
 \subsubsection{\textit{Esempi}}
@@ -3109,7 +3109,7 @@ Due oggetti nella categoria delle varietà differenziabili puntate sono isomorfi
 
 \subsection{Funtori}
 
-Siano due categorie $ \mathfrak{C} $ e $ \mathfrak{D} $, un \textit{funtore} $ \mathcal{F} : \mathfrak{C} \to \mathfrak{D} $ è una coppia di applicazioni che agisce nel seguente modo: una delle applicazioni mappa la collezione di oggetti $ Ob(\mathfrak{C}) $ in $ Ob(\mathfrak{D}) $; l'altra applicazione mappa i morfismi $ Mor(C_{1}, C_{2}) $ in $ Mor(D_{1} ,D_{2}) $, dove $ C_{1}, C_{2} \in Ob(\mathfrak{C}) $ e $ D_{1}, D_{2} \in Ob(\mathfrak{D}) $ sono due coppie qualsiasi di oggetti delle rispettive categorie. I funtori si dividono in \textit{covarianti} e \textit{controvarianti}.
+Siano due categorie $ \mathfrak{C} $ e $ \mathfrak{D} $, un \textit{funtore} $ \mathcal{F} : \mathfrak{C} \to \mathfrak{D} $ è una coppia di applicazioni che agisce nel seguente modo: una delle applicazioni mappa la collezione di oggetti $ \ob(\mathfrak{C}) $ in $ \ob(\mathfrak{D}) $; l'altra applicazione mappa i morfismi $ \mor(C_{1}, C_{2}) $ in $ \mor(D_{1} ,D_{2}) $, dove $ C_{1}, C_{2} \in \ob(\mathfrak{C}) $ e $ D_{1}, D_{2} \in \ob(\mathfrak{D}) $ sono due coppie qualsiasi di oggetti delle rispettive categorie. I funtori si dividono in \textit{covarianti} e \textit{controvarianti}.
 
 \paragraph{Funtori covarianti}
 
@@ -3117,8 +3117,8 @@ Siano $ \mathfrak{C} $ e $ \mathfrak{D} $ due categorie, un \textit{funtore cova
 
 \begin{equation}
 	\begin{cases}
-		\mathcal{F}(A) \in Ob(\mathfrak{D}), & \forall A \in Ob(\mathfrak{C}) \\
-		\mathcal{F}(f) \in Mor(\mathcal{F}(A),\mathcal{F}(B)), & \forall f \in Mor(A,B)
+		\mathcal{F}(A) \in \ob(\mathfrak{D}), & \forall A \in \ob(\mathfrak{C}) \\
+		\mathcal{F}(f) \in \mor(\mathcal{F}(A),\mathcal{F}(B)), & \forall f \in \mor(A,B)
 	\end{cases}
 \end{equation}
 
@@ -3126,8 +3126,8 @@ rispettando l'identità e la composizione, i.e.
 
 \begin{equation}
 	\begin{cases}
-		\mathcal{F}(\bigone_{A}) = \bigone_{\mathcal{F}(A)} \in Mor(\mathcal{F}(A),\mathcal{F}(A)), & \forall \bigone_{A} \in Mor(A,A) \\
-		\mathcal{F}(g \circ f) = \mathcal{F}(g) \circ \mathcal{F}(f), & \forall f \in Mor(A,B), \forall g \in Mor(B,C)
+		\mathcal{F}(\bigone_{A}) = \bigone_{\mathcal{F}(A)} \in \mor(\mathcal{F}(A),\mathcal{F}(A)), & \forall \bigone_{A} \in \mor(A,A) \\
+		\mathcal{F}(g \circ f) = \mathcal{F}(g) \circ \mathcal{F}(f), & \forall f \in \mor(A,B), \forall g \in \mor(B,C)
 	\end{cases}
 \end{equation}
 
@@ -3135,8 +3135,8 @@ Siano $ \mathfrak{C} $ la categoria delle varietà puntate e $ \mathfrak{D} $ la
 
 \begin{equation}
 	\begin{cases}
-		\mathcal{F}((N,p)) = T_{p}(N), & \forall (N,p) \in Ob(\mathfrak{C}), \, T_{p}(N) \in Ob(\mathfrak{D}) \\
-		\mathcal{F}(F) = F_{*p}, & \forall F \in Mor((N,p),(M,q)), \, F_{*p} \in Mor(T_{p}(N),T_{q=F(p)}(M))
+		\mathcal{F}((N,p)) = T_{p}(N), & \forall (N,p) \in \ob(\mathfrak{C}), \, T_{p}(N) \in \ob(\mathfrak{D}) \\
+		\mathcal{F}(F) = F_{*p}, & \forall F \in \mor((N,p),(M,q)), \, F_{*p} \in \mor(T_{p}(N),T_{q=F(p)}(M))
 	\end{cases}
 \end{equation}
 
@@ -3169,8 +3169,8 @@ Siano $ \mathfrak{C} $ e $ \mathfrak{D} $ due categorie, un \textit{funtore cont
 
 \begin{equation}
 	\begin{cases}
-		\mathcal{F}(A) \in Ob(\mathfrak{D}), & \forall A \in Ob(\mathfrak{C})\\
-		\mathcal{F}(f) \in Mor(\mathcal{F}(B),\mathcal{F}(A)), & \forall f \in Mor(A,B)
+		\mathcal{F}(A) \in \ob(\mathfrak{D}), & \forall A \in \ob(\mathfrak{C})\\
+		\mathcal{F}(f) \in \mor(\mathcal{F}(B),\mathcal{F}(A)), & \forall f \in \mor(A,B)
 	\end{cases}
 \end{equation}
 
@@ -3178,8 +3178,8 @@ rispettando l'identità e la composizione, i.e.
 
 \begin{equation}
 	\begin{cases}
-		\mathcal{F}(\bigone_{A}) = \bigone_{\mathcal{F}(A)} \in Mor(\mathcal{F}(A),\mathcal{F}(A)), & \forall \bigone_{A} \in Mor(A,A)\\
-		\mathcal{F}(g \circ f) = \mathcal{F}(f) \circ \mathcal{F}(g) & \forall f \in Mor(A,B), \forall g \in Mor(B,C)
+		\mathcal{F}(\bigone_{A}) = \bigone_{\mathcal{F}(A)} \in \mor(\mathcal{F}(A),\mathcal{F}(A)), & \forall \bigone_{A} \in \mor(A,A)\\
+		\mathcal{F}(g \circ f) = \mathcal{F}(f) \circ \mathcal{F}(g) & \forall f \in \mor(A,B), \forall g \in \mor(B,C)
 	\end{cases}
 \end{equation}
 
@@ -3197,7 +3197,7 @@ rispettando l'identità e la composizione, i.e.
 	\begin{gather}
 		A \simeq B \nonumber \\
 		\Updownarrow\\ %
-		\E f \in Mor(A,B) \wedge g \in Mor(B,A) \, \mid \, g \circ f = \bigone_{A} \wedge f \circ g = \bigone_{B} \nonumber
+		\E f \in \mor(A,B) \wedge g \in \mor(B,A) \, \mid \, g \circ f = \bigone_{A} \wedge f \circ g = \bigone_{B} \nonumber
 	\end{gather}
 	
 	Applicando il funtore a entrambi i membri di entrambe le condizioni:
@@ -3231,8 +3231,8 @@ Sia $ \mathfrak{C} $ la categoria degli spazi vettoriali su $ \R $, consideriamo
 
 \begin{equation}
 	\begin{cases}
-		\mathcal{F}(V) = V^{*}, & \forall V \in Ob(\mathfrak{C})\\
-		\mathcal{F}(f) = f^{*}, & \forall f \in Mor(V,W) \doteq Hom(V,W)
+		\mathcal{F}(V) = V^{*}, & \forall V \in \ob(\mathfrak{C})\\
+		\mathcal{F}(f) = f^{*}, & \forall f \in \mor(V,W) \doteq Hom(V,W)
 	\end{cases}
 \end{equation}
 
@@ -3267,7 +3267,7 @@ e la composizione
 	\mathcal{F}(g \circ f) = (g \circ f)^{*} %
 	= f^{*} \circ g^{*} %
 	= \mathcal{F}(f) \circ \mathcal{F}(g) %
-	\qcomma f \in Mor(V,W), \, g \in Mor(W,Z)
+	\qcomma f \in \mor(V,W), \, g \in \mor(W,Z)
 \end{align}
 
 in quanto
@@ -3286,8 +3286,8 @@ Siano $ \mathfrak{C} $ la categoria delle varietà puntate e $ \mathfrak{D} $ la
 
 \begin{equation}
 	\begin{cases}
-		\mathcal{F}((N,p)) = T_{p}(N), & \forall (N,p) \in Ob(\mathfrak{C}), \, T_{p}(N) \in Ob(\mathfrak{D}) \\
-		\mathcal{F}(F) = F_{*p} & \forall F \in Mor((N,p),(M,q)), \, F_{*p} \in Mor(T_{p}(N),T_{q=F(p)}(M))
+		\mathcal{F}((N,p)) = T_{p}(N), & \forall (N,p) \in \ob(\mathfrak{C}), \, T_{p}(N) \in \ob(\mathfrak{D}) \\
+		\mathcal{F}(F) = F_{*p} & \forall F \in \mor((N,p),(M,q)), \, F_{*p} \in \mor(T_{p}(N),T_{q=F(p)}(M))
 	\end{cases}
 \end{equation}
 
