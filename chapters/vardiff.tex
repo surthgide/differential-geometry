@@ -2676,7 +2676,7 @@ La dimostrazione di questa relazione si ottiene applicando la composizione a $ X
 	\end{split}
 \end{align}
 
-\paragraph{3. Proprietà funtoriali}
+\paragraph{3. Proprietà funtoriali}\label{par:funt-prop}
 
 Il differenziale dell'identità $ \id_{N} : N \to N $ in punto $ p \in N $ è l'identità dello spazio tangente, i.e.
 	
@@ -2688,10 +2688,10 @@ in quanto
 
 \begin{equation}
 		(\id_{N})_{*p} (X_{p})(f) = X_{p} (f \circ \id_{N}) %
-		= X_{p}(f)
+		= X_{p}(f) %
+		\qcomma \forall f \in [(f,U)] \in C^{\infty}_{p}(N)
 \end{equation}
 
-per $ \forall f \in [(f,U)] \in C^{\infty}_{p}(N) $.\\
 Sia un diffeomorfismo $ F : N \to M $, allora il differenziale $ F_{*p} : T_{p}(N) \to T_{F(p)}(M) $ è un isomorfismo tra spazi vettoriali: essendo $ F $ un diffeomorfismo, esiste una funzione $ G : M \to N $ per cui
 
 \begin{equation}
@@ -3117,7 +3117,7 @@ Siano $ \mathfrak{C} $ e $ \mathfrak{D} $ due categorie, un \textit{funtore cova
 
 \begin{equation}
 	\begin{cases}
-		\mathcal{F}(A) \in Ob(\mathfrak{D}), & \forall A \in Ob(\mathfrak{C})\\
+		\mathcal{F}(A) \in Ob(\mathfrak{D}), & \forall A \in Ob(\mathfrak{C}) \\
 		\mathcal{F}(f) \in Mor(\mathcal{F}(A),\mathcal{F}(B)), & \forall f \in Mor(A,B)
 	\end{cases}
 \end{equation}
@@ -3126,8 +3126,8 @@ rispettando l'identità e la composizione, i.e.
 
 \begin{equation}
 	\begin{cases}
-		\mathcal{F}(\bigone_{A}) = \bigone_{\mathcal{F}(A)} \in Mor(\mathcal{F}(A),\mathcal{F}(A)), & \forall \bigone_{A} \in Mor(A,A)\\
-		\mathcal{F}(g \circ f) = \mathcal{F}(g) \circ \mathcal{F}(f) & \forall f \in Mor(A,B), \forall g \in Mor(B,C)
+		\mathcal{F}(\bigone_{A}) = \bigone_{\mathcal{F}(A)} \in Mor(\mathcal{F}(A),\mathcal{F}(A)), & \forall \bigone_{A} \in Mor(A,A) \\
+		\mathcal{F}(g \circ f) = \mathcal{F}(g) \circ \mathcal{F}(f), & \forall f \in Mor(A,B), \forall g \in Mor(B,C)
 	\end{cases}
 \end{equation}
 
@@ -3135,8 +3135,8 @@ Siano $ \mathfrak{C} $ la categoria delle varietà puntate e $ \mathfrak{D} $ la
 
 \begin{equation}
 	\begin{cases}
-		\mathcal{F}((N,p)) = T_{p}(N), & \forall (N,p) \in Ob(\mathfrak{C}), \, T_{p}(N) \in Ob(\mathfrak{D})\\
-		\mathcal{F}(F) = F_{*p} & \forall F \in Mor((N,p),(M,q)), \, F_{*p} \in Mor(T_{p}(N),T_{q=F(p)}(M))
+		\mathcal{F}((N,p)) = T_{p}(N), & \forall (N,p) \in Ob(\mathfrak{C}), \, T_{p}(N) \in Ob(\mathfrak{D}) \\
+		\mathcal{F}(F) = F_{*p}, & \forall F \in Mor((N,p),(M,q)), \, F_{*p} \in Mor(T_{p}(N),T_{q=F(p)}(M))
 	\end{cases}
 \end{equation}
 

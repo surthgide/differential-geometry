@@ -2050,19 +2050,189 @@ Essendo positivo, il fibrato tangente $ T(M) $ è orientabile.
 
 %
 
-\section{}\label{es2-27}
+\section{Funtore differenziale su varietà differenziabili}\label{es2-27}
 
 \begin{tcolorbox}
-	Dimostrare che l'applicazione $ \mathcal{F}_{*} $ che associa a ogni varietà differenziabile il suo fibrato tangente e a ogni applicazione $ F : N \to M $ tra varietà differenziabili il suo differenziale $ F_{*} : T(N) \to T(M) $ definita come
+	Dimostrare che l'applicazione $ \mathcal{F}_{*} $ che associa a ogni varietà differenziabile il suo fibrato tangente e a ogni applicazione $ F : M \to N $ tra varietà differenziabili l'applicazione $ F_{*} : T(M) \to T(N) $ definita come
 	
 	\begin{equation}
-		\mathcal{F}_{*}((p,v)) = (F(p), F_{*p}(v))
+		\mathcal{F}_{*}(p,v) = (F(p), F_{*p}(v)) \qcomma \forall (p,v) \in T(M)
 	\end{equation}
 	
-	per $ \forall (p,v) \in T(N) $ definisce un funtore covariante dalla categoria delle varietà differenziabili in sé stessa.
+	definisce un funtore covariante dalla categoria delle varietà differenziabili in sé stessa.
 \end{tcolorbox}
 
-qui
+Sia $ \mathfrak{C} $ la categoria delle varietà differenziabili con
+
+\begin{gather}
+	Ob(\mathfrak{C}) = \{ \text{collezione di tutte le varietà differenziabili} \}\\
+	Mor(M,N) = \{ \text{applicazioni lisce } F : M \to N \} \qcomma \forall M,N \in Ob(\mathfrak{C})
+\end{gather}
+
+Scriviamo la coppia di applicazioni $ \mathcal{F}_{*} $ come
+
+\begin{align}
+	\begin{split}
+		\mathcal{F}_{*} : \mathfrak{C} &\to \mathfrak{C} \\
+		M &\mapsto T(M) \\
+		F &\mapsto F_{*}
+	\end{split}
+\end{align}
+
+dove $ F : M \to N $ e l'applicazione $ F_{*} $ è definita come
+
+\map{F_{*}}
+	{T(M)}{T(N)}
+	{(p,v)}{(F(p), F_{*p}(v))}
+
+A questo punto, $ \mathcal{F}_{*} $ è un funtore covariante se
+
+\begin{equation}
+	\begin{cases}
+		\mathcal{F}_{*}(M) \in Ob(\mathfrak{C}), & \forall M \in Ob(\mathfrak{C}) \\
+		\mathcal{F}_{*}(F) \in Mor(\mathcal{F}_{*}(M),\mathcal{F}_{*}(N)), & \forall F \in Mor(M,N) \\
+		\mathcal{F}_{*}(\bigone_{M}) = \bigone_{\mathcal{F}_{*}(M)} \in Mor(\mathcal{F}_{*}(M),\mathcal{F}_{*}(M)), & \forall \bigone_{M} \in Mor(M,M) \\
+		\mathcal{F}_{*}(G \circ F) = \mathcal{F}_{*}(G) \circ \mathcal{F}_{*}(F), & \forall F \in Mor(M,N), \forall G \in Mor(N,P)
+	\end{cases}
+\end{equation}
+
+\paragraph{1)}
+
+Dalla definizione
+
+\begin{equation}
+	\mathcal{F}_{*}(M) = T(M) \in Ob(\mathfrak{C})
+\end{equation}
+
+in quanto $ T(M) $ è una varietà differenziabile.
+
+\paragraph{2)}
+
+Dalla definizione abbiamo che $ \mathcal{F}_{*}(F) = F_{*} $: per dimostrare che
+
+\begin{equation}
+	F_{*} \in Mor(\mathcal{F}_{*}(M),\mathcal{F}_{*}(N)) = Mor(T(M),T(N))
+\end{equation}
+
+e quindi che $ F_{*} \in C^{\infty}(T(M)) $, consideriamo il seguente diagramma
+
+\sbs{0.35}{%
+			\diagr{%
+					T(M) \arrow[rr, "F_{*}"]          \&  \& T(N) \arrow[dd, "\pi"] \\
+					\&  \&                        \\
+					M \arrow[rr, "F"] \arrow[uu, "X"] \&  \& N                     
+					}
+			}
+	{0.65}{%
+			\begin{equation}
+				F = \pi \circ F_{*} \circ X
+			\end{equation}
+			%			
+			\begin{align}
+				\begin{split}
+					(\pi \circ F_{*} \circ X)(p) &= \pi (F_{*} (X_{p})) \\
+					&= \pi(F(p), F_{*p}(X_{p})) \\
+					&= F(p)
+				\end{split}
+			\end{align}
+			}
+
+Essendo tutte le applicazioni dell'uguaglianza lisce, anche $ F_{*} $ è liscia, i.e.
+
+\begin{equation}
+	\begin{cases}
+		F \in C^{\infty}(M) \\
+		\pi \in C^{\infty}(T(N)) \\
+		X \in \chi(M)
+	\end{cases} %
+	\implies %
+	F_{*} \in C^{\infty}(T(M))
+\end{equation}
+
+\paragraph{3)}
+
+Sia l'applicazione identità
+
+\map{\bigone_{M}}
+	{M}{M}
+	{p}{p}
+
+Dalla definizione
+
+\map{\mathcal{F}_{*}(\bigone_{M}) = (\bigone_{M})_{*}}
+	{T(M)}{T(M)}
+	{(p,v)}{(\bigone_{M}(p), (\bigone_{M})_{*p}(v))}
+
+Siccome vale la relazione\footnote{%
+	Vedi Paragrafo \ref{par:funt-prop}.%
+}
+
+\begin{equation}
+	(\bigone_{M})_{*p} = \bigone_{T_{p}(M)}
+\end{equation}
+
+possiamo riscrivere $ \mathcal{F}_{*}(\bigone_{M}) $ come
+
+\map{\mathcal{F}_{*}(\bigone_{M}) = (\bigone_{M})_{*}}
+	{T(M)}{T(M)}
+	{(p,v)}{ %
+			(\bigone_{M}(p), \bigone_{T_{p}(M)}(v)) \\
+			&\mapsto (p,v)
+			}
+
+dunque
+
+\begin{equation}
+	\mathcal{F}_{*}(\bigone_{M}) = \bigone_{\mathcal{F}_{*}(M)}
+\end{equation}
+
+\paragraph{4)}
+
+Siano le applicazioni lisce
+
+\begin{equation}
+	\begin{cases}
+		F : M \to N \\
+		G : N \to P
+	\end{cases}
+\end{equation}
+
+Dalla definizione
+
+\map{\mathcal{F}_{*}(G \circ F) = (G \circ F)_{*}}
+	{T(M)}{T(P)}
+	{(p,v)}{ %
+			((G \circ F)(p), (G \circ F)_{*p}(v)) \\
+			&\mapsto ((G \circ F)(p), (G_{*F(p)} \circ F_{*p})(v))
+			}
+
+Siccome le applicazioni $ F_{*} $ e $ F_{*} $ sono definite come
+
+\sbs{0.5}{%
+			\map{F_{*}}
+			{T(M)}{T(N)}
+			{(p,v)}{(F(p), F_{*p}(v))}
+			}
+	{0.5}{%
+			\map{G_{*}}
+			{T(N)}{T(P)}
+			{(q,w)}{(G(q), G_{*q}(w))}
+			}
+
+possiamo scrivere la composizione
+
+\map{\mathcal{F}_{*}(G) \circ \mathcal{F}_{*}(F) = G_{*} \circ F_{*}}
+	{T(M)}{T(P)}
+	{(p,v)}{ %
+		G_{*}(F(p), F_{*p}(v)) \\
+		&\mapsto ((G \circ F)(p), (G_{*F(p)} \circ F_{*p})(v))
+	}
+
+dunque
+
+\begin{equation}
+	\mathcal{F}_{*}(G \circ F) = \mathcal{F}_{*}(G) \circ \mathcal{F}_{*}(F)
+\end{equation}
 
 %
 
