@@ -2206,7 +2206,7 @@ Dalla definizione
 			&\mapsto ((G \circ F)(p), (G_{*F(p)} \circ F_{*p})(v))
 			}
 
-Siccome le applicazioni $ F_{*} $ e $ F_{*} $ sono definite come
+Siccome le applicazioni $ F_{*} $ e $ G_{*} $ sono definite come
 
 \sbs{0.5}{%
 			\map{F_{*}}
@@ -2225,6 +2225,7 @@ possiamo scrivere la composizione
 	{T(M)}{T(P)}
 	{(p,v)}{ %
 		G_{*}(F(p), F_{*p}(v)) \\
+		&\mapsto (G(F(p)), G_{*F(p)}(F_{*p}(v))) \\
 		&\mapsto ((G \circ F)(p), (G_{*F(p)} \circ F_{*p})(v))
 	}
 
@@ -2240,28 +2241,47 @@ dunque
 
 %
 
-\section{}\label{es2-28}
+\section{Commutatore e derivazione di algebra di Lie}\label{es2-28}
 
 \begin{tcolorbox}
 	Una \textit{derivazione} di un'algebra di Lie $ (V,[\cdot,\cdot]) $ su un campo $ \K $ è un'applicazione lineare $ D : V \to V $ tale che
 	
 	\begin{equation}
-		D([Y,Z]) = [DY,Z] + [Y,DZ]
+		D([Y,Z]) = [DY,Z] + [Y,DZ] \qcomma \forall Y,Z \in V
 	\end{equation}
 	
-	per $ \forall Y,Z \in V $. Dimostrare che, dato $ X \in V $, l'applicazione
+	Dimostrare che, dato $ X \in V $, l'applicazione
 	
-	\begin{align}
-		\begin{split}
-			D_{X} : V &\to V\\
-			Y &\mapsto [X,Y]
-		\end{split}
-	\end{align}
+	\map{D_{X}}
+		{V}{V}
+		{Y}{[X,Y]}
 	
 	è una derivazione.
 \end{tcolorbox}
 
-qui
+Consideriamo l'identità di Jacobi per i commutatori
+
+\begin{equation}
+	[X,[Y,Z]] + [Y,[Z,X]] + [Z,[X,Y]] = 0 \qcomma \forall X,Y,Z \in V
+\end{equation}
+
+Calcoliamo dunque la seguente espressione:
+
+\begin{align}
+	\begin{split}
+		[D_{X} Y,Z] + [Y,D_{X} Z] &= [[X,Y],Z] + [Y,[X,Z]] \\
+		&= - [Z,[X,Y]] + [Y,-[Z,X]] \\
+		&= - [Z,[X,Y]] - [Y,[Z,X]] \\
+		&= [X,[Y,Z]] \\
+		&= D_{X}([Y,Z])
+	\end{split}
+\end{align}
+
+dove nel quarto passaggio abbiamo usato l'identità di Jacobi, quindi $ D_{X} $ è una derivazione in quanto
+
+\begin{equation}
+	D_{X}([Y,Z]) = [D_{X} Y,Z] + [Y,D_{X} Z] \qcomma \forall Y,Z \in V
+\end{equation}
 
 %
 
