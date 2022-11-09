@@ -1876,11 +1876,11 @@ A questo punto, possiamo mostrare che la sfera $ \S^{1} $ sia parallelizzabile, 
 \section{Varietà orientabili}\label{es2-26}
 
 \begin{tcolorbox}
-	Una varietà differenziabile $ N $ è detta \textit{orientabile} se esiste un atlante di $ N $ rispetto al quale il determinante jacobiano dei cambi di carte è positivo. Dimostrare che:
+	Una varietà differenziabile $ M $ è detta \textit{orientabile} se esiste un atlante di $ M $ rispetto al quale il determinante jacobiano dei cambi di carte è positivo. Dimostrare che:
 	
 	\begin{enumerate}
 		\item $ \rp{3} $ è una varietà orientabile;
-		\item il fibrato tangente $ T(N) $ di una varietà differenziabile $ N $ è orientabile.
+		\item il fibrato tangente $ T(M) $ di una varietà differenziabile $ M $ è orientabile.
 	\end{enumerate}
 \end{tcolorbox}
 
@@ -1935,8 +1935,115 @@ A questo punto, per $ \rp{3} $, abbiamo che questo è orientabile in quanto $ n 
 
 \paragraph{Fibrato tangente $ T(N) $}
 
-qui
+% https://math.stackexchange.com/questions/129514/why-is-the-tangent-bundle-orientable
 
+Siano un punto $ p \in M $ e le carte
+
+\begin{equation}
+	\begin{cases}
+		(U_{\alpha},\phi_{\alpha}) = (U_{\alpha},x^{1},\dots,x^{n}) \in M \\
+		(U_{\beta},\phi_{\beta}) = (U_{\beta},y^{1},\dots,y^{n}) \in M \\
+		(T(U_{\alpha}),\tilde{\phi}_{\alpha}) = (T(U_{\alpha}),\xi^{1},\dots,\xi^{2n}) \in T(M) \\
+		(T(U_{\beta}),\tilde{\phi}_{\beta}) = (T(U_{\beta}),\theta^{1},\dots,\theta^{2n}) \in T(M)
+	\end{cases}
+\end{equation}
+
+dove le applicazioni per il fibrato tangente sono date da
+
+\sbs{0.5}{%
+			\map{\tilde{\phi}_{\alpha}}
+				{T(U_{\alpha})}{\phi(U_{\alpha}) \times \R^{n}}
+				{(p,v)}{(\phi_{\alpha}(p),a(v))}
+			}
+	{0.5}{%
+			\map{\tilde{\phi}_{\beta}}
+				{T(U_{\beta})}{\phi(U_{\beta}) \times \R^{n}}
+				{(p,v)}{(\phi_{\beta}(p),b(v))}
+			}
+
+in quanto possiamo scrivere un vettore nello spazio tangente come
+
+\begin{equation}
+	v = \sum_{i=1}^{n} a^{i}(v) \eval{ \pdv{x^{i}} }_{p} %
+	= \sum_{i=1}^{n} b^{i}(v) \eval{ \pdv{y^{i}} }_{p} %
+	\in T_{p}(U_{\alpha} \cap U_{\beta})
+\end{equation}
+
+con
+
+\begin{gather}
+	a(v) = (a^{1}(v),\dots,a^{n}(v)) \\
+	b(v) = (b^{1}(v),\dots,b^{n}(v))
+\end{gather}
+
+Definendo le applicazioni di transizione come
+
+\begin{equation}
+	\begin{cases}
+		t_{\alpha \beta} \doteq \phi_{\alpha} \circ \phi_{\beta}^{-1} \\
+		\tilde{t}_{\alpha \beta} \doteq \tilde{\phi}_{\alpha} \circ \tilde{\phi}_{\beta}^{-1} 
+	\end{cases}
+\end{equation}
+
+possiamo esplicitare l'azione di $ \tilde{t}_{\alpha \beta} $ e della sua inversa:
+
+\begin{gather}
+	\tilde{t}_{\alpha \beta} (\phi_{\beta}(p),b(v)) = %
+	\left( t_{\alpha \beta}, \sum_{i=1}^{n} b^{i}(v) \, \pdv{(t_{\alpha \beta})^{1}}{r^{i}}, \dots, \sum_{i=1}^{n} b^{i}(v) \, \pdv{(t_{\alpha \beta})^{n}}{r^{i}} \right) (\phi_{\beta}(p)) \\
+	%
+	\tilde{t}_{\beta \alpha} (\phi_{\alpha}(p),a(v)) = %
+	\left( t_{\beta \alpha}, \sum_{i=1}^{n} b^{i}(v) \, \pdv{(t_{\beta \alpha})^{1}}{r^{i}}, \dots, \sum_{i=1}^{n} b^{i}(v) \, \pdv{(t_{\beta \alpha})^{n}}{r^{i}} \right) (\phi_{\alpha}(p))
+\end{gather}
+
+Calcoliamo ora lo jacobiano delle applicazioni di transizione\footnote{%
+	Calcoliamo solo $ J(\tilde{t}_{\alpha \beta})(\phi_{\alpha}(p),a(v)) $ in quanto $ J(\tilde{t}_{\beta \alpha})(\phi_{\beta}(p),b(v)) $ dà un risultato analogo al fine del calcolo del determinante.%
+}
+
+\begin{equation}
+	J(\tilde{t}_{\alpha \beta})(\phi_{\alpha}(p),a(v)) = \left[ \pdv{\theta^{i}}{\xi^{j}} \right]_{i,j=1}^{2n} %
+	= \bmqty{ %
+				\left[ \dpdv{\theta^{i}}{\xi^{j}} \right]_{i,j=1}^{n} & \eval{ \left[ \dpdv{\theta^{i}}{\xi^{j}} \right]_{i=1}^{n} }_{j=n+1}^{2n} \\\\
+			 	\eval{ \left[ \dpdv{\theta^{i}}{\xi^{j}} \right]_{i=n+1}^{2n} }_{j=1}^{n} & \left[ \dpdv{\theta^{i}}{\xi^{j}} \right]_{i,j=n+1}^{2n} %
+		 		}
+\end{equation}
+
+Sappiamo che
+
+\begin{equation}
+	(\theta^{1},\dots,\theta^{n}) = \phi_{\alpha} \left( \phi_{\beta}^{-1} (\xi^{1},\dots,\xi^{n}) \right)
+\end{equation}
+
+non dipendono da $ (\xi^{n+1},\dots,\xi^{2n}) $, i.e.
+
+\begin{equation}
+	\eval{ \left[ \dpdv{\theta^{i}}{\xi^{j}} \right]_{i=1}^{n} }_{j=n+1}^{2n} = 0_{n,n}
+\end{equation}
+
+Inoltre, la prima e l'ultima matrice di $ J(\tilde{t}_{\alpha \beta})(\phi_{\alpha}(p),a(v)) $ corrispondono allo jacobiano della matrice di transizione $ t_{\alpha \beta} $:
+
+\begin{gather}
+	\left[ \dpdv{\theta^{i}}{\xi^{j}} \right]_{i,j=1}^{n} = J(t_{\alpha \beta})(\phi_{\beta}(p)) \\
+	\nonumber\\
+	\left[ \dpdv{\theta^{i}}{\xi^{j}} \right]_{i,j=n+1}^{2n} = J \left( (t_{\alpha \beta})_{*(\xi^{1},\dots,\xi^{n})} \right) (\theta^{1},\dots,\theta^{n}) = J(t_{\alpha \beta})(\phi_{\beta}(p))
+\end{gather}
+
+A questo punto possiamo riscrivere lo jacobiano di $ \tilde{t}_{\alpha \beta} $ come
+
+\begin{equation}
+	J(\tilde{t}_{\alpha \beta})(\phi_{\alpha}(p),a(v)) = %
+	\bmqty{ %
+			J(t_{\alpha \beta})(\phi_{\beta}(p)) & 0_{n,n} \\\\
+			\eval{ \left[ \dpdv{\theta^{i}}{\xi^{j}} \right]_{i=n+1}^{2n} }_{j=1}^{n} & J(t_{\alpha \beta})(\phi_{\beta}(p)) %
+			}
+\end{equation}
+
+da cui il determinante
+
+\begin{equation}
+	\det( J(\tilde{t}_{\alpha \beta})(\phi_{\alpha}(p),a(v)) ) = \left( \det( J(t_{\alpha \beta})(\phi_{\beta}(p)) ) \right)^{2} > 0
+\end{equation}
+
+Essendo positivo, il fibrato tangente $ T(M) $ è orientabile.
 %
 
 \newpage
