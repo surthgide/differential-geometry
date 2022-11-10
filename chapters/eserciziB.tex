@@ -2289,13 +2289,44 @@ dove nel quarto passaggio abbiamo usato l'identità di Jacobi, quindi $ D_{X} $ 
 
 %
 
-\section{}\label{es2-29}
+\section{Curva integrale (1)}\label{es2-29}
 
 \begin{tcolorbox}
-	Siano $ M = \R \setminus 0 $ e $ X = \sfrac{\operatorname{d}}{\operatorname{dx}} \in \chi(M) $. Trovare la curva integrale di $ X $ massimale che inizia in un generico punto $ p \in \R $.
+	Siano $ M = \R \setminus \{0\} $ e $ X = \pdv*{x} \in \chi(M) $. Trovare la curva integrale di $ X $ massimale che inizia in un generico punto $ p \in \R $.
 \end{tcolorbox}
 
-qui
+Una curva integrale $ c : (a,b) \to \R $ per il campo $ X $ che inizia in $ p $ rispetta le seguenti condizioni
+
+\begin{equation}
+	\begin{cases}
+		c'(t) = X_{c(t)}, & \forall t \in (a,b) \\
+		c(0) = p
+	\end{cases}
+\end{equation}
+
+Le espressioni della tangente alla curva e del campo di vettori calcolato in $ c(t) $ sono date da
+
+\begin{gather}
+	c'(t) = \sum_{i=1}^{n} \dot{c}^{i}(t) \eval{ \pdv{x^{i}} }_{c(t)} = \dot{c}(t) \eval{ \pdv{x} }_{c(t)} \\
+	X_{c(t)} = \sum_{i=1}^{n} a^{i}(c(t)) \eval{ \pdv{x^{i}} }_{c(t)} = a(c(t)) \eval{ \pdv{x} }_{c(t)} = \eval{ \pdv{x} }_{c(t)}
+\end{gather}
+
+dunque, per ottenere la curva integrale, Possiamo ora calcolare il sistema nel seguente modo:
+
+\begin{equation}
+	\begin{cases}
+		\dot{c}(t) = 1, & \forall t \in (a,b) \\
+		c(0) = p
+	\end{cases} %
+	\implies %
+	c(t) = t + p
+\end{equation}
+
+Dunque la curva integrale massimale è la seguente:
+
+\map{c}
+	{\R}{M}
+	{t}{t + p}
 
 %
 
