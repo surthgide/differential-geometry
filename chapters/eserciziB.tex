@@ -2334,23 +2334,151 @@ Dunque la curva integrale massimale è la seguente:
 
 %
 
-\section{}\label{es2-30}
+\section{Flusso locale e gruppo di diffeomorfismi a un parametro}\label{es2-30}
 
 \begin{tcolorbox}
 	Trovare il flusso (locale) dei seguenti campi di vettori in $ \chi(\R^{2}) $:
 	
 	\begin{equation}
 		\begin{cases}
-			X = x \, \dfrac{\partial}{\partial x} - y \, \dfrac{\partial}{\partial y}\\\\
-			Y = x \, \dfrac{\partial}{\partial x} + y \, \dfrac{\partial}{\partial y}\\\\
-			Z = \dfrac{\partial}{\partial x} + y \, \dfrac{\partial}{\partial y}
+			X = x \, \dpdv{x} - y \, \dpdv{y} \\\\
+			Y = x \, \dpdv{x} + y \, \dpdv{y} \\\\
+			Z = \dpdv{x} + y \, \dpdv{y}
 		\end{cases}
 	\end{equation}
 	
 	Nel caso siano completi, calcolare il loro gruppo di diffeomorfismi a un parametro.
 \end{tcolorbox}
 
-qui
+Per calcolare il flusso (locale) $ F(t,p) $ di un campo di vettori $ X \in \chi(M) $, definiti come
+
+\map{F}
+	{(-\varepsilon,\varepsilon) \times W}{V}
+	{(t,p)}{F(t,p)}
+
+\begin{equation}
+	X = \sum_{i=1}^{n} a^{i} \pdv{x^{i}}
+\end{equation}
+
+con $ W,V \subseteq M $, è necessario risolvere il sistema
+
+\begin{equation}
+	\begin{cases}
+		F'(t,p) = X_{F(t,p)}, & \forall (t,p) \in (-\varepsilon,\varepsilon) \times W \\
+		F(0,p) = p
+	\end{cases}
+\end{equation}
+
+Essendo $ F(\cdot,p) : (-\varepsilon,\varepsilon) \to V $ una curva integrale per $ X $, possiamo riscrivere il sistema come
+
+\begin{equation}
+	\begin{cases}
+		\dot{F}^{i}(t,p) = a^{i}(F(t,p)), & \forall t \in (-\varepsilon,\varepsilon) \\
+		F^{i}(0,p) = p^{i}
+	\end{cases}
+\end{equation}
+
+Nel caso dei campi considerati:
+
+\begin{equation}
+	\begin{cases}
+		X = x \, \dpdv{x} - y \, \dpdv{y} \\\\
+		Y = x \, \dpdv{x} + y \, \dpdv{y} \\\\
+		Z = \dpdv{x} + y \, \dpdv{y}
+	\end{cases} %
+	\implies %
+	\begin{cases}
+		a = (x,-y) \\
+		b = (x,y) \\
+		c = (1,y)
+	\end{cases}
+\end{equation}
+
+Da cui i sistemi
+
+\begin{equation}
+	\begin{cases}
+		\dot{F_{X}}^{1}(t,p) \doteq \dot{x}(t) = x(t) \\
+		\dot{F_{X}}^{2}(t,p) \doteq \dot{y}(t) = - y(t) \\
+		{F_{X}}^{1}(0,p) \doteq x(0) = p^{1} \\
+		{F_{X}}^{2}(0,p) \doteq y(0) = p^{2}
+	\end{cases} %
+	\implies %
+	\begin{cases}
+		x(t) = A e^{t} \\
+		y(t) = B e^{-t} \\
+		x(0) = p^{1} \\
+		y(0) = p^{2}
+	\end{cases} %
+	\implies %
+	F_{X}(t,p) = (p^{1} e^{t}, p^{2} e^{-t})
+\end{equation}
+
+\begin{equation}
+	\begin{cases}
+		\dot{F_{Y}}^{1}(t,p) \doteq \dot{x}(t) = x(t) \\
+		\dot{F_{Y}}^{2}(t,p) \doteq \dot{y}(t) = y(t) \\
+		{F_{Y}}^{1}(0,p) \doteq x(0) = p^{1} \\
+		{F_{Y}}^{2}(0,p) \doteq y(0) = p^{2}
+	\end{cases} %
+	\implies %
+	\begin{cases}
+		x(t) = A e^{t} \\
+		y(t) = B e^{t} \\
+		x(0) = p^{1} \\
+		y(0) = p^{2}
+	\end{cases} %
+	\implies %
+	F_{Y}(t,p) = (p^{1} e^{t}, p^{2} e^{t}) = p \, e^{t}
+\end{equation}
+
+\begin{equation}
+	\begin{cases}
+		\dot{F_{Z}}^{1}(t,p) \doteq \dot{x}(t) = 1 \\
+		\dot{F_{Z}}^{2}(t,p) \doteq \dot{y}(t) = y(t) \\
+		{F_{Z}}^{1}(0,p) \doteq x(0) = p^{1} \\
+		{F_{Z}}^{2}(0,p) \doteq y(0) = p^{2}
+	\end{cases} %
+	\implies %
+	\begin{cases}
+		x(t) = t + A \\
+		y(t) = B e^{t} \\
+		x(0) = p^{1} \\
+		y(0) = p^{2}
+	\end{cases} %
+	\implies %
+	F_{Z}(t,p) = (p^{1} + t, p^{2} e^{t})
+\end{equation}
+
+Essendo tutti i flussi definiti in $ \R \times \R^{2} $, questi sono globali e i campi di vettori associati sono completi.\\
+I gruppi di diffeomorfismi a un parametro dei campi di vettori sono dunque
+
+\sbs{0.5}{%
+			\map{G_{X}}
+				{\R}{\operatorname{Diff}(\R^{2})}
+				{t}{F_{X,t}}
+			
+			\map{G_{X}}
+				{\R}{\operatorname{Diff}(\R^{2})}
+				{t}{F_{Y,t}}
+			
+			\map{G_{X}}
+				{\R}{\operatorname{Diff}(\R^{2})}
+				{t}{F_{Z,t}}
+			}
+	{0.5}{%
+			\map{F_{X,t}}
+				{\R^{2}}{\R^{2}}
+				{p}{(p^{1} e^{t}, p^{2} e^{-t})}
+			
+			\map{F_{Y,t}}
+				{\R^{2}}{\R^{2}}
+				{p}{(p^{1} e^{t}, p^{2} e^{t}) = p \, e^{t}}
+			
+			\map{F_{Z,t}}
+				{\R^{2}}{\R^{2}}
+				{p}{(p^{1} + t, p^{2} e^{t})}
+			}
 
 %
 
