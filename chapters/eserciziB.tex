@@ -2486,13 +2486,72 @@ I gruppi di diffeomorfismi a un parametro dei campi di vettori sono dunque
 
 %
 
-\section{}\label{es2-31}
+\section{Campo di vettori non completo}\label{es2-31}
 
 \begin{tcolorbox}
-	Dimostrare che il campo di vettori $ X = \sfrac{\partial}{\partial x} \in \chi(\R^{2} \setminus (0,0)) $ non è completo.
+	Dimostrare che il campo di vettori $ X = \pdv*{x} \in \chi(\R^{2} \setminus \{(0,0)\}) $ non è completo.
 \end{tcolorbox}
 
-qui
+Per calcolare il flusso (locale) $ F(t,p) $ del campo di vettori $ X \in \chi(\R^{2} \setminus \{(0,0)\}) $, definiti come
+
+\map{F}
+	{(-\varepsilon,\varepsilon) \times W}{V}
+	{(t,p)}{F(t,p)}
+
+\begin{equation}
+	X = \sum_{i=1}^{n} a^{i} \pdv{x^{i}} = a^{1} \pdv{x} + a^{2} \pdv{y} \equiv (1,0)
+\end{equation}
+
+con $ W,V \subseteq \R^{2} \setminus \{(0,0)\} $, è necessario risolvere il sistema
+
+\begin{equation}
+	\begin{cases}
+		\dot{F}^{1}(t,p) = a^{1}(F(t,p)) = 1 \\
+		\dot{F}^{2}(t,p) = a^{2}(F(t,p)) = 0 \\
+		F^{1}(0,p) = p^{1} \\
+		F^{2}(0,p) = p^{2}
+	\end{cases} %
+	\implies %
+	\begin{cases}
+		F^{1}(t,p) = t + A \\
+		F^{2}(t,p) = B \\
+		F^{1}(0,p) = p^{1} \\
+		F^{2}(0,p) = p^{2}
+	\end{cases} %
+	\implies %
+	F(t,p) = (p^{1} + t, p^{2})
+\end{equation}
+
+Possiamo ora considerare due casi per $ p^{2} \neq 0 $ e $ p^{2} = 0 $:
+
+\begin{equation}
+	p^{2} \neq 0 %
+	\implies %
+	F(t,p) : \R \times \R^{2} \setminus \{(0,0)\} \to \R^{2} \setminus \{(0,0)\}
+\end{equation}
+
+\begin{equation}
+	p^{2} \neq 0 %
+	\implies %
+	\begin{cases}
+		F(t,p) : \R \times (- p^{1}, + \infty) \to \R^{2} \setminus \{(0,0)\}, & p^{1} > 0 \\
+		F(t,p) : \R \times (- \infty, - p^{1}) \to \R^{2} \setminus \{(0,0)\}, & p^{1} < 0
+	\end{cases}
+\end{equation}
+
+Il dominio non è dunque $ \R \times \R^{2} \setminus \{(0,0)\} $ per qualsiasi $ t \in \R $ in quanto
+
+\begin{equation}
+	\begin{cases}
+		p^{2} = 0 \\
+		t = - p^{1}
+	\end{cases} %
+	\implies %
+	F(t,p) = F(- p^{1}; p^{1}, 0) = (0,0) \notin \R^{2} \setminus \{(0,0)\} %
+	\qcomma \forall p^{1} \in \R
+\end{equation}
+
+perciò il campo non è completo.
 
 %
 
