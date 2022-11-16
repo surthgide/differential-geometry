@@ -2597,13 +2597,57 @@ con $ c'(t) = X_{c(t)} $, il suo vettore tangente al punto $ c(t) $ sarà dato d
 
 %
 
-\section{}\label{es2-33}
+\section{Gruppo di diffeomorfismi a un parametro per campo di vettori nullo}\label{es2-33}
 
 \begin{tcolorbox}
 	Sia $ M $ una varietà differenziabile e $ X \in \chi(M) $ il campo di vettori nullo, i.e. $ X = 0 $. Descrivere il gruppo dei diffeomorfismi a un parametro associato a $ X $.
 \end{tcolorbox}
 
-qui
+Sia la carta
+
+\begin{equation}
+	(U, \phi) = (U; x^{1},\dots,x^{n}) \in M
+\end{equation}
+
+Possiamo scrivere il campo di vettori calcolato in $ p $ come
+
+\begin{equation}
+	X_{p} = \sum_{i=1}^{n} a^{i}(p) \eval{ \pdv{x^{i}} }_{p} \equiv (0,\dots,0)
+\end{equation}
+
+Se prendiamo la curva integrale
+
+\map{F}
+{(- \varepsilon, \varepsilon) \times V}{W}
+{(t,p)}{F_{t}(p)}
+
+con $ V,W \subseteq M $, la sua espressione sarà data dalla soluzione al seguente sistema:
+
+\begin{align}
+	\begin{cases}
+		F'_{t}(p) = X_{F_{t}(p)}, & \forall (t,p) \in (- \varepsilon, \varepsilon) \times V \\
+		F_{0}(p) = p
+	\end{cases}
+\end{align}
+
+da cui le componenti per $ i = 1,\dots,n $
+
+\begin{equation}
+	\begin{cases}
+		\dot{F_{t}}^{i}(p) = a^{i}(F_{t}(p)) \\
+		{F_{0}}^{i}(p) = p^{i} \\
+		i = 1,\dots,n
+	\end{cases} %
+	\implies %
+	F(t,p) = (p^{1},\dots,p^{n}) = p
+\end{equation}
+
+dunque $ F = \id_{M} $.\\
+Siccome il dominio di $ (t,p) $ può essere esteso a $ \R \times M $, possiamo scrivere il gruppo di diffeomorfismi a un parametro associato al campo di vettori nullo:
+
+\map{G}
+	{\R}{\operatorname{Diff}(M)}
+	{t}{\id_{M}}
 
 %
 
