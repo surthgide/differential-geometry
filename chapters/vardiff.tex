@@ -8622,7 +8622,7 @@ ma $ XY \notin \der(C^{\infty}(M)) $ perché non rispetta la regola di Leibniz
 	\end{split}
 \end{align}
 
-Definiamo quindi il \textit{commutatore o "bracket" tra due campi di vettori} come\footnote{%
+Definiamo quindi il \textit{commutatore tra due campi di vettori} come\footnote{%
 	Alternativamente si può scrivere
 	
 	\maps{[\cdot,\cdot]}
@@ -8636,13 +8636,13 @@ Definiamo quindi il \textit{commutatore o "bracket" tra due campi di vettori} co
 	{\chi(M) \times \chi(M)}{\chi(M)}
 	{(X,Y)}{XY-YX}
 
-e dunque, siccome questo rispetta anche la regola di Leibniz
+Il commutatore è $ \R $-lineare e rispetta anche la regola di Leibniz, dunque è un campo di vettori liscio:
 
 \begin{equation}
 	[X,Y] \doteq XY-YX \in \der(C^{\infty}(M))
 \end{equation}
 
-Di seguito, la verifica:
+Di seguito, la verifica per la regola di Leibniz:
 
 \begin{align}
 	\begin{split}
@@ -8661,7 +8661,7 @@ Di seguito, la verifica:
 	\end{split}
 \end{align}
 
-A questo punto, considerati un aperto $ U $, un suo punto $ p \in U $, due campi di vettori lisci $ X,Y \in \chi(U) $ e una funzione liscia $ f \in C^{\infty}(U) $, possiamo definire il commutatore dei due campi come
+A questo punto, considerati un aperto $ U \subset M $, un suo punto $ p \in U $, due campi di vettori lisci $ X,Y \in \chi(U) $ e una funzione liscia $ f \in C^{\infty}(U) $, possiamo definire l'azione del commutatore tra i due campi come
 
 \begin{equation}
 	[X,Y]_{p}(f) \doteq X_{p} (Y(f)) - Y_{p} (X(f)) \in C^{\infty}(U)
@@ -8671,7 +8671,7 @@ dove $ Y(f), X(f) \in C^{\infty}(U) $ e $ [X,Y] \in \chi(U) $.\\
 Il commutatore $ [X,Y]_{p}(f) $ è ancora una funzione liscia in quanto:
 
 \begin{itemize}
-	\item $ \R $-lineare poiché lo è $ X_{p} $
+	\item $ \R $-lineare poiché lo sono $ X_{p} $ e $ Y_{p} $
 	
 	\begin{equation}
 		[X,Y]_{p}(\lambda f + \mu g) = \lambda [X,Y]_{p}(f) + \mu [X,Y]_{p}(g)
@@ -8691,7 +8691,7 @@ Il commutatore $ [X,Y]_{p}(f) $ è ancora una funzione liscia in quanto:
 	
 	%
 	
-	\item $ [X,Y] $ è effettivamente un campo di vettori liscio in quanto è liscia la composizione $ XY-YX $
+	\item $ [X,Y] $ è un campo di vettori liscio in quanto è liscia la composizione $ XY-YX $
 		
 	\begin{equation}
 		[X,Y]_{p}(f) = [X,Y](f)(p) %
@@ -8719,15 +8719,21 @@ Il commutatore $ [X,Y]_{p}(f) $ è ancora una funzione liscia in quanto:
 		
 		e le forme locali dei campi tramite la carta
 		
-		\begin{gather}
-			\eval{X}_{U} = \sum_{j=1}^{n} a^{j} \, \pdv{x^{j}} \\
-			\eval{Y}_{U} = \sum_{j=1}^{n} b^{j} \, \pdv{x^{j}}
-		\end{gather}
+		\sbs{0.45}{%
+					\begin{equation}
+						\eval{X}_{U} = \sum_{j=1}^{n} a^{j} \, \pdv{x^{j}}
+					\end{equation}
+					}
+			{0.45}{%
+					\begin{equation}
+						\eval{Y}_{U} = \sum_{j=1}^{n} b^{j} \, \pdv{x^{j}}
+					\end{equation}
+					}
 	
 		con $ a^{j},b^{j} \in C^{\infty}(U) $ per $ j=1,\dots,n $, abbiamo che la forma locale del commutatore tra i campi è la seguente
 		
 		\begin{equation}
-			\eval{[X,Y]}_{U} = \sum_{j,k=1}^{n} \left( a^{j} \, \pdv{b^{k}}{x^{j}} + b^{j} \, \pdv{a^{k}}{x^{j}} \right) \pdv{x^{k}}
+			\eval{[X,Y]}_{U} = \sum_{j,k=1}^{n} \left( a^{j} \, \pdv{b^{k}}{x^{j}} - b^{j} \, \pdv{a^{k}}{x^{j}} \right) \pdv{x^{k}}
 		\end{equation}
 	\end{itemize}
 \end{definition}
@@ -8757,7 +8763,7 @@ Il commutatore $ [X,Y]_{p}(f) $ è ancora una funzione liscia in quanto:
 			\eval{[X,Y]}_{U} &= \left[ \sum_{j=1}^{n} a^{j} \, \pdv{x^{j}} , \sum_{k=1}^{n} b^{k} \, \pdv{x^{k}} \right]\\
 			&= \sum_{j,k=1}^{n} a^{j} b^{k} \cancelto{0}{\left[ \pdv{x^{j}} , \pdv{x^{k}} \right]} + \sum_{j,k=1}^{n} a^{j} \, \pdv{b^{k}}{x^{j}} \pdv{x^{k}} - \sum_{j,k=1}^{n} b^{k} \, \pdv{a^{j}}{x^{k}} \pdv{x^{j}}\\
 			&= \sum_{j,k=1}^{n} a^{j} \, \pdv{b^{k}}{x^{j}} \pdv{x^{k}} - \sum_{j,k=1}^{n} b^{j} \, \pdv{a^{k}}{x^{j}} \pdv{x^{k}}\\
-			&= \sum_{j,k=1}^{n} \left( a^{j} \, \pdv{b^{k}}{x^{j}} + b^{j} \, \pdv{a^{k}}{x^{j}} \right) \pdv{x^{k}}
+			&= \sum_{j,k=1}^{n} \left( a^{j} \, \pdv{b^{k}}{x^{j}} - b^{j} \, \pdv{a^{k}}{x^{j}} \right) \pdv{x^{k}}
 		\end{split}
 	\end{align}
 
