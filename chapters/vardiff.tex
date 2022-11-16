@@ -8772,8 +8772,8 @@ Il commutatore $ [X,Y]_{p}(f) $ è ancora una funzione liscia in quanto:
 
 \subsection{Distribuzioni e teorema di Frobenius}
 
-Sia $ M $ una varietà differenziabile di dimensione $ n $, una \textit{distribuzione} $ r $\textit{-dimensionale} ($ r \leqslant n $) assegna a qualsiasi punto $ p \in M $ un sottospazio $ D_{p} \subseteq T_{p}(M) $ tale che $ \dim(D_{p}) = r $, i.e. una distribuzione è una famiglia di sottospazi dello spazio tangente punto per punto.\\
-Una distribuzione $ r $-dimensionale è liscia se per qualsiasi punto $ p \in M $ esistono un intorno aperto $ U \subset M $ di $ p $ e un'insieme di $ r $ campi di vettori lisci $ X_{1},\dots,X_{r} \in \chi(M) $ tali che
+Sia $ M $ una varietà differenziabile di dimensione $ n $, una \textit{distribuzione} $ r $\textit{-dimensionale} ($ r \leqslant n $) è un'assegnazione di ogni punto $ p \in M $ a un sottospazio $ D_{p} \subseteq T_{p}(M) $ tale che $ \dim(D_{p}) = r $, i.e. l'immagine di una distribuzione è una famiglia di sottospazi dello spazio tangente punto per punto.\\
+Una distribuzione $ r $-dimensionale è \textit{liscia} se per qualsiasi punto $ p \in M $ esistono un intorno aperto $ U \subset M $ di $ p $ e un'insieme di $ r $ campi di vettori lisci $ X_{1},\dots,X_{r} \in \chi(M) $ tali che
 
 \begin{equation}
 	D_{p} = \ev{ (X_{1})_{p}, \dots, (X_{r})_{p} }_{\R}
@@ -8783,11 +8783,11 @@ Una distribuzione è liscia perché varia in tale modo rispetto al punto a cui �
 Sia $ D $ una distribuzione liscia $ r $-dimensionale, una \textit{varietà integrale} di $ D $ è una varietà differenziabile $ S \subset M $ (non necessariamente una sottovarietà) tale che
 
 \begin{equation}
-	T_{p}(S) = D_{p} \qcomma \forall p \in M
+	T_{p}(S) = D_{p} \qcomma \forall p \in S
 \end{equation}
 
 con $ \dim(S) = r $, cioè che ha, in ogni suo punto, come spazio tangente una distribuzione liscia.\\
-Una distribuzione liscia $ r $-dimensionale $ D $ è \textit{completamente integrabile} se per qualsiasi $ q \in M $ esiste una varietà integrale $ S $ per $ D $ tale che $ q \in S $, cioè se esiste una varietà integrabile per ogni punto della varietà.\\\\
+Una distribuzione liscia $ r $-dimensionale $ D $ è \textit{completamente integrabile} se per qualsiasi $ q \in M $ esiste una varietà integrale $ S $ per $ D $ tale che $ q \in S $, cioè se esiste una varietà integrale per ogni punto della varietà.\\\\
 %
 Ad esempio, sia un campo di vettori $ X \in \chi(M) $ non nullo in un aperto $ U $, i.e. $ X \neq 0 $ in $ U \subset M $, e consideriamo la distribuzione liscia $ 1 $-dimensionale
 
@@ -8831,7 +8831,7 @@ L'esistenza di una curva integrale che passa per $ p $ è verificata se $ D $ è
 Per dimostrare che $ D $ sia involutoria è necessario che, presi due campi di vettori della distribuzione $ Y,Z \in D $, il commutatore di questi appartenga ancora alla distribuzione, i.e. $ [Y,Z] \in D $: per la distribuzione considerata in precedenza
 
 \begin{equation}
-	Y,Z \in D \iff Y = f X \wedge Z = g X \qcomma f,g \in C^{\infty}(U)
+	Y,Z \in D \iff Y = f X \, \wedge \, Z = g X \qcomma f,g \in C^{\infty}(U)
 \end{equation}
 
 in quanto la moltiplicazione di un campo di vettori liscio per una funzione liscia è ancora un vettore liscio (nella stessa direzione). Calcolando ora il commutatore tra i due campi
@@ -8854,8 +8854,8 @@ Prendiamo $ \R^{3} $ e i campi di vettori lisci (con la loro identificazione)
 
 \begin{equation}
 	\begin{cases}
-		X = z \, \pdv{x} + \pdv{z} \equiv (z,0,1) \\\\
-		Y = \pdv{y} + \pdv{z} \equiv (0,1,1)
+		X = z \, \dpdv{x} + \dpdv{z} \equiv (z,0,1) \\\\
+		Y = \dpdv{y} + \dpdv{z} \equiv (0,1,1)
 	\end{cases}
 \end{equation}
 
