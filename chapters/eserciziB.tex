@@ -2559,13 +2559,37 @@ perciò il campo non è completo.
 
 %
 
-\section{}\label{es2-32}
+\section{Curva integrale costante}\label{es2-32}
 
 \begin{tcolorbox}
-	Sia $ M $ una varietà differenziabile e $ X \in \chi(M) $ tale che $ X(p) = 0 $ in un punto $ p \in M $. Dimostrare che la curva integrale di $ X $ che inizia in $ p $ è la curva costante $ c(t)=p $.
+	Sia $ M $ una varietà differenziabile e $ X \in \chi(M) $ tale che $ X(p) = 0 $ in un punto $ p \in M $. Dimostrare che la curva integrale di $ X $ che inizia in $ p $ è la curva costante $ c(t) = p $.
 \end{tcolorbox}
 
-\textbf{l 26 m 36}
+Sia la carta
+
+\begin{equation}
+	(U, \phi) = (U; x^{1},\dots,x^{n}) \in M
+\end{equation}
+
+Se prendiamo la curva integrale
+
+\map{c}
+	{(- \varepsilon, \varepsilon)}{M}
+	{t}{p}
+
+con $ c'(t) = X_{c(t)} $, il suo vettore tangente al punto $ c(t) $ sarà dato da
+
+\begin{align}
+	\begin{split}
+		X_{c(t)} &= c'(t) \\
+		&= \sum_{i=1}^{n} \dot{c}^{i}(t) \eval{ \pdv{x^{i}} }_{c(t)} \\
+		&\equiv (\dot{c}^{1}(t), \dots, \dot{c}^{n}(t)) \\
+		&= \dot{(p^{1}, \dots, p^{n})} \\
+		&= (0,\dots,0) \qcomma \forall c(t) \in M
+	\end{split}
+\end{align}
+
+È quindi necessario che tutte le componenti del vettore tangente alla curva siano nulle sempre perché possano essere nulle in un punto $ p \in M $ perciò, essendo la curva integrale unica, la curva integrale di $ X $ che inizia in $ p $ è la curva costante $ c(t) = p $.
 
 %
 
