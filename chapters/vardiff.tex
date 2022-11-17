@@ -8891,23 +8891,23 @@ Questo prova che $ D $ non è involutoria e quindi, per il teorema di Frobenius,
 
 \section{Pushforward di campi di vettori}
 
-Siano $ N $ e $ M $ due varietà differenziabili di dimensione rispettivamente $ n $ ed $ m $, un'applicazione liscia $ F : N \to M $ e un campo di vettori liscio $ X \in \chi(M) $. Fissando un punto $ p \in N $, per associare un vettore del campo dallo spazio tangente di $ N $ in $ p $ a quello di $ M $ in $ F(p) $ possiamo usare il differenziale
+Siano $ N $ e $ M $ due varietà differenziabili di dimensione rispettivamente $ n $ ed $ m $, un'applicazione liscia $ F : N \to M $ e un campo di vettori liscio $ X \in \chi(N) $. Fissando un punto $ p \in N $, per associare un vettore del campo dallo spazio tangente di $ N $ in $ p $ a quello di $ M $ in $ F(p) $ possiamo usare il differenziale
 
 \map{F_{*p}}
 	{T_{p}(N)}{T_{F(p)}(M)}
 	{X_{p}}{F_{*p}(X_{p})}
 
-ma questo non può essere esteso a tutto il campo di vettori in quanto, se l'applicazione non fosse iniettiva, esisterebbero $ p,q \in N $ tali che $ F(p) = F(q) $: a questo punto si presenta l'assegnazione del vettore in $ F(p) = F(q) $ e ci sarebbe ambiguità tra $ F_{*p}(X_{p}) $ e $ F_{*p}(X_{q}) $ e tra $ F_{*q}(X_{p}) $ e $ F_{*q}(X_{q}) $. Se l'applicazione fosse iniettiva ma non suriettiva, non esisterebbe un vettore $ X_{p} \in \chi(N) $ in $ p \in N $ la cui immagine attraverso il differenziale $ F_{*p} $ sia un vettore in un punto $ r \in M \setminus F(N) $ (dove $ F(N) \subsetneq M $ in quanto $ F $ non è suriettiva).\\
+ma questo non può essere esteso a tutto il campo di vettori in quanto, se l'applicazione $ F $ non fosse iniettiva, esisterebbero due punti diversi $ p,q \in N $ tali che $ F(p) = F(q) $: a questo punto si presenta l'assegnazione del vettore in $ F(p) = F(q) $ e ci sarebbe ambiguità tra $ F_{*p}(X_{p}) $ e $ F_{*p}(X_{q}) $ e tra $ F_{*q}(X_{p}) $ e $ F_{*q}(X_{q}) $. Se l'applicazione fosse iniettiva ma non suriettiva, non esisterebbe un vettore $ X_{p} \in \chi(N) $ in $ p \in N $ la cui immagine attraverso il differenziale $ F_{*p} $ sia un vettore in un punto $ r \in M \setminus F(N) $ (dove $ F(N) \subsetneq M $ in quanto $ F $ non è suriettiva).\\
 Supponiamo ora che l'applicazione $ F : N \to M $ sia un diffeomorfismo (quindi iniettiva e suriettiva) e definiamo il \textit{pushforward di} $ X $ tramite il diffeomorfismo $ F $ come
 
 \begin{equation}
-	(F_{*}(X))_{q} \doteq F_{*F^{-1}(q)} (X_{F^{-1}(q)}) \in T_{q}(M) \qcomma \forall q \in N
+	(F_{*}(X))_{q} \doteq F_{*F^{-1}(q)} (X_{F^{-1}(q)}) \in T_{q}(M) \qcomma \forall q \in M
 \end{equation}
 
 La definizione utilizza $ F^{-1}(q) $ in quanto $ F $ è biettiva e dunque $ F^{-1}(q) $ è l'unico punto che viene mandato in $ q $ tramite $ F $.
 
 \begin{definition}
-	Il pushforward $ F_{*}(X) $ di $ X $ tramite il diffeomorfismo $ F $ è un campo di vettori liscio su $ M $, i.e. $ F_{*}(X) \in \chi(M) $.
+	Il pushforward $ F_{*}(X) $ di un campo di vettori liscio $ X \in \chi(N) $ tramite il diffeomorfismo $ F : N \to M $ è un campo di vettori liscio su $ M $, i.e. $ F_{*}(X) \in \chi(M) $.
 \end{definition}
 
 \begin{proof}
