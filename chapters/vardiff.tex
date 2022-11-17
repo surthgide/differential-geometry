@@ -8803,15 +8803,14 @@ Questa distribuzione è completamente integrabile in quanto per qualsiasi $ q \i
 Data una distribuzione $ D $, un campo di vettori $ X \in \chi(M) $ appartiene alla distribuzione se $ X_{p} \in D_{p} $ per qualsiasi $ p \in M $. Nella distribuzione dell'esempio precedente, $ f X \in D $ per qualsiasi $ f \in C^{\infty}(M) $ con $ f \neq 0 $.
 
 \begin{theorem}[Frobenius]
-	Sia $ D $ una distribuzione $ r $-dimensionale liscia su una varietà differenziabile $ M $, allora $ D $ è completamente integrabile se e solo se $ D $ è \textit{involutoria}, i.e.
+	Sia $ D $ una distribuzione $ r $-dimensionale liscia su una varietà differenziabile $ M $, allora $ D $ è completamente integrabile se e solo se $ D $ è \textit{involutoria} (il commutatore di due campi di vettori appartiene alla distribuzione), i.e.
 	
 	\begin{equation}
-		\begin{cases}
-			D \text{ involutoria} \\
-			X,Y \in D
-		\end{cases}
-		\implies %
-		[X,Y] \in D
+		D \text{ completamente integrabile} %
+		\iff %
+		D \text{ involutoria} %
+		\stackrel{\quad}{=\joinrel=} %
+		[X,Y] \in D \qcomma \forall X,Y \in D
 	\end{equation}
 \end{theorem}
 
@@ -8840,7 +8839,8 @@ in quanto la moltiplicazione di un campo di vettori liscio per una funzione lisc
 	\begin{split}
 		[Y,Z] &= [fX,gX] \\
 		&= fg [X,X] + (f \, X(g)) X - (g \, X(f)) X \\
-		&= (f \, X(g) - g \, X(f)) X \in D
+		&= (f \, X(g) - g \, X(f)) X \\
+		&\doteq h X \in D
 	\end{split}
 \end{align}
 
@@ -8866,15 +8866,22 @@ Consideriamo la distribuzione liscia 2-dimensionale
 \end{equation}
 
 Se $ D $ fosse completamente integrabile, per ogni punto di $ \R^{3} $ esisterebbe una superficie il cui spazio tangente è generato da una combinazione lineare dei campi di vettori (definiti sopra) valutati in quello stesso punto.\\
-Verifichiamo ora che non sia completamente integrabile: per farlo, è sufficiente esibire un controesempio, i.e. un commutatore tra i campi della distribuzione che non sia appartenente alla distribuzione, prendiamo dunque il commutatore tra i campi $ X $ e $ Y $
+Verifichiamo ora che non sia completamente integrabile: per farlo, è sufficiente esibire un controesempio, i.e. un commutatore tra i campi della distribuzione che non sia appartenente alla distribuzione.\\
+Ricordando la proprietà
+
+\begin{equation}
+	[fX,gX] = fg [X,X] + (f \, X(g)) X - (g \, X(f)) X \qcomma \forall f,g \in C^{\infty}(M), \,  \forall X,Y \in \chi(M)
+\end{equation}
+
+calcoliamo il commutatore tra i campi $ X $ e $ Y $
 
 \begin{align}
 	\begin{split}
 		[X,Y] &= \left[ z \, \pdv{x} + \pdv{z} , \pdv{y} + \pdv{z} \right] \\
 		&= \left[ z \pdv{x}, \pdv{y} \right] + \left[ z \pdv{x}, \pdv{z} \right] + \cancel{\left[ \pdv{z}, \pdv{y} \right]} + \cancel{\left[ \pdv{z}, \pdv{z} \right]} \\
 		&= \left[ z \pdv{x}, \pdv{y} \right] + \left[ z \pdv{x}, \pdv{z} \right] \\
-		&= (z \cdot 1) \cancel{\left[ \pdv{x}, \pdv{y} \right]} + \left( z \, \cancel{ \pdv{1}{x} } \right) \pdv{y} - \cancel{\left( \pdv{z}{y} \right)} \pdv{x} + \\
-		& \hal + (z \cdot 1) \cancel{\left[ \pdv{x}, \pdv{z} \right]} + \left( z \, \cancel{\pdv{1}{x}} \right) \pdv{z} - \cancelto{1}{\left( \pdv{z}{z} \right)} \pdv{x}\\
+		&= (z \cdot 1) \cancel{\left[ \pdv{x}, \pdv{y} \right]} + \left( z \, \cancel{ \pdv{1}{x} } \right) \pdv{y} - 1 \cdot \cancel{\left( \pdv{z}{y} \right)} \pdv{x} + \\
+		& \hal + (z \cdot 1) \cancel{\left[ \pdv{x}, \pdv{z} \right]} + \left( z \, \cancel{\pdv{1}{x}} \right) \pdv{z} - 1 \cdot \cancelto{1}{\left( \pdv{z}{z} \right)} \pdv{x}\\
 		%
 		&= - \pdv{x} \notin D
 	\end{split}
