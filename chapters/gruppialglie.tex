@@ -1,34 +1,44 @@
 \section{Gruppi di Lie}
 
-Un gruppo $ G $ è un \textit{gruppo di Lie} se l'insieme del gruppo è una varietà differenziabile, è un gruppo algebrico e se le sue operazioni
+Un gruppo $ (G,\mu) \equiv G $ è un \textit{gruppo di Lie} se l'insieme $ G $ del gruppo è una varietà differenziabile, se è un gruppo algebrico e se sono lisce le sue operazioni di prodotto e inversione:
 
-\begin{align}
-	\begin{split}
-		\mu : G \times G &\to G\\
-		(a,b) &\mapsto a b\\\\
-		%
-		i : G &\to G\\
-		a &\mapsto a^{-1}
-	\end{split}
-\end{align}
+\sbs{0.5}{%
+			\map{\mu}
+				{G \times G}{G}
+				{(ab)}{a b}
+			}
+	{0.5}{%
+			\map{i}
+				{G}{G}
+				{a}{a^{-1}}
+			}
+		
+Sia $ a \in G $, possiamo considerare delle restrizioni della moltiplicazione, chiamate traslazione a sinistra $ L_{a} $ e traslazione a destra $ R_{a} $:
 
-sono lisce.\\\\
-%
-Le traslazioni possono essere a sinistra e a destra:
+\sbs{0.5}{%
+			\map{L_{a}}
+				{G}{G}
+				{b}{a b}
+			}
+	{0.5}{%
+			\map{R_{a}}
+				{G}{G}
+				{b}{b a}
+			}
 
-\begin{itemize}
-	\item Dato $ a \in G $, la traslazione a sinistra
-	
-	\map{L_{a}}{G}{G}{b}{a b}
-	
-	è un'applicazione liscia, in quanto restrizione di un'applicazione liscia (i.e. $ L_{a} = \mu(a,\cdot) $), ed è inoltre un diffeomorfismo, in quanto $ L_{a}^{-1} = L_{a^{-1}} $ è ancora liscia;
-	
-	\item Dato $ a \in G $, la traslazione a destra
-	
-	\map{R_{a}}{G}{G}{b}{b a}
-	
-	è un'applicazione liscia, in quanto restrizione di un'applicazione liscia (i.e. $ R_{a} = \mu(\cdot,a) $), ed è inoltre un diffeomorfismo, in quanto $ R_{a}^{-1} = R_{a^{-1}} $ è ancora liscia.
-\end{itemize}
+Queste sono lisce in quanto restrizioni di applicazioni lisce:
+
+\begin{gather}
+	L_{a} \doteq \mu(a,\cdot) \\
+	R_{a} \doteq \mu(\cdot,a) 
+\end{gather}
+
+Sono inoltre diffeomorfismi, in quanto sono lisce le inverse:
+
+\begin{gather}
+	L_{a}^{-1} = L_{a^{-1}} \\
+	R_{a}^{-1} = R_{a^{-1}}
+\end{gather}
 
 \subsubsection{\textit{Esempi}}
 
