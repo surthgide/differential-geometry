@@ -42,25 +42,26 @@ Sono inoltre diffeomorfismi, in quanto sono lisce le inverse:
 
 \subsubsection{\textit{Esempi}}
 
-\paragraph{1) Gruppo lineare $ GL_{n}(^{\R}) $}
+\paragraph{1) Gruppo lineare $ GL_{n}(\R) $}
 
-Il gruppo delle matrici invertibili
+Sia il gruppo delle matrici invertibili
 
 \begin{equation}
 	GL_{n}(\R) = \{ A \in M_{n}(\R) \mid \det(A) \neq 0 \} \subset M_{n}(\R) = \R^{n^{2}}
 \end{equation}
 
-con la struttura differenziale ereditata da $ M_{n}(\R) = \R^{n^{2}} $ in quanto $ GL_{n}(\R) $ è aperto in questo spazio, è un gruppo di Lie rispetto alla moltiplicazione e l'inversione:
+Questo è aperto in $ M_{n}(\R) = \R^{n^{2}} $, dunque ha la struttura differenziale ereditata da quest'ultimo e perciò è un gruppo di Lie rispetto alla moltiplicazione e l'inversione definite come
 
-\begin{align}
-	\begin{split}
-		\mu : GL_{n}(\R) \times GL_{n}(\R) &\to GL_{n}(\R)\\
-		(A,B) &\mapsto A B\\\\
-		%
-		i : GL_{n}(\R) &\to GL_{n}(\R)\\
-		A &\mapsto A^{-1}
-	\end{split}
-\end{align}
+\sbs{0.5}{%
+			\map{\mu}
+				{GL_{n}(\R) \times GL_{n}(\R)}{GL_{n}(\R)}
+				{(A,B)}{A B}
+			}
+	{0.5}{%
+			\map{i}
+				{GL_{n}(\R)}{GL_{n}(\R)}
+				{A}{A^{-1}}
+		}
 
 le quali sono lisce.
 
@@ -74,22 +75,25 @@ Il gruppo delle matrici con determinante unitario
 
 è un gruppo di Lie rispetto alla moltiplicazione e l'inversione:
 
-\begin{align}
-	\begin{split}
-		\mu : SL_{n}(\R) \times SL_{n}(\R) &\to SL_{n}(\R)\\
-		(A,B) &\mapsto A B\\\\
-		%
-		i : SL_{n}(\R) &\to SL_{n}(\R)\\
-		A &\mapsto A^{-1}
-	\end{split}
-\end{align}
+\sbs{0.5}{%
+			\map{\mu}
+				{SL_{n}(\R) \times SL_{n}(\R)}{SL_{n}(\R)}
+				{(A,B)}{A B}
+			}
+	{0.5}{%
+			\map{i}
+				{SL_{n}(\R)}{SL_{n}(\R)}
+				{A}{A^{-1}}
+			}
 
 in quanto sottovarietà di $ GL_{n}(\R) $ (e quindi una varietà) di dimensione $ n^{2}-1 $ e gruppo algebrico rispetto alle sue operazioni, le quali sono lisce.\\
 Dimostriamo ora che la moltiplicazione è liscia\footnote{%
 	Questa dimostrazione è già stata fatta nell'Esempio \ref{ex-slnr}.%
 }: prendiamo la moltiplicazione (liscia) in $ GL_{n}(\R) $
 
-\map{F}{GL_{n}(\R) \times GL_{n}(\R)}{GL_{n}(\R)}{(A,B)}{A B}
+\map{F}
+	{GL_{n}(\R) \times GL_{n}(\R)}{GL_{n}(\R)}
+	{(A,B)}{A B}
 
 e l'inclusione liscia
 
@@ -97,7 +101,7 @@ e l'inclusione liscia
 	i \times i : SL_{n}(\R) \times SL_{n}(\R) \to GL_{n}(\R) \times GL_{n}(\R)
 \end{equation}
 
-L'applicazione $ G = F \circ (i \times i) $ è dunque liscia perché composizione di applicazione lisce; siccome il prodotto di due matrici con determinante unitario (i.e. in $ SL_{n}(\R) $) è ancora una matrice con determinante unitario, l'immagine di $ G $
+L'applicazione $ G = F \circ (i \times i) $ è dunque liscia perché composizione di applicazione lisce; siccome il prodotto di due matrici con determinante unitario (i.e. in $ SL_{n}(\R) $) è ancora una matrice con determinante unitario, vale per l'immagine di $ G $
 
 \begin{equation}
 	G(SL_{n}(\R) \times SL_{n}(\R)) \subset SL_{n}(\R)
@@ -105,20 +109,28 @@ L'applicazione $ G = F \circ (i \times i) $ è dunque liscia perché composizion
 
 A questo punto, dato che $ SL_{n}(\R) $ è una sottovarietà di $ GL_{n}(\R) $ (ipotesi del teorema che permette di mantenere l'applicazione liscia), possiamo considerare la restrizione del codominio della funzione $ G $
 
-\map{\tilde{G}}{SL_{n}(\R) \times SL_{n}(\R)}{SL_{n}(\R)}{(A,B)}{A B}
+\map{\tilde{G}}
+	{SL_{n}(\R) \times SL_{n}(\R)}{SL_{n}(\R)}
+	{(A,B)}{A B}
 
 la quale è identica a $ \mu $, dunque $ \mu \in C^{\infty}(SL_{n}(\R) \times SL_{n}(\R)) $.\\
 Per dimostrare che l'inversione sia liscia, consideriamo l'inversione in $ GL_{n}(\R) $
 
-\map{F}{GL_{n}(\R)}{GL_{n}(\R)}{A}{A^{-1}}
+\map{F}
+	{GL_{n}(\R)}{GL_{n}(\R)}
+	{A}{A^{-1}}
 
 la quale è liscia e, analogamente per la moltiplicazione, definiamo $ G = F \circ i $
 
-\map{G}{SL_{n}(\R)}{GL_{n}(\R)}{A}{A^{-1}}
+\map{G}
+	{SL_{n}(\R)}{GL_{n}(\R)}
+	{A}{A^{-1}}
 
 e dunque la restrizione del suo codominio a $ SL_{n}(\R) $ (sottovarietà di $ GL_{n}(\R) $)
 
-\map{\tilde{G}}{SL_{n}(\R)}{SL_{n}(\R)}{A}{A^{-1}}
+\map{\tilde{G}}
+	{SL_{n}(\R)}{SL_{n}(\R)}
+	{A}{A^{-1}}
 
 funzione che coincide con l'inversione in $ SL_{n}(\R) $, rendendo dunque l'inversione  $ i $ liscia.
 
