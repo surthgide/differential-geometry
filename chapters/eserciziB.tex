@@ -2655,7 +2655,7 @@ Siccome il dominio di $ (t,p) $ può essere esteso a $ \R \times M $, possiamo s
 
 %
 
-\section{}\label{es2-34}
+\section{Pushforward di prodotto tra funzione e campo}\label{es2-34}
 
 \begin{tcolorbox}
 	Siano $ F : N \to M $ un diffeomorfismo tra varietà differenziabili, $ X \in \chi(N) $ e $ f \in C^{\infty}(N) $. Dimostrare che
@@ -2665,5 +2665,39 @@ Siccome il dominio di $ (t,p) $ può essere esteso a $ \R \times M $, possiamo s
 	\end{equation}
 \end{tcolorbox}
 
-qui
+Per dimostrare questa relazione, usiamo la definizione di pushforward, di differenziale, la linearità del differenziale, e il prodotto tra funzione e campo di vettori:
 
+\begin{equation}
+	\begin{cases}
+		(F_{*} X)_{q} = F_{*F^{-1}(q)} (X_{F^{-1}(q)}), & \forall q \in M \\
+		F_{*q} (X_{q}) (g) = X_{q} (g \circ F), & \forall q \in M, \, \forall g \in C^{\infty}(M) \\
+		F_{*q} (\alpha X_{q}) = \alpha F_{*q} (X_{q}), & \forall \alpha \in \R \\
+		(f X)(p) = f(p) X_{p}, & \forall p \in N 
+	\end{cases}
+\end{equation}
+
+Considerando $ f : N \to \R $ e un punto qualsiasi $ p \in M $, possiamo scrivere
+
+\begin{align}
+	\begin{split}
+		F_{*}(f X)(p) &= (F_{*}(f X))_{q} \\
+		&= F_{*F^{-1}(q)} ((f X)_{F^{-1}(q)}) \\
+		&= F_{*F^{-1}(q)} (f(F^{-1}(q)) \, X_{F^{-1}(q)}) \\
+		&= f(F^{-1}(q)) \, F_{*F^{-1}(q)} (X_{F^{-1}(q)}) \\
+		&= (f \circ F^{-1})(q) \, F_{*F^{-1}(q)} (X_{F^{-1}(q)}) \\
+		&= (f \circ F^{-1})(q) \, (F_{*} X)_{q} \\
+		&= ((f \circ F^{-1}) \, F_{*} X)(q)
+	\end{split}
+\end{align}
+
+in quanto
+
+\begin{equation}
+	f(F^{-1}(q)) = (f \circ F^{-1})(q) \in \R
+\end{equation}
+
+dunque
+
+\begin{equation}
+	F_{*}(f X) = (f \circ F^{-1}) \, F_{*} X
+\end{equation}
