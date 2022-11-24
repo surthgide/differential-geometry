@@ -173,7 +173,7 @@ Ad esempio, la funzione
 	{\R}{\R}
 	{x}{x^{3}}
 è una bigezione, è liscia ma la sua inversa non lo è, dunque $ f $ non è un diffeomorfismo.\\
-Quando esiste un diffeomorfismo tra due aperti, si dice che questi sono \textit{diffeomorfi}: $ U $ e $ V $ sono diffeomorfi se $ \E f : U \to V $ diffeomorfismo, i.e. $ U \simeq V $.\\
+Quando esiste un diffeomorfismo tra due aperti, si dice che questi sono \textit{diffeomorfi}: $ U $ e $ V $ sono diffeomorfi se $ \E f : U \to V $ diffeomorfismo, \ie $ U \simeq V $.\\
 
 \begin{theorem}[Invarianza topologica della dimensione]
 	Se $ U \subset \R^{n} $ e $ V \subset \R^{m} $ sono aperti omeomorfi allora $ n = m $.
@@ -203,7 +203,7 @@ sono diffeomorfi tra loro\footnote{%
 
 \subsection{Diffeomorfismo tra $ B_{\delta} (c) $ e $ \R^{n} $}
 
-Indichiamo con $ B_{1} (0) $ la \textit{palla} di centro l'origine e raggio unitario, i.e.
+Indichiamo con $ B_{1} (0) $ la \textit{palla} di centro l'origine e raggio unitario, \ie
 
 \begin{equation}
 	B_{1} (0) = \left\{ x \in \R^{n} \st \norm{x} \doteq \sqrt{\sum_{i=1}^{n} (x^{i})^{2}} < 1 \right\}
@@ -232,7 +232,7 @@ in quanto
 Perché sia $ f $ che $ f^{-1} $ siano lisce, dobbiamo verificare che ogni loro componente lo sia, il quale è verificato perché la derivata di una delle componenti di $ f $ ha al denominatore sempre $ \sqrt{1 - \norm{x}^{2}} \in B_{1} (0) $ e lo stesso vale per la sua inversa $ \sqrt{1 + \norm{x}^{2}} \in \R^{n} $.
 
 \begin{corollary}
-	La palla di centro $ c $ e raggio $ \delta $ con $ c \in \R^{n} $ e $ \delta \geqslant 0 $ è diffeomorfa a $ \R^{n} $, i.e. $ B_{\delta} (c) \simeq \R^{n} $.
+	La palla di centro $ c $ e raggio $ \delta $ con $ c \in \R^{n} $ e $ \delta \geqslant 0 $ è diffeomorfa a $ \R^{n} $, \ie $ B_{\delta} (c) \simeq \R^{n} $.
 \end{corollary}
 
 Per dimostrare questo è necessario dimostrare che siano diffeomorfismi le traslazioni (le quali sono lineari e affini) e le omotetie (scala di un fattore $ \delta $); questa dimostrazione mostra anche che\footnote{%
@@ -469,7 +469,7 @@ Preso un punto $ p \in \R^{n} $, lo \textit{spazio tangente} in quel punto viene
 	\bmqty{ v^{1} \\ \vdots \\ v^{n} } \qquad \lor \qquad [v^{1}, \cdots, v^{n}]
 \end{equation}
 
-dove le $ v^{i} $ sono le componenti del vettore nella base canonica, i.e.
+dove le $ v^{i} $ sono le componenti del vettore nella base canonica, \ie
 
 \begin{equation}
 	v = \sum_{i=1}^{n} v^{i} e_{i}
@@ -500,7 +500,7 @@ dove $ D_{v} f \in \R $ e $ v = [v^{1},\dots,v^{n}] $.
 
 \sbs{0.4}{%
 			\begin{remark}
-				Sia $ g \in C^{\infty} (\R^{n}) $ tale che $ g : V \to \R $ con $ V \subset \R $ e $ V \cap U \neq \emptyset $. Se $ g \equiv f $ in un intorno del punto $ p \in U \cap V $, allora la loro derivata direzionale è la stessa\footnotemark, i.e. $ D_{v} g = D_{v} f $.
+				Sia $ g \in C^{\infty} (\R^{n}) $ tale che $ g : V \to \R $ con $ V \subset \R $ e $ V \cap U \neq \emptyset $. Se $ g \equiv f $ in un intorno del punto $ p \in U \cap V $, allora la loro derivata direzionale è la stessa\footnotemark, \ie $ D_{v} g = D_{v} f $.
 			\end{remark}
 			}
 	{0.6}{%
@@ -531,7 +531,7 @@ Prendiamo dunque lo spazio quoziente
 	\sfrac{X}{\sim} \doteq C_{p}^{\infty}(\R^{n})
 \end{equation}
 
-dove un elemento $ [(f,U)] $ di questo spazio è chiamato \textit{germe} intorno al punto $ p $ ed è una \textit{classe di equivalenza} di coppie $ (f,U) $. A questo punto, $ C_{p}^{\infty}(\R^{n}) $ è l'insieme dei germi di funzioni lisce intorno a $ p $, i.e.
+dove un elemento $ [(f,U)] $ di questo spazio è chiamato \textit{germe} intorno al punto $ p $ ed è una \textit{classe di equivalenza} di coppie $ (f,U) $. A questo punto, $ C_{p}^{\infty}(\R^{n}) $ è l'insieme dei germi di funzioni lisce intorno a $ p $, \ie
 
 \begin{equation}
 	C_{p}^{\infty}(\R^{n}) = \left\{ [(f,U)] \right\}
@@ -647,14 +647,14 @@ Questa applicazione possiede le seguenti proprietà:
 \begin{enumerate}
 	\item $ \R $-linearità\footnote{%
 		Rispetto alla struttura di spazio vettoriale di $ C_{p}^{\infty}(\R^{n}) $.%
-	}, i.e.
+	}, \ie
 		%
 		\begin{align}
 			D ([(f,U)] + [(g,V)]) &= D ([(f,U)]) + D ([(g,V)])\\
 			D (\lambda [(f,U)]) &= \lambda D ([(f,U)])
 		\end{align}
 	
-	\item soddisfa la \textit{regola di Leibniz}, i.e.
+	\item soddisfa la \textit{regola di Leibniz}, \ie
 		%
 		\begin{equation}
 			D ([(f,U)] \cdot [(g,V)]) = D ([(f,U)]) \, g(p) + f(p) \, D ([(g,V)])
@@ -707,7 +707,7 @@ Questa applicazione possiede le seguenti proprietà:
 \end{proof}
 
 La derivazione puntuale è quindi un modo per associare un numero reale a un germe di funzioni, soddisfacendo le proprietà definite sopra.\\
-Indichiamo dunque l'insieme delle derivazioni puntuali di $ C_{p}^{\infty}(\R^{n}) $ come $ \der_{p}(C_{p}^{\infty}(\R^{n})) $, i.e.
+Indichiamo dunque l'insieme delle derivazioni puntuali di $ C_{p}^{\infty}(\R^{n}) $ come $ \der_{p}(C_{p}^{\infty}(\R^{n})) $, \ie
 
 \begin{equation}
 	\der_{p}(C_{p}^{\infty}(\R^{n})) \doteq \left\{ D ([(f,U)]) = D_{v} f \doteq \sum_{j=1}^{n} \pdv{f}{x^{j}} \, (p) \, v^{j} \in \R \st [(f,U)] \in C_{p}^{\infty}(\R^{n}), v \in T_{p} (\R^{n}) \right\}
@@ -721,17 +721,17 @@ Definiamo l'applicazione
 	{T_{p}(\R^{n})}{\der_{p}(C_{p}^{\infty}(\R^{n}))}
 	{v}{D_{v}}
 
-questa associa il vettore $ v = [v^{1},\dots,v^{n}] \in T_{p}(\R^{n}) $ con $ p \in \R^{n} $ alla derivazione puntuale $ D_{v} $, la quale è a sua volta un'applicazione che associa la classe di equivalenza di germi di funzioni $ [(f,U)] $ alla derivata direzionale di $ f $ rispetto a $ v $, i.e.
+questa associa il vettore $ v = [v^{1},\dots,v^{n}] \in T_{p}(\R^{n}) $ con $ p \in \R^{n} $ alla derivazione puntuale $ D_{v} $, la quale è a sua volta un'applicazione che associa la classe di equivalenza di germi di funzioni $ [(f,U)] $ alla derivata direzionale di $ f $ rispetto a $ v $, \ie
 
 \begin{align}
 	D_{v} f = \sum_{j=1}^{n} \pdv{f}{x^{j}} \, (p) \, v^{j} \in \R
 \end{align}
 
-Possiamo usare lo stesso simbolo, i.e. $ D_{v} ([(f,U)]) = D_{v} f $, perché questa relazione vale per qualsiasi rappresentante della classe.\\
+Possiamo usare lo stesso simbolo, \ie $ D_{v} ([(f,U)]) = D_{v} f $, perché questa relazione vale per qualsiasi rappresentante della classe.\\
 L'applicazione $ \phi $ permette di considerare equivalentemente l'insieme delle derivazioni puntuali dell'algebra dei germi delle funzioni $ C_{p}^{\infty}(\R^{n}) $ e lo spazio tangente a un punto, in quanto questi due insiemi sono isomorfi tra loro tramite $ \phi $ stessa. Utilizzare le derivazioni è utile perché per le varietà differenziabili non esiste una visualizzazione dello spazio tangente.
 
 \begin{theorem}
-	L'applicazione $ \phi $ è un isomorfismo degli spazi vettoriali $ T_{p}(\R^{n}) $ e $ \der_{p}(C_{p}^{\infty}(\R^{n})) $, i.e. tramite $ \phi $ si ha che
+	L'applicazione $ \phi $ è un isomorfismo degli spazi vettoriali $ T_{p}(\R^{n}) $ e $ \der_{p}(C_{p}^{\infty}(\R^{n})) $, \ie tramite $ \phi $ si ha che
 	
 	\begin{equation}
 		T_{p}(\R^{n}) \stackrel{iso.}{\simeq} \der_{p}(C_{p}^{\infty}(\R^{n}))
@@ -752,7 +752,7 @@ Per dimostrare questo teorema è necessario notare che gli elementi $ D_{i} \in 
 Consideriamo ora la seguente preposizione:
 
 \begin{definition}
-	Le operazioni dello spazio vettoriale $ \der_{p}(C_{p}^{\infty}(\R^{n})) $ su $ \R $ (definite sopra) sono $ \R $-lineari e la somma soddisfa la regola di Leibniz, i.e.
+	Le operazioni dello spazio vettoriale $ \der_{p}(C_{p}^{\infty}(\R^{n})) $ su $ \R $ (definite sopra) sono $ \R $-lineari e la somma soddisfa la regola di Leibniz, \ie
 	
 	\begin{align}
 		(D_{v} + D_{w}) ([(f,U)]) &= D_{v}([(f,U)]) + D_{w}([(f,U)])\\
@@ -841,7 +841,7 @@ Consideriamo ora la seguente preposizione:
 		{C_{p}^{\infty}(\R^{n})}{\R}
 		{[(f,U)]}{0}
 
-	i.e. $ \ker \phi = \{0\} $, allora $ \phi $ è iniettiva\footnote{
+	\ie $ \ker \phi = \{0\} $, allora $ \phi $ è iniettiva\footnote{
 		Questo vale perché $ \phi $ è lineare.%
 	}.\\
 	Siccome $ 0 $ associa un qualunque germe liscio $ [(f,U)] $ sempre a $ 0 \in \R $, possiamo scegliere l'applicazione
@@ -850,7 +850,7 @@ Consideriamo ora la seguente preposizione:
 		{\R^{n}}{\R}
 		{(x^{1}, \dots, x^{n})}{x^{j}}
 
-	per $ \forall j=1,\dots,n $, la quale è una proiezione liscia dunque il germe che la contiene è liscio, i.e. $ [(x^{j},\R)] \in C_{p}^{\infty}(\R^{n}) $. A questo punto
+	per $ \forall j=1,\dots,n $, la quale è una proiezione liscia dunque il germe che la contiene è liscio, \ie $ [(x^{j},\R)] \in C_{p}^{\infty}(\R^{n}) $. A questo punto
 	
 	\begin{align}
 		\begin{split}
@@ -910,7 +910,7 @@ Consideriamo ora la seguente preposizione:
 		\end{align}
 	\end{proof}
 
-	A questo punto, due applicazioni sono uguali se e solo se coincidono per ogni punto del dominio, i.e.
+	A questo punto, due applicazioni sono uguali se e solo se coincidono per ogni punto del dominio, \ie
 	
 	\begin{equation}
 		D_{v} = D \iff D_{v}([(f,U)]) = D([(f,U)]), \quad \forall ([(f,U)]) \in (C_{p}^{\infty}(\R^{n}))
@@ -947,7 +947,7 @@ Consideriamo ora la seguente preposizione:
 	dunque $ D = D_{f} $.
 \end{proof}
 
-Date queste proprietà di $ \phi $, questa applicazione è un isomorfismo tra $ T_{p}(\R^{n}) $ e $ \der_{p}(C_{p}^{\infty}(\R^{n})) $, i.e.
+Date queste proprietà di $ \phi $, questa applicazione è un isomorfismo tra $ T_{p}(\R^{n}) $ e $ \der_{p}(C_{p}^{\infty}(\R^{n})) $, \ie
 
 \begin{equation}
 	T_{p}(\R^{n}) \stackrel{iso.}{\simeq} \der_{p}(C_{p}^{\infty}(\R^{n}))
@@ -989,7 +989,7 @@ forma una base per lo spazio $ \der_{p}(C_{p}^{\infty}(\R^{n})) $.
 		\phi(e_{i}) = D_{e_{i}} \qcomma \forall i=1,\dots,n
 	\end{equation}
 
-	i.e. un isomorfismo porta elementi di base in altrettanti elementi di base.\\
+	\ie un isomorfismo porta elementi di base in altrettanti elementi di base.\\
 	Applicando questo a una qualunque funzione $ f \in C^{\infty} (\R^{n}) $
 	
 	\begin{equation}
@@ -1037,8 +1037,8 @@ Un campo di vettori
 	X = \sum_{i=1}^{n} a^{i} \pdv{x^{i}}
 \end{equation}
 
-è $ C^{\infty} (U) $ (liscio o differenziabile) se le funzioni $ a^{i} $ sono lisce, i.e. $ a^{i} \in C^{\infty}(U) $ per $ \forall i=1,\dots,n $.\\
-L'insieme dei campi di vettori che rispettano questa prescrizione è chiamato $ \chi(U) $, i.e.
+è $ C^{\infty} (U) $ (liscio o differenziabile) se le funzioni $ a^{i} $ sono lisce, \ie $ a^{i} \in C^{\infty}(U) $ per $ \forall i=1,\dots,n $.\\
+L'insieme dei campi di vettori che rispettano questa prescrizione è chiamato $ \chi(U) $, \ie
 
 \begin{equation}
 	\chi(U) = \left\{ X : U \to \bigsqcup_{p \in U} T_{p}(\R^{n}), \, X(p) = X_{p} = \sum_{i=1}^{n} a^{i}(p) \eval{ \pdv{x^{i}} }_{p} \st U \subset \R^{n}, \, a^{i} \in C^{\infty}(U) \right\}
@@ -1176,7 +1176,7 @@ tale che
 
 per $ \forall r,s \in R $ e $ \forall a,b \in A $. Queste proprietà valgono solo da \textit{destra}, potrebbero non valere se calcolate da sinistra.\\\\
 %
-Tramite queste definizioni, definiamo $ (A,+) $ un $ R $-modulo se è sia un $ R $-modulo sinistro che destro, i.e. $ \cdot \equiv * $.
+Tramite queste definizioni, definiamo $ (A,+) $ un $ R $-modulo se è sia un $ R $-modulo sinistro che destro, \ie $ \cdot \equiv * $.
 
 \begin{remark}
 	Se un gruppo $ A $ è un $ R $-modulo ed $ R $ è un campo $ \K $, allora $ A $ è uno spazio vettoriale in $ \K $.
@@ -1327,5 +1327,5 @@ Inoltre $ \phi $ è anche $ C^{\infty}(U) $-lineare:
 	\phi(f X + g Y) = f \, \phi(X) + g \, \phi(Y) \qcomma \forall f, g \in C^{\infty}(U), \, \forall X, Y \in \chi(U)
 \end{equation}
 
-Dimostreremo per le varietà differenziabili che $ \phi $ è un isomorfismo di $ C^{\infty}(U) $-moduli, i.e. $ \chi(U) \simeq \der(C^{\infty}(U)) $.\\
-Tramite questo isomorfismo, si possono identificare i campi di vettori lisci con le derivazioni dell'algebra delle funzioni lisce, analogamente a come lo spazio tangente a un punto di $ \R^{n} $ si può identificare con le derivazioni puntuali dell'algebra dei germi delle funzioni in quel punto, i.e. $ T_{p}(\R^{n}) \simeq \der_{p}(C_{p}^{\infty}(\R^{n})) $.
+Dimostreremo per le varietà differenziabili che $ \phi $ è un isomorfismo di $ C^{\infty}(U) $-moduli, \ie $ \chi(U) \simeq \der(C^{\infty}(U)) $.\\
+Tramite questo isomorfismo, si possono identificare i campi di vettori lisci con le derivazioni dell'algebra delle funzioni lisce, analogamente a come lo spazio tangente a un punto di $ \R^{n} $ si può identificare con le derivazioni puntuali dell'algebra dei germi delle funzioni in quel punto, \ie $ T_{p}(\R^{n}) \simeq \der_{p}(C_{p}^{\infty}(\R^{n})) $.
