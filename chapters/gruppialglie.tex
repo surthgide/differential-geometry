@@ -322,20 +322,44 @@ Siano $ G $ un gruppo di Lie e $ H \neq \emptyset $ un suo sottoinsieme, diremo 
 \begin{enumerate}
 	\item $ H $ è un sottogruppo algebrico di $ G $, in notazione $ H < G $;
 	
-	\item $ H $ è una sottovarietà immersa di $ G $, i.e. è l'immagine di $ G $ tramite un'immersione iniettiva (la topologia di $ H $ non è necessariamente la topologia indotta da $ G $);
+	\item $ H $ è una sottovarietà immersa di $ G $, i.e. $ H $ è l'immagine di $ G $ tramite un'immersione iniettiva (la topologia di $ H $ non è necessariamente la topologia indotta da $ G $);
 	
-	\item Le operazioni di moltiplicazione e inversione, indotte da $ G $, sono lisce.
+	\item Le operazioni di moltiplicazione e inversione su $ H $, indotte da $ G $, sono lisce.
 \end{enumerate}
 
-\begin{remark}
-	Se $ H \subset G $ sottogruppo algebrico ed $ H $ è una sottovarietà di $ G $, allora la terza condizione è superflua. Questo perché: consideriamo la moltiplicazione $ f : G \times G \to G $ in $ G $ e l'inclusione $ i : H \to G $, la loro composizione $ g = f \circ (i \times i) : H \times H \to G $ ha come immagine $ g(H \times H) \subset H $ perciò possiamo restringere il codominio di questa al solo insieme $ H $, ottenendo dunque la moltiplicazione $ \tilde{g} = \mu : H \times H \to H $ per $ H $, la quale è liscia per i teoremi sulle sottovarietà; il ragionamento è analogo per l'inversione.
-\end{remark}
+\begin{definition}
+	Se $ H $ è un sottogruppo algebrico di $ G $ e una sottovarietà di $ G $, allora la terza condizione è superflua.
+\end{definition}
 
-Se $ H \subset G $ sottogruppo algebrico ed $ H $ è una sottovarietà di $ G $, diremo che $ H $ un \textit{sottogruppo di Lie embedded}.\\
+\begin{proof}
+	Consideriamo la moltiplicazione e l'inclusione in $ G $
+	
+	\begin{gather}
+		\mu_{G} : G \times G \to G \\
+		i : H \to G
+	\end{gather}
+
+	La loro composizione
+	
+	\begin{equation}
+		\nu \doteq \mu_{G} \circ (i \times i) : H \times H \to G
+	\end{equation}
+
+	ha come immagine $ \nu (H \times H) \subset H $ perciò possiamo restringere il codominio di questa al solo insieme $ H $, ottenendo dunque la moltiplicazione per $ H $
+	
+	\begin{equation}
+		\tilde{\nu} = \mu_{H} : H \times H \to H
+	\end{equation}
+
+	la quale è liscia per i teoremi sulle sottovarietà; il ragionamento è analogo per l'inversione.
+\end{proof}
+
+Se $ H < G $ è un  sottogruppo algebrico e $ H \subset G $ è una sottovarietà di $ G $, diremo che $ H $ è un \textit{sottogruppo di Lie embedded}.\\\\
+%
 Ad esempio, $ SL_{n}(\R) $ e $ O(n) $ sono sottogruppi di Lie embedded di $ GL_{n}(\R) $, perché sottovarietà di quest'ultimo.
 
 \begin{theorem}\label{thm:liesub-var}
-	Siano $ G $ e $ H $ varietà differenziabili, se $ H < G $ sottogruppo algebrico e $ H $ è chiuso in $ G $ (come sottospazio topologico) allora $ H $ è un sottogruppo embedded di $ G $.
+	Siano $ G $ e $ H $ varietà differenziabili, se $ H < G $ sottogruppo algebrico e $ H $ è chiuso in $ G $ (come sottospazio topologico) allora $ H $ è un sottogruppo di Lie embedded di $ G $.
 \end{theorem}
 
 Da questo teorema, possiamo ancora derivare che $ SL_{n}(\R) $ e $ O(n) $ siano sottogruppi di Lie embedded di $ GL_{n}(\R) $ (e quindi sottovarietà) in quanto varietà e chiusi:
@@ -343,11 +367,15 @@ Da questo teorema, possiamo ancora derivare che $ SL_{n}(\R) $ e $ O(n) $ siano 
 \begin{itemize}
 	\item $ SL_{n}(\R) $ è un chiuso in $ GL_{n}(\R) $ in quanto controimmagine di 1 (chiuso in $ \R $) tramite l'applicazione continua (porta chiusi in chiusi)
 	
-	\map{f}{GL_{n}(\R)}{\R}{A}{\det(A)}
+	\map{f}
+		{GL_{n}(\R)}{\R}
+		{A}{\det(A)}
 	
 	\item $ O(n) $ è un chiuso in $ GL_{n}(\R) $ in quanto controimmagine di $ I $ (chiuso in $ S(n) $) tramite l'applicazione
 	
-	\map{f}{GL_{n}(\R)}{S(n)}{A}{A^{T} A}
+	\map{f}
+		{GL_{n}(\R)}{S(n)}
+		{A}{A^{T} A}
 \end{itemize}
 
 \subsubsection{\textit{Esempio}}
