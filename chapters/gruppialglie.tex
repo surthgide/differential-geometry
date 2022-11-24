@@ -281,28 +281,38 @@ ovvero lo spazio tangente di $ O(n) $ è formato dalle matrici antisimmetriche (
 
 Un \textit{omomorfismo} di gruppi\footnote{%
 	Omomorfismo e omeomorfismo sono due concetti differenti legati a due parti differenti della matematica.%
-} è un'applicazione (non necessariamente liscia) che preserva le moltiplicazioni di un gruppo nell'altro.
-
-\begin{remark}
-Siano $ F $ un omomorfismo, $ e_{H} \in H $ e $ e_{G} \in G $ gli elementi neutri dei rispettivi gruppi, allora $ F(e_{H}) = e_{G} $.
-\end{remark}
-
-Un omomorfismo di due gruppi di Lie $ H $ e $ G $ è un'applicazione liscia $ F : H \to G $ tale che sia un omomorfismo di gruppi, i.e.
+} è un'applicazione (non necessariamente liscia) che preserva le moltiplicazioni di un gruppo nell'altro, i.e. per un omomorfismo $ F : G \to H $ vale
 
 \begin{equation}
-	F \circ L_{h} = L_{F(h)} \circ F, \qquad \forall h \in H
+	F(g_{1} g_{2}) = F(g_{1}) \, F(g_{2}) \in H \qcomma \forall g_{1},g_{2} \in G
 \end{equation}
 
-in quanto, se $ F $ è un omomorfismo di gruppi
+\begin{remark}
+Siano $ F : G \to H $ un omomorfismo, $ e_{G} \in G $ ed $ e_{H} \in H $ gli elementi neutri dei rispettivi gruppi, allora $ F(e_{G}) = e_{H} $.
+\end{remark}
 
-\begin{align}
-	\begin{split}
-		F(h k) &= F(h) \, F(k)\\
-		(F \circ L_{h})(k) &= (L_{F(h)} \circ F)(k)\\
-		F \circ L_{h} &= L_{F(h)} \circ F
-	\end{split}
-\end{align}
+\begin{definition}
+	Sia $ F : G \to H $ un omomorfismo di gruppi, vale la relazione
+	
+	\begin{equation}
+		F \circ L_{g} = L_{F(g)} \circ F \qcomma \forall g \in G
+	\end{equation}
+\end{definition}
 
+\begin{proof}
+	Essendo $ F $ un omomorfismo, è preservata la moltiplicazione, perciò presi due elementi qualsiasi $ g,h \in G $ vale
+	
+	\begin{align}
+		\begin{split}
+			F(g h) &= F(g) \, F(h) \\
+			F(L_{g}(h)) &= L_{F(g)}(F(h)) \\
+			(F \circ L_{g})(h) &= (L_{F(g)} \circ F)(h) \\
+			F \circ L_{g} &= L_{F(g)} \circ F
+		\end{split}
+	\end{align}
+\end{proof}
+
+Un omomorfismo di due gruppi di Lie $ H $ e $ G $ è un'applicazione liscia $ F : H \to G $ tale che sia un omomorfismo di gruppi.\\
 Un \textit{isomorfismo di Lie} è un omomorfismo di gruppi che sia anche un diffeomorfismo.
 
 \subsection{Sottogruppi di Lie}
