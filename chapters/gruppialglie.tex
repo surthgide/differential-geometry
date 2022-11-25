@@ -427,60 +427,65 @@ Per dimostrarlo in generale, facciamo una digressione su concetti di analisi uti
 
 \subsection{Spazi vettoriali e algebre normati}
 
+\paragraph{Spazi vettoriali normati}
+
 Uno spazio vettoriale $ V $ sui reali $ \R $ è detto \textit{normato} se esiste un'applicazione
 
-\map{\norm{\cdot}}{V}{\R}{v}{\norm{v}}
+\map{\norm{\cdot}}
+	{V}{\R}
+	{v}{\norm{v}}
 
 chiamata \textit{norma} tale che siano soddisfatte le condizioni:
 
 \begin{equation}
 	\begin{cases}
 		\begin{cases}
-			\norm{v} \geqslant 0\\
+			\norm{v} \geqslant 0 \\
 			\norm{v} = 0 \iff v = 0 \in V
-		\end{cases}%
-		 & \text{definita positiva}\\
-		\norm{\lambda v} = \abs{\lambda} \norm{v} & \text{omogeneità}\\
-		\norm{v + w} \leqslant \norm{v} + \norm{w} & \text{subaddittività}
+		\end{cases} & \text{definita positiva} \\
+		\norm{\lambda v} = \abs{\lambda} \norm{v} & \text{omogeneità} \\
+		\norm{v + w} \leqslant \norm{v} + \norm{w} & \text{subadditività}
 	\end{cases}
 \end{equation}
 
-per $ \forall \lambda \in \R $ e $ \forall v,w \in V $.\\
+per qualsiasi $ \lambda \in \R $ e $ v,w \in V $.\\
+La condizione di subadditività deriva dalla \textit{diseguaglianza di Cauchy-Schwarz}:
+
+\begin{equation}
+	\norm{v \cdot w} \leqslant \norm{v} \norm{w} \qcomma \forall v,w \in \R^{n}
+\end{equation}
+
 Consideriamo in particolare lo spazio vettoriale delle matrici quadrate sui reali $ M_{n}(\R) $ di dimensione $ n^{2} $ e come norma
 
-\map{\norm{}}%
-	{M_{n}(\R)}%
-	{\R}%
-	{X = [x_{ij}]_{i,j=1,\dots,n}}%
-	{\left( \sum_{i,j=1}^{n} x_{ij}^{2} \right)^{\sfrac{1}{2}}}
+\map{\norm{}}
+	{M_{n}(\R)}{\R}
+	{X = [x_{ij}]_{i,j=1,\dots,n}}{\left( \sum_{i,j=1}^{n} x_{ij}^{2} \right)^{1/2}}
 	
-la quale corrisponde alla norma usuale in $ \R^{n^{2}} $: da ciò deriva che questa norma soddisfa le condizioni poste sopra\footnote{%
-	In particolare, la subadditività deriva dalla diseguaglianza di Cauchy-Schwarz (\textit{C-S}):
-	
-	\begin{equation*}
-		\norm{v \cdot w} \leqslant \norm{v} \norm{w}, \qquad v,w \in \R^{n},
-	\end{equation*}%
-}, rendendo quindi $ M_{n}(\R) $ uno spazio vettoriale normato.\\\\
-%
+la quale corrisponde alla norma usuale in $ \R^{n^{2}} $: da ciò deriva che questa norma soddisfa le condizioni poste sopra, rendendo quindi $ M_{n}(\R) $ uno spazio vettoriale normato.\\
+
+\paragraph{Algebre normate}
+
 Una tripletta $ (V,\cdot,\norm{}) $ è un'\textit{algebra normata} se $ V $ è uno spazio vettoriale su $ \R $, $ (V,\cdot) $ è un'algebra su $ \R $ e $ (V,\norm{\cdot}) $ è uno spazio vettoriale normato tali che valga la proprietà di submoltiplicatività
 
 \begin{equation}
-	\norm{v \cdot w} \leqslant \norm{v} \norm{w}, \qquad v,w \in V,
+	\norm{v \cdot w} \leqslant \norm{v} \norm{w} \qcomma v,w \in V
 \end{equation}
 
 che lega l'operazione dell'algebra $ \cdot $ e la norma $ \norm{} $.\\
 La tripletta $ (M_{n}(\R),\cdot,\norm{}) $ con $ \cdot $ la moltiplicazione tra matrici e $ \norm{} $ la norma sopra definita per $ M_{n}(\R) $ è un'algebra normata: per verificarlo dobbiamo dimostrare che il prodotto tra matrici e la norma soddisfino la proprietà di submoltiplicatività (in quanto le altre condizioni sono già soddisfatte).\\
-Siano le matrici quadrate $ X = [x_{ij}] $ e $ y = [y_{ij}] $, allora utilizzando la diseguaglianza di Cauchy-Schwarz
+Siano le matrici quadrate $ X = [x_{ij}] $ e $ Y = [y_{ij}] $, utilizzando la diseguaglianza di Cauchy-Schwarz e positività della norma, otteniamo la diseguaglianza
 
-\begin{equation}
-	(X Y)_{ij}^{2} = \left( \sum_{k=1}^{n} x_{ik} y_{kj} \right)^{2} \leqslant \left( \sum_{k=1}^{n} x_{ik}^{2} \right) \left( \sum_{k=1}^{n} y_{kj}^{2} \right), \qquad i,j=1,\dots,n
-\end{equation}
+\begin{align}
+	\norm{v \cdot w} &\leqslant \norm{v} \norm{w} \\
+	\norm{v \cdot w}^{2} &\leqslant \norm{v}^{2} \norm{w}^{2} \\
+	((X Y)_{ij})^{2} = \left( \sum_{k=1}^{n} x_{ik} y_{kj} \right)^{2} &\leqslant \left( \sum_{i,k=1}^{n} x_{ik}^{2} \right) \left( \sum_{j,k=1}^{n} y_{kj}^{2} \right)
+\end{align}
 
-se consideriamo dunque la somma al quadrato
+Se consideriamo dunque la norma al quadrato
 
 \begin{align}
 	\begin{split}
-		\norm{X Y}^{2} &= \sum_{i,j=1}^{n} (X Y)_{ij}^{2}\\
+		\norm{X Y}^{2} &= \sum_{i,j=1}^{n} ((X Y)_{ij})^{2}\\
 		&= \sum_{i,j=1}^{n} \left( \sum_{k=1}^{n} x_{ik} y_{kj} \right)^{2}\\
 		&\leqslant \sum_{i,j=1}^{n} \left( \sum_{k=1}^{n} x_{ik}^{2} \right) \left( \sum_{k=1}^{n} y_{kj}^{2} \right)\\
 		&= \left( \sum_{i,k=1}^{n} x_{ik}^{2} \right) \left( \sum_{j,k=1}^{n} y_{kj}^{2} \right)\\
@@ -494,25 +499,25 @@ da cui $ \norm{X Y} \leqslant \norm{X} \norm{Y} $.
 	Sia $ (V,\cdot,\norm{}) $ un'algebra normata, allora
 	
 	\begin{itemize}
-		\item Se $ s_{n} \in V $ è una successione convergente, i.e $ s_{n} \to s \in V $, allora
+		\item Se $ s_{n} \in V $ è una successione convergente, \ie $ s_{n} \to s \in V $, allora
 		
 		\begin{equation}
-			s_{n} \to s \implies a s_{n} \to a s, \qquad \forall a \in V
+			s_{n} \to s \implies a s_{n} \to a s \qcomma \forall a \in V
 		\end{equation}
 	
 		\item Se consideriamo la serie
 		
 		\begin{equation}
 			\sum_{n=0}^{+\infty} s_{n} = s %
-			\implies%
+			\implies %
 			\begin{cases}
-				\displaystyle \sum_{n=0}^{+\infty} a s_{n} = a s\\\\
+				\displaystyle \sum_{n=0}^{+\infty} a s_{n} = a s \\\\
 				\displaystyle \sum_{n=0}^{+\infty} s_{n} a = s a
 			\end{cases}
 			\qquad \forall a \in V
 		\end{equation}
 	
-		dove $ a s $ e $ s a $ implicano la moltiplicazione dell'algebra.
+		dove $ a s $ ed $ s a $ implicano la moltiplicazione dell'algebra.
 	\end{itemize}
 \end{definition}
 
@@ -527,12 +532,12 @@ Per definizione, la notazione $ s_{n} \to s $ implica l'equazione
 	
 	\begin{equation}
 		\begin{cases}
-			\norm{a s_{n} - a s} = \norm{a (s_{n} - s)}\\
+			\norm{a s_{n} - a s} = \norm{a (s_{n} - s)} \\\\
 			\lim\limits_{n \to \infty} \norm{s_{n} - s} = 0
 		\end{cases}
 		\implies%
 		\begin{cases}
-			\norm{a s_{n} - a s} = \abs{a} \norm{s_{n} - s}\\
+			\norm{a s_{n} - a s} = \abs{a} \norm{s_{n} - s} \\\\
 			s_{n} \to s
 		\end{cases}
 		\implies%
@@ -543,9 +548,9 @@ Per definizione, la notazione $ s_{n} \to s $ implica l'equazione
 	
 	\begin{equation}
 		\sum_{n=0}^{+\infty} s_{n} = s %
-		\iff%
+		\iff %
 		\begin{cases}
-			\displaystyle \tilde{s}_{k} = \sum_{n=0}^{k} s_{n}\\
+			\displaystyle \tilde{s}_{k} = \sum_{n=0}^{k} s_{n} \\\\
 			\tilde{s}_{k} \to s
 		\end{cases}
 	\end{equation}
@@ -554,9 +559,9 @@ Per definizione, la notazione $ s_{n} \to s $ implica l'equazione
 	
 	\begin{equation}
 		\sum_{n=0}^{+\infty} a s_{n} = a s %
-		\iff%
+		\iff %
 		\begin{cases}
-			\displaystyle a \tilde{s}_{k} = \sum_{n=0}^{k} a s_{n}\\
+			\displaystyle a \tilde{s}_{k} = \sum_{n=0}^{k} a s_{n} \\\\
 			a \tilde{s}_{k} \to a s
 		\end{cases}
 	\end{equation}
@@ -579,13 +584,13 @@ Per definizione, la notazione $ s_{n} \to s $ implica l'equazione
 Una serie è \textit{assolutamente convergente} se è convergente la stessa serie considerando le norme degli addendi, \ie
 
 \begin{equation}
-	\sum_{n=0}^{+\infty} s_{n} \text{ assolutamente convergente} \iff \sum_{n=0}^{+\infty} \norm{s_{n}} \text{ convergente}
+	\sum_{n=0}^{+\infty} s_{n} \text{ assolutamente convergente} =\joinrel= \sum_{n=0}^{+\infty} \norm{s_{n}} \text{ convergente}
 \end{equation}
 
 Una successione $ s_{n} $ è una \textit{successione di Cauchy} se
 
 \begin{equation}
-	s_{n} \text{ di Cauchy} \iff \forall \varepsilon > 0, \, \E p,q,N_{\varepsilon} \in \N \mid \norm{s_{p} - s_{q}} \leqslant \epsilon, \quad \forall p,q \geqslant N_{\varepsilon}
+	s_{n} \text{ di Cauchy} \iff \forall \varepsilon > 0, \E p,q,N_{\varepsilon} \in \N \mid \norm{s_{p} - s_{q}} \leqslant \epsilon \qcomma \forall p,q \geqslant N_{\varepsilon}
 \end{equation}
 
 \begin{remark}
