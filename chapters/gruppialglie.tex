@@ -654,71 +654,71 @@ dove $ \norm{X} \in \R $, dunque la serie converge.
 
 \subsection{Proprietà dell'esponenziale di matrice}
 
-Valgono le seguenti proprietà:
+Valgono le tre seguenti proprietà:
 
-\begin{itemize}
-	\item Se $ A B = B A $ i.e. $ [A,B] = 0 $, allora $ e^{A + B} = e^{A} e^{B} = e^{B} e^{A} $ per $ \forall A,B \in M_{n}(\R) $;
+\begin{equation}
+	\begin{cases}
+		[A,B] = 0 \implies e^{A + B} = e^{A} e^{B} = e^{B} e^{A}, & \forall A,B \in M_{n}(\R) \\\\
+		e^{A} \in GL_{n}(\R), & \forall A \in M_{n}(\R) \\\\
+		\ddv{t}  e^{t X} = X e^{t X} = e^{t X} X, & \forall X\in M_{n}(\R), \, \forall t \in \R
+	\end{cases}
+\end{equation}
+
+\begin{proof}[Dimostrazione (1)]
+	Considerando che $ [A,B] = 0 $, possiamo utilizzare la formula binomiale, dunque
 	
-	\item L'esponenziale di matrice è una matrice invertibile, i.e. $ e^{A} \in GL_{n}(\R) $ per $ \forall A \in M_{n}(\R) $;
+	\begin{align}
+		\begin{split}
+			e^{A + B} &= \sum_{k=0}^{+\infty} \dfrac{1}{k!} (A+B)^{k} \\
+			&= \sum_{k=0}^{+\infty} \dfrac{1}{k!} \left( \sum_{j=0}^{k} \binom{k}{j} A^{k-j} B^{j} \right) \\
+			&= \sum_{k=0}^{+\infty} \dfrac{1}{k!} \left( \sum_{j=0}^{k} \dfrac{k!}{j! (k-j)!} A^{k-j} B^{j} \right) \\
+			&= \sum_{k=0}^{+\infty} \sum_{j=0}^{k} \left( \dfrac{A^{k-j}}{(k-j)!} \right) \left( \dfrac{B^{j}}{j!} \right) \\
+			&= \left( \sum_{k=0}^{+\infty} \dfrac{A^{k}}{k!} \right) \left( \sum_{j=0}^{+\infty} \dfrac{B^{j}}{j!} \right) \\
+			&= e^{A} e^{B}
+		\end{split}
+	\end{align}
+\end{proof}
+
+\begin{proof}[Dimostrazione (2)]
+	La matrice $ e^{A} $ è invertibile con inversa, dalla prima proprietà, $ e^{-A} $ in quanto
 	
-	\item %
 	\begin{equation}
-		\dfrac{\operatorname{d}}{\operatorname{dt}} e^{t X} = X e^{t X} = e^{t X} X, \qquad \forall X\in M_{n}(\R), \, \forall t \in \R
+		e^{A} e^{-A} = e^{-A} e^{A} = e^{A-A} = e^{0_{n}} = I
 	\end{equation}
-\end{itemize}
+\end{proof}
 
-\begin{proof}
-	\begin{itemize}
-		\item Considerando che $ [A,B] = 0 $ possiamo utilizzare la formula binomiale, dunque
-		
-		\begin{align}
-			\begin{split}
-				e^{A + B} &= \sum_{k=0}^{+\infty} \dfrac{1}{k!} (A+B)^{k}\\
-				&= \sum_{k=0}^{+\infty} \dfrac{1}{k!} \left( \sum_{j=0}^{k} \binom{k}{j} A^{k-j} B^{j} \right)\\
-				&= \sum_{k=0}^{+\infty} \dfrac{1}{k!} \left( \sum_{j=0}^{k} \dfrac{k!}{j! (k-j)!} A^{k-j} B^{j} \right)\\
-				&= \sum_{k=0}^{+\infty} \sum_{j=0}^{k} \left( \dfrac{A^{k-j}}{(k-j)!} \right) \left( \dfrac{B^{j}}{j!} \right)\\
-				&= \left( \sum_{k=0}^{+\infty} \dfrac{A^{k}}{k!} \right) \left( \sum_{j=0}^{+\infty} \dfrac{B^{j}}{j!} \right)\\
-				&= e^{A} e^{B}
-			\end{split}
-		\end{align}
-		
-		\item La matrice $ e^{A} $ è invertibile con inversa, dalla prima proprietà, $ e^{-A} $ in quanto
-		
-		\begin{equation}
-			e^{A} e^{-A} = e^{-A} e^{A} = e^{A-A} = e^{0_{n}} = I
-		\end{equation}
+\begin{proof}[Dimostrazione (3)]
+	\begin{align}
+		\begin{split}
+			\dv{t} e^{t X} &= \dv{t} \left( \sum_{j=0}^{+\infty} \dfrac{(t X)^{j}}{j!} \right) \\
+			&= \sum_{j=0}^{+\infty} \dv{t} \left( \dfrac{(t X)^{j}}{j!} \right) \\
+			&= \sum_{j=0}^{+\infty} \left( \dfrac{j X (t X)^{j-1}}{j!} \right) \\
+			&= X \sum_{j=0}^{+\infty} \left( \dfrac{j (t X)^{j-1}}{j (j-1)!} \right) \\
+			&= X \sum_{j=0}^{+\infty} \dfrac{(t X)^{j-1}}{(j-1)!} \\
+			&= X \sum_{k=0}^{+\infty} \dfrac{(t X)^{k}}{k!} \\
+			&= X e^{t X}
+		\end{split}
+	\end{align}
 	
-		\item %
-		\begin{align}
-			\begin{split}
-				\dfrac{\operatorname{d}}{\operatorname{dt}} e^{t X} &= \dfrac{\operatorname{d}}{\operatorname{dt}} \left( \sum_{j=0}^{+\infty} \dfrac{(t X)^{j}}{j!} \right)\\
-				&= \sum_{j=0}^{+\infty} \dfrac{\operatorname{d}}{\operatorname{dt}} \left( \dfrac{(t X)^{j}}{j!} \right)\\
-				&= \sum_{j=0}^{+\infty} \left( \dfrac{j X (t X)^{j-1}}{j!} \right)\\
-				&= X \sum_{j=0}^{+\infty} \left( \dfrac{j (t X)^{j-1}}{j (j-1)!} \right)\\
-				&= X \sum_{j=0}^{+\infty} \dfrac{(t X)^{j-1}}{(j-1)!}\\
-				&= X \sum_{k=0}^{+\infty} \dfrac{(t X)^{k}}{k!}\\
-				&= X e^{t X} = e^{t X} X
-			\end{split}
-		\end{align}
+	dove nel quarto passaggio abbiamo usato il fatto che
 	
-		dove nel quarto passaggio abbiamo usato il fatto che
-		
-		\begin{equation}
-			s_{n} \to s \implies a s_{n} \to a s
-		\end{equation}
-	\end{itemize}
+	\begin{equation}
+		s_{n} \to s \implies a s_{n} \to a s
+	\end{equation}
 \end{proof}
 
 \begin{remark}
-	Se consideriamo il campo dei numeri complessi $ \C $ al posto di $ \R $ per gli spazi vettoriali e dunque una matrice con entrate complesse ha come norma
+	Se consideriamo il campo dei numeri complessi $ \C $ al posto di $ \R $ per gli spazi vettoriali e dunque la norma di una matrice con entrate complesse come
 	
-	\map{\norm{}}%
-		{M_{n}(\C)}%
-		{\R}%
-		{X = [x_{ij}]_{i,j=1,\dots,n}}%
-		{\left( \sum_{i,j=1}^{n} \abs{x_{ij}}^{2} \right)^{\sfrac{1}{2}}}
+	\map{\norm{}}
+		{M_{n}(\C)}{\R}
+		{X = [x_{ij}]_{i,j=1,\dots,n}}{\left( \sum_{i,j=1}^{n} \abs{x_{ij}}^{2} \right)^{1/2}}
 		
-	tutti i ragionamenti fatti in questa sezione sono validi, e.g. $ e^{X} $ è ancora una matrice invertibile anche se $ X \in M_{n}(\C) $, i.e. $ e^{X} \in GL_{n}(\C) $.
+	tutti i ragionamenti fatti in questa sezione sono validi, e.g. l'esponenziale di una matrice qualsiasi è ancora una matrice invertibile, i.e.
+	
+	\begin{equation}
+		e^{X} \in GL_{n}(\C) \qcomma \forall X \in M_{n}(\C)
+	\end{equation}
 \end{remark}
 
 \section{Richiami di algebra lineare}
