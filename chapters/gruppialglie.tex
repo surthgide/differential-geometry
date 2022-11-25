@@ -380,23 +380,25 @@ Da questo teorema, possiamo ancora derivare che $ SL_{n}(\R) $ e $ O(n) $ siano 
 
 \subsubsection{\textit{Esempio}}
 
-Questo esempio è riferito a un sottogruppo di Lie immerso importante, il resto dei sottogruppi considerati, saranno sottogruppi di Lie embedded.\\
+Questo esempio è riferito a un sottogruppo di Lie immerso importante, il resto dei sottogruppi considerati in questo testo, saranno sottogruppi di Lie embedded.\\
 Consideriamo come gruppo di Lie il toro $ \T^{2} = \S^{1} \times \S^{1} $ ($ \S^{1} $ è un gruppo di Lie, quindi il prodotto diretto di due $ \S^{1} $ è ancora un gruppo di Lie) con le operazioni naturali e l'applicazione
 
-\map{F}{\R}{\T^{2}}{t}{(e^{2 \pi i t},e^{2 \pi i \alpha t})}
+\map{F}
+	{\R}{\T^{2}}
+	{t}{(e^{2 \pi i t},e^{2 \pi i \alpha t})}
 
 dove $ \alpha \in \R \setminus \Q $, \ie $ \alpha $ è irrazionale; questa applicazione è un'immersione iniettiva e un omomorfismo di gruppi, in quanto
 
 \begin{align}
 	\begin{split}
-		F(t+s) &= (e^{2 \pi i (t+s)},e^{2 \pi i \alpha (t+s)})\\
-		&= (e^{2 \pi i t} e^{2 \pi i s},e^{2 \pi i \alpha t} e^{2 \pi i \alpha s})\\
-		&= (e^{2 \pi i t},e^{2 \pi i \alpha t}) (e^{2 \pi i s},e^{2 \pi i \alpha s})\\
+		F(t+s) &= (e^{2 \pi i (t+s)},e^{2 \pi i \alpha (t+s)}) \\
+		&= (e^{2 \pi i t} e^{2 \pi i s},e^{2 \pi i \alpha t} e^{2 \pi i \alpha s}) \\
+		&= (e^{2 \pi i t},e^{2 \pi i \alpha t}) (e^{2 \pi i s},e^{2 \pi i \alpha s}) \\
 		&= F(t) \, F(s)
 	\end{split}
 \end{align}
 
-L'immagine di $ \R $ tramite $ F $ è un sottogruppo di $ \T^{2} $, \ie $ F(\R) < \T^{2} $, è una sottovarietà immersa ($ F $ non è un embedding) di $ \T^{2} $ e le operazioni su $ F(\R) $ sono lisce, dunque $ H \doteq F(\R) $ è un sottogruppo di Lie (immerso) di $ \T^{2} $.
+L'immagine di $ \R $ tramite $ F $ è un sottogruppo di $ \T^{2} $, \ie $ F(\R) < \T^{2} $, è una sottovarietà immersa di $ \T^{2} $ ($ F $ non è un embedding) e le operazioni su $ F(\R) $ sono lisce, dunque $ F(\R) $ è un sottogruppo di Lie (immerso) di $ \T^{2} $.
 
 \section{Esponenziale di una matrice}
 
