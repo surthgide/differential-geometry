@@ -402,17 +402,17 @@ L'immagine di $ \R $ tramite $ F $ è un sottogruppo di $ \T^{2} $, \ie $ F(\R) 
 
 \section{Esponenziale di una matrice}
 
-Sia una matrice quadrata $ X \in M_{n}(\R) $, definiamo l'\textit{esponenziale di matrice} come\footnote{%
-In particolare $ X^{0} = I $.}
+Sia una matrice quadrata $ X \in M_{n}(\R) $, definiamo l'\textit{esponenziale di matrice} come
 
 \begin{equation}
-	e^{X} = \sum_{i=0}^{+\infty} \dfrac{X^{i}}{i!}, \qquad X \in M_{n}(\R)
+	e^{X} = \sum_{i=0}^{+\infty} \dfrac{X^{i}}{i!} \qcomma X \in M_{n}(\R)
 \end{equation}
 
-sulla falsa riga delle serie di potenze
+In particolare abbiamo che $ X^{0} = I $.\\
+La definizione dell'esponenziale di matrice segue la falsa riga delle serie di potenze
 
 \begin{equation}
-	e^{x} = \sum_{i=0}^{+\infty} \dfrac{x^{i}}{i!}, \qquad x \in \R
+	e^{x} = \sum_{i=0}^{+\infty} \dfrac{x^{i}}{i!} \qcomma x \in \R
 \end{equation}
 
 Non è però chiaro se la serie di matrici considerata sia convergente e dunque che $ e^{X} \in M_{n}(\R) $: questo è facilmente dimostrabile se la matrice all'esponente è
@@ -420,7 +420,7 @@ Non è però chiaro se la serie di matrici considerata sia convergente e dunque 
 \begin{itemize}
 	\item la matrice nulla $ X = 0_{n} $ da cui $ e^{0_{n}} = I_{n} = I $;
 	
-	\item la matrice è un multiplo della matrice identità $ X = x I_{n} $, \ie $ X^{i} = x^{i} I_{n} $, da cui $ e^{X} = x I_{n} $.
+	\item la matrice è un multiplo della matrice identità $ X = x I_{n} $, \ie $ X^{i} = x^{i} I_{n} $, da cui $ e^{X} = e^{x} I_{n} $.
 \end{itemize}
 
 Per dimostrarlo in generale, facciamo una digressione su concetti di analisi utili alla dimostrazione.
