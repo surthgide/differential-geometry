@@ -840,14 +840,14 @@ Le stesse due matrici sono \textit{unitariamente simili} se la matrice $ S $ del
 \subsection{Altre proprietà}
 
 \begin{definition}
-	Se $ A $ è simile a $ B $ se e solo se esiste un'applicazione lineare $ T : \C^{n} \to \C^{n} $ tali che $ A $ e $ B $ rappresentano $ T $ rispetto a due basi di $ \C^{n} $.
+	Siano $ A,B \in M_{n}(\C) $, allora $ A $ è simile a $ B $ se e solo se esiste un'applicazione lineare $ T : \C^{n} \to \C^{n} $ tali che $ A $ e $ B $ rappresentano $ T $ rispetto a due basi di $ \C^{n} $.
 \end{definition}
 
 \begin{definition}
-	$ A $ è unitariamente simile a $ B $ se e solo se esiste un'applicazione lineare $ T : \C^{n} \to \C^{n} $ tali che $ A $ e $ B $ rappresentano $ T $ rispetto a due basi ortonormali di $ \C^{n} $.
+	Siano $ A,B \in M_{n}(\C) $, allora $ A $ è unitariamente simile a $ B $ se e solo se esiste un'applicazione lineare $ T : \C^{n} \to \C^{n} $ tali che $ A $ e $ B $ rappresentano $ T $ rispetto a due basi ortonormali di $ \C^{n} $.
 \end{definition}
 
-Questi due risultati derivano dal fatto che, prese due basi $ \mathcal{A} $ e $ \mathcal{B}' $ per $ \C^{n} $ con la matrice $ S $ che rappresenta il cambio di base, i.e.
+Questi due risultati derivano dal fatto che, prese due basi $ \mathcal{A} $ e $ \mathcal{B} $ per $ \C^{n} $ con la matrice $ S $ che rappresenta il cambio di base, i.e.
 
 \begin{equation}
 	\begin{cases}
@@ -860,8 +860,8 @@ abbiamo che l'applicazione lineare $ T $ applicata a un vettore $ x $ ha due imm
 
 \begin{align}
 	\begin{split}
-		T : \C^{n} &\to \C^{n}\\
-		x &\stackrel{\mathcal{A}}{\mapsto} [T(x)]_{\mathcal{A}} = A x\\
+		T : \C^{n} &\to \C^{n} \\
+		x &\stackrel{\mathcal{A}}{\mapsto} [T(x)]_{\mathcal{A}} = A x \\
 		x' &\stackrel{\mathcal{B}}{\mapsto} [T(x)]_{\mathcal{B}} = B x'
 	\end{split}
 \end{align}
@@ -870,9 +870,9 @@ le quali sono legate da
 
 \begin{align}
 	\begin{split}
-		[T(x)]_{\mathcal{B}} &= B x'\\
-		S [T(x)]_{\mathcal{A}} &= B S x\\
-		[T(x)]_{\mathcal{A}} &= S^{-1} B S x\\
+		[T(x)]_{\mathcal{B}} &= B x' \\
+		S [T(x)]_{\mathcal{A}} &= B S x \\
+		[T(x)]_{\mathcal{A}} &= S^{-1} B S x \\
 		[T(x)]_{\mathcal{A}} &= A x
 	\end{split}
 \end{align}
@@ -886,11 +886,11 @@ da cui
 il quale rende le due matrici simili.
 
 \begin{definition}
-	"$ A $ è (unitariamente) simile a $ B $" è una relazione di equivalenza in $ M_{n}(\C) $, i.e. $ A \sim B $.
+	Siano $ A,B \in M_{n}(\C) $, allora "$ A $ è (unitariamente) simile a $ B $" è una relazione di equivalenza in $ M_{n}(\C) $, i.e. $ A \sim B $.
 \end{definition}
 
 \begin{definition}
-	Se $ A \sim B $ allora $ A $ e $ B $ hanno stessi traccia, rango, determinante e polinomio caratteristico.
+	Siano $ A,B \in M_{n}(\C) $, se $ A \sim B $ allora $ A $ e $ B $ hanno stessi traccia, rango, determinante e polinomio caratteristico.
 \end{definition}
 
 \begin{proof}
@@ -906,18 +906,21 @@ il quale rende le due matrici simili.
 		\item Per quanto riguarda il determinante, per Binet:
 
 		\begin{equation}
-			\det(A) = \det(S^{-1} B S) = \det(S^{-1}) \det(B) \det(S) = \det(B) \det(S^{-1} S) = \det(B)
+			\det(A) = \det(S^{-1} B S) %
+			= \det(S^{-1}) \det(B) \det(S) %
+			= \det(B) \det(S^{-1} S) %
+			= \det(B)
 		\end{equation}
 
 		\item Per quanto riguarda il polinomio caratteristico, per Binet:
 		
 		\begin{align}
 			\begin{split}
-				P_{\lambda}(A) &= \det(A - \lambda I)\\
-				&= \det(S^{-1} B S - \lambda I)\\
-				&= \det(S^{-1} B S - S^{-1} \lambda I S)\\
-				&= \det(S^{-1}) \det(B - \lambda I) \det(S)\\
-				&= \det(B - \lambda I)\\
+				P_{\lambda}(A) &= \det(A - \lambda I) \\
+				&= \det(S^{-1} B S - \lambda I) \\
+				&= \det(S^{-1} B S - S^{-1} \lambda I S) \\
+				&= \det(S^{-1}) \det(B - \lambda I) \det(S) \\
+				&= \det(B - \lambda I) \\
 				&= P_{\lambda}(B)
 			\end{split}
 		\end{align}
