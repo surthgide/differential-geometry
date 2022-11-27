@@ -725,7 +725,7 @@ Valgono le tre seguenti proprietà:
 
 \subsection{Prodotti scalari ed hermitiani}
 
-Nell'algebra $ (\R,\cdot) $, presi due vettori $ v,w \in \R^{n} $ il loro prodotto scalare $ v \cdot w \in \R $ è definito come
+Nell'algebra $ (\R,\cdot) $, presi due vettori $ v,w \in \R^{n} $, il loro prodotto scalare $ v \cdot w \in \R $ è definito come
 
 \begin{equation}
 	v \cdot w = (v^{1},\dots,v^{n}) \cdot (w^{1},\dots,w^{n}) \doteq \sum_{j=1}^{n} v^{j} w^{j}
@@ -735,12 +735,7 @@ Considerando tutti i vettori come matrici con $ n $ righe e una colonna, possiam
 
 \begin{equation}
 	v \cdot w = v^{T} w = %
-	\begin{pmatrix}
-		v^{1} & \cdots & v^{n}
-	\end{pmatrix}%
-	\begin{pmatrix}
-		w^{1} \\ \vdots \\ w^{n}
-	\end{pmatrix}
+	\bmqty{ v^{1} & \cdots & v^{n} } \bmqty{ w^{1} \\ \vdots \\ w^{n} }
 \end{equation}
 
 Per vettori in campo complesso, i.e. nell'algebra $ (\C,\cdot) $, definiamo il \textit{prodotto hermitiano} $ v \cdot w \in \C $ come
@@ -766,7 +761,7 @@ Il prodotto hermitiano non è bilineare come il prodotto scalare, ma lineare per
 
 \begin{equation}
 	\begin{cases}
-		(\lambda v_{1} + \mu v_{2}) \cdot w = \lambda (v_{1} \cdot w) + \mu (v_{2} \cdot w)\\
+		(\lambda v_{1} + \mu v_{2}) \cdot w = \lambda (v_{1} \cdot w) + \mu (v_{2} \cdot w) \\
 		v \cdot (\lambda w_{1} + \mu w_{2}) = \bar{\lambda} (v \cdot w_{1}) + \bar{\mu} (v \cdot w_{2})
 	\end{cases}%
 	\qquad \forall \lambda,\mu \in \C, \, \forall v,w \in \C^{n}
