@@ -935,16 +935,22 @@ il quale rende le due matrici simili.
 	
 	\begin{equation}
 		U^{*} A U = T = %
-		\smqty(\dmat{\lambda_{1}, & & K \\ & \ddots & \\ 0 & & ,\lambda_{n}})
+		\bmqty{ %
+				\dmat{ %
+						\lambda_{1},
+						& & K \\ & \ddots & \\ 0 & & ,
+						\lambda_{n}
+						}
+				}
 	\end{equation}
 
-	con $ T $ matrice triangolare (superiore), i.e. una matrice che ha tutte entrate nulle sotto la diagonale principale.\\
+	con $ T $ matrice triangolare (superiore), i.e. una matrice che ha tutte entrate nulle sotto la diagonale principale ($ K \neq 0 $).\\
 	In altre parole, $ A $ è unitariamente simile a una matrice triangolare (superiore), il che rende $ \lambda_{1},\dots,\lambda_{n} $ gli autovalori di $ A $.
 \end{theorem}
 
 \begin{proof}
 	La dimostrazione di questo teorema è fatta per induzione su $ n $.\\
-	Per $ n=1 $, le matrici diventano numeri e il teorema è dimostrato in quanto sono già "diagonali".\\
+	Per $ n=1 $, le matrici diventano numeri e il teorema è dimostrato in quanto questi sono già "diagonali".\\
 	Supponiamo dunque che sia vero per $ n-1 $ e dimostriamo per $ n $: dimostrare che $ A $ è simile a una matrice triangolare superiore è equivalente a trovare una base ortonormale $ \{v_{1},\dots,v_{n}\} $ (rispetto al prodotto hermitiano, i.e. $ v_{i}^{T} \bar{v}_{j} = \delta_{ij} $ con $ i,j=1,\dots,n $) di $ \C^{n} $ tale che $ A v_{k} $ sia combinazione lineare dei vettori di base.\\
 	Siano $ \lambda_{1} \in \C $ un autovalore per $ A $ e $ v_{1} \neq 0 $ il corrispondente autovettore, i.e. $ A v_{1} = \lambda_{1} v_{1} $. Sia lo spazio dei vettori generati da $ v_{1} $
 	
@@ -960,15 +966,19 @@ il quale rende le due matrici simili.
 
 	con $ \dim_{\C}(W^{\perp}) = n-1 $ e la proiezione $ \pi_{W^{\perp}} : \C^{n} \to W^{\perp} $. Consideriamo l'applicazione lineare
 	
-	\map{\pi_{W^{\perp}} \circ A}{W^{\perp}}{W^{\perp}}{w}{\pi_{W^{\perp}}(A w)}
+	\map{\pi_{W^{\perp}} \circ A}
+		{W^{\perp}}{W^{\perp}}
+		{w}{\pi_{W^{\perp}}(A w)}
 	
-	Per ipotesi induttiva, esiste una base ortonormale $ \{v_{2},\dots,v_{n}\} $ di $ W^{\perp} $ tale che $ (\pi_{W^{\perp}} \circ A)(v_{k}) $ è combinazione lineare di $ v_{2},\dots,v_{k} $ per $ \forall k=2,\dots,n $.\\
+	Per ipotesi induttiva, esiste una base ortonormale $ \{v_{2},\dots,v_{n}\} $ di $ W^{\perp} $ tale che $ (\pi_{W^{\perp}} \circ A)(v_{k}) $ è combinazione lineare di $ v_{2},\dots,v_{k} $ con $ k=2,\dots,n $.\\
 	A questo punto $ \{v_{1},\dots,v_{n}\} $ è una base ortonormale di $ \C^{n} $ tale che $ A v_{k} $ sia combinazione lineare dei vettori di base.\\
 	Essendo la base ortonormale, la matrice $ A $ è dunque unitariamente simile a una matrice triangolare (superiore).
 \end{proof}
 
-La base $ \{v_{1},\dots,v_{n}\} $ che appare nel teorema di Schur viene chiamata \textit{base di Schur}.\\\\
-%
+\begin{remark}
+	La base $ \{v_{1},\dots,v_{n}\} $ che appare nel teorema di Schur viene chiamata \textit{base di Schur}.
+\end{remark}
+
 Una matrice $ A \in M_{n}(\C) $ è detta \textit{normale} se $ A A^{*} = A^{*} A $, i.e. commuta con la sua trasposta coniugata: esempi di matrici normali sono
 
 \begin{itemize}
@@ -985,9 +995,16 @@ Una matrice $ A \in M_{n}(\C) $ è detta \textit{normale} se $ A A^{*} = A^{*} A
 	Ogni matrice $ A \in M_{n}(\C) $ normale è unitariamente simile a una matrice diagonale, i.e.
 	
 	\begin{equation}
-		A \in M_{n}(\C) \qq{normale} \implies %
+		A \in M_{n}(\C) \text{ normale} %
+		\implies %
 		\E U \in U(n) \mid U^{*} A U = %
-		\smqty(\dmat{\lambda_{1}, & & 0 \\ & \ddots & \\ 0 & & ,\lambda_{n}})
+		\bmqty{ %
+				\dmat{ %
+						\lambda_{1},
+						& & 0 \\ & \ddots & \\ 0 & & ,
+						\lambda_{n}
+						}
+				}
 	\end{equation}
 
 	con $ \lambda_{j} $ gli autovalori di $ A $.\\
@@ -1000,7 +1017,13 @@ Una matrice $ A \in M_{n}(\C) $ è detta \textit{normale} se $ A A^{*} = A^{*} A
 	
 	\begin{equation}
 		U^{*} A U = T = %
-		\smqty(\dmat{\lambda_{1}, & & K \\ & \ddots & \\ 0 & & ,\lambda_{n}})
+		\bmqty{ %
+				\dmat{ %
+						\lambda_{1},
+						& & K \\ & \ddots & \\ 0 & & ,
+						\lambda_{n}
+						}
+				}
 	\end{equation}
 
 	cioè $ A $ sia simile a una matrice triangolare superiore.\\
@@ -1008,29 +1031,60 @@ Una matrice $ A \in M_{n}(\C) $ è detta \textit{normale} se $ A A^{*} = A^{*} A
 	
 	\begin{align}
 		\begin{split}
-			(U^{*} A U) (U^{*} A U)^{*} &= U^{*} A U U^{*} A^{*} U\\
-			&= U^{*} A A^{*} U\\
-			&= U^{*} A^{*} A U\\
-			&= U^{*} A^{*} U U^{*} A U\\
+			(U^{*} A U) (U^{*} A U)^{*} &= U^{*} A U U^{*} A^{*} U \\
+			&= U^{*} A A^{*} U \\
+			&= U^{*} A^{*} A U \\
+			&= U^{*} A^{*} U U^{*} A U \\
 			&= (U^{*} A U)^{*} (U^{*} A U)
 		\end{split}
 	\end{align}
 
 	A questo punto, $ T $ è normale ma se una matrice è triangolare superiore e normale allora è diagonale: dimostriamo questo per induzione su $ n $.\\
-	Per $ n=1 $, la matrice è diagonale in quanto numero.\\
-	Supponiamo che sia vero per matrici di ordine $ n-1 $ e mostriamolo per matricidi ordine $ n $: riscriviamo la matrice normale triangolare superiore come
+	Per $ n=1 $, la matrice è "diagonale" in quanto numero.\\
+	Supponiamo che sia vero per matrici di ordine $ n-1 $ e mostriamolo per matrici di ordine $ n $: riscriviamo la matrice normale triangolare superiore come
 	
-	\begin {equation}
-		T = \mqty(\lambda_{1} & B \\ 0 & C)
+	\begin{equation}
+		T = \bmqty{ \lambda_{1} & B \\ 0 & C } \qcomma %
+		\begin{cases}
+			\lambda_{1} \in \C \\
+			B \in M_{1,n-1}(\C) \\
+			0 \in M_{n-1,1}(\C) \\
+			C \in M_{n-1}(\C)
+		\end{cases}
 	\end{equation}
 
-	dove $ \lambda_{1} \in \C $, $ B \in M_{1,n-1}(\C) $, $ 0 \in M_{n-1,1} $ e $ C \in M_{n-1}(\C) $. Imponendo la condizione di matrice normale
+	Imponendo la condizione di matrice normale
 	
 	\begin{align}
 		\begin{split}
 			T T^{*} &= T^{*} T\\
-			\mqty(\lambda_{1} & B \\ 0 & C) \mqty(\bar{\lambda}_{1} & 0 \\ B^{*} & C^{*}) &= \mqty(\bar{\lambda}_{1} & 0 \\ B^{*} & C^{*}) \mqty(\lambda_{1} & B \\ 0 & C)\\
-			\mqty(\abs{\lambda}_{1} + B B^{*} & B C^{*} \\ C B^{*} & C C^{*}) &= \mqty(\abs{\lambda}_{1} & \bar{\lambda}_{1} B \\ \lambda_{1} B^{*} & B^{*} B + C^{*} C)
+			\bmqty{ %
+					\lambda_{1} & B \\
+					0 & C %
+					} %
+			\bmqty{ %
+					\bar{\lambda}_{1} & 0 \\
+					B^{*} & C^{*} %
+					}
+			&= %
+			\bmqty{ %
+						\bar{\lambda}_{1} & 0 \\
+						B^{*} & C^{*} %
+						}
+			\bmqty{ %
+					\lambda_{1} & B \\
+					0 & C %
+					} \\
+			%
+			\bmqty{ %
+					\abs{\lambda}_{1} + B B^{*} & B C^{*} \\
+					C B^{*} & C C^{*} %
+					}
+			&= %
+			\bmqty{ %
+					\abs{\lambda}_{1} & \bar{\lambda}_{1} B \\
+					\lambda_{1} B^{*} & B^{*} B + C^{*} C %
+					}
 		\end{split}
 	\end{align}
 
@@ -1038,7 +1092,7 @@ Una matrice $ A \in M_{n}(\C) $ è detta \textit{normale} se $ A A^{*} = A^{*} A
 	
 	\begin{equation}
 		\begin{cases}
-			B B^{*} = 0 \implies B = 0\\
+			B B^{*} = 0 \implies B = 0 \\
 			C^{*} C = C C^{*}
 		\end{cases}
 	\end{equation}
@@ -1051,7 +1105,13 @@ Una matrice $ A \in M_{n}(\C) $ è detta \textit{normale} se $ A A^{*} = A^{*} A
 	
 	\begin{equation}
 		P^{T} A P = D = %
-		\smqty(\dmat{\lambda_{1}, & & 0 \\ & \ddots & \\ 0 & & ,\lambda_{n}})
+		\bmqty{ %
+				\dmat{ %
+						\lambda_{1},
+						& & 0 \\ & \ddots & \\ 0 & & ,
+						\lambda_{n}
+						}
+				}
 	\end{equation}
 \end{corollary}
 
@@ -1073,25 +1133,29 @@ Una matrice $ A \in M_{n}(\C) $ è detta \textit{normale} se $ A A^{*} = A^{*} A
 
 	\begin{align}
 		\begin{split}
-			\lambda v &= A v\\
-			\bar{v}^{T} \lambda v &= \bar{v}^{T} A v\\
-			\lambda \abs{v}^{2} &= \bar{v}^{T} \bar{A}^{T} v\\
-			&= \overline{A v}^{T} v\\
-			&= \overline{\lambda v}^{T} v\\
-			&= \bar{\lambda} v^{T} v\\
+			\lambda v &= A v \\
+			\bar{v}^{T} \lambda v &= \bar{v}^{T} A v \\
+			\lambda \abs{v}^{2} &= \bar{v}^{T} \bar{A}^{T} v \\
+			&= \overline{A v}^{T} v \\
+			&= \overline{\lambda v}^{T} v \\
+			&= \bar{\lambda} v^{T} v \\
 			&= \bar{\lambda} \abs{v}^{2}
 		\end{split}
 	\end{align}
 
-	perciò $ \bar{\lambda} = \lambda \implies \lambda \in \R $.
+	perciò
+	
+	\begin{equation}
+		\bar{\lambda} = \lambda \implies \lambda \in \R
+	\end{equation}
 \end{proof}
 
 \begin{corollary}[2]
-	Siano una matrice normale $ A \in M_{n}(\C) $ e un suo autovalore $ \lambda $, allora la molteplicità algebrica di $ \lambda $ coincide con quella geometrica, dove la prima indica il grado della soluzione $ \lambda $ all'interno del polinomio caratteristico mentre la seconda indica la dimensione del autospazio associato a $ \lambda $.
+	Siano una matrice normale $ A \in M_{n}(\C) $ e un suo autovalore $ \lambda $, allora la molteplicità algebrica di $ \lambda $ coincide con quella geometrica, dove la prima indica il grado della soluzione $ \lambda $ all'interno del polinomio caratteristico mentre la seconda indica la dimensione dell'autospazio associato a $ \lambda $.
 \end{corollary}
 
 \begin{proof}
-	Per dimostrare il corollario, ricordiamo che una matrice normale è sempre diagonalizzabile e una matrice è diagonalizzabile se e solo se la molteplicità algebrica dei suoi autovalori coincide con quella geometrica.
+	Ricordiamo che una matrice normale è sempre diagonalizzabile e una matrice è diagonalizzabile se e solo se la molteplicità algebrica dei suoi autovalori coincide con quella geometrica.
 \end{proof}
 
 \begin{corollary}[3]
@@ -1099,7 +1163,14 @@ Una matrice $ A \in M_{n}(\C) $ è detta \textit{normale} se $ A A^{*} = A^{*} A
 	
 	\begin{equation}
 		U^{*} A U = %
-		\smqty(\dmat{ e^{i \theta_{n}} & & 0 \\ & \ddots & \\ 0 & & e^{i \theta_{n}} }) \qcomma \theta_{j} \in \R, \, j=1,\dots,n
+		\bmqty{ %
+				\dmat{ %
+						e^{i \theta_{1}} & & 0 \\
+						& \ddots & \\
+						0 & & e^{i \theta_{n}} %
+						}
+				} %
+		\qcomma \theta_{j} \in \R, \, j=1,\dots,n
 	\end{equation}
 
 	In altre parole, una matrice unitaria è simile a una matrice diagonale con entrate di norma unitaria.
@@ -1110,18 +1181,24 @@ Una matrice $ A \in M_{n}(\C) $ è detta \textit{normale} se $ A A^{*} = A^{*} A
 	
 	\begin{equation}
 		U^{T} A U = %
-		\smqty(\dmat{\lambda_{1} & & 0 \\ & \ddots & \\ 0 & & \lambda_{n}})
+		\bmqty{ %
+				\dmat{ %
+						\lambda_{1} & & 0 \\
+						& \ddots & \\
+						0 & & \lambda_{n} %
+						}
+				}
 	\end{equation}
 
-	quindi è sufficiente dimostrare che $ \abs{\lambda_{j}} = 1 $ per $ \forall j=1,\dots,n $:
+	quindi è sufficiente dimostrare che $ \abs{\lambda_{j}} = 1 $ per $ j=1,\dots,n $:
 	
 	\begin{align}
 		\begin{split}
-			\lambda v &= A v\\
-			\overline{(A v)}^{T} \lambda v &= \overline{(A v)}^{T} A v\\
-			\overline{(\lambda v)}^{T} \lambda v &= \bar{v}^{T} A^{*} A v\\
-			\bar{\lambda} \lambda \bar{v}^{T} v &= \bar{v}^{T} v\\
-			\abs{\lambda}^{2} \abs{v}^{2} &= \abs{v}^{2}\\
+			\lambda v &= A v \\
+			\overline{(A v)}^{T} \lambda v &= \overline{(A v)}^{T} A v \\
+			\overline{(\lambda v)}^{T} \lambda v &= \bar{v}^{T} A^{*} A v \\
+			\bar{\lambda} \lambda \bar{v}^{T} v &= \bar{v}^{T} v \\
+			\abs{\lambda}^{2} \abs{v}^{2} &= \abs{v}^{2} \\
 			\abs{\lambda} &= 1
 		\end{split}
 	\end{align}
@@ -1130,7 +1207,8 @@ Una matrice $ A \in M_{n}(\C) $ è detta \textit{normale} se $ A A^{*} = A^{*} A
 Consideriamo l'insieme delle \textit{matrici unitarie speciali}:
 
 \begin{equation}
-	SU(n) = \{ X \in U(n) \mid \det(X) = 1 \} = \{ X \in M_{n}(\C) \mid X^{*} X = I \wedge \det(X) = 1 \}
+	SU(n) = \{ X \in U(n) \mid \det(X) = 1 \} %
+	= \{ X \in M_{n}(\C) \mid X^{*} X = I \wedge \det(X) = 1 \}
 \end{equation}
 
 \begin{corollary}[4]
@@ -1138,7 +1216,14 @@ Consideriamo l'insieme delle \textit{matrici unitarie speciali}:
 	
 	\begin{equation}
 		U^{*} A U = %
-		\smqty(\dmat{ e^{i \theta_{n}} & & 0 \\ & \ddots & \\ 0 & & e^{i \theta_{n}} }) \qcomma \theta_{j} \in \R, \, j=1,\dots,n
+		\bmqty{ %
+				\dmat{ %
+						e^{i \theta_{1}} & & 0 \\
+						& \ddots & \\
+						0 & & e^{i \theta_{n}} %
+						}
+				} %
+		\qcomma \theta_{j} \in \R, \, j=1,\dots,n
 	\end{equation}
 
 	con
@@ -1149,19 +1234,11 @@ Consideriamo l'insieme delle \textit{matrici unitarie speciali}:
 \end{corollary}
 
 \begin{proof}
-	\begin{align}
-		\begin{split}
-			1 &= \det(A)\\
-			&= \prod_{j=1}^{n} e^{i \theta_{j}}\\
-			&= e^{i \sum_{j=1}^{n} \theta_{j}}
-		\end{split}
-	\end{align}
-
-	\begin{equation}
-		1 = \det(A) = \det(U^{*} A U) = \prod_{j=1}^{n} e^{i \theta_{j}} = e^{i \sum_{j=1}^{n} \theta_{j}} %
-		\implies%
+	\begin{gather}
+		1 = \det(A) = \det(U^{*} A U) = \prod_{j=1}^{n} e^{i \theta_{j}} = e^{i \sum_{j=1}^{n} \theta_{j}} \\
+		\Downarrow \\
 		\sum_{j=1}^{n} \theta_{j} = 2 k \pi \qcomma k \in \Z
-	\end{equation}
+	\end{gather}
 \end{proof}
 
 \subsection{Forma canonica}
