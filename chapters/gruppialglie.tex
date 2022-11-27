@@ -781,10 +781,10 @@ Utilizzando come entrate i numeri reali, le matrici ortogonali $ O(n) $ sono def
 	O(n) = \{ A \in M_{n}(\R) \mid A^{T} A = I \}
 \end{equation}
 
-In campo complesso, si parla di \textit{matrici unitarie}, definite come
+In campo complesso, si parla invece di \textit{matrici unitarie}, definite come
 
 \begin{equation}
-	U(n) = \{ A \in M_{n}(\C) \mid  = I \}
+	U(n) = \{ A \in M_{n}(\C) \mid A^{*} = I \}
 \end{equation}
 
 dove $ A ^{-1} = A^{*} = \bar{A}^{T} $.\\
@@ -792,18 +792,18 @@ Analogamente come le matrici ortogonali hanno colonne ortogonali tra loro e di n
 
 \begin{equation}
 	A^{*} A = %
-	\begin{pmatrix}
-		\bar{a}_{11} & \bar{a}_{21} & \cdots & \bar{a}_{n1} \\ %
-		\bar{a}_{12} & \bar{a}_{22} & & \bar{a}_{n2}\\ %
-		\vdots & & \ddots & \vdots \\ %
-		\bar{a}_{1n} & \bar{a}_{2n} & \cdots & \bar{a}_{nn}
-	\end{pmatrix}%
-	\begin{pmatrix}
-		a_{11} & a_{12} & \cdots & a_{1n} \\ %
-		a_{21} & a_{22} & & a_{2n}\\ %
-		\vdots & & \ddots & \vdots \\ %
-		a_{n1} & a_{n2} & \cdots & a_{nn}
-	\end{pmatrix}
+	\bmqty{ %
+			\bar{a}_{11} & \bar{a}_{21} & \cdots & \bar{a}_{n1} \\ %
+			\bar{a}_{12} & \bar{a}_{22} & \cdots & \bar{a}_{n2} \\ %
+			\vdots & \vdots & \ddots & \vdots \\ %
+			\bar{a}_{1n} & \bar{a}_{2n} & \cdots & \bar{a}_{nn}
+			}
+	\bmqty{ %
+			a_{11} & a_{12} & \cdots & a_{1n} \\ %
+			a_{21} & a_{22} & \cdots& a_{2n} \\ %
+			\vdots & \vdots & \ddots & \vdots \\ %
+			a_{n1} & a_{n2} & \cdots & a_{nn}
+			}
 \end{equation}
 
 se consideriamo solo la prima entrata della matrice prodotto, otteniamo
@@ -815,7 +815,7 @@ se consideriamo solo la prima entrata della matrice prodotto, otteniamo
 e così per il resto degli elementi nella diagonale, mentre tutti gli altri prodotti hermitiani tra il resto delle colonne è nullo, i.e. le colonne sono tra loro ortogonali.
 
 \begin{definition}
-	Le colonne di una matrice unitaria sono una base ortonormale per l'algebra $ (\C^{n},\cdot) $, i.e. prese due colonne $ v_{i} $ e $ v_{j} $ di una matrice unitaria, vale la seguente uguaglianza $ v_{i} \cdot v_{j} = \delta_{ij} $.
+	Le colonne di una matrice unitaria sono una base ortonormale per l'algebra $ (\C^{n},\cdot) $, i.e. prese due colonne $ v_{i} $ e $ v_{j} $ di una matrice unitaria, vale $ v_{i} \cdot v_{j} = \delta_{ij} $.
 \end{definition}
 
 
