@@ -1879,25 +1879,37 @@ Il gruppo di Lie $ SL_{n}(\R) \subset GL_{n}(\R) $ è un sottogruppo di Lie di $
 
 Inoltre, $ SL_{n}(\R) $ è connesso (e quindi connesso per archi in quanto varietà), chiuso in $ GL_{n}(\R) $ ma non compatto.\\\\
 %
-Per dimostrare che sia un sottogruppo di Lie senza usare la proprietà di sottovarietà, dovremmo dimostrare che $ SL_{n}(\R) $ sia un sottogruppo algebrico di $ GL_{n}(\R) $, che sia una sottovarietà immersa e che le sue operazioni siano lisce; usando invece il teorema della preimmagine, possiamo dimostrare che $ SL_{n}(\R) $ è una sottovarietà di $ GL_{n}(\R) $\footnote{%
+Per dimostrare che sia un sottogruppo di Lie senza usare la proprietà di sottovarietà, dovremmo dimostrare che $ SL_{n}(\R) $ sia un sottogruppo algebrico di $ GL_{n}(\R) $, che sia una sottovarietà immersa e che le sue operazioni siano lisce; usando invece il teorema della preimmagine, possiamo dimostrare che $ SL_{n}(\R) $ è una sottovarietà\footnote{%
 	Vedi Esempio \ref{es:sl-subman}.%
-} e dunque, per il Teorema \ref{thm:liesub-var}, che è un sottogruppo di Lie embedded di $ GL_{n}(\R) $.\\
+} di $ GL_{n}(\R) $ e dunque, per il Teorema \ref{thm:liesub-var}, che è un sottogruppo di Lie embedded di $ GL_{n}(\R) $.\\
 Per (ri)dimostrare che $ SL_{n}(\R) $ sia una sottovarietà di $ GL_{n}(\R) $, consideriamo sempre la funzione determinante
 
-\map{f = \det}%
-	{GL_{n}(\R)}{\R}%
+\map{f \doteq \det}
+	{GL_{n}(\R)}{\R}
 	{A}{\det(A)}
 	
-da cui $ SL_{n}(\R) = f^{-1}(1) $ (il quale rende $ SL_{n}(\R) $ chiuso in quanto immagine di un chiuso tramite una funzione continua). Perché $ SL_{n}(\R) $ sia effettivamente una sottovarietà di $ GL_{n}(\R) $ è necessario che $ 1 \in \mathcal{VR}_{f} $, i.e. il differenziale $ f_{*A} $ è suriettivo per $ \forall A \in SL_{n}(\R) = f^{-1}(1) $: preso il differenziale
+da cui $ SL_{n}(\R) = f^{-1}(1) $ (il quale rende $ SL_{n}(\R) $ chiuso in quanto immagine di un chiuso tramite una funzione continua). Perché $ SL_{n}(\R) $ sia effettivamente una sottovarietà di $ GL_{n}(\R) $ è necessario\footnote{%
+	Vedi Teorema \ref{thm:preimg}.%
+} che $ 1 \in \mathcal{VR}_{f} $, i.e. il differenziale $ f_{*A} $ è suriettivo per qualsiasi $ A \in SL_{n}(\R) = f^{-1}(1) $.\\
+Preso il differenziale
 
-\map{f_{*A} = \operatorname{det}_{*A}}%
-	{T_{A}(GL_{n}(\R))}{T_{\det(A)}(\R) = \R}%
+\map{f_{*A} = {\det}_{*A}}
+	{T_{A}(GL_{n}(\R))}{T_{\det(A)}(\R) = \R}
 	{B}{\det(A) \tr(A^{-1} B) = \tr(A^{-1} B)}
-
-dove $ \det(A) = 1 $ in quanto $ A \in SL_{n}(\R) $, deve esiste $ B \in T_{A}(GL_{n}(\R)) = M_{n}(\R) $ tale che $ \tr(A^{-1} B) = c $ e questo si verifica per $ B = c A / n $ con $ n = \dim(M_{n}(\R)) $
+	
+dove $ \det(A) = 1 $ in quanto $ A \in SL_{n}(\R) $, la condizione di suriettività è la seguente:
 
 \begin{equation}
-	\tr(A^{-1} B) = \tr(\dfrac{c A^{-1} A}{n}) = \dfrac{c \tr(I_{n})}{n} = \dfrac{c \, n}{n} = c
+	\forall c \in \R, \E B \in T_{A}(GL_{n}(\R)) = M_{n}(\R) \mid \tr(A^{-1} B) = c
+\end{equation}
+
+questo si verifica per $ B = c A / n $ con $ n = \dim(M_{n}(\R)) $, in quanto
+
+\begin{equation}
+	\tr(A^{-1} B) = \tr(\dfrac{c A^{-1} A}{n}) %
+	= \dfrac{c \tr(I_{n})}{n} %
+	= \dfrac{c \, n}{n} %
+	= c
 \end{equation}
 
 dunque $ SL_{n}(\R) $ è una sottovarietà di $ GL_{n}(\R) $ con dimensione (usando la funzione determinante)
@@ -1915,7 +1927,8 @@ Il teorema della preimmagine asserisce inoltre che
 da cui lo spazio tangente a $ SL_{n}(\R) $
 
 \begin{equation}
-	T_{I}(SL_{n}(\R)) = \ker(\operatorname{det}_{*I}) = \{ X \in M_{n}(\R) = T_{A}(GL_{n}(\R)) \mid \tr(X) = 0 \}
+	T_{I}(SL_{n}(\R)) = \ker({\det}_{*I}) %
+	= \{ X \in M_{n}(\R) = T_{A}(GL_{n}(\R)) \mid \tr(X) = 0 \}
 \end{equation}
 
 il quale ha dimensione $ n^{2} - 1 $ (esattamente come $ SL_{n}(\R) $) in quanto le sue entrate sono vincolate dalla condizione di avere traccia nulla. Nel caso in cui lo spazio tangente fosse calcolato in un altro punto
@@ -1930,25 +1943,26 @@ Per quanto riguarda la topologia di $ SL_{n}(\R) $, considerando il teorema di H
 
 \begin{equation}
 	\left\{ %
-		\smqty(\dmat{ k & 0 \\ 0 & \sfrac{1}{k}, I_{n-2} }) \qcomma k \in \N \setminus \{0\}
+			\bmqty{\dmat{ k & 0 \\ 0 & \sfrac{1}{k}, I_{n-2} }} \qcomma k \in \N \setminus \{0\}
 	\right\} %
 	\subset SL_{n}(\R)
 \end{equation}
 
 questo è illimitato al variare di $ k $ in quanto non esiste una palla in $ GL_{n}(\R) $ che lo contenga.\\
-Per uno spazio localmente euclideo ($ SL_{n}(\R) $ è una varietà quindi lo è), vale che questo è connesso se e solo se è connesso per archi\footnote{%
+Per uno spazio localmente euclideo (come $ SL_{n}(\R) $ in quanto varietà), vale che questo è connesso se e solo se è connesso per archi\footnote{%
 	Per uno spazio non localmente euclideo, la connessione per archi implica la connessione ma non viceversa.%
-}. Per dimostrare dunque che $ SL_{n}(\R) $ sia connesso, facciamo vedere che una matrice qualunque $ A \in SL_{n}(\R) $ può essere unita tramite un arco, i.e. un'applicazione continua, all'identità: usando questo procedimento due volte, ogni matrice sarà unità ad ogni altra matrice di $ SL_{n}(\R) $ tramite archi. Le matrici appartenenti a $ SL_{n}(\R) $ possono essere scritte come prodotto finito di matrici elementari
+}. Per dimostrare dunque che $ SL_{n}(\R) $ sia connesso, facciamo vedere che una matrice qualunque $ A \in SL_{n}(\R) $ può essere unita tramite un arco, i.e. un'applicazione continua, all'identità: usando questo procedimento e il suo inverso, ogni matrice sarà unita a ogni altra matrice di $ SL_{n}(\R) $ tramite archi ($ A \to I \to B $). Ricordiamo che le matrici appartenenti a $ SL_{n}(\R) $ possono essere scritte come prodotto finito di matrici elementari
 
 \begin{equation}
-	A = \prod_{k=1}^{s} M_{a_{k}}(i_{k},j_{k}) = \prod_{k=1}^{s} (I + a_{k} E_{i_{k} j_{k}})
+	A = \prod_{k=1}^{s} M_{a_{k}}(i_{k},j_{k}) %
+	= \prod_{k=1}^{s} (I + a_{k} E_{i_{k} j_{k}})
 \end{equation}
 
 con $ E_{ij} $ la matrice che ha tutte entrate nulle tranne per quella nella riga $ i $-esima e colonna $ j $-esima dove è presente 1.\\
-Sia la curva
+Sia la curva continua
 
-\map{c}%
-	{[0,1]}{SL_{n}(\R)}%
+\map{c}
+	{[0,1]}{SL_{n}(\R)}
 	{t}{\prod_{k=1}^{s} M_{t a_{k}}(i_{k},j_{k}) = \prod_{k=1}^{s} (I + t a_{k} E_{i_{k} j_{k}})}
 	
 un'applicazione continua con $ c(0) = I $ e $ c(1) = A $: questa curva funge da arco che collega la matrice identità ad $ A $, dimostrando dunque che $ SL_{n}(\R) $ è connesso.
