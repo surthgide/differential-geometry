@@ -1890,7 +1890,7 @@ Per (ri)dimostrare che $ SL_{n}(\R) $ sia una sottovarietà di $ GL_{n}(\R) $, c
 	
 da cui $ SL_{n}(\R) = f^{-1}(1) $ (il quale rende $ SL_{n}(\R) $ chiuso in quanto immagine di un chiuso tramite una funzione continua). Perché $ SL_{n}(\R) $ sia effettivamente una sottovarietà di $ GL_{n}(\R) $ è necessario\footnote{%
 	Vedi Teorema \ref{thm:preimg}.%
-} che $ 1 \in \mathcal{VR}_{f} $, i.e. il differenziale $ f_{*A} $ è suriettivo per qualsiasi $ A \in SL_{n}(\R) = f^{-1}(1) $.\\
+} che $ 1 \in \VR_{f} $, i.e. il differenziale $ f_{*A} $ è suriettivo per qualsiasi $ A \in SL_{n}(\R) = f^{-1}(1) $.\\
 Preso il differenziale
 
 \map{f_{*A} = {\det}_{*A}}
@@ -1977,10 +1977,10 @@ Il gruppo di Lie $ SL_{n}(\C) \subset GL_{n}(\C) $ è un sottogruppo di Lie di $
 
 Inoltre, $ SL_{n}(\C) $ è connesso (e quindi connesso per archi in quanto varietà), chiuso in $ GL_{n}(\C) $ ma non compatto.\\\\
 %
-Analogamente a $ SL_{n}(\R) $, l'insieme $ SL_{n}(\C) $ è una sottovarietà di $ GL_{n}(\C) $ in quanto preimmagine del valore regolare $ 1 \in \mathcal{VR}_{f} $ tramite da funzione
+Analogamente a $ SL_{n}(\R) $, l'insieme $ SL_{n}(\C) $ è una sottovarietà di $ GL_{n}(\C) $ in quanto preimmagine del valore regolare $ 1 \in \VR_{f} $ tramite la funzione
 
-\map{f = \det}%
-	{GL_{n}(\C)}{\C}%
+\map{f \doteq \det}
+	{GL_{n}(\C)}{\C}
 	{A}{\det(A)}
 
 da cui la dimensione
@@ -1991,8 +1991,8 @@ da cui la dimensione
 
 Per quanto riguarda lo spazio tangente, prendendo il nucleo del differenziale
 
-\map{f_{*A} = \operatorname{det}_{*A}}%
-	{T_{A}(GL_{n}(\C))}{\C}%
+\map{f_{*A} = \operatorname{det}_{*A}}
+	{T_{A}(GL_{n}(\C))}{\C}
 	{B}{\tr(A^{-1} B)}
 
 si ottiene
@@ -2012,7 +2012,7 @@ Il gruppo delle matrici ortogonali
 \end{equation}
 
 è un sottogruppo di Lie embedded di $ GL_{n}(\R) $, compatto\footnote{%
-	L'insieme $ O(n) $ è compatto in quanto chiuso e limitato in $ GL_{n}(\R) $: chiuso perché preimmagine di $ I \in \mathcal{VR}_{f} $ tramite l'applicazione continua
+	L'insieme $ O(n) $ è compatto in quanto chiuso e limitato in $ GL_{n}(\R) $: chiuso perché preimmagine di $ I \in \VR_{f} $ tramite l'applicazione continua
 	
 	\maps{f}%
 		{GL_{n}(\R)}{S(n)}%
@@ -2216,7 +2216,7 @@ dove il codominio è l'insieme delle matrici hermitiane
 	H(n) = \{ B \in M_{n}(\C) \mid B^{*} = B \}
 \end{equation}
 
-Abbiamo che $ U(n) = f^{-1}(I) $, dunque dobbiamo verificare che $ I \in \mathcal{VR}_{f} $ per poter usare il teorema della preimmagine di un valore regolare. Prendiamo quindi differenziale $ f_{*A}(B) $ con $ A \in GL_{n}(\C) $ e $ B \in T_{A}(GL_{n}(\C)) = M_{n}(\C) $ e verifichiamo che sia suriettiva nella restrizione a matrici unitarie: presa una curva $ c : (-\varepsilon,\varepsilon) $ tale che $ c(0) = A $ e $ c'(0) = B $, possiamo scrivere
+Abbiamo che $ U(n) = f^{-1}(I) $, dunque dobbiamo verificare che $ I \in \VR_{f} $ per poter usare il teorema della preimmagine di un valore regolare. Prendiamo quindi differenziale $ f_{*A}(B) $ con $ A \in GL_{n}(\C) $ e $ B \in T_{A}(GL_{n}(\C)) = M_{n}(\C) $ e verifichiamo che sia suriettiva nella restrizione a matrici unitarie: presa una curva $ c : (-\varepsilon,\varepsilon) $ tale che $ c(0) = A $ e $ c'(0) = B $, possiamo scrivere
 
 \begin{align}
 	\begin{split}
@@ -2237,7 +2237,7 @@ da cui, tramite le identificazioni $ T_{A}(GL_{n}(\C)) = M_{n}(\C) $ e $ T_{f(A)
 A questo punto abbiamo che
 
 \begin{equation}
-	I \in \mathcal{VR}_{f} \iff \E B \in M_{n}(\C) \mid f_{*A}(B) = C \qcomma \forall C \in H(n), \, \forall A \in U(n) = f^{-1}(I)
+	I \in \VR_{f} \iff \E B \in M_{n}(\C) \mid f_{*A}(B) = C \qcomma \forall C \in H(n), \, \forall A \in U(n) = f^{-1}(I)
 \end{equation}
 
 cioè $ f_{*A} $ è suriettiva per $ A \in U(n) $: questo si verifica per $ B = AC/2 $
@@ -2252,7 +2252,7 @@ cioè $ f_{*A} $ è suriettiva per $ A \in U(n) $: questo si verifica per $ B = 
 	\end{split}
 \end{align}
 
-in quanto $ C \in H(n) $, perciò $ I \in \mathcal{VR}_{f} $ e dunque $ U(n) $ è una sottovarietà di $ GL_{n}(\C) $.\\
+in quanto $ C \in H(n) $, perciò $ I \in \VR_{f} $ e dunque $ U(n) $ è una sottovarietà di $ GL_{n}(\C) $.\\
 La dimensione di $ U(n) $ deriva dal teorema della preimmagine
 
 \begin{equation}
@@ -2326,7 +2326,7 @@ Questa applicazione ha come codominio $ S(1) = \{ \pm 1 \} $ perché per $ A \in
 	\det(A) = e^{i \theta} \qcomma \theta \in \R
 \end{equation}
 
-Prendendo $ 1 \in \C $, $ SU(n) $ ne è la controimmagine tramite il determinante, i.e. $ SU(n) = f^{-1}(1) $: perché sia una sottovarietà di $ U(n) $ è sufficiente che $ 1 \in \mathcal{VR}_{f} $, quindi prendiamo il differenziale dell'applicazione 
+Prendendo $ 1 \in \C $, $ SU(n) $ ne è la controimmagine tramite il determinante, i.e. $ SU(n) = f^{-1}(1) $: perché sia una sottovarietà di $ U(n) $ è sufficiente che $ 1 \in \VR_{f} $, quindi prendiamo il differenziale dell'applicazione 
 
 \map{\operatorname{det}_{*A}}%
 	{T_{A}(U(n))}{T_{\det(A)}(\S^{1})}%
@@ -2345,10 +2345,10 @@ con $ a \in \R $, $ c(0) = 1 $ e $ \dot{c} = i a $. Dato che $ \dot(c) \in T_{1}
 \end{equation}
 
 cioè tutti i vettori paralleli all'asse immaginario che partano in $ 1 $.\\
-A questo punto, perché $ 1 \in \mathcal{VR}_{f} $, è necessario che il differenziale sua suriettivo per $ \forall A \in SU(n) $ o equivalentemente
+A questo punto, perché $ 1 \in \VR_{f} $, è necessario che il differenziale sua suriettivo per $ \forall A \in SU(n) $ o equivalentemente
 
 \begin{equation}
-	1 \in \mathcal{VR}_{f} \iff \E B \in T_{A}(U(n)) \mid \tr(A^{-1} B) = i a \qcomma A \in SU(n), \, a \in \R
+	1 \in \VR_{f} \iff \E B \in T_{A}(U(n)) \mid \tr(A^{-1} B) = i a \qcomma A \in SU(n), \, a \in \R
 \end{equation}
 
 Abbiamo dimostrato che $ T_{A}(U(n)) = A \, T_{I}(U(n)) $ e $ T_{I}(U(n)) = H^{-}(n) $ cioè le matrici antihermitiane, perciò
@@ -2363,7 +2363,7 @@ Per soddisfare la condizione, prendiamo $ B = AX $ con $ X = (i a/n) I $, da cui
 	\tr(A^{-1} B) = \tr(A^{-1} A \, \dfrac{ia}{n} \, I) = \dfrac{ia \tr(I)}{n} = i a
 \end{equation}
 
-Questo dimostra che $ 1 \in \mathcal{VR}_{f} $ perciò $ SU(n) $ è una sottovarietà e quindi un sottogruppo di Lie embedded di $ U(n) $ di dimensione
+Questo dimostra che $ 1 \in \VR_{f} $ perciò $ SU(n) $ è una sottovarietà e quindi un sottogruppo di Lie embedded di $ U(n) $ di dimensione
 
 \begin{equation}
 	\dim_{\R}(SU(n)) = \dim_{\R}(U(n)) - \dim_{\R}(\S^{1}) = n^{2} - 1
@@ -4804,7 +4804,7 @@ Per lo spazio tangente, le matrici hanno la forma:
 La base standard di $ \su(2) $ è la seguente
 
 \begin{equation}
-	\mathcal{B}_{\su(2)} = \left\{ %
+	\B_{\su(2)} = \left\{ %
 		\mqty( 0 & 1 \\ -1 & 0 ), %
 		\mqty( i & 0 \\ 0 & -i ), %
 		\mqty( 0 & i \\ i & 0 ) %
