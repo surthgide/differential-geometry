@@ -2011,23 +2011,15 @@ Il gruppo delle matrici ortogonali
 	O(n) = \{ A \in GL_{n}(\R) \mid A^{T} A = I \}
 \end{equation}
 
-è un sottogruppo di Lie embedded di $ GL_{n}(\R) $, compatto\footnote{%
-	L'insieme $ O(n) $ è compatto in quanto chiuso e limitato in $ GL_{n}(\R) $: chiuso perché preimmagine di $ I \in \VR_{f} $ tramite l'applicazione continua
+è un sottogruppo di Lie embedded di $ GL_{n}(\R) $.\\
+È compatto in quanto chiuso e limitato in $ GL_{n}(\R) $: chiuso perché preimmagine di $ I \in \VR_{f} $ tramite l'applicazione continua
 	
-	\maps{f}%
-		{GL_{n}(\R)}{S(n)}%
-		{A}{A^{T} A}
+\map{f}
+	{GL_{n}(\R)}{S(n)}
+	{A}{A^{T} A}
 	
-	e limitato in quanto le colonne delle matrici di $ O(n) $ hanno norma unitaria e quindi la somma delle colonne è limitata dalla dimensione $ n $ delle matrici.%
-} e non connesso (per $ n \geqslant 1 $\footnote{%
-	Per $ n=1 $ si ha l'insieme
-	
-	\begin{equation*}
-		O(n) = \{ x \in \R \mid x^{2} = 1 \} = \{ \pm 1 \}
-	\end{equation*}
-	
-	il quale non è connesso.%
-}) ma costituito da due componenti connesse
+e limitato in quanto le colonne delle matrici di $ O(n) $ hanno norma unitaria e quindi la somma delle colonne è limitata dalla dimensione $ n $ delle matrici.\\
+Non è connesso per $ n \geqslant 1 $, ma costituito da due componenti connesse
 
 \begin{equation}
 	O(n) = SO(n) \sqcup S^{-}(n)
@@ -2042,7 +2034,13 @@ dove
 	\end{cases}
 \end{equation}
 
-La dimensione di $ O(n) $ è $ n(n-1)/2 $ e il suo spazio tangente coincide con l'insieme delle matrici simmetriche
+In particolare, per $ n=1 $ si ha l'insieme
+
+\begin{equation}
+	O(n) = \{ x \in \R \mid x^{2} = 1 \} = \{ \pm 1 \}
+\end{equation}
+
+La dimensione di questo gruppo di Lie è $ \dim(O(n)) = n(n-1)/2 $ e il suo spazio tangente coincide con l'insieme delle matrici simmetriche
 
 \begin{equation}
 	T_{I}(O(n)) = \{ X \in M_{n}(\R) \mid X^{T} = -X \}
@@ -2050,13 +2048,32 @@ La dimensione di $ O(n) $ è $ n(n-1)/2 $ e il suo spazio tangente coincide con 
 
 Sappiamo anche che $ SO(n) $ è un sottogruppo di Lie di $ O(n) $ della stessa dimensione (in quanto componente connessa) e con lo stesso spazio tangente di $ O(n) $.\\\\
 %
-Per dimostrare che $ O(n) $ non sia connesso (e quindi non connesso per archi in quanto varietà), usiamo il fatto che non esiste un arco che connette due matrici che abbiano rispettivamente determinante 1 e -1. Siano la matrice identità $ I $ e la matrice
+Per dimostrare che $ O(n) $ non sia connesso (e quindi non connesso per archi in quanto varietà), usiamo il fatto che non esiste un arco che connette due matrici che abbiano rispettivamente determinante $ 1 $ e $ -1 $. Siano la matrice identità $ I $ e la matrice
 
 \begin{equation}
-	A = \smqty(\dmat{-1,1,\ddots,1})
+	A = \bmqty{\dmat{-1,1,\ddots,1}}
 \end{equation}
 
-perciò con $ \det(I) = 1 $ e $ \det(A) = -1 $ e supponiamo per assurdo che esista una curva continua (arco) $ c : [0,1] \to O(n) $ tale che $ c(0) = I $ e $ c(1) = A $. Per la curva vale
+con
+
+\begin{equation}
+	\begin{cases}
+		\det(I) = 1 \\
+		\det(A) = - 1
+	\end{cases}
+\end{equation}
+
+Supponiamo per assurdo che esista una curva continua (arco) $ c $ tale che
+
+\begin{equation}
+	\begin{cases}
+		c : [0,1] \to O(n) \\
+		c(0) = I \\
+		c(1) = A
+	\end{cases}
+\end{equation}
+
+Per la curva vale
 
 \begin{equation}
 	c(t) \in O(n) \implies \det(c(t)) \neq 0 \qcomma \forall t \in [0,1]
@@ -2066,58 +2083,87 @@ e abbiamo che
 
 \begin{equation}
 	\begin{cases}
-		\det(c(0)) = \det(I) = 1\\
-		\det(c(1)) = \det(A) = -1
+		\det(c(0)) = \det(I) = 1 \\
+		\det(c(1)) = \det(A) = - 1
 	\end{cases}
 \end{equation}
 
 Per il teorema del valor medio, esiste un $ t_{0} \in [0,1] $ tale che $ \det(c(t_{0})) = 0 $, ma questo è assurdo in quanto $ c(t) \in O(n) $ e dunque $ O(n) $ non è connesso.\\
-Verifichiamo ora che il sottoinsieme $ SO(n) $ sia connessa (per archi) tramite la forma canonica ortogonale:
+Verifichiamo ora che il sottoinsieme $ SO(n) $ sia connesso (per archi) tramite la forma canonica ortogonale:
 
 \begin{equation}
-	A \in SO(n) \implies %
+	A \in SO(n) %
+	\implies %
 	\E P \in O(n) \mid P^{T} A P = %
-	\smqty(\dmat{ I_{p}, - I_{q}, R_{1}(\theta_{1}), \ddots, R_{k}(\theta_{k}) })
+	\bmqty{ %
+			\dmat{ %
+					I_{p}, %
+					- I_{q}, %
+					R_{1}(\theta_{1}), %
+					\ddots, %
+					R_{k}(\theta_{k}) %
+					} %
+			}
 \end{equation}
 
 con $ p,q,k \in \N $ e $ \theta_{j} \in (0,\pi) $ dove $ k = (n-p-q)/2 $ e $ j=1,\dots,k $, definendo $ R_{j}(\theta_{j}) $ come
 
 \begin{equation}
-	R_{j}(\theta_{j}) = \mqty(\dmat{ \cos(\theta_{j}) & \sin(\theta_{j}) \\\\ - \sin(\theta_{j}) & \cos(\theta_{j}) })
+	R_{j}(\theta_{j}) = %
+	\bmqty{ %
+			\cos(\theta_{j}) & \sin(\theta_{j}) \\\\
+			- \sin(\theta_{j}) & \cos(\theta_{j}) %
+			}
 \end{equation}
 
 Siccome il teorema vale per $ O(n) $, la condizione $ A \in SO(n) $ implica anche che $ \det(P^{T} A P) = 1 $ e quindi che $ \det(-I_{q}) = 1 $ in quanto $ \det(I_{p}) = \det(R_{j}) = 1 $, i.e. $ q $ deve essere pari. Consideriamo la curva continua (arco)
 
-\map{c}%
-	{[0,1]}{SO(n)}%
-	{t}{%
-		\mqty(\dmat{ %
-					I_{p}, R_{1}(\pi t), \ddots, R_{q}(\pi t), R_{1}(t \theta_{1}), \ddots, R_{k}(t \theta_{k}) })
+\map{c}
+	{[0,1]}{SO(n)}
+	{t}{\bmqty{ %
+				\dmat{ %
+						I_{p}, %
+						R_{1}(\pi t), %
+						\ddots, %
+						R_{q}(\pi t), %
+						R_{1}(t \theta_{1}), %
+						\ddots, %
+						R_{k}(t \theta_{k}) %
+						}%
+				} %
 		}
 
-con un numero pari $ q $ di $ R(\pi t) $, per cui vale
+con $ q $ pari, per cui vale
 
 \begin{equation}
 	\begin{cases}
-		c(0) = I\\
+		c(0) = I \\
 		c(1) = P^{T} A P
 	\end{cases}
 \end{equation}
 
 Considerando ora la curva
 
-\map{g = P \, c \, P^{T}}%
+\map{g \doteq P \, c \, P^{T}}%
 	{[0,1]}{SO(n)}%
-	{t}{%
-		P \mqty(\dmat{ %
-					I_{p}, R_{1}(\pi t), \ddots, R_{q}(\pi t), R_{1}(t \theta_{1}), \ddots, R_{k}(t \theta_{k}) }) P^{T}
+	{t}{ P \bmqty{ %
+					\dmat{ %
+							I_{p}, %
+							R_{1}(\pi t), %
+							\ddots, %
+							R_{q}(\pi t), %
+							R_{1}(t \theta_{1}), %
+							\ddots, %
+							R_{k}(t \theta_{k}) %
+							}%
+					} P^{T} %
 	}
 
 per cui vale
 
 \begin{equation}
 	\begin{cases}
-		g(0) = I\\
+		g(0) = I \\
 		g(1) = A
 	\end{cases}
 \end{equation}
@@ -2126,14 +2172,15 @@ Abbiamo dunque costruito un arco che collega qualsiasi matrice di $ SO(n) $ alla
 L'insieme $ SO(n) $ è anche una componente connessa di $ O(n) $ perché se esistesse un insieme connesso $ M $ tale che
 
 \begin{equation}
-	SO(n) \subsetneqq M \subset O(n)
+	SO(n) \subsetneq M \subset O(n)
 \end{equation}
 
-un elemento di $ SO(n) $ potrebbe essere unito a un elemento $ A \in M $ con $ \det(A) = -1 $ e, siccome $ M $ è connesso (per archi), esisterebbe un arco $ c : [0,1] \to M $ tale che
+un elemento di $ SO(n) $ potrebbe essere unito a un elemento $ A \in M $ con $ \det(A) = -1 $ e, siccome $ M $ è connesso (per archi), esisterebbe un arco $ c $ tale che
 
 \begin{equation}
 	\begin{cases}
-		c(0) = I\\
+		c : [0,1] \to M \\
+		c(0) = I \\
 		c(1) = A
 	\end{cases}
 \end{equation}
@@ -2152,7 +2199,7 @@ Consideriamo le due seguenti proposizioni:
 \end{definition}
 
 \begin{proof}
-	La chiusura $ \bar{C} $ di una componente connessa $ C $ è ancora connessa e anche chiusa, dunque $ \bar{C} \equiv C $ perciò $ C $ è chiuso.
+	La chiusura $ \bar{C} $ di una componente connessa $ C $ è ancora connessa e anche chiusa, dunque $ \bar{C} \equiv C $, perciò $ C $ è chiuso.
 \end{proof}
 
 \begin{definition}
@@ -2160,12 +2207,12 @@ Consideriamo le due seguenti proposizioni:
 \end{definition}
 
 \begin{proof}
-	Sia $ p \in C \subset X $: essendo $ X $ localmente euclideo, esiste un intorno aperto $ U \ni p $ che sia connesso (per archi), in quanto la connessione (per archi) si preserva per omeomorfismi.\\
-	Se, per assurdo, $ U \not\subset C $ allora $ U \cup C $ è un connesso tale che $ U \cup C \supsetneqq C $ ma questo non è possibile perché avremmo trovato un connesso che contiene strettamente $ C $, in contrasto con il fatto che $ C $ sia una componente connessa.\\
+	Sia un punto $ p \in C \subset X $: essendo $ X $ localmente euclideo, esiste un intorno aperto $ U \ni p $ che sia connesso (per archi), in quanto la connessione (per archi) si preserva per omeomorfismi.\\
+	Se, per assurdo, $ U \not\subset C $ allora $ U \cup C $ è un connesso tale che $ U \cup C \supsetneq C $ ma questo non è possibile perché avremmo trovato un connesso che contiene strettamente $ C $, in contrasto con il fatto che $ C $ sia una componente connessa.\\
 	Questo rende il punto (arbitrario) $ p $ interno a $ C $ e dunque $ C $ è aperto.
 \end{proof}
 
-Queste proposizioni insieme asseriscono che uno spazio topologico localmente euclideo, e.g. una varietà differenziabile, ha le sue componenti connesse sia aperte che chiuse: a questo punto, possiamo dire che l'insieme $ SO(n) $ è sia chiuso che aperto in $ O(n) $.\\
+Queste proposizioni insieme asseriscono che uno spazio topologico localmente euclideo, e.g. una varietà differenziabile, ha le sue componenti connesse sia aperte che chiuse: nello specifico, possiamo dire che l'insieme $ SO(n) $ è sia chiuso che aperto in $ O(n) $.\\
 Qualunque aperto di una varietà differenziabile è una sottovarietà\footnote{%
 	Vedi Osservazione \ref{subvar-open}.%
 }, dunque $ SO(n) $ è una sottovarietà di $ O(n) $ e, per questo, è anche un sottogruppo di Lie embedded. La dimensione e lo spazio tangente di un aperto di una varietà sono gli stessi di quelli della varietà\footnote{%
@@ -2182,9 +2229,9 @@ Per piccoli valori di $ n $, abbiamo che:
 \begin{itemize}
 	\item $ SO(1) = \{ 1 \} $;
 	
-	\item $ SO(2) $ è diffeomorfo a $ \S^{1} $\footnote{%
+	\item $ SO(2) $ è diffeomorfo\footnote{%
 		Vedi Esercizio \ref{BONUS3-1}.%
-	};
+	} a $ \S^{1} $;
 	
 	\item $ SO(3) $ è diffeomorfo a $ \rp{3} $.
 \end{itemize}
