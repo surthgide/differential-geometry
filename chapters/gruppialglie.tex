@@ -1597,7 +1597,7 @@ in quanto
 Le seguenti considerazioni e dimostrazioni valgono indifferentemente se si considera come campo su cui sono definiti gli spazi quello dei numeri reali o quello dei numeri complessi, i.e. $ \K = \R,\C $. Per sintesi, useremo nella trattazione il campo dei reali $ \R $.
 
 \begin{definition}
-	Sia $ X \in M_{n}(\R) $, allora
+	Sia un matrice $ X \in M_{n}(\R) $, allora
 	
 	\begin{equation}
 		\tr(X) = \sum_{j=1}^{n} \lambda_{j}
@@ -1606,33 +1606,31 @@ Le seguenti considerazioni e dimostrazioni valgono indifferentemente se si consi
 	dove i $ \lambda_{j} $ sono gli autovalori di $ X $.
 \end{definition}
 
-La traccia di una matrice a entrare reali è un numero reale, i.e. $ \tr(X) \in \R $, nonostante ci possano essere autovalori complessi, perché quest'ultimi saranno complessi coniugati tra loro e, sommandoli, si elidono a vicenda.
+La traccia di una matrice a entrare reali è un numero reale, i.e. $ \tr(X) \in \R $, nonostante ci possano essere autovalori complessi, poiché quest'ultimi saranno complessi coniugati tra loro e, sommandoli, si elidono a vicenda.
 
 \begin{proof}
 	Per il teorema di Schur, $ X $ è simile a una matrice triangolare superiore, i.e. esiste $ U \in U(n) $ tale che
 	
 	\begin{equation}
 		U^{*} X U = T = %
-		\smqty(\dmat{ \lambda_{1}, %
-						& & A \\ %
-						& \ddots & \\ %
-						0 & & , %
-						\lambda_{n} })
+		\bmqty{ %
+				\lambda_{1}	& & A \\
+				& \ddots & \\
+				0 & & \lambda_{n} %
+				}
 	\end{equation}
 	
 	dove i $ \lambda_{j} $ sono gli autovalori di $ X $. Possiamo ora scrivere
 	
-	\begin{align}
-		\begin{split}
-			\tr(X) &= \tr(U^{*} X U)\\
-			&= \tr(T)\\
-			&= \sum_{j=1}^{n} \lambda_{j}
-		\end{split}
-	\end{align}
+	\begin{equation}
+		\tr(X) = \tr(U^{*} X U) %
+		= \tr(T) %
+		= \sum_{j=1}^{n} \lambda_{j}
+	\end{equation}
 \end{proof}
 
 \begin{definition}
-	Sia $ X \in M_{n}(\R) $, allora
+	Sia una matrice $ X \in M_{n}(\R) $, allora
 	
 	\begin{equation}
 		\det(e^{X}) = e^{\tr(X)}
@@ -1644,87 +1642,87 @@ La traccia di una matrice a entrare reali è un numero reale, i.e. $ \tr(X) \in 
 	
 	\begin{equation}
 		X = %
-		\smqty(\dmat{ \lambda_{1}, %
-						& & A \\ %
-						& \ddots & \\ %
-						0 & & , %
-						\lambda_{n} })
+		\bmqty{ %
+				\lambda_{1} & & A \\
+				& \ddots & \\
+				0 & & \lambda_{n} %
+				}
 	\end{equation}
 
-	la potenza $ k $-esima di questa matrice avrà la forma
+	La potenza $ k $-esima di questa matrice avrà la forma
 	
 	\begin{equation}
 		X^{k} = %
-		\smqty(\dmat{ \lambda_{1}^{k}, %
-						& & A' \\ %
-						& \ddots & \\ %
-						0 & & , %
-						\lambda_{n}^{k} })
+		\bmqty{ %
+				\lambda_{1}^{k} & & A' \\
+				& \ddots & \\
+				0 & & \lambda_{n}^{k} %
+				}
 	\end{equation}
 
 	perciò l'esponenziale sarà
 	
 	\begin{align}
 		\begin{split}
-			e^{X} &= \sum_{k=0}^{+\infty} \dfrac{X^{k}}{k!}\\
+			e^{X} &= \sum_{k=0}^{+\infty} \dfrac{X^{k}}{k!} \\
 			&= \sum_{k=0}^{+\infty} %
-				\smqty(\dmat{ \lambda_{1}^{k}, %
-								& & A' \\ %
-								& \ddots & \\ %
-								0 & & , %
-								\lambda_{n}^{k} })\\
-			 %
-			&= \smqty(\dmat{ \displaystyle\sum_{k=0}^{+\infty} \dfrac{\lambda_{1}^{k}}{k!}, %
-								& & A'' \\ %
-								& \ddots & \\ %
-								0 & & , %
-								\displaystyle\sum_{k=0}^{+\infty} \dfrac{\lambda_{n}^{k}}{k!} })\\
-			&= \smqty(\dmat{ e^{\lambda_{1}}, %
-								& & A'' \\ %
-								& \ddots & \\ %
-								0 & & , %
-								e^{\lambda_{n}} })
+				\bmqty{ %
+						\lambda_{1}^{k} & & A' \\
+						& \ddots & \\
+						0 & & \lambda_{n}^{k} %
+						} \\
+			%
+			&= \bmqty{ %
+						\displaystyle\sum_{k=0}^{+\infty} \dfrac{\lambda_{1}^{k}}{k!} & & A'' \\
+						& \ddots & \\
+						0 & & \displaystyle\sum_{k=0}^{+\infty} \dfrac{\lambda_{n}^{k}}{k!} %
+						} \\
+			&= \bmqty{ %
+						e^{\lambda_{1}} & & A'' \\
+						& \ddots & \\
+						0 & & e^{\lambda_{n}} %
+						}
 		\end{split}
 	\end{align}
 
 	A questo punto
 	
 	\begin{equation}
-		\det(e^{X}) = \prod_{k=1}^{n} e^{\lambda_{k}} = e^{\sum_{k=1}^{n} \lambda_{k}} = e^{\tr(X)}
+		\det(e^{X}) = \prod_{k=1}^{n} e^{\lambda_{k}} %
+		= e^{\sum_{k=1}^{n} \lambda_{k}} %
+		= e^{\tr(X)}
 	\end{equation}
 
 	Nel caso in cui la matrice $ X $ non fosse triangolare, per il teorema di Schur, $ X $ è simile a una matrice triangolare superiore, i.e. esiste $ U \in U(n) $ tale che
 	
 	\begin{equation}
 		U^{*} X U = T = %
-		\smqty(\dmat{ \lambda_{1}, %
-			& & A \\ %
-			& \ddots & \\ %
-			0 & & , %
-			\lambda_{n} })
+		\bmqty{ %
+				\lambda_{1} & & A \\
+				& \ddots & \\
+				0 & & \lambda_{n} %
+				}
 	\end{equation}
 	
 	Per calcolare il determinante di $ e^{X} $, utilizziamo Binet e la dimostrazione fatta sopra ottenendo
 	
-	\begin{align}
-		\begin{split}
-			\det(e^{X}) &= \det(U^{*} e^{X} U)\\
-			&= \det(e^{U^{*} X U})\\
-			&= e^{\tr(U^{*} X U)}\\
-			&= e^{\tr(X)}
-		\end{split}
-	\end{align}
+	\begin{equation}
+		\det(e^{X}) %
+		= \det(U^{*} e^{X} U) %
+		= \det(e^{U^{*} X U}) %
+		= e^{\tr(U^{*} X U)} %
+		= e^{\tr(X)}
+	\end{equation}
 	
 	nel secondo passaggio abbiamo utilizzato la proprietà $ U^{*} e^{X} U = e^{U^{*} X U} $, che si dimostra come
 	
-	\begin{align}
-		\begin{split}
-			e^{U^{*} X U} &= \sum_{k=0}^{+\infty} \dfrac{(U^{*} X U)^{k}}{k!}\\
-			&= \sum_{k=0}^{+\infty} \dfrac{U^{*} X^{k} U}{k!}\\
-			&= U^{*} \left( \sum_{k=0}^{+\infty} \dfrac{X^{k}}{k!} \right) U\\
-			&= U^{*} e^{X} U
-		\end{split}
-	\end{align}
+	\begin{equation}
+		e^{U^{*} X U} %
+		= \sum_{k=0}^{+\infty} \dfrac{(U^{*} X U)^{k}}{k!} %
+		= \sum_{k=0}^{+\infty} \dfrac{U^{*} X^{k} U}{k!} %
+		= U^{*} \left( \sum_{k=0}^{+\infty} \dfrac{X^{k}}{k!} \right) U %
+		= U^{*} e^{X} U
+	\end{equation}
 
 	dove $ (U^{*} X U)^{k} = U^{*} X^{k} U $ in quanto $ U^{*} U = I $ e, nel terzo passaggio, abbiamo usato le proprietà delle serie convergenti, i.e.
 	
@@ -1736,38 +1734,48 @@ La traccia di una matrice a entrare reali è un numero reale, i.e. $ \tr(X) \in 
 \begin{corollary}
 	Siccome la proposizione dà un metodo per calcolare il determinante di $ e^{X} $, ricaviamo dunque che l'esponenziale di una matrice è sempre invertibile\footnote{%
 		Questo fatto è già stato dimostrato, questa è solo un'ulteriore conferma.%
-	}, in quanto $ e^{\tr(X)} \neq 0 $ per $ \forall X \in M_{n}(\K) $.
+	}, in quanto
+
+	\begin{equation}
+		e^{\tr(X)} \neq 0 \qcomma \forall X \in M_{n}(\K)
+	\end{equation}
 \end{corollary}
 
 \begin{corollary}
-	L'esponenziale di una matrice sia sempre invertibile.\\
-	Sia $ X \in M_{n}(\R) $, allora la curva
+	Sappiamo che l'esponenziale di una matrice è sempre invertibile, i.e.
 	
-	\map{c}%
-		{\R \times M_{n}(\R)}{GL_{n}(\R)}%
+	\begin{equation}
+		e^{X} \in GL_{n}(\R) \qcomma \forall X \in M_{n}(\R)
+	\end{equation}
+
+	Sia dunque una matrice $ X \in M_{n}(\R) $, allora la curva
+	
+	\map{c}
+		{\R \times M_{n}(\R)}{GL_{n}(\R)}
 		{(t,X)}{e^{t X}}
 	
-	ha vettore tangente nell'origine esattamente $ X $, i.e. $ c'(0) = X $ dove valgono le seguenti identificazioni
+	ha vettore tangente nell'origine esattamente $ X $, i.e. $ c'(0) = X $.\\
+	Valgono le seguenti identificazioni
 	
 	\begin{equation}
 		\begin{cases}
-			c(0) = I\\
-			T_{I}(GL_{n}(\R)) = M_{n}(\R)\\
-			c'(0) = \left. \dv{t} c \right|_{t=0}
+			c(0) = I \\\\
+			T_{I}(GL_{n}(\R)) = M_{n}(\R) \\\\
+			c'(0) = \eval{ \ddv{t} c }_{t=0}
 		\end{cases}
 	\end{equation}
 
 	Più in generale, se $ A \in GL_{n}(\R) $ e $ B \in M_{n}(\R) $, allora per la curva
 	
-	\map{c}%
-		{\R \times GL_{n}(\R) \times M_{n}(\R)}{GL_{n}(\R)}%
+	\map{c}
+		{\R \times GL_{n}(\R) \times M_{n}(\R)}{GL_{n}(\R)}
 		{(t,A,B)}{A e^{t A^{-1} B}}
 	
 	valgono
 	
 	\begin{equation}
 		\begin{cases}
-			c(0) = A\\
+			c(0) = A \\
 			c'(0) = B
 		\end{cases}
 	\end{equation}
@@ -1783,7 +1791,10 @@ La traccia di una matrice a entrare reali è un numero reale, i.e. $ \tr(X) \in 
 	e il vettore tangente
 	
 	\begin{equation}
-		c'(0) = \left. \dv{t} e^{t X} \right|_{t=0} = \left. X e^{t X} \right|_{t=0} = X I = X
+		c'(0) = \eval{ \dv{t} e^{t X} }_{t=0} %
+		= \eval{ X e^{t X} }_{t=0} %
+		= X I %
+		= X
 	\end{equation}
 
 	più in generale
@@ -1795,50 +1806,64 @@ La traccia di una matrice a entrare reali è un numero reale, i.e. $ \tr(X) \in 
 	e il vettore tangente
 	
 	\begin{equation}
-		c'(0) = \left. \dv{t} A e^{t A^{-1} B} \right|_{t=0} = A \left. \dv{t} e^{t A^{-1} B} \right|_{t=0} = A \left. A^{-1} B e^{t A^{-1} B} \right|_{t=0} = B I = B
+		c'(0) = \eval{ \dv{t} A e^{t A^{-1} B} }_{t=0} %
+		= A \eval{ \dv{t} e^{t A^{-1} B} }_{t=0} %
+		= A \eval{ A^{-1} B e^{t A^{-1} B} }_{t=0} %
+		= B I %
+		= B
 	\end{equation}
 \end{proof}
 
 \begin{corollary}
 	Siano l'applicazione determinante
 	
-	\map{\det}%
-		{GL_{n}(\R)}{\R}%
+	\map{\det}
+		{GL_{n}(\R)}{\R}
 		{A}{\det(A)}
 		
-	e $ B \in T_{A}(GL_{n}(\R)) = M_{n}(\R) $\footnote{%
-		Si ha anche che $ T_{A}(GL_{n}(\R)) = A \, T_{I}(GL_{n}(\R)) $, derivato dal differenziale della traslazione a sinistra nell'Esempio \ref{trasl-diff}.%
-	}. Il differenziale del determinante $ \det_{*A} : T_{A}(GL_{n}(\R)) \to T_{\det(A)}(\R) $, tramite le identificazioni $  T_{A}(GL_{n}(\R)) = M_{n}(\R) $ e $ T_{\det(A)}(\R) = \R $, può essere scritto come
+	Tramite le identificazioni \footnote{%
+		Lo spazio tangente può anche essere scritto come $ T_{A}(GL_{n}(\R)) = A \, T_{I}(GL_{n}(\R)) $, derivato dal differenziale della traslazione a sinistra nell'Esempio \ref{trasl-diff}.%
+	}
+	
+	\begin{equation}
+		\begin{cases}
+			T_{A}(GL_{n}(\R)) = M_{n}(\R) \\
+			T_{\det(A)}(\R) = \R
+		\end{cases}
+	\end{equation}
 
-	\map{\operatorname{det}_{*A}}%
-		{M_{n}(\R)}{\R}%
+	il differenziale del determinante $ \det_{*A} : T_{A}(GL_{n}(\R)) \to T_{\det(A)}(\R) $ può essere scritto come
+
+	\map{{\det}_{*A}}
+		{M_{n}(\R)}{\R}
 		{B}{\det(A) \tr(A^{-1} B)}
 \end{corollary}
 
 \begin{proof}
 	Sia la curva
 	
-	\map{c}%
-		{\R \times GL_{n}(\R) \times M_{n}(\R)}{GL_{n}(\R)}%
+	\map{c}
+		{\R \times GL_{n}(\R) \times M_{n}(\R)}{GL_{n}(\R)}
 		{(t,A,B)}{A e^{t A^{-1} B}}
 	
-	con $ c(0) = A $ e $ c'(0) = B $, allora, usando le proprietà dell'esponenziale di matrice
+	con $ c(0) = A $ e $ c'(0) = B $.\\
+	Usando le proprietà dell'esponenziale di matrice
 	
 	\begin{align}
 		\begin{split}
-			\operatorname{det}_{*A}(B) &= \left. \dv{t} \det(A e^{t A^{-1} B}) \right|_{t=0}\\
-			&= \left. \dv{t} \det(A) \det(e^{t A^{-1} B}) \right|_{t=0}\\
-			&= \det(A) \left. \dv{t} \det(e^{t A^{-1} B}) \right|_{t=0}\\
-			&= \det(A) \left. \dv{t} e^{\tr(t A^{-1} B)} \right|_{t=0}\\
-			&= \det(A) \left. \dv{t} e^{t \tr(A^{-1} B)} \right|_{t=0}\\
-			&= \det(A) \tr(A^{-1} B) \left. e^{t \tr(A^{-1} B)} \right|_{t=0}\\
+			{\det}_{*A}(B) &= \eval{ \dv{t} \det(A e^{t A^{-1} B}) }_{t=0} \\
+			&= \eval{ \dv{t} \det(A) \det(e^{t A^{-1} B}) }_{t=0} \\
+			&= \det(A) \eval{ \dv{t} \det(e^{t A^{-1} B}) }_{t=0} \\
+			&= \det(A) \eval{ \dv{t} e^{\tr(t A^{-1} B)} }_{t=0} \\
+			&= \det(A) \eval{ \dv{t} e^{t \tr(A^{-1} B)} }_{t=0} \\
+			&= \det(A) \tr(A^{-1} B) \eval{ e^{t \tr(A^{-1} B)} }_{t=0} \\
 			&= \det(A) \tr(A^{-1} B) I\\
 			&= \det(A) \tr(A^{-1} B)
 		\end{split}
 	\end{align}
 \end{proof}
 
-Come asserito all'inizio della sezione, queste proprietà valgono anche se si considera il campo dei numeri complessi $ \C. $
+Come asserito all'inizio della sottosezione, queste proprietà valgono anche se si considera il campo dei numeri complessi $ \C $.
 
 \section{Esempi di sottogruppi di Lie e loro topologia}
 
