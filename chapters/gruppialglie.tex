@@ -1291,8 +1291,8 @@ dove
 \begin{equation}
 	[E_{ij}]_{kl} = %
 	\begin{cases}
-		1 & k = i \wedge l = j\\
-		0 & \text{altrimenti}
+		1, & k = i \wedge l = j \\
+		0, & \text{altrimenti}
 	\end{cases}
 \end{equation}
 
@@ -1303,18 +1303,18 @@ Il determinante di una matrice elementare è sempre unitario, i.e.
 	\det(M_{a}(i,j)) = 1
 \end{equation}
 
-in quanto è sempre una matrice triangolare superiore o inferiore, dunque il determinante è dato dal prodotto degli elementi sulla diagonale. L'inversa di una matrice elementare è data da
+in quanto è sempre una matrice triangolare superiore o inferiore, dunque il determinante è dato dal prodotto degli elementi sulla diagonale. L'inversa di una matrice elementare è ancora una matrice elementare ed è data da
 
 \begin{equation}
 	(M_{a}(i,j))^{-1} = M_{-a}(i,j)
 \end{equation}
 
-ed è ancora una matrice elementare, in quanto
+in quanto
 
 \begin{align}
 	\begin{split}
-		M_{a}(i,j) M_{-a}(i,j) &= (I + a E_{ij}) (I - a E_{ij})\\
-		&= I + a E_{ij} - a E_{ij} - a^{2} \cancel{E_{ij} E_{ij}}\\
+		M_{a}(i,j) M_{-a}(i,j) &= (I + a E_{ij}) (I - a E_{ij}) \\
+		&= I + a E_{ij} - a E_{ij} - a^{2} \cancel{E_{ij} E_{ij}} \\
 		&= I
 	\end{split}
 \end{align}
@@ -1329,7 +1329,7 @@ ed è ancora una matrice elementare, in quanto
 	allora $ SL_{n}(\K) $ è generato da matrici elementari, i.e.
 	
 	\begin{equation}
-		\forall A \in SL_{n}(\K) \qcomma \E M_{a_{1}}(i_{1},j_{1}), \dots, M_{a_{t}}(i_{t},j_{t}) \mid A = \prod_{p=1}^{t} M_{a_{p}}(i_{p},j_{p})
+		\forall A \in SL_{n}(\K), \E M_{a_{1}}(i_{1},j_{1}), \dots, M_{a_{t}}(i_{t},j_{t}) \mid A = \prod_{p=1}^{t} M_{a_{p}}(i_{p},j_{p})
 	\end{equation}
 
 	cioè ogni matrice del gruppo lineare speciale può essere scritta come prodotto finito di matrici elementari.
@@ -1345,80 +1345,103 @@ ed è ancora una matrice elementare, in quanto
 	con
 	
 	\begin{equation}
-		R_{i} = \mqty(\dmat{ a_{i1} & \cdots & a_{in} })
+		R_{i} = \bmqty{ a_{i1} & \cdots & a_{in} }
 	\end{equation}
 
 	in quanto
 	
 	\begin{align}
 		\begin{split}
-			M_{b}(i,j) A &= (I + b E_{ij}) A\\
-			&= A + b E_{ij} A\\
-			&= \smqty(\dmat{ a_{11} & \cdots & a_{1n} \\ %
-							\vdots & \ddots & \vdots \\ %
-							a_{n1} & \cdots & a_{nn} }) + %
-				b \smqty(\dmat{ 0 & \cdots & \cdots & & \cdots & & \cdots & 0 \\ %
-								\vdots & \ddots & & & & & & \vdots \\ %
-								& & \ddots & & & & & \\ %
-								0 & \cdots & \cdots & 0 & \cdots & 1 & \cdots & 0 \\ %
-								\vdots & & & & \ddots & & & \vdots \\ %
-								& & & & & \ddots & & \\ %
-								\vdots & & & & & & \ddots & \vdots \\ %
-								0 & \cdots & \cdots & & \cdots & & \cdots & 0 }) %
-				\smqty(\dmat{ a_{11} & \cdots & a_{1n} \\ %
-							\vdots & \ddots & \vdots \\ %
-							a_{n1} & \cdots & a_{nn} })\\
+			M_{b}(i,j) A &= (I + b E_{ij}) A \\
+			&= A + b E_{ij} A \\
+			&= \sbmqty{ %
+						a_{11} & \cdots & a_{1n} \\
+						\vdots & \ddots & \vdots \\
+						a_{n1} & \cdots & a_{nn} %
+						} + %
+				b \sbmqty{ %
+							0 & \cdots & & & \cdots & & \cdots & 0 \\
+							\vdots & \ddots & & & & & & \vdots \\
+							& & \ddots & & & & & \\
+							0 & \cdots & \cdots & 0 & \cdots & 1 & \cdots & 0 \\
+							& & & & \ddots & & & \\
+							\vdots & & & & & \ddots & & \vdots \\
+							& & & & & & \ddots & \\
+							0 & \cdots & & & \cdots & & \cdots & 0 %
+							} %
+				\sbmqty{ %
+						a_{11} & \cdots & a_{1n} \\
+						\vdots & \ddots & \vdots \\
+						a_{n1} & \cdots & a_{nn} %
+						} \\
 			%
-			&= \smqty(\dmat{ R_{1} \\ %
-							\vdots \\ %
-							R_{i-1} \\ %
-							R_{i} \\ %
-							R_{i+1} \\ %
-							\vdots \\ %
-							\vdots \\ %
-							R_{n} }) + %
-				\smqty(\dmat{ 0 & \cdots & \cdots & & \cdots & & \cdots & 0 \\ %
-							\vdots & \ddots & & & & & & \vdots \\ %
-							& & \ddots & & & & & \\ %
-							0 & \cdots & \cdots & 0 & \cdots & b & \cdots & 0 \\ %
-							\vdots & & & & \ddots & & & \vdots \\ %
-							& & & & & \ddots & & \\ %
-							\vdots & & & & & & \ddots & \vdots \\ %
-							0 & \cdots & \cdots & & \cdots & & \cdots & 0 }) %
-				\smqty(\dmat{ R_{1} \\ %
-							\vdots \\ %
-							R_{i-1} \\ %
-							R_{i} \\ %
-							R_{i+1} \\ %
-							\vdots \\ %
-							\vdots \\ %
-							R_{n} })\\
+			&= \sbmqty{ %
+						R_{1} \\
+						\vdots \\
+						R_{i-1} \\
+						R_{i} \\
+						R_{i+1} \\
+						\\
+						\vdots \\
+						\\
+						R_{n} %
+						} + %
+				\sbmqty{ %
+						0 & \cdots & & & \cdots & & \cdots & 0 \\
+						\vdots & \ddots & & & & & & \vdots \\
+						& & \ddots & & & & & \\
+						0 & \cdots & \cdots & 0 & \cdots & b & \cdots & 0 \\
+						& & & & \ddots & & & \\
+						\vdots & & & & & \ddots & & \vdots \\
+						& & & & & & \ddots & \\
+						0 & \cdots & & & \cdots & & \cdots & 0 %
+						} %
+				\sbmqty{ %
+						R_{1} \\
+						\vdots \\
+						R_{i-1} \\
+						R_{i} \\
+						R_{i+1} \\
+						\\
+						\vdots \\
+						\\
+						R_{n} %
+						} \\
 			%
-			&= \smqty(\dmat{ R_{1} \\ %
-							\vdots \\ %
-							R_{i-1} \\ %
-							R_{i} \\ %
-							R_{i+1} \\ %
-							\vdots \\ %
-							\vdots \\ %
-							R_{n} }) + %
-				\smqty(\dmat{ 0 \\ %
-							\vdots \\ %
-							0 \\ %
-							b R_{j} \\ %
-							0 \\ %
-							\vdots \\ %
-							\vdots \\ %
-							0 })\\
+			&= \sbmqty{ %
+						R_{1} \\
+						\vdots \\
+						R_{i-1} \\
+						R_{i} \\
+						R_{i+1} \\
+						\\
+						\vdots \\
+						\\
+						R_{n} %
+						} + %
+				\sbmqty{ %
+						0 \\
+						\vdots \\
+						0 \\ %
+						b R_{j} \\
+						0 \\
+						\\
+						\vdots \\
+						\\
+						0 %
+						} \\
 			%
-			&= \smqty(\dmat{ R_{1} \\ %
-							\vdots \\ %
-							R_{i-1} \\ %
-							R_{i} + b R_{j} \\ %
-							R_{i+1} \\ %
-							\vdots \\ %
-							\vdots \\ %
-							R_{n} })
+			&= \sbmqty{ %
+						R_{1} \\
+						\vdots \\
+						R_{i-1} \\
+						R_{i} + b R_{j} \\
+						R_{i+1} \\
+						\\
+						\vdots \\
+						\\
+						R_{n} %
+						}
 		\end{split}
 	\end{align}
 
@@ -1431,45 +1454,63 @@ ed è ancora una matrice elementare, in quanto
 	con
 	
 	\begin{equation}
-		C_{i} = \mqty(\dmat{ a_{1i} \\ \vdots \\ a_{ni} })
+		C_{i} = \bmqty{ a_{1i} \\ \vdots \\ a_{ni} }
 	\end{equation}
 	
 	in quanto
 	
 	\begin{align}
 		\begin{split}
-			A M_{b}(i,j) &= A (I + b E_{ij})\\
-			&= A + b A E_{ij}\\
-			&= \smqty(\dmat{ a_{11} & \cdots & a_{1n} \\ %
-							\vdots & \ddots & \vdots \\ %
-							a_{n1} & \cdots & a_{nn} }) + %
-			b \smqty(\dmat{ a_{11} & \cdots & a_{1n} \\ %
-							\vdots & \ddots & \vdots \\ %
-							a_{n1} & \cdots & a_{nn} }) %
-			\smqty(\dmat{ 0 & \cdots & \cdots & & \cdots & & \cdots & 0 \\ %
-							\vdots & \ddots & & & & & & \vdots \\ %
-							& & \ddots & & & & & \\ %
-							0 & \cdots & \cdots & 0 & \cdots & 1 & \cdots & 0 \\ %
-							\vdots & & & & \ddots & & & \vdots \\ %
-							& & & & & \ddots & & \\ %
-							\vdots & & & & & & \ddots & \vdots \\ %
-							0 & \cdots & \cdots & & \cdots & & \cdots & 0 })\\
+			A M_{b}(i,j) &= A (I + b E_{ij}) \\
+			&= A + b A E_{ij} \\
+			&= \sbmqty{ %
+						a_{11} & \cdots & a_{1n} \\
+						\vdots & \ddots & \vdots \\
+						a_{n1} & \cdots & a_{nn} %
+						} + %
+			b \sbmqty{ %
+						a_{11} & \cdots & a_{1n} \\
+						\vdots & \ddots & \vdots \\
+						a_{n1} & \cdots & a_{nn} %
+						} %
+			\sbmqty{ %
+						0 & \cdots & & & \cdots & & \cdots & 0 \\
+						\vdots & \ddots & & & & & & \vdots \\
+						& & \ddots & & & & & \\
+						0 & \cdots & \cdots & 0 & \cdots & 1 & \cdots & 0 \\
+						& & & & \ddots & & & \\
+						\vdots & & & & & \ddots & & \vdots \\
+						& & & & & & \ddots & \\
+						0 & \cdots & & & \cdots & & \cdots & 0 %
+						} \\
 			%
-			&= \smqty(\dmat{ C_{1} & \cdots & \cdots & C_{j-1} & C_{j} & C_{j+1} & \cdots & C_{n} }) + %
-				\smqty(\dmat{ 0 & \cdots & \cdots & & \cdots & & \cdots & 0 \\ %
-								\vdots & \ddots & & & & & & \vdots \\ %
-								& & \ddots & & & & & \\ %
-								0 & \cdots & \cdots & 0 & \cdots & b & \cdots & 0 \\ %
-								\vdots & & & & \ddots & & & \vdots \\ %
-								& & & & & \ddots & & \\ %
-								\vdots & & & & & & \ddots & \vdots \\ %
-								0 & \cdots & \cdots & & \cdots & & \cdots & 0 }) %
-				\smqty(\dmat{ C_{1} & \cdots & \cdots & C_{j-1} & C_{j} & C_{j+1} & \cdots & C_{n} })\\
+			&= \sbmqty{ %
+						C_{1} & \cdots & \cdots & C_{j-1} & C_{j} & C_{j+1} & \cdots & C_{n} %
+						} + %
+				\sbmqty{ %
+							0 & \cdots & & & \cdots & & \cdots & 0 \\
+							\vdots & \ddots & & & & & & \vdots \\
+							& & \ddots & & & & & \\
+							0 & \cdots & \cdots & 0 & \cdots & b & \cdots & 0 \\
+							& & & & \ddots & & & \\
+							\vdots & & & & & \ddots & & \vdots \\
+							& & & & & & \ddots & \\
+							0 & \cdots & & & \cdots & & \cdots & 0 %
+							} %
+				\sbmqty{ %
+						C_{1} & \cdots & \cdots & C_{j-1} & C_{j} & C_{j+1} & \cdots & C_{n} %
+						} \\
 			%
-			&= \smqty(\dmat{ C_{1} & \cdots & \cdots & C_{j-1} & C_{j} & C_{j+1} & \cdots & C_{n} }) + %
-				\smqty(\dmat{ 0 & \cdots & \cdots & 0 & b C_{i} & 0 & \cdots & 0 })\\
+			&= \sbmqty{ %
+						C_{1} & \cdots & \cdots & C_{j-1} & C_{j} & C_{j+1} & \cdots & C_{n} %
+						} + %
+				\sbmqty{ %
+						0 & \cdots & \cdots & 0 & b C_{i} & 0 & \cdots & 0 %
+						} \\
 			%
-			&= \smqty(\dmat{ C_{1} & \cdots & \cdots & C_{j-1} & C_{j} + b C_{i} & C_{j+1} & \cdots & C_{n} })
+			&= \sbmqty{ %
+						C_{1} & \cdots & \cdots & C_{j-1} & C_{j} + b C_{i} & C_{j+1} & \cdots & C_{n} %
+						}
 		\end{split}
 	\end{align}
 
@@ -1482,7 +1523,7 @@ ed è ancora una matrice elementare, in quanto
 			C_{2} \to C_{2} + C_{j}
 		\end{equation}
 	
-		che rende $ a_{12} \neq 0 $
+		che rende $ a_{12} \neq 0 $;
 		
 		\item Con l'operazione elementare
 		
@@ -1496,7 +1537,7 @@ ed è ancora una matrice elementare, in quanto
 			a_{11} \to a_{11} + \left( \dfrac{1-a_{11}}{a_{12}} \right) a_{12} = a_{11} + 1 - a_{11} = 1
 		\end{equation}
 		
-		\item Per $ \forall j \geqslant 2 $, applichiamo l'operazione elementare
+		\item Per tutti i $ j \geqslant 2 $, applichiamo l'operazione elementare
 		
 		\begin{equation}
 			C_{j} \to C_{j} - a_{1j} C_{1}
@@ -1505,10 +1546,10 @@ ed è ancora una matrice elementare, in quanto
 		rendendo la prima riga $ R_{1} $ della matrice $ A $ pari a 
 		
 		\begin{equation}
-			R_{1} = \mqty(\dmat{ 1 & 0 & \cdots & 0 })
+			R_{1} = \bmqty{ 1 & 0 & \cdots & 0 }
 		\end{equation}
 		
-		\item Per $ \forall j \geqslant 2 $, applichiamo l'operazione elementare
+		\item Per tutti i $ j \geqslant 2 $, applichiamo l'operazione elementare
 		
 		\begin{equation}
 			R_{j} \to R_{j} - a_{j1} R_{1}
@@ -1517,31 +1558,36 @@ ed è ancora una matrice elementare, in quanto
 		rendendo la prima colonna $ C_{1} $ della matrice $ A $ pari a 
 		
 		\begin{equation}
-			C_{1} = \mqty(\dmat{ 1 \\ 0 \\ \vdots \\ 0 })
+			C_{1} = \bmqty{ 1 \\ 0 \\ \vdots \\ 0 }
 		\end{equation}
 	
-		e dunque la matrice $ A $
+		e dunque la matrice $ A $ sarà ora pari a
 		
 		\begin{equation}
 			A = %
-			\mqty(\dmat{ 1 & 0 & \cdots & 0 \\ %
-							0 & & & \\ %
-							\vdots & & B &\\ %
-							0 & & & })
+			\bmqty{ %
+					1 & 0 & \cdots & 0 \\ %
+					0 & & & \\ %
+					\vdots & & B &\\ %
+					0 & & & %
+					}
 		\end{equation}
 	
-		con $ B \in SL_{n-1}(\K) $, in quanto le operazioni elementari fatte non modificano il determinante della matrice $ A $ (e dunque della matrice $ B $)
+		con $ B \in SL_{n-1}(\K) $, in quanto le operazioni elementari fatte non modificano il determinante della matrice $ A $ (e dunque della matrice $ B $);
 		
-		\item Per induzione, rifacendo gli stessi passaggi per $ B $, si ricava la matrice identità $ I $ mediante un numero finito di operazioni elementari sulle righe e sulle colonne; le operazioni elementari su $ B $ non intaccano le operazioni precedenti perché gli elementi fuori da $ B $ e non nella diagonale sono tutti nulli
+		\item Per induzione, rifacendo gli stessi passaggi\footnote{%
+			Le operazioni elementari su $ B $ non intaccano le operazioni precedenti perché gli elementi fuori da $ B $ e non nella diagonale sono tutti nulli.%
+		} per $ B $, si ricava la matrice identità $ I $ mediante un numero finito di operazioni elementari sulle righe e sulle colonne.
 	\end{enumerate}
 
 	Una volta svolte tutte le operazioni elementari, scritte come moltiplicazioni a destra e a sinistra per matrici elementari, possiamo scrivere infine
 	
 	\begin{align}
 		\begin{split}
-			(M_{1} \cdots M_{q}) A (M_{q+1} \cdots M_{t}) &= I\\
-			A &= (M_{1} \cdots M_{q})^{-1} (M_{q+1} \cdots M_{t})^{-1}\\
-			&= (M_{q}^{-1} \cdots M_{1}^{-1}) (M_{t}^{-1} \cdots M_{q+1}^{-1})
+			(M_{1} \cdots M_{q}) A (M_{q+1} \cdots M_{t}) &= I \\
+			A &= (M_{1} \cdots M_{q})^{-1} (M_{q+1} \cdots M_{t})^{-1} \\
+			&= M_{q}^{-1} \cdots M_{1}^{-1} \, M_{t}^{-1} \cdots M_{q+1}^{-1} \\
+			&= M_{-q} \cdots M_{-1} \, M_{-t} \cdots M_{-(q+1)}
 		\end{split}
 	\end{align}
 \end{proof}
