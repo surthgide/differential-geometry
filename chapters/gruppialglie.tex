@@ -2371,7 +2371,7 @@ Esiste dunque un arco che connette ogni matrice unitaria alla matrice identità,
 L'insieme delle matrici
 
 \begin{equation}
-	U(n) = \{ A \in GL_{n}(\C) \mid A^{*} A = I \}
+	SU(n) = \{ A \in GL_{n}(\C) \mid A^{*} A = I \wedge \det(A) = 1 \}
 \end{equation}
 
 è un sottogruppo di Lie embedded di $ U(n) $ di dimensione $ \dim_{\R}(SU(n)) = n^{2} - 1 $ con spazio tangente l'insieme delle matrici antihermitiane a traccia nulla
@@ -2383,47 +2383,59 @@ L'insieme delle matrici
 L'insieme $ SU(n) $ è anche compatto e connesso.\\
 Per dimostrare che sia un sottogruppo di Lie embedded di $ U(n) $, utilizziamo il teorema della preimmagine per dimostrare che ne sia una sottovarietà tramite l'applicazione
 
-\map{f = \det}%
-	{U(n)}{\S^{1}}%
+\map{f \doteq \det}
+	{U(n)}{\S^{1}}
 	{A}{\det(A)}
 
-Questa applicazione ha come codominio $ S(1) = \{ \pm 1 \} $ perché per $ A \in U(n) $ vale
+Questa applicazione ha come codominio $ \S^{1} $ perché per $ A \in U(n) $ vale
 
 \begin{equation}
-	A^{*} A = I \implies %
+	A^{*} A = I %
+	\implies %
 	\begin{aligned}
-		\det(I) &= \det(A^{*} A)\\
-		1 &= \det(A^{*}) \det(A)\\
-		&= \overline{\det(A)} \det(A)\\
+		\det(I) &= \det(A^{*} A) \\
+		1 &= \det(A^{*}) \det(A) \\
+		&= \overline{\det(A)} \det(A) \\
 		&= \abs{\det(A)}^{2}
-	\end{aligned}%
+	\end{aligned} %
 	\implies %
 	\det(A) = e^{i \theta} \qcomma \theta \in \R
 \end{equation}
 
-Prendendo $ 1 \in \C $, $ SU(n) $ ne è la controimmagine tramite il determinante, i.e. $ SU(n) = f^{-1}(1) $: perché sia una sottovarietà di $ U(n) $ è sufficiente che $ 1 \in \VR_{f} $, quindi prendiamo il differenziale dell'applicazione 
+A questo punto, $ SU(n) $ è la controimmagine di $ 1 \in \C $ tramite il determinante, i.e. $ SU(n) = f^{-1}(1) $: perché sia una sottovarietà di $ U(n) $ è sufficiente che $ 1 \in \VR_{f} $. Prendiamo quindi il differenziale dell'applicazione 
 
-\map{\operatorname{det}_{*A}}%
-	{T_{A}(U(n))}{T_{\det(A)}(\S^{1})}%
+\map{{\det}_{*A}}
+	{T_{A}(U(n))}{T_{\det(A)}(\S^{1})}
 	{B}{\det(A) \tr(A^{-1} B)}
 	
 Siccome siamo interessati agli elementi di $ SU(n) $, abbiamo che $ \det(A) = 1 $, perciò dobbiamo studiare $ T_{1}(\S^{1}) $ con $ \S^{1} \subset \C $: possiamo trovare gli elementi di questo spazio tangente considerando la curva
 
-\map{c}%
-	{(-\varepsilon,\varepsilon)}{\S^{1}}%
+\map{c}
+	{(-\varepsilon,\varepsilon)}{\S^{1}}
 	{t}{e^{i a t}}
 	
-con $ a \in \R $, $ c(0) = 1 $ e $ \dot{c} = i a $. Dato che $ \dot(c) \in T_{1}(\S^{1}) $, possiamo asserire che
+con
+
+\begin{equation}
+	\begin{cases}
+		a \in \R \\
+		c(0) = 1 \\
+		\dot{c} = i a
+	\end{cases}
+\end{equation}
+
+Dato che $ \dot{c} \in T_{1}(\S^{1}) $, possiamo asserire che
 
 \begin{equation}
 	T_{1}(\S^{1}) = \ev{i}_{\R}
 \end{equation}
 
-cioè tutti i vettori paralleli all'asse immaginario che partano in $ 1 $.\\
-A questo punto, perché $ 1 \in \VR_{f} $, è necessario che il differenziale sua suriettivo per $ \forall A \in SU(n) $ o equivalentemente
+cioè lo spazio tangente è generato da tutti i vettori paralleli all'asse immaginario che partano da $ 1 \in \C $.\\
+A questo punto, perché $ 1 \in \VR_{f} $, è necessario che il differenziale sia suriettivo per qualsiasi $ A \in SU(n) $ o equivalentemente
 
 \begin{equation}
-	1 \in \VR_{f} \iff \E B \in T_{A}(U(n)) \mid \tr(A^{-1} B) = i a \qcomma A \in SU(n), \, a \in \R
+	1 \in \VR_{f} \iff \E B \in T_{A}(U(n)) \mid \tr(A^{-1} B) = i a %
+	\qcomma A \in SU(n), \, a \in \R
 \end{equation}
 
 Abbiamo dimostrato che $ T_{A}(U(n)) = A \, T_{I}(U(n)) $ e $ T_{I}(U(n)) = H^{-}(n) $ cioè le matrici antihermitiane, perciò
@@ -2447,7 +2459,7 @@ Questo dimostra che $ 1 \in \VR_{f} $ perciò $ SU(n) $ è una sottovarietà e q
 Lo spazio tangente di $ SU(n) $ deriva ancora dal teorema della preimmagine
 
 \begin{equation}
-	T_{I}(SU(n)) = \ker(\operatorname{det}_{*A}) = \{ X \in T_{I}(U(n)) \mid \tr(X) = 0 \}
+	T_{I}(SU(n)) = \ker({\det}_{*A}) = \{ X \in T_{I}(U(n)) \mid \tr(X) = 0 \}
 \end{equation}
 
 ma sappiamo che
@@ -2459,7 +2471,7 @@ ma sappiamo che
 perciò
 
 \begin{equation}
-	T_{I}(U(n)) = \{ X \in M_{n}(\C) \mid X^{*} = -X \wedge \tr(X) = 0 \}
+	T_{I}(SU(n)) = \{ X \in M_{n}(\C) \mid X^{*} = -X \wedge \tr(X) = 0 \}
 \end{equation}
 
 Essendo $ SU(n) $ chiuso nel compatto $ U(n) $ (o anche chiuso e limitato), $ SU(n) $ è compatto.\\
@@ -2467,7 +2479,13 @@ L'insieme $ SU(n) $ è connesso perché, presa $ A \in SU(n) $, per il corollari
 
 \begin{equation}
 	U^{-1} A U = %
-	\smqty(\dmat{ e^{i \theta_{1}}, \ddots, e^{i \theta_{n}} })
+	\bmqty{ %
+			\dmat{ %
+			 		e^{i \theta_{1}}, %
+			 		\ddots, %
+			 		e^{i \theta_{n}} %
+		 			} %
+	 		}
 \end{equation}
 
 con $ \theta_{j} \in \R $ per $ j=1,\dots,n $ e siccome il determinante deve essere unitario
@@ -2478,15 +2496,23 @@ con $ \theta_{j} \in \R $ per $ j=1,\dots,n $ e siccome il determinante deve ess
 
 Possiamo definire una curva continua
 
-\map{c}%
-	{[0,1]}{SU(n)}%
-	{t}{U \smqty(\dmat{ e^{i t \theta_{1}}, \ddots, e^{i t \theta_{n}} }) U^{-1}}
+\map{c}
+	{[0,1]}{SU(n)}
+	{t}{ %
+			U \bmqty{ %
+						\dmat{ %
+								e^{i t \theta_{1}}, %
+								\ddots, %
+								e^{i t \theta_{n}} %
+								} %
+						} U^{-1} %
+			}
 
 dove
 
 \begin{equation}
 	\begin{cases}
-		c(0) = I\\
+		c(0) = I \\
 		c(1) = A
 	\end{cases}
 \end{equation}
