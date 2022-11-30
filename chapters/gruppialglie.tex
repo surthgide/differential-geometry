@@ -1,19 +1,27 @@
 \section{Gruppi di Lie}
 
-Un gruppo $ (G,\mu) \equiv G $ è un \textit{gruppo di Lie} se l'insieme $ G $ del gruppo è una varietà differenziabile, se è un gruppo algebrico e se sono lisce le sue operazioni di prodotto e inversione:
+Un gruppo $ (G,\mu) \equiv G $ è un \textit{gruppo di Lie} se:
 
-\sbs{0.5}{%
-			\map{\mu}
-				{G \times G}{G}
-				{(ab)}{a b}
-			}
-	{0.5}{%
-			\map{i}
-				{G}{G}
-				{a}{a^{-1}}
-			}
+\begin{itemize}
+	\item L'insieme $ G $ del gruppo è una varietà differenziabile;
+	
+	\item $ (G,\mu) $ è un gruppo algebrico;
+	
+	\item sono lisce le sue operazioni di prodotto e inversione
+	
+	\sbs{0.5}{%
+				\map{\mu}
+					{G \times G}{G}
+					{(a,b)}{a b}
+				}
+		{0.5}{%
+				\map{i}
+					{G}{G}
+					{a}{a^{-1}}
+				}
+\end{itemize}
 		
-Sia $ a \in G $, possiamo considerare delle restrizioni della moltiplicazione, chiamate traslazione a sinistra $ L_{a} $ e traslazione a destra $ R_{a} $:
+Preso un elemento $ a \in G $, possiamo considerare delle restrizioni della moltiplicazione, chiamate traslazione a sinistra $ L_{a} $ e traslazione a destra $ R_{a} $:
 
 \sbs{0.5}{%
 			\map{L_{a}}
@@ -101,13 +109,13 @@ e l'inclusione liscia
 	i \times i : SL_{n}(\R) \times SL_{n}(\R) \to GL_{n}(\R) \times GL_{n}(\R)
 \end{equation}
 
-L'applicazione $ G = F \circ (i \times i) $ è dunque liscia perché composizione di applicazione lisce; siccome il prodotto di due matrici con determinante unitario (i.e. in $ SL_{n}(\R) $) è ancora una matrice con determinante unitario, vale per l'immagine di $ G $
+L'applicazione $ G = F \circ (i \times i) $ è dunque liscia perché composizione di applicazione lisce. Siccome il prodotto di due matrici con determinante unitario (i.e. in $ SL_{n}(\R) $) è ancora una matrice con determinante unitario, vale per l'immagine di $ G $
 
 \begin{equation}
 	G(SL_{n}(\R) \times SL_{n}(\R)) \subset SL_{n}(\R)
 \end{equation}
 
-A questo punto, dato che $ SL_{n}(\R) $ è una sottovarietà di $ GL_{n}(\R) $ (ipotesi del teorema che permette di mantenere l'applicazione liscia), possiamo considerare la restrizione del codominio della funzione $ G $
+A questo punto, dato che $ SL_{n}(\R) $ è una sottovarietà di $ GL_{n}(\R) $ (ipotesi del Teorema \ref{thm:smooth-restriction-subman} che permette di mantenere l'applicazione liscia), possiamo considerare la restrizione del codominio della funzione $ G $
 
 \map{\tilde{G}}
 	{SL_{n}(\R) \times SL_{n}(\R)}{SL_{n}(\R)}
@@ -132,7 +140,7 @@ e dunque la restrizione del suo codominio a $ SL_{n}(\R) $ (sottovarietà di $ G
 	{SL_{n}(\R)}{SL_{n}(\R)}
 	{A}{A^{-1}}
 
-funzione che coincide con l'inversione in $ SL_{n}(\R) $, rendendo dunque l'inversione  $ i $ liscia.
+funzione che coincide con l'inversione $ i $ in $ SL_{n}(\R) $, rendendola dunque liscia.
 
 \paragraph{3) Gruppo ortogonale $ O(n) $}
 
@@ -175,10 +183,10 @@ dove $ (A^{T} A)^{T} = A^{T} A $ dunque $ A^{T} A \in S(n) $. Dimostrando che $ 
 	\dim(O(n)) = \dim(GL_{n}(\R)) - \dim(S(n))
 \end{equation}
 
-dove $ S(n) $ è uno spazio vettoriale su $ \R $ e anche un sottospazio vettoriale di $ M_{n}(\R) $, la cui dimensione è data dalla quantità di condizioni necessarie al fine di determinare una matrice simmetrica, i.e.
+dove $ S(n) $ è uno spazio vettoriale su $ \R $ e anche un sottospazio vettoriale di $ M_{n}(\R) $, la cui dimensione è data da $ n^{2} $ meno le condizioni necessarie al fine di determinare una matrice simmetrica, i.e.
 
 \begin{equation}
-	\dim(S(n)) = \dfrac{n (n+1)}{2}
+	\dim(S(n)) = \dfrac{n^{2} - n}{2} + n = \dfrac{n (n+1)}{2}
 \end{equation}
 
 Siccome $ \dim(GL_{n}(\R)) = n^{2} $, otteniamo che
@@ -193,7 +201,7 @@ Verifichiamo ora che $ I \in \VR_{f} $: per fare ciò, dobbiamo calcolare il dif
 	f_{*A} : T_{A}(GL_{n}(\R)) \to T_{f(A)}(S(n))
 \end{equation}
 
-possiamo identificare $ T_{A}(GL_{n}(\R)) = M_{n}(\R) $ e $ T_{f(A)}(S(n)) = S(n) $ (in quanto $ S(n) $ è uno spazio vettoriale), perciò $ f_{*} $ porta matrici in matrici simmetriche. Calcoliamo dunque il differenziale $ f_{*A}(X) $ prendendo una curva che passi per $ A $ in 0 e il cui vettore tangente sia $ B $
+possiamo identificare $ T_{A}(GL_{n}(\R)) = M_{n}(\R) $ e $ T_{f(A)}(S(n)) = S(n) $ (in quanto $ S(n) $ è uno spazio vettoriale), perciò $ f_{*} $ porta matrici in matrici simmetriche. Calcoliamo dunque il differenziale $ f_{*A}(X) $ prendendo una curva che passi per $ A $ in 0 e il cui vettore tangente sia $ X $, i.e.
 
 \begin{equation}
 	\begin{cases}
@@ -213,10 +221,11 @@ perciò
 
 \begin{align}
 	\begin{split}
-		f_{*A}(X) &= \eval{ \dv{t} f(c(t)) }_{t=0} \\
+		f_{*A}(X) &= \dv{t} (f \circ c) (0) \\
+		&= \eval{ \dv{t} f(c(t)) }_{t=0} \\
 		&= \eval{ \dv{t} \left( c(t)^{T} c(t) \right) }_{t=0} \\
 		&= \dot{c}(0)^{T} c(0) + c(0)^{T} \dot{c}(0) \\
-		&= X^{T} A + X A^{T}
+		&= X^{T} A + A^{T} X
 	\end{split}
 \end{align}
 
@@ -224,7 +233,7 @@ i.e.
 
 \map{f_{*A}}
 	{M_{n}(\R)}{S(n)}
-	{X}{X^{T} A + X A^{T}}
+	{X}{X^{T} A + A^{T} X}
 
 Vale la condizione
 
@@ -237,16 +246,17 @@ Vale la condizione
 Perché $ f_{*A} $ sia suriettiva
 
 \begin{equation}
-	\forall A \in O(n), \, \forall B \in S(n), \E X \in M_{n}(\R) \mid X^{T} A + X A^{T} = B
+	\forall A \in O(n), \, \forall B \in S(n), \E X \in M_{n}(\R) \mid X^{T} A + A^{T} X = B
 \end{equation}
 
 è sufficiente dunque prendere $ X = A B / 2 $, i.e.
 
 \begin{align}
 	\begin{split}
-		X^{T} A + X A^{T} &= \left( \dfrac{1}{2} A B \right)^{T} A + \dfrac{1}{2} A^{T} A B\\
-		&= \dfrac{1}{2} B^{T} A^{T} A + \dfrac{1}{2} B\\
-		&= \dfrac{1}{2} B + \dfrac{1}{2} B\\
+		X^{T} A + A^{T} X &= \left( \dfrac{1}{2} A B \right)^{T} A + \dfrac{1}{2} A^{T} A B \\
+		&= \dfrac{1}{2} B^{T} A^{T} A + \dfrac{1}{2} B \\
+		&= \dfrac{1}{2} B^{T} + \dfrac{1}{2} B \\
+		&= \dfrac{1}{2} B + \dfrac{1}{2} B \\
 		&= B
 	\end{split}
 \end{align}
@@ -263,13 +273,13 @@ perciò
 	T_{I}(O(n)) = \ker(f_{*I})
 \end{equation}
 
-ma abbiamo che
+Siccome
 
 \begin{equation}
 	f_{*I}(X) = X^{T} + X
 \end{equation}
 
-perciò
+abbiamo che
 
 \begin{equation}
 	T_{I}(O(n)) = \ker(f_{*I}) = \{ X \in M_{n}(\R) \mid X^{T} = -X \}
