@@ -2532,16 +2532,26 @@ Notiamo anche che
 Un gruppo di Lie è un gruppo algebrico con operazioni lisce che sia anche una varietà differenziabile. Due gruppi di Lie possono essere legati da un diffeomorfismo, in quanto varietà, ma non essere isomorfe: questo succede se il diffeomorfismo non è anche un omomorfismo di gruppi, i.e. non preserva la moltiplicazione tra i gruppi.\\
 Sia l'applicazione
 
-\map{f}%
-	{GL_{n}(\R)}{SL_{n}(\R) \times \R \setminus \{0\}}%
-	{A}{(A M_{\sfrac{1}{\det(A)}},\det(A))}
+\map{f}
+	{GL_{n}(\R)}{SL_{n}(\R) \times \R \setminus \{0\}}
+	{A}{(A M_{1/\det(A)},\det(A))}
 
-dove il codominio è un prodotto diretto tra i gruppi di Lie (il gruppo delle matrici invertibili con determinante unitario $ SL_{n}(\R) $ e $ (\R \setminus \{0\},\cdot) $ con $ \cdot $ il prodotto tra numeri reali) e
+dove il codominio è un prodotto diretto tra i gruppi di Lie (il gruppo delle matrici invertibili con determinante unitario $ SL_{n}(\R) $ e il gruppo $ (\R \setminus \{0\},\cdot) $ con $ \cdot $ il prodotto tra numeri reali) e
 
 \begin{equation}
 	M_{r} \doteq %
-	\mqty( r & 0_{1,n} \\\\ 0_{n,1} & I_{n-1} ) = %
-	\smqty(\dmat{ r, 1, \ddots, 1 })
+	\bmqty{ %
+			r & 0_{1,n} \\\\
+			0_{n,1} & I_{n-1} %
+			} = %
+	\bmqty{ %
+			\dmat{ %
+					r, %
+					1, %
+					\ddots, %
+					1 %
+					} %
+			}
 \end{equation}
 
 con $ \det(M_{r}) = r $.\\
@@ -2549,10 +2559,10 @@ L'applicazione $ f $ è un diffeomorfismo ma non un isomorfismo.\\
 L'immagine è ben definita, i.e. il primo termine appartiene a $ SL_{n}(\R) $
 
 \begin{equation}
-	\det(A M_{\sfrac{1}{\det(A)}}) = \det(A) \det(M_{\sfrac{1}{\det(A)}}) = \det(A) \dfrac{1}{\det(A)} = 1
+	\det(A M_{1/\det(A)}) = \det(A) \det(M_{1/\det(A)}) = \det(A) \, \dfrac{1}{\det(A)} = 1
 \end{equation}
 
-e il secondo appartiene a $ \R \setminus \{0\} $, il che è verificato in quanto $ \det(A) \neq 0 $ per $ \forall A \in GL_{n}(\R) $.\\
+e il secondo appartiene a $ \R \setminus \{0\} $, il che è verificato in quanto $ \det(A) \neq 0 $ per qualsiasi $ A \in GL_{n}(\R) $.\\
 Questa applicazione è liscia perché tutte le entrate sono lisce e perché, considerando l'applicazione liscia
 
 \begin{equation}
@@ -2562,22 +2572,26 @@ Questa applicazione è liscia perché tutte le entrate sono lisce e perché, con
 il codominio di $ f $ è una restrizione del codominio di $ g $ a una sua sottovarietà.\\
 L'inversa di $ f $ (ancora liscia anche perché restrizione di un'applicazione liscia) è
 
-\map{f^{-1}}%
-	{SL_{n}(\R) \times \R \setminus \{0\}}{GL_{n}(\R)}%
+\map{f^{-1}}
+	{SL_{n}(\R) \times \R \setminus \{0\}}{GL_{n}(\R)}
 	{(S,r)}{S M_{r}}
 
 in quanto
 
 \begin{align}
 	\begin{split}
-		(f^{-1} \circ f)(A) &= f^{-1} \left( A M_{\sfrac{1}{\det(A)}},\det(A) \right)\\
-		&= A M_{\sfrac{1}{\det(A)}} M_{\det(A)}\\
-		&= A\\\\
-		%
-		(f \circ f^{-1})(S,r) &= f(S M_{r})\\
-		&= \left( S M_{r} M_{\sfrac{1}{\det(S M_{r})}},\det(S M_{r}) \right)\\
-		&= \left( S M_{r} M_{\sfrac{1}{\det(S) \det(M_{r})}},\det(S) \det(M_{r}) \right)\\
-		&= \left( S M_{r} M_{\sfrac{1}{r}},r \right)\\
+		(f^{-1} \circ f)(A) &= f^{-1} \left( A M_{1/\det(A)},\det(A) \right) \\
+		&= A M_{1/\det(A)} M_{\det(A)} \\
+		&= A
+	\end{split}
+\end{align}
+
+\begin{align}
+	\begin{split}
+		(f \circ f^{-1})(S,r) &= f(S M_{r}) \\
+		&= \left( S M_{r} M_{{1/\det(S M_{r})}},\det(S M_{r}) \right) \\
+		&= \left( S M_{r} M_{1/(\det(S) \det(M_{r}))},\det(S) \det(M_{r}) \right) \\
+		&= \left( S M_{r} M_{1/r},r \right) \\
 		&= (S,r)
 	\end{split}
 \end{align}
@@ -2588,17 +2602,19 @@ Perché sia un isomorfismo, oltre ad essere un diffeomorfismo, dovrebbe essere u
 \begin{align}
 	\begin{split}
 		f(A B) &\neq f(A) \, f(B)\\
-		\left( A B M_{\sfrac{1}{\det(A B)}}, \det(A B) \right) &\neq \left( A M_{\sfrac{1}{\det(A)}},\det(A) \right) \, \left( B M_{\sfrac{1}{\det(B)}},\det(B) \right)\\
-		&\neq \left( A M_{\sfrac{1}{\det(A)}} B M_{\sfrac{1}{\det(B)}},\det(A) \det(B) \right)\\
-		&\neq \left( A M_{\sfrac{1}{\det(A)}} B M_{\sfrac{1}{\det(B)}},\det(A B) \right)
+		\left( A B M_{1/\det(A B)}, \det(A B) \right) &\neq \left( A M_{1/\det(A)},\det(A) \right) \, \left( B M_{1/\det(B)},\det(B) \right) \\
+		&\neq \left( A M_{1/\det(A)} B M_{1/\det(B)},\det(A) \det(B) \right) \\
+		&\neq \left( A M_{1/\det(A)} B M_{1/\det(B)},\det(A B) \right)
 	\end{split}
 \end{align}
 
-in quanto $ [B, M_{\sfrac{1}{\det(A)}}] \neq 0 $.\\
+in quanto $ [B, M_{1/\det(A)}] \neq 0 $.\\
 Da questa analisi otteniamo che
 
 \begin{equation}
-	GL_{n}(\R) \stackrel{diff.}{\simeq} SL_{n}(\R) \times \R \setminus \{0\} \quad \wedge \quad GL_{n}(\R) \stackrel{iso.}{\not\simeq} SL_{n}(\R) \times \R \setminus \{0\}
+	GL_{n}(\R) \stackrel{diff.}{\simeq} SL_{n}(\R) \times \R \setminus \{0\} %
+	\quad \wedge \quad %
+	GL_{n}(\R) \stackrel{iso.}{\not\simeq} SL_{n}(\R) \times \R \setminus \{0\}
 \end{equation}
 
 Inoltre, dal diffeomorfismo, ricaviamo che $ GL_{n}(\R) $ è costituito da due componenti connesse (in quanto $ SL_{n}(\R) $ è connesso), i.e. le matrici con determinante positivo e quelle con determinante negativo: siccome $ \R \setminus \{0\} $ è costituito da due componenti connesse
@@ -2610,7 +2626,8 @@ Inoltre, dal diffeomorfismo, ricaviamo che $ GL_{n}(\R) $ è costituito da due c
 abbiamo che
 
 \begin{equation}
-	GL_{n}(\R) = (SL_{n}(\R) \times \R^{+}) \sqcup (SL_{n}(\R) \times \R^{-}) \doteq GL_{n}^{+}(\R) \sqcup GL_{n}^{-}(\R)
+	GL_{n}(\R) = (SL_{n}(\R) \times \R^{+}) \sqcup (SL_{n}(\R) \times \R^{-}) %
+	\doteq GL_{n}^{+}(\R) \sqcup GL_{n}^{-}(\R)
 \end{equation}
 
 In generale, $ GL_{n}(\R) $ e $ SL_{n}(\R) \times \R \setminus \{0\} $ non sono quindi isomorfi: questo rimane vero per $ n $ pari, ma per $ n $ dispari è possibile trovare un isomorfismo tra questi due gruppi.
@@ -2629,10 +2646,16 @@ Il centro del gruppo lineare è l'insieme di tutte le matrici scalari, i.e.
 Questo significa che
 
 \begin{equation}
-	Z(GL_{n}(\R)) = \R \setminus \{0\} \times I = \R \setminus \{0\}
+	Z(GL_{n}(\R)) = \R \setminus \{0\} \times \{I\} = \R \setminus \{0\}
 \end{equation}
 
-Siccome il centro del prodotto di due gruppi è il prodotto del centro dei gruppi, possiamo scrivere
+Siccome il centro del prodotto di due gruppi è il prodotto del centro dei gruppi, i.e.
+
+\begin{equation}
+	Z(G) \times Z(H) = Z(G \times H) \qcomma \forall G,H \text{ gruppi}
+\end{equation}
+
+possiamo scrivere
 
 \begin{equation}
 	Z(SL_{n}(\R) \times \R \setminus \{0\}) = Z(SL_{n}(\R)) \times Z(\R \setminus \{0\})
@@ -2643,10 +2666,10 @@ L'insieme dei reali è commutativo, i.e. $ Z(G) = G $ per $ G $ abeliano, dunque
 \begin{equation}
 	Z(SL_{n}(\R)) = %
 	\begin{cases}
-		\{ \pm I \} & n = 2 k\\
-		\{ I \} & n = 2 k + 1
+		\{ \pm I \}, & n = 2 k \\
+		\{ I \}, & n = 2 k + 1
 	\end{cases}%
-	\qcomma k \in \N
+	\qquad k \in \N
 \end{equation}
 
 A questo punto, abbiamo che per $ n $ pari
@@ -2655,7 +2678,6 @@ A questo punto, abbiamo che per $ n $ pari
 	\begin{split}
 		Z(GL_{n}(\R)) &\neq Z(SL_{n}(\R) \times \R \setminus \{0\})\\
 		\{ I \} \times \R \setminus \{0\} &\neq Z(SL_{n}(\R)) \times Z(\R \setminus \{0\})\\
-		&\neq Z(SL_{n}(\R)) \times Z(\R \setminus \{0\})\\
 		&\neq \{ \pm I \} \times \R \setminus \{0\}
 	\end{split}
 \end{align}
@@ -2669,45 +2691,54 @@ mentre per $ n $ dispari
 Questo prova che non sia possibile costruire un isomorfismo per $ n $ pari in quanto, se i gruppi fossero isomorfi, in particolare dovrebbero esserlo anche i loro centri, fatto che non si verifica in questo caso.\\
 A questo punto, esibiamo un isomorfismo esplicito, per $ n $ dispari, tra $ GL_{n}(\R) $ e $ SL_{n}(\R) \times \R \setminus \{0\} $:
 
-\map{h}%
-	{GL_{n}(\R)}{SL_{n}(\R) \times \R \setminus \{0\}}%
-	{A}{\left( \det(A)^{\sfrac{-1}{n}} \, A, \det(A) \right)}
+\map{h}
+	{GL_{n}(\R)}{SL_{n}(\R) \times \R \setminus \{0\}}
+	{A}{\left( \det(A)^{-1/n} \, A, \det(A) \right)}
 
-Notiamo che la prima entrata è ben definita in quanto esiste sempre la radice $ n $-esima di un numero reale per $ n $ dispari, che l'applicazione è liscia e la sua inversa è liscia
+Notiamo che la prima entrata è ben definita in quanto esiste sempre la radice $ n $-esima di un numero reale per $ n $ dispari, che l'applicazione è liscia, invertibile, e la sua inversa è liscia
 
-\map{h^{-1}}%
-	{SL_{n}(\R) \times \R \setminus \{0\}}{GL_{n}(\R)}%
-	{(S,r)}{r^{\sfrac{1}{n}} S}
+\map{h^{-1}}
+	{SL_{n}(\R) \times \R \setminus \{0\}}{GL_{n}(\R)}
+	{(S,r)}{r^{1/n} S}
 	
 Verifichiamo che sia l'inversa:
 
 \begin{align}
 	\begin{split}
-		(h^{-1} \circ h)(A) &= h^{-1} \left( \det(A)^{\sfrac{-1}{n}} \, A, \det(A) \right)\\
-		&= \det(A)^{\sfrac{-1}{n}} \det(A)^{\sfrac{-1}{n}} A\\
-		&= A\\\\
-		%
-		(h \circ h^{-1})(S,r) &= h \left( r^{\sfrac{1}{n}} S \right)\\
-		&= \left( \det(r^{\sfrac{1}{n}} S)^{\sfrac{-1}{n}} \, r^{\sfrac{1}{n}} S, \det(r^{\sfrac{1}{n}} S) \right)\\
-		&= \left( \left( (r^{\sfrac{1}{n}})^{n} \det(S) \right)^{\sfrac{-1}{n}} \, r^{\sfrac{1}{n}} S, (r^{\sfrac{1}{n}})^{n} \det(S) \right)\\
-		&= \left( r^{\sfrac{-1}{n}} r^{\sfrac{1}{n}} S, r \right)\\
+		(h^{-1} \circ h)(A) &= h^{-1} \left( \det(A)^{-1/n} \, A, \det(A) \right) \\
+		&= \det(A)^{1/n} \det(A)^{-1/n} A \\
+		&= A
+	\end{split}
+\end{align}
+
+\begin{align}
+	\begin{split}
+		(h \circ h^{-1})(S,r) &= h \left( r^{1/n} S \right) \\
+		&= \left( \det(r^{1/n} S)^{-1/n} \, r^{1/n} S, \det(r^{1/n} S) \right) \\
+		&= \left( \left( (r^{1/n})^{n} \det(S) \right)^{-1/n} \, r^{1/n} S, (r^{1/n})^{n} \det(S) \right) \\
+		&= \left( r^{1/n} r^{1/n} S, r \right) \\
 		&= (S,r)
 	\end{split}
 \end{align}
 
-dove $ \det(c \, A) = c^{n} \det(A) $ per $ \forall c \in \R $ e $ \forall A \in M_{n}(\R) $ e $ \det(S) = 1 $ poiché $ S \in SL_{n} (\R) $.\\
+dove $ \det(S) = 1 $ poiché $ S \in SL_{n} (\R) $ e
+
+\begin{equation}
+	\det(c \, A) = c^{n} \det(A) \qcomma \forall c \in \R, \, \forall A \in M_{n}(\R)
+\end{equation}
+
 Verifichiamo ora che sia un omomorfismo:
 
 \begin{align}
 	\begin{split}
-		h(A B) &= \left( \det(A B)^{\sfrac{-1}{n}} \, A B, \det(A B) \right)\\
-		&= \left( \det(A)^{\sfrac{-1}{n}} \, A \, \det(B)^{\sfrac{-1}{n}} \, B, \det(A) \det(B) \right)\\
-		&= \left( \det(A)^{\sfrac{-1}{n}} \, A, \det(A) \right) \, \left( \det(B)^{\sfrac{-1}{n}} \, B, \det(B) \right)\\
+		h(A B) &= \left( \det(A B)^{-1/n} \, A B, \det(A B) \right) \\
+		&= \left( \det(A)^{-1/n} \, A \, \det(B)^{-1/n} \, B, \det(A) \det(B) \right) \\
+		&= \left( \det(A)^{-1/n} \, A, \det(A) \right) \, \left( \det(B)^{-1/n} \, B, \det(B) \right) \\
 		&= h(A) \, h(B)
 	\end{split}
 \end{align}
 
-Da cui otteniamo che $ h $ è un isomorfismo di gruppi di Lie tra $ GL_{n}(\R) $ e $ SL_{n}(\R) \times \R \setminus \{0\} $.
+Da cui otteniamo che $ h $ è un isomorfismo di gruppi di Lie tra $ GL_{n}(\R) $ e $ SL_{n}(\R) \times \R \setminus \{0\} $ per $ n $ dispari.
 
 \section{Algebre di Lie}
 
