@@ -332,7 +332,7 @@ Siano $ G $ un gruppo di Lie e $ H \neq \emptyset $ un suo sottoinsieme, diremo 
 \begin{enumerate}
 	\item $ H $ è un sottogruppo algebrico di $ G $, in notazione $ H < G $;
 	
-	\item $ H $ è una sottovarietà immersa di $ G $, i.e. $ H $ è l'immagine di $ G $ tramite un'immersione iniettiva (la topologia di $ H $ non è necessariamente la topologia indotta da $ G $);
+	\item $ H $ è una sottovarietà immersa di $ G $, i.e. $ H $ è l'immagine di un'immersione iniettiva che sia contenuta in $ G $ (la topologia di $ H $ non è necessariamente la topologia indotta da $ G $);
 	
 	\item Le operazioni di moltiplicazione e inversione su $ H $, indotte da $ G $, sono lisce.
 \end{enumerate}
@@ -390,14 +390,18 @@ Da questo teorema, possiamo ancora derivare che $ SL_{n}(\R) $ e $ O(n) $ siano 
 
 \subsubsection{\textit{Esempio}}
 
-Questo esempio è riferito a un sottogruppo di Lie immerso importante, il resto dei sottogruppi considerati in questo testo, saranno sottogruppi di Lie embedded.\\
-Consideriamo come gruppo di Lie il toro $ \T^{2} = \S^{1} \times \S^{1} $ ($ \S^{1} $ è un gruppo di Lie, quindi il prodotto diretto di due $ \S^{1} $ è ancora un gruppo di Lie) con le operazioni naturali e l'applicazione
+Questo esempio è riferito a un sottogruppo di Lie immerso importante, il resto dei sottogruppi considerati in questo testo saranno sottogruppi di Lie embedded.\\
+Consideriamo i gruppi di Lie $ (\R,+) $ e il toro\footnote{%
+	Siccome $ \S^{1} $ è un gruppo di Lie, il prodotto diretto di due $ \S^{1} $ è ancora un gruppo di Lie; vedi Esercizio \ref{es3-1}.%
+} $ \T^{2} = \S^{1} \times \S^{1} $ con le operazioni naturali (moltiplicazione di $ \S^{1} $). Inoltre, prendiamo l'applicazione
 
 \map{F}
 	{\R}{\T^{2}}
 	{t}{(e^{2 \pi i t},e^{2 \pi i \alpha t})}
 
-dove $ \alpha \in \R \setminus \Q $, i.e. $ \alpha $ è irrazionale; questa applicazione è un'immersione iniettiva e un omomorfismo di gruppi, in quanto
+dove $ \alpha \in \R \setminus \Q $, i.e. $ \alpha $ è irrazionale; questa applicazione è un'immersione iniettiva\footnote{%
+	Vedi Esempio \ref{ex:embed-torus}.%
+} e un omomorfismo di gruppi, in quanto
 
 \begin{align}
 	\begin{split}
