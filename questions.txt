@@ -1,72 +1,38 @@
 DOMANDE GEOMETRIA DIFFERENZIALE
 
-esercizio A.6: penso che per dimostrare che g sia liscia dovrei usare il teorema di Taylor con
-resto ma non riesco a capire come; non riesco a utilizzare le condizione del teorema per la 
-dimostrazione
+esercizio A.6: penso che per dimostrare che g sia liscia dovrei usare il teorema di Taylor con resto ma non riesco a capire come; non riesco a utilizzare le condizione del teorema per la dimostrazione
 
-(\chi(U),+) come C^{\infty}-modulo: non capisco perché la moltiplicazione di un campo di 
-vettori per una funzione debba essere liscia al fine di rendere (\chi(U),+) un C^{\infty}-modulo; 
-teoricamente dovrei solo dimostrare che le 4 proprietà del C^{\infty}-modulo siano soddisfatte 
-sia da sinistra che a destra per la moltiplicazione per funzione
+(\chi(U),+) come C^{\infty}-modulo: non capisco perché la moltiplicazione di un campo di vettori per una funzione debba essere liscia al fine di rendere (\chi(U),+) un C^{\infty}-modulo; teoricamente dovrei solo dimostrare che le 4 proprietà del C^{\infty}-modulo siano soddisfatte sia da sinistra che a destra per la moltiplicazione per funzione
 
-CURIOSITÀ: le quattro proprietà che rendono un gruppo un R-modulo sono parte delle proprietà che 
-rendono uno spazio uno spazio vettoriale? (da qui l'osservazione negli appunti)
+CURIOSITÀ: le quattro proprietà che rendono un gruppo un R-modulo sono parte delle proprietà che rendono uno spazio uno spazio vettoriale? (da qui l'osservazione negli appunti)
 
-esercizio A.11: penso di essere praticamente arrivato alla soluzione, ma non sono sicuro di aver 
-usato una proprietà che posso usare; ho scritto che ho usato la commutatività della 
-moltiplicazione dell'algebra ma quest'ultima non è detto che ce l'abbia
+esercizio A.11: penso di essere praticamente arrivato alla soluzione, ma non sono sicuro di aver usato una proprietà che posso usare; ho scritto che ho usato la commutatività della moltiplicazione dell'algebra ma quest'ultima non è detto che ce l'abbia
 
-definizione atlante topologico: le carte di un atlante topologico devono avere un omeomorfismo 
-dallo spazio topologico a un sottoinsieme di uno spazio euclideo o basta che siano degli 
-omeomorfismi verso un altro spazio?
+definizione atlante topologico: le carte di un atlante topologico devono avere un omeomorfismo dallo spazio topologico a un sottoinsieme di uno spazio euclideo o basta che siano degli omeomorfismi verso un altro spazio?
 
-esercizio B.4: non sono totalmente sicuro della veridicità della dimostrazione connessione; 
-dimostrare la compattezza tramite le varietà di Stiefel mi sembra inutile ma non sono riuscito a 
-farlo tramite F(k,n); usando la varietà di Stiefel devo dimostrare anche che questa è chiusa e 
-limitata o è sufficiente nominarlo al fine dell'esercizio?
+esercizio B.4: non sono totalmente sicuro della veridicità della dimostrazione connessione; dimostrare la compattezza tramite le varietà di Stiefel mi sembra inutile ma non sono riuscito a farlo tramite F(k,n); usando la varietà di Stiefel devo dimostrare anche che questa è chiusa e limitata o è sufficiente nominarlo al fine dell'esercizio?
 
-esercizio B.5: la dimostrazione che ho scritto negli esercizi non mi convince; se provo a 
-ridimostrarlo da zero, non so come fare perché S^1 è chiuso in R^2 dunque non posso né usare S^1 
-né intersezioni di aperti con S^1 per creare una carta valida per verificare la definizione di 
-funzione liscia su varietà; è necessario che usi l'inclusione e la condizione di sottovarietà? 
-online ho trovato che f|_S^1 \circ \phi^{-1} = f \circ \phi^{-1} ma non capisco perché
+esercizio B.5: la dimostrazione che ho scritto negli esercizi non mi convince; se provo a ridimostrarlo da zero, non so come fare perché S^1 è chiuso in R^2 dunque non posso né usare S^1 né intersezioni di aperti con S^1 per creare una carta valida per verificare la definizione di funzione liscia su varietà; è necessario che usi l'inclusione e la condizione di sottovarietà? online ho trovato che f|_S^1 \circ \phi^{-1} = f \circ \phi^{-1} ma non capisco perché
 
-diffeomorfismi tra varietà: non sono sicuro di aver capito al 100% come S^1 possa essere una 
-varietà differenziale di dimensione 307 (o qualsiasi altro numero che non sia 1)
+diffeomorfismi tra varietà: non sono sicuro di aver capito al 100% come S^1 possa essere una varietà differenziale di dimensione 307 (o qualsiasi altro numero che non sia 1)
 
-esercizio C.1: non sono sicuro sia necessario utilizzare la composizione delle operazioni 
-tramite le proiezioni, forse basta dire che le operazioni di \Omega sono composizioni di 
+esercizio C.1: non sono sicuro sia necessario utilizzare la composizione delle operazioni tramite le proiezioni, forse basta dire che le operazioni di \Omega sono composizioni di 
 operazioni lisce
 
-esercizio B.15: non so come dimostrare la prima formula, non capisco bene come orientarmi con 
-lo spazio dei polinomi, non so se la dimostrazione della sottovarietà vada fatta effettivamente 
-così, non so come dimostrare la dimensione della sottovarietà (non so cosa usare per trovarla--
-nel senso di carte, condizioni o altro), non so come dimostrare i diffeomorfismi perché non ho 
-nemmeno ben capito come siano fatte le sottovarietà
+esercizio B.15: non so come dimostrare la prima formula, non capisco bene come orientarmi con lo spazio dei polinomi, non so se la dimostrazione della sottovarietà vada fatta effettivamente così, non so come dimostrare la dimensione della sottovarietà (non so cosa usare per trovarla--nel senso di carte, condizioni o altro), non so come dimostrare i diffeomorfismi perché non ho nemmeno ben capito come siano fatte le sottovarietà
 
 esercizio B.16: nelle condizioni di SL_n(C) intendeva scrivere det(A) = 1 ?
 
 2.4.5: perché un embedding topologico (e quindi anche differenziale) è iniettivo?
 
-esercizio B.19: scrivere la sottovarietà come zero di funzioni è equivalente a cercare 
-un'applicazione la cui controimmagine dell'origine del codominio sia la sottovarietà?
+esercizio B.19: scrivere la sottovarietà come zero di funzioni è equivalente a cercare un'applicazione la cui controimmagine dell'origine del codominio sia la sottovarietà?
 
-esercizio B.24: sono riuscito a capire che un'immersione iniettiva propria è un'applicazione 
-chiusa e un embedding liscio, ma non so come dimostrarlo; per la seconda parte basta dire che 
-se l'embedding liscio non è chiuso, allora non è proprio; la dimostrazione dovrebbe passare 
-per un concetto che non è presente negli appunti (il concetto di bordo--boundary in inglese-- 
-per una varietà), quindi non sono sicuro che sia la via giusta; vedi preposizione 4.22 di 
+esercizio B.24: sono riuscito a capire che un'immersione iniettiva propria è un'applicazione chiusa e un embedding liscio, ma non so come dimostrarlo; per la seconda parte basta dire che se l'embedding liscio non è chiuso, allora non è proprio; la dimostrazione dovrebbe passare per un concetto che non è presente negli appunti (il concetto di bordo--boundary in inglese-- per una varietà), quindi non sono sicuro che sia la via giusta; vedi preposizione 4.22 di 
 introduction to smooth manifolds di Lee
 
-esercizio B.25: devo dimostrare in qualche modo che sia iniettivo il differenziale del 
-differenziale (differenziale secondo?) dell'inclusione tra la sottovarietà e la sua varietà; 
-non riesco a capire come dimostrare che esista l'inversa sinistra del differenziale secondo 
-dell'inclusione né so bene come usare la condizione f(x)=f(y) => x=y in quanto non riesco 
-a definire le gli elementi e le mappe di TT(M); è possibile che debba usare il teorema della 
-dimensione in quanto il differenziale secondo (come il differenziale normale) è lineare; 
-sono sicuro di dover passare per il fatto che l'inclusione i:T(N)->T(M) è un'immersione
+esercizio B.25: devo dimostrare in qualche modo che sia iniettivo il differenziale del differenziale (differenziale secondo?) dell'inclusione tra la sottovarietà e la sua varietà; non riesco a capire come dimostrare che esista l'inversa sinistra del differenziale secondo dell'inclusione né so bene come usare la condizione f(x)=f(y) => x=y in quanto non riesco a definire le gli elementi e le mappe di TT(M); è possibile che debba usare il teorema della dimensione in quanto il differenziale secondo (come il differenziale normale) è lineare; sono sicuro di dover passare per il fatto che l'inclusione i:T(N)->T(M) è un'immersione
 
-esercizio B.27: non riesco a dimostrare che \rp{3} sia orientabile tramite lo jacobiano dei 
-cambi di carta perché mi esce che il determinante è positivo solo per la metà delle 
-trasformazioni
+esercizio B.27: non riesco a dimostrare che \rp{3} sia orientabile tramite lo jacobiano dei cambi di carta perché mi esce che il determinante è positivo solo per la metà delle trasformazioni
+
+esercizio C.2: non so come dimostrare che una topologia sia inclusa in un'altra topologia e non sono sicuro che le definizioni che ho scritto delle topologie in esame siano corrette; forse posso trovare una base per ognuna delle due topologie e mostrare che la base per uno sia inclusa nella base dell'altra
 

@@ -113,17 +113,14 @@ Siccome le proiezioni e le operazioni dei gruppi $ G $ e $ H $ sono liscie, anch
 
 %
 
-\section{}\label{es3-2}
+\section{Topologie sul toro}\label{es3-2}
 
 \begin{tcolorbox}
 	Siano la proiezione
 	
-	\begin{align}
-		\begin{split}
-			\pi : \R^{2} &\to \S^{1} \times \S^{1}\\
-			(t,s) &\mapsto (e^{2 \pi i t},e^{2 \pi i s})
-		\end{split}
-	\end{align}
+	\map{\pi}
+		{\R^{2}}{\T^{2} = \S^{1} \times \S^{1}}
+		{(t,s)}{(e^{2 \pi i t},e^{2 \pi i s})}
 	
 	l'insieme
 	
@@ -131,7 +128,13 @@ Siccome le proiezioni e le operazioni dei gruppi $ G $ e $ H $ sono liscie, anch
 		L = \{ (t,\alpha t) \in \R^{2} \mid \alpha \in \R \setminus \Q \}
 	\end{equation}
 	
-	e la restrizione di $ \pi $ a $ L $, i.e. $ f = \pi_{|L} : L \to \S^{1} \times \S^{1} $. Siano
+	e la restrizione di $ \pi $ a $ L $, i.e.
+	
+	\begin{equation}
+		f = \eval{\pi}_{L} : L \to \S^{1} \times \S^{1}
+	\end{equation}
+
+	Siano
 	
 	\begin{itemize}
 		\item $ \tau_{f} $ la topologia indotta da $ f $ su $ H = \pi(L) $;
@@ -142,7 +145,17 @@ Siccome le proiezioni e le operazioni dei gruppi $ G $ e $ H $ sono liscie, anch
 	Dimostrare che $ \tau_{s} \subset \tau_{f} $.
 \end{tcolorbox}
 
-qui
+Definiamo le due topologie:
+
+\begin{itemize}
+	\item $ \tau_{s} $: $ W $ è aperto in $ H $ se $ W = U \cap H $ con $ U \subset \S^{1} \times \S^{1} $ aperto;
+	
+	\item $ \tau_{f} $: $ W $ è aperto in $ H $ se $ f^{-1}(W) \subset L $ è aperto in $ L $.
+\end{itemize}
+
+Sappiamo che $ f $ è un'immersione iniettiva\footnote{%
+	Vedi Esempio \ref{ex:embed-torus}.%
+} (non un embedding).
 
 %
 
