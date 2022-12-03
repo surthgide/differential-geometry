@@ -487,7 +487,7 @@ Una tripletta $ (V,\cdot,\norm{}) $ è un'\textit{algebra normata} se $ V $ è u
 
 che lega l'operazione dell'algebra $ \cdot $ e la norma $ \norm{} $.\\
 La tripletta $ (M_{n}(\R),\cdot,\norm{}) $ con $ \cdot $ la moltiplicazione tra matrici e $ \norm{} $ la norma sopra definita per $ M_{n}(\R) $ è un'algebra normata: per verificarlo dobbiamo dimostrare che il prodotto tra matrici e la norma soddisfino la proprietà di submoltiplicatività (in quanto le altre condizioni sono già soddisfatte).\\
-Siano le matrici quadrate $ X = [x_{ij}] $ e $ Y = [y_{ij}] $, utilizzando la diseguaglianza di Cauchy-Schwarz e positività della norma, otteniamo la diseguaglianza
+Siano le matrici quadrate $ X = [x_{ij}] $ e $ Y = [y_{ij}] $, utilizzando la diseguaglianza di Cauchy-Schwarz e la positività della norma, otteniamo la diseguaglianza
 
 \begin{align}
 	\norm{v \cdot w} &\leqslant \norm{v} \norm{w} \\
@@ -640,7 +640,8 @@ Come controesempio dell'implicazione inversa, la serie in $ \R $
 	Consideriamo la successione di serie parziali $ \tilde{s}_{k} \in V $ e $ p,q \in \N $ con $ p > q $. Per ipotesi la serie è assolutamente convergente perciò
 	
 	\begin{equation}
-		\norm{\tilde{s}_{p} - \tilde{s}_{q}} = \norm{ \sum_{n=q+1}^{p} \tilde{s}_{n} } \leqslant \sum_{n=q+1}^{p} \norm{\tilde{s}_{n}} < \varepsilon \qcomma \forall p,q > N_{\varepsilon} \in \N
+		\norm{\tilde{s}_{p} - \tilde{s}_{q}} = \norm{ \sum_{n=q+1}^{p} \tilde{s}_{n} } \leqslant \sum_{n=q+1}^{p} \norm{\tilde{s}_{n}} < \varepsilon %
+		\qcomma \forall p,q > N_{\varepsilon} \in \N
 	\end{equation}
 
 	dove nel secondo passaggio abbiamo utilizzato la subadditività, dunque $ \tilde{s}_{k} $ è di Cauchy. Essendo $ V $ completo, la successione $ \tilde{s}_{k} $ è convergente strettamente dunque anche la serie è convergente.
