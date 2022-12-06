@@ -751,7 +751,7 @@ Valgono le tre seguenti proprietà:
 
 \subsection{Prodotti scalari ed hermitiani}
 
-Nell'algebra $ (\R,\cdot) $, presi due vettori $ v,w \in \R^{n} $, il loro prodotto scalare $ v \cdot w \in \R $ è definito come
+Nell'algebra $ (\R^{n},\cdot) $, presi due vettori $ v,w \in \R^{n} $, il loro prodotto scalare $ v \cdot w \in \R $ è definito come
 
 \begin{equation}
 	v \cdot w = (v^{1},\dots,v^{n}) \cdot (w^{1},\dots,w^{n}) \doteq \sum_{j=1}^{n} v^{j} w^{j}
@@ -764,7 +764,7 @@ Considerando tutti i vettori come matrici con $ n $ righe e una colonna, possiam
 	\bmqty{ v^{1} & \cdots & v^{n} } \bmqty{ w^{1} \\ \vdots \\ w^{n} }
 \end{equation}
 
-Per vettori in campo complesso, i.e. nell'algebra $ (\C,\cdot) $, definiamo il \textit{prodotto hermitiano} $ v \cdot w \in \C $ come
+Per vettori in campo complesso, i.e. nell'algebra $ (\C^{n},\cdot) $, definiamo il \textit{prodotto hermitiano} $ v \cdot w \in \C $ come
 
 \begin{equation}
 	v \cdot w \doteq \sum_{j=1}^{n} v^{j} \bar{w}^{j} = v^{T} \bar{w}
@@ -789,7 +789,7 @@ Il prodotto hermitiano non è bilineare come il prodotto scalare, ma lineare per
 	\begin{cases}
 		(\lambda v_{1} + \mu v_{2}) \cdot w = \lambda (v_{1} \cdot w) + \mu (v_{2} \cdot w) \\
 		v \cdot (\lambda w_{1} + \mu w_{2}) = \bar{\lambda} (v \cdot w_{1}) + \bar{\mu} (v \cdot w_{2})
-	\end{cases}%
+	\end{cases} %
 	\qquad \forall \lambda,\mu \in \C, \, \forall v,w \in \C^{n}
 \end{equation}
 
@@ -810,10 +810,10 @@ Utilizzando come entrate i numeri reali, le matrici ortogonali $ O(n) $ sono def
 In campo complesso, si parla invece di \textit{matrici unitarie}, definite come
 
 \begin{equation}
-	U(n) = \{ A \in M_{n}(\C) \mid A^{*} = I \}
+	U(n) = \{ A \in M_{n}(\C) \mid A^{*} A = I \}
 \end{equation}
 
-dove $ A ^{-1} = A^{*} = \bar{A}^{T} $.\\
+dove $ A^{*} \doteq \bar{A}^{T} = A ^{-1} $.\\
 Analogamente come le matrici ortogonali hanno colonne ortogonali tra loro e di norma unitaria (entrambi rispetto al prodotto scalare), anche le matrici unitarie hanno colonne ortogonali tra loro e di norma unitaria (entrambi rispetto al prodotto hermitiano): svolgendo il prodotto matriciale nella definizione di $ U(n) $
 
 \begin{equation}
@@ -849,7 +849,7 @@ e così per il resto degli elementi nella diagonale, mentre tutti gli altri prod
 	La dimensione di un sottospazio $ W \subset \C^{n} $ in $ \C^{n} $ è doppia rispetto alla dimensione che questo avrebbe sui numeri reali $ \R $, in quanto esiste l'identificazione $ \C^{n} = \R^{2n} $, i.e.
 
 	\begin{equation}
-		\dim_{\C^{n}}(W) = 2 \dim_{\R^{n}}(W)
+		\dim_{\C}(W) = 2 \dim_{\R}(W)
 	\end{equation}
 \end{definition}
 
@@ -866,11 +866,11 @@ Le stesse due matrici sono \textit{unitariamente simili} se la matrice $ S $ del
 \subsection{Altre proprietà}
 
 \begin{definition}
-	Siano $ A,B \in M_{n}(\C) $, allora $ A $ è simile a $ B $ se e solo se esiste un'applicazione lineare $ T : \C^{n} \to \C^{n} $ tali che $ A $ e $ B $ rappresentano $ T $ rispetto a due basi di $ \C^{n} $.
+	Siano $ A,B \in M_{n}(\C) $, allora $ A $ è simile a $ B $ se e solo se esiste un'applicazione lineare $ T : \C^{n} \to \C^{n} $ per la quale $ A $ e $ B $ rappresentino l'immagine di $ T $ rispetto a due basi di $ \C^{n} $.
 \end{definition}
 
 \begin{definition}
-	Siano $ A,B \in M_{n}(\C) $, allora $ A $ è unitariamente simile a $ B $ se e solo se esiste un'applicazione lineare $ T : \C^{n} \to \C^{n} $ tali che $ A $ e $ B $ rappresentano $ T $ rispetto a due basi ortonormali di $ \C^{n} $.
+	Siano $ A,B \in M_{n}(\C) $, allora $ A $ è unitariamente simile a $ B $ se e solo se esiste un'applicazione lineare $ T : \C^{n} \to \C^{n} $ per la quale $ A $ e $ B $ rappresentino l'immagine di $ T $ rispetto a due basi ortonormali di $ \C^{n} $.
 \end{definition}
 
 Questi due risultati derivano dal fatto che, prese due basi $ \mathcal{A} $ e $ \mathcal{B} $ per $ \C^{n} $ con la matrice $ S $ che rappresenta il cambio di base, i.e.
@@ -882,7 +882,7 @@ Questi due risultati derivano dal fatto che, prese due basi $ \mathcal{A} $ e $ 
 	\end{cases}
 \end{equation}
 
-abbiamo che l'applicazione lineare $ T $ applicata a un vettore $ x $ ha due immagini a seconda della base in cui sono scritte
+abbiamo che l'applicazione lineare $ T $ applicata a un vettore $ x $ ha due immagini a seconda della base in cui sono espresse
 
 \begin{align}
 	\begin{split}
@@ -944,20 +944,23 @@ il quale rende le due matrici simili.
 			\begin{split}
 				P_{\lambda}(A) &= \det(A - \lambda I) \\
 				&= \det(S^{-1} B S - \lambda I) \\
+				&= \det(S^{-1} B S - S^{-1} S \lambda I) \\
 				&= \det(S^{-1} B S - S^{-1} \lambda I S) \\
+				&= \det(S^{-1} (B - \lambda I) S) \\
 				&= \det(S^{-1}) \det(B - \lambda I) \det(S) \\
 				&= \det(B - \lambda I) \\
 				&= P_{\lambda}(B)
 			\end{split}
 		\end{align}
-		
+	
+			dove nel settimo passaggio abbiamo usato la proprietà $ \det(S^{-1}) = \det(S)^{-1} $.
 	\end{itemize}
 \end{proof}
 
 \subsection{Teorema di Schur e teorema spettrale}
 
 \begin{theorem}(Teorema di Schur)
-	Data una matrice $ A \in M_{n}(\C) $ esiste una matrice $ U \in U(n) $ tale che
+	Data una matrice $ A \in M_{n}(\C) $, esiste una matrice $ U \in U(n) $ tale che
 	
 	\begin{equation}
 		U^{*} A U = T = %
@@ -971,7 +974,7 @@ il quale rende le due matrici simili.
 	\end{equation}
 
 	con $ T $ matrice triangolare (superiore), i.e. una matrice che ha tutte entrate nulle sotto la diagonale principale ($ K \neq 0 $).\\
-	In altre parole, $ A $ è unitariamente simile a una matrice triangolare (superiore), il che rende $ \lambda_{1},\dots,\lambda_{n} $ gli autovalori di $ A $.
+	In altre parole, una qualsiasi matrice quadrata $ A $ è unitariamente simile a una matrice triangolare (superiore), il che rende gli elementi della diagonale della matrice triangolare $ \lambda_{1},\dots,\lambda_{n} $ gli autovalori di $ A $.
 \end{theorem}
 
 \begin{proof}
@@ -981,16 +984,17 @@ il quale rende le due matrici simili.
 	Siano $ \lambda_{1} \in \C $ un autovalore per $ A $ e $ v_{1} \neq 0 $ il corrispondente autovettore, i.e. $ A v_{1} = \lambda_{1} v_{1} $. Sia lo spazio dei vettori generati da $ v_{1} $
 	
 	\begin{equation}
-		W = \ev{v_{1}}_{\C} = \{ \lambda v_{1} \mid \lambda \in \C \}
+		W = \ev{v_{1}}_{\C} = \{ \lambda v_{1} \mid \lambda \in \C \} \subset \C
 	\end{equation}
 	
-	il quale avrà $ \dim_{\C}(W) = 1 $, consideriamo ora il suo \textit{complemento ortogonale}
+	il quale avrà $ \dim_{\C}(W) = 1 $.\\
+	Consideriamo ora il suo \textit{complemento ortogonale}
 	
 	\begin{equation}
-		W^{\perp} = \{ v\in \C^{n} \mid v \cdot w = 0, \, \forall w \in W \}
+		W^{\perp} = \{ v\in \C^{n} \mid v \cdot w = 0, \, \forall w \in W \} \subset \C^{n-1}
 	\end{equation}
 
-	con $ \dim_{\C}(W^{\perp}) = n-1 $ e la proiezione $ \pi_{W^{\perp}} : \C^{n} \to W^{\perp} $. Consideriamo l'applicazione lineare
+	con $ \dim_{\C}(W^{\perp}) = n-1 $ e la proiezione $ \pi_{W^{\perp}} : \C^{n} \to W^{\perp} $. Consideriamo infine l'applicazione lineare
 	
 	\map{\pi_{W^{\perp}} \circ A}
 		{W^{\perp}}{W^{\perp}}
@@ -1070,7 +1074,8 @@ Una matrice $ A \in M_{n}(\C) $ è detta \textit{normale} se $ A A^{*} = A^{*} A
 	Supponiamo che sia vero per matrici di ordine $ n-1 $ e mostriamolo per matrici di ordine $ n $: riscriviamo la matrice normale triangolare superiore come
 	
 	\begin{equation}
-		T = \bmqty{ \lambda_{1} & B \\ 0 & C } \qcomma %
+		T = \bmqty{ \lambda_{1} & B \\ 0 & C } %
+		\qcomma %
 		\begin{cases}
 			\lambda_{1} \in \C \\
 			B \in M_{1,n-1}(\C) \\
@@ -1145,7 +1150,7 @@ Una matrice $ A \in M_{n}(\C) $ è detta \textit{normale} se $ A A^{*} = A^{*} A
 	Per dimostrare questo corollario, è sufficiente dimostrare che gli autovalori di $ A $ siano reali e dunque anche gli autovettori sono reali: considerando l'uguaglianza
 	
 	\begin{equation}
-		U(n) \cup M_{n}(\R) = O(n)
+		U(n) \cap M_{n}(\R) = O(n)
 	\end{equation}
 
 	il resto della dimostrazione deriva dal teorema spettrale.\\
@@ -1262,7 +1267,7 @@ Consideriamo l'insieme delle \textit{matrici unitarie speciali}:
 \begin{proof}
 	\begin{gather}
 		1 = \det(A) = \det(U^{*} A U) = \prod_{j=1}^{n} e^{i \theta_{j}} = e^{i \sum_{j=1}^{n} \theta_{j}} \\
-		\Downarrow \\
+		\Downarrow \nonumber \\
 		\sum_{j=1}^{n} \theta_{j} = 2 k \pi \qcomma k \in \Z
 	\end{gather}
 \end{proof}
@@ -1270,7 +1275,7 @@ Consideriamo l'insieme delle \textit{matrici unitarie speciali}:
 \subsection{Forma canonica}
 
 \begin{theorem}[Forma canonica ortogonale]
-	Sia una matrice $ A \in O(n) $, i.e. $ A^{T} A = I $, allora esistono una matrice ortogonale $ P $, due numeri naturale $ p,q \in \N $, e $ \theta_{j} \in (0,\pi) $ con $ j=1,\dots,k $ dove $ k = (n-p-q)/2 $ tali che\footnote{%
+	Sia una matrice $ A \in O(n) $, i.e. $ A^{T} A = I $, allora esistono una matrice ortogonale $ P $, tre numeri naturali $ p,q \in \N $ e $ \theta_{j} \in (0,\pi) $ con $ j=1,\dots,k $ dove $ k = (n-p-q)/2 $ tali che\footnote{%
 		Le entrate omesse nelle matrici implicano entrate nulle.%
 	}
 
@@ -1511,7 +1516,7 @@ in quanto
 						} \\
 			%
 			&= \sbmqty{ %
-						C_{1} & \cdots & \cdots & C_{j-1} & C_{j} & C_{j+1} & \cdots & C_{n} %
+						C_{1} & \cdots & C_{j-1} & C_{j} & C_{j+1} & \cdots & C_{n} %
 						} + %
 				\sbmqty{ %
 							0 & \cdots & & & \cdots & & \cdots & 0 \\
@@ -1524,18 +1529,18 @@ in quanto
 							0 & \cdots & & & \cdots & & \cdots & 0 %
 							} %
 				\sbmqty{ %
-						C_{1} & \cdots & \cdots & C_{j-1} & C_{j} & C_{j+1} & \cdots & C_{n} %
+						C_{1} & \cdots & C_{j-1} & C_{j} & C_{j+1} & \cdots & C_{n} %
 						} \\
 			%
 			&= \sbmqty{ %
-						C_{1} & \cdots & \cdots & C_{j-1} & C_{j} & C_{j+1} & \cdots & C_{n} %
+						C_{1} & \cdots & C_{j-1} & C_{j} & C_{j+1} & \cdots & C_{n} %
 						} + %
 				\sbmqty{ %
-						0 & \cdots & \cdots & 0 & b C_{i} & 0 & \cdots & 0 %
+						0 & \cdots & 0 & b \, C_{i} & 0 & \cdots & 0 %
 						} \\
 			%
 			&= \sbmqty{ %
-						C_{1} & \cdots & \cdots & C_{j-1} & C_{j} + b C_{i} & C_{j+1} & \cdots & C_{n} %
+						C_{1} & \cdots & C_{j-1} & C_{j} + b \, C_{i} & C_{j+1} & \cdots & C_{n} %
 						}
 		\end{split}
 	\end{align}
