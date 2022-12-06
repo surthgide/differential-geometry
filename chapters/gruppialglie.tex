@@ -686,16 +686,27 @@ Valgono le tre seguenti proprietà:
 		\begin{split}
 			e^{A + B} &= \sum_{k=0}^{+\infty} \dfrac{1}{k!} (A+B)^{k} \\
 			&= \sum_{k=0}^{+\infty} \dfrac{1}{k!} \left( \sum_{j=0}^{k} \binom{k}{j} A^{k-j} B^{j} \right) \\
-			&= \sum_{k=0}^{+\infty} \dfrac{1}{k!} \left( \sum_{j=0}^{k} \dfrac{k!}{j! (k-j)!} A^{k-j} B^{j} \right) \\
-			&= \sum_{k=0}^{+\infty} \sum_{j=0}^{k} \left( \dfrac{A^{k-j}}{(k-j)!} \right) \left( \dfrac{B^{j}}{j!} \right) \\
-			&= \left( \sum_{k=0}^{+\infty} \dfrac{A^{k}}{k!} \right) \left( \sum_{j=0}^{+\infty} \dfrac{B^{j}}{j!} \right) \\
+			&= \sum_{k=0}^{+\infty} \sum_{j=0}^{k} \dfrac{1}{k!} \dfrac{k!}{(k-j)! \, j!} A^{k-j} B^{j} \\
+			&= \sum_{k=0}^{+\infty} \sum_{j=0}^{k} \dfrac{A^{k-j} B^{j}}{(k-j)! \, j!} \\
+			&= \sum_{m=0}^{+\infty} \sum_{j=0}^{m} \dfrac{A^{m} B^{j}}{m! \, j!} \\
+			&= \left( \sum_{m=0}^{+\infty} \dfrac{A^{m}}{m!} \right) \left( \sum_{j=0}^{+\infty} \dfrac{B^{j}}{j!} \right) \\
 			&= e^{A} e^{B}
 		\end{split}
 	\end{align}
+
+	dove nel secondo passaggio abbiamo usato la commutatività delle matrici, nel quinto abbiamo definito un nuovo indice $ m \doteq k-j $, e nel sesto abbiamo usato il prodotto di Cauchy\footnote{%
+		Il prodotto di Cauchy è definito come la convoluzione discreta di due serie infinite; la sua formula generale è la seguente
+		
+		\begin{equation*}
+			\left( \sum_{i=0}^{+\infty} a^{i} \right) \left( \sum_{j=0}^{+\infty} b^{j} \right) = \sum_{k=0}^{+\infty} c^{k} %
+			\qq{dove} %
+			c^{k} \doteq \sum_{m=0}^{k} a^{m} b^{k-m}
+		\end{equation*}%
+	}.
 \end{proof}
 
 \begin{proof}[Dimostrazione (2)]
-	La matrice $ e^{A} $ è invertibile con inversa, dalla prima proprietà, $ e^{-A} $ in quanto
+	La matrice $ e^{A} $ è invertibile con inversa $ e^{-A} $ (dalla prima proprietà) in quanto
 	
 	\begin{equation}
 		e^{A} e^{-A} = e^{-A} e^{A} = e^{A-A} = e^{0_{n}} = I
