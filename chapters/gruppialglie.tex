@@ -1625,7 +1625,7 @@ in quanto
 
 \subsection{Traccia, determinante ed esponenziale di una matrice}
 
-Le seguenti considerazioni e dimostrazioni valgono indifferentemente se si considera come campo su cui sono definiti gli spazi quello dei numeri reali o quello dei numeri complessi, i.e. $ \K = \R,\C $. Per sintesi, useremo nella trattazione il campo dei reali $ \R $.
+Le seguenti considerazioni e dimostrazioni valgono indifferentemente se si considera come campo su cui sono definiti gli spazi quello dei numeri reali o quello dei numeri complessi, i.e. $ \K = \R,\C $. Per semplicità, useremo nella trattazione il campo dei reali $ \R $.
 
 \begin{definition}
 	Sia un matrice $ X \in M_{n}(\R) $, allora
@@ -1735,17 +1735,19 @@ La traccia di una matrice a entrare reali è un numero reale, i.e. $ \tr(X) \in 
 				}
 	\end{equation}
 	
-	Per calcolare il determinante di $ e^{X} $, utilizziamo Binet e la dimostrazione fatta sopra ottenendo
+	Per calcolare il determinante di $ e^{X} $, utilizziamo Binet e la dimostrazione fatta sopra:
+
+	\begin{align}
+		\begin{split}
+			\det(e^{X}) &= \det(U^{*}) \det(e^{X}) \det(U) \\
+			&= \det(U^{*} e^{X} U) \\
+			&= \det(e^{U^{*} X U}) \\
+			&= e^{\tr(U^{*} X U)} \\
+			&= e^{\tr(X)}
+		\end{split}
+	\end{align}
 	
-	\begin{equation}
-		\det(e^{X}) %
-		= \det(U^{*} e^{X} U) %
-		= \det(e^{U^{*} X U}) %
-		= e^{\tr(U^{*} X U)} %
-		= e^{\tr(X)}
-	\end{equation}
-	
-	nel secondo passaggio abbiamo utilizzato la proprietà $ U^{*} e^{X} U = e^{U^{*} X U} $, che si dimostra come
+	nel terzo passaggio abbiamo utilizzato la proprietà $ U^{*} e^{X} U = e^{U^{*} X U} $, che si dimostra come
 	
 	\begin{equation}
 		e^{U^{*} X U} %
@@ -1846,7 +1848,7 @@ La traccia di una matrice a entrare reali è un numero reale, i.e. $ \tr(X) \in 
 \end{proof}
 
 \begin{corollary}
-	Siano l'applicazione determinante
+	Sia l'applicazione determinante
 	
 	\map{\det}
 		{GL_{n}(\R)}{\R}
@@ -1882,13 +1884,13 @@ La traccia di una matrice a entrare reali è un numero reale, i.e. $ \tr(X) \in 
 	
 	\begin{align}
 		\begin{split}
-			{\det}_{*A}(B) &= \eval{ \dv{t} \det(A e^{t A^{-1} B}) }_{t=0} \\
+			{\det}_{*A}(B) &= \dot{(\det \circ \, c)} (0) \\
+			&= \eval{ \dv{t} \det(A e^{t A^{-1} B}) }_{t=0} \\
 			&= \eval{ \dv{t} \det(A) \det(e^{t A^{-1} B}) }_{t=0} \\
 			&= \det(A) \eval{ \dv{t} \det(e^{t A^{-1} B}) }_{t=0} \\
 			&= \det(A) \eval{ \dv{t} e^{\tr(t A^{-1} B)} }_{t=0} \\
 			&= \det(A) \eval{ \dv{t} e^{t \tr(A^{-1} B)} }_{t=0} \\
 			&= \det(A) \tr(A^{-1} B) \eval{ e^{t \tr(A^{-1} B)} }_{t=0} \\
-			&= \det(A) \tr(A^{-1} B) I\\
 			&= \det(A) \tr(A^{-1} B)
 		\end{split}
 	\end{align}
