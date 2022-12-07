@@ -256,7 +256,7 @@ in quanto $ M_{n}(\R) $ è uno spazio di Banach, quindi completo.
 
 %
 
-\section{}\label{es3-4}
+\section{Esponenziale di somma di matrici}\label{es3-4}
 
 \begin{tcolorbox}
 	Trovare due matrici $ A $ e $ B $ tali che
@@ -266,7 +266,39 @@ in quanto $ M_{n}(\R) $ è uno spazio di Banach, quindi completo.
 	\end{equation}
 \end{tcolorbox}
 
-qui
+Prese due matrici $ A,B \in M_{n}(\K) $ con $ \K = \R, \C $, vale la proprietà
+
+\begin{equation}
+	e^{A+B} = e^{A} e^{B} \qcomma [A,B] = 0
+\end{equation}
+
+Un esempio di matrici che non rispettano questa proprietà può essere:
+
+\sbs{0.5}{%
+			\begin{equation}
+				A = \bmqty{ %
+							0 & 1 \\
+							1 & 0 %
+							}
+			\end{equation}
+			}
+	{0.5}{%
+			\begin{equation}
+				B = \bmqty{ %
+							0 & 1 \\
+							0 & 0 %
+							}
+			\end{equation}
+			}
+
+in quanto
+
+\begin{equation}
+	[A,B] = %
+	\bmqty{ 0 & 1 \\ 1 & 0 } \bmqty{ 0 & 1 \\ 0 & 0 } - \bmqty{ 0 & 1 \\ 0 & 0 }  \bmqty{ 0 & 1 \\ 1 & 0 } %
+	= \bmqty{ -1 & 0 \\ 0 & 1 } %
+	\neq 0
+\end{equation}
 
 %
 
