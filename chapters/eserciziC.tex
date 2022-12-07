@@ -163,23 +163,92 @@ Sappiamo che $ f $ è un'immersione iniettiva\footnote{%
 
 %
 
-\section{}\label{es3-3}
+\section{Esponenziale di matrice}\label{es3-3}
 
 \begin{tcolorbox}
 	Sia la matrice
 	
 	\begin{equation}
-		X = \begin{pmatrix} 0 & 1 \\\\ 1 & 0 \end{pmatrix}
+		X = \bmqty{ %
+					0 & 1 \\
+					1 & 0 %
+					}
 	\end{equation}
 	
 	Dimostrare che
 	
 	\begin{equation}
-		e^{X} = \begin{pmatrix} \cosh(1) & \sinh(1) \\\\ \sinh(1) & \cosh(1) \end{pmatrix}
+		e^{X} = \bmqty{ %
+						\cosh(1) & \sinh(1) \\\\
+						\sinh(1) & \cosh(1) %
+						}
 	\end{equation}
 \end{tcolorbox}
 
-qui
+Possiamo vedere che la matrice $ X $ è idempotente, i.e.
+
+\begin{equation}
+	X^{2} = \bmqty{ %
+					0 & 1 \\
+					1 & 0 %
+					} %
+			\bmqty{ %
+					0 & 1 \\
+					1 & 0 %
+					} %
+	= \bmqty{ %
+				1 & 0 \\
+				0 & 1 %
+				} %
+	= I
+\end{equation}
+
+da cui le relazioni
+
+\begin{equation}
+	\begin{cases}
+		X^{2k} = I \\
+		X^{2k+1} = X
+	\end{cases}
+	\quad k \in \N \cup \{0\}
+\end{equation}
+
+Consideriamo anche le espansioni in serie di Taylor delle seguenti due funzioni iperboliche:\\
+
+\sbs{0.5}{%
+			\begin{equation}
+				\cosh(t) = \sum_{k=0}^{+\infty} \dfrac{t^{2k}}{(2k)!}
+			\end{equation}
+			}
+	{0.5}{%
+			\begin{equation}
+				\sinh(t) = \sum_{k=0}^{+\infty} \dfrac{t^{2k+1}}{(2k+1)!}
+			\end{equation}
+			}
+
+A questo punto, possiamo calcolare l'esponenziale di $ X $ mediante la definizione:
+
+\begin{align}
+	\begin{split}
+		e^{X} &\doteq \sum_{k=0}^{+\infty} \dfrac{X^{k}}{k!} \\\\
+		&= \sum_{k=0}^{+\infty} \left( \dfrac{X^{2k}}{(2k)!} + \dfrac{X^{2k+1}}{(2k+1)!} \right) \\\\
+		&= \sum_{k=0}^{+\infty} \left( \dfrac{(1)^{2k}}{(2k)!} \, I \right) + \sum_{k=0}^{+\infty} \left( \dfrac{(1)^{2k+1}}{(2k+1)!} \, X \right) \\\\
+		&= \sum_{k=0}^{+\infty} \left( \dfrac{(1)^{2k}}{(2k)!} \right) I + \sum_{k=0}^{+\infty} \left( \dfrac{(1)^{2k+1}}{(2k+1)!} \right) X \\\\
+		&= \cosh(1) \, I + \sinh(1) \, X \\\\
+		&= \bmqty{ %
+					\cosh(1) & \sinh(1) \\\\
+					\sinh(1) & \cosh(1) %
+					}
+	\end{split}
+\end{align}
+
+dove nel quarto passaggio abbiamo usato la proprietà delle serie convergenti
+
+\begin{equation}
+	\sum_{n=0}^{+\infty} a s_{n} = a \sum_{n=0}^{+\infty} s_{n}
+\end{equation}
+
+in quanto $ M_{n}(\R) $ è uno spazio di Banach, quindi completo.
 
 %
 
