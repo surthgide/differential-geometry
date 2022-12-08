@@ -306,13 +306,57 @@ in quanto
 
 %
 
-\section{}\label{es3-5}
+\section{Matrici unitarie come insieme compatto}\label{es3-5}
 
 \begin{tcolorbox}
 	Dimostrare che il gruppo unitario $ U(n) $ è compatto per ogni $ n \geqslant 1 $.
 \end{tcolorbox}
 
-qui
+Per dimostrare che $ U(n) \subset GL_{n}(\C) $ sia compatto, è necessario dimostrare che sia chiuso e limitato in $ GL_{n}(\C) $.\\
+È chiuso perché preimmagine di $ I \in GL_{n}(\C) $ tramite l'applicazione continua
+
+\map{F}
+	{GL_{n}(\C)}{GL_{n}(\C)}
+	{A}{A^{*} A}
+
+
+Mentre è limitato in quanto le colonne delle matrici di $ U(n) $ hanno norma unitaria e quindi la somma delle colonne è limitata dalla dimensione n delle matrici.\\
+Svolgendo il prodotto matriciale nella definizione di $ U(n) $
+
+\begin{equation}
+	A^{*} A = %
+	\bmqty{ %
+		\bar{a}_{11} & \bar{a}_{21} & \cdots & \bar{a}_{n1} \\ %
+		\bar{a}_{12} & \bar{a}_{22} & \cdots & \bar{a}_{n2} \\ %
+		\vdots & \vdots & \ddots & \vdots \\ %
+		\bar{a}_{1n} & \bar{a}_{2n} & \cdots & \bar{a}_{nn}
+	}
+	\bmqty{ %
+		a_{11} & a_{12} & \cdots & a_{1n} \\ %
+		a_{21} & a_{22} & \cdots& a_{2n} \\ %
+		\vdots & \vdots & \ddots & \vdots \\ %
+		a_{n1} & a_{n2} & \cdots & a_{nn}
+	}
+\end{equation}
+
+se consideriamo solo la prima entrata della matrice prodotto, otteniamo
+
+\begin{equation}
+	\abs{a_{11}}^{2} + \abs{a_{21}}^{2} + \cdots + \abs{a_{n1}}^{2} = 1
+\end{equation}
+
+e così per il resto degli elementi nella diagonale, mentre tutti gli altri prodotti hermitiani tra il resto delle colonne è nullo.\\
+Questo implica che, considerata la norma per matrici complesse
+
+\map{\norm{}}
+	{M_{n}(\C)}{\R}
+	{X = [x_{ij}]_{i,j=1,\dots,n}}{\left( \sum_{i,j=1}^{n} \abs{x_{ij}}^{2} \right)^{1/2}}
+
+vale per le matrici unitarie
+
+\begin{equation}
+	\norm{A} \leqslant n \qcomma \forall A \in U(n)
+\end{equation}
 
 %
 
