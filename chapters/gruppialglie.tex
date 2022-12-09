@@ -142,7 +142,7 @@ e dunque la restrizione del suo codominio a $ SL_{n}(\R) $ (sottovarietà di $ G
 
 funzione che coincide con l'inversione $ i $ in $ SL_{n}(\R) $, rendendola dunque liscia.
 
-\paragraph{3) Gruppo ortogonale $ O(n) $}
+\paragraph{3) Gruppo ortogonale $ O(n) $}\label{ex:on-group-lie}
 
 Il gruppo delle matrici ortogonali
 
@@ -2089,7 +2089,9 @@ In particolare, per $ n=1 $ si ha l'insieme
 	O(n) = \{ x \in \R \mid x^{2} = 1 \} = \{ \pm 1 \}
 \end{equation}
 
-La dimensione di questo gruppo di Lie è $ \dim(O(n)) = n(n-1)/2 $ e il suo spazio tangente coincide con l'insieme delle matrici simmetriche
+La dimensione di questo gruppo di Lie è $ \dim(O(n)) = n(n-1)/2 $ e il suo spazio tangente coincide con l'insieme delle matrici antisimmetriche\footnote{%
+	Vedi Esempio \ref{ex:on-group-lie}.%
+}
 
 \begin{equation}
 	T_{I}(O(n)) = \{ X \in M_{n}(\R) \mid X^{T} = -X \}
@@ -2137,7 +2139,7 @@ e abbiamo che
 	\end{cases}
 \end{equation}
 
-Per il teorema del valor medio, esiste un $ t_{0} \in [0,1] $ tale che $ \det(c(t_{0})) = 0 $, ma questo è assurdo in quanto $ c(t) \in O(n) $ e dunque $ O(n) $ non è connesso.\\
+Per il teorema del valore medio, esiste un $ t_{0} \in [0,1] $ tale che $ \det(c(t_{0})) = 0 $, ma questo è assurdo in quanto $ c(t) \in O(n) $ e dunque $ O(n) $ non è connesso.\\
 Verifichiamo ora che il sottoinsieme $ SO(n) $ sia connesso (per archi) tramite la forma canonica ortogonale:
 
 \begin{equation}
@@ -2234,7 +2236,7 @@ un elemento di $ SO(n) $ potrebbe essere unito a un elemento $ A \in M $ con $ \
 	\end{cases}
 \end{equation}
 
-Questo è assurdo, per il teorema del valor medio, perché il determinante di $ \det(c(t)) \neq 0 $ ma $ c $ è un'applicazione continua che passerebbe da $ \det(c(0)) = 1 $ a $ \det(c(1)) = -1 $.\\
+Questo è assurdo, per il teorema del valore medio, perché il determinante di $ \det(c(t)) \neq 0 $ ma $ c $ è un'applicazione continua che passerebbe da $ \det(c(0)) = 1 $ a $ \det(c(1)) = -1 $.\\
 Analogamente, l'insieme delle matrici con determinante pari a $ -1 $, i.e. $ S^{-}(n) $, è l'altra componente connessa di $ O(n) $, per cui vale
 
 \begin{equation}
@@ -2266,11 +2268,12 @@ Qualunque aperto di una varietà differenziabile è una sottovarietà\footnote{%
 	Vedi Osservazione \ref{subvar-open}.%
 }, dunque $ SO(n) $ è una sottovarietà di $ O(n) $ e, per questo, è anche un sottogruppo di Lie embedded. La dimensione e lo spazio tangente di un aperto di una varietà sono gli stessi di quelli della varietà\footnote{%
 	Vedi Esercizio \ref{es3-6}.%
-}, perciò $ \dim(SO(n)) = n(n-1)/2 $ e
+}, perciò
 
-\begin{equation}
+\begin{gather}
+	\dim(SO(n)) = n(n-1)/2 \\
 	T_{I}(SO(n)) = T_{I}(O(n)) = \{ X \in M_{n}(\R) \mid X^{T} = -X \}
-\end{equation}
+\end{gather}
 
 Essendo chiuso e limitato (o, equivalentemente, chiuso in un compatto, i.e. $ O(n) $), $ SO(n) $ è compatto.\\
 Per piccoli valori di $ n $, abbiamo che:
