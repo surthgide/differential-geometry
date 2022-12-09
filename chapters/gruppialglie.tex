@@ -1907,7 +1907,13 @@ Alcuni gruppi di Lie sono $ SL_{n}(\K) $, $ O(n) $, $ U(n) $ e $ SU(n) $: in que
 
 \subsection{$ SL_{n}(\R) $ come sottogruppo di Lie di $ GL_{n}(\R) $}\label{SL-sublie}
 
-Il gruppo di Lie $ SL_{n}(\R) \subset GL_{n}(\R) $ è un sottogruppo di Lie di $ GL_{n}(\R) $ di dimensione $ \dim(SL_{n}(\R)) = n^{2} - 1 $ con spazio tangente
+Il gruppo di Lie $ SL_{n}(\R) \subset GL_{n}(\R) $ è un sottogruppo di Lie di $ GL_{n}(\R) $ di dimensione
+
+\begin{equation}
+	\dim(SL_{n}(\R)) = n^{2} - 1
+\end{equation}
+
+con spazio tangente alla matrice unità
 
 \begin{equation}
 	T_{I}(SL_{n}(\R)) = \{ X \in M_{n}(\R) \mid \tr(X) = 0 \}
@@ -1967,7 +1973,7 @@ da cui lo spazio tangente a $ SL_{n}(\R) $
 	= \{ X \in M_{n}(\R) = T_{A}(GL_{n}(\R)) \mid \tr(X) = 0 \}
 \end{equation}
 
-il quale ha dimensione $ n^{2} - 1 $ (esattamente come $ SL_{n}(\R) $) in quanto le sue entrate sono vincolate dalla condizione di avere traccia nulla. Nel caso in cui lo spazio tangente fosse calcolato in un altro punto
+il quale ha dimensione $ n^{2} - 1 $ (esattamente come $ SL_{n}(\R) $), in quanto le sue entrate sono vincolate dall'unica condizione di avere traccia nulla. Nel caso in cui lo spazio tangente fosse calcolato in un altro punto
 
 \begin{equation}
 	T_{A}(SL_{n}(\R)) = A \, T_{I}(SL_{n}(\R))
@@ -1991,11 +1997,12 @@ Per uno spazio localmente euclideo (come $ SL_{n}(\R) $ in quanto varietà), val
 
 \begin{equation}
 	A = \prod_{k=1}^{s} M_{a_{k}}(i_{k},j_{k}) %
-	= \prod_{k=1}^{s} (I + a_{k} E_{i_{k} j_{k}})
+	= \prod_{k=1}^{s} (I + a_{k} E_{i_{k} j_{k}}) %
+	\qcomma \forall A \in SL_{n}(\R)
 \end{equation}
 
 con $ E_{ij} $ la matrice che ha tutte entrate nulle tranne per quella nella riga $ i $-esima e colonna $ j $-esima dove è presente 1.\\
-Sia la curva continua
+Sia la curva
 
 \map{c}
 	{[0,1]}{SL_{n}(\R)}
