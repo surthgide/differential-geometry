@@ -2060,9 +2060,9 @@ Il gruppo delle matrici ortogonali
 	O(n) = \{ A \in GL_{n}(\R) \mid A^{T} A = I \}
 \end{equation}
 
-è un sottogruppo di Lie embedded di $ GL_{n}(\R) $.\\
+è un sottogruppo di Lie embedded di $ GL_{n}(\R) $, in quanto sottogruppo algebrico e sottovarietà di $ GL_{n}(\R) $.\\
 È compatto in quanto chiuso e limitato in $ GL_{n}(\R) $: chiuso perché preimmagine di $ I \in \VR_{f} $ tramite l'applicazione continua
-	
+
 \map{f}
 	{GL_{n}(\R)}{S(n)}
 	{A}{A^{T} A}
@@ -2076,11 +2076,28 @@ Non è connesso per $ n \geqslant 1 $, ma costituito da due componenti connesse
 
 dove
 
+\begin{gather}
+	SO(n) = \{ A \in O(n) \mid \det(A) = 1 \} \\
+	S^{-}(n) = \{ A \in O(n) \mid \det(A) = -1 \}
+\end{gather}
+
+Questo perché, siccome
+
 \begin{equation}
-	\begin{cases}
-		SO(n) = \{ A \in O(n) \mid \det(A) = 1 \}\\
-		S^{-}(n) = \{ A \in O(n) \mid \det(A) = -1 \}
-	\end{cases}
+	\det(A^{T}) = \det(A) \qcomma \forall A \in M_{n}(\K)
+\end{equation}
+
+abbiamo che
+
+\begin{equation}
+	\begin{aligned}
+		1 &= \det(I) \\
+		&= \det(A^{T} A) \\
+		&= \det(A^{T}) \det(A) \\
+		&= (\det(A))^{2} \\
+	\end{aligned} %
+	\implies %
+	\abs{\det(A)} = 1 \qcomma \forall A \in O(n)
 \end{equation}
 
 In particolare, per $ n=1 $ si ha l'insieme
@@ -2089,7 +2106,13 @@ In particolare, per $ n=1 $ si ha l'insieme
 	O(n) = \{ x \in \R \mid x^{2} = 1 \} = \{ \pm 1 \}
 \end{equation}
 
-La dimensione di questo gruppo di Lie è $ \dim(O(n)) = n(n-1)/2 $ e il suo spazio tangente coincide con l'insieme delle matrici antisimmetriche\footnote{%
+La dimensione di questo gruppo di Lie è
+
+\begin{equation}
+	\dim(O(n)) = \dfrac{n(n-1)}{2}
+\end{equation}
+
+e il suo spazio tangente coincide con l'insieme delle matrici antisimmetriche\footnote{%
 	Vedi Esempio \ref{ex:on-group-lie}.%
 }
 
@@ -2157,7 +2180,7 @@ Verifichiamo ora che il sottoinsieme $ SO(n) $ sia connesso (per archi) tramite 
 			}
 \end{equation}
 
-con $ p,q,k \in \N $ e $ \theta_{j} \in (0,\pi) $ dove $ k = (n-p-q)/2 $ e $ j=1,\dots,k $, definendo $ R_{j}(\theta_{j}) $ come
+con $ p,q,k \in \N $ e $ \theta_{j} \in (0,\pi) $ dove $ j=1,\dots,k $ e $ k = (n-p-q)/2 $, definendo $ R_{j}(\theta_{j}) $ come
 
 \begin{equation}
 	R_{j}(\theta_{j}) = %
@@ -2167,7 +2190,7 @@ con $ p,q,k \in \N $ e $ \theta_{j} \in (0,\pi) $ dove $ k = (n-p-q)/2 $ e $ j=1
 			}
 \end{equation}
 
-Siccome il teorema vale per $ O(n) $, la condizione $ A \in SO(n) $ implica anche che $ \det(P^{T} A P) = 1 $ e quindi che $ \det(-I_{q}) = 1 $ in quanto $ \det(I_{p}) = \det(R_{j}) = 1 $, i.e. $ q $ deve essere pari. Consideriamo la curva continua (arco)
+Siccome il teorema del valore medio vale per $ O(n) $, la condizione $ A \in SO(n) $ implica anche che $ \det(P^{T} A P) = 1 $ e quindi che $ \det(-I_{q}) = 1 $ in quanto $ \det(I_{p}) = \det(R_{j}) = 1 $, i.e. $ q $ deve essere pari. Consideriamo la curva continua (arco)
 
 \map{c}
 	{[0,1]}{SO(n)}
@@ -2193,7 +2216,7 @@ con $ q $ pari, per cui vale
 	\end{cases}
 \end{equation}
 
-Considerando ora la curva
+Considerando ora la curva`continua
 
 \map{g \doteq P \, c \, P^{T}}%
 	{[0,1]}{SO(n)}%
@@ -2220,7 +2243,7 @@ per cui vale
 \end{equation}
 
 Abbiamo dunque costruito un arco che collega qualsiasi matrice di $ SO(n) $ alla matrice identità, dunque lo spazio è connesso (per archi).\\
-L'insieme $ SO(n) $ è anche una componente connessa di $ O(n) $ perché se esistesse un insieme connesso $ M $ tale che
+L'insieme $ SO(n) $ è una componente connessa di $ O(n) $ anche perché se esistesse un insieme connesso $ M $ tale che
 
 \begin{equation}
 	SO(n) \subsetneq M \subset O(n)
@@ -2250,7 +2273,7 @@ Consideriamo le due seguenti proposizioni:
 \end{definition}
 
 \begin{proof}
-	La chiusura $ \bar{C} $ di una componente connessa $ C $ è ancora connessa e anche chiusa, dunque $ \bar{C} \equiv C $, perciò $ C $ è chiuso.
+	La chiusura $ \bar{C} $ di una componente connessa $ C $ è ancora connessa e anche chiusa, dunque $ \bar{C} \equiv C $, perciò $ C $ è chiusa.
 \end{proof}
 
 \begin{definition}
@@ -2271,11 +2294,13 @@ Qualunque aperto di una varietà differenziabile è una sottovarietà\footnote{%
 }, perciò
 
 \begin{gather}
-	\dim(SO(n)) = n(n-1)/2 \\
+	\dim(SO(n)) = \dfrac{n(n-1)}{2} \\
+	\nonumber \\
 	T_{I}(SO(n)) = T_{I}(O(n)) = \{ X \in M_{n}(\R) \mid X^{T} = -X \}
 \end{gather}
 
-Essendo chiuso e limitato (o, equivalentemente, chiuso in un compatto, i.e. $ O(n) $), $ SO(n) $ è compatto.\\
+Essendo chiuso e limitato (o, equivalentemente, chiuso nel compatto $ O(n) $), $ SO(n) $ è compatto.\\
+Gli stessi ragionamenti fatti fin'ora sono applicabili all'altra componente connessa $ S^{-}(n) $ di $ O(n) $.\\
 Per piccoli valori di $ n $, abbiamo che:
 
 \begin{itemize}
