@@ -388,13 +388,100 @@ qui
 
 %
 
-\section{}\label{BONUS3-1}
+\section{Diffeomorfismo $ SO(2) \simeq \S^{1} $}\label{BONUS3-1}
 
 \begin{tcolorbox}
 	Verificare che $ SO(2) $ sia diffeomorfo a $ \S^{1} $.
 \end{tcolorbox}
 
-qui
+Dalle definizioni degli spazi in esame, possiamo derivare le seguenti definizioni alternative:
+
+\begin{align}
+	\begin{split}
+		SO(2) &= \{ X \in M_{2}(\R) \mid X^{T} X = I \, \wedge \, \det(X) = 1 \} \subset O(2) \subset GL_{2}(\R) \subset M_{2}(\R) \\
+		&= \left\{ \bmqty{ a & b \\ -b & a} \in M_{2}(\R) \st a^{2} + b^{2} = 1 \right\} \\
+		&= \left\{ \bmqty{ \cos(\theta) & \sin(\theta) \\ -\sin(\theta) & \cos(\theta) } \in M_{2}(\R) \st \theta \in [0,2\pi) \subset \R \right\}
+	\end{split}
+\end{align}
+
+\begin{align}
+	\begin{split}
+		\S^{1} &= \{ (x,y) \in \R^{2} \mid x^{2} + y^{2} = 1 \} \subset \R^{2} \\
+		&= \{ z \in \C \mid \abs{z} = 1 \} \subset \C = \R^{2} \\
+		&= \{ e^{i \theta} \in \C \mid \theta \in [0,2\pi) \subset \R \}
+	\end{split}
+\end{align}
+
+Consideriamo ora l'applicazione
+
+\map{\phi}
+	{\S^{1}}{SO(2)}
+	{e^{i \theta}}{\bmqty{ \cos(\theta) & \sin(\theta) \\ -\sin(\theta) & \cos(\theta) }}
+
+la quale è liscia in quanto composizione delle applicazioni lisce $ \phi = h \circ g \circ f $ definite come:
+
+\map{f}
+	{\S^{1}}{\R^{2}}
+	{e^{i \theta}}{(\cos(\theta), \sin(\theta))}
+
+\map{g}
+	{\R^{2}}{\R^{4}}
+	{(\cos(\theta), \sin(\theta))}{(\cos(\theta), \sin(\theta), -\sin(\theta), \cos(\theta))}
+
+\map{h}
+	{\R^{4}}{SO(2)}
+	{(\cos(\theta), \sin(\theta), -\sin(\theta), \cos(\theta))}
+	{\bmqty{ \cos(\theta) & \sin(\theta) \\ -\sin(\theta) & \cos(\theta) }}
+
+A questo punto, definiamo le applicazioni
+
+\sbs{0.5}{%
+			\map{\psi}
+				{M_{2}(\R)}{\S^{1}}
+				{\bmqty{ a & b \\ c & d }}{a + i b}
+			}
+	{0.5}{%
+			\map{i}
+				{SO(2)}{M_{2}(\R)}
+				{A}{A}
+			}
+
+le quali sono lisce perché rispettivamente $ \psi $ è lineare, e valgono le condizioni\footnote{%
+	Vedi Proposizione \ref{prop:subman-incl-immersion}.%
+}
+
+\begin{equation}
+	SO(2) \subset M_{2}(\R) \text{ sottovarietà\footnotemark} %
+	\iff %
+	i \text{ immersione} %
+	\implies %
+	i \in C^{\infty}(SO(2))
+\end{equation}
+\footnotetext{%
+	L'insieme $ SO(n) $ è aperto in $ O(n) $ (vedi Sottosezione \ref{ssec:o-n-subgroup-lie-glnr}), che è sottovarietà di $ GL_{n}(\R) $, il quale a sua volta è aperto in $ M_{n}(\R) $: questo rende $ SO(n) $ sottovarietà di $ M_{n}(\R) $.%
+}
+
+Se componiamo le applicazioni appena definite, otteniamo
+
+\map{\phi^{-1} \doteq \psi \circ i = \eval{\psi}_{SO(2)}}
+	{SO(2)}{\S^{1}}
+	{\bmqty{ \cos(\theta) & \sin(\theta) \\ -\sin(\theta) & \cos(\theta) }}
+	{\cos(\theta) + i \sin(\theta) = e^{i \theta}}
+
+la quale è liscia perché composizione di applicazioni lisce e inoltre è inversa di $ \phi $. Avendo trovato un'applicazione liscia, invertibile, e con inversa liscia tra i due spazi, abbiamo dimostrato che i due sono diffeomorfi, i.e.
+
+\begin{equation}
+	\begin{cases}
+		\phi \in C^{\infty}(\S^{1}) \\\\
+		\begin{cases}
+			\phi \circ \phi^{-1} = \id_{\S^{1}} \\
+			\phi^{-1} \circ \phi = \id_{SO(2)}
+		\end{cases} \\\\
+		\phi^{-1} \in C^{\infty}(SO(2))
+	\end{cases}
+	\implies %
+	SO(2) \simeq \S^{1}
+\end{equation}
 
 %
 
