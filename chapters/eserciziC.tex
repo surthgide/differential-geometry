@@ -364,23 +364,92 @@ vale per le matrici unitarie
 
 %
 
-\section{}\label{es3-6}
+\section{Proprietà componente connessa $ G_{0} $ di un gruppo di Lie}\label{es3-6}
 
 \begin{tcolorbox}
 	Siano $ G $ un gruppo di Lie e $ G_{0} $ la componente connessa di $ G $ che contiene $ e $ (elemento neutro di $ G $). Se $ \mu $ e $ i $ denotano rispettivamente la moltiplicazione e l'inversione in $ G $, provare che:
 	
 	\begin{enumerate}
-		\item $ \mu(\{x\} \times G_{0}) \subset G_{0} $ per $ \forall x \in G $;
+		\item $ \mu(\{g\} \times G_{0}) \subset G_{0} $ per qualsiasi $ g \in G_{0} $;
 		
 		\item $ i(G_{0}) \subset G_{0} $;
 		
 		\item $ G_{0} $ è un sottoinsieme aperto di $ G $;
 		
-		\item $ G_{0} $ è un sottogruppo di Lie di $ G $
+		\item $ G_{0} $ è un sottogruppo di Lie di $ G $.
 	\end{enumerate}
 \end{tcolorbox}
 
-qui
+\paragraph{1)}
+
+Considerando un elemento $ g \in G $ e la traslazione a sinistra
+
+\map{L_{g}}
+	{G}{G}
+	{h}{g h}
+
+possiamo scrivere
+
+\begin{equation}
+	L_{g}(G_{0}) = \mu(\{g\} \times G_{0})
+\end{equation}
+
+Sappiamo che la traslazione a sinistra è un diffeomorfismo\footnote{%
+	Vedi Sezione \ref{sec:lie-groups}.%
+}, dunque anche continua: prendendo un qualunque elemento $ g \in G_{0} $, questo è collegato all'identità tramite
+
+\begin{equation}
+	L_{g}(e) = e g = g \in G_{0} \qcomma \forall g \in G_{0}
+\end{equation}
+
+Questo dimostra che $ L_{g}(G_{0}) $ sia connesso (per archi) e quindi che
+
+\begin{equation}
+	L_{g}(G_{0}) = \mu(\{g\} \times G_{0}) \subset G_{0} \qcomma \forall g \in G_{0}
+\end{equation}
+
+in quanto $ G_{0} $ è componente connessa di $ G $.\\
+L'ultima condizione può essere anche scritta come $ \mu(G_{0} \times G_{0}) \subset G_{0} $.
+
+\paragraph{2)}
+
+Essendo l'inversione $ i : G \to G $ un omeomorfismo (bigezione continua con inversa continua), abbiamo che $ i(G_{0}) $ è connesso. Inoltre, abbiamo che l'immagine di $ G_{0} $ tramite l'inversione contiene l'elemento neutro, i.e.
+
+\begin{equation}
+	i(G_{0}) \ni e \, \because \, i(e) = e
+\end{equation}
+
+A questo punto, siccome $ i(G_{0}) $ è connesso, contiene $ e \in G_{0} $ e $ G_{0} $ è una componente connessa di $ G $, possiamo scrivere $ i(G_{0}) \subset G_{0} $.
+
+\paragraph{3)}
+
+Vedi Proposizione \ref{prop:conn-comp-open}, poiché $ G $ è localmente euclideo in quanto varietà differenziabile.
+
+\paragraph{4)}
+
+Siccome per il punto precedente, $ G_{0} \subset G $ è aperto in $ G $, la componente connessa $ G_{0} $ è una sottovarietà di $ G $. Tramite la Proposizione \ref{prop:lie-group-cond}, è necessario dunque mostrare che $ G_{0} < G $ perché $ G_{0} $ sia sottogruppo di Lie di $ G $: questo è immediatamente verificato dai primi due punti, i.e.
+
+\begin{equation}
+	\begin{cases}
+		\mu(G_{0} \times G_{0}) \subset G_{0} \\
+		i(G_{0}) \subset G_{0}
+	\end{cases} %
+	\implies %
+	G_{0} < G
+\end{equation}
+
+dove moltiplicazione e inversione di $ G $ inducono le operazioni su $ G_{0} $:
+
+\sbs{0.5}{%
+			\map{\mu_{0}}
+				{G_{0} \times G_{0}}{G_{0}}
+				{(g,h)}{g h}
+			}
+	{0.5}{%
+			\map{i_{0}}
+				{G_{0}}{G_{0}}
+				{g}{g^{-1}}
+			}
 
 %
 
