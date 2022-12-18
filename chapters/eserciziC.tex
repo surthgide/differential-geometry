@@ -558,13 +558,45 @@ la quale è liscia perché composizione di applicazioni lisce e inoltre è inver
 
 %
 
-\section{}\label{BONUS3-2}
+\section{Diffeomorfismo $ SU(2) \simeq \S^{3} $}\label{BONUS3-2}
 
 \begin{tcolorbox}
 	Verificare che $ SU(2) $ sia diffeomorfo a $ \S^{3} $.
 \end{tcolorbox}
 
-qui
+Dalle definizioni degli spazi in esame, possiamo derivare le seguenti definizioni alternative:
+
+\begin{align}
+	\begin{split}
+		SU(2) &= \{ A \in M_{2}(\C) \mid A^{*} A = I \, \wedge \, \det(A) = 1 \} \subset U(2) \subset GL_{2}(\C) \subset M_{2}(\C) \\
+		&= \left\{ \bmqty{ \alpha & - \bar{\beta} \\ \beta & \bar{\alpha} } \in M_{2}(\C) \st \alpha, \beta \in \C^{2}, \, \det(A) = \abs{\alpha}^{2} + \abs{\beta}^{2} = 1 \right\}
+	\end{split}
+\end{align}
+
+\begin{align}
+	\begin{split}
+		\S^{1} &= \{ (a,b,c,d) \in \R^{4} \mid a^{2} + b^{2} + c^{2} + d^{2} = 1 \} \subset \R^{4} \\
+		&= \{ (\alpha, \beta) \in \C^{2} \mid \abs{\alpha}^{2} + \abs{\beta}^{2} = 1 \} \subset \C^{2} = \R^{4}
+	\end{split}
+\end{align}
+
+dove, per legare la prima definizione di $ \S^{3} $ alla seconda, si può considerare l'identificazione
+
+\begin{equation}
+	\begin{cases}
+		\alpha = a + i b \\
+		\beta = c + i d
+	\end{cases} %
+	\qquad a,b,c,d \in \R
+\end{equation}
+
+Analogamente all'esercizio precedente, possiamo considerare l'applicazione liscia, invertibile e con inversa liscia:
+
+\map{\phi}
+	{\S^{3}}{SU(2)}
+	{(\alpha, \beta)}{\bmqty{ \alpha & - \bar{\beta} \\ \beta & \bar{\alpha} }}
+
+Questa rende dunque i due spazi diffeomorfi, i.e. $ SU(2) \simeq \S^{3} $.
 
 %
 
