@@ -816,7 +816,7 @@ In campo complesso, si parla invece di \textit{matrici unitarie}, definite come
 	U(n) = \{ A \in M_{n}(\C) \mid A^{*} A = I \}
 \end{equation}
 
-dove $ A^{*} \doteq \bar{A}^{T} = A ^{-1} $.\\
+dove $ A^{*} \doteq \bar{A}^{T} \equiv A ^{-1} $.\\
 Analogamente come le matrici ortogonali hanno colonne ortogonali tra loro e di norma unitaria (entrambi rispetto al prodotto scalare), anche le matrici unitarie hanno colonne ortogonali tra loro e di norma unitaria (entrambi rispetto al prodotto hermitiano): svolgendo il prodotto matriciale nella definizione di $ U(n) $
 
 \begin{equation}
@@ -2321,7 +2321,13 @@ L'insieme delle matrici unitarie
 	U(n) = \{ A \in GL_{n}(\C) \mid A^{*} A = I \}
 \end{equation}
 
-dove $ A^{*} = \bar{A}^{T} $, è un sottogruppo di Lie embedded di $ GL_{n}(\C) $ di dimensione $ \dim_{\R}(U(n)) = n^{2} $ con spazio tangente l'insieme delle matrici antihermitiane
+dove $ A^{*} \doteq \bar{A}^{T} \equiv A^{-1} $, è un sottogruppo di Lie embedded di $ GL_{n}(\C) $ di dimensione
+
+\begin{equation}
+	\dim_{\R}(U(n)) = n^{2}
+\end{equation}
+
+con spazio tangente l'insieme delle matrici antihermitiane
 
 \begin{equation}
 	T_{I}(U(n)) = \{ X \in M_{n}(\C) \mid X^{*} = -X \}
@@ -2340,7 +2346,7 @@ dove il codominio è l'insieme delle matrici hermitiane
 	H(n) = \{ B \in M_{n}(\C) \mid B^{*} = B \}
 \end{equation}
 
-Abbiamo che $ U(n) = f^{-1}(I) $, dunque dobbiamo verificare che $ I \in \VR_{f} $ per poter usare il teorema della preimmagine di un valore regolare. Prendiamo quindi differenziale $ f_{*A}(B) $ con $ A \in GL_{n}(\C) $ e $ B \in T_{A}(GL_{n}(\C)) = M_{n}(\C) $ e verifichiamo che sia suriettiva nella restrizione a matrici unitarie: presa una curva
+Abbiamo che $ U(n) = f^{-1}(I) $, dunque dobbiamo verificare che $ I \in \VR_{f} $ per poter usare il teorema della preimmagine di un valore regolare. Prendiamo quindi differenziale $ f_{*A}(B) $ con $ A \in GL_{n}(\C) $ e $ B \in T_{A}(GL_{n}(\C)) = M_{n}(\C) $ e verifichiamo che sia suriettivo nella restrizione a matrici unitarie: presa una curva liscia $ c $ tale che
 
 \begin{equation}
 	\begin{cases}
@@ -2357,7 +2363,7 @@ possiamo scrivere
 		f_{*A}(B) &= \eval{ \dv{t} (f \circ c(t)) }_{t=0} \\
 		&= \eval{ \dv{t} f(c(t)) }_{t=0} \\
 		&= \eval{ \dv{t} (c(t)^{*} c(t)) }_{t=0} \\
-		&= \eval{ \dot{c}(t)^{*} c(t) + c(t)^{*} \dot{c}(t) }_{t=0} \\
+		&= \dot{c}(0)^{*} c(0) + c(0)^{*} \dot{c}(0) \\
 		&= B^{*} A + A^{*} B
 	\end{split}
 \end{align}
@@ -2388,7 +2394,9 @@ cioè $ f_{*A} $ è suriettiva per $ A \in U(n) $: questo si verifica per $ B = 
 \end{align}
 
 in quanto $ C \in H(n) $, perciò $ I \in \VR_{f} $ e dunque $ U(n) $ è una sottovarietà di $ GL_{n}(\C) $.\\
-La dimensione di $ U(n) $ deriva dal teorema della preimmagine
+La dimensione di $ U(n) $ deriva dal teorema della preimmagine\footnote{%
+	La dimensione di $ H(n) $ deriva dal fatto che gli $ n $ elementi della diagonale sono reali mentre quelli sopra dalla diagonale determinano anche quelli sotto e sono complessi, da cui il termine $ 2 (n(n-1)/2) $.%
+}
 
 \begin{equation}
 	\dim_{\R}(U(n)) = \dim_{\R}(GL_{n}(\C)) - \dim_{\R}(H(n)) %
@@ -2397,7 +2405,6 @@ La dimensione di $ U(n) $ deriva dal teorema della preimmagine
 	= n^{2}
 \end{equation}
 
-dove la dimensione di $ H(n) $ deriva dal fatto che gli $ n $ elementi della diagonale sono reali mentre quelli sopra dalla diagonale determinano anche quelli sotto e sono complessi (da cui $ 2 (n(n-1)/2) $).\\
 Sempre dal teorema della preimmagine, lo spazio tangente di $ U(n) $ è
 
 \begin{equation}
