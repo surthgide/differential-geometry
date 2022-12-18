@@ -368,7 +368,7 @@ Se $ H < G $ è un  sottogruppo algebrico e $ H \subset G $ è una sottovarietà
 %
 Ad esempio, $ SL_{n}(\R) $ e $ O(n) $ sono sottogruppi di Lie embedded di $ GL_{n}(\R) $, perché sottovarietà di quest'ultimo.
 
-\begin{theorem}\label{thm:liesub-var}
+\begin{theorem}[Cartan]\label{thm:liesub-var}
 	Siano $ G $ e $ H $ varietà differenziabili, se $ H < G $ sottogruppo algebrico e $ H $ è chiuso in $ G $ (come sottospazio topologico) allora $ H $ è un sottogruppo di Lie embedded di $ G $.
 \end{theorem}
 
@@ -918,7 +918,7 @@ il quale rende le due matrici simili.
 	Siano $ A,B \in M_{n}(\C) $, allora "$ A $ è (unitariamente) simile a $ B $" è una relazione di equivalenza in $ M_{n}(\C) $, i.e. $ A \sim B $.
 \end{definition}
 
-\begin{definition}
+\begin{definition}\label{prop:similar-matrix-properties}
 	Siano $ A,B \in M_{n}(\C) $, se $ A \sim B $ allora $ A $ e $ B $ hanno stessi traccia, rango, determinante e polinomio caratteristico.
 \end{definition}
 
@@ -1192,7 +1192,7 @@ Una matrice $ A \in M_{n}(\C) $ è detta \textit{normale} se $ A A^{*} = A^{*} A
 	Ricordiamo che una matrice normale è sempre diagonalizzabile e una matrice è diagonalizzabile se e solo se la molteplicità algebrica dei suoi autovalori coincide con quella geometrica.
 \end{proof}
 
-\begin{corollary}[3]
+\begin{corollary}[3]\label{cor:unit-matrix-similar}
 	Sia $ A \in U(n) $, i.e. $ A^{*} A = I $, allora esiste una matrice unitaria $ U \in U(n) $ tale che
 	
 	\begin{equation}
@@ -1850,7 +1850,7 @@ La traccia di una matrice a entrare reali è un numero reale, i.e. $ \tr(X) \in 
 	\end{equation}
 \end{proof}
 
-\begin{corollary}
+\begin{corollary}\label{cor:det-diff}
 	Sia l'applicazione determinante
 	
 	\map{\det}
@@ -2454,26 +2454,56 @@ Esiste dunque un arco che connette ogni matrice unitaria alla matrice identità,
 
 \subsection{$ SU(n) $ come sottogruppo di Lie di $ U(n) $}
 
-L'insieme delle matrici
+L'insieme delle matrici unitarie speciali
 
-\begin{equation}
-	SU(n) = \{ A \in GL_{n}(\C) \mid A^{*} A = I \wedge \det(A) = 1 \}
-\end{equation}
+\begin{align}
+	\begin{split}
+		SU(n) &= \{ A \in GL_{n}(\C) \mid A^{*} A = I \wedge \det(A) = 1 \} \\
+		&= \{ A \in U(n) \mid \det(A) = 1 \}
+	\end{split}
+\end{align}
 
 è un sottogruppo di Lie embedded di $ U(n) $ di dimensione $ \dim_{\R}(SU(n)) = n^{2} - 1 $ con spazio tangente l'insieme delle matrici antihermitiane a traccia nulla
 
-\begin{equation}
-	T_{I}(U(n)) = \{ X \in M_{n}(\C) \mid X^{*} = -X \wedge \tr(X) = 0 \}
-\end{equation}
+\begin{align}
+	\begin{split}
+		T_{I}(SU(n)) &= \{ X \in M_{n}(\C) \mid X^{*} = -X \wedge \tr(X) = 0 \} \\
+		&= \{ X \in T_{I}(U(n)) \mid \tr(X) = 0 \}
+	\end{split}
+\end{align}
 
 L'insieme $ SU(n) $ è anche compatto e connesso.\\
 Per dimostrare che sia un sottogruppo di Lie embedded di $ U(n) $, utilizziamo il teorema della preimmagine per dimostrare che ne sia una sottovarietà tramite l'applicazione
 
-\map{f \doteq \det}
+\map{f}
 	{U(n)}{\S^{1}}
 	{A}{\det(A)}
 
-Questa applicazione ha come codominio $ \S^{1} $ perché per $ A \in U(n) $ vale
+Questa applicazione ha come codominio $ \S^{1} $ perché per $ A \in U(n) $ vale\footnote{%
+	È possibile dimostrare questo fatto anche nel seguente modo: siccome due matrici simili hanno stesso determinante (vedi Proposizione \ref{prop:similar-matrix-properties}) e siccome ogni matrice unitaria $ A \in U(n) $ è simile a una matrice del tipo
+	
+	\begin{equation*}
+		U^{*} A U = %
+		\bmqty{ %
+				\dmat{ %
+						e^{i \theta_{1}} & & 0 \\
+						& \ddots & \\
+						0 & & e^{i \theta_{n}} %
+						}
+				} %
+		\qcomma \theta_{j} \in \R, \, j=1,\dots,n
+	\end{equation*}
+	
+	con $ U \in U(n) $ (vedi Corollario \ref{cor:unit-matrix-similar}), possiamo asserire che
+	
+	\begin{equation*}
+		\det(U) = \det(U^{-1} A U) %
+		= e^{i \sum_{i=1}^{n} \theta_{i}} %
+		\doteq e^{i \Theta} %
+		\qcomma \Theta \in \R
+	\end{equation*}
+	%
+}
 
 \begin{equation}
 	A^{*} A = I %
@@ -2485,30 +2515,39 @@ Questa applicazione ha come codominio $ \S^{1} $ perché per $ A \in U(n) $ vale
 		&= \abs{\det(A)}^{2}
 	\end{aligned} %
 	\implies %
-	\det(A) = e^{i \theta} \qcomma \theta \in \R
+	\det(A) = e^{i \theta} \in \S^{1} \qcomma \theta \in \R
 \end{equation}
 
-A questo punto, $ SU(n) $ è la controimmagine di $ 1 \in \C $ tramite il determinante, i.e. $ SU(n) = f^{-1}(1) $: perché sia una sottovarietà di $ U(n) $ è sufficiente che $ 1 \in \VR_{f} $. Prendiamo quindi il differenziale dell'applicazione 
+A questo punto, $ SU(n) $ è la controimmagine di $ 1 \in \S^{1} \subset \C $ tramite il determinante, i.e. $ SU(n) = f^{-1}(1) $: perché sia una sottovarietà di $ U(n) $ è sufficiente che $ 1 \in \VR_{f} $. Prendiamo quindi il differenziale dell'applicazione determinante\footnote{%
+	Vedi Corollario \ref{cor:det-diff}.%
+}
 
-\map{{\det}_{*A}}
+\map{f_{*A}}
 	{T_{A}(U(n))}{T_{\det(A)}(\S^{1})}
 	{B}{\det(A) \tr(A^{-1} B)}
 	
-Siccome siamo interessati agli elementi di $ SU(n) $, abbiamo che $ \det(A) = 1 $, perciò dobbiamo studiare $ T_{1}(\S^{1}) $ con $ \S^{1} \subset \C $: possiamo trovare gli elementi di questo spazio tangente considerando la curva
+Siccome siamo interessati agli elementi di $ SU(n) $, abbiamo che $ \det(A) = 1 $, i.e. per $ A \in SU(n) $
 
-\map{c}
-	{(-\varepsilon,\varepsilon)}{\S^{1}}
-	{t}{e^{i a t}}
-	
-con
+\map{f_{*A}}
+	{T_{A}(U(n))}{T_{1}(\S^{1})}
+	{B}{\tr(A^{-1} B)}
 
-\begin{equation}
-	\begin{cases}
-		a \in \R \\
-		c(0) = 1 \\
-		\dot{c} = i a
-	\end{cases}
-\end{equation}
+A questo punto, dobbiamo studiare $ T_{1}(\S^{1}) $ con $ \S^{1} \subset \C $: possiamo trovare gli elementi di questo spazio tangente considerando la curva
+
+\sbs{0.5}{%
+			\map{c}
+				{(-\varepsilon,\varepsilon)}{\S^{1}}
+				{t}{e^{i a t}}
+			}
+	{0.5}{%
+			\begin{equation}
+				\begin{cases}
+					a \in \R \\
+					c(0) = 1 \\
+					\dot{c} = i a
+				\end{cases}
+			\end{equation}
+			}
 
 Dato che $ \dot{c} \in T_{1}(\S^{1}) $, possiamo asserire che
 
@@ -2520,20 +2559,31 @@ cioè lo spazio tangente è generato da tutti i vettori paralleli all'asse immag
 A questo punto, perché $ 1 \in \VR_{f} $, è necessario che il differenziale sia suriettivo per qualsiasi $ A \in SU(n) $ o equivalentemente
 
 \begin{equation}
-	1 \in \VR_{f} \iff \E B \in T_{A}(U(n)) \mid \tr(A^{-1} B) = i a %
-	\qcomma A \in SU(n), \, a \in \R
+	1 \in \VR_{f} \iff \forall a \in \R, \E B \in T_{A}(U(n)) \mid f_{*A} (B) = \tr(A^{-1} B) = i a \in T_{1}(\S^{1}) %
+	\qcomma A \in SU(n)
 \end{equation}
 
-Abbiamo dimostrato che $ T_{A}(U(n)) = A \, T_{I}(U(n)) $ e $ T_{I}(U(n)) = H^{-}(n) $ cioè le matrici antihermitiane, perciò
+Abbiamo dimostrato che
 
 \begin{equation}
-	T_{A}(U(n)) = \{ AX \mid X^{*} = -X \}
+	\begin{cases}
+		T_{A}(U(n)) = A \, T_{I}(U(n)) \\
+		T_{I}(U(n)) = H^{-}(n) & \text{ matrici antihermitiane}
+	\end{cases}
+\end{equation}
+
+perciò
+
+\begin{equation}
+	T_{A}(U(n)) = \{ AX \in M_{n}(\C) \mid X^{*} = -X \}
 \end{equation}
 
 Per soddisfare la condizione, prendiamo $ B = AX $ con $ X = (i a/n) I $, da cui
 
 \begin{equation}
-	\tr(A^{-1} B) = \tr(A^{-1} A \, \dfrac{ia}{n} \, I) = \dfrac{ia \tr(I)}{n} = i a
+	\tr(A^{-1} B) = \tr(A^{-1} A \, \dfrac{ia}{n} \, I) %
+	= \dfrac{ia}{n} \tr(I) %
+	= i a
 \end{equation}
 
 Questo dimostra che $ 1 \in \VR_{f} $ perciò $ SU(n) $ è una sottovarietà e quindi un sottogruppo di Lie embedded di $ U(n) $ di dimensione
@@ -2545,7 +2595,8 @@ Questo dimostra che $ 1 \in \VR_{f} $ perciò $ SU(n) $ è una sottovarietà e q
 Lo spazio tangente di $ SU(n) $ deriva ancora dal teorema della preimmagine
 
 \begin{equation}
-	T_{I}(SU(n)) = \ker({\det}_{*A}) = \{ X \in T_{I}(U(n)) \mid \tr(X) = 0 \}
+	T_{I}(SU(n)) = \ker({\det}_{*A}) %
+	= \{ X \in T_{I}(U(n)) \mid \tr(X) = 0 \}
 \end{equation}
 
 ma sappiamo che
@@ -2560,8 +2611,10 @@ perciò
 	T_{I}(SU(n)) = \{ X \in M_{n}(\C) \mid X^{*} = -X \wedge \tr(X) = 0 \}
 \end{equation}
 
-Essendo $ SU(n) $ chiuso nel compatto $ U(n) $ (o anche chiuso e limitato), $ SU(n) $ è compatto.\\
-L'insieme $ SU(n) $ è connesso perché, presa $ A \in SU(n) $, per il corollario del teorema spettrale, esiste una matrice $ U \in U(n) $ tale che
+Essendo $ SU(n) $ chiuso (perché controimmagine del chiuso $ 1 \in \C $ tramite l'applicazione continua determinante) nel compatto $ U(n) $, $ SU(n) $ è compatto\footnote{%
+	Alternativamente, si può utilizzare il fatto che sia chiuso e limitato in $ U(n) $.%
+}.\\
+L'insieme $ SU(n) $ è connesso perché, presa una matrice $ A \in SU(n) $, per il corollario del teorema spettrale, esiste una matrice $ U \in U(n) $ tale che
 
 \begin{equation}
 	U^{-1} A U = %
@@ -2604,14 +2657,15 @@ dove
 \end{equation}
 
 e la curva appartiene a $ SU(n) $ per Binet.\\
-Esiste dunque un arco che connette ogni matrice unitaria speciale alla matrice identità perciò $ SU(n) $ è connesso\footnote{%
+Esiste dunque un arco che connette ogni matrice unitaria speciale alla matrice identità perciò $ SU(n) $ è connesso.\\
+Notiamo anche che\footnote{%
 	Vedi Esercizio \ref{BONUS3-2}.%
-}.\\
-Notiamo anche che
+}
 
-\begin{equation}
-	SU(1) = U(1) = SO(2) = \S^{1}
-\end{equation}
+\begin{gather}
+	SU(1) = U(1) = SO(2) \simeq \S^{1} \\
+	SU(2) \simeq \S^{3}
+\end{gather}
 
 \subsection{Isomorfismo tra $ GL_{n}(\R) $ e $ SL_{n}(\R) \times \R \setminus \{0\} $}
 
