@@ -2300,7 +2300,7 @@ Qualunque aperto di una varietà differenziabile è una sottovarietà\footnote{%
 \end{gather}
 
 Essendo chiuso e limitato (o, equivalentemente, chiuso nel compatto $ O(n) $), $ SO(n) $ è compatto.\\
-Gli stessi ragionamenti fatti fin'ora sono applicabili all'altra componente connessa $ S^{-}(n) $ di $ O(n) $.\\
+Gli stessi ragionamenti sono applicabili all'altra componente connessa $ S^{-}(n) $ di $ O(n) $.\\
 Per piccoli valori di $ n $, abbiamo che:
 
 \begin{itemize}
@@ -2452,7 +2452,7 @@ dove
 
 Esiste dunque un arco che connette ogni matrice unitaria alla matrice identità, perciò $ U(n) $ è connesso.
 
-\subsection{$ SU(n) $ come sottogruppo di Lie di $ U(n) $}
+\subsection{$ SU(n) $ come sottogruppo di Lie di $ U(n) $}\label{ssec:su-n-lie-subg}
 
 L'insieme delle matrici unitarie speciali
 
@@ -3291,7 +3291,8 @@ L'algebra $ (T_{e}(G),[,]) $ è chiamata \textit{algebra di Lie del gruppo} $ G 
 La coppia $ (\R^{n},+) $ è un gruppo di Lie (abeliano) con elemento neutro $ 0 \in \R^{n} $. Lo spazio tangente all'elemento neutro $ T_{0}(\R^{n}) $ può essere identificato con $ \R^{n} $ stesso:
 
 \begin{equation}
-	T_{0}(\R^{n}) = \left\{ \sum_{j=1}^{n} a^{j} \eval{\pdv{x^{j}}}_{0} \right\} = (a_{1},\dots,a^{n}) \in \R^{n}
+	T_{0}(\R^{n}) = \left\{ \sum_{j=1}^{n} a^{j} \eval{\pdv{x^{j}}}_{0} \right\} %
+	= (a_{1},\dots,a^{n}) \in \R^{n}
 \end{equation}
 
 dove
@@ -3302,9 +3303,9 @@ dove
 
 Prendiamo ora l'isomorfismo $ \hatapp $, in modo da analizzare i campi di vettori invarianti a sinistra $ L(\R^{n}) $
 
-\map{\hatapp}%
-	{T_{0}(\R^{n})}{L(\R^{n})}%
-	{\eval{ \pdv{x^{j}} }_{0}}{\widehat{ \pdv{x^{1}} }}
+\map{\hatapp}
+	{T_{0}(\R^{n})}{L(\R^{n})}
+	{\eval{ \pdv{x^{j}} }_{0}}{\widehat{ \pdv{x^{j}} }}
 
 Applichiamolo alla base di $ T_{0}(\R^{n}) $ per ottenere i generatori dello spazio $ L(\R^{n}) $
 
@@ -3317,41 +3318,41 @@ Per esplicitare la forma dei campi di vettori invarianti a sinistra, valutiamo u
 \begin{align}
 	\begin{split}
 		\left( \widehat{ \eval{ \pdv{x^{i}} }_{0} } \right)_{g} \in T_{g}(\R^{n}) %
-		\implies%
+		\implies %
 		\left( \widehat{ \eval{ \pdv{x^{i}} }_{0} } \right)_{g} = \sum_{i=1}^{n} b^{ij} \eval{ \pdv{x^{j}} }_{g} \qcomma b^{ij} \in \R
 	\end{split}
 \end{align}
 
-Al fine di trovare i coefficienti $ b^{ij} $, applichiamo entrambi i membri dell'equazione alla funzione
+Al fine di trovare i coefficienti $ b^{ij} $, applichiamo entrambi i membri dell'equazione alla proiezione
 
-\map{x^{k}}%
-	{\R^{n}}{\R}%
+\map{x^{k}}
+	{\R^{n}}{\R}
 	{(x^{1},\dots,x^{n})}{x^{k}}
 
 Per il secondo membro
 
 \begin{align}
 	\begin{split}
-		\left( \sum_{i=1}^{n} b^{ij} \eval{ \pdv{x^{j}} }_{g} \right) (x^{k}) &= \sum_{i=1}^{n} b^{ij} \eval{ \pdv{x^{k}}{x^{j}} }_{g}\\
-		&= \sum_{i=1}^{n} b^{ij} \delta^{jk}\\
+		\left( \sum_{i=1}^{n} b^{ij} \eval{ \pdv{x^{j}} }_{g} \right) (x^{k}) &= \sum_{i=1}^{n} b^{ij} \eval{ \pdv{x^{k}}{x^{j}} }_{g} \\
+		&= \sum_{i=1}^{n} b^{ij} \delta^{jk} \\
 		&= b^{ik}
 	\end{split}
 \end{align}
 
 mentre per il primo membro, considerando $ g = (g^{1},\dots,g^{n}) $ e la traslazione a sinistra
 
-\map{L_{g}}%
-	{\R^{n}}{\R^{n}}%
+\map{L_{g}}
+	{\R^{n}}{\R^{n}}
 	{x}{g+x}
 
 abbiamo che
 
 \begin{align}
 	\begin{split}
-		\left( \widehat{ \eval{ \pdv{x^{i}} }_{0} } \right)_{g} (x^{k}) &= L_{g_{*0}} \left( \eval{ \pdv{x^{i}} }_{0} \right) (x^{k})\\
-		&= \eval{ \pdv{x^{i}} }_{0} (x^{k} \circ L_{g})\\
-		&= \eval{ \pdv{x^{i}} }_{0} (g^{k} + x^{k})\\
-		&= \cancel{ \eval{ \pdv{g^{k}}{x^{i}} }_{0} } + \eval{ \pdv{x^{k}}{x^{i}} }_{0}\\
+		\left( \widehat{ \eval{ \pdv{x^{i}} }_{0} } \right)_{g} (x^{k}) &= L_{g_{*0}} \left( \eval{ \pdv{x^{i}} }_{0} \right) (x^{k}) \\
+		&= \eval{ \pdv{x^{i}} }_{0} (x^{k} \circ L_{g}) \\
+		&= \eval{ \pdv{x^{i}} }_{0} (g^{k} + x^{k}) \\
+		&= \cancel{ \eval{ \pdv{g^{k}}{x^{i}} }_{0} } + \eval{ \pdv{x^{k}}{x^{i}} }_{0} \\
 		&= \delta^{ik}
 	\end{split}
 \end{align}
@@ -3359,7 +3360,8 @@ abbiamo che
 perciò $ b^{ik} = \delta^{ik} $ e quindi
 
 \begin{equation}
-	\left( \widehat{ \eval{ \pdv{x^{i}} }_{0} } \right)_{g} = \sum_{i=1}^{n} \delta^{ij} \eval{ \pdv{x^{j}} }_{g} = \eval{ \pdv{x^{i}} }_{g} \qcomma \forall g \in \R
+	\left( \widehat{ \eval{ \pdv{x^{i}} }_{0} } \right)_{g} = \sum_{i=1}^{n} \delta^{ij} \eval{ \pdv{x^{j}} }_{g} %
+	= \eval{ \pdv{x^{i}} }_{g} \qcomma \forall g \in \R
 \end{equation}
 
 il che implica
@@ -3375,13 +3377,13 @@ Un campo di vettori invariante a sinistra può dunque essere scritto come
 \end{equation}
 
 mentre un campo di vettori qualsiasi può avere al posto dei coefficienti reali $ a^{i} $ delle funzioni.\\
-Il commutatore dell'algebra di Lie $ (T_{0}(\R^{n}),[,]) $, presi $ A,B \in T_{0}(\R^{n}) $ è definito come
+Presi due vettori $ A,B \in T_{0}(\R^{n}) $, il commutatore dell'algebra di Lie $ (T_{0}(\R^{n}),[,]) $ è definito come
 
 \begin{align}
 	\begin{split}
-		\comm{A}{B} &\doteq \comm{\hat{A}}{\hat{B}}_{0}\\
-		&= \comm{ \sum_{i=1}^{n} a^{i} \pdv{x^{i}} }{ \sum_{j=1}^{n} b^{j} \pdv{x^{j}} }_{0}\\
-		&= \sum_{i,j=1}^{n} a^{i} b^{j} \cancel{ \comm{ \pdv{x^{i}} }{ \pdv{x^{j}} } }\\
+		\comm{A}{B} &\doteq \comm{\hat{A}}{\hat{B}}_{0} \\
+		&= \comm{ \sum_{i=1}^{n} a^{i} \pdv{x^{i}} }{ \sum_{j=1}^{n} b^{j} \pdv{x^{j}} }_{0} \\
+		&= \sum_{i,j=1}^{n} a^{i} b^{j} \cancel{ \comm{ \pdv{x^{i}} }{ \pdv{x^{j}} } } \\
 		&= 0
 	\end{split}
 \end{align}
@@ -3390,45 +3392,55 @@ Essendo il commutatore nullo, l'algebra di Lie $ (T_{0}(\R^{n}),[,]) $ è abelia
 
 \paragraph{2) $ (\S^{1},\cdot) $}
 
-La coppia $ (\S^{1},\cdot) $, dove $ \S^{1} $ è una sottovarietà di $ \R^{2} = \C $, è un gruppo di Lie (abeliano) con elemento neutro $ 1 \in \S^{1} $. Lo spazio tangente all'elemento neutro $ T_{1}(\S^{1}) $ è generato dall'unità immaginaria, i.e.
+La coppia $ (\S^{1},\cdot) $ è un gruppo di Lie (abeliano) con elemento neutro $ 1 \in \S^{1} $, dove $ \S^{1} $ è una sottovarietà di $ \R^{2} = \C $. Lo spazio tangente all'elemento neutro $ T_{1}(\S^{1}) $ è generato dall'unità immaginaria\footnote{%
+	Vedi Sottosezione \ref{ssec:su-n-lie-subg}.%
+}, i.e.
 
 \begin{equation}
-	T_{1}(\S^{1}) = \ev{i}_{\R} = \{ a i \mid a \in \R \}
+	T_{1}(\S^{1}) = \ev{i}_{\R} = \{ ia \mid a \in \R \}
 \end{equation}
 
 Prendendo la traslazione a sinistra (anche $ (\S^{1},\cdot) $ è un gruppo abeliano)
 
-\map{L_{g}}%
-	{\S^{1}}{\S^{1}}%
+\map{L_{g}}
+	{\S^{1}}{\S^{1}}
 	{h}{g h}
 	
 e la curva liscia
 
-\map{c}%
-	{(-\varepsilon,\varepsilon)}{\S^{1}}%
-	{t}{e^{i t}}
-	
-con $ c(0) = 1 $ e $ c'(0) = i $, l'isomorfismo verso i campi di vettori invarianti a sinistra è definito come
+\sbs{0.5}{%
+			\map{c}
+				{(-\varepsilon,\varepsilon)}{\S^{1}}
+				{t}{e^{i t}}
+			}
+	{0.5}{%
+			\begin{equation}
+				\begin{cases}
+					c(0) = 1 \\
+					c'(0) = i
+				\end{cases}
+			\end{equation}
+			}
+
+l'isomorfismo verso i campi di vettori invarianti a sinistra è definito come
 
 \begin{align}
 	\begin{split}
-		\hat{i}_{g} &= L_{g_{*1}} (i)\\
-		&= \eval{ \dv{t} L_{g}(c(t)) }_{t=0}\\
-		&= \eval{ \dv{t} (g \, e^{i t}) }_{t=0}\\
+		\hat{i}_{g} &= (L_{g})_{*1} (i) \\
+		&= \eval{ \dv{t} L_{g}(c(t)) }_{t=0} \\
+		&= \eval{ \dv{t} (g \, e^{i t}) }_{t=0} \\
 		&= i g
 	\end{split}
 \end{align}
 
-dove $ L(\S^{1}) = \ev{\hat{i}}_{\R} $ e $ \hat{i}_{g} $ è il vettore perpendicolare alla normale al punto $ g \in \S^{1} $ (la rotazione di $ \sfrac{\pi}{2} $ in senso antiorario è data da $ i $)\\
+dove $ L(\S^{1}) = \ev{\hat{i}}_{\R} $ e $ \hat{i}_{g} $ è il vettore perpendicolare alla normale al punto $ g \in \S^{1} $ (la rotazione di $ \pi/2 $ in senso antiorario è data da $ i $)\\
 Anche in questo caso, il commutatore definito nello spazio tangente è nullo in quanto
 
-\begin{align}
-	\begin{split}
-		\comm{a i}{b i} &\doteq \comm{\widehat{a i}}{\widehat{b i}}_{1}\\
-		&= a b \cancel{ \comm{i}{i} }\\
-		&= 0
-	\end{split}
-\end{align}
+\begin{equation}
+	[ia,ib] \doteq \comm{\widehat{ia}}{\widehat{ib}}_{1} %
+	= a b \cancel{ [i,i] } %
+	= 0
+\end{equation}
 
 dunque anche l'algebra di Lie $ (T_{1}(\S^{1}),[,]) $ è abeliana.
 
@@ -3440,7 +3452,7 @@ Il toro è definito come
 	\T^{n} = \prod^{n} \S^{1} = \S^{1} \times \cdots \times \S^{1}
 \end{equation}
 
-La coppia $ (\T^{n},\cdot) $ è un gruppo di Lie (abeliano) con elemento neutro $ e = (1,\dots,1) \in \T^{n} $. Lo spazio tangente all'elemento neutro è
+La coppia $ (\T^{n},\cdot) $ è un gruppo di Lie (abeliano) con elemento neutro $ e = (1,\dots,1) $. Lo spazio tangente all'elemento neutro è dato da
 
 \begin{equation}
 	T_{e}(\T^{n}) = \prod^{n} T_{1}(\S^{1}) = T_{1}(\S^{1}) \times \cdots \times T_{1}(\S^{1})
@@ -3466,24 +3478,18 @@ L'insieme delle matrici invertibili
 	GL_{n}(\R) = \{ A \in M_{n}(\R) \mid \det(A) \neq 0 \}
 \end{equation}
 
-insieme al prodotto matriciale $ (GL_{n}(\R),\cdot) $ forma un gruppo di Lie con elemento neutro $ I \in GL_{n}(\R) $. Lo spazio tangente all'elemento neutro è
+insieme al prodotto matriciale $ (GL_{n}(\R),\cdot) $ forma un gruppo di Lie con elemento neutro $ I $.\\
+Lo spazio tangente all'elemento neutro è
 
 \begin{equation}
-	T_{I}(GL_{n}(\R)) = \{ X \in  \}
+	T_{I}(GL_{n}(\R)) = M_{n}(\R)
 \end{equation}
 
-Un elemento dello spazio tangente può essere scritto come
+Un elemento dello spazio tangente può essere scritto sommatoria degli elementi di base delle matrici quadrate e poi identificato con la matrice dei coefficienti, i.e.
 
 \begin{equation}
-	A \in T_{I}(GL_{n}(\R)) %
-	\iff%
-	A = \sum_{i,j=1}^{n} a_{ij} \eval{ \pdv{x_{ij}} }_{I}
-\end{equation}
-
-e identificato con la matrice dei coefficienti
-
-\begin{equation}
-	A = [a_{ij}] \in M_{n}(\R)
+	A = \sum_{i,j=1}^{n} a_{ij} \eval{ \pdv{x_{ij}} }_{I} \equiv [a_{ij}] %
+	\qcomma \forall A \in T_{I}(GL_{n}(\R))
 \end{equation}
 
 Consideriamo l'isomorfismo $ \hatapp $ tra lo spazio tangente $ T_{I}(GL_{n}(\R)) $ e l'insieme dei campi di vettori invarianti a sinistra $ L(GL_{n}(\R)) $: presa una matrice $ g = [g_{ij}] \in GL_{n}(\R) $ e la traslazione a sinistra
@@ -3494,51 +3500,49 @@ Consideriamo l'isomorfismo $ \hatapp $ tra lo spazio tangente $ T_{I}(GL_{n}(\R)
 
 un elemento di $ L(GL_{n}(\R)) $ è definito come
 
-\begin{align}
-	\begin{split}
-		\hat{A}_{g} &= L_{g_{*I}} (A)\\
-		&= \sum_{i,j=1}^{n} (g A)_{ij} \eval{ \pdv{x_{ij}} }_{g}
-	\end{split}
-\end{align}
+\begin{equation}
+	\hat{A}_{g} = (L_{g})_{*I} (A) %
+	= \sum_{i,j=1}^{n} (g A)_{ij} \eval{ \pdv{x_{ij}} }_{g}
+\end{equation}
 
-Il commutatore nello spazio tangente è definito tramite l'isomorfismo ed avrà la forma
+Il commutatore nello spazio tangente è definito tramite l'isomorfismo e avrà la forma
 
 \begin{equation}
-	\comm{A}{B} \doteq \comm{\hat{A}}{\hat{B}}_{I} = \sum_{i,j=1}^{n} c_{ij} \eval{ \pdv{x_{ij}} }_{I}
+	[A,B] \doteq \comm{\hat{A}}{\hat{B}}_{I} = \sum_{i,j=1}^{n} c_{ij} \eval{ \pdv{x_{ij}} }_{I}
 \end{equation}
 
 può dunque essere identificato dalla matrice
 
 \begin{equation}
-	\comm{A}{B} = C = [c_{ij}] \in M_{n}(\R)
+	[A,B] = C = [c_{ij}] \in M_{n}(\R)
 \end{equation}
 
 Definendo la funzione
 
-\map{x_{ij}}%
-	{M_{n}(\R)}{\R}%
+\map{x_{ij}}
+	{M_{n}(\R)}{\R}
 	{X = [x_{ij}]}{x_{ij}}
 
 e applicando entrambi i membri del commutatore a questa funzione, abbiamo che
 
 \begin{align}
 	\begin{split}
-		\left( \sum_{p,q=1}^{n} c_{pq} \eval{ \pdv{x_{pq}} }_{I} \right)(x_{ij}) &= \comm{\hat{A}}{\hat{B}}_{I} (x_{ij})\\
-		c_{ij} &= \hat{A}_{I} (\hat{B} \, x_{ij}) - \hat{B}_{I} (\hat{A} \, x_{ij})\\
+		\left( \sum_{p,q=1}^{n} c_{pq} \eval{ \pdv{x_{pq}} }_{I} \right)(x_{ij}) &= \comm{\hat{A}}{\hat{B}}_{I} (x_{ij}) \\
+		c_{ij} &= \hat{A}_{I} (\hat{B} \, x_{ij}) - \hat{B}_{I} (\hat{A} \, x_{ij}) \\
 		&= A (\hat{B} \, x_{ij}) - B (\hat{A} \, x_{ij})
 	\end{split}
 \end{align}
 
-per $ \forall i,j = 1,\dots,n $, dove $ \hat{X}_{I} = X $ per definizione dell'isomorfismo e della sua inversa.\\
+per qualsiasi $ i,j = 1,\dots,n $, dove $ \hat{X}_{I} = X $ per definizione dell'isomorfismo e della sua inversa.\\
 Per calcolare il secondo membro, lo applichiamo a una matrice $ g \in GL_{n}(\R) $ e utilizziamo il differenziale della traslazione a sinistra definito sopra, ottenendo (per la parte tra parentesi del secondo termine)
 
 \begin{align}
 	\begin{split}
-		(\hat{A} \, x_{ij})(g) &= \hat{A}_{g} (x_{ij})\\
-		&= \left( \sum_{p,q=1}^{n} (g A)_{pq} \eval{ \pdv{x_{pq}} }_{g} \right)(x_{ij})\\
-		&= \left( \sum_{p,q=1}^{n} (g A)_{pq} \, \delta_{ip} \, \delta_{jq} \right)\\
-		&= (g A)_{ij}\\
-		&= \sum_{k=1}^{n} g_{ik} \, a_{kj}\\
+		(\hat{A} \, x_{ij})(g) &= \hat{A}_{g} (x_{ij}) \\
+		&= \left( \sum_{p,q=1}^{n} (g A)_{pq} \eval{ \pdv{x_{pq}} }_{g} \right)(x_{ij}) \\
+		&= \left( \sum_{p,q=1}^{n} (g A)_{pq} \, \delta_{ip} \, \delta_{jq} \right) \\
+		&= (g A)_{ij} \\
+		&= \sum_{k=1}^{n} g_{ik} \, a_{kj} \\
 		&= \sum_{k=1}^{n} a_{kj} \, x_{ik}(g)
 	\end{split}
 \end{align}
@@ -3547,7 +3551,7 @@ da cui, per analogia
 
 \begin{equation}
 	\begin{cases}
-		\hat{A} \, x_{ij} = \displaystyle\sum_{k=1}^{n} a_{kj} \, x_{ik}\\\\
+		\hat{A} \, x_{ij} = \displaystyle\sum_{k=1}^{n} a_{kj} \, x_{ik} \\\\
 		\hat{B} \, x_{ij} = \displaystyle\sum_{k=1}^{n} b_{kj} \, x_{ik}
 	\end{cases}
 \end{equation}
@@ -3556,9 +3560,9 @@ Sostituendo ora in $ c_{ij} $
 
 \begin{align}
 	\begin{split}
-		c_{ij} &= A (\hat{B} \, x_{ij}) - B (\hat{A} \, x_{ij})\\
-		&= \left( \sum_{p,q=1}^{n} a_{pq} \eval{ \pdv{x_{pq}} }_{I} \right) \left( \displaystyle\sum_{k=1}^{n} b_{kj} \, x_{ik} \right) - \left( \sum_{p,q=1}^{n} b_{pq} \eval{ \pdv{x_{pq}} }_{I} \right) \left( \displaystyle\sum_{k=1}^{n} a_{kj} \, x_{ik} \right)\\
-		&= \sum_{p,q,k=1}^{n} ( a_{pq} b_{kj} - b_{pq} a_{kj} ) \delta_{ip} \, \delta_{kq}\\
+		c_{ij} &= A (\hat{B} \, x_{ij}) - B (\hat{A} \, x_{ij}) \\
+		&= \left( \sum_{p,q=1}^{n} a_{pq} \eval{ \pdv{x_{pq}} }_{I} \right) \left( \sum_{k=1}^{n} b_{kj} \, x_{ik} \right) - \left( \sum_{p,q=1}^{n} b_{pq} \eval{ \pdv{x_{pq}} }_{I} \right) \left( \sum_{k=1}^{n} a_{kj} \, x_{ik} \right) \\
+		&= \sum_{p,q,k=1}^{n} ( a_{pq} b_{kj} - b_{pq} a_{kj} ) \delta_{ip} \, \delta_{kq} \\
 		&= \sum_{k=1}^{n} ( a_{ik} b_{kj} - b_{ik} a_{kj} )
 	\end{split}
 \end{align}
