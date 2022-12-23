@@ -3022,8 +3022,8 @@ I campi di vettori invarianti a sinistra sono importanti perché esiste un isomo
 	\begin{enumerate}
 		\item L'applicazione
 		
-		\map{\hat{}}%
-			{T_{e}(G)}{L(G)}%
+		\map{\hatapp}
+			{T_{e}(G)}{L(G)}
 			{A}{\hat{A}}
 			
 		dove $ L(G) $ indica l'insieme dei campi di vettori invarianti a sinistra di $ G $ e
@@ -3114,7 +3114,7 @@ I campi di vettori invarianti a sinistra sono importanti perché esiste un isomo
 		e viceversa verifichiamo che
 		
 		\begin{equation}
-			(\, \hat{} \, \circ \mid_{e})(A) = \hat{X_{e}} = X
+			(\hatapp \circ \mid_{e})(A) = \hat{X_{e}} = X
 		\end{equation}
 	
 		applicando il primo membro a un qualunque elemento $ g \in G $:
@@ -3237,7 +3237,7 @@ Dati $ A,B \in T_{e}(G) $ definiamo il commutatore tra gli elementi dello spazio
 
 cioè tramite l'isomorfismo
 
-\map{\hat{}}%
+\map{\hatapp}%
 	{T_{e}(G)}{L(G)}%
 	{A}{\hat{A}}
 	
@@ -3254,7 +3254,7 @@ portiamo gli elementi dello spazio tangente $ A $ e $ B $ nei rispettivi campi d
 	{X}{X_{e}}
 
 ottenendo dunque il commutatore $ \comm{A}{B} $ come un elemento dello spazio tangente $ T_{e}(G) $.\\
-In questo modo, l'applicazione $ \hat{} $ è un isomorfismo di algebre di Lie tra $ (T_{e}(G),[,]) $ e $ (L(G),[,]) $ con i rispettivi commutatori; le proprietà di algebra di Lie sono rispettate da $ (T_{e}(G),[,]) $ in quanto isomorfo a $ (L(G),[,]) $, che le rispetta.\\
+In questo modo, l'applicazione $ \hatapp $ è un isomorfismo di algebre di Lie tra $ (T_{e}(G),[,]) $ e $ (L(G),[,]) $ con i rispettivi commutatori; le proprietà di algebra di Lie sono rispettate da $ (T_{e}(G),[,]) $ in quanto isomorfo a $ (L(G),[,]) $, che le rispetta.\\
 L'algebra $ (T_{e}(G),[,]) $ è chiamata \textit{algebra di Lie del gruppo} $ G $ e viene indicata con
 
 \begin{equation}
@@ -3268,7 +3268,7 @@ L'algebra $ (T_{e}(G),[,]) $ è chiamata \textit{algebra di Lie del gruppo} $ G 
 		\widehat{[A,B]} = \widehat{\comm{\hat{A}}{\hat{B}}_{e}} = \comm{\hat{A}}{\hat{B}}
 	\end{equation}
 
-	dove nel primo passaggio abbiamo usato la definizione di commutatore nello spazio tangente e nel secondo abbiamo usato il fatto che l'isomorfismo $ \hat{} $ e la valutazione nell'elemento neutro $ \mid_{e} $ siano i rispettivi inversi.
+	dove nel primo passaggio abbiamo usato la definizione di commutatore nello spazio tangente e nel secondo abbiamo usato il fatto che l'isomorfismo $ \hatapp $ e la valutazione nell'elemento neutro $ \mid_{e} $ siano i rispettivi inversi.
 \end{remark}
 
 \subsubsection{Esempi di algebre di Lie su spazi tangenti a gruppi di Lie}
@@ -3287,9 +3287,9 @@ dove
 	T_{0}(\R^{n}) = \ev{ \eval{ \pdv{x^{1}} }_{0}, \dots, \eval{ \pdv{x^{n}} }_{0} }
 \end{equation}
 
-Prendiamo ora l'isomorfismo $ \hat{} $, in modo da analizzare i campi di vettori invarianti a sinistra $ L(\R^{n}) $
+Prendiamo ora l'isomorfismo $ \hatapp $, in modo da analizzare i campi di vettori invarianti a sinistra $ L(\R^{n}) $
 
-\map{\hat{}}%
+\map{\hatapp}%
 	{T_{0}(\R^{n})}{L(\R^{n})}%
 	{\eval{ \pdv{x^{j}} }_{0}}{\widehat{ \pdv{x^{1}} }}
 
@@ -3473,7 +3473,7 @@ e identificato con la matrice dei coefficienti
 	A = [a_{ij}] \in M_{n}(\R)
 \end{equation}
 
-Consideriamo l'isomorfismo $ \hat{} $ tra lo spazio tangente $ T_{I}(GL_{n}(\R)) $ e l'insieme dei campi di vettori invarianti a sinistra $ L(GL_{n}(\R)) $: presa una matrice $ g = [g_{ij}] \in GL_{n}(\R) $ e la traslazione a sinistra
+Consideriamo l'isomorfismo $ \hatapp $ tra lo spazio tangente $ T_{I}(GL_{n}(\R)) $ e l'insieme dei campi di vettori invarianti a sinistra $ L(GL_{n}(\R)) $: presa una matrice $ g = [g_{ij}] \in GL_{n}(\R) $ e la traslazione a sinistra
 
 \map{L_{g}}%
 	{GL_{n}(\R)}{GL_{n}(\R)}%
@@ -3567,12 +3567,12 @@ Siano $ H $ e $ G $ due gruppi di Lie e $ F : H \to G $ un omomorfismo di gruppi
 \end{equation}
 
 Per trasportare i campi di vettori invarianti a sinistra su $ H $ in quelli su $ G $, possiamo utilizzare gli isomorfismi tra questi spazi e gli spazi tangenti e comporli con il differenziale dell'omomorfismo: consideriamo le applicazioni\footnote{%
-	Al fine di non appesantire la notazione, il simbolo $ \hat{} $ verrà usato per entrambi gli isomorfismi
+	Al fine di non appesantire la notazione, il simbolo $ \hatapp $ verrà usato per entrambi gli isomorfismi
 	
 	\begin{equation*}
 		\begin{cases}
-			\hat{} : T_{e}(G) \to L_{G}\\
-			\hat{} : T_{e}(H) \to L_{H}
+			\hatapp : T_{e}(G) \to L_{G}\\
+			\hatapp : T_{e}(H) \to L_{H}
 		\end{cases}
 	\end{equation*}
 	
@@ -3583,7 +3583,7 @@ Per trasportare i campi di vettori invarianti a sinistra su $ H $ in quelli su $
 	\begin{cases}
 		\mid_{e} \, : L(H) \to T_{e}(H)\\
 		F_{*e} : T_{e}(H) \to T_{e}(G)\\
-		\hat{} : T_{e}(G) \to L_{G}
+		\hatapp : T_{e}(G) \to L_{G}
 	\end{cases}
 \end{equation}
 
@@ -3647,7 +3647,7 @@ Analogamente, prendendo un elemento dello spazio tangente $ A \in T_{e}(H) $ e c
 		
 		\item il fatto che $ F $ è un omomorfismo nel quarto passaggio
 		
-		\item la definizione di $ \hat{} $ nel settimo passaggio
+		\item la definizione di $ \hatapp $ nel settimo passaggio
 	\end{itemize}
 
 	dunque
@@ -4203,7 +4203,7 @@ Fin'ora sappiamo solo che $ \sigma_{t}^{\xi}(g) $ dipenda in modo liscio da $ t 
 			\end{cases}
 		\end{equation}
 	
-		mentre per il primo membro, sapendo che $ \dd{u} = t \dd{s} $ e che l'isomorfismo $ \hat{} $ è lineare
+		mentre per il primo membro, sapendo che $ \dd{u} = t \dd{s} $ e che l'isomorfismo $ \hatapp $ è lineare
 		
 		\begin{align}
 			\begin{split}
@@ -4326,7 +4326,7 @@ Ad esempio, $ \gamma^{\xi}(t) = \exp(t \xi) $ definisce un sottogruppo a un para
 \end{definition}
 
 \begin{remark}
-	Da questa proposizione, deriviamo che esiste una corrispondenza biunivoca tra gli elementi dell'algebra di Lie $ \g $ di $ G $ e l'insieme dei sottogruppi a un parametro; a questo punto, essendo presente l'isomorfismo $ \hat{} $ tra lo spazio tangente a $ G $ e l'insieme dei campi di vettori invarianti a sinistra, i.e. $ T_{e}(G) \stackrel{iso.}{\simeq} L(G) $, si possono descrivere gli elementi dell'algebra di Lie $ \g $ sia come sottogruppi a un parametro di $ G $ sia come campi di vettori invarianti a sinistra.
+	Da questa proposizione, deriviamo che esiste una corrispondenza biunivoca tra gli elementi dell'algebra di Lie $ \g $ di $ G $ e l'insieme dei sottogruppi a un parametro; a questo punto, essendo presente l'isomorfismo $ \hatapp $ tra lo spazio tangente a $ G $ e l'insieme dei campi di vettori invarianti a sinistra, i.e. $ T_{e}(G) \stackrel{iso.}{\simeq} L(G) $, si possono descrivere gli elementi dell'algebra di Lie $ \g $ sia come sottogruppi a un parametro di $ G $ sia come campi di vettori invarianti a sinistra.
 \end{remark}
 
 \begin{proof}
