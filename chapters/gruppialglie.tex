@@ -2887,8 +2887,8 @@ Un'\textit{algebra di Lie su un campo} $ \K $ è uno spazio vettoriale\footnote{
 	Non necessariamente di dimensione finita.%
 } $ V $ dotato di un'applicazione
 
-\map{[,]}%
-	{V \times V}{V}%
+\map{[,]}
+	{V \times V}{V}
 	{(x,y)}{[x,y]}
 
 tale che:
@@ -2898,23 +2898,21 @@ tale che:
 	
 	\begin{equation}
 		\begin{cases}
-			[ax+by,z] = a[x,z] + b[y,z]\\
-			[x,cz+dw] = c[x,z] + d[x,w]
+			[ax+by,z] = a[x,z] + b[y,z], & \forall a,b \in \R, \, \forall x,y,z \in V \\
+			[x,cz+dw] = c[x,z] + d[x,w], & \forall c,d \in \R, \, \forall x,z,w \in V
 		\end{cases}
 	\end{equation}
-	
-	per $ \forall a,b,c,d \in \R $ e $ \forall x,y,z,w \in V $;
 	
 	\item L'applicazione sia antisimmetrica, i.e.
 	
 	\begin{equation}
-		[x,y] = -[y,x], \qquad \forall x,y \in V
+		[x,y] = -[y,x] \qcomma \forall x,y \in V
 	\end{equation}
 	
 	\item Valga l'\textit{identità di Jacobi}
 	
 	\begin{equation}
-		[x,[y,z]] + [y,[z,x]] + [z,[x,y]] = 0, \qquad \forall x,y,z \in V
+		[x,[y,z]] + [y,[z,x]] + [z,[x,y]] = 0 \qcomma \forall x,y,z \in V
 	\end{equation}
 \end{itemize}
 
@@ -2925,19 +2923,17 @@ tale che:
 Se $ V $ è uno spazio vettoriale su $ \K $, possiamo definire il commutatore nullo
 
 \begin{equation}
-	[x,y] = 0, \qquad \forall x,y \in V
+	[x,y] = 0 \qcomma \forall x,y \in V
 \end{equation}
 
 che definisce l'algebra di Lie \textit{abeliana} (gli elementi $ x $ e $ y $ commutano).
 
 \paragraph{2) Insieme delle matrici quadrate}
 
-Siano lo spazio vettoriale $ M_{n}(\K) $ delle matrici quadrate\footnote{%
-	Questo spazio vettoriale ha dimensione $ n^{2} $.%
-} su un campo $ \K $ e il commutatore
+Siano lo spazio vettoriale $ M_{n}(\K) $ delle matrici quadrate su un campo $ \K $ e il commutatore
 
 \begin{equation}
-	[A,B] = AB - BA
+	[A,B] = AB - BA \qcomma A,B \in M_{n}(\K)
 \end{equation}
 
 La verifica delle proprietà è immediata e dunque $ (V,[,]) $ è un'algebra di Lie.
@@ -2954,10 +2950,10 @@ Una qualsiasi algebra $ A $ su un campo $ \K $ con commutatore
 
 \paragraph{4) Campi di vettori}
 
-Siano $ M $ una varietà differenziabile, $ \chi(M) $ l'insieme dei campi di vettori lisci sulla varietà e il commutatore
+Siano $ M $ una varietà differenziabile, $ \chi(M) $ l'insieme dei campi di vettori lisci sulla varietà e il commutatore tra campi
 
 \begin{equation}
-	[X,Y] = XY - YX, \qquad X,Y \in \chi(M)
+	[X,Y] = XY - YX \qcomma X,Y \in \chi(M)
 \end{equation}
 
 allora $ (\chi(M),[,]) $ è un'algebra di Lie su $ \R $. Lo spazio vettoriale $ \chi(M) $ ha dimensione infinita.
