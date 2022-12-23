@@ -2669,14 +2669,14 @@ Notiamo anche che\footnote{%
 
 \subsection{Isomorfismo tra $ GL_{n}(\R) $ e $ SL_{n}(\R) \times \R \setminus \{0\} $}
 
-Un gruppo di Lie è un gruppo algebrico con operazioni lisce che sia anche una varietà differenziabile. Due gruppi di Lie possono essere legati da un diffeomorfismo, in quanto varietà, ma non essere isomorfe: questo succede se il diffeomorfismo non è anche un omomorfismo di gruppi, i.e. non preserva la moltiplicazione tra i gruppi.\\
+Un gruppo di Lie è un gruppo algebrico con operazioni lisce che sia anche una varietà differenziabile. Due gruppi di Lie possono essere legati da un diffeomorfismo, in quanto varietà, ma non essere isomorfi: questo succede se il diffeomorfismo non è anche un omomorfismo di gruppi, i.e. non preserva la moltiplicazione tra i gruppi.\\
 Sia l'applicazione
 
 \map{f}
 	{GL_{n}(\R)}{SL_{n}(\R) \times \R \setminus \{0\}}
 	{A}{(A M_{1/\det(A)},\det(A))}
 
-dove il codominio è un prodotto diretto tra i gruppi di Lie (il gruppo delle matrici invertibili con determinante unitario $ SL_{n}(\R) $ e il gruppo $ (\R \setminus \{0\},\cdot) $ con $ \cdot $ il prodotto tra numeri reali) e
+dove la matrice $ M_{r} $ è definita come
 
 \begin{equation}
 	M_{r} \doteq %
@@ -2691,19 +2691,20 @@ dove il codominio è un prodotto diretto tra i gruppi di Lie (il gruppo delle ma
 					\ddots, %
 					1 %
 					} %
-			}
+			} %
+	\qcomma \qquad \det(M_{r}) = r \in \R
 \end{equation}
 
-con $ \det(M_{r}) = r $.\\
+e il codominio è un prodotto diretto tra i gruppi di Lie, i.e. il gruppo delle matrici invertibili con determinante unitario $ SL_{n}(\R) $ e il gruppo $ (\R \setminus \{0\},\cdot) $ con $ \cdot $ il prodotto tra numeri reali.\\
 L'applicazione $ f $ è un diffeomorfismo ma non un isomorfismo.\\
-L'immagine è ben definita, i.e. il primo termine appartiene a $ SL_{n}(\R) $
+L'immagine è ben definita, i.e. il primo termine appartiene a $ SL_{n}(\R) $ in quanto
 
 \begin{equation}
 	\det(A M_{1/\det(A)}) = \det(A) \det(M_{1/\det(A)}) = \det(A) \, \dfrac{1}{\det(A)} = 1
 \end{equation}
 
-e il secondo appartiene a $ \R \setminus \{0\} $, il che è verificato in quanto $ \det(A) \neq 0 $ per qualsiasi $ A \in GL_{n}(\R) $.\\
-Questa applicazione è liscia perché tutte le entrate sono lisce e perché, considerando l'applicazione liscia
+e il secondo appartiene a $ \R \setminus \{0\} $, poiché $ \det(A) \neq 0 $ per qualsiasi $ A \in GL_{n}(\R) $.\\
+L'applicazione $ f $ è liscia perché tutte le entrate sono lisce e perché, considerando l'applicazione liscia
 
 \begin{equation}
 	g : GL_{n}(\R) \to GL_{n}(\R) \times \R \setminus \{0\}
@@ -2757,20 +2758,20 @@ Da questa analisi otteniamo che
 	GL_{n}(\R) \stackrel{iso.}{\not\simeq} SL_{n}(\R) \times \R \setminus \{0\}
 \end{equation}
 
-Inoltre, dal diffeomorfismo, ricaviamo che $ GL_{n}(\R) $ è costituito da due componenti connesse (in quanto $ SL_{n}(\R) $ è connesso), i.e. le matrici con determinante positivo e quelle con determinante negativo: siccome $ \R \setminus \{0\} $ è costituito da due componenti connesse
+Inoltre, siccome $ \R \setminus \{0\} $ è costituito da due componenti connesse
 
 \begin{equation}
 	\R \setminus \{0\} = \R^{+} \sqcup \R^{-}
 \end{equation}
 
-abbiamo che
+dal diffeomorfismo $ f $, ricaviamo che anche $ GL_{n}(\R) $ è costituito da due componenti connesse (in quanto $ SL_{n}(\R) $ è connesso), i.e. le matrici con determinante positivo e quelle con determinante negativo
 
 \begin{equation}
 	GL_{n}(\R) = (SL_{n}(\R) \times \R^{+}) \sqcup (SL_{n}(\R) \times \R^{-}) %
 	\doteq GL_{n}^{+}(\R) \sqcup GL_{n}^{-}(\R)
 \end{equation}
 
-In generale, $ GL_{n}(\R) $ e $ SL_{n}(\R) \times \R \setminus \{0\} $ non sono quindi isomorfi: questo rimane vero per $ n $ pari, ma per $ n $ dispari è possibile trovare un isomorfismo tra questi due gruppi.
+In generale, $ GL_{n}(\R) $ e $ SL_{n}(\R) \times \R \setminus \{0\} $ non sono quindi isomorfi: questo rimane vero per $ n $ pari, ma per $ n $ dispari è possibile trovare un isomorfismo tra questi due gruppi.\\
 Preso un gruppo algebrico $ G $, il suo \textit{centro} $ Z(G) $ è l'insieme  degli elementi di $ G $ che commutano con tutti gli altri elementi, i.e.
 
 \begin{equation}
@@ -2786,7 +2787,7 @@ Il centro del gruppo lineare è l'insieme di tutte le matrici scalari, i.e.
 Questo significa che
 
 \begin{equation}
-	Z(GL_{n}(\R)) = \R \setminus \{0\} \times \{I\} = \R \setminus \{0\}
+	Z(GL_{n}(\R)) = \{I\} \times \R \setminus \{0\}
 \end{equation}
 
 Siccome il centro del prodotto di due gruppi è il prodotto del centro dei gruppi, i.e.
@@ -2801,14 +2802,14 @@ possiamo scrivere
 	Z(SL_{n}(\R) \times \R \setminus \{0\}) = Z(SL_{n}(\R)) \times Z(\R \setminus \{0\})
 \end{equation}
 
-L'insieme dei reali è commutativo, i.e. $ Z(G) = G $ per $ G $ abeliano, dunque coincide con il suo centro mentre il gruppo lineare speciale ha centro diverso a seconda della dimensione delle matrici:
+L'insieme dei reali è commutativo e, siccome $ Z(G) = G $ per $ G $ abeliano, abbiamo che coincide con il suo centro, mentre il gruppo lineare speciale ha centro diverso a seconda della dimensione delle matrici:
 
 \begin{equation}
 	Z(SL_{n}(\R)) = %
 	\begin{cases}
 		\{ \pm I \}, & n = 2 k \\
 		\{ I \}, & n = 2 k + 1
-	\end{cases}%
+	\end{cases} %
 	\qquad k \in \N
 \end{equation}
 
@@ -2816,8 +2817,8 @@ A questo punto, abbiamo che per $ n $ pari
 
 \begin{align}
 	\begin{split}
-		Z(GL_{n}(\R)) &\neq Z(SL_{n}(\R) \times \R \setminus \{0\})\\
-		\{ I \} \times \R \setminus \{0\} &\neq Z(SL_{n}(\R)) \times Z(\R \setminus \{0\})\\
+		Z(GL_{n}(\R)) &\neq Z(SL_{n}(\R) \times \R \setminus \{0\}) \\
+		\{ I \} \times \R \setminus \{0\} &\neq Z(SL_{n}(\R)) \times Z(\R \setminus \{0\}) \\
 		&\neq \{ \pm I \} \times \R \setminus \{0\}
 	\end{split}
 \end{align}
@@ -2829,7 +2830,7 @@ mentre per $ n $ dispari
 \end{equation}
 
 Questo prova che non sia possibile costruire un isomorfismo per $ n $ pari in quanto, se i gruppi fossero isomorfi, in particolare dovrebbero esserlo anche i loro centri, fatto che non si verifica in questo caso.\\
-A questo punto, esibiamo un isomorfismo esplicito, per $ n $ dispari, tra $ GL_{n}(\R) $ e $ SL_{n}(\R) \times \R \setminus \{0\} $:
+A questo punto, esibiamo un isomorfismo di Lie esplicito, per $ n $ dispari, tra $ GL_{n}(\R) $ e $ SL_{n}(\R) \times \R \setminus \{0\} $:
 
 \map{h}
 	{GL_{n}(\R)}{SL_{n}(\R) \times \R \setminus \{0\}}
@@ -2841,7 +2842,7 @@ Notiamo che la prima entrata è ben definita in quanto esiste sempre la radice $
 	{SL_{n}(\R) \times \R \setminus \{0\}}{GL_{n}(\R)}
 	{(S,r)}{r^{1/n} S}
 	
-Verifichiamo che sia l'inversa:
+Verifichiamo che siano inverse:
 
 \begin{align}
 	\begin{split}
@@ -2856,7 +2857,7 @@ Verifichiamo che sia l'inversa:
 		(h \circ h^{-1})(S,r) &= h \left( r^{1/n} S \right) \\
 		&= \left( \det(r^{1/n} S)^{-1/n} \, r^{1/n} S, \det(r^{1/n} S) \right) \\
 		&= \left( \left( (r^{1/n})^{n} \det(S) \right)^{-1/n} \, r^{1/n} S, (r^{1/n})^{n} \det(S) \right) \\
-		&= \left( r^{1/n} r^{1/n} S, r \right) \\
+		&= \left( r^{-1/n} r^{1/n} S, r \right) \\
 		&= (S,r)
 	\end{split}
 \end{align}
