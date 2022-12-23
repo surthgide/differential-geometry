@@ -2960,14 +2960,19 @@ allora $ (\chi(M),[,]) $ è un'algebra di Lie su $ \R $. Lo spazio vettoriale $ 
 
 \subsection{Algebre e gruppi di Lie}
 
-Siano un gruppo di Lie $ G $ e il suo elemento neutro $ e $, possiamo associare lo spazio vettoriale tangente a $ G $ in $ e $, i.e. $ T_{e}(G) $, il quale ha la stessa dimensione del gruppo di Lie $ \dim(T_{e}(G)) = \dim(G) $.\\
-Vogliamo definire una struttura di algebra di Lie su $ T_{e}(G) $ che sia legata al gruppo di Lie $ G $: per fare questo, definiamo un commutatore
+Siano un gruppo di Lie $ G $, il suo elemento neutro $ e $, e lo spazio vettoriale tangente a $ G $ in $ e $, i.e. $ T_{e}(G) $, il quale ha la stessa dimensione del gruppo di Lie
 
-\map{[,]}%
-	{T_{e}(G) \times T_{e}(G)}{T_{e}(G)}%
+\begin{equation}
+	\dim(T_{e}(G)) = \dim(G)
+\end{equation}
+
+Vogliamo definire una struttura di algebra di Lie su $ T_{e}(G) $ che sia legata al gruppo di Lie $ G $: per fare questo, definiamo un commutatore su $ T_{e}(G) $
+
+\map{[,]}
+	{T_{e}(G) \times T_{e}(G)}{T_{e}(G)}
 	{(v,w)}{[v,w]}
 
-su $ T_{e}(G) $ che sia bilineare, antisimmetrico e che rispetti l'identità di Jacobi.\\
+che sia bilineare, antisimmetrico e che rispetti l'identità di Jacobi.\\
 L'idea è usare il commutatore dei campi di vettori lisci sul gruppo di Lie $ G $, i.e. considerare l'algebra $ (\chi(G),[,]) $, per indurre un commutatore su $ T_{e}(G) $.
 
 \subsubsection{Campi di vettori invarianti a sinistra}
@@ -2975,7 +2980,7 @@ L'idea è usare il commutatore dei campi di vettori lisci sul gruppo di Lie $ G 
 Sia $ X $ un campo di vettori su $ G $ (non necessariamente liscio), diremo che $ X $ è \textit{invariante a sinistra} se
 
 \begin{equation}
-	L_{g_{*}} X = X \qcomma \forall g \in G
+	(L_{g})_{*} X = X \qcomma \forall g \in G
 \end{equation}
 
 cioè il pushforward\footnote{%
@@ -2986,14 +2991,14 @@ cioè il pushforward\footnote{%
 	\end{equation*}%
 } di $ X $ tramite la traslazione a sinistra è identico a sé stesso, dove la traslazione a sinistra è definita come
 
-\map{L_{g}}%
-	{G}{G}%
+\map{L_{g}}
+	{G}{G}
 	{h}{g h}
 
 la quale è un diffeomorfismo (quindi è possibile definire il pushforward in quanto $ L_{g} $ è sia iniettiva che suriettiva) con inversa $ L_{g}^{-1} = L_{g^{-1}} $. Equivalentemente, il campo di vettori $ X $ è invariante per traslazioni a sinistra se
 
 \begin{equation}
-	L_{g_{*h}} (X_{h}) = X_{gh} \qcomma \forall g,h \in G
+	(L_{g})_{*h} (X_{h}) = X_{gh} \qcomma \forall g,h \in G
 \end{equation}
 
 ciò significa che $ X $ è $ L_{g} $-related\footnote{%
@@ -3010,7 +3015,7 @@ ciò significa che $ X $ è $ L_{g} $-related\footnote{%
 	Un campo di vettori invariante a sinistra $ X $ è determinato dal suo valore nell'elemento neutro $ X_{e} $ in quanto
 	
 	\begin{equation}
-		X_{g} = L_{g_{*e}} (X_{e})
+		X_{g} = (L_{g})_{*e} (X_{e})
 	\end{equation}
 \end{remark}
 
@@ -3029,10 +3034,10 @@ I campi di vettori invarianti a sinistra sono importanti perché esiste un isomo
 		dove $ L(G) $ indica l'insieme dei campi di vettori invarianti a sinistra di $ G $ e
 		
 		\begin{equation}
-			\hat{A}_{g} \doteq L_{g_{*e}}(A)
+			\hat{A}_{g} \doteq (L_{g})_{*e}(A)
 		\end{equation}
 	
-		con $ L_{g_{*e}} : T_{e}(G) \to T_{g}(G) $, è un isomorfismo di spazi vettoriali;
+		con $ (L_{g})_{*e} : T_{e}(G) \to T_{g}(G) $, è un isomorfismo di spazi vettoriali;
 		
 		\item L'insieme dei campi di vettori invarianti a sinistra di $ G $ è contenuto nell'insieme dei campi di vettori lisci su $ G $, i.e. $ L(G) \subset \chi(G) $ quindi un campo di vettori invariante a sinistra è sempre liscio;
 		
@@ -3051,76 +3056,81 @@ I campi di vettori invarianti a sinistra sono importanti perché esiste un isomo
 		\item Verifichiamo innanzitutto che $ \hat{A} \in L(G) $:
 		
 		\begin{gather}
-			\hat{A} \in L(G)\nonumber\\%
-			\Updownarrow\nonumber\\%
-			L_{g_{*}}(\hat{A}) = \hat{A} \qcomma \forall g \in G\\%
-			\Updownarrow\nonumber\\%
-			L_{g_{*h}}(\hat{A}_{h}) = \hat{A}_{gh} \qcomma \forall g,h \in G\nonumber
+			\hat{A} \in L(G) \nonumber \\
+			\Updownarrow \nonumber \\
+			(L_{g})_{*}(\hat{A}) = \hat{A} \qcomma \forall g \in G \\
+			\Updownarrow \nonumber \\
+			(L_{g})_{*h}(\hat{A}_{h}) = \hat{A}_{gh} \qcomma \forall g,h \in G \nonumber
 		\end{gather}
 	
 		Possiamo dimostrare l'ultima equazione tramite la definizione di $ \hat{A}_{g} $
 		
 		\begin{equation}
-			\hat{A}_{g} \doteq L_{g_{*e}}(A)
+			\hat{A}_{g} \doteq (L_{g})_{*e}(A)
 		\end{equation}
 	
 		otteniamo dunque che
 		
 		\begin{align}
 			\begin{split}
-				L_{g_{*h}}(\hat{A}_{h}) &= L_{g_{*h}}(L_{h_{*e}}(A)) = \hat{A}_{gh}\\
+				(L_{g})_{*h}(\hat{A}_{h}) &= (L_{g})_{*h}((L_{h})_{*e}(A)) = \hat{A}_{gh}\\
 				&= (L_{g} \circ L_{h})_{*e} (A)\\
-				&= L_{gh_{*e}} (A)\\
+				&= (L_{gh})_{*e} (A)\\
 				&= \hat{A}_{gh}
 			\end{split}
 		\end{align}
-	
+		
 		quindi $ \hat{A} \in L(G) $.\\
-		Per dimostrare che $ \hat{} $ sia un isomorfismo tra spazi vettoriali dobbiamo far vedere che sia un omomorfismo invertibile. Per dimostrare che sia un omomorfismo dobbiamo mostrare che $ \hat{} $ sia un'applicazione lineare, i.e.
+		Per dimostrare che $ \hatapp $ sia un isomorfismo tra spazi vettoriali dobbiamo far vedere che sia un omomorfismo invertibile. Per dimostrare che sia un omomorfismo dobbiamo mostrare che $ \hatapp $ sia un'applicazione lineare, i.e.
 		
 		\begin{equation}
-			\widehat{\lambda A + \mu B} = \lambda \hat{A} + \mu \hat{B}
+			\widehat{\lambda A + \mu B} = \lambda \hat{A} + \mu \hat{B} %
+			 \qcomma \forall \lambda,\mu \in \R, \, \forall A,B \in T_{e}(G)
 		\end{equation}
 	
 		per fare ciò, applichiamo il primo membro a un qualunque elemento $ g \in G $:
 	
 		\begin{align}
 			\begin{split}
-				(\widehat{\lambda A + \mu B})_{g} &\doteq L_{g_{*e}} (\lambda A + \mu B)\\
-				&= \lambda L_{g_{*e}} (A) + \mu L_{g_{*e}} (B)\\
-				&\doteq \lambda \hat{A}_{g} + \mu \hat{B}_{g}\\
+				(\widehat{\lambda A + \mu B})_{g} &\doteq (L_{g})_{*e} (\lambda A + \mu B) \\
+				&= \lambda (L_{g})_{*e} (A) + \mu (L_{g})_{*e} (B) \\
+				&\doteq \lambda \hat{A}_{g} + \mu \hat{B}_{g} \\
 				&= (\lambda \hat{A} + \mu \hat{B})_{g}
 			\end{split}
 		\end{align}
 	
-		per $ \forall \lambda,\mu \in \R $ e $ \forall A,B \in T_{e}(G) $. L'applicazione inversa (lineare) è la "valutazione in $ e $"
+		L'applicazione inversa (lineare) è la "valutazione in $ e $"
 		
-		\map{\mid_{e}}%
-			{L(G)}{T_{e}(G)}%
+		\map{\mid_{e}}
+			{L(G)}{T_{e}(G)}
 			{X}{X_{e}}
 			
 		in quanto
 		
 		\begin{equation}
-			(\mid_{e} \circ \, \hat{} \,)(A) = \hat{A}_{e} = L_{e_{*e}} (A) = A
+			(\mid_{e} \circ \hatapp)(A) = \hat{A}_{e} = (L_{e})_{*e} (A) = A
 		\end{equation}
-	
-		poiché
+		
+		poiché, per le proprietà funtoriali del differenziale, vale l'implicazione
 		
 		\begin{equation}
-			L_{e} = \id_{G} \implies L_{e_{*e}} = \id_{T_{e}(G)}
+			L_{e} = \id_{G} %
+			\implies %
+			(L_{e})_{*e} = \id_{T_{e}(G)}
 		\end{equation}
 	
 		e viceversa verifichiamo che
 		
 		\begin{equation}
-			(\hatapp \circ \mid_{e})(A) = \hat{X_{e}} = X
+			(\hatapp \circ \mid_{e})(X) = \widehat{X_{e}} = X
 		\end{equation}
 	
 		applicando il primo membro a un qualunque elemento $ g \in G $:
 		
 		\begin{equation}
-			\hat{X_{e}}_{| g} \doteq L_{g_{*e}}(X_{e}) = X_{g} \qcomma \forall g \in G \implies \hat{X_{e}} = X
+			\eval{\widehat{X_{e}}}_{g} \doteq (L_{g})_{*e}(X_{e}) = X_{g} \qcomma \forall g \in G %
+			\implies %
+			\hat{X_{e}} = X
 		\end{equation}
 		
 		\item Un campo di vettori è liscio se la derivata di una funzione liscia rispetto al campo di vettori è ancora una funzione liscia, i.e.
@@ -3133,8 +3143,8 @@ I campi di vettori invarianti a sinistra sono importanti perché esiste un isomo
 		
 		\begin{equation}
 			\begin{cases}
-				\gamma : (-\varepsilon,\varepsilon) \to G\\
-				\gamma(0) = g\\
+				\gamma : (-\varepsilon,\varepsilon) \to G \\
+				\gamma(0) = g \\
 				\gamma'(0) = X_{g}
 			\end{cases}
 		\end{equation}
@@ -3145,27 +3155,29 @@ I campi di vettori invarianti a sinistra sono importanti perché esiste un isomo
 			X_{g} f = \eval{ \dv{t} f(\gamma(t)) }_{t=0}
 		\end{equation}
 	
-		Consideriamo dunque la curva $ \gamma = g \cdot c $ dove $ \cdot $ è il prodotto in $ G $ e
+		Consideriamo dunque la curva $ \gamma = g \cdot c $ dove $ \cdot $ è il prodotto in $ G $ e $ c $ è una curva liscia
 		
 		\begin{equation}
 			\begin{cases}
-				c : (-\varepsilon,\varepsilon) \to G\\
-				c(0) = e\\
+				c : (-\varepsilon,\varepsilon) \to G \\
+				c(0) = e \\
 				c'(0) = X_{e}
 			\end{cases}
 		\end{equation}
 	
 		che rispetta le condizioni poste su $ \gamma $:
 		
+		\begin{equation}
+			\gamma(0) = g \, c(0)= g \, e = g
+		\end{equation}
+	
 		\begin{align}
 			\begin{split}
-				\gamma(0) &= g \, c(0)= g \, e = g\\\\
-				%
-				\gamma'(0) &= \eval{ \dv{t} g \, c(t) }_{t=0}\\
-				&= \eval{ \dv{t} L_{g}(c(t)) }_{t=0}\\
-				&= (L_{g} \circ c)'(0)\\
-				&= L_{g_{*c(0)}} (c'(0))\\
-				&= L_{g_{*e}} (X_{e})\\
+				\gamma'(0) &= \eval{ \dv{t} g \, c(t) }_{t=0} \\
+				&= \eval{ \dv{t} L_{g}(c(t)) }_{t=0} \\
+				&= (L_{g} \circ c)'(0) \\
+				&= (L_{g})_{*c(0)} (c'(0)) \\
+				&= (L_{g})_{*e} (X_{e}) \\
 				&= X_{g}
 			\end{split}
 		\end{align}
@@ -3177,51 +3189,52 @@ I campi di vettori invarianti a sinistra sono importanti perché esiste un isomo
 		\end{equation}
 		
 		e nell'ultimo abbiamo utilizzato il fatto che $ X $ è invariante a sinistra.\\
-		A questo punto, per mostrare che $ X \in \chi(G) $ basta mostrare che
+		A questo punto, per mostrare che $ X \in \chi(G) $ basta mostrare che sia liscia in $ G $ la derivata direzionale
 		
 		\begin{equation}
-			X_{g} f = \eval{ \dv{t} f(\gamma(t)) }_{t=0} = \eval{ \dv{t} f(g \cdot c(t)) }_{t=0}
+			X_{g} f = \eval{ \dv{t} f(\gamma(t)) }_{t=0} %
+			= \eval{ \dv{t} f(g \cdot c(t)) }_{t=0}
 		\end{equation}
 	
-		sia liscia in $ G $: questo è vero perché $ f \in C^{\infty}(G) $ per ipotesi, $ c(t) $ è una curva liscia, il prodotto $ \cdot $ è liscio in quanto $ G $ è un gruppo di Lie e $ f(g \cdot c(t)) $ rimane liscia se derivata rispetto a $ t $.
+		questo è vero perché $ f \in C^{\infty}(G) $ per ipotesi, $ c(t) $ è una curva liscia, il prodotto $ \cdot $ è liscio in quanto $ G $ è un gruppo di Lie e $ f(g \cdot c(t)) $ rimane liscia se derivata rispetto a $ t $.
 		
 		\item Siano $ X,Y \in L(G) \subset \chi(G) $, perché il loro commutatore appartenga a $ L(G) $ è necessario che
 		
 		\begin{equation}
-			L_{g_{*}}(\comm{X}{Y}) = \comm{X}{Y} \qcomma \forall g \in G \iff \comm{X}{Y} \in L(G)
+			(L_{g})_{*}([X,Y]) = [X,Y] \qcomma \forall g \in G \iff [X,Y] \in L(G)
 		\end{equation}
 	
-		Sappiamo che $ X $ e $ Y $ sono lisci e inoltre sono $ L_{g} $-related rispettivamente a $ L_{g_{*}}(X) $ e $ L_{g_{*}}(Y) $ dunque, per il Corollario \ref{frel-brack}, abbiamo che
+		Sappiamo che $ X $ e $ Y $ sono lisci e inoltre sono $ L_{g} $-related rispettivamente a $ (L_{g})_{*}(X) $ e $ (L_{g})_{*}(Y) $ dunque, per il Corollario \ref{frel-brack}, abbiamo che
 		
 		\begin{equation}
-			L_{g_{*}}(\comm{X}{Y}) = \comm{L_{g_{*}}(X)}{L_{g_{*}}(Y)}
+			L_{g_{*}}([X,Y]) = [(L_{g})_{*}(X), (L_{g})_{*}(Y)]
 		\end{equation}
 	
 		Essendo $ X $ e $ Y $ invarianti a sinistra, i.e.
 		
 		\begin{equation}
 			\begin{cases}
-				L_{g_{*}}(X) = X\\
-				L_{g_{*}}(Y) = Y
+				(L_{g})_{*}(X) = X \\
+				(L_{g})_{*}(Y) = Y
 			\end{cases}
 		\end{equation}
 		
 		abbiamo dunque che
 		
 		\begin{equation}
-			L_{g_{*}}(\comm{X}{Y}) = \comm{L_{g_{*}}(X)}{L_{g_{*}}(Y)} = \comm{X}{Y}
+			(L_{g})_{*}([X,Y]) = [(L_{g})_{*}(X), (L_{g})_{*}(Y)] = [X,Y]
 		\end{equation}		
 	\end{enumerate}
 \end{proof}
 
 \begin{corollary}
-	La coppia $ (L(G),\comm{}{}) $ è una sottoalgebra\footnote{%
-		Presi due spazi vettoriali $ V $ e $ W \subset V $ con $ (V,\comm{}{}) $ algebra di Lie, $ (W,\comm{}{}_{| W}) $ è una sottoalgebra di Lie se $ W $ è un sottospazio vettoriale e
+	La coppia $ (L(G),[,]) $ è una sottoalgebra\footnote{%
+		Presi due spazi vettoriali $ V $ e $ W \subset V $ con $ (V,[,]) $ algebra di Lie, $ \left( W, \eval{[,]}_{W} \right) $ è una sottoalgebra di Lie se $ W $ è un sottospazio vettoriale e vale
 		
 		\begin{equation*}
-			\comm{w_{1}}{w_{2}} \in W \qcomma \forall w_{1},w_{2} \in W
+			[w_{1}, w_{2}] \in W \qcomma \forall w_{1},w_{2} \in W
 		\end{equation*}%
-	} di Lie di $ (\chi(G),\comm{}{}) $ e dunque essa stessa un'algebra di Lie finito-dimensionale, in quanto ha la stessa dimensione dello spazio tangente $ T_{e}(G) $ poiché $ L(G) \stackrel{iso.}{\simeq} T_{e}(G) $.
+	} di Lie di $ (\chi(G),[,]) $ e dunque essa stessa un'algebra di Lie finito-dimensionale, in quanto ha la stessa dimensione dello spazio tangente $ T_{e}(G) $ poiché $ L(G) \stackrel{iso.}{\simeq} T_{e}(G) $.
 \end{corollary}
 
 \subsection{Algebra di Lie su $ T_{e}(G) $}
