@@ -3245,29 +3245,29 @@ Dati $ A,B \in T_{e}(G) $ definiamo il commutatore tra gli elementi dello spazio
 }
 
 \begin{equation}
-	\comm{A}{B} \doteq \comm{\hat{A}}{\hat{B}}_{e}
+	[A,B] \doteq \comm{\hat{A}}{\hat{B}}_{e}
 \end{equation}
 
 cioè tramite l'isomorfismo
 
-\map{\hatapp}%
-	{T_{e}(G)}{L(G)}%
+\map{\hatapp}
+	{T_{e}(G)}{L(G)}
 	{A}{\hat{A}}
 	
 dove
 
 \begin{equation}
-	\hat{A}_{g} = L_{g_{*e}}(A) \qcomma \forall g \in G
+	\hat{A}_{g} = (L_{g})_{*e}(A) \qcomma \forall g \in G
 \end{equation}
 
-portiamo gli elementi dello spazio tangente $ A $ e $ B $ nei rispettivi campi di vettori invarianti a sinistra $ \hat{A} $ e $ \hat{B} $, ne facciamo il commutatore (come campi di vettori) e poi lo valutiamo nell'elemento $ e $, i.e. utilizzando l'inversa dell'isomorfismo
+In sintesi, vengono mappati gli elementi dello spazio tangente $ A $ e $ B $ nei rispettivi campi di vettori invarianti a sinistra $ \hat{A} $ e $ \hat{B} $, di questi si calcola il commutatore (come campi di vettori), il quale viene infine valutato nell'elemento $ e $, i.e. utilizzando l'inversa dell'isomorfismo
 
-\map{\mid_{e}}%
-	{L(G)}{T_{e}(G)}%
+\map{\mid_{e}}
+	{L(G)}{T_{e}(G)}
 	{X}{X_{e}}
 
-ottenendo dunque il commutatore $ \comm{A}{B} $ come un elemento dello spazio tangente $ T_{e}(G) $.\\
-In questo modo, l'applicazione $ \hatapp $ è un isomorfismo di algebre di Lie tra $ (T_{e}(G),[,]) $ e $ (L(G),[,]) $ con i rispettivi commutatori; le proprietà di algebra di Lie sono rispettate da $ (T_{e}(G),[,]) $ in quanto isomorfo a $ (L(G),[,]) $, che le rispetta.\\
+ottenendo dunque il commutatore $ [A,B] $ come un elemento dello spazio tangente $ T_{e}(G) $.\\
+In questo modo, l'applicazione $ \hatapp $ è un isomorfismo di algebre di Lie tra $ (T_{e}(G),[,]) $ e $ (L(G),[,]) $ con i rispettivi commutatori; le proprietà di algebra di Lie sono rispettate da $ (T_{e}(G),[,]) $ in quanto isomorfo a $ (L(G),[,]) $, il quale le rispetta.\\
 L'algebra $ (T_{e}(G),[,]) $ è chiamata \textit{algebra di Lie del gruppo} $ G $ e viene indicata con
 
 \begin{equation}
@@ -3278,7 +3278,7 @@ L'algebra $ (T_{e}(G),[,]) $ è chiamata \textit{algebra di Lie del gruppo} $ G 
 	Siano $ A,B \in T_{e}(G) $, allora il campo di vettori associato al loro commutatore tramite l'isomorfismo tra $ T_{e}(G) $ e $ L(G) $ è identico al commutatore tra i campi di vettori corrispondenti ad $ A $ e $ B $, i.e.
 	
 	\begin{equation}
-		\widehat{[A,B]} = \widehat{\comm{\hat{A}}{\hat{B}}_{e}} = \comm{\hat{A}}{\hat{B}}
+		\widehat{[A,B]} = \widehat{\comm{\hat{A}}{\hat{B}}}_{e} = \comm{\hat{A}}{\hat{B}}
 	\end{equation}
 
 	dove nel primo passaggio abbiamo usato la definizione di commutatore nello spazio tangente e nel secondo abbiamo usato il fatto che l'isomorfismo $ \hatapp $ e la valutazione nell'elemento neutro $ \mid_{e} $ siano i rispettivi inversi.
