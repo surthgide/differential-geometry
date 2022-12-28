@@ -3260,13 +3260,27 @@ dove
 	\hat{A}_{g} = (L_{g})_{*e}(A) \qcomma \forall g \in G
 \end{equation}
 
-In sintesi, vengono mappati gli elementi dello spazio tangente $ A $ e $ B $ nei rispettivi campi di vettori invarianti a sinistra $ \hat{A} $ e $ \hat{B} $, di questi si calcola il commutatore (come campi di vettori), il quale viene infine valutato nell'elemento $ e $, i.e. utilizzando l'inversa dell'isomorfismo
+\sbs{0.55}{%
+			In sintesi, vengono mappati gli elementi dello spazio tangente $ A $ e $ B $ nei rispettivi campi di vettori invarianti a sinistra $ \hat{A} $ e $ \hat{B} $, di questi si calcola il commutatore (come campi di vettori), il quale viene infine valutato nell'elemento $ e $, i.e. utilizzando l'inversa dell'isomorfismo
+			
+			\map{\mid_{e}}
+				{L(G)}{T_{e}(G)}
+				{X}{X_{e}}
+			
+			ottenendo dunque il commutatore $ [A,B] $ come un elemento dello spazio tangente $ T_{e}(G) $.
+			}
+	{0.45}{%
+			\diagr{%
+					L(G) \times L(G) \arrow[rr, "{[,]}"]                         \&  \& L(G) \arrow[dd, "\mid_{e}"]                         \\
+					\&  \&                                                     \\
+					T_{e}(G) \times T_{e}(G) \arrow[uu, "\hatapp \times \hatapp"]                   \&  \& T_{e}(G)                                            \\
+					                                                 \&  \&                                                     \\
+					{(\hat{A},\hat{B})} \arrow[rr, "{[,]}", maps to] \&  \& {[\hat{A},\hat{B}]} \arrow[dd, "\mid_{e}", maps to] \\
+					\&  \&                                                     \\
+					{(A,B)} \arrow[uu, "\hatapp \times \hatapp", maps to]           \&  \& {[\hat{A},\hat{B}]_{e}}                                     
+					}
+			}
 
-\map{\mid_{e}}
-	{L(G)}{T_{e}(G)}
-	{X}{X_{e}}
-
-ottenendo dunque il commutatore $ [A,B] $ come un elemento dello spazio tangente $ T_{e}(G) $.\\
 In questo modo, l'applicazione $ \hatapp $ è un isomorfismo di algebre di Lie tra $ (T_{e}(G),[,]) $ e $ (L(G),[,]) $ con i rispettivi commutatori; le proprietà di algebra di Lie sono rispettate da $ (T_{e}(G),[,]) $ in quanto isomorfo a $ (L(G),[,]) $, il quale le rispetta.\\
 L'algebra $ (T_{e}(G),[,]) $ è chiamata \textit{algebra di Lie del gruppo} $ G $ e viene indicata con
 
