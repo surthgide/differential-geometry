@@ -3319,9 +3319,9 @@ Prendiamo ora l'isomorfismo $ \hatapp $, in modo da analizzare i campi di vettor
 
 \map{\hatapp}
 	{T_{0}(\R^{n})}{L(\R^{n})}
-	{\eval{ \pdv{x^{j}} }_{0}}{\widehat{ \pdv{x^{j}} }}
+	{\eval{ \pdv{x^{j}} }_{0}}{\widehat{ \eval{ \pdv{x^{j}} }_{0} }}
 
-Applichiamolo alla base di $ T_{0}(\R^{n}) $ per ottenere i generatori dello spazio $ L(\R^{n}) $
+Applicando l'isomorfismo alla base di $ T_{0}(\R^{n}) $ otteniamo i generatori dello spazio $ L(\R^{n}) $:
 
 \begin{equation}
 	L(\R^{n}) = \ev{ \widehat{ \eval{ \pdv{x^{1}} }_{0} }, \dots, \widehat{ \eval{ \pdv{x^{n}} }_{0} } }
@@ -3345,13 +3345,11 @@ Al fine di trovare i coefficienti $ b^{ij} $, applichiamo entrambi i membri dell
 
 Per il secondo membro
 
-\begin{align}
-	\begin{split}
-		\left( \sum_{i=1}^{n} b^{ij} \eval{ \pdv{x^{j}} }_{g} \right) (x^{k}) &= \sum_{i=1}^{n} b^{ij} \eval{ \pdv{x^{k}}{x^{j}} }_{g} \\
-		&= \sum_{i=1}^{n} b^{ij} \delta^{jk} \\
-		&= b^{ik}
-	\end{split}
-\end{align}
+\begin{equation}
+	\left( \sum_{i=1}^{n} b^{ij} \eval{ \pdv{x^{j}} }_{g} \right) (x^{k}) = \sum_{i=1}^{n} b^{ij} \eval{ \pdv{x^{k}}{x^{j}} }_{g} %
+	= \sum_{i=1}^{n} b^{ij} \delta^{jk} %
+	= b^{ik}
+\end{equation}
 
 mentre per il primo membro, considerando $ g = (g^{1},\dots,g^{n}) $ e la traslazione a sinistra
 
@@ -3381,7 +3379,7 @@ perciò $ b^{ik} = \delta^{ik} $ e quindi
 il che implica
 
 \begin{equation}
-	\widehat{ \eval{ \pdv{x^{i}} }_{0} } = \pdv{x^{i}}
+	\widehat{ \eval{ \pdv{x^{i}} }_{0} } \equiv \pdv{x^{i}}
 \end{equation}
 
 Un campo di vettori invariante a sinistra può dunque essere scritto come
@@ -3414,7 +3412,7 @@ La coppia $ (\S^{1},\cdot) $ è un gruppo di Lie (abeliano) con elemento neutro 
 	T_{1}(\S^{1}) = \ev{i}_{\R} = \{ ia \mid a \in \R \}
 \end{equation}
 
-Prendendo la traslazione a sinistra (anche $ (\S^{1},\cdot) $ è un gruppo abeliano)
+Prendendo la traslazione a sinistra
 
 \map{L_{g}}
 	{\S^{1}}{\S^{1}}
@@ -3492,14 +3490,14 @@ L'insieme delle matrici invertibili
 	GL_{n}(\R) = \{ A \in M_{n}(\R) \mid \det(A) \neq 0 \}
 \end{equation}
 
-insieme al prodotto matriciale $ (GL_{n}(\R),\cdot) $ forma un gruppo di Lie con elemento neutro $ I $.\\
-Lo spazio tangente all'elemento neutro è
+con il prodotto matriciale $ \cdot $ forma un gruppo di Lie $ (GL_{n}(\R),\cdot) $ con elemento neutro la matrice identità $ I $.\\
+Lo spazio tangente all'elemento neutro è l'insieme delle matrici quadrate
 
 \begin{equation}
 	T_{I}(GL_{n}(\R)) = M_{n}(\R)
 \end{equation}
 
-Un elemento dello spazio tangente può essere scritto sommatoria degli elementi di base delle matrici quadrate e poi identificato con la matrice dei coefficienti, i.e.
+Un elemento dello spazio tangente può essere scritto come sommatoria degli elementi di base delle matrici quadrate e poi identificato con la matrice dei coefficienti, i.e.
 
 \begin{equation}
 	A = \sum_{i,j=1}^{n} a_{ij} \eval{ \pdv{x_{ij}} }_{I} \equiv [a_{ij}] %
@@ -3508,8 +3506,8 @@ Un elemento dello spazio tangente può essere scritto sommatoria degli elementi 
 
 Consideriamo l'isomorfismo $ \hatapp $ tra lo spazio tangente $ T_{I}(GL_{n}(\R)) $ e l'insieme dei campi di vettori invarianti a sinistra $ L(GL_{n}(\R)) $: presa una matrice $ g = [g_{ij}] \in GL_{n}(\R) $ e la traslazione a sinistra
 
-\map{L_{g}}%
-	{GL_{n}(\R)}{GL_{n}(\R)}%
+\map{L_{g}}
+	{GL_{n}(\R)}{GL_{n}(\R)}
 	{h}{g h}
 
 un elemento di $ L(GL_{n}(\R)) $ è definito come
