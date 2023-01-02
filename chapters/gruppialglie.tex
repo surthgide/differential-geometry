@@ -3306,13 +3306,13 @@ La coppia $ (\R^{n},+) $ è un gruppo di Lie (abeliano) con elemento neutro $ 0 
 
 \begin{equation}
 	T_{0}(\R^{n}) = \left\{ \sum_{j=1}^{n} a^{j} \eval{\pdv{x^{j}}}_{0} \right\} %
-	= (a_{1},\dots,a^{n}) \in \R^{n}
+	= (a^{1},\dots,a^{n}) \in \R^{n}
 \end{equation}
 
-dove
+dove le $ a^{j} : \R^{n} \to \R $ sono applicazioni e lo spazio tangente è generato dalle derivate parziali, i.e.
 
 \begin{equation}
-	T_{0}(\R^{n}) = \ev{ \eval{ \pdv{x^{1}} }_{0}, \dots, \eval{ \pdv{x^{n}} }_{0} }
+	T_{0}(\R^{n}) = \ev{ \eval{ \pdv{x^{j}} }_{0} }
 \end{equation}
 
 Prendiamo ora l'isomorfismo $ \hatapp $, in modo da analizzare i campi di vettori invarianti a sinistra $ L(\R^{n}) $
@@ -3324,7 +3324,7 @@ Prendiamo ora l'isomorfismo $ \hatapp $, in modo da analizzare i campi di vettor
 Applicando l'isomorfismo alla base di $ T_{0}(\R^{n}) $ otteniamo i generatori dello spazio $ L(\R^{n}) $:
 
 \begin{equation}
-	L(\R^{n}) = \ev{ \widehat{ \eval{ \pdv{x^{1}} }_{0} }, \dots, \widehat{ \eval{ \pdv{x^{n}} }_{0} } }
+	L(\R^{n}) = \ev{ \widehat{ \eval{ \pdv{x^{j}} }_{0} } }
 \end{equation}
 
 Per esplicitare la forma dei campi di vettori invarianti a sinistra, valutiamo un rappresentante di $ L(\R^{n}) $ in un generico elemento $ g \in \R^{n} $
@@ -3385,17 +3385,17 @@ il che implica
 Un campo di vettori invariante a sinistra può dunque essere scritto come
 
 \begin{equation}
-	X \in L(\R^{n}) \iff X = \sum_{i=1}^{n} a^{i} \pdv{x^{j}} \qcomma a^{i} \in \R
+	X \in L(\R^{n}) \iff X = \sum_{i=1}^{n} a^{i} \pdv{x^{i}} \qcomma a^{i} \in \R
 \end{equation}
 
-mentre un campo di vettori qualsiasi può avere al posto dei coefficienti reali $ a^{i} $ delle funzioni.\\
+mentre un campo di vettori qualsiasi può avere delle funzioni al posto dei coefficienti reali $ a^{i} $.\\
 Presi due vettori $ A,B \in T_{0}(\R^{n}) $, il commutatore dell'algebra di Lie $ (T_{0}(\R^{n}),[,]) $ è definito come
 
 \begin{align}
 	\begin{split}
 		\comm{A}{B} &\doteq \comm{\hat{A}}{\hat{B}}_{0} \\
 		&= \comm{ \sum_{i=1}^{n} a^{i} \pdv{x^{i}} }{ \sum_{j=1}^{n} b^{j} \pdv{x^{j}} }_{0} \\
-		&= \sum_{i,j=1}^{n} a^{i} b^{j} \cancel{ \comm{ \pdv{x^{i}} }{ \pdv{x^{j}} } } \\
+		&= \sum_{i,j=1}^{n} a^{i} b^{j} \cancel{ \comm{ \pdv{x^{i}} }{ \pdv{x^{j}} }_{0} } \\
 		&= 0
 	\end{split}
 \end{align}
@@ -3436,14 +3436,12 @@ e la curva liscia
 
 l'isomorfismo verso i campi di vettori invarianti a sinistra è definito come
 
-\begin{align}
-	\begin{split}
-		\hat{i}_{g} &= (L_{g})_{*1} (i) \\
-		&= \eval{ \dv{t} L_{g}(c(t)) }_{t=0} \\
-		&= \eval{ \dv{t} (g \, e^{i t}) }_{t=0} \\
-		&= i g
-	\end{split}
-\end{align}
+\begin{equation}
+	\hat{i}_{g} \doteq (L_{g})_{*1} (i) %
+	= \eval{ \dv{t} L_{g}(c(t)) }_{t=0} %
+	= \eval{ \dv{t} (g \, e^{i t}) }_{t=0} %
+	= i g
+\end{equation}
 
 dove $ L(\S^{1}) = \ev{\hat{i}}_{\R} $ e $ \hat{i}_{g} $ è il vettore perpendicolare alla normale al punto $ g \in \S^{1} $ (la rotazione di $ \pi/2 $ in senso antiorario è data da $ i $)\\
 Anche in questo caso, il commutatore definito nello spazio tangente è nullo in quanto
@@ -3513,7 +3511,7 @@ Consideriamo l'isomorfismo $ \hatapp $ tra lo spazio tangente $ T_{I}(GL_{n}(\R)
 un elemento di $ L(GL_{n}(\R)) $ è definito come
 
 \begin{equation}
-	\hat{A}_{g} = (L_{g})_{*I} (A) %
+	\hat{A}_{g} \doteq (L_{g})_{*I} (A) %
 	= \sum_{i,j=1}^{n} (g A)_{ij} \eval{ \pdv{x_{ij}} }_{g}
 \end{equation}
 
@@ -3526,7 +3524,7 @@ Il commutatore nello spazio tangente è definito tramite l'isomorfismo e avrà l
 può dunque essere identificato dalla matrice
 
 \begin{equation}
-	[A,B] = C = [c_{ij}] \in M_{n}(\R)
+	[A,B] \doteq C = [c_{ij}] \in M_{n}(\R)
 \end{equation}
 
 Definendo la funzione
