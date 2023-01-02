@@ -3587,55 +3587,75 @@ cioè l'usuale commutatore tra matrici.
 
 \subsection{Pushforward di campi di vettori invarianti a sinistra tramite omomorfismi di gruppi di Lie}
 
-Siano $ H $ e $ G $ due gruppi di Lie e $ F : H \to G $ un omomorfismo di gruppi di Lie, i.e. $ F $ è liscio (ma non necessariamente invertibile), preserva le operazioni dei gruppi e vale
+Siano $ G $ e $ H $ due gruppi di Lie e $ F : G \to H $ un omomorfismo di gruppi di Lie, i.e. $ F $ è liscio (ma non necessariamente invertibile), preserva le operazioni dei gruppi e vale
 
 \begin{equation}
-	L_{F(h)} \circ F = F \circ L_{h} \qcomma \forall h \in H
+	L_{F(g)} \circ F = F \circ L_{g} \qcomma \forall g \in G
 \end{equation}
 
-Per trasportare i campi di vettori invarianti a sinistra su $ H $ in quelli su $ G $, possiamo utilizzare gli isomorfismi tra questi spazi e gli spazi tangenti e comporli con il differenziale dell'omomorfismo: consideriamo le applicazioni\footnote{%
+Per trasportare i campi di vettori invarianti a sinistra su $ G $ in quelli su $ H $, possiamo utilizzare gli isomorfismi tra questi spazi e gli spazi tangenti e comporli con il differenziale dell'omomorfismo.
+
+\sbs{0.55}{%
+			Consideriamo le seguenti applicazioni\footnotemark
+			
+			\begin{equation}
+				\begin{cases}
+					\mid_{e} \, : L(G) \to T_{e}(G) \\
+					F_{*e} : T_{e}(G) \to T_{e}(H) \\
+					\hatapp : T_{e}(H) \to L(H)
+				\end{cases}
+			\end{equation}
+		
+			
+			}
+	{0.45}{%
+			\diagr{%
+					T_{e}(G) \arrow[rr, "F_{*e}"]                   \&  \& T_{e}(H) \arrow[dd, "\hatapp"] \\
+					\&  \&                                \\
+					L(G) \arrow[uu, "\mid_{e}"] \arrow[rr, "F_{*}"] \&  \& L(H)                          
+					}
+			}
+
+\footnotetext{%
 	Al fine di non appesantire la notazione, il simbolo $ \hatapp $ verrà usato per entrambi gli isomorfismi
 	
 	\begin{equation*}
 		\begin{cases}
-			\hatapp : T_{e}(G) \to L_{G}\\
+			\hatapp : T_{e}(G) \to L_{G} \\
 			\hatapp : T_{e}(H) \to L_{H}
 		\end{cases}
 	\end{equation*}
 	
-	e analogamente per il suo inverso; inoltre $ e $ indicherà l'elemento neutro per entrambi i gruppi di Lie, anche perché legati da un omomorfismo, il quale mappa $ e \in H $ in $ e \in G $.%
+	e analogamente per il suo inverso; inoltre $ e $ indicherà l'elemento neutro per entrambi i gruppi di Lie, anche perché legati da un omomorfismo, il quale mappa $ e \in G $ in $ e \in H $.%
 }
 
+Definiamo il \textit{pushforward tramite l'omomorfismo} $ F $ come la composizione:
+
 \begin{equation}
-	\begin{cases}
-		\mid_{e} \, : L(H) \to T_{e}(H)\\
-		F_{*e} : T_{e}(H) \to T_{e}(G)\\
-		\hatapp : T_{e}(G) \to L_{G}
-	\end{cases}
+	F_{*} \doteq \hatapp \circ F_{*e} \circ \mid_{e}
 \end{equation}
 
-\img{0.4}{img53}
-
-Tramite la loro composizione, definiamo il pushforward di $ X \in L(H) $ tramite l'omomorfismo $ F $ come
+Applicandolo a un campo di vettori invariante a sinistra $ X \in L(G) $
 
 \begin{equation}
-	F_{*}(X) \doteq \widehat{ F_{*e}(X_{e}) } \in L(G)
+	F_{*}(X) = \widehat{ F_{*e}(X_{e}) } \in L(G)
 \end{equation}
 
 Esplicitando questa definizione tramite la traslazione a sinistra
 
 \begin{equation}
-	(F_{*}(X))_{g} = (\widehat{ F_{*e}(X_{e}) })_{g} = L_{g*_{e}} (F_{*e}(X_{e})) \qcomma \forall g \in G
+	(F_{*}(X))_{g} = (\widehat{ F_{*e}(X_{e}) })_{g} %
+	\doteq L_{g*_{e}} (F_{*e}(X_{e})) \qcomma \forall g \in G
 \end{equation}
 
-Analogamente, prendendo un elemento dello spazio tangente $ A \in T_{e}(H) $ e considerando il campo di vettori invariante a sinistra $ \hat{A} \in L(H) $ dato dall'isomorfismo, si può riscrivere il pushforward tramite l'omomorfismo $ F $ come
+Analogamente, prendendo un elemento dello spazio tangente $ A \in T_{e}(G) $ e considerando il campo di vettori invariante a sinistra $ \hat{A} \in L(G) $ dato dall'isomorfismo, si può riscrivere il pushforward tramite l'omomorfismo $ F $ come
 
 \begin{equation}
 	F_{*} (\hat{A}) = \widehat{ F_{*e} (\hat{A}_{e}) } = \widehat{ F_{*e} (A) }
 \end{equation}
 
-\begin{definition}[1]
-	Sia $ F : H \to G $ un isomorfismo di gruppi di Lie, allora il pushforward di $ X \in L(H) $ tramite $ F $ visto come diffeomorfismo coincide al pushforward di $ X $ tramite $ F $ visto come omomorfismo.
+\begin{definition}
+	Sia $ F : G \to H $ un isomorfismo di gruppi di Lie, allora il pushforward di $ X \in L(G) $ tramite $ F $ visto come diffeomorfismo coincide al pushforward di $ X $ tramite $ F $ visto come omomorfismo.
 \end{definition}
 
 \begin{proof}
@@ -3647,40 +3667,47 @@ Analogamente, prendendo un elemento dello spazio tangente $ A \in T_{e}(H) $ e c
 		\item $ F_{*}(X) $ per il pushforward di $ X $ tramite $ F $ visto come omomorfismo
 	\end{itemize}
 
-	e dunque vogliamo dimostrare che $ \tilde{F}_{*}(X) = F_{*}(X) $.\\
-	Per definizione, applicando il pushforward tramite il diffeomorfismo a un elemento $ g \in G $
+	Per definizione, applicando il pushforward tramite il diffeomorfismo $ F : G \to H $ a un elemento $ h \in H $, otteniamo
 	
 	\begin{align}
 		\begin{split}
-			(\tilde{F}_{*}(X))_{g} &= F_{*h}(X_{h})\\
-			&= F_{*h}(L_{h_{*e}}(X_{e}))\\
-			&= (F \circ L_{h})_{*e} (X_{e})\\
-			&= (L_{F(h)} \circ F)_{*e} (X_{e})\\
-			&= L_{F(h)_{*e}} (F_{*e}(X_{e}))\\
-			&= L_{g_{*e}} (F_{*e}(X_{e}))\\
-			&= (\widehat{ F_{*e}(X_{e}) })_{g}\\
-			&= (F_{*}(X))_{g}
+			(\tilde{F}_{*}(X))_{h} &\doteq F_{*F^{-1}(h)}(X_{F^{-1}(h)}) \\
+			&= F_{*g}(X_{g}) \\
+			&= F_{*g}((L_{g})_{*e}(X_{e})) \\
+			&= (F \circ L_{g})_{*e} (X_{e}) \\
+			&= (L_{F(g)} \circ F)_{*e} (X_{e}) \\
+			&= (L_{h} \circ F)_{*e} (X_{e}) \\
+			&= (L_{h})_{*F(e)} (F_{*e}(X_{e})) \\
+			&= (L_{h})_{*e} (F_{*e}(X_{e})) \\
+			&\doteq (\widehat{ F_{*e}(X_{e}) })_{h} \\
+			&= (F_{*}(X))_{h}
 		\end{split}
 	\end{align}
 
-	usando:
+	dove abbiamo usato le seguenti proprietà:
 	
 	\begin{itemize}
-		\item $ F(h) = g $ nel primo e nel sesto passaggio
+		\item nel primo passaggio, la definizione del pushforward
 		
-		\item nel secondo passaggio, il campo di vettori è invariante a sinistra, i.e. $ X \in L(H) $
+		\item nel secondo e nel sesto passaggio, $ F(g) = h $
 		
-		\item la regola della catena nel terzo e nel quinto passaggio
+		\item nel terzo passaggio, il campo di vettori è invariante a sinistra, i.e. $ X \in L(G) $
 		
-		\item il fatto che $ F $ è un omomorfismo nel quarto passaggio
+		\item nel quarto e nel settimo passaggio, la regola della catena
 		
-		\item la definizione di $ \hatapp $ nel settimo passaggio
+		\item nel quinto passaggio, il fatto che $ F $ è un omomorfismo, i.e.
+		%
+		\begin{equation}
+			L_{F(g)} \circ F = F \circ L_{g} \qcomma \forall g \in G
+		\end{equation}		
+		
+		\item nel nono passaggio, la definizione dell'immagine dell'isomorfismo $ \hatapp $
 	\end{itemize}
 
-	dunque
+	A questo punto
 	
 	\begin{equation}
-		\tilde{F}_{*}(X) = F_{*}(X)
+		\tilde{F}_{*}(X) = F_{*}(X) \qcomma \forall X \in L(G)
 	\end{equation}
 
 	Essendo equivalenti, d'ora in poi verrà utilizzata la notazione $ F_{*}(X) $ per indicare il pushforward sia tramite diffeomorfismo che tramite omomorfismo.
@@ -3688,8 +3715,8 @@ Analogamente, prendendo un elemento dello spazio tangente $ A \in T_{e}(H) $ e c
 
 Anche nel contesto di omomorfismi, è possibile definire campi di vettori $ F $-related.
 
-\begin{definition}[2]
-	Siano $ F : H \to G $ un omomorfismo di gruppi di Lie e un campo di vettori su $ H $ invariante a sinistra $ X \in L(H) $, allora $ X $ è $ F $-related\footnote{%
+\begin{definition}
+	Siano $ F : H \to G $ un omomorfismo di gruppi di Lie e un campo di vettori su $ H $ invariante a sinistra $ X \in L(H) $, allora $ X $ è $ F $-related \footnote{%
 		Siano un'applicazione liscia $ F : N \to M $ e due campi di vettori lisci $ X \in \chi(N) $ e $ Y \in \chi(M) $, allora $ X $ è $ F $-related a $ Y $ se
 		
 		\begin{equation*}
@@ -3719,7 +3746,7 @@ Anche nel contesto di omomorfismi, è possibile definire campi di vettori $ F $-
 	\end{align}
 \end{proof}
 
-\begin{definition}[3]
+\begin{definition}
 	Sia $ F : H \to G $ un omomorfismo di gruppi di Lie, allora il differenziale
 	
 	\begin{equation}
