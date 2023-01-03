@@ -3587,7 +3587,7 @@ cioè l'usuale commutatore tra matrici.
 
 \subsection{Pushforward di campi di vettori invarianti a sinistra tramite omomorfismi di gruppi di Lie}
 
-Siano $ G $ e $ H $ due gruppi di Lie e $ F : G \to H $ un omomorfismo di gruppi di Lie, i.e. $ F $ è liscio (ma non necessariamente invertibile), preserva le operazioni dei gruppi e vale
+Siano $ G $ e $ H $ due gruppi di Lie; un omomorfismo di gruppi di Lie $ F : G \to H $ è un'applicazione liscia (ma non necessariamente invertibile), che preserva le operazioni dei gruppi e per la quale vale
 
 \begin{equation}
 	L_{F(g)} \circ F = F \circ L_{g} \qcomma \forall g \in G
@@ -3626,7 +3626,7 @@ Per trasportare i campi di vettori invarianti a sinistra su $ G $ in quelli su $
 		\end{cases}
 	\end{equation*}
 	
-	e analogamente per il suo inverso; inoltre $ e $ indicherà l'elemento neutro per entrambi i gruppi di Lie, anche perché legati da un omomorfismo, il quale mappa $ e \in G $ in $ e \in H $.%
+	e analogamente per il suo inverso; inoltre $ e $ indicherà l'elemento neutro per entrambi i gruppi di Lie, anche perché questi sono legati da un omomorfismo, il quale mappa $ e \in G $ in $ e \in H $.%
 }
 
 Definiamo il \textit{pushforward tramite l'omomorfismo} $ F $ come la composizione:
@@ -3716,7 +3716,7 @@ Analogamente, prendendo un elemento dello spazio tangente $ A \in T_{e}(G) $ e c
 Anche nel contesto di omomorfismi, è possibile definire campi di vettori $ F $-related.
 
 \begin{definition}
-	Siano $ F : H \to G $ un omomorfismo di gruppi di Lie e un campo di vettori su $ H $ invariante a sinistra $ X \in L(H) $, allora $ X $ è $ F $-related \footnote{%
+	Siano $ F : G \to H $ un omomorfismo di gruppi di Lie e un campo di vettori su $ H $ invariante a sinistra $ X \in L(G) $, allora $ X $ è $ F $-related \footnote{%
 		Siano un'applicazione liscia $ F : N \to M $ e due campi di vettori lisci $ X \in \chi(N) $ e $ Y \in \chi(M) $, allora $ X $ è $ F $-related a $ Y $ se
 		
 		\begin{equation*}
@@ -3727,7 +3727,7 @@ Anche nel contesto di omomorfismi, è possibile definire campi di vettori $ F $-
 	} a $ F_{*}(X) $, i.e.
 
 	\begin{equation}
-		F_{*h} (X_{h}) = (F_{*}(X))_{F(h)} \qcomma \forall h \in H
+		F_{*g} (X_{g}) = (F_{*}(X))_{F(g)} \qcomma \forall g \in G
 	\end{equation}
 \end{definition}
 
