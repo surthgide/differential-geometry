@@ -604,19 +604,101 @@ Questa rende dunque i due spazi diffeomorfi, i.e. $ SU(2) \simeq \S^{3} $.
 
 %
 
-\section{}\label{es3-7}
+\section{Differenziale moltiplicazione gruppo di Lie}\label{es3-7}
 
 \begin{tcolorbox}
 	Sia $ G $ un gruppo di Lie con moltiplicazione $ \mu : G \times G \to G $. Dimostrare che
 	
 	\begin{equation}
-		\mu_{*(a,b)}(X_{a},Y_{b}) = (R_{b})_{*a}(X_{a}) + (L_{a})_{*b}(Y_{b}) \qcomma \forall (a,b) \in G \times G, \, \forall X_{a} \in T_{a}(G), \, \forall Y_{b} \in T_{b}(G)
+		\mu_{*(a,b)}(X_{a},Y_{b}) = (R_{b})_{*a}(X_{a}) + (L_{a})_{*b}(Y_{b}) %
+		\qcomma \forall (a,b) \in G \times G, \, \forall X_{a} \in T_{a}(G), \, \forall Y_{b} \in T_{b}(G)
 	\end{equation}
 	
-	dove $ L_{a} $ (risp. $ R_{a} $) denota la traslazione a sinistra (risp. a destra) associata ad $ a $ (risp. $ b $).
+	dove $ L_{a} $ (risp. $ R_{b} $) denota la traslazione a sinistra (risp. a destra) associata ad $ a $ (risp. $ b $).
 \end{tcolorbox}
 
-qui
+Siccome il differenziale è un'applicazione lineare, possiamo scrivere\footnote{%
+	Vedi Paragrafo \ref{par:differ-prod-inv-lie}.%
+}
+
+\begin{equation}
+	\mu_{*(a,b)}(X_{a},Y_{b}) = \mu_{*(a,b)}(X_{a},0) + \mu_{*(a,b)}(0,Y_{b})
+\end{equation}
+
+Consideriamo ora le seguenti curve lisce:
+
+\sbs{0.5}{%
+			\begin{equation}
+				\begin{cases}
+					c : (- \varepsilon, \varepsilon) \to G \\
+					c(0) = a \\
+					c'(0) = X_{a}
+				\end{cases}
+			\end{equation}
+			}
+	{0.5}{%
+			\begin{equation}
+				\begin{cases}
+					d : (- \varepsilon, \varepsilon) \to G \\
+					d(0) = b \\
+					d'(0) = Y_{b}
+				\end{cases}
+			\end{equation}
+			}
+
+\sbs{0.5}{%
+			\begin{equation}
+				\begin{cases}
+					\gamma \doteq (c(t), b) \\
+					\gamma(0) = (a,b) \\
+					\gamma'(0) = (X_{a}, 0)
+				\end{cases}
+			\end{equation}
+			}
+	{0.5}{%
+			\begin{equation}
+				\begin{cases}
+					\eta \doteq (a, d(t)) \\
+					\eta(0) = (a,b) \\
+					\eta'(0) = (0, Y_{b})
+				\end{cases}
+			\end{equation}
+			}
+
+Queste ci permettono di calcolare i differenziale delle traslazioni a destra e sinistra, e della moltiplicazione:
+
+\begin{gather}
+	(R_{b})_{*a}(X_{a}) = \eval{ \dv{t} }_{0} R_{b}(c(t)) %
+	= \eval{ \dv{t} }_{0} (c(t) \, b) %
+	= c'(0) \, b %
+	= X_{a} \, b \\
+	%
+	(L_{a})_{*b}(Y_{b}) = \eval{ \dv{t} }_{0} L_{a}(d(t)) %
+	= \eval{ \dv{t} }_{0} (a \, d(t)) %
+	= a \, d'(0) %
+	= a \, Y_{b}
+\end{gather}
+
+\begin{gather}
+	\mu_{*(a,b)}(X_{a}, 0) = \dot{ (\mu \circ \gamma) }(0) %
+	= \mu'(c(t), b)(0) %
+	= (c(t) \, b)'(0) %
+	= c'(0) \, b %
+	= X_{a} \, b \\
+	%
+	\mu_{*(a,b)}(0, Y_{b}) = \dot{ (\mu \circ \eta) }(0) %
+	= \mu'(a, d(t))(0) %
+	= (a \, d(t))'(0) %
+	= a \, d'(0) %
+	= a \, Y_{b}
+\end{gather}
+
+dunque
+
+\begin{equation}
+	\mu_{*(a,b)}(X_{a},Y_{b}) = (R_{b})_{*a}(X_{a}) + (L_{a})_{*b}(Y_{b}) %
+	= X_{a} \, b + a \, Y_{b}
+\end{equation}
 
 %
 
