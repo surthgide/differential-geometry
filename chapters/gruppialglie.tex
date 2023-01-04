@@ -3644,8 +3644,8 @@ Applicandolo a un campo di vettori invariante a sinistra $ X \in L(G) $
 Esplicitando questa definizione tramite la traslazione a sinistra
 
 \begin{equation}
-	(F_{*}(X))_{g} = (\widehat{ F_{*e}(X_{e}) })_{g} %
-	\doteq L_{g*_{e}} (F_{*e}(X_{e})) \qcomma \forall g \in G
+	(F_{*}(X))_{h} = (\widehat{ F_{*e}(X_{e}) })_{h} %
+	\doteq (L_{h})_{*e} (F_{*e}(X_{e})) \qcomma \forall h \in H
 \end{equation}
 
 Analogamente, prendendo un elemento dello spazio tangente $ A \in T_{e}(G) $ e considerando il campo di vettori invariante a sinistra $ \hat{A} \in L(G) $ dato dall'isomorfismo, si può riscrivere il pushforward tramite l'omomorfismo $ F $ come
@@ -3667,7 +3667,7 @@ Analogamente, prendendo un elemento dello spazio tangente $ A \in T_{e}(G) $ e c
 		\item $ F_{*}(X) $ per il pushforward di $ X $ tramite $ F $ visto come omomorfismo
 	\end{itemize}
 
-	Per definizione, applicando il pushforward tramite il diffeomorfismo $ F : G \to H $ a un elemento $ h \in H $, otteniamo
+	Per definizione, applicando il pushforward tramite il diffeomorfismo $ F : G \to H $ a un elemento $ F(g) = h \in H $, otteniamo
 	
 	\begin{align}
 		\begin{split}
@@ -3689,7 +3689,7 @@ Analogamente, prendendo un elemento dello spazio tangente $ A \in T_{e}(G) $ e c
 	\begin{itemize}
 		\item nel primo passaggio, la definizione del pushforward
 		
-		\item nel secondo e nel sesto passaggio, $ F(g) = h $
+		\item nel secondo, $ g = F^{-1}(h) $
 		
 		\item nel terzo passaggio, il campo di vettori è invariante a sinistra, i.e. $ X \in L(G) $
 		
@@ -3716,7 +3716,7 @@ Analogamente, prendendo un elemento dello spazio tangente $ A \in T_{e}(G) $ e c
 Anche nel contesto di omomorfismi, è possibile definire campi di vettori $ F $-related.
 
 \begin{definition}
-	Siano $ F : G \to H $ un omomorfismo di gruppi di Lie e un campo di vettori su $ H $ invariante a sinistra $ X \in L(G) $, allora $ X $ è $ F $-related \footnote{%
+	Siano un omomorfismo di gruppi di Lie $ F : G \to H $ e un campo di vettori su $ H $ invariante a sinistra $ X \in L(G) $, allora $ X $ è $ F $-related \footnote{%
 		Siano un'applicazione liscia $ F : N \to M $ e due campi di vettori lisci $ X \in \chi(N) $ e $ Y \in \chi(M) $, allora $ X $ è $ F $-related a $ Y $ se
 		
 		\begin{equation*}
@@ -3732,42 +3732,42 @@ Anche nel contesto di omomorfismi, è possibile definire campi di vettori $ F $-
 \end{definition}
 
 \begin{proof}
-	Per dimostrare che $ X $ è $ F $-related a $ F_{*}(X) $ tramite $ F $ omomorfismo, usiamo la definizione di campo di vettori invarianti a sinistra
+	Per dimostrare che $ X $ è $ F $-related a $ F_{*}(X) $ tramite $ F $ omomorfismo, usiamo la definizione di campo di vettori invariante a sinistra
 	
 	\begin{align}
 		\begin{split}
-			F_{*h} (X_{h}) &= F_{*h} (L_{h_{*e}}(X_{e}))\\
-			&= (F \circ L_{h*})_{*e} (X_{e})\\
-			&= (L_{F(h)} \circ F)_{*e} (X_{e})\\
-			&= L_{F(h)_{*e}} (F_{*e}(X_{e}))\\
-			&= (\widehat{ F_{*e}(X_{e}) })_{F(h)}\\
-			&= (F_{*}(X))_{F(h)}
+			F_{*g} (X_{g}) &= F_{*g} ((L_{g})_{*e}(X_{e})) \\
+			&= (F \circ L_{g})_{*e} (X_{e}) \\
+			&= (L_{F(g)} \circ F)_{*e} (X_{e}) \\
+			&= (L_{F(g)})_{*e} (F_{*e}(X_{e})) \\
+			&= (\widehat{ F_{*e}(X_{e}) })_{F(g)} \\
+			&= (F_{*}(X))_{F(g)}
 		\end{split}
 	\end{align}
 \end{proof}
 
 \begin{definition}
-	Sia $ F : H \to G $ un omomorfismo di gruppi di Lie, allora il differenziale
+	Sia $ F : G \to H $ un omomorfismo di gruppi di Lie, allora il differenziale
 	
 	\begin{equation}
-		F_{*e} : T_{e}(H) \to T_{e}(G)
+		F_{*e} : T_{e}(G) \to T_{e}(H)
 	\end{equation}
 
 	scritto anche come
 	
 	\begin{equation}
-		F_{*e} : \h \to \g
+		F_{*e} : \g \to \h
 	\end{equation}
 
 	è un omomorfismo di algebre di Lie (con il commutatore usuale), i.e.
 	
 	\begin{equation}
-		F_{*e} \comm{A}{B} = \comm{F_{*e} (A)}{F_{*e} (B)} \qcomma \forall A,B \in \h
+		F_{*e} \comm{A}{B} = \comm{F_{*e} (A)}{F_{*e} (B)} \qcomma \forall A,B \in \g
 	\end{equation}
 \end{definition}
 
 \begin{proof}
-	Siano i campi di vettori su $ H $ invarianti a sinistra $ \hat{A},\hat{B} \in L(H) $. Per la seconda proposizione
+	Siano i campi di vettori su $ G $ invarianti a sinistra $ \hat{A},\hat{B} \in L(G) $. Per la seconda proposizione
 	
 	\begin{itemize}
 		\item $ \hat{A} $ è $ F $ related a $ F_{*}(\hat{A}) $
@@ -3778,22 +3778,23 @@ Anche nel contesto di omomorfismi, è possibile definire campi di vettori $ F $-
 	Per il Corollario \ref{frel-brack} e per l'identificazione tra il pushforward tramite il diffeomorfismo e quello tramite omomorfismo, se $ F $ è un'applicazione liscia allora $ [\hat{A},\hat{B}] $ è $ F $-related a $ [F_{*} (\hat{A}),F_{*} (\hat{B})] $, i.e.
 	
 	\begin{equation}
-		F_{*h} \left( \comm{\hat{A}}{\hat{B}}_{h} \right) = \comm{ F_{*}(\hat{A}) }{ F_{*}(\hat{B}) }_{F(h)} \qcomma \forall h \in H
+		F_{*g} \left( \comm{\hat{A}}{\hat{B}}_{g} \right) = \comm{ F_{*}(\hat{A}) }{ F_{*}(\hat{B}) }_{F(g)} %
+		\qcomma \forall g \in G
 	\end{equation}
 
-	Se $ h=e $, abbiamo che $ F(e)=e $, dunque
+	Se $ g = e $, abbiamo che $ F(e) = e $, dunque
 	
 	\begin{align}
 		\begin{split}
-			F_{*e} \left( \comm{\hat{A}}{\hat{B}}_{e} \right) &= \comm{ F_{*}(\hat{A}) }{ F_{*}(\hat{B}) }_{e}\\
-			F_{*e} (\comm{A}{B}) &= \comm{ \widehat{ F_{*e}(A) } }{ \widehat{ F_{*e}(B) } }_{e}\\
+			F_{*e} \left( \comm{\hat{A}}{\hat{B}}_{e} \right) &= \comm{ F_{*}(\hat{A}) }{ F_{*}(\hat{B}) }_{e} \\
+			F_{*e} (\comm{A}{B}) &= \comm{ \widehat{ F_{*e}(A) } }{ \widehat{ F_{*e}(B) } }_{e} \\
 			&= \comm{F_{*e} (A)}{F_{*e} (B)}
 		\end{split}
 	\end{align}
 \end{proof}
 
 \begin{corollary}
-	Siano $ H $ un sottogruppo di Lie di un gruppo di Lie $ G $ e $ i : H \to G $ l'inclusione, allora, chiamando le algebre di Lie degli spazi tangenti come
+	Siano $ H $ un sottogruppo di Lie di un gruppo di Lie $ G $ e l'inclusione $ i : H \to G $, allora, chiamando le algebre di Lie degli spazi tangenti come
 	
 	\begin{equation}
 		\begin{cases}
@@ -3814,10 +3815,10 @@ Anche nel contesto di omomorfismi, è possibile definire campi di vettori $ F $-
 In particolare, il commutatore dei sottogruppi (matriciali) di $ GL_{n}(\R) $ o $ GL_{n}(\C) $ è dato dal \textit{commutatore standard}
 
 \begin{equation}
-	[A,B] = A B - B A \qcomma A,B \in T_{I}(GL_{n}(\K)), \, \K = \R \lor \C
+	[A,B] = A B - B A \qcomma A,B \in T_{I}(GL_{n}(\K)), \, \K = \R, \C
 \end{equation}
 
-in quanto questo è il commutatore definito nell'algebra dello spazio tangente all'insieme delle matrici invertibili, i.e. $ (T_{I}(GL_{n}(\R)),[,]) $ con l'identificazione $ T_{I}(GL_{n}(\R)) = M_{n}(\R) $. Tramite questo, l'algebra di Lie dei sottogruppi matriciali è data dalla coppia formata da spazio tangente all'identità del sottoinsieme e commutatore standard.
+in quanto questo è il commutatore definito nell'algebra dello spazio tangente all'insieme delle matrici invertibili, i.e. $ (T_{I}(GL_{n}(\R)),[,]) $ con l'identificazione $ T_{I}(GL_{n}(\R)) = M_{n}(\R) $. L'algebra di Lie dei sottogruppi matriciali è dunque data dalla coppia formata da spazio tangente all'identità del sottoinsieme e il commutatore standard.
 
 \subsubsection{\textit{Esempi}}
 
@@ -3870,7 +3871,9 @@ Essendo un elemento dello spazio tangente, per il commutatore valgono
 	\end{cases}
 \end{equation}
 
-Vedi Esercizio \ref{es3-9}.
+\paragraph{3)}
+
+Per la verifica che il commutatore standard definisca un'algebra di Lie nei gruppi matriciali studiati in precedenza, vedi Esercizio \ref{es3-9}.
 
 \subsection{Applicazione esponenziale di un gruppo di Lie}
 
