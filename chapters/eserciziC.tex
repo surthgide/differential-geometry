@@ -706,17 +706,67 @@ dunque
 
 %
 
-\section{}\label{es3-8}
+\section{Differenziale inversione gruppo di Lie}\label{es3-8}
 
 \begin{tcolorbox}
 	Sia $ G $ un gruppo di Lie con inversione $ i : G \to G $. Dimostrare che
 	
 	\begin{equation}
-		i_{*a}(Y_{a}) = -(R_{a^{-1}})_{*e}(L_{a^{-1}})_{*e} (Y_{a}) \qcomma \forall a \in G, \, \forall Y_{a} \in T_{a}(G)
+		i_{*a}(Y_{a}) = -(R_{a^{-1}})_{*e}(L_{a^{-1}})_{*a} (Y_{a}) %
+		\qcomma \forall a \in G, \, \forall Y_{a} \in T_{a}(G)
 	\end{equation}
 \end{tcolorbox}
 
-qui
+Per l'inversione, vale la seguente proprietà:
+
+\begin{equation}
+	R_{a} \circ i = i \circ L_{a^{-1}} \qcomma \forall a \in G
+\end{equation}
+
+Moltiplicando entrambi i membri a sinistra per l'inversa della traslazione a destra, i.e.
+
+\begin{equation}
+	(R_{a})^{-1} = R_{a^{-1}} \qcomma \forall a \in G
+\end{equation}
+
+otteniamo
+
+\begin{equation}
+	i = R_{a^{-1}} \circ i \circ L_{a^{-1}} \qcomma \forall a \in G
+\end{equation}
+
+Differenziando quest'espressione in una qualsiasi elemento $ a \in G $, possiamo scrivere
+
+\begin{align}
+	\begin{split}
+		i_{*a} &= (R_{a^{-1}} \circ i \circ L_{a^{-1}})_{*a} \\
+		&= (R_{a^{-1}})_{*i(e)} \circ i_{*L_{a^{-1}}(a)} \circ (L_{a^{-1}})_{*a} \\
+		&= (R_{a^{-1}})_{*e} \circ i_{*e} \circ (L_{a^{-1}})_{*a}
+	\end{split}
+\end{align}
+
+dove abbiamo utilizzato che
+
+\begin{gather}
+	i(e) = e^{-1} = e \\
+	L_{a^{-1}}(a) = a^{-1} a = e
+\end{gather}
+
+Dal Paragrafo \ref{par:differ-prod-inv-lie}, sappiamo che
+
+\begin{equation}
+	i_{*e} (Y_{e}) = - Y_{e}
+\end{equation}
+
+possiamo dunque applicare il differenziale a un qualsiasi vettore dello spazio tangente $ Y_{a} \in T_{a}(G) $, ottenendo
+
+\begin{align}
+	\begin{split}
+		i_{*a}(Y_{a}) &= (R_{a^{-1}})_{*e} \circ i_{*e} \circ (L_{a^{-1}})_{*a} \\
+		&= (- (R_{a^{-1}})_{*e} \circ (L_{a^{-1}})_{*a}) (Y_{a}) \\
+		&= - (R_{a^{-1}})_{*e} (L_{a^{-1}})_{*a} (Y_{a})
+	\end{split}
+\end{align}
 
 %
 
