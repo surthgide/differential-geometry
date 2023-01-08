@@ -4,4 +4,5 @@ aggiungi capitolo/sezione di spiegazione dei simboli e della notazione
 
 cambia tutte le istanze di "funzion*" in "applicazion*" alla fine della revisione degli appunti?
 
+crea macro per il testo degli esercizi (\exer{titolo}{label}{testo}{soluzione})
 
