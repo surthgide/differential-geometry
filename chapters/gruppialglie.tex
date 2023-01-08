@@ -3877,33 +3877,35 @@ Per la verifica che il commutatore standard definisca un'algebra di Lie nei grup
 
 \subsection{Applicazione esponenziale di un gruppo di Lie}
 
-Siano $ G $ un gruppo di Lie, $ e \in G $ il suo elemento neutro, $ \g = (T_{e}(G),[,]) $ la sua algebra di Lie e $ \xi,\eta \in \g $ gli elementi di quest'algebra, vogliamo costruire un'applicazione
+Siano $ G $ un gruppo di Lie, $ e \in G $ il suo elemento neutro, $ \g = (T_{e}(G),[,]) $ la sua algebra di Lie e $ \xi,\eta \in \g $ due elementi di quest'algebra, vogliamo costruire un'applicazione
 
 \begin{equation}
 	f : \g \to G
 \end{equation}
 
-che leghi l'algebra di Lie di $ G $, costruita mediante i campi di vettori invarianti a sinistra, al gruppo stesso.
+che leghi l'algebra di Lie di $ G $, costruita mediante i campi di vettori invarianti a sinistra sul gruppo, al gruppo stesso.
 
 \subsubsection{Flusso di un campo di vettori invariante a sinistra}
 
-Sia $ \hat{\xi} \in L(G) $ il campo di vettori invariante a sinistra associato a $ \xi \in \g $ con
+Sia $ \hat{\xi} \in L(G) $ il campo di vettori invariante a sinistra associato al campo di vettori dell'algebra di Lie $ \xi \in \g $ con
 
 \begin{equation}
-	\hat{\xi}_{g} = L_{g_{*e}}(\xi)
+	\hat{\xi}_{g} = (L_{g})_{*e}(\xi)
 \end{equation}
 
-Possiamo considerare il flusso locale di $ \hat{\xi} $ nel punto $ g \in U $ con $ U \subset G $ aperto, i.e. $ \sigma_{t}^{\xi}(g) $ con $ t \in (-\delta,\delta) $. La condizione per cui questo oggetto sia un flusso è che, considerando $ \sigma_{t}^{\xi}(g) $ come una curva al variare di $ t $ con $ g $ fissato, la curva inizi in $ g $ e il vettore tangente a questa curva in ogni suo punto coincida con il campo di vettori $ \hat{\xi} $ calcolato nello stesso punto, i.e.
+Possiamo considerare il flusso locale di $ \hat{\xi} $ nel punto $ g \in U $ con $ U \subset G $ aperto, i.e. $ \sigma_{t}^{\xi}(g) $ con $ t \in (-\delta,\delta) $ e $ \delta \in \R $. La condizione per cui questo oggetto sia un flusso è che, considerando $ \sigma_{t}^{\xi}(g) $ come una curva al variare di $ t $ con $ g $ fissato, la curva inizi in $ g $ e il vettore tangente a questa curva in ogni suo punto coincida con il campo di vettori $ \hat{\xi} $ calcolato nello stesso punto, i.e.
 
 \begin{equation}
 	\begin{cases}
-		\sigma_{0}^{\xi}(g) = g\\\\
-		\dv{t} \sigma_{t}^{\xi}(g) = \hat{\xi}_{\sigma_{t}^{\xi}(g)}
+		\sigma_{0}^{\xi}(g) = g \\\\
+		\ddv{t} \sigma_{t}^{\xi}(g) = \hat{\xi}_{\sigma_{t}^{\xi}(g)}
 	\end{cases}
 \end{equation}
 
 Equivalentemente, $ \sigma_{t}^{\xi}(g) $ è la curva integrale del campo di vettori $ \hat{\xi} $.\\
-Dai teoremi sulle curve integrali e sui flussi di campi di vettori, $ \sigma_{t}^{\xi}(g) $ dipende in modo liscio da $ t $ e da $ g $; inoltre
+Dai teoremi sulle curve integrali e sui flussi di campi di vettori\footnote{%
+	Vedi Teorema \ref{thm:flux-var}.%
+}, $ \sigma_{t}^{\xi}(g) $ dipende in modo liscio da $ t $ e da $ g $; inoltre vale la relazione
 
 \begin{equation}
 	\sigma_{t+s}^{\xi} = \sigma_{t}^{\xi} \circ \sigma_{s}^{\xi}
@@ -3928,51 +3930,45 @@ ottenendo
 	\sigma_{t}^{0}(g) = \sigma_{0}^{0}(g) = g
 \end{equation}
 
+dunque il flusso locale dell'elemento neutro dell'algebra di Lie è costante.\\
 Riassumendo per $ \sigma_{t}^{\xi}(g) $
 
 \begin{equation}
 	\begin{cases}
-		\sigma_{0}^{\xi}(g) = g\\\\
-		\dv{t} \sigma_{t}^{\xi}(g) = \hat{\xi}_{\sigma_{t}^{\xi}(g)}\\\\
-		\sigma_{t+s}^{\xi} = \sigma_{t}^{\xi} \circ \sigma_{s}^{\xi}\\\\
-		\sigma_{t}^{0}(g) = g & \forall t \in (-\delta,\delta)
+		\sigma_{0}^{\xi}(g) = g \\\\
+		\ddv{t} \sigma_{t}^{\xi}(g) = \hat{\xi}_{\sigma_{t}^{\xi}(g)} \\\\
+		\sigma_{t+s}^{\xi} = \sigma_{t}^{\xi} \circ \sigma_{s}^{\xi} \\\\
+		\sigma_{t}^{0}(g) = g, & \forall t \in (-\delta,\delta)
 	\end{cases}
 \end{equation}
 
 Definiamo ora la curva liscia
 
-\map{\gamma^{\xi}}%
-	{(-\delta,\delta)}{G}%
+\map{\gamma^{\xi}}
+	{(-\delta,\delta)}{G}
 	{t}{\sigma_{t}^{\xi}(e)}
 	
-dove $ e \in G $ è l'elemento neutro; abbiamo che la curva inizia nell'elemento neutro del gruppo di Lie $ G $
+dove $ e \in G $ è l'elemento neutro del gruppo. Calcolandone il punto in cui inizia e il vettore tangente, otteniamo:
+
+\begin{gather}
+	\gamma^{\xi}(0) = \sigma_{0}^{\xi}(e) = e \\
+	\nonumber \\
+	\dv{t} \gamma^{\xi}(t) = \dv{t} \sigma_{t}^{\xi}(e) %
+	= \hat{\xi}_{\sigma_{t}^{\xi}(e)} %
+	= \hat{\xi}_{\gamma^{\xi}(t)}
+\end{gather}
+
+dunque $ \gamma^{\xi}(t) $ è la curva integrale di $ \hat{\xi} $ che inizia in $ e $.\\
+In particolare
 
 \begin{equation}
-	\gamma^{\xi}(0) = \sigma_{0}^{\xi}(e) = e
+	\eval{ \dv{t} \gamma^{\xi}(t) }_{t=0} = \eval{ \hat{\xi}_{\gamma^{\xi}(t)} }_{t=0} %
+	= \hat{\xi}_{\gamma^{\xi}(0)} %
+	= \hat{\xi}_{e} %
+	= \xi
 \end{equation}
 
-mentre il suo vettore tangente è
-
-\begin{align}
-	\begin{split}
-		\dv{t} \gamma^{\xi}(t) &= \dv{t} \sigma_{t}^{\xi}(e)\\
-		&= \hat{\xi}_{\sigma_{t}^{\xi}(e)}\\
-		&= \hat{\xi}_{\gamma^{\xi}(t)}
-	\end{split}
-\end{align}
-
-Dunque $ \gamma^{\xi}(t) $ è la curva integrale di $ \hat{\xi} $ che inizia in $ e $, in particolare
-
-\begin{align}
-	\begin{split}
-		\eval{ \dv{t} \gamma^{\xi}(t) }_{t=0} &= \eval{ \hat{\xi}_{\gamma^{\xi}(t)} }_{t=0}\\
-		&= \hat{\xi}_{\gamma^{\xi}(0)}\\
-		&= \hat{\xi}_{e}\\
-		&= \xi
-	\end{split}
-\end{align}
-
-Inoltre
+Inoltre vale la relazione
 
 \begin{align}
 	\begin{split}
@@ -3988,9 +3984,9 @@ Riassumendo per $ \gamma^{\xi}(t) $:
 
 \begin{equation}
 	\begin{cases}
-		\gamma^{\xi}(0) = e\\\\
-		\dv{t} \gamma^{\xi}(t) = \hat{\xi}_{\gamma^{\xi}(t)}\\\\
-		\eval{ \dv{t} \gamma^{\xi}(t) }_{t=0} = \xi\\\\
+		\gamma^{\xi}(0) = e \\\\
+		\ddv{t} \gamma^{\xi}(t) = \hat{\xi}_{\gamma^{\xi}(t)} \\\\
+		\eval{ \ddv{t} \gamma^{\xi}(t) }_{t=0} = \xi \\\\
 		\gamma^{\xi}(t+s) = \gamma^{\xi}(s) \cdot \gamma^{\xi}(t)
 	\end{cases}
 \end{equation}
@@ -4005,24 +4001,24 @@ Riassumendo per $ \gamma^{\xi}(t) $:
 	dove $ \cdot $ indica il prodotto in $ G $.
 \end{definition}
 
-Ricordiamo che una curva integrale che inizia in un punto è l'unica curva integrale (dove è definita) che inizi nello stesso punto.
+Ricordiamo che una curva integrale che inizia in un punto è l'unica curva integrale (dove definita) che inizi nello stesso punto.
 
 \begin{proof}
 	Per definizione
 	
 	\begin{equation}
 		\begin{cases}
-			\sigma_{0}^{\xi}(g) = g\\\\
-			\dv{t} \sigma_{t}^{\xi}(g) = \hat{\xi}_{\sigma_{t}^{\xi}(g)}
+			\sigma_{0}^{\xi}(g) = g \\\\
+			\ddv{t} \sigma_{t}^{\xi}(g) = \hat{\xi}_{\sigma_{t}^{\xi}(g)}
 		\end{cases}
 	\end{equation}
 
-	Perché $ \sigma_{t}^{\xi}(g) = g \cdot \gamma^{\xi}(t) $ dobbiamo dimostrare che
+	Perché valga $ \sigma_{t}^{\xi}(g) = g \cdot \gamma^{\xi}(t) $, dobbiamo dimostrare che
 	
 	\begin{equation}
 		\begin{cases}
-			g \cdot \gamma^{\xi}(0) = g\\\\
-			\dv{t} (g \cdot \gamma^{\xi}(t)) = \hat{\xi}_{g \cdot \gamma^{\xi}(t)}
+			g \cdot \gamma^{\xi}(0) = g \\\\
+			\ddv{t} (g \cdot \gamma^{\xi}(t)) = \hat{\xi}_{g \cdot \gamma^{\xi}(t)}
 		\end{cases}
 	\end{equation}
 
@@ -4036,9 +4032,9 @@ Ricordiamo che una curva integrale che inizia in un punto è l'unica curva integ
 	
 	\begin{align}
 		\begin{split}
-			\eval{ \dv{t} (g \cdot \gamma^{\xi}(t)) }_{s} &= \eval{ \dv{t} L_{g}(\gamma^{\xi}(t)) }_{s}\\
-			&= L_{g_{*\gamma^{\xi}(s)}} \left( \dv{t} \gamma^{\xi}(t) \right)\\
-			&= L_{g_{*\gamma^{\xi}(s)}} \left( \hat{\xi}_{\gamma^{\xi}(t)} \right)\\
+			\eval{ \dv{t} (g \cdot \gamma^{\xi}(t)) }_{s} &= \eval{ \dv{t} L_{g}(\gamma^{\xi}(t)) }_{s} \\
+			&= L_{g_{*\gamma^{\xi}(s)}} \left( \dv{t} \gamma^{\xi}(t) \right) \\
+			&= L_{g_{*\gamma^{\xi}(s)}} \left( \hat{\xi}_{\gamma^{\xi}(t)} \right) \\
 			&= \hat{\xi}_{g \cdot \gamma^{\xi}(t)}
 		\end{split}
 	\end{align}
@@ -4059,19 +4055,21 @@ Ricordiamo che una curva integrale che inizia in un punto è l'unica curva integ
 	Perché $ \hat{\xi} $ sia completo, è necessario che il flusso $ \sigma_{t}^{\xi}(g) $ sia globale: per dimostrare questo, è sufficiente dimostrare che $ g \cdot \gamma^{\xi}(t) $ sia globale in quanto, per la proposizione precedente, abbiamo che $ \sigma_{t}^{\xi}(g) = g \cdot \gamma^{\xi}(t) $.\\
 	Supponiamo, per assurdo, che $ (-\delta,\delta) $ con $ \delta < \infty $ sia il dominio massimale di definizione di $ \gamma^{\xi} $. Definiamo ora la curva
 	
-	\map{\gamma}%
-		{(-\delta,\delta +t_{0})}{G}%
+	\map{\gamma}
+		{(-\delta,\delta +t_{0})}{G}
 		{t}{%
 			\begin{cases}
-				\gamma^{\xi}(t) & t \in (-\delta,\delta)\\
-				\gamma^{\xi}(t_{0}) \cdot \gamma^{\xi}(t - t_{0}) & t \in (t_{0},\delta + t_{0})
+				\gamma^{\xi}(t), & t \in (-\delta,\delta) \\
+				\gamma^{\xi}(t_{0}) \cdot \gamma^{\xi}(t - t_{0}), & t \in (t_{0},\delta + t_{0})
 			\end{cases}%
 			}
 		
 	dove $ t_{0} \in (0,\delta) $; questa curva è liscia perché liscia nelle due condizioni e queste coincidono nell'intersezione aperta $ (t_{0},\delta) $ in quanto
 	
 	\begin{equation}
-		\gamma^{\xi}(t_{0}) \cdot \gamma^{\xi}(t - t_{0}) = \gamma^{\xi}(t - t_{0} + t_{0}) = \gamma^{\xi}(t) \qcomma \forall t \in (t_{0},\delta)
+		\gamma^{\xi}(t_{0}) \cdot \gamma^{\xi}(t - t_{0}) %
+		= \gamma^{\xi}(t - t_{0} + t_{0}) %
+		= \gamma^{\xi}(t) \qcomma \forall t \in (t_{0},\delta)
 	\end{equation}
 
 	Abbiamo che
@@ -4083,17 +4081,19 @@ Ricordiamo che una curva integrale che inizia in un punto è l'unica curva integ
 	inoltre, per $ t \in (-\delta,\delta) $
 	
 	\begin{equation}
-		\dv{t} \gamma(t) = \dv{t} \gamma^{\xi}(t) = \hat{\xi}_{\gamma^{\xi}(t)} = \hat{\xi}_{\gamma(t)}
+		\dv{t} \gamma(t) = \dv{t} \gamma^{\xi}(t) %
+		= \hat{\xi}_{\gamma^{\xi}(t)} %
+		= \hat{\xi}_{\gamma(t)}
 	\end{equation}
 
 	e per $ t \in (\delta,\delta + t_{0}) $
 	
 	\begin{align}
 		\begin{split}
-			\dv{t} \gamma(t) &= \dv{t} ( \gamma^{\xi}(t_{0}) \cdot \gamma^{\xi}(t - t_{0}) )\\
-			&= \dv{t} L_{\gamma^{\xi}(t_{0})} ( \gamma^{\xi}(t - t_{0}) )\\
-			&= L_{\gamma^{\xi}(t_{0})_{*\gamma^{\xi}(t - t_{0})}} \left( \dv{t} \gamma^{\xi}(t - t_{0}) \right)\\
-			&= L_{\gamma^{\xi}(t_{0})_{*\gamma^{\xi}(t - t_{0})}} \left( \hat{\xi}_{\gamma^{\xi}(t - t_{0})} \right)\\
+			\dv{t} \gamma(t) &= \dv{t} ( \gamma^{\xi}(t_{0}) \cdot \gamma^{\xi}(t - t_{0}) ) \\
+			&= \dv{t} L_{\gamma^{\xi}(t_{0})} ( \gamma^{\xi}(t - t_{0}) ) \\
+			&= L_{\gamma^{\xi}(t_{0})_{*\gamma^{\xi}(t - t_{0})}} \left( \dv{t} \gamma^{\xi}(t - t_{0}) \right) \\
+			&= L_{\gamma^{\xi}(t_{0})_{*\gamma^{\xi}(t - t_{0})}} \left( \hat{\xi}_{\gamma^{\xi}(t - t_{0})} \right) \\
 			&= \hat{\xi}_{\gamma^{\xi}(t_{0}) \cdot \gamma^{\xi}(t - t_{0})}
 		\end{split}
 	\end{align}
@@ -4102,8 +4102,8 @@ Ricordiamo che una curva integrale che inizia in un punto è l'unica curva integ
 		
 	\begin{equation}
 		\begin{cases}
-			\gamma(0) = e\\\\
-			\dv{t} \gamma(t) = \hat{\xi}_{\gamma(t)}
+			\gamma(0) = e \\\\
+			\ddv{t} \gamma(t) = \hat{\xi}_{\gamma(t)}
 		\end{cases}
 	\end{equation}	
 	
@@ -4112,16 +4112,16 @@ Ricordiamo che una curva integrale che inizia in un punto è l'unica curva integ
 
 A questo punto, la curva integrale $ \gamma^{\xi}(t) \in G $ può essere scritta come
 
-\map{\gamma^{\xi}}%
-	{\R}{G}%
+\map{\gamma^{\xi}}
+	{\R}{G}
 	{t}{\sigma_{t}^{\xi}(e)}
 
 \subsubsection{Definizione e proprietà dell'esponenziale di un gruppo di Lie}
 
 Siano $ G $ un gruppo di Lie, $ e \in G $ il suo elemento neutro, $ \xi \in T_{e}(G) $ un elemento dell'algebra di Lie $ \g $ di $ G $ e $ \gamma^{\xi}(t) $ con $ t \in \R $ la curva integrale del campo di vettori invariante a sinistra $ \hat{\xi} $ che inizia in $ e $, definiamo l'applicazione \textit{esponenziale} come
 
-\map{\exp}%
-	{T_{e}(G)}{G}%
+\map{\exp}
+	{T_{e}(G)}{G}
 	{\xi}{\gamma^{\xi}(1) = \sigma_{1}^{\xi}(e)}
 
 Questa applicazione è il riassunto di alcuni passaggi intermedi:
@@ -4139,7 +4139,7 @@ Questa applicazione è il riassunto di alcuni passaggi intermedi:
 \end{enumerate}
 
 A questo punto, possiamo dire che $ \exp(\xi) \in G $ è il valore in $ t=1 $ della curva integrale del campo di vettori invariante a sinistra $ \hat{\xi} $ che inizia nell'elemento neutro $ e \in G $.\\
-Fin'ora sappiamo solo che $ \sigma_{t}^{\xi}(g) $ dipenda in modo liscio da $ t $ e da $ g $ ma non abbiamo informazioni sulla dipendenza da $ \xi $.
+Fin'ora sappiamo solo che $ \sigma_{t}^{\xi}(g) $ dipende in modo liscio da $ t $ e da $ g $ ma non abbiamo informazioni sulla dipendenza da $ \xi $.
 
 \begin{definition}[Proprietà dell'esponenziale di un gruppo di Lie]\hfill\break
 	\begin{enumerate}
@@ -4352,14 +4352,14 @@ Fin'ora sappiamo solo che $ \sigma_{t}^{\xi}(g) $ dipenda in modo liscio da $ t 
 \end{proof}
 
 \begin{remark}
-	Si dimostra che, presi $ \forall \xi,\eta \in \g $ con $ [\xi,\eta] = 0 $, vale
+	Si dimostra che, presi due elementi qualsiasi dell'algebra di Lie $ \xi,\eta \in \g $ con $ [\xi,\eta] = 0 $, vale
 	
 	\begin{equation}
 		\exp(\xi + \eta) = \exp(\xi) \cdot \exp(\eta)
 	\end{equation}
 
 	In generale, l'esponenziale della somma non è uguale al prodotto degli esponenziali\footnote{%
-		Vedi Formula di Baker–Campbell–Hausdorff.%
+		Vedi \textit{Formula di Baker–Campbell–Hausdorff}.%
 	}.
 \end{remark}
 
