@@ -786,7 +786,52 @@ possiamo dunque applicare il differenziale a un qualsiasi vettore dello spazio t
 	definisce un'algebra di Lie sullo spazio tangente all'identità dei gruppi: $ O(n) $, $ SO(n) $, $ U(n) $, $ SU(n) $, $ SL_{n}(\R) $, $ SL_{n}(\C) $.
 \end{tcolorbox}
 
-qui
+Dal Corollario \ref{cor:incl-alg-lie-subg}, sappiamo che il commutatore dei sottogruppi matriciali di $ GL_{n}(\K) $ è dato dal commutatore standard
+
+\begin{equation}
+	[A,B] = AB - BA
+\end{equation}
+
+in quanto il commutatore del gruppo lineare induce il commutatore nei suo sottogruppi tramite il differenziale dell'inclusione.\\
+Consideriamo ora i seguenti insiemi
+
+\begin{equation}
+	\begin{cases}
+		S^{-}_{n}(\K) = \{ X \in M_{n}(\K) \mid X^{T} = - X \} & \text{ (antisimmetriche)} \\
+		H^{-}_{n} = \{ X \in M_{n}(\C) \mid X^{*} = - X \} & \text{ (antihermitiane)} \\
+		T^{0}_{n}(\K) = \{ X \in M_{n}(\K) \mid \tr(X) = 0 \} & \text{ (traccia nulla)}
+	\end{cases}
+\end{equation}
+
+i quali permettono di scrivere le algebre di Lie relative ai gruppi di Lie in esame nel seguente modo:
+
+\begin{align}
+	O(n) &\longrightarrow \mathfrak{o}(n) = (S^{-}_{n}(\R),[,]) \\
+	SO(n) &\longrightarrow \so(n) = (S^{-}_{n}(\R) \cap T^{0}_{n}(\R),[,]) \\
+	U(n) &\longrightarrow \mathfrak{u}(n) = (H^{-}_{n},[,]) \\
+	SU(n) &\longrightarrow \su(n) = (H^{-}_{n} \cap T^{0}_{n}(\C),[,]) \\
+	SL_{n}(\R) &\longrightarrow \mathfrak{sl}(n,\R) = (T^{0}_{n}(\R),[,]) \\
+	SL_{n}(\C) &\longrightarrow \mathfrak{sl}(n,\C) = (T^{0}_{n}(\C),[,])
+\end{align}
+
+dove l'insieme ambiente delle algebre è dato dallo spazio tangente all'identità del gruppo relativo.\\
+Possiamo ora verificare che le condizioni valide per gli elementi dello spazio tangente all'unità dei vari gruppi valgano anche per i commutatori definiti sulla loro algebra. In particolare, dobbiamo verificare che i commutatori di matrici antisimmetriche e di matrici antihermitiane siano rispettivamente antisimmetrici e antihermitiani, e che la traccia di un commutatore di matrici a traccia nulla sia anch'essa nulla:
+
+\begin{gather}
+	[X,Y]^{T} = (X Y - Y X)^{T} = Y^{T} X^{T} - X^{T} Y^{T} = Y X - X Y = - [X,Y] %
+	\qcomma \forall X,Y \in S^{-}_{n}(\K) \\
+	[X,Y]^{*} = (X Y - Y X)^{*} = Y^{*} X^{*} - X^{*} Y^{*} = Y X - X Y = - [X,Y] %
+	\qcomma \forall X,Y \in H^{-}_{n} \\
+	\tr([X,Y]) = \tr(X Y - Y X) = \tr(X Y) - \tr(Y X) = \tr(X Y) - \tr(X Y) = 0
+\end{gather}
+
+dove abbiamo usato la proprietà
+
+\begin{equation}
+	\tr(A B) = \tr(B A) \qcomma \forall A,B \in M_{n}(\K)
+\end{equation}
+
+A questo punto i commutatori delle algebre in esame appartengono ai rispettivi spazi tangenti all'unità dei gruppi.
 
 %
 
