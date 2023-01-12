@@ -4159,39 +4159,41 @@ Fin'ora sappiamo solo che $ \sigma_{t}^{\xi}(g) $ dipende in modo liscio da $ t 
 	\begin{enumerate}
 		\item Sia $ \tilde{G} = G \times T_{e}(G) $ il prodotto diretto dei gruppi di Lie $ (G,\cdot) $ e $ (T_{e}(G),+) $, da cui il gruppo di Lie $ (\tilde{G},\cdot) $ con quest'ultima operazione definita come
 		
-		\map{\cdot}%
-			{\tilde{G} \times \tilde{G}}{\tilde{G}}%
+		\map{\cdot}
+			{\tilde{G} \times \tilde{G}}{\tilde{G}}
 			{((g_{1},\xi_{1}),(g_{2},\xi_{2}))}{(g_{1} \cdot g_{2},\xi_{1} + \xi_{2})}
 
 		Tramite il gruppo di Lie $ \tilde{G} $, consideriamo $ \xi $ non come parametro ma come coordinata di un punto $ (g,\xi) \in \tilde{G} $.\\
-		Lo spazio tangente di $ \tilde{G} $, ricordando che $ T_{e}(G) $ è uno spazio vettoriale quindi coincide con il suo spazio tangente, è pari a
+		Lo spazio tangente di $ \tilde{G} $ nell'elemento neutro $ (e,0) $, ricordando che $ T_{e}(G) $ è uno spazio vettoriale quindi coincide con il suo spazio tangente, è pari a
 		
 		\begin{equation}
-			T_{(e,0)}(\tilde{G}) = T_{e}(G) \times T_{0}(T_{e}(G)) = T_{e}(G) \times T_{e}(G)
+			T_{(e,0)}(\tilde{G}) = T_{e}(G) \times T_{0}(T_{e}(G)) %
+			= T_{e}(G) \times T_{e}(G)
 		\end{equation}
-	
+		
+		dove abbiamo usato l'isomorfismo tra lo spazio tangente del prodotto diretto e il prodotto diretto degli spazi tangenti\footnote{%
+			Vedi Esercizio \ref{es2-11}.%
+		}.\\
 		Prendiamo un elemento $ \tilde{\xi} $ di questo spazio tangente definito come
 		
 		\begin{equation}
-			\tilde{\xi}_{(g,\xi)} = (\hat{\xi}_{g},0)
+			\tilde{\xi}_{(g,\xi)} = (\hat{\xi}_{g},0) \in T_{e}(G) \times T_{e}(G)
 		\end{equation}
 	
-		dove $ \hat{\xi} \in L(G) $ è il campo di vettori invarianti a sinistra associato a $ \xi $ e $ 0 \in T_{e}(G) $; $ \tilde{\xi} $ è un campo di vettori invariante a sinistra, i.e. $ \tilde{\xi} \in L(\tilde{G}) $, in quanto
+		dove $ \hat{\xi} \in L(G) $ è il campo di vettori invarianti a sinistra associato a $ \xi $ e $ 0 \in T_{e}(G) $ è il campo di vettori nullo; $ \tilde{\xi} $ è un campo di vettori invariante a sinistra, i.e. $ \tilde{\xi} \in L(\tilde{G}) $, in quanto
 		
-		\begin{align}
-			\begin{split}
-				L_{(g,\xi)_{*}} \left( \tilde{\xi} \right) &= \left( L_{(g,\xi)_{*}} \left( \hat{\xi}_{g} \right), L_{(g,\xi)_{*}} (0) \right)\\
-				&= \left( \hat{\xi}_{g},0 \right)\\
-				&= \tilde{\xi}_{(g,\xi)}
-			\end{split}
-		\end{align}
+		\begin{equation}
+			L_{(g,\xi)_{*}} \left( \tilde{\xi} \right) = \left( L_{(g,\xi)_{*}} \left( \hat{\xi}_{g} \right), L_{(g,\xi)_{*}} (0) \right) %
+			= \left( \hat{\xi}_{g},0 \right) %
+			= \tilde{\xi}_{(g,\xi)}
+		\end{equation}
 	
-		Per $ \tilde{\sigma}(t,g,\xi) $ flusso globale di $ \tilde{\xi} $ valgono
+		Per il flusso globale di $ \tilde{\xi} $ scritto come $ \tilde{\sigma}(t,g,\xi) $ valgono le seguenti relazioni
 		
 		\begin{equation}
 			\begin{cases}
-				\tilde{\sigma} : \R \times \tilde{G} \to \tilde{G}\\
-				\dv{t} \tilde{\sigma}(t,g,\xi) = \tilde{\xi}_{\tilde{\sigma}(t,g,\xi)}\\
+				\tilde{\sigma} : \R \times \tilde{G} \to \tilde{G} \\\\
+				\ddv{t} \tilde{\sigma}(t,g,\xi) = \tilde{\xi}_{\tilde{\sigma}(t,g,\xi)} \\\\
 				\tilde{\sigma}(0,g,\xi) = (g,\xi)
 			\end{cases}
 		\end{equation}
@@ -4209,10 +4211,11 @@ Fin'ora sappiamo solo che $ \sigma_{t}^{\xi}(g) $ dipende in modo liscio da $ t 
 			\dv{t} (\sigma_{t}^{\xi}(g),\xi) = \left( \hat{\xi}_{\sigma_{t}^{\xi}(g)}, 0 \right) = \tilde{\xi}_{(\sigma_{t}^{\xi}(g),\xi)}
 		\end{equation}
 	
-		Dunque è una curva integrale per $ \tilde{\xi} $ che inizia in $ (g,\xi) $$ \tilde{\sigma}(t,g,\xi) $: per il teorema sull'unicità della curva integrale, otteniamo che
+		Dunque è una curva integrale per $ \tilde{\xi} $ che inizia in $ (g,\xi) $: per il teorema sull'unicità della curva integrale, otteniamo che
 		
 		\begin{equation}
-			\tilde{\sigma}(t,g,\xi) = (\sigma_{t}^{\xi}(g),\xi) \qcomma \forall t \in \R, \, \forall g \in G, \, \forall \xi \in \g
+			\tilde{\sigma}(t,g,\xi) = (\sigma_{t}^{\xi}(g),\xi) %
+			\qcomma \forall t \in \R, \, \forall g \in G, \, \forall \xi \in \g
 		\end{equation}
 	
 		Questo prova che anche $ \sigma_{t}^{\xi}(g) $ è liscia in $ \xi $, da cui $ \gamma^{\xi}(t) = \sigma_{t}^{\xi}(e) $ è liscia in $ \xi $ e infine abbiamo che $ \exp(\xi) = \gamma^{\xi}(1) $ è liscio in $ \xi $.
@@ -4220,10 +4223,12 @@ Fin'ora sappiamo solo che $ \sigma_{t}^{\xi}(g) $ dipende in modo liscio da $ t 
 		\item Per definizione
 		
 		\begin{equation}
-			\exp(0) \doteq \gamma^{0}(1) = \sigma_{1}^{0}(e) = e
+			\exp(0) \doteq \gamma^{0}(1) %
+			= \sigma_{1}^{0}(e) %
+			= e
 		\end{equation}
 	
-		in quanto $ \sigma_{t}^{0}(g) = g $ per $ \forall t \in \R $.
+		in quanto $ \sigma_{t}^{0}(g) = g $ per qualsiasi $ t \in \R $.
 		
 		\item Per definizione
 		
@@ -4240,13 +4245,15 @@ Fin'ora sappiamo solo che $ \sigma_{t}^{\xi}(g) $ dipende in modo liscio da $ t 
 		Più in generale, dimostriamo che
 		
 		\begin{equation}
-			\gamma^{t \xi}(s) = \gamma^{\xi}(t s) \qcomma t,s \in \R
+			\gamma^{t \xi}(s) = \gamma^{\xi}(t s) \qcomma \forall t,s \in \R
 		\end{equation}
 	
-		Questa proprietà è verificata per $ t=0 $
+		Questa proprietà è verificata per $ t = 0 $
 		
 		\begin{equation}
-			\gamma^{0}(s) = \sigma_{s}^{0}(e) = e = \gamma^{\xi}(0)
+			\gamma^{0}(s) = \sigma_{s}^{0}(e) %
+			= e %
+			= \gamma^{\xi}(0)
 		\end{equation}
 	
 		Supponiamo che $ t \neq 0 $ e sfruttiamo l'unicità delle curve integrali: definendo $ u = t s $, vogliamo che
@@ -4259,19 +4266,19 @@ Fin'ora sappiamo solo che $ \sigma_{t}^{\xi}(g) $ dipende in modo liscio da $ t 
 		
 		\begin{equation}
 			\begin{cases}
-				\gamma^{\xi}(0) = e\\
-				\dv{u} \gamma^{\xi}(u) = \hat{\xi}_{\gamma^{\xi}(u)}
+				\gamma^{\xi}(0) = e \\\\
+				\ddv{u} \gamma^{\xi}(u) = \hat{\xi}_{\gamma^{\xi}(u)}
 			\end{cases}
 		\end{equation}
 	
-		mentre per il primo membro, sapendo che $ \dd{u} = t \dd{s} $ e che l'isomorfismo $ \hatapp $ è lineare
+		mentre per il primo membro, sapendo che $ \dd{u} = t \dd{s} $ e che l'isomorfismo $ \hatapp $ è lineare, otteniamo
 		
 		\begin{align}
 			\begin{split}
-				\dv{u} \gamma^{t \xi} \left( \dfrac{u}{t} \right) &= \dfrac{1}{t} \dv{s} \gamma^{t \xi}(s)\\
-				&= \dfrac{1}{t} \left( \widehat{t \xi} \right)_{\gamma^{t \xi}(s)}\\
-				&= \dfrac{1}{t} \, t \, \left( \hat{\xi}_{\gamma^{t \xi}(s)} \right)\\
-				&= \hat{\xi}_{\gamma^{t \xi}(s)}\\
+				\dv{u} \gamma^{t \xi} \left( \dfrac{u}{t} \right) &= \dfrac{1}{t} \dv{s} \gamma^{t \xi}(s) \\
+				&= \dfrac{1}{t} \left( \widehat{t \xi} \right)_{\gamma^{t \xi}(s)} \\
+				&= \dfrac{1}{t} \, t \, \left( \hat{\xi}_{\gamma^{t \xi}(s)} \right) \\
+				&= \hat{\xi}_{\gamma^{t \xi}(s)} \\
 				&= \hat{\xi}_{\gamma^{t \xi}(u/t)}
 			\end{split}
 		\end{align}
@@ -4280,12 +4287,12 @@ Fin'ora sappiamo solo che $ \sigma_{t}^{\xi}(g) $ dipende in modo liscio da $ t 
 		
 		\begin{equation}
 			\begin{cases}
-				\gamma^{t \xi}(0) = e\\
-				\dv{u} \gamma^{t \xi} \left( \dfrac{u}{t} \right) = \hat{\xi}_{\gamma^{t \xi}(u/t)}
+				\gamma^{t \xi}(0) = e \\\\
+				\ddv{u} \gamma^{t \xi} \left( \dfrac{u}{t} \right) = \hat{\xi}_{\gamma^{t \xi}(u/t)}
 			\end{cases}
 		\end{equation}
 	
-		perciò, per unicità delle curva integrali
+		perciò, per unicità delle curve integrali
 		
 		\begin{equation}
 			\gamma^{\xi}(u) = \gamma^{t \xi} \left( \dfrac{u}{t} \right)
@@ -4317,7 +4324,8 @@ Fin'ora sappiamo solo che $ \sigma_{t}^{\xi}(g) $ dipende in modo liscio da $ t 
 		
 		\item %
 		\begin{equation}
-			\exp((t+s) \xi) = \exp(t \xi) \cdot \exp(s \xi) \qcomma \forall t,s \in \R, \, \forall \xi \in \g
+			\exp((t+s) \xi) = \exp(t \xi) \cdot \exp(s \xi) %
+			\qcomma \forall t,s \in \R, \, \forall \xi \in \g
 		\end{equation}
 		
 		\item L'inversa dell'esponenziale è pari a
@@ -4337,18 +4345,18 @@ Fin'ora sappiamo solo che $ \sigma_{t}^{\xi}(g) $ dipende in modo liscio da $ t 
 		\item %
 		\begin{align}
 			\begin{split}
-				\exp((t+s) \xi) &= \gamma^{\xi}(t+s)\\
-				&= \gamma^{\xi}(t) \cdot \gamma^{\xi}(s)\\
+				\exp((t+s) \xi) &= \gamma^{\xi}(t+s) \\
+				&= \gamma^{\xi}(t) \cdot \gamma^{\xi}(s) \\
 				&= \exp(t \xi) \cdot \exp(s \xi)
 			\end{split}
 		\end{align}
 		
-		\item Per $ t=1 $ e $ s =-1 $
+		\item Per $ t = 1 $ e $ s = -1 $
 		
 		\begin{align}
 			\begin{split}
-				\exp(t \xi) \cdot \exp(s \xi) &= \exp((t+s) \xi)\\
-				\exp(\xi) \cdot \exp(-\xi) &= \exp(0)\\
+				\exp(t \xi) \cdot \exp(s \xi) &= \exp((t+s) \xi) \\
+				\exp(\xi) \cdot \exp(-\xi) &= \exp(0) \\
 				&= e
 			\end{split}
 		\end{align}
