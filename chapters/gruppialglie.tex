@@ -4383,14 +4383,14 @@ Sia $ G $ un gruppo di Lie, un'applicazione liscia $ \phi : \R \to G $ è chiama
 	\phi(t+s) = \phi(t) \cdot \phi(s) \qcomma \forall t,s \in \R
 \end{equation}
 
-cioè $ \phi $ è un omomorfismo di gruppi di Lie tra $ (\R,+) $ e $ G $.\\
+cioè $ \phi $ è un omomorfismo di gruppi di Lie tra $ (\R,+) $ e $ G $. L'applicazione $ \phi $ è chiamata così poiché l'immagine $ \phi(\R) $ è un sottogruppo algebrico di $ G $ isomorfo al gruppo $ (\R,+) $.\\
 Ad esempio, $ \gamma^{\xi}(t) = \exp(t \xi) $ definisce un sottogruppo a un parametro di $ G $.
 
 \begin{definition}
-	Sia $ \phi : \R \to G $ un sottogruppo a un parametro di un gruppo di Lie $ G $, allora esiste $ \xi \in T_{e}(G) $ tale che
+	Sia $ \phi : \R \to G $ un sottogruppo a un parametro di un gruppo di Lie $ G $, allora
 	
 	\begin{equation}
-		\phi(t) = \exp (t \xi) \qcomma \forall t \in \R
+		\E \xi \in T_{e}(G) \mid \phi(t) = \exp (t \xi) \qcomma \forall t \in \R
 	\end{equation}
 \end{definition}
 
@@ -4401,8 +4401,8 @@ Ad esempio, $ \gamma^{\xi}(t) = \exp(t \xi) $ definisce un sottogruppo a un para
 \begin{proof}
 	Sia la curva
 	
-	\map{q}%
-		{\R}{G}%
+	\map{q}
+		{\R}{G}
 		{t}{\phi(t) \exp(-t \xi)}
 		
 	Osserviamo che $ \phi(0) = e $ in quanto omomorfismo di gruppi di Lie (manda l'elemento neutro di $ \R $ in quello di $ G $) e dunque
@@ -4415,8 +4415,8 @@ Ad esempio, $ \gamma^{\xi}(t) = \exp(t \xi) $ definisce un sottogruppo a un para
 	
 	\begin{align}
 		\begin{split}
-			\dv{t} q(t) &= \dv{t} \phi(t) \exp(-t \xi)\\
-			&= \eval{ \dv{s} \phi(t+s) \exp(- (t+s) \xi) }_{s=0}\\
+			\dv{t} q(t) &= \dv{t} \phi(t) \exp(-t \xi) \\
+			&= \eval{ \dv{s} \phi(t+s) \exp(- (t+s) \xi) }_{s=0} \\
 			&= \eval{ \dv{s} \phi(t) \phi(s) \exp(-s \xi) \exp(-t \xi) }_{s=0}
 		\end{split}
 	\end{align}
