@@ -4387,10 +4387,17 @@ cioè $ \phi $ è un omomorfismo di gruppi di Lie tra $ (\R,+) $ e $ G $. L'appl
 Ad esempio, $ \gamma^{\xi}(t) = \exp(t \xi) $ definisce un sottogruppo a un parametro di $ G $.
 
 \begin{definition}
-	Sia $ \phi : \R \to G $ un sottogruppo a un parametro di un gruppo di Lie $ G $, allora
+	Sia $ \phi : \R \to G $ un sottogruppo a un parametro di un gruppo di Lie $ G $ tale che
 	
 	\begin{equation}
-		\E \xi \in T_{e}(G) \mid \phi(t) = \exp (t \xi) \qcomma \forall t \in \R
+		\phi'(0) = \eval{ \dv{t} \phi(t) }_{t=0} %
+		= \xi \in T_{e}(G)
+	\end{equation}
+	
+	allora
+	
+	\begin{equation}
+		\phi(t) = \exp (t \xi) \qcomma \forall t \in \R
 	\end{equation}
 \end{definition}
 
@@ -4423,18 +4430,25 @@ Ad esempio, $ \gamma^{\xi}(t) = \exp(t \xi) $ definisce un sottogruppo a un para
 
 	Definendo l'applicazione
 	
-	\map{Q}%
-		{\R}{G}%
-		{t}{Q^{t}L_{\phi(t)} \circ R_{\exp(-t \xi)}}
-		
-	possiamo scrivere, usando la moltiplicazione $ \mu $ di $ G $
+	\map{Q}
+		{\R \times G \times T_{e}(G)}{G}
+		{(t,g,\xi)}{Q^{\xi}_{t}(g)}
+	
+	dove
+	
+	\begin{equation}
+		Q^{\xi}_{t}(g) \doteq (L_{\phi(t)} \circ R_{\exp(-t \xi)})(g) = \phi(t) \, g \, \exp(-t \xi)
+	\end{equation}
+	
+	possiamo scrivere, usando la definizione di differenziale e la moltiplicazione $ \mu $ di $ G $
 	
 	\begin{align}
 		\begin{split}
-			\dv{t} q(t) &= \eval{ \dv{s} \phi(t) \phi(s) \exp(-s \xi) \exp(-t \xi) }_{s=0}\\
-			&= \eval{ \dv{s} Q^{t} (\phi(s) \exp(-s \xi)) }_{s=0}\\
-			&= Q^{t}_{*e} \left( \eval{ \dv{s} \phi(s) \exp(-s \xi) }_{s=0} \right)\\
-			&= Q^{t}_{*e} \left( \mu_{*(e,e)} \left( \eval{ \dv{s} \phi(s) }_{s=0}, \eval{ \dv{s} \exp(-s \xi) }_{s=0} \right) \right)
+			\dv{t} q(t) &= \eval{ \dv{s} \phi(t) \phi(s) \exp(-s \xi) \exp(-t \xi) }_{s=0} \\
+			&= \eval{ \dv{s} Q^{\xi}_{t} (\phi(s) \exp(-s \xi)) }_{s=0} \\
+			&= (Q^{\xi}_{t})_{*e} \left( \eval{ \dv{s} \phi(s) \exp(-s \xi) }_{s=0} \right) \\
+			&= (Q^{\xi}_{t})_{*e} \left( \eval{ \dv{s} \mu(\phi(s), \exp(-s \xi)) }_{s=0} \right) \\
+			&= (Q^{\xi}_{t})_{*e} \left( \mu_{*(e,e)} \left( \eval{ \dv{s} \phi(s) }_{s=0}, \eval{ \dv{s} \exp(-s \xi) }_{s=0} \right) \right)
 		\end{split}
 	\end{align}
 
@@ -4444,12 +4458,13 @@ Ad esempio, $ \gamma^{\xi}(t) = \exp(t \xi) $ definisce un sottogruppo a un para
 		\mu_{*(e,e)} (X_{e},Y_{e}) = X_{e} + Y {e} \qcomma X_{e},Y_{e} \in T_{e}(G)
 	\end{equation}
 
-	calcoliamo separatamente l'argomento di $ Q^{t}_{*e} $
+	mostriamo che l'argomento di $ Q^{t}_{*e} $ è nullo:
 	
 	\begin{align}
 		\begin{split}
-			\mu_{*(e,e)} \left( \eval{ \dv{s} \phi(s) }_{s=0}, \eval{ \dv{s} \exp(-s \xi) }_{s=0} \right) &= \mu_{*(e,e)} (\xi, -\xi)\\
-			&= \xi - \xi\\
+			\mu_{*(e,e)} \left( \eval{ \dv{s} \phi(s) }_{s=0}, \eval{ \dv{s} \exp(-s \xi) }_{s=0} \right) &= \left( \xi, \eval{ \dv{s} \gamma^{-\xi}(s) }_{s=0} \right) \\
+			&= \mu_{*(e,e)} (\xi, -\xi) \\
+			&= \xi - \xi \\
 			&= 0
 		\end{split}
 	\end{align}
@@ -4460,7 +4475,7 @@ Ad esempio, $ \gamma^{\xi}(t) = \exp(t \xi) $ definisce un sottogruppo a un para
 		\dv{t} q(t) = Q^{t}_{*e} (0) = 0 \qcomma \forall t \in \R \implies q(t) = e \qcomma \forall t \in \R
 	\end{equation}
 
-	quindi
+	cioè la curva $ q(t) $ è costante (usiamo il suo valore in $ q(0) = e $), quindi
 	
 	\begin{equation}
 		\phi(t) \exp(-t \xi) = q(t) = e \qcomma \forall t \in \R \implies \phi(t) = \exp(t \xi)
