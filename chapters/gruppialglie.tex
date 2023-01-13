@@ -4493,9 +4493,7 @@ Ad esempio, $ \gamma^{\xi}(t) = \exp(t \xi) $ definisce un sottogruppo a un para
 		\exp_{*0} : T_{0}(T_{e}(G)) = T_{e}(G) \to T_{e}(G)
 	\end{equation}
 
-	è un isomorfismo per il teorema della funzione inversa\footnote{%
-		Vedi Teorema \ref{ift}.%
-	}.
+	è un isomorfismo di spazi vettoriali.
 \end{definition}
 
 \begin{remark}
@@ -4503,11 +4501,28 @@ Ad esempio, $ \gamma^{\xi}(t) = \exp(t \xi) $ definisce un sottogruppo a un para
 \end{remark}
 
 \begin{proof}
-	Notiamo che l'identificazione $ T_{0}(T_{e}(G)) = T_{e}(G) $ implica che l'origine del primo spazio sia mappata in $ e \in T_{e}(G) $.\\
-	Preso un elemento $ \xi \in T_{e}(G) $, per calcolare il differenziale dell'esponenziale $ \exp_{*0} = \exp_{*e} $ è sufficiente prendere una curva che inizi in $ e $ e che abbia come vettore tangente $ \xi $: questa curva coincide con l'esponenziale, dunque
+%	Notiamo che l'identificazione $ T_{0}(T_{e}(G)) = T_{e}(G) $ implica che l'origine del primo spazio $ 0 \in T_{0}(T_{e}(G)) $ sia mappata in $ e \in T_{e}(G) $.\\
+	Preso un elemento $ \xi \in T_{e}(G) = T_{0}(T_{e}(G)) $, per calcolare il differenziale dell'esponenziale $ \exp_{*0} $, consideriamo la curva
+	
+	\map{c}
+		{\R}{T_{e}(G)}
+		{t}{t \xi}
+	
+	dove
 	
 	\begin{equation}
-		\exp_{*0} (\xi) =  \eval{ \dv{t} \exp(t \xi) }_{t=0} = \xi
+		\begin{cases}
+			c(0) = 0 \in T_{e}(G) \\
+			c'(0) = \xi
+		\end{cases}
+	\end{equation}
+	
+	dunque, per le proprietà del differenziale
+	
+	\begin{equation}
+		\exp_{*0} (\xi) = \dot{(\exp \circ \, c)}(0) %
+		= \eval{ \dv{t} \exp(t \xi) }_{0} %		
+		= \xi
 	\end{equation}
 
 	e quindi
@@ -4516,27 +4531,36 @@ Ad esempio, $ \gamma^{\xi}(t) = \exp(t \xi) $ definisce un sottogruppo a un para
 		\exp_{*0} = \id_{T_{0}(T_{e}(G))}
 	\end{equation}
 
-	Essendo l'identità è in particolare invertibile e, per il teorema della funzione inversa, abbiamo che l'esponenziale è un diffeomorfismo locale intorno a $ 0 \in T_{0}(T_{e}(G)) $.
+	Essendo il differenziale l'identità dello spazio $ T_{0}(T_{e}(G)) $, questo è invertibile e, per il teorema della funzione inversa\footnote{%
+		Vedi Teorema \ref{ift}.%
+	}, questo lo rende un diffeomorfismo locale intorno a $ 0 \in T_{0}(T_{e}(G)) $.
 \end{proof}
 
 \begin{definition}
-	Siano un omomorfismo di gruppi di Lie $ F : H \to G $ e gli esponenziali dei rispettivi gruppi di Lie
+	Siano un omomorfismo di gruppi di Lie $ F : G \to H $ e gli esponenziali dei rispettivi gruppi di Lie
 	
-	\begin{equation}
-		\begin{cases}
-			\exp_{H} : T_{e}(H) \to H\\
-			\exp_{G} : T_{e}(G) \to G
-		\end{cases}
-	\end{equation}
-
-	allora il seguente diagramma è commutativo
-	
-	\img{0.4}{img54}
+	\sbs{0.6}{%
+				\begin{equation}
+					\begin{cases}
+						\exp_{G} : T_{e}(G) \to G \\
+						\exp_{H} : T_{e}(H) \to H
+					\end{cases}
+				\end{equation}
+				
+				allora il diagramma a lato è commutativo.
+				}
+		{0.4}{%
+				\diagr{%
+						T_{e}(G) \arrow[rr, "F_{*e}"] \arrow[dd, "\exp_{G}"] \&  \& T_{e}(H) \arrow[dd, "\exp_{H}"] \\
+						\&  \&                                 \\
+						G \arrow[rr, "F"]                                    \&  \& H                              %
+						}
+				}
 	
 	Questo significa che l'esponenziale commuta con gli omomorfismi di gruppi di Lie, i.e.
 	
 	\begin{equation}
-		F \circ \exp_{H} = \exp_{G} \circ F_{*e}
+		F \circ \exp_{G} = \exp_{H} \circ F_{*e}
 	\end{equation}
 \end{definition}
 
@@ -4544,19 +4568,22 @@ Ad esempio, $ \gamma^{\xi}(t) = \exp(t \xi) $ definisce un sottogruppo a un para
 	Per dimostrare questo fatto, facciamo vedere che
 	
 	\begin{equation}
-		F(\exp_{H}(t \xi)) = \exp_{G}(F_{*e}(t \xi)) \qcomma \forall t \in \R, \, \forall \xi \in T_{e}(H)
+		F(\exp_{G}(t \xi)) = \exp_{H}(F_{*e}(t \xi)) \qcomma \forall t \in \R, \, \forall \xi \in T_{e}(G)
 	\end{equation}
 
-	Chiamiamo il primo membro $ \phi_{1} $ e il secondo $ \phi_{2} $ e osserviamo che le applicazioni
+	Chiamiamo l'applicazione nel primo membro $ \phi_{1} $ e quella nel secondo $ \phi_{2} $ e osserviamo che queste applicazioni
 	
-	\map{\phi_{1}}%
-		{\R}{G}%
-		{t}{F(\exp_{H}(t \xi))}
-		
-	\map{\phi_{1}}%
-		{\R}{G}%
-		{t}{\exp_{G}(F_{*e}(t \xi))}
-		
+	\sbs{0.5}{%
+				\map{\phi_{1}}
+					{\R}{G}
+					{t}{F(\exp_{G}(t \xi))}
+				}
+		{0.5}{%
+				\map{\phi_{2}}
+					{\R}{G}
+					{t}{\exp_{H}(F_{*e}(t \xi))}
+				}
+	
 	sono sottogruppi a un parametro di $ G $, i.e.
 	
 	\begin{equation}
@@ -4571,57 +4598,60 @@ Ad esempio, $ \gamma^{\xi}(t) = \exp(t \xi) $ definisce un sottogruppo a un para
 
 	Per verificarlo, utilizziamo il fatto che $ F $ sia un omomorfismo, i.e. preservi la moltiplicazione, dunque
 	
-	\begin{align}
-		\begin{split}
-			\phi_{1}(t+s) &= F(\exp_{H}((t+s) \xi))\\
-			&= F(\exp_{H}(t \xi) \exp_{H}(s \xi))\\
-			&= F(\exp_{H}(t \xi)) \, F(\exp_{H}(s \xi))\\
-			&= \phi_{1}(t) \, \phi_{1}(s)
-		\end{split}
-	\end{align}
-
-	Il suo vettore tangente è pari a
+	\sbs{0.5}{%
+				\begin{align}
+					\begin{split}
+						\phi_{1}(t+s) &= F(\exp_{G}((t+s) \xi)) \\
+						&= F(\exp_{G}(t \xi) \exp_{G}(s \xi)) \\
+						&= F(\exp_{G}(t \xi)) \, F(\exp_{G}(s \xi)) \\
+						&= \phi_{1}(t) \, \phi_{1}(s)
+					\end{split}
+				\end{align}
+				}
+		{0.5}{%
+				\begin{align}
+					\begin{split}
+						\phi_{2}(t+s) &= \exp_{H}(F_{*e}((t+s) \xi)) \\
+						&= \exp_{H}((t+s) F_{*e}(\xi)) \\
+						&= \exp_{H}(t F_{*e}(\xi)) \exp_{H}(s F_{*e}(\xi)) \\
+						&= \phi_{2}(t) \, \phi_{2}(s)
+					\end{split}
+				\end{align}
+				}
 	
-	\begin{align}
-		\begin{split}
-			\phi'_{1}(0) &= \dv{t} F(\exp_{H}(t \xi))\\
-			&= F_{*e} \left( \exp_{H}(t \xi) \right)\\
-			&= F_{*e}(\xi)
-		\end{split}
-	\end{align}
-
-	Analogamente per $ \phi_{2} $
+	con vettori tangenti pari a
 	
-	\begin{align}
-		\begin{split}
-			\phi_{2}(t+s) &= \exp_{G}(F_{*e}((t+s) \xi))\\
-			&= \exp_{G}((t+s) F_{*e}(\xi))\\
-			&= \exp_{G}(t F_{*e}(\xi)) \exp_{G}(s F_{*e}(\xi))\\
-			&= \phi_{2}(t) \, \phi_{2}(s)
-		\end{split}
-	\end{align}
-
-	e il suo vettore tangente
+	\sbs{0.5}{%
+				\begin{align}
+					\begin{split}
+						\phi'_{1}(0) &= \dv{t} F(\exp_{G}(t \xi)) \\
+						&= F_{*e} \left( \exp_{G}(t \xi) \right) \\
+						&= F_{*e}(\xi)
+					\end{split}
+				\end{align}
+				}
+		{0.5}{%
+				\begin{align}
+					\begin{split}
+						\phi'_{2}(0) &= \dv{t} \exp_{H}(F_{*e}(t \xi)) \\
+						&= (\exp_{H})_{*0} (F_{*e}(t \xi)) \\
+						&= \id_{T_{0}(T_{e}(G))} (F_{*e}(t \xi)) \\
+						&= F_{*e}(\xi)
+					\end{split}
+				\end{align}
+				}
 	
-	\begin{align}
-		\begin{split}
-			\phi'_{2}(0) &= \dv{t} \exp_{G}(F_{*e}(t \xi))\\
-			&= \exp_{G_{*0}} (F_{*e}(t \xi))\\
-			&= \id_{T_{0}(T_{e}(G))} (F_{*e}(t \xi))\\
-			&= F_{*e}(\xi)
-		\end{split}
-	\end{align}
-
-	A questo punto $ \phi_{1} $ e $ \phi_{1} $ sono due sottogruppi a un parametro su $ G $ entrambi costruiti a partire da $ F_{*e}(\xi) $ dunque coincidono, il che prova
+	A questo punto $ \phi_{1} $ e $ \phi_{2} $ sono due sottogruppi a un parametro su $ G $ entrambi costruiti a partire da $ F_{*e}(\xi) $ dunque coincidono, il che prova
 	
 	\begin{equation}
-		F(\exp_{H}(t \xi)) = \exp_{G}(F_{*e}(t \xi)) \qcomma \forall t \in \R, \, \forall \xi \in T_{e}(H)
+		F(\exp_{G}(t \xi)) = \exp_{H}(F_{*e}(t \xi)) %
+		\qcomma \forall t \in \R, \, \forall \xi \in T_{e}(H)
 	\end{equation}
 
 	e in particolare per $ t=1 $, da cui otteniamo
 	
 	\begin{equation}
-		F \circ \exp_{H} = \exp_{G} \circ F_{*e}
+		F \circ \exp_{G} = \exp_{H} \circ F_{*e}
 	\end{equation}
 
 	cioè l'esponenziale commuta con gli omomorfismi di gruppi di Lie.
@@ -4635,7 +4665,10 @@ Ad esempio, $ \gamma^{\xi}(t) = \exp(t \xi) $ definisce un sottogruppo a un para
 \begin{proof}
 	Consideriamo il seguente diagramma
 	
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	RIFAI GRAFICO (CAMBIA 'H' E 'G')
 	\img{0.6}{img55}
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	
 	Mostriamo innanzitutto che $ F $ sia liscio in un intorno dell'origine $ e \in H $: l'esponenziale è un diffeomorfismo locale intorno all'origine, dunque la sua restrizione
 	
