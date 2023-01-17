@@ -6,3 +6,5 @@ cambia tutte le istanze di "funzion*" in "applicazion*" alla fine della revision
 
 crea macro per il testo degli esercizi (\exer{titolo}{label}{testo}{soluzione})
 
+inserisci "thm:", "sec:", "cor:", ecc. nei label
+
