@@ -4529,10 +4529,10 @@ Ad esempio, $ \gamma^{\xi}(t) = \exp(t \xi) $ definisce un sottogruppo a un para
 	\begin{equation}
 		\exp_{*0} = \id_{T_{0}(T_{e}(G))}
 	\end{equation}
-
-	Essendo il differenziale l'identità dello spazio $ T_{0}(T_{e}(G)) $, questo è invertibile e, per il teorema della funzione inversa\footnote{%
-		Vedi Teorema \ref{ift}.%
-	}, questo lo rende un diffeomorfismo locale intorno a $ 0 \in T_{0}(T_{e}(G)) $.
+	
+	Il differenziale è dunque l'identità dello spazio $ T_{0}(T_{e}(G)) $, perciò invertibile e, in particolare, isomorfismo di spazi vettoriali: per il teorema della funzione inversa\footnote{%
+		Vedi Teorema \ref{ift}, e Teorema \ref{thm:diffeo-loc-iso-ift} per la formulazione tramite differenziale.%
+	}, questo rende l'esponenziale un diffeomorfismo locale intorno a $ 0 \in T_{e}(G) $.
 \end{proof}
 
 \begin{definition}\label{prop:homo-lie-exp-comm}
@@ -4574,16 +4574,16 @@ Ad esempio, $ \gamma^{\xi}(t) = \exp(t \xi) $ definisce un sottogruppo a un para
 	
 	\sbs{0.5}{%
 				\map{\phi_{1}}
-					{\R}{G}
+					{\R}{H}
 					{t}{F(\exp_{G}(t \xi))}
 				}
 		{0.5}{%
 				\map{\phi_{2}}
-					{\R}{G}
+					{\R}{H}
 					{t}{\exp_{H}(F_{*e}(t \xi))}
 				}
 	
-	sono sottogruppi a un parametro di $ G $, i.e.
+	sono sottogruppi a un parametro di $ H $, i.e.
 	
 	\begin{equation}
 		\phi_{j}(t+s) = \phi_{j}(t) \, \phi_{j}(s) \qcomma \forall t,s \in \R, \, j = 1,2
@@ -4592,7 +4592,7 @@ Ad esempio, $ \gamma^{\xi}(t) = \exp(t \xi) $ definisce un sottogruppo a un para
 	tali che il loro vettore tangente in $ 0 $ sia
 	
 	\begin{equation}
-		\phi'_{1}(0) = \phi'_{2}(0) = F_{*e}(\xi)
+		\phi'_{1}(0) = \phi'_{2}(0) = F_{*e}(\xi) \in T_{e}(H)
 	\end{equation}
 
 	Per verificarlo, utilizziamo il fatto che $ F $ sia un omomorfismo, i.e. preservi la moltiplicazione, dunque
@@ -4613,18 +4613,19 @@ Ad esempio, $ \gamma^{\xi}(t) = \exp(t \xi) $ definisce un sottogruppo a un para
 						\phi_{2}(t+s) &= \exp_{H}(F_{*e}((t+s) \xi)) \\
 						&= \exp_{H}((t+s) F_{*e}(\xi)) \\
 						&= \exp_{H}(t F_{*e}(\xi)) \exp_{H}(s F_{*e}(\xi)) \\
+						&= \exp_{H}(F_{*e}(t \xi)) \exp_{H}(F_{*e}(s \xi)) \\
 						&= \phi_{2}(t) \, \phi_{2}(s)
 					\end{split}
 				\end{align}
 				}
 	
-	con vettori tangenti pari a
+	con vettori tangenti, calcolati usando i differenziali tramite curve, pari a
 	
 	\sbs{0.5}{%
 				\begin{align}
 					\begin{split}
-						\phi'_{1}(0) &= \dv{t} F(\exp_{G}(t \xi)) \\
-						&= F_{*e} \left( \exp_{G}(t \xi) \right) \\
+						\phi'_{1}(0) &= \eval{ \dv{t} }_{0} F(\exp_{G}(t \xi)) \\
+						&= F_{*e} \left( \eval{ \dv{t} }_{0} \exp_{G}(t \xi) \right) \\
 						&= F_{*e}(\xi)
 					\end{split}
 				\end{align}
@@ -4632,15 +4633,15 @@ Ad esempio, $ \gamma^{\xi}(t) = \exp(t \xi) $ definisce un sottogruppo a un para
 		{0.5}{%
 				\begin{align}
 					\begin{split}
-						\phi'_{2}(0) &= \dv{t} \exp_{H}(F_{*e}(t \xi)) \\
-						&= (\exp_{H})_{*0} (F_{*e}(t \xi)) \\
-						&= \id_{T_{0}(T_{e}(G))} (F_{*e}(t \xi)) \\
+						\phi'_{2}(0) &= \eval{ \dv{t} }_{0} \exp_{H}(F_{*e}(t \xi)) \\
+						&= \eval{ \dv{t} }_{0} \exp_{H}(t F_{*e}(\xi)) \\
 						&= F_{*e}(\xi)
 					\end{split}
 				\end{align}
 				}
 	
-	A questo punto $ \phi_{1} $ e $ \phi_{2} $ sono due sottogruppi a un parametro su $ G $ entrambi costruiti a partire da $ F_{*e}(\xi) $ dunque coincidono, il che prova
+	in quanto il vettore tangente in $ 0 \in T_{e}(G) $ dell'esponenziale $ \exp(t \xi) $ è pari a $ \xi $.\\
+	A questo punto $ \phi_{1} $ e $ \phi_{2} $ sono due sottogruppi a un parametro su $ G $ entrambi costruiti a partire da $ F_{*e}(\xi) $, perciò coincidono, il che prova
 	
 	\begin{equation}
 		F(\exp_{G}(t \xi)) = \exp_{H}(F_{*e}(t \xi)) %
@@ -4666,20 +4667,20 @@ Ad esempio, $ \gamma^{\xi}(t) = \exp(t \xi) $ definisce un sottogruppo a un para
 	
 	\img{0.6}{img55}
 	
-	Mostriamo innanzitutto che l'omomorfismo $ F $ sia liscio in un intorno $ U $ dell'origine $ e \in G $: l'esponenziale è un diffeomorfismo locale intorno all'origine, dunque la sua restrizione
+	Mostriamo innanzitutto che l'omomorfismo $ F $ sia liscio in un intorno $ U $ dell'origine $ e \in G $: l'esponenziale è un diffeomorfismo locale intorno all'origine $ 0 \in T_{e}(G) $, dunque la sua restrizione all'intorno $ \tilde{U} \ni 0 $
 	
 	\begin{equation}
-		\eval{\exp}_{\tilde{U}} : \tilde{U} \to U
+		\eval{\exp}_{\tilde{U}} : \tilde{U} \to \exp(\tilde{U})
 	\end{equation}
 
-	è un diffeomorfismo, perciò la restrizione $ \eval{F}_{U} $ è liscia in quanto può essere scritta come
+	è un diffeomorfismo. A questo punto, la restrizione $ \eval{F}_{U} $, dove $ U \doteq \exp \!\; (\tilde{U}) $, è liscia poiché può essere scritta come
 	
 	\begin{equation}
 		\eval{F}_{U} = \exp \circ F_{*e} \circ \left( \eval{\exp}_{\tilde{U}} \right)^{-1}
 	\end{equation}
 
 	questa composizione è liscia perché l'esponenziale è liscio e il differenziale è lineare (dunque liscio).\\
-	Consideriamo ora un qualsiasi punto (che non sia l'origine) $ g \in G $ e l'immagine dell'aperto $ U $ tramite la traslazione a sinistra $ L_{g}(U) $, il quale è aperto in quanto $ L_{g} $ è un diffeomorfismo (porta aperti in aperti): verifichiamo ora che $ \eval{F}_{L_{g}(U)} $ sia liscia, rendendola liscia dappertutto in quanto $ g $ è arbitrario.\\
+	Consideriamo ora un qualsiasi punto (che non sia l'origine) $ g \in G $ e l'immagine dell'aperto $ U $ tramite la traslazione a sinistra $ L_{g}(U) $, il quale è aperto in quanto $ L_{g} $ è un diffeomorfismo (porta aperti in aperti). Verifichiamo ora che la restrizione $ \eval{F}_{L_{g}(U)} $ sia liscia, rendendo $ F $ liscio dappertutto in quanto $ g $ è arbitrario.\\
 	Essendo $ F $ un omomorfismo, vale la proprietà
 	
 	\begin{equation}
@@ -4687,7 +4688,7 @@ Ad esempio, $ \gamma^{\xi}(t) = \exp(t \xi) $ definisce un sottogruppo a un para
 	\end{equation}
 
 	siccome
-	
+	%	
 	\begin{gather}
 		L_{h}^{-1} = L_{h^{-1}} \\
 		L_{h^{-1}} (L_{h}(U)) = U
@@ -4727,7 +4728,7 @@ Ad esempio, $ \gamma^{\xi}(t) = \exp(t \xi) $ definisce un sottogruppo a un para
 				e dunque che
 	
 				\begin{equation}
-					\exp_{H} = \exp_{G_{| T_{e}(H)}}
+					\exp_{H} = \eval{\exp_{G}}_{T_{e}(H)}
 				\end{equation}
 				}
 		{0.4}{%
