@@ -1663,7 +1663,7 @@ La traccia di una matrice a entrare reali è un numero reale, i.e. $ \tr(X) \in 
 	\end{equation}
 \end{proof}
 
-\begin{definition}
+\begin{definition}\label{prop:det-exp-tr}
 	Sia una matrice $ X \in M_{n}(\R) $, allora
 	
 	\begin{equation}
@@ -4708,7 +4708,7 @@ Ad esempio, $ \gamma^{\xi}(t) = \exp(t \xi) $ definisce un sottogruppo a un para
 	il che rende $ \eval{F}_{L_{g}(U)} $ liscia in quanto composizione di applicazioni lisce.
 \end{proof}
 
-\begin{corollary}
+\begin{corollary}\label{cor:subgr-lie-exp-tang}
 	Sia $ H \subset G $ un sottogruppo di Lie di $ G $, allora l'esponenziale del sottogruppo di Lie $ \exp_{H} : T_{e}(H) \to H $ è la restrizione dell'esponenziale di $ G $ allo spazio tangente in $ H $, i.e.
 	
 	\begin{equation}
@@ -4747,26 +4747,26 @@ Ad esempio, $ \gamma^{\xi}(t) = \exp(t \xi) $ definisce un sottogruppo a un para
 
 Ricordiamo che l'esponenziale per matrici è definito come
 
-\map{e}%
-	{M_{n}(\R)}{GL_{n}(\R)}%
+\map{e}
+	{M_{n}(\R)}{GL_{n}(\R)}
 	{A}{e^{A} = \sum_{k=0}^{+\infty} \dfrac{A^{k}}{k!}}
 
-ma $ M_{n}(\R) = T_{I}(GL_{n}(\R)) $, quindi potremmo definire anche l'esponenziale di gruppi di Lie
+Possiamo identificare $ M_{n}(\R) = T_{I}(GL_{n}(\R)) $, quindi l'esponenziale di gruppi di Lie ha stesso dominio e codominio dell'esponenziale per matrici, i.e.
 
-\map{\exp}%
-	{T_{I}(GL_{n}(\R))}{GL_{n}(\R)}%
+\map{\exp}
+	{T_{I}(GL_{n}(\R))}{GL_{n}(\R)}
 	{A}{\exp(A)}
 
 \begin{corollary}
-	L'esponenziale di matrici coincide con l'esponenziale di gruppi di Lie per gruppi matriciali.
+	L'esponenziale di matrici coincide con l'esponenziale di gruppi di Lie matriciali.
 \end{corollary}
 
 \begin{proof}
-	Sia $ A \in M_{n}(\R) $, chiamiamo
+	Sia una matrice $ A \in M_{n}(\R) $, chiamiamo
 	
 	\begin{equation}
 		\begin{cases}
-			\phi_{1}(t) \doteq e^{t A}\\
+			\phi_{1}(t) \doteq e^{t A} \\
 			\phi_{2}(t) \doteq \exp(t A)
 		\end{cases}
 	\end{equation}
@@ -4774,10 +4774,16 @@ ma $ M_{n}(\R) = T_{I}(GL_{n}(\R)) $, quindi potremmo definire anche l'esponenzi
 	dove, tramite l'identificazione $ M_{n}(\R) = T_{I}(GL_{n}(\R)) $
 	
 	\begin{equation}
-		\phi_{j} : T_{I}(GL_{n}(\R)) \to GL_{n}(\R) \qcomma j=1,2
+		\phi_{j} : \R \times T_{I}(GL_{n}(\R)) \to GL_{n}(\R) \qcomma j=1,2
 	\end{equation}
 
-	Le applicazioni $ \phi_{1}(t) $ e $ \phi_{2}(t) $ sono sottogruppi di Lie a un parametro di $ GL_{n}(\R) $ e il loro vettore tangente nell'origine è la matrice $ A $, i.e.
+	Fissando $ A \in M_{n}(\R) $, le applicazioni $ \phi_{1}(t) $ e $ \phi_{2}(t) $ sono sottogruppi di Lie a un parametro di $ GL_{n}(\R) $, i.e.
+	
+	\begin{equation}
+		\phi_{j} : \R \to GL_{n}(\R) \qcomma j=1,2
+	\end{equation}
+	
+	e il loro vettore tangente nell'origine è la matrice $ A $, i.e.
 	
 	\begin{equation}
 		\phi'_{1}(0) = \phi'_{2}(0) = A
@@ -4787,23 +4793,20 @@ ma $ M_{n}(\R) = T_{I}(GL_{n}(\R)) $, quindi potremmo definire anche l'esponenzi
 	
 	\begin{equation}
 		\begin{cases}
-			e^{(t+s) A} = e^{t A} e^{s A}\\
+			e^{(t+s) A} = e^{t A} e^{s A} \\
 			\exp((t+s) A) = \exp(t A) \exp(s A)
-		\end{cases}%
-		\qcomma \forall t,s \in \R, \, \forall A \in M_{n}(\R)
+		\end{cases} %
+		\qquad \forall t,s \in \R, \, \forall A \in M_{n}(\R)
 	\end{equation}
 
 	e per i vettori tangenti
 	
 	\begin{equation}
-		\begin{cases}
-			\eval{ \dv{t} e^{t A} }_{t=0} = A\\\\
-			\eval{ \dv{t} \exp(t A) }_{t=0} = A
-		\end{cases}%
+		\eval{ \dv{t} e^{t A} }_{t=0} = \eval{ \dv{t} \exp(t A) }_{t=0} = A %
 		\qcomma \forall t \in \R, \, \forall A \in M_{n}(\R)
 	\end{equation}
 
-	Due sottogruppi a un parametro che hanno lo stesso vettore tangente nell'origine (essendo completamente determinanti da questo) coincidono, dunque
+	Due sottogruppi a un parametro che hanno lo stesso vettore tangente nell'origine (essendo completamente determinati da questo) coincidono, dunque
 	
 	\begin{equation}
 		e \equiv \exp
@@ -4813,28 +4816,39 @@ ma $ M_{n}(\R) = T_{I}(GL_{n}(\R)) $, quindi potremmo definire anche l'esponenzi
 \end{proof}
 
 \begin{corollary}
-	Sia $ H \subset GL_{n}(\R) $ è un sottogruppo di Lie matriciale di $ GL_{n}(\R) $, allora
+	Sia $ G \subset GL_{n}(\R) $ un sottogruppo di Lie matriciale di $ GL_{n}(\R) $, allora
 	
 	\begin{equation}
-		\exp_{H} = e_{| T_{I}(H)}
+		\exp_{G} = \eval{e}_{T_{I}(G)}
 	\end{equation}
 \end{corollary}
+
+\begin{proof}
+	Dal Corollario \ref{cor:subgr-lie-exp-tang} e dall'identificazione $ e \equiv \exp $, possiamo scrivere
+	
+	\begin{equation}
+		\exp_{G} = \eval{ \exp_{GL_{n}(\R)} }_{T_{I}(G)} %
+		= \eval{e}_{T_{I}(G)}
+	\end{equation}
+\end{proof}
 
 \subsubsection{\textit{Esempio}}
 
 Sia il gruppo delle matrici lineari speciali $ SL_{n}(\R) \subset GL_{n}(\R) $, l'esponenziale in questo spazio è definito come
 
-\map{e}%
-	{T_{I}(SL_{n}(\R))}{SL_{n}(\R)}%
+\map{e}
+	{T_{I}(SL_{n}(\R))}{SL_{n}(\R)}
 	{X}{e^{X}}
 
-cioè coincide con l'esponenziale standard ma con $ X \in T_{I}(SL_{n}(\R)) $, i.e. $ \tr(X) = 0 $: se la traccia di $ X $ è nulla, l'esponenziale avrà determinante unitario e quindi apparterrà a $ SL_{n}(\R) $
+cioè coincide con l'esponenziale standard ma con $ X \in T_{I}(SL_{n}(\R)) $, i.e. $ \tr(X) = 0 $: se la traccia di $ X $ è nulla, l'esponenziale avrà determinante unitario e quindi apparterrà a $ SL_{n}(\R) $, in quanto\footnote{%
+	Vedi Proposizione \ref{prop:det-exp-tr}.%
+}
 
 \begin{equation}
 	\det(e^{X}) = e^{\tr(X)} = 1
 \end{equation}
 
-Vedi Esercizio \ref{es3-10}.
+Per altri esempi di gruppi matriciali, vedi Esercizio \ref{es3-10}.
 
 \subsection{Sulla suriettività dell'esponenziale}
 
