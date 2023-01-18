@@ -800,7 +800,8 @@ Consideriamo ora i seguenti insiemi
 		S^{-}_{n}(\K) = \{ X \in M_{n}(\K) \mid X^{T} = - X \} & \text{ (antisimmetriche)} \\
 		H^{-}_{n} = \{ X \in M_{n}(\C) \mid X^{*} = - X \} & \text{ (antihermitiane)} \\
 		T^{0}_{n}(\K) = \{ X \in M_{n}(\K) \mid \tr(X) = 0 \} & \text{ (traccia nulla)}
-	\end{cases}
+	\end{cases} %
+	\qquad \K = \R, \C
 \end{equation}
 
 i quali permettono di scrivere le algebre di Lie relative ai gruppi di Lie in esame nel seguente modo:
@@ -839,35 +840,96 @@ A questo punto i commutatori delle algebre in esame appartengono ai rispettivi s
 
 %
 
-\section{}\label{es3-10}
+\section{Esponenziale per gruppi di Lie}\label{es3-10}
 
 \begin{tcolorbox}
 	Verificare che l'esponenziale di una matrice definisce un'applicazione
 	
-	\begin{align}
-		\begin{split}
-			e : T_{I_{n}}(G) &\to G\\
-			A &\mapsto e^{A}
-		\end{split}
-	\end{align}
+	\map{e}
+		{T_{I}(G)}{G}
+		{A}{e^{A}}
 	
-	per i gruppi di Lie
-	
-	\begin{equation}
-		\begin{cases}
-			GL_{n}(\R)\\
-			GL_{n}(\C)\\
-			O(n)\\
-			SO(n)\\
-			U(n)\\
-			SU(n)\\
-			SL_{n}(\R)\\
-			SL_{n}(\C)
-		\end{cases}
-	\end{equation}
+	per i gruppi di Lie: $ GL_{n}(\R) $, $ GL_{n}(\C) $, $ SL_{n}(\R) $, $ SL_{n}(\C) $, $ O(n) $, $ SO(n) $, $ U(n) $, $ SU(n) $
 \end{tcolorbox}
 
-qui
+Consideriamo i seguenti insiemi
+
+\begin{equation}
+	\begin{cases}
+		S^{-}_{n}(\K) = \{ A \in M_{n}(\K) \mid A^{T} = - A \} & \text{ (antisimmetriche)} \\
+		H^{-}_{n} = \{ A \in M_{n}(\C) \mid A^{*} = - A \} & \text{ (antihermitiane)} \\
+		T^{0}_{n}(\K) = \{ A \in M_{n}(\K) \mid \tr(A) = 0 \} & \text{ (traccia nulla)}
+	\end{cases} %
+	\qquad \K = \R, \C
+\end{equation}
+
+i quali permettono di scrivere gli spazi tangenti ai gruppi di Lie in esame nel seguente modo:
+
+\begin{align}
+	T_{I}(GL_{n}(\K)) &= M_{n}(\K) \\
+	T_{I}(SL_{n}(\K)) &= T^{0}_{n}(\K) \\
+	T_{I}(O(n)) &= S^{-}_{n}(\R) \\
+	T_{I}(SO(n)) &= S^{-}_{n}(\R) \cap T^{0}_{n}(\R) \\
+	T_{I}(U(n)) &= H^{-}_{n} \\
+	T_{I}(SU(n)) &= H^{-}_{n} \cap T^{0}_{n}(\C)
+\end{align}
+
+Calcoliamo ora il trasposto e il coniugato dell'esponenziale di una matrice $ A \in M_{n}(\K) $ tramite la definizione di esponenziale di matrice:
+
+\begin{gather}
+	\left( e^{A} \right)^{T} = \left( \sum_{+ \infty}^{i=1} \dfrac{A^{i}}{i !} \right)^{T} %
+	= \sum_{+ \infty}^{i=1} \dfrac{(A^{i})^{T}}{i !} %
+	= \sum_{+ \infty}^{i=1} \dfrac{\left( A^{T} \right)^{i}}{i !} %
+	= e^{\left( A^{T} \right)} \\
+	\nonumber \\
+	\left( e^{A} \right)^{*} = \left( \sum_{+ \infty}^{i=1} \dfrac{A^{i}}{i !} \right)^{*} %
+	= \sum_{+ \infty}^{i=1} \dfrac{(A^{i})^{*}}{i !} %
+	= \sum_{+ \infty}^{i=1} \dfrac{\left( A^{*} \right)^{i}}{i !} %
+	= e^{\left( A^{*} \right)}
+\end{gather}
+
+Consideriamo infine le seguenti implicazioni:
+
+\begin{gather}
+	A \in T^{0}_{n}(\K) %
+	\implies \det(e^{A}) = e^{\tr(A)} = e^{0} = 1 %
+	\implies e^{A} \in SL_{n}(\K) \\
+	%
+	A \in M_{n}(\K) %
+	\implies \det(e^{A}) = e^{\tr(A)} \neq 0 %
+	\implies e^{A} \in GL_{n}(\K) \\
+	%
+	A \in S^{-}_{n}(\R) %
+	\implies e^{A} \left( e^{A} \right)^{T} = e^{A} e^{\left( A^{T} \right)} = e^{A} e^{-A} = e^{0} = I %
+	\implies e^{A} \in O(n) \\
+	%
+	A \in H^{-}_{n} %
+	\implies e^{A} \left( e^{A} \right)^{*} = e^{A} e^{\left( A^{*} \right)} = e^{A} e^{-A} = e^{0} = I %
+	\implies e^{A} \in U(n)
+\end{gather}
+
+dove per la prima abbiamo usato la Proposizione \ref{prop:det-exp-tr} e per la seconda il Corollario \ref{cor:det-exp-gl}.\\
+A questo punto, possiamo usare questi ragionamenti per verificare che l'esponenziale di matrice definisca un'applicazione dallo spazio tangente al gruppo matriciale al gruppo stesso:
+
+\begin{gather}
+	A \in T_{I}(GL_{n}(\K)) = M_{n}(\K) %
+	\implies e^{A} \in GL_{n}(\K) \\
+	%
+	A \in T_{I}(SL_{n}(\K)) = T^{0}_{n}(\K) %
+	\implies e^{A} \in SL_{n}(\K) \\
+	%
+	A \in T_{I}(O(n)) = S^{-}_{n}(\R) %
+	\implies e^{A} \in O(n) \\
+	%
+	A \in T_{I}(SO(n)) = S^{-}_{n}(\R) \cap T^{0}_{n}(\R) %
+	\implies e^{A} \in O(n) \cap SL_{n}(\R) = SO(n) \\
+	%
+	A \in T_{I}(U(n)) = H^{-}_{n} %
+	\implies e^{A} \in U(n) \\
+	%
+	A \in T_{I}(SU(n)) = H^{-}_{n} \cap T^{0}_{n}(\C) %
+	\implies e^{A} \in U(n) \cap SL_{n}(\C) = SU(n)
+\end{gather}
 
 %
 
