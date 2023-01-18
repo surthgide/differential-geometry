@@ -36,5 +36,3 @@ esercizio B.27: non riesco a dimostrare che \rp{3} sia orientabile tramite lo ja
 
 esercizio C.2: non so come dimostrare che una topologia sia inclusa in un'altra topologia e non sono sicuro che le definizioni che ho scritto delle topologie in esame siano corrette; forse posso trovare una base per ognuna delle due topologie e mostrare che la base per uno sia inclusa nella base dell'altra
 
-esercizio C.11: non sono sicuro che con "Verificare che il commutatore tra matrici definisce un'algebra di Lie" intenda "verifica che i commutatori di matrici di uno spazio appartengano anch'essi allo spazio"
-
