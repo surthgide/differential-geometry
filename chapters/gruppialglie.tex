@@ -4852,16 +4852,16 @@ Per altri esempi di gruppi matriciali, vedi Esercizio \ref{es3-10}.
 
 \subsection{Sulla suriettività dell'esponenziale}
 
-Dai risultati precedenti, dato un gruppo di Lie $ G $, possiamo costruire un'algebra di Lie $ \g = (T_{e}(G),[,]) $ e da questo possiamo tornare indietro tramite l'esponenziale $ \exp $: questo dimostra che esiste un funtore, i.e. \textit{il funtore di Lie} $ \mathcal{L} $ dalla categoria dei gruppi di Lie $ \g $ alla categoria delle algebre di Lie $ \mathfrak{A} $ che porta omomorfismi di gruppi di Lie $ F : H \to G $ in omomorfismi di algebre di Lie $ F_{*e} : \h \to \g $
+Dai risultati precedenti, dato un gruppo di Lie $ G $, possiamo costruire un'algebra di Lie $ \g = (T_{e}(G),[,]) $ e da questo possiamo tornare indietro tramite l'esponenziale: questo dimostra l'esistenza di un funtore, chiamato \textit{funtore di Lie} $ \mathcal{L} $, dalla categoria dei gruppi di Lie $ \mathfrak{G} $ alla categoria delle algebre di Lie $ \mathfrak{A} $ che porta omomorfismi di gruppi di Lie $ F : G \to H $ in isomorfismi di algebre di Lie $ F_{*e} : \g \to \h $
 
 \begin{equation}
 	\begin{cases}
-		\mathcal{L}(G) = T_{e}(G) & \forall G \in \ob(\g), \, T_{e}(G) \in \ob(\mathfrak{A})\\
-		\mathcal{L}(F) = F_{*p} & \forall F \in \mor(H,G), \, F_{*e} \in \mor(\h,\g)
+		\mathcal{L}(G) = T_{e}(G), & \forall G \in \ob(\g), \, T_{e}(G) \in \ob(\mathfrak{A}) \\
+		\mathcal{L}(F) = F_{*p}, & \forall F \in \mor(H,G), \, F_{*e} \in \mor(\h,\g)
 	\end{cases}
 \end{equation}
 
-Ci chiediamo ora quali siano le condizioni sotto cui l'esponenziale di gruppi di Lie sia suriettivo, in modo tale da poter legare un gruppo di Lie alla sua algebra di Lie.\\
+Ci chiediamo ora quali siano le condizioni sotto cui l'esponenziale di gruppi di Lie sia suriettivo, in modo tale da poter legare un'algebra di Lie a un solo gruppo di Lie.\\
 In generale, l'esponenziale non è suriettivo, a parte per un intorno dell'origine, per il quale è un diffeomorfismo locale (quindi suriettivo).\\
 Ad esempio, considerando l'insieme
 
@@ -4871,21 +4871,21 @@ Ad esempio, considerando l'insieme
 
 l'esponenziale
 
-\map{\exp}%
-	{T_{I}(SL_{2}(\R))}{SL_{2}(\R)}%
+\map{\exp}
+	{T_{I}(SL_{2}(\R))}{SL_{2}(\R)}
 	{X}{e^{X}}
 
 non è suriettivo, i.e. esistono delle matrici in $ SL_{2}(\R) $ che non hanno controimmagine tramite l'esponenziale in $ T_{I}(SL_{2}(\R)) $. In generale, nemmeno
 
-\map{\exp}%
-	{T_{I}(GL_{2}(\R))}{GL_{2}(\R)}%
+\map{\exp}
+	{T_{I}(GL_{2}(\R))}{GL_{2}(\R)}
 	{X}{e^{X}}
 
 è suriettiva.\\
-Consideriamo la matrice
+In particolare, consideriamo la matrice
 
 \begin{equation}
-	A = \mqty( \sfrac{-1}{2} & 0 \\\\ 0 & -2 )
+	A = \bmqty{ \sfrac{-1}{2} & 0 \\\\ 0 & -2 } \in SL_{2}(\R)
 \end{equation}
 
 per questa matrice non esiste $ B \in T_{I}(SL_{2}(\R)) $ tale che $ e^{B} = A $.\\
@@ -4895,29 +4895,27 @@ Supponiamo, per assurdo, che questa matrice esista e dividiamo il problema in du
 	\item La matrice $ B $ è diagonalizzabile: sia $ \lambda \in \R $ un suo autovalore, allora
 	
 	\begin{equation}
-		B v = \lambda v \qcomma v \in \R^{2} \wedge v \neq 0
+		B v = \lambda v \qcomma v \in \R^{2} \setminus {(0,0)}
 	\end{equation}
 
-	e $ e^{\lambda} $ è un autovalore per $ A = e^{B} $ perché
+	ed $ e^{\lambda} $ è un autovalore per $ A = e^{B} $ perché
 	
-	\begin{align}
-		\begin{split}
-			A v &= e^{B} v\\
-			&= \left( \sum_{j=0}^{+\infty} \dfrac{B^{j}}{j!} \right) (v)\\
-			&= \sum_{j=0}^{+\infty} \dfrac{B^{j} v}{j!}\\
-			&= \sum_{j=0}^{+\infty} \dfrac{\lambda^{j} v}{j!}\\
-			&= \left( \sum_{j=0}^{+\infty} \dfrac{\lambda^{j}}{j!} \right) (v)\\
-			&= e^{\lambda} v
-		\end{split}
-	\end{align}
+	\begin{equation}
+		A v = e^{B} v %
+		= \left( \sum_{j=0}^{+\infty} \dfrac{B^{j}}{j!} \right) (v) %
+		= \sum_{j=0}^{+\infty} \dfrac{B^{j} v}{j!} %
+		= \sum_{j=0}^{+\infty} \dfrac{\lambda^{j} v}{j!} %
+		= \left( \sum_{j=0}^{+\infty} \dfrac{\lambda^{j}}{j!} \right) (v) %
+		= e^{\lambda} v
+	\end{equation}
 
-	dunque se $ \lambda_{1} $ e $ \lambda_{2} $ sono due autovalori di $ B $ allora $ e^{\lambda_{1}} $ ed $ e^{\lambda_{2}} $ sono due autovalori di $ A = e^{B} $, ma questo è assurdo perché gli autovalori di $ A $ sono negativi mentre $ e^{\lambda} > 0 $ per $ \forall \lambda in \R $;
+	dunque se $ \lambda_{1} $ e $ \lambda_{2} $ sono due autovalori di $ B $ allora $ e^{\lambda_{1}} $ ed $ e^{\lambda_{2}} $ sono due autovalori di $ A = e^{B} $, ma questo è assurdo perché gli autovalori di $ A $ sono negativi mentre $ e^{\lambda} > 0 $ per qualsiasi $ \lambda \in \R $;
 	
 	\item La matrice $ B $ non è diagonalizzabile: gli autovalori di $ B $ non sono reali quindi, per il teorema fondamentale dell'algebra, avremmo che la matrice avrà degli autovalori $ \alpha, \bar{\alpha} \in \C $ complessi coniugati (in quanto il polinomio caratteristico ha coefficienti reali); anche in questo caso $ e^{\alpha} $ ed $ e^{\bar{\alpha}} $ sono due autovalori di $ A = e^{B} $ ma
 	
 	\begin{equation}
 		\abs{e^{\alpha}} = \abs{e^{x + i y}} = \abs{e^{x} e^{i y}} = e^{x} %
-		\implies%
+		\implies %
 		\abs{e^{\alpha}} = \abs{e^{\bar{\alpha}}}
 	\end{equation}
 
