@@ -4320,11 +4320,8 @@ Fin'ora sappiamo solo che $ \sigma_{t}^{\xi}(g) $ dipende in modo liscio da $ t 
 			\sigma_{t}^{\xi}(g) = g \cdot \exp(t \xi)
 		\end{equation}
 		
-		\item %
-		\begin{equation}
-			\exp((t+s) \xi) = \exp(t \xi) \cdot \exp(s \xi) %
-			\qcomma \forall t,s \in \R, \, \forall \xi \in \g
-		\end{equation}
+		\item $ \exp((t+s) \xi) = \exp(t \xi) \cdot \exp(s \xi) %
+		\qcomma \forall t,s \in \R, \, \forall \xi \in \g $
 		
 		\item L'inversa dell'esponenziale è pari a
 		\begin{equation}
@@ -4335,22 +4332,14 @@ Fin'ora sappiamo solo che $ \sigma_{t}^{\xi}(g) $ dipende in modo liscio da $ t 
 
 \begin{proof}\hfill\break
 	\begin{enumerate}
-		\item %
-		\begin{equation}
-			\sigma_{t}^{\xi}(g) = g \cdot \gamma^{\xi}(t) = g \cdot \exp(t \xi)
-		\end{equation}
+		\item $ \sigma_{t}^{\xi}(g) = g \cdot \gamma^{\xi}(t) = g \cdot \exp(t \xi) $
 		
-		\item %
-		\begin{align}
-			\begin{split}
-				\exp((t+s) \xi) &= \gamma^{\xi}(t+s) \\
-				&= \gamma^{\xi}(t) \cdot \gamma^{\xi}(s) \\
-				&= \exp(t \xi) \cdot \exp(s \xi)
-			\end{split}
-		\end{align}
+		\item $ \exp((t+s) \xi) = \gamma^{\xi}(t+s) %
+		= \gamma^{\xi}(t) \cdot \gamma^{\xi}(s) %
+		= \exp(t \xi) \cdot \exp(s \xi) $
 		
 		\item Per $ t = 1 $ e $ s = -1 $
-		
+		%
 		\begin{align}
 			\begin{split}
 				\exp(t \xi) \cdot \exp(s \xi) &= \exp((t+s) \xi) \\
@@ -4484,7 +4473,7 @@ Ad esempio, $ \gamma^{\xi}(t) = \exp(t \xi) $ definisce un sottogruppo a un para
 
 \subsection{Omomorfismi ed esponenziale di gruppi di Lie}
 
-\begin{definition}
+\begin{definition}\label{prop:exp-loc-diffeo}
 	L'esponenziale $ \exp : T_{e}(G) \to G $ è un diffeomorfismo locale in $ 0 \in T_{e}(G) $, i.e. il differenziale dell'esponenziale nell'origine
 	
 	\begin{equation}
@@ -4617,7 +4606,7 @@ Ad esempio, $ \gamma^{\xi}(t) = \exp(t \xi) $ definisce un sottogruppo a un para
 				\end{align}
 				}
 	
-	con vettori tangenti, calcolati usando i differenziali tramite curve, pari a
+	con vettori tangenti, calcolati usando i differenziali tramite curve e la linearità del differenziale, pari a
 	
 	\sbs{0.5}{%
 				\begin{align}
@@ -4850,8 +4839,8 @@ Per altri esempi di gruppi matriciali, vedi Esercizio \ref{es3-10}.
 
 \subsection{Sulla suriettività dell'esponenziale}
 
-Dai risultati precedenti, dato un gruppo di Lie $ G $, possiamo costruire un'algebra di Lie $ \g = (T_{e}(G),[,]) $ e da questo possiamo tornare indietro tramite l'esponenziale: questo dimostra l'esistenza di un funtore, chiamato \textit{funtore di Lie} $ \mathcal{L} $, dalla categoria dei gruppi di Lie $ \mathfrak{G} $ alla categoria delle algebre di Lie $ \mathfrak{A} $ che porta omomorfismi di gruppi di Lie $ F : G \to H $ in omomorfismi\footnote{%
-	Gli isomorfismi di algebre sono omomorfismi invertibili, per i morfismi delle categorie questo non è necessario.%
+Dai risultati precedenti, dato un gruppo di Lie $ G $, possiamo costruire un'algebra di Lie $ \g = (T_{e}(G),[,]) $ e da questa possiamo tornare indietro tramite l'esponenziale: questo dimostra l'esistenza di un funtore, chiamato \textit{funtore di Lie} $ \mathcal{L} $, dalla categoria dei gruppi di Lie $ \mathfrak{G} $ alla categoria delle algebre di Lie $ \mathfrak{A} $ che porta omomorfismi di gruppi di Lie $ F : G \to H $ in omomorfismi\footnote{%
+	Gli isomorfismi di algebre di Lie sono omomorfismi invertibili, per i morfismi della categoria delle algebre di Lie questo non è necessario.%
 } di algebre di Lie $ F_{*e} : \g \to \h $
 
 \begin{equation}
@@ -4861,8 +4850,10 @@ Dai risultati precedenti, dato un gruppo di Lie $ G $, possiamo costruire un'alg
 	\end{cases}
 \end{equation}
 
-Ci chiediamo ora quali siano le condizioni sotto cui l'esponenziale di gruppi di Lie sia suriettivo, in modo tale da poter legare un'algebra di Lie a un solo gruppo di Lie.\\
-In generale, l'esponenziale non è suriettivo, a parte per un intorno dell'origine, per il quale è un diffeomorfismo locale (quindi suriettivo).\\
+Ci chiediamo ora quali siano le condizioni sotto cui l'esponenziale di gruppi di Lie sia suriettivo, in modo tale da poter legare un gruppo di Lie alla sua algebra di Lie.\\
+In generale, l'esponenziale non è suriettivo, a parte per un intorno dell'origine, per il quale è un diffeomorfismo locale\footnote{%
+	Vedi Proposizione \ref{prop:exp-loc-diffeo}; l'essere un diffeomorfismo implica la suriettività.%
+}.\\
 Ad esempio, considerando l'insieme
 
 \begin{equation}
@@ -4882,14 +4873,14 @@ non è suriettivo, i.e. esistono delle matrici in $ SL_{2}(\R) $ che non hanno c
 	{X}{e^{X}}
 
 è suriettiva.\\
-In particolare, consideriamo la matrice
+Prendendo una matrice con determinante unitario
 
 \begin{equation}
 	A = \bmqty{ \sfrac{-1}{2} & 0 \\\\ 0 & -2 } \in SL_{2}(\R)
 \end{equation}
 
 per questa matrice non esiste $ B \in T_{I}(SL_{2}(\R)) $ tale che $ e^{B} = A $.\\
-Supponiamo, per assurdo, che questa matrice esista e dividiamo il problema in due casi: la matrice $ B $ è diagonalizzabile oppure no
+Supponiamo, per assurdo, che questa matrice esista e dividiamo il problema nei casi in cui la matrice $ B $ sia diagonalizzabile oppure no:
 
 \begin{itemize}
 	\item La matrice $ B $ è diagonalizzabile: sia $ \lambda \in \R $ un suo autovalore, allora
@@ -5048,26 +5039,32 @@ Nel caso del gruppo di Lie matriciale connesso $ GL_{n}(\C) $, l'esponenziale
 			G \stackrel{iso.}{\simeq} \R^{k} \times \T^{n-k} \qcomma k \in [0,n], \, \dim(G) = n
 		\end{equation}
 		
-		Abbiamo che $ T_{0}(\R) = \R $ dunque l'esponenziale per $ \R $
+		Abbiamo che $ T_{0}(\R) = \R $, dunque l'esponenziale per $ \R $
 		
 		\begin{equation}
 			\exp = \id_{\R} : \R \to \R
 		\end{equation}
 		
-		mentre, siccome $ T_{1}(\S^{1}) = i \R $, l'esponenziale per $ \S^{1} $ (e dunque per $ \T $)
-		%		
+		mentre, siccome $ T_{1}(\S^{1}) = i \R $, l'esponenziale\footnote{%
+			Questo esponenziale vale anche per $ \T $, in quanto il prodotto diretto di un gruppi di Lie connessi e abeliani è ancora un gruppo di Lie connesso e abeliano.%
+		} per $ \S^{1} $
+		
 		\map{\exp}
 			{i \R}{\R}
 			{t}{e^{i t}}
 		
-		da cui si ricava immediatamente che sono suriettivi e che rispettano la proprietà dell'esponenziale.
+		da cui si ricava immediatamente che sono suriettivi.
 		
-		\item Per dimostrare che ogni elemento del gruppo possa essere scritto come prodotto finito di esponenziali, usiamo che un gruppo di Lie $ G $ è generato da un qualunque intorno del suo elemento neutro (Lemma \ref{lem:lie-gr-neut-int}) e questo intorno è diffeomorfo a $ \g $ tramite l'esponenziale, quindi l'esponenziale è suriettivo perciò ogni elemento di $ \g $ è mappato in un solo elemento di $ G $ intorno all'elemento neutro.
+		\item Per dimostrare che ogni elemento del gruppo possa essere scritto come prodotto finito di esponenziali, usiamo che un gruppo di Lie $ G $ è generato da un qualunque intorno del suo elemento neutro\footnote{%
+			Vedi Lemma \ref{lem:lie-gr-neut-int}.%
+		}: scegliamo l'intorno che sia diffeomorfo a $ \g $ tramite l'esponenziale\footnote{%
+			Vedi Proposizione \ref{prop:exp-loc-diffeo}.%
+		}, quindi l'esponenziale è suriettivo perciò ogni elemento di $ \g $ è mappato in un solo elemento di $ G $ intorno all'elemento neutro.
 	\end{enumerate}
 \end{proof}
 
 \begin{remark}
-	Nel teorema dimostrato sopra, il punto 3 implica il punto 2, i.e. l'ultima parte del teorema implica il fatto che se $ G $ è connesso e abeliano allora l'esponenziale è suriettivo: essendo $ G $ abeliano
+	Nel teorema dimostrato sopra, il punto 3 implica il punto 2, i.e. il poter scrivere ogni elemento di $ G $ come prodotto finito di esponenziali implica il fatto che se $ G $ è connesso e abeliano allora l'esponenziale è suriettivo: essendo $ G $ abeliano, vale l'implicazione
 	
 	\begin{equation}
 		[\xi,\eta] = 0 \implies \exp(\xi + \eta) = \exp(\xi) + \exp(\eta) %
