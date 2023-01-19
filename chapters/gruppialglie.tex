@@ -4850,12 +4850,14 @@ Per altri esempi di gruppi matriciali, vedi Esercizio \ref{es3-10}.
 
 \subsection{Sulla suriettività dell'esponenziale}
 
-Dai risultati precedenti, dato un gruppo di Lie $ G $, possiamo costruire un'algebra di Lie $ \g = (T_{e}(G),[,]) $ e da questo possiamo tornare indietro tramite l'esponenziale: questo dimostra l'esistenza di un funtore, chiamato \textit{funtore di Lie} $ \mathcal{L} $, dalla categoria dei gruppi di Lie $ \mathfrak{G} $ alla categoria delle algebre di Lie $ \mathfrak{A} $ che porta omomorfismi di gruppi di Lie $ F : G \to H $ in isomorfismi di algebre di Lie $ F_{*e} : \g \to \h $
+Dai risultati precedenti, dato un gruppo di Lie $ G $, possiamo costruire un'algebra di Lie $ \g = (T_{e}(G),[,]) $ e da questo possiamo tornare indietro tramite l'esponenziale: questo dimostra l'esistenza di un funtore, chiamato \textit{funtore di Lie} $ \mathcal{L} $, dalla categoria dei gruppi di Lie $ \mathfrak{G} $ alla categoria delle algebre di Lie $ \mathfrak{A} $ che porta omomorfismi di gruppi di Lie $ F : G \to H $ in omomorfismi\footnote{%
+	Gli isomorfismi di algebre sono omomorfismi invertibili, per i morfismi delle categorie questo non è necessario.%
+} di algebre di Lie $ F_{*e} : \g \to \h $
 
 \begin{equation}
 	\begin{cases}
-		\mathcal{L}(G) = T_{e}(G), & \forall G \in \ob(\g), \, T_{e}(G) \in \ob(\mathfrak{A}) \\
-		\mathcal{L}(F) = F_{*p}, & \forall F \in \mor(H,G), \, F_{*e} \in \mor(\h,\g)
+		\mathcal{L}(G) = \g, & \forall G \in \ob(\mathfrak{G}), \, \g \in \ob(\mathfrak{A}) \\
+		\mathcal{L}(F) = F_{*e}, & \forall F \in \mor(G,H), \, F_{*e} \in \mor(\g,\h)
 	\end{cases}
 \end{equation}
 
@@ -4864,7 +4866,7 @@ In generale, l'esponenziale non è suriettivo, a parte per un intorno dell'origi
 Ad esempio, considerando l'insieme
 
 \begin{equation}
-	SL_{2}(\R) = \{ A \in GL_{2}(\R) \mid \det(A) = 1 \}
+	SL_{2}(\R) = \{ A \in GL_{2}(\R) \mid \det(A) = 1 \} \subset GL_{2}(\R)
 \end{equation}
 
 l'esponenziale
@@ -5001,7 +5003,7 @@ Per le proprietà della componente connessa attorno all'elemento neutro, vedi Es
 	questo insieme è aperto in quanto $ L_{g} $ è un diffeomorfismo (porta aperti in aperti) ed è un sottoinsieme di $ S $ perché ogni elemento di $ g U \cap U^{-1} $ è della forma
 	
 	\begin{equation}
-		g U \cap U^{-1} = \left\{ \prod_{j=1}^{k'} g_{j} \right\} \subset S
+		g U \cap U^{-1} = \left\{ \prod_{j=1}^{k+1} g_{j} \right\} \subset S
 	\end{equation}
 	
 	Dunque $ S $ è aperto e, per il lemma precedente, questo prova che $ S = G $ e dunque che $ G $ è generato da un qualunque intorno del suo elemento neutro.
