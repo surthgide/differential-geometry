@@ -5097,7 +5097,7 @@ Tramite il seguente teorema, otteniamo le condizioni per cui questo sia possibil
 	\begin{enumerate}
 		\item Per ogni algebra di Lie $ \g $ (finito-dimensionale) su $ \R $ esiste un unico gruppo di Lie semplicemente connesso\footnote{%
 			Uno spazio topologico è semplicemente connesso se è connesso per archi e se ogni curva chiusa può essere deformata fino a ridursi a un singolo punto; dato un gruppo di Lie qualsiasi, è sempre possibile costruire un gruppo di Lie semplicemente connesso a partire dal primo.%
-		} tale che l'algebra di Lie associata a $ G $ coincida con $ \g $, i.e. $ Lie(G) = \g $;
+		} $ G $ tale che l'algebra di Lie associata a $ G $ coincida con $ \g $, i.e. $ Lie(G) = \g $;
 		
 		\item Siano $ G $ e $ H $ due gruppi di Lie con $ G $ semplicemente connesso, e $ Lie(G) $ e $ Lie(H) $ le corrispondenti algebre di Lie, se esiste un omomorfismo di algebre di Lie $ \phi : Lie(G) \to Lie(H) $ allora esiste un unico omomorfismo di gruppi di Lie $ F : G \to H $ tale che il suo differenziale sia uguale all'omomorfismo di algebre di Lie, i.e. $ F_{*e} = \phi $;
 		
@@ -5106,7 +5106,7 @@ Tramite il seguente teorema, otteniamo le condizioni per cui questo sia possibil
 \end{theorem}
 
 \begin{remark}
-	In generale, se due gruppi di Lie sono isomorfi, le algebre di Lie relative sono isomorfe. I primi due punti di questo teorema provano l'implicazione opposta. Segue dunque da questi due punti che due gruppi di Lie $ G $ e $ H $ sono semplicemente connessi con le loro algebre di Lie $ Lie(G_{1}) $ e $ Lie(G_{2}) $ isomorfe se e solo se i due gruppi di Lie sono isomorfi.
+	In generale, se due gruppi di Lie sono isomorfi, le algebre di Lie relative sono isomorfe. I primi due punti di questo teorema provano l'implicazione opposta. Segue dunque da questi due punti che due gruppi di Lie $ G $ e $ H $ sono semplicemente connessi con le loro algebre di Lie $ Lie(G) $ e $ Lie(H) $ isomorfe se e solo se i due gruppi di Lie sono isomorfi.
 \end{remark}
 
 \begin{theorem}
@@ -5130,8 +5130,8 @@ Siano i gruppi di Lie
 
 \begin{equation}
 	\begin{cases}
-		G_{1} = (\R^{n},+) \\
-		G_{2} = (\T^{n},\cdot)
+		G = (\R^{n},+) \\
+		H = (\T^{n},\cdot)
 	\end{cases}
 \end{equation}
 
@@ -5139,9 +5139,9 @@ questi non sono isomorfi perché, in particolare, dovrebbero essere diffeomorfi 
 Nonostante non siano isomorfi, le loro algebre sono identiche e dunque isomorfe
 
 \begin{equation}
-	Lie(G_{1}) = Lie(G_{2}) = (\R^{n},[,]_{0}) %
+	Lie(G) = Lie(H) = (\R^{n},[,]_{0}) %
 	\implies %
-	Lie(G_{1}) \stackrel{iso.}{\simeq} Lie(G_{2})
+	Lie(G) \stackrel{iso.}{\simeq} Lie(H)
 \end{equation}
 
 dove $ [,]_{0} $ indica il commutatore nullo (e dunque un'algebra abeliana), ricordando che $ T_{1}(\S^{1}) = i \R $ è abbinato a $ [,]_{0} $ nell'algebra di $ \S^{1} $.\\
