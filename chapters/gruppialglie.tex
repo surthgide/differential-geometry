@@ -5154,41 +5154,43 @@ Entrambi sono compatti e connessi e hanno la stessa dimensione
 
 \begin{equation}
 	\begin{cases}
-		\dim(SO(n)) = n^{2} - 1\\
+		\dim(SO(n)) = n^{2} - 1 \\
 		\dim(SO(n)) = n(n-1)/2
 	\end{cases}
-	\implies%
+	\implies %
 	\dim(SO(3)) = \dim(SU(2)) = 3
 \end{equation}
 
 Analizziamo ora $ SU(2) $: l'insieme è definito come
 
 \begin{equation}
-	SU(2) = \{ A \in GL_{2}(\C) \mid A^{*} A = I_{2} \wedge \det(A) = 1 \}
+	SU(2) = \{ A \in GL_{2}(\C) \mid A^{*} A = I_{2} \, \wedge \, \det(A) = 1 \}
 \end{equation}
 
-Possiamo ricavare delle condizioni sulle entrate delle matrici del gruppo, esplicitando quest'ultime:
+Possiamo ricavare delle condizioni sulle entrate delle matrici del gruppo: esplicitando quest'ultime
 
 \begin{equation}
-	A = \mqty( a & b \\\\ c & d ) \qcomma a,b,c,d \in \C
+	A = \bmqty{ a & b \\ c & d } \qcomma a,b,c,d \in \C
 \end{equation}
 
 con le condizioni date nella definizione, dunque
 
 \begin{equation}
 	\begin{cases}
-		\det(A) = a d - b c = 1\\\\
-		A^{*} = \mqty( \bar{a} & \bar{c} \\ \bar{b} & \bar{d} ) = A^{-1} = \cancel{\dfrac{1}{\det(A)}} \mqty( d & -b \\ -c & a )
+		\det(A) = a d - b c = 1 \\\\
+		A^{*} = \bmqty{ \bar{a} & \bar{c} \\ \bar{b} & \bar{d} } %
+		= A^{-1} %
+		= \cancel{\dfrac{1}{\det(A)}} \bmqty{ d & -b \\ -c & a }
 	\end{cases}
-	\implies%
+	\implies %
 	\begin{cases}
-		a d - b c = 1\\
-		c = - \bar{b}\\
+		a d - b c = 1 \\
+		c = - \bar{b} \\
 		d = \bar{a}
 	\end{cases}
-	\implies%
+	\implies %
 	\begin{cases}
-		A = \mqty( \bar{a} & b \\ - \bar{b} & \bar{a} )\\\\
+		A = \bmqty{ \bar{a} & b \\ - \bar{b} & \bar{a} } \\\\
 		\abs{a}^{2} + \abs{b}^{2} = 1
 	\end{cases}
 \end{equation}
@@ -5196,33 +5198,35 @@ con le condizioni date nella definizione, dunque
 dunque possiamo riscrivere la definizione
 
 \begin{equation}
-	SU(2) = \{ A = \mqty( \bar{a} & b \\ - \bar{b} & \bar{a} ) \in GL_{2}(\C) \mid \abs{a}^{2} + \abs{b}^{2} = 1 \}
+	SU(2) = \left\{ A = \bmqty{ \bar{a} & b \\ - \bar{b} & \bar{a} } \in GL_{2}(\C) \st \abs{a}^{2} + \abs{b}^{2} = 1 \right\}
 \end{equation}
 
-Esiste un diffeomorfismo tra $ SU(2) $ e $ \S^{3} \subset \R^{4} = \C^{2} $
+Esiste un diffeomorfismo\footnote{%
+	Vedi Esercizio \ref{BONUS3-2}.%
+} tra $ SU(2) $ e $ \S^{3} \subset \R^{4} = \C^{2} $
 
-\map{\phi}%
-	{SU(2)}{\S^{3}}%
-	{\mqty( \bar{a} & b \\ - \bar{b} & \bar{a} )}{(a,b) \in \C^{2}}
+\map{\phi}
+	{SU(2)}{\S^{3}}
+	{\bmqty{ \bar{a} & b \\ - \bar{b} & \bar{a} }}{(a,b) \in \C^{2}}
 
 dove
 
 \begin{equation}
 	\begin{cases}
-		a = a_{1} + i a_{2}\\
+		a = a_{1} + i a_{2} \\
 		b = b_{1} + i b_{2}
 	\end{cases}
 \end{equation}
 
 e il punto $ (a,b) $ appartiene alla sfera $ \S^{3} $ grazie alla condizione $ \abs{a}^{2} + \abs{b}^{2} = 1 $.\\
-Collateralmente, tramite questo diffeomorfismo, possiamo dotare la sfera della struttura di gruppo di Lie mediante l'operazione associata a $ SU(2) $.\\
+Incidentalmente, tramite questo diffeomorfismo, possiamo dotare la sfera della struttura di gruppo di Lie mediante l'operazione associata a $ SU(2) $.\\
 Lo spazio tangente di $ SU(2) $ è composto dalle matrici antihermitiane a traccia nulla
 
 \begin{equation}
-	T_{I}(SU(2)) = \{X \in M_{2}(\C) = X^{*} = -X \wedge \tr(X) = 0 \}
+	T_{I}(SU(2)) = \{X \in M_{2}(\C) \mid X^{*} = - X \, \wedge \, \tr(X) = 0 \}
 \end{equation}
 
-Abbinandolo al commutatore $ [,] $, otteniamo l'algebra di Lie associata
+Abbinandolo al commutatore otteniamo l'algebra di Lie associata
 
 \begin{equation}
 	\su(2) = Lie(SU(2)) = (T_{I}(SU(2)),[,])
@@ -5231,30 +5235,35 @@ Abbinandolo al commutatore $ [,] $, otteniamo l'algebra di Lie associata
 Per lo spazio tangente, le matrici hanno la forma:
 
 \begin{equation}
-	X = \mqty( i u_{1} & u_{2} + i u_{3} \\\\ - u_{2} + i u_{3} & - i u_{1} ) \qcomma u_{1},u_{2},u_{3} \in \R
+	X = \bmqty{ %
+				i u_{1} 			& u_{2} + i u_{3} \\\\
+				- u_{2} + i u_{3} 	& - i u_{1} %
+				} %
+	\qcomma u_{1},u_{2},u_{3} \in \R
 \end{equation}
 
 La base standard di $ \su(2) $ è la seguente
 
 \begin{equation}
 	\B_{\su(2)} = \left\{ %
-		\mqty( 0 & 1 \\ -1 & 0 ), %
-		\mqty( i & 0 \\ 0 & -i ), %
-		\mqty( 0 & i \\ i & 0 ) %
+		\bmqty{ 0 & 1 \\ -1 & 0 }, %
+		\bmqty{ i & 0 \\ 0 & -i }, %
+		\bmqty{ 0 & i \\ i & 0 } %
 		\right\}
 \end{equation}
 
 Esiste un isomorfismo di spazi vettoriali tra $ T_{I}(SU(2)) $ ed $ \R^{3} $
 
-\map{\psi}%
-	{T_{I}(SU(2))}{\R^{3}}%
-	{\mqty( i u_{1} & u_{2} + i u_{3} \\\\ - u_{2} + i u_{3} & - i u_{1} )}{u = \mqty( u_{1} \\ u_{2} \\ u_{3} )}
+\map{\psi}
+	{T_{I}(SU(2))}{\R^{3}}
+	{\bmqty{ i u_{1} & u_{2} + i u_{3} \\\\ - u_{2} + i u_{3} & - i u_{1} }}{u = \bmqty{ u_{1} \\ u_{2} \\ u_{3} }}
 
 L'inversa di questa applicazione associa a un vettore $ u \in \R^{3} $ una matrice $ M_{u} $ che appartiene a $ T_{I}(SU(2)) $, i.e.
 
-\map{\psi^{-1} = M}%
-	{\R^{3}}{T_{I}(SU(2))}%
-	{u = \mqty( u_{1} \\ u_{2} \\ u_{3} )}{M_{u} = \mqty( i u_{1} & u_{2} + i u_{3} \\\\ - u_{2} + i u_{3} & - i u_{1} )}
+\map{\psi^{-1} = M}
+	{\R^{3}}{T_{I}(SU(2))}
+	{u = \bmqty{ u_{1} \\ u_{2} \\ u_{3} }}
+	{M_{u} = \bmqty{ i u_{1} & u_{2} + i u_{3} \\\\ - u_{2} + i u_{3} & - i u_{1} }}
 
 Considerando il commutatore di $ \su(2) $ e il prodotto vettoriale $ \times $ di vettori di $ \R^{3} $, otteniamo che
 
@@ -5289,13 +5298,15 @@ questo induce un isomorfismo di spazi euclidei
 Per quanto riguarda $ SO(3) $: l'insieme è definito come
 
 \begin{equation}
-	SO(2) = \{ B \in GL_{3}(\R) \mid B^{T} B = I_{3} \wedge \det(B) = 1 \}
+	SO(2) = \{ B \in GL_{3}(\R) \mid B^{T} B = I_{3} \, \wedge \, \det(B) = 1 \}
 \end{equation}
 
 La condizione di ortogonalità può essere scritta, considerando $ v_{1},v_{2} \in \R^{3} $, come
 
 \begin{equation}
-	B^{T} B = I_{3} \iff (B v_{1}) \cdot (B v_{2}) = v_{1} \cdot v_{2}
+	B^{T} B = I_{3} %
+	\iff %
+	(B v_{1}) \cdot (B v_{2}) = v_{1} \cdot v_{2}
 \end{equation}
 
 cioè rispetta il prodotto scalare tra due vettori.
@@ -5309,21 +5320,19 @@ cioè rispetta il prodotto scalare tra due vettori.
 	
 	\begin{equation}
 		\begin{cases}
-			A \in SU(2) \implies A^{-1} = A^{*}\\
+			A \in SU(2) \implies A^{-1} = A^{*} \\
 			M_{v} \in \su(2) \implies M_{v}^{*} = - M_{v}
 		\end{cases}
 	\end{equation}
 
 	possiamo scrivere che
 	
-	\begin{align}
-		\begin{split}
-			(A M_{v} A^{-1})^{*} &= (A M_{v} A^{*})^{*}\\
-			&= A M_{v}^{*} A^{*}\\
-			&= - A M_{v} A^{*}\\
-			&= - A M_{v} A^{-1}
-		\end{split}
-	\end{align}
+	\begin{equation}
+		(A M_{v} A^{-1})^{*} = (A M_{v} A^{*})^{*} %
+		= A M_{v}^{*} A^{*} %
+		= - A M_{v} A^{*} %
+		= - A M_{v} A^{-1}
+	\end{equation}
 
 	e considerando che
 	
@@ -5335,6 +5344,17 @@ cioè rispetta il prodotto scalare tra due vettori.
 	
 	\begin{equation}
 		\tr(A M_{v} A^{-1}) = \tr(M_{v}) = 0
+	\end{equation}
+
+	dunque
+	
+	\begin{equation}
+		\begin{cases}
+			(A M_{v} A^{-1})^{*} = - A M_{v} A^{-1} \\
+			\tr(A M_{v} A^{-1}) = 0
+		\end{cases}
+		\implies %
+		A M_{v} A^{-1} \in \su(2)
 	\end{equation}
 \end{proof}
 
@@ -5361,10 +5381,10 @@ nel seguente modo
 
 \begin{align}
 	\begin{split}
-		(R(A) \, v_{1}) \cdot (R(A) \, v_{2}) &= - \dfrac{1}{2} \tr( (R(A) \, v_{1}) (R(A) \, v_{2}) )\\
-		&= - \dfrac{1}{2} \tr( A M_{v_{1}} A^{-1} A M_{v_{2}} A^{-1} )\\
-		&= - \dfrac{1}{2} \tr( A M_{v_{1}} M_{v_{2}} A^{-1} )\\
-		&= - \dfrac{1}{2} \tr( M_{v_{1}} M_{v_{2}} )\\
+		(R(A) \, v_{1}) \cdot (R(A) \, v_{2}) &= - \dfrac{1}{2} \tr( (R(A) \, v_{1}) (R(A) \, v_{2}) ) \\
+		&= - \dfrac{1}{2} \tr( A M_{v_{1}} A^{-1} A M_{v_{2}} A^{-1} ) \\
+		&= - \dfrac{1}{2} \tr( A M_{v_{1}} M_{v_{2}} A^{-1} ) \\
+		&= - \dfrac{1}{2} \tr( M_{v_{1}} M_{v_{2}} ) \\
 		&= v_{1} \cdot v_{2}
 	\end{split}
 \end{align}
@@ -5372,14 +5392,15 @@ nel seguente modo
 \begin{theorem}
 	L'applicazione
 	
-	\map{R}%
-		{SU(2)}{O(3)}%
+	\map{R}
+		{SU(2)}{O(3)}
 		{A}{R(A)}
 	
 	dove
 	
 	\begin{equation}
-		 M_{R(A) \, v} = A M_{v} A^{-1} \qcomma v \in \R^{3}, \, A \in SU(2), \, M_{v} \in \su(2)
+		 M_{R(A) \, v} = A M_{v} A^{-1} %
+		 \qcomma v \in \R^{3}, \, A \in SU(2), \, M_{v} \in \su(2)
 	\end{equation}
 
 	induce l'omomorfismo di gruppi di Lie suriettivo
@@ -5437,14 +5458,12 @@ nel seguente modo
 
 	Usando la definizione di $ M_{R(A) \, v} $, otteniamo che
 	
-	\begin{align}
-		\begin{split}
-			M_{R(A B) \, v} &= (A B) M_{v} (A B)^{-1}\\
-			&= A B M_{v} B^{-1} A^{-1}\\
-			&= A M_{R(B) \, v} A^{-1}\\
-			&= M_{R(A) \, R(B) \, v}\\
-		\end{split}
-	\end{align}
+	\begin{equation}
+		M_{R(A B) \, v} = (A B) M_{v} (A B)^{-1} %
+		= A B M_{v} B^{-1} A^{-1} %
+		= A M_{R(B) \, v} A^{-1} %
+		= M_{R(A) \, R(B) \, v}
+	\end{equation}
 
 	essendo $ M $ un isomorfismo, la condizione per cui $ R $ sia un omomorfismo è verificata.\\
 	Il nucleo\footnote{%
@@ -5458,14 +5477,18 @@ nel seguente modo
 	per cui
 	
 	\begin{equation}
-		A \in \ker(R) \implies M_{R(A) \, v} = M_{v} = A M_{v} A^{-1} \implies [M_{v},A] = 0 \qcomma \forall v \in \R^{3}
+		A \in \ker(R) %
+		\implies %
+		M_{R(A) \, v} = M_{v} = A M_{v} A^{-1} %
+		\implies %
+		[M_{v},A] = 0 \qcomma \forall v \in \R^{3}
 	\end{equation}
 
 	Le uniche matrici di $ SU(2) $ che commutano con $ M_{v} $ sono $ \{ \pm I_{2} \} $.\\
 	Per dimostrare che $ R_{*I_{2}} : \su(2) \to \so(3) $ è un isomorfismo di algebre di Lie, scriviamo il differenziale di una matrice $ M_{u} \in \su(2) $ con $ u \in \R^{3} $ tramite la curva $ \exp(t M_{u}) $
 	
 	\begin{equation}
-			R_{*I_{2}}(M_{u}) = \eval{ \dv{t} R( \exp(t M_{u}) ) }_{t=0}
+		R_{*I_{2}}(M_{u}) = \eval{ \dv{t} R( \exp(t M_{u}) ) }_{t=0}
 	\end{equation}
 	
 	Tramite la definizione di $ M_{R(A) \, v} $, otteniamo che
@@ -5478,13 +5501,13 @@ nel seguente modo
 	
 	\begin{align}
 		\begin{split}
-			\eval{ \dv{t} M_{R(\exp(t M_{u})) \, v} }_{t=0} &= M_{R_{*I_{2}}(M_{u}) (v)}\\
-			&= \eval{ \dv{t} \exp(t M_{u}) \, M_{v} \, \exp(-t M_{u}) }_{t=0}\\
-			&= \left( \eval{ \dv{t} \exp(t M_{u}) }_{t=0} \right) M_{v} \cancelto{1}{ \left( \eval{ \exp(-t M_{u}) }_{t=0} \right) } +\\
-			& \hal + \cancelto{-1}{ \left( \eval{ \exp(t M_{u}) }_{t=0} \right) } M_{v} \left( \eval{ \dv{t} \exp(-t M_{u}) }_{t=0} \right)\\
+			\eval{ \dv{t} M_{R(\exp(t M_{u})) \, v} }_{t=0} &= M_{R_{*I_{2}}(M_{u}) (v)} \\
+			&= \eval{ \dv{t} \exp(t M_{u}) \, M_{v} \, \exp(-t M_{u}) }_{t=0} \\
+			&= \left( \eval{ \dv{t} \exp(t M_{u}) }_{t=0} \right) M_{v} \cancelto{1}{ \left( \eval{ \exp(-t M_{u}) }_{t=0} \right) } + \\
+			& \hal + \cancelto{-1}{ \left( \eval{ \exp(t M_{u}) }_{t=0} \right) } M_{v} \left( \eval{ \dv{t} \exp(-t M_{u}) }_{t=0} \right) \\
 			%
-			&= M_{u} M_{v} - M_{v} M_{u}\\
-			&= [M_{u},M_{v}]\\
+			&= M_{u} M_{v} - M_{v} M_{u} \\
+			&= [M_{u},M_{v}] \\
 			&= 2 M_{u \times v}
 		\end{split}
 	\end{align}
@@ -5499,23 +5522,24 @@ nel seguente modo
 	
 	\begin{equation}
 		u \times v = %
-		\mqty( 0 & - u_{3} & u_{2} \\ u_{3} & 0 & - u_{1} \\ - u_{2} & u_{1} & 0 ) %
-		\mqty( v_{1} \\ v_{2} \\ v_{3} )
+		\bmqty{ 0 & - u_{3} & u_{2} \\ u_{3} & 0 & - u_{1} \\ - u_{2} & u_{1} & 0 } %
+		\bmqty{ v_{1} \\ v_{2} \\ v_{3} }
 	\end{equation}
 	
 	dunque
 	
 	\begin{equation}
 		R_{*I_{2}}(M_{u}) = %
-		R_{*I_{2}} \left( \mqty( i u_{1} & u_{2} + i u_{3} \\\\ - u_{2} + i u_{3} & - i u_{1} ) \right) = %
-		2 \mqty( 0 & - u_{3} & u_{2} \\ u_{3} & 0 & - u_{1} \\ - u_{2} & u_{1} & 0 ) \in \so(3)
+		R_{*I_{2}} \left( \bmqty{ i u_{1} & u_{2} + i u_{3} \\\\ - u_{2} + i u_{3} & - i u_{1} } \right) = %
+		2 \bmqty{ 0 & - u_{3} & u_{2} \\ u_{3} & 0 & - u_{1} \\ - u_{2} & u_{1} & 0 } \in \so(3)
 	\end{equation}
 	
 	il che rende il differenziale
 	
-	\map{R_{*I_{2}}}%
-		{\su(2)}{\so(3)}%
-		{M_{u} = \mqty( i u_{1} & u_{2} + i u_{3} \\\\ - u_{2} + i u_{3} & - i u_{1} )}{2 \mqty( 0 & - u_{3} & u_{2} \\ u_{3} & 0 & - u_{1} \\ - u_{2} & u_{1} & 0 )}
+	\map{R_{*I_{2}}}
+		{\su(2)}{\so(3)}
+		{M_{u} = \bmqty{ i u_{1} & u_{2} + i u_{3} \\\\ - u_{2} + i u_{3} & - i u_{1} }}
+		{2 \bmqty{ 0 & - u_{3} & u_{2} \\ u_{3} & 0 & - u_{1} \\ - u_{2} & u_{1} & 0 }}
 	
 	lineare e invertibile, dunque $ R_{*I_{2}} $ è un isomorfismo di algebre di Lie.\\
 	Avendo calcolato il nucleo dell'applicazione (il quale non possiede solo l'elemento neutro del dominio), sappiamo che $ R $ non è iniettiva, però possiamo dimostrare che sia suriettiva: consideriamo il fatto che $ R $ sia un omomorfismo, i.e.
@@ -5528,13 +5552,13 @@ nel seguente modo
 	
 	\begin{align}
 		\begin{split}
-			(R \circ L_{A})_{*I_{2}} &= (L_{R(A)} \circ R)_{*I_{2}}\\
-			R_{*A} \circ L_{A_{*I_{2}}} &= L_{R(A)_{*I_{2}}} \circ R_{*I_{2}}\\
+			(R \circ L_{A})_{*I_{2}} &= (L_{R(A)} \circ R)_{*I_{2}} \\
+			R_{*A} \circ L_{A_{*I_{2}}} &= L_{R(A)_{*I_{2}}} \circ R_{*I_{2}} \\
 			R_{*A} &= L_{R(A)_{*I_{2}}} \circ R_{*I_{2}} \circ L_{A_{*I_{2}}}^{-1}
 		\end{split}
 	\end{align}
 	
-	Questo rende il differenziale in un punto qualsiasi $ A \in SU(2) $ un isomorfismo in quanto composizione di isomorfismi: questo rende $ R $ una sommersione (in quanto il suo differenziale, essendo un isomorfismo, è suriettivo) da cui, per il corollario del teorema di sommersione locale\footnote{%
+	Questo rende il differenziale in un punto qualsiasi $ A \in SU(2) $ un isomorfismo in quanto composizione di isomorfismi: a questo punto $ R $ è una sommersione (in quanto il suo differenziale, essendo un isomorfismo, è suriettivo) da cui, per il corollario del teorema di sommersione locale\footnote{%
 		Vedi Corollario \ref{thm:somm-loc-cor}.%
 	}, abbiamo che $ R $ è un'applicazione aperta\footnote{%
 		Alternativamente, per il teorema della funzione inversa (vedi Teorema \ref{ift}) $ R $ è un diffeomorfismo locale e dunque un'applicazione aperta.%
