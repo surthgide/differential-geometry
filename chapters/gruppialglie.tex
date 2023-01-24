@@ -5559,7 +5559,7 @@ nel seguente modo
 	\end{align}
 	
 	Questo rende il differenziale in un punto qualsiasi $ A \in SU(2) $ un isomorfismo in quanto composizione di isomorfismi: a questo punto $ R $ è una sommersione (in quanto il suo differenziale, essendo un isomorfismo, è suriettivo) da cui, per il corollario del teorema di sommersione locale\footnote{%
-		Vedi Corollario \ref{thm:somm-loc-cor}.%
+		Vedi Corollario \ref{cor:sub-open}.%
 	}, abbiamo che $ R $ è un'applicazione aperta\footnote{%
 		Alternativamente, per il teorema della funzione inversa (vedi Teorema \ref{ift}) $ R $ è un diffeomorfismo locale e dunque un'applicazione aperta.%
 	}. Questa applicazione però è anche chiusa per il lemma dell'applicazione chiusa\footnote{%
@@ -5585,19 +5585,19 @@ nel seguente modo
 
 \subsubsection{Il toro e sua algebra di Lie}
 
-L'ultimo punto del teorema di corrispondenza di Lie asseriva che, presi un gruppo di Lie  connesso $ G $ e la sua algebra di Lie $ \g = Lie(G) $, allora per ogni sottoalgebra di Lie $ \h < \g $ di $ \g $ esiste un sottogruppo di Lie connesso $ H \subset G $ di $ G $ tale che $ Lie(H) = \h $. Segue che, dati un gruppo di Lie connesso $ G $ e la sua algebra di Lie $ \g $, esiste una corrispondenza biunivoca tra sottoalgebre di Lie di $ \g $ e i sottogruppi connessi di $ G $: sappiamo che un sottogruppo di Lie $ H $ di $ G $ induce una sottoalgebra $ \h $ di $ \g $ tramite il suo spazio tangente, i.e.
+L'ultimo punto del teorema di corrispondenza di Lie asserisce che, presi un gruppo di Lie connesso $ G $ e la sua algebra di Lie $ \g = Lie(G) $, allora per ogni sottoalgebra di Lie $ \h < \g $ di $ \g $ esiste un sottogruppo di Lie connesso $ H \subset G $ di $ G $ tale che $ Lie(H) = \h $. Segue che, dati un gruppo di Lie connesso $ G $ e la sua algebra di Lie $ \g $, esiste una corrispondenza biunivoca tra sottoalgebre di Lie di $ \g $ e i sottogruppi connessi di $ G $: sappiamo che un sottogruppo di Lie $ H $ di $ G $ induce una sottoalgebra $ \h $ di $ \g $ tramite il suo spazio tangente, i.e.
 
 \begin{equation}
-	H \subset G \implies T_{e}(H) \subset T_{e}(G) \implies \h < \g
+	H \subset G \longleftarrow T_{e}(H) \subset T_{e}(G) \longleftarrow \h < \g
 \end{equation}
 
 in quanto l'inclusione è un omomorfismo di gruppi di Lie, ma il teorema di corrispondenza di Lie asserisce il viceversa (con la condizione che i gruppi di siano connessi).\\\\
 %
-Consideriamo ora il gruppo di Lie $ \T^{2} = \S^{1} \times \S^{1} $ e la sua algebra di Lie $ (\R^{2},[,]) $: le sottoalgebre di $ (\R^{2},[,]) $ hanno come insieme dei sottospazi vettoriali di $ \R^{2} $, dunque tutte le rette passanti per l'origine (oltre $ \R^{2} $ stesso, di dimensione 2, e l'origine, di dimensione 0).\\
-Prendiamo l'esponenziale
+Consideriamo ora il gruppo di Lie del toro bidimensionale $ \T^{2} = \S^{1} \times \S^{1} $ e la sua algebra di Lie $ (\R^{2},[,]) $: le sottoalgebre di $ (\R^{2},[,]) $ hanno come insieme dei sottospazi vettoriali di $ \R^{2} $, dunque tutte le rette passanti per l'origine (oltre $ \R^{2} $ stesso, di dimensione 2, e l'origine, di dimensione 0).\\
+Consideriamo l'esponenziale
 
-\map{\exp}%
-	{\R^{2}}{\T^{2}}%
+\map{\exp}
+	{\R^{2}}{\T^{2}}
 	{(t,s)}{(e^{i t}, e^{i s})}
 
 La retta identificata dai punti $ (0,s) \simeq \R $ viene mappata in $ (0,e^{i s}) \in \S^{1} \subset \T^{2} $: tutte le altre rette possono essere descritte dai punti $ (t,\alpha t) $ con $ \alpha \in \R $, la cui immagine
@@ -5610,22 +5610,24 @@ dipende da $ \alpha $ nel seguente modo
 
 \begin{equation}
 	\begin{cases}
-		S_{\alpha} = \S^{1} & \qq*{se} \alpha \in \Q\\
+		S_{\alpha} = \S^{1} & \qq*{se} \alpha \in \Q \\
 		S_{\alpha} = \R & \qq*{se} \alpha \in \R \setminus \Q
 	\end{cases}
 \end{equation}
 
 cioè se $ \alpha $ è razionale allora $ S_{\alpha} $ torna al punto di partenza e si chiude, mentre se è irrazionale $ S_{\alpha} $ non si chiude e sarà isomorfa a una retta.\\
-Questi sottoinsiemi del toro sono sottovarietà immerse in quanto l'esponenziale è un'immersione: quando si definiscono i sottogruppi di Lie, si richiede che questi siano solo sottovarietà immerse (e non embedded) del gruppo di Lie associato in modo tale da non escludere sottogruppi di Lie (e.g. quelli isomorfi a $ \R $) di alcuni gruppi di Lie, come il toro.\\\\
+Questi sottoinsiemi del toro sono sottovarietà immerse in quanto l'esponenziale è un'immersione\footnote{%
+	Il differenziale dell'esponenziale è l'identità dello spazio tangente al gruppo di Lie, dunque iniettivo.%
+}: quando si definiscono i sottogruppi di Lie, si richiede che questi siano solo sottovarietà immerse (e non embedded) del gruppo di Lie associato in modo tale da non escludere sottogruppi di Lie (e.g. quelli isomorfi a $ \R $) di alcuni gruppi di Lie, come il toro.\\\\
 %
-L'ultima parte della dimostrazione del teorema di corrispondenza di Lie utilizza il seguente teorema:
+L'ultima parte della dimostrazione (non riportata in questo testo) del teorema di corrispondenza di Lie utilizza il seguente teorema:
 
 \begin{theorem}[Teorema di Ado]
 	Una qualunque algebra di Lie è isomorfa a una sottoalgebra delle matrici quadrate a entrate reali, i.e.
 	
 	\begin{equation}
-		\forall \g \, \E\,  \g' \mid \g \simeq \g' \subset M_{n}(\R)
+		\forall \g, \E  \g' \mid \g \simeq \g' \subset M_{n}(\R)
 	\end{equation}
 \end{theorem}
 
-In linea teorica, studiare l'algebra di Lie delle matrici è dunque sufficiente per ottenere risultati su ogni algebra di Lie, a patto di conoscere l'isomorfismo tra l'algebra considerata e una sottoalgebra di $ M_{n}(\R) $.
+In linea teorica, studiare l'algebra di Lie delle matrici è dunque sufficiente per ottenere risultati su ogni algebra di Lie, a patto di conoscere l'isomorfismo tra l'algebra considerata e una sottoalgebra di $ M_{n}(\R) $, il quale potrebbe essere arbitrariamente complicato (il teorema di Ado non da alcuna indicazione su come trovare l' isomorfismo in questione).
