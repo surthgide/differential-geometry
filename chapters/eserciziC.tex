@@ -943,10 +943,201 @@ A questo punto, possiamo usare questi ragionamenti per verificare che l'esponenz
 	Sia $ G = G_{1} \times \cdots \times G_{s} $ il prodotto diretto di gruppi di Lie. Dimostrare che l'algebra di Lie di $ G $ è isomorfa alla somma diretta delle algebre di Lie dei $ G_{i} $ con $ i=1,\dots,s $.
 \end{tcolorbox}
 
+% https://math.stackexchange.com/questions/3724626/lieg-times-h-cong-lieg-oplus-lieh
+
 In notazione, dobbiamo dimostrare la seguente implicazione per gruppi di Lie $ G_{i} $
 
 \begin{equation}
-	\bigoplus_{i=1}^{s} Lie(G_{i}) \stackrel{iso}{\simeq} Lie \left( \prod_{i=1}^{s} G_{i} \right)
+	\bigoplus_{i=1}^{s} Lie(G_{i}) \stackrel{iso}{\simeq} Lie \left( \prod_{i=1}^{s} G_{i} \right) %
+	\qcomma \forall s \in \N
+\end{equation}
+
+Semplifichiamo il problema al caso di due gruppi nel seguente modo:
+
+\begin{equation}
+	Lie(G) \oplus Lie(H) \stackrel{iso}{\simeq} Lie(G \times H) %
+	\qq{con} %
+	H = \bigoplus_{i=1}^{s-1} G_{i}
+\end{equation}
+
+L'applicazione
+
+\map{\psi}
+	{Lie(G) \oplus Lie(H)}{Lie(G \times H)}
+	{(\xi, \eta)}{\xi \oplus \eta}
+
+è un isomorfismo di algebre di Lie se è un omomorfismo di algebre di Lie biunivoco e invertibile; l'immagine $ \xi \oplus \eta $ è data da
+
+\map{\xi \oplus \eta}
+	{G \times H}{T(G \times H)}
+	{(g,h)}{(\xi \oplus \eta)_{(g,h)} \in T_{(g,h)}(G \times H)}
+
+definita a sua volta dall'isomorfismo\footnote{%
+	Vedi Esercizio \ref{es2-11}.%
+}
+
+\map{f_{(g,h)}}
+	{T_{(g,h)}(G \times H)}{T_{g}(G) \times T_{h}(H)}
+	{(\xi \oplus \eta)_{(g,h)}}
+	{ %
+		\left( (\pi_{G})_{*g} ((\xi \oplus \eta)_{(g,h)}), (\pi_{H})_{*h} ((\xi \oplus \eta)_{(g,h)}) \right) = (\xi_{g}, \eta_{h})
+	}
+
+con le proiezioni e i loro differenziali
+
+\sbs{0.5}{%
+			\map{\pi_{G}}
+				{G \times H}{G}
+				{(g,h)}{g}
+				
+			\map{(\pi_{G})_{*g}}
+				{T_{(g,h)}(G \times H)}{T_{g}(G)}
+				{(\xi \oplus \eta)_{(g,h)}}{\xi_{g}}
+			}
+	{0.5}{%
+			\map{\pi_{H}}
+				{G \times H}{H}
+				{(g,h)}{h}
+				
+			\map{(\pi_{H})_{*h}}
+				{T_{(g,h)}(G \times H)}{T_{h}(H)}
+				{(\xi \oplus \eta)_{(g,h)}}{\eta_{h}}
+			}
+
+Consideriamo ora l'applicazione
+
+\map{\phi}
+	{\mathfrak{X}(G) \oplus \mathfrak{X}(H)}{\mathfrak{X}(G \times H)}
+	{(X,Y)}{X \oplus Y}
+
+dove $ X \oplus Y $ è definita analogamente a $ \xi \oplus \eta $ e $ \mathfrak{X}(G) \doteq (\chi(G), [,]) $ è l'algebra di Lie dei campi di vettori lisci su $ G $ con il commutatore tra campi di vettori definito come
+
+\begin{equation}
+	[X,Y] = X Y - Y X \qcomma X, Y \in \chi(G)
+\end{equation}
+
+da cui l'algebra di Lie
+
+\begin{equation}
+	\mathfrak{X}(G) \oplus \mathfrak{X}(H) = (\chi(G) \times \chi(H),[,])
+\end{equation}
+
+con il commutatore di quest'ultima algebra definito come
+
+\map{[,]}
+	{\chi(G) \times \chi(H) \times \chi(G) \times \chi(H)}{\chi(G) \times \chi(H)}
+	{(X_{1},Y_{1},X_{2},Y_{2})}
+	{[(X_{1},Y_{1}),(X_{2},Y_{2})] \doteq \left( [X_{1},X_{2}], [Y_{1},Y_{2}] \right)}
+
+Questa applicazione è un omomorfismo di algebre di Lie in quanto
+
+\begin{align}
+	\begin{split}
+		\phi \left( [(X_{1},Y_{1}),(X_{2},Y_{2})] \right) &\doteq \phi \left( [X_{1},X_{2}], [Y_{1},Y_{2}] \right) \\
+		&= [X_{1},X_{2}] \oplus [Y_{1},Y_{2}] \\
+		&= [X_{1} \oplus Y_{1}, X_{2} \oplus Y_{2}] \\
+		&= \left[ \phi(X_{1}, Y_{1}), \phi(X_{2}, Y_{2}) \right]
+	\end{split}
+\end{align}
+
+dunque
+
+\begin{equation}
+	\mathfrak{X}(G) \oplus \mathfrak{X}(H) \stackrel{iso}{\simeq} \mathfrak{X}(G \times H)
+\end{equation}
+
+A questo punto, siccome
+
+\begin{equation}
+	Lie(G) = (T_{e}(G),[,]) \stackrel{iso}{\simeq} (L(G),[,]) < (\chi(G),[,]) = \mathfrak{X}(G) %
+	\; \because \; %
+	\begin{cases}
+		T_{e}(G) \stackrel{iso}{\simeq} L(G) \\
+		L(G) \subset \chi(G)
+	\end{cases}
+\end{equation}
+
+possiamo considerare la restrizione di $ \phi $ alle algebre di Lie di
+
+\begin{equation}
+	\eval{\phi}_{Lie(G) \oplus Lie(H)} : Lie(G) \oplus Lie(H) \to \mathfrak{X}(G \times H)
+\end{equation}
+
+Dal momento che $ \phi $ è una bigezione in quanto omomorfismo ed è invertibile poiché le dimensioni di dominio e codominio sono identiche, i.e.
+
+\begin{equation}
+	\dim(Lie(G) \oplus Lie(H)) = \dim(\mathfrak{X}(G) \oplus \mathfrak{X}(H)) %
+	= \dim(\mathfrak{X}(G \times H)) %
+	= \dim(Lie(G \times H))
+\end{equation}
+
+allora $ \psi $, essendo una restrizione di $ \phi $, deve essere solo definita perché sia un isomorfismo, i.e.
+
+\begin{equation}
+	\psi(Lie(G) \oplus Lie(H)) \subset Lie(G \times H)
+\end{equation}
+
+in altre parole
+
+\begin{gather}
+	\xi \oplus \eta \in (L(G \times H),[,]) %
+	\stackrel{iso}{\simeq} (T_{(e,e)}(G \times H),[,]) %
+	= Lie(G \times H) %
+	\qcomma \forall (\xi,\eta) \in Lie(G) \oplus Lie(H)
+\end{gather}
+
+Per verificare questo, ricordiamo la seguente definizione di campi di vettori invarianti a sinistra:
+
+\begin{equation}
+	(L_{g})_{*h}(X_{h}) = X_{L_{g}(h)} = X_{gh} \qcomma \forall X \in L(G)
+\end{equation}
+
+Applicando quindi il differenziale della traslazione a sinistra, possiamo scrivere
+
+\begin{align}
+	\begin{split}
+		(L_{g_{1}} \times L_{h_{1}})_{*(g_{2},h_{2})} \left( (\xi \oplus \eta)_{(g_{2},h_{2})} \right) &= \left( (L_{g_{1}} \times L_{h_{1}})_{*(g_{2},h_{2})} \circ (f_{(g,h)})^{-1} \right) \left( \xi_{g_{2}}, \eta_{h_{2}} \right) \\
+		&= \left( (f_{(g_{1} g_{2}, h_{1} h_{2})})^{-1} \circ f_{(g_{1} g_{2}, h_{1} h_{2})} \circ (L_{g_{1}} \times L_{h_{1}})_{*(g_{2},h_{2})} \circ (f_{(g,h)})^{-1} \right) \left( \xi_{g_{2}}, \eta_{h_{2}} \right) \\
+		&= \left( (f_{(g_{1} g_{2}, h_{1} h_{2})})^{-1} \circ \left( (L_{g_{1}})_{*g_{2}} \times (L_{h_{1}})_{*h_{2}} \right) \right) \left( \xi_{g_{2}}, \eta_{h_{2}} \right) \\
+		&= (f_{(g_{1} g_{2}, h_{1} h_{2})})^{-1} \left( \left( (L_{g_{1}})_{*g_{2}} \times (L_{h_{1}})_{*h_{2}} \right) \left( \xi_{g_{2}}, \eta_{h_{2}} \right) \right) \\
+		&= (f_{(g_{1} g_{2}, h_{1} h_{2})})^{-1} \left( (L_{g_{1}})_{*g_{2}} (\xi_{g_{2}}), (L_{h_{1}})_{*h_{2}} (\eta_{h_{2}}) \right) \\
+		&= (f_{(g_{1} g_{2}, h_{1} h_{2})})^{-1} \left( \xi_{g_{1} g_{2}}, \eta_{h_{1} h_{2}} \right) \\
+		&= (\xi \oplus \eta)_{(g_{1} g_{2}, h_{1} h_{2})}
+	\end{split}
+\end{align}
+
+dove abbiamo usato il fatto che i campi di vettori $ \xi $ e $ \eta $ siano singolarmente invarianti a sinistra, i.e. $ \xi \in L(G) $ e $ \eta \in L(H) $, e la commutatività del seguente diagramma\footnote{%
+	In generale, il differenziale della traslazione a sinistra non lascia i campi di vettori invariati, dunque l'immagine di questa applicazione è rappresentata da un campo di vettori diverso da quello del dominio, i.e.
+	%
+	\begin{equation*}
+		\xi'_{h} \neq (L_{g})_{*h}(\xi_{h}) \qcomma \xi \in T(G)
+	\end{equation*}%
+}:
+
+\diagr{%
+		{(\xi \oplus \eta)_{(g_{2}, h_{2})}} \arrow[rrrr, "{(L_{g_{1}} \times L_{h_{1}})_{(g_{2},h_{2})}}", maps to]                                                \&  \&  \&  \& {(\xi' \oplus \eta')_{(g_{1} g_{2}, h_{1} h_{2})}} \arrow[ddd, "{f_{(g_{1} g_{2}, h_{1} h_{2})}}", maps to] \\
+		\&  \&  \&  \&                                                                                                             \\
+		\&  \&  \&  \&                                                                                                             \\
+		{(\xi_{g_{2}}, \eta_{h_{2}})} \arrow[rrrr, "(L_{g_{1}})_{*g_{2}} \times (L_{h_{1}})_{*h_{2}}"', maps to] \arrow[uuu, "{(f_{(g_{2},h_{2})})^{-1}}", maps to] \&  \&  \&  \& {(\xi'_{g_{1} g_{2}}, \eta'_{h_{1} h_{2}})} 
+		}
+
+da cui si ottiene la seguente uguaglianza
+
+\begin{equation}
+	f_{(g_{1} g_{2}, h_{1} h_{2})} \circ (L_{g_{1}} \times L_{h_{1}})_{*(g_{2},h_{2})} \circ (f_{(g,h)})^{-1} = (L_{g_{1}})_{*g_{2}} \times (L_{h_{1}})_{*h_{2}}
+\end{equation}
+
+A questo punto abbiamo che i campi di vettori $ \xi \oplus \eta $ sono invarianti a sinistra, il che implica che $ \psi $ sia un isomorfismo (per il ragionamento precedente), i.e.
+
+\begin{equation}
+	Lie(G) \oplus Lie(H) \stackrel{iso}{\simeq} Lie(G \times H)
+\end{equation}
+
+Il ragionamento vale iterativamente per $ H = \displaystyle\bigoplus_{i=1}^{s-1} G_{i} $, da cui
+
+\begin{equation}
+	\bigoplus_{i=1}^{s} Lie(G_{i}) \stackrel{iso}{\simeq} Lie \left( \prod_{i=1}^{s} G_{i} \right) %
+	\qcomma \forall s \in \N
 \end{equation}
 
 %
