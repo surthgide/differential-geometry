@@ -1146,10 +1146,129 @@ Il ragionamento vale iterativamente per $ H = \displaystyle\bigoplus_{i=1}^{s-1}
 
 %
 
-\section{}\label{es3-12}
+\section{Parallelizzabilità dei gruppi di Lie}\label{es3-12}
 
 \begin{tcolorbox}
 	Dimostrare che ogni gruppo di Lie è parallelizzabile.
 \end{tcolorbox}
 
-qui
+% https://math.stackexchange.com/questions/308691/let-g-be-a-lie-group-show-that-there-is-a-diffeomorphism-tg-cong-g-times-t
+
+Una varietà differenziabile di dimensione $ n $ è parallelizzabile se esistono $ n $ vettori lisci linearmente indipendenti che formino una base per lo spazio tangente in ogni punto, i.e. per un gruppo di Lie $ G $
+
+\begin{equation}
+	\E \xi_{1}, \dots, \xi_{n} \in \chi(G) \mid %
+	\B_{T_{g}(G)} = \left\{ \xi_{1}, \dots, \xi_{n} \right\} %
+	\; \lor \; T_{g}(G) = \ev{(\xi_{i})_{g}}_{i=1,\dots,n} %
+	\qcomma \forall g \in G
+\end{equation}
+
+Questa condizione è equivalente a dire che il fibrato tangente è triviale, i.e. sono isomorfi come spazi vettoriali i seguenti spazi
+
+\begin{equation}
+	T(G) \stackrel{iso}{\simeq} G \times T_{g}(G) \qcomma \forall g \in G
+\end{equation}
+
+Siccome la traslazione a sinistra è un diffeomorfismo, il suo differenziale è un isomorfismo di spazi vettoriali, i.e.
+
+\begin{equation}
+	(L_{g})_{*e} : T_{e}(G) \to T_{g}(G) %
+	\implies %
+	T_{e}(G) \stackrel{iso}{\simeq} T_{g}(G) \qcomma \forall g \in G
+\end{equation}
+
+questo permette di riscrivere la condizione di trivialità del fibrato tangente come
+
+\begin{equation}
+	T(G) \stackrel{iso}{\simeq} G \times T_{e}(G)
+\end{equation}
+
+Consideriamo quindi l'applicazione
+
+\map{\phi}
+	{G \times T_{e}(G)}{T(G)}
+	{(g, \xi)}{(L_{g})_{*}(\xi)}
+
+dal momento che i campi di vettori dello spazio tangente a un gruppo di Lie sono invarianti a sinistra, i.e.
+
+\begin{equation}
+	(L_{g})_{*}(\xi) = \xi \qcomma \forall \xi \in T_{e}(G) \stackrel{iso}{\simeq} L(G)
+\end{equation}
+
+possiamo scrivere $ \phi(g, \xi) = \xi $.\\
+Perché $ \phi $ sia un isomorfismo di spazi vettoriali è necessario che sia una bigezione e che sia $ \R $-lineare.\\
+Per dimostrare che sia una bigezione, è sufficiente dimostrare che possieda un'inversa destra (i.e. sia suriettiva, perciò $ \Im(\phi) = T(G) $) in quanto, per il teorema della dimensione e per il fatto che dominio e codominio hanno la stessa dimensione, i.e.
+
+\begin{equation}
+	\dim(G \times T_{e}(G)) = \dim(T(G)) = 2 \dim(G)
+\end{equation}
+
+da cui
+
+\begin{align}
+	\begin{split}
+		\dim(\Im(\phi)) + \dim(\ker(\phi)) &= \dim(G \times T_{e}(G))\\
+		\cancel{ \dim(T(G)) } + \dim(\ker(\phi)) &= \cancel{ \dim(G \times T_{e}(G)) }\\
+		\dim(\ker(\phi)) &= 0
+	\end{split}
+\end{align}
+
+questo mostra che la dimensione del nucleo sia nulla e dunque che sia anche iniettiva; di seguito la composizione dell'inversa destra e la verifica:
+
+\sbs{0.5}{%
+			\begin{equation}
+				\psi \doteq (\pi_{G} \times i^{-1}) \circ \Delta : T(G) \to G \times T_{e}(G)
+			\end{equation}
+			
+			\map{\pi_{G}}
+				{T(G)}{G}
+				{\xi}{g}
+		
+			\centering dove $ (g,\xi) \equiv \xi \in T_{g}(G) $
+			}
+	{0.5}{%
+			\map{i}
+				{T_{e}(G)}{T(G)}
+				{\xi}{\xi}
+			
+			\map{\Delta}
+				{T(G) \times T(G)}{T(G)}
+				{\xi}{(\xi,\xi)}
+			}
+
+\begin{gather}
+	(\phi \circ \psi)(\xi) = (\phi \circ ((\pi_{G} \times i^{-1}) \circ \Delta))(\xi) %
+	= \phi ((\pi_{G} \times i^{-1})(\xi,\xi)) %
+	= \phi(g,\xi) %
+	= \xi %
+	\qcomma \forall \xi \in T(G) \nonumber \\
+	\Downarrow \\
+	\phi \circ \psi = \id_{T(G)} \nonumber
+\end{gather}
+
+Per la $ \R $-linearità:
+
+\begin{align}
+	\begin{split}
+		\phi(\alpha (g,\xi) + \beta (h,\eta)) &= \phi((\alpha g,\alpha \xi) + (\beta h,\beta \eta)) \\
+		&= \phi((\alpha g + \beta h,\alpha \xi + \beta \eta)) \\
+		&= \alpha \xi + \beta \eta \\
+		&= \alpha \phi(g,\xi) + \beta \phi(h,\eta)
+	\end{split} %
+	\qquad %
+	\begin{cases}
+		\forall (g,\xi),(h,\eta) \in G \times T_{e}(G) \\
+		\forall \alpha,\beta \in \R
+	\end{cases}
+\end{align}
+
+con la moltiplicazione per scalare e la somma standard del dominio e del codominio di $ \phi $.\\
+A questo punto, per il ragionamento precedente, l'applicazione $ \phi $ è una bigezione $ \R $-lineare, dunque un isomorfismo di spazi vettoriali, i.e. vale per qualsiasi gruppo di Lie $ G $ il seguente isomorfismo
+
+\begin{equation}
+	T(G) \stackrel{iso}{\simeq} G \times T_{e}(G)
+\end{equation}
+
+il che rende triviale il fibrato tangente di un gruppo di Lie, equivalente a dimostrare che ogni gruppo di Lie è parallelizzabile.\\
+Incidentalmente, come implicazione inversa, otteniamo che ogni spazio non parallelizzabile non può essere dotato della struttura di gruppo di Lie.
+
