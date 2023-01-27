@@ -5154,7 +5154,7 @@ Entrambi sono compatti e connessi e hanno la stessa dimensione
 
 \begin{equation}
 	\begin{cases}
-		\dim(SO(n)) = n^{2} - 1 \\
+		\dim(SU(n)) = n^{2} - 1 \\
 		\dim(SO(n)) = n(n-1)/2
 	\end{cases}
 	\implies %
@@ -5177,20 +5177,20 @@ con le condizioni date nella definizione, dunque
 
 \begin{equation}
 	\begin{cases}
-		\det(A) = a d - b c = 1 \\\\
 		A^{*} = \bmqty{ \bar{a} & \bar{c} \\ \bar{b} & \bar{d} } %
 		= A^{-1} %
-		= \cancel{\dfrac{1}{\det(A)}} \bmqty{ d & -b \\ -c & a }
+		= \cancel{\dfrac{1}{\det(A)}} \bmqty{ d & -b \\ -c & a } \\\\
+		\det(A) = a d - b c = 1
 	\end{cases}
 	\implies %
 	\begin{cases}
-		a d - b c = 1 \\
+		\bar{a} = d \\
 		c = - \bar{b} \\
-		d = \bar{a}
+		a d - b c = 1
 	\end{cases}
 	\implies %
 	\begin{cases}
-		A = \bmqty{ \bar{a} & b \\ - \bar{b} & \bar{a} } \\\\
+		A = \bmqty{ a & b \\ - \bar{b} & \bar{a} } \\\\
 		\abs{a}^{2} + \abs{b}^{2} = 1
 	\end{cases}
 \end{equation}
@@ -5198,7 +5198,7 @@ con le condizioni date nella definizione, dunque
 dunque possiamo riscrivere la definizione
 
 \begin{equation}
-	SU(2) = \left\{ A = \bmqty{ \bar{a} & b \\ - \bar{b} & \bar{a} } \in GL_{2}(\C) \st \abs{a}^{2} + \abs{b}^{2} = 1 \right\}
+	SU(2) = \left\{ A = \bmqty{ a & b \\ - \bar{b} & \bar{a} } \in GL_{2}(\C) \st \abs{a}^{2} + \abs{b}^{2} = 1 \right\}
 \end{equation}
 
 Esiste un diffeomorfismo\footnote{%
@@ -5207,18 +5207,9 @@ Esiste un diffeomorfismo\footnote{%
 
 \map{\phi}
 	{SU(2)}{\S^{3}}
-	{\bmqty{ \bar{a} & b \\ - \bar{b} & \bar{a} }}{(a,b) \in \C^{2}}
+	{\bmqty{ a & b \\ - \bar{b} & \bar{a} }}{(a,b) \in \C^{2}}
 
-dove
-
-\begin{equation}
-	\begin{cases}
-		a = a_{1} + i a_{2} \\
-		b = b_{1} + i b_{2}
-	\end{cases}
-\end{equation}
-
-e il punto $ (a,b) $ appartiene alla sfera $ \S^{3} $ grazie alla condizione $ \abs{a}^{2} + \abs{b}^{2} = 1 $.\\
+dove il punto $ (a,b) $ appartiene alla sfera $ \S^{3} $ grazie alla condizione $ \abs{a}^{2} + \abs{b}^{2} = 1 $.\\
 Incidentalmente, tramite questo diffeomorfismo, possiamo dotare la sfera della struttura di gruppo di Lie mediante l'operazione associata a $ SU(2) $.\\
 Lo spazio tangente di $ SU(2) $ è composto dalle matrici antihermitiane a traccia nulla
 
@@ -5242,7 +5233,9 @@ Per lo spazio tangente, le matrici hanno la forma:
 	\qcomma u_{1},u_{2},u_{3} \in \R
 \end{equation}
 
-La base standard di $ \su(2) $ è la seguente
+La base standard\footnote{%
+	La base di $ \su(2) $ è legata alle \textit{matrici di Pauli} $ \sigma_{i} $ da $ \B_{\su(2)} = \{i \sigma_{i}\} $.%
+} di $ \su(2) $ è la seguente
 
 \begin{equation}
 	\B_{\su(2)} = \left\{ %
@@ -5252,7 +5245,7 @@ La base standard di $ \su(2) $ è la seguente
 		\right\}
 \end{equation}
 
-Esiste un isomorfismo di spazi vettoriali tra $ T_{I}(SU(2)) $ ed $ \R^{3} $
+Esiste un isomorfismo di spazi vettoriali tra $ T_{I}(SU(2)) $ ed $ \R^{3} $, rappresentato dall'applicazione
 
 \map{\psi}
 	{T_{I}(SU(2))}{\R^{3}}
@@ -5265,7 +5258,28 @@ L'inversa di questa applicazione associa a un vettore $ u \in \R^{3} $ una matri
 	{u = \bmqty{ u_{1} \\ u_{2} \\ u_{3} }}
 	{M_{u} = \bmqty{ i u_{1} & u_{2} + i u_{3} \\\\ - u_{2} + i u_{3} & - i u_{1} }}
 
-Considerando il commutatore di $ \su(2) $ e il prodotto vettoriale $ \times $ di vettori di $ \R^{3} $, otteniamo che
+Considerando il commutatore di $ \su(2) $ e il prodotto vettoriale\footnote{%
+	Siano due vettori in $ T(\R^{3}) $ rappresentati tramite la loro identificazione con $ \R^{3} $
+	%
+	\begin{equation*}
+		\begin{cases}
+			u = (u_{1},u_{2},u_{3}) \\
+			v = (v_{1},v_{2},v_{3})
+		\end{cases}
+	\end{equation*}
+	%
+	Il prodotto vettoriale tra questi può essere calcolato tramite il determinante tra le componenti dei vettori e i versori $ \hat{i},\hat{j},\hat{k} \in T(\R^{3}) $:
+	%
+	\begin{equation*}
+		u \times v = %
+		\mdet{ %
+				\hat{i} & \hat{j} & \hat{k} \\
+				u_{1} & u_{2} & u_{3} \\
+				v_{1} & v_{2} & v_{3} %
+				} %
+		= (u_{2} v_{3} - u_{3} v_{2}, u_{3} v_{1} - u_{1} v_{3}, u_{1} v_{2} - u_{2} v_{1})
+	\end{equation*} %
+} $ \times $ di vettori di $ \R^{3} $, otteniamo
 
 \begin{equation}
 	[M_{u},M_{v}] = M_{u} M_{v} - M_{v} M_{u} = 2 M_{u \times v}
@@ -5289,7 +5303,7 @@ Inoltre, considerando il prodotto scalare in $ \R^{3} $
 	u \cdot v = - \dfrac{1}{2} \tr(M_{u} M_{v})
 \end{equation}
 
-questo induce un isomorfismo di spazi euclidei
+questo induce un isomorfismo di gruppi di spazi euclidei
 
 \begin{equation}
 	(\R^{3},\cdot) \stackrel{iso.}{\simeq} \left( T_{I}(SU(2)), -\dfrac{1}{2} \tr(\cdot \, \cdot) \right)
@@ -5309,7 +5323,7 @@ La condizione di ortogonalità può essere scritta, considerando $ v_{1},v_{2} \
 	(B v_{1}) \cdot (B v_{2}) = v_{1} \cdot v_{2}
 \end{equation}
 
-cioè rispetta il prodotto scalare tra due vettori.
+i.e. la moltiplicazione di due vettori per matrici ortogonali speciali rispetta il prodotto scalare tra i due vettori.
 
 \begin{lemma}
 	Siano $ A \in SU(2) $ e $ M_{v} \in \su(2) $, allora $ A M_{v} A^{-1} \in \su(2) $.
@@ -5337,13 +5351,16 @@ cioè rispetta il prodotto scalare tra due vettori.
 	e considerando che
 	
 	\begin{equation}
-		M_{v} \in \su(2) \implies \tr(M_{v}) = 0
+		M_{v} \in \su(2) \implies \tr(M_{v}) = 0 \\
+		\tr(A B) = \tr(B A) \qcomma \forall A,B \in M_{n}(\K)
 	\end{equation}
 	
 	abbiamo che
 	
 	\begin{equation}
-		\tr(A M_{v} A^{-1}) = \tr(M_{v}) = 0
+		\tr(A M_{v} A^{-1}) = \tr(M_{v} A^{-1} A) %
+		= \tr(M_{v}) %
+		= 0
 	\end{equation}
 
 	dunque
@@ -5403,7 +5420,7 @@ nel seguente modo
 		 \qcomma v \in \R^{3}, \, A \in SU(2), \, M_{v} \in \su(2)
 	\end{equation}
 
-	induce l'omomorfismo di gruppi di Lie suriettivo
+	è un omomorfismo di gruppi di Lie suriettivo
 	
 	\begin{equation}
 		R : SU(2) \to SO(3)
@@ -5427,7 +5444,7 @@ nel seguente modo
 		R_{*I_{2}} : \su(2) \to \so(3)
 	\end{equation}
 
-	è un isomorfismo di algebre di Lie
+	è un isomorfismo di algebre di Lie, i.e.
 	
 	\begin{equation}
 		\su(2) \stackrel{iso.}{\simeq} \so(3)
@@ -5465,9 +5482,16 @@ nel seguente modo
 		= M_{R(A) \, R(B) \, v}
 	\end{equation}
 
-	essendo $ M $ un isomorfismo, la condizione per cui $ R $ sia un omomorfismo è verificata.\\
+	essendo $ M $ un isomorfismo, i.e.
+	
+	\map{M}
+		{\R^{3}}{T_{I}(SU(2))}
+		{u = \bmqty{ u_{1} \\ u_{2} \\ u_{3} }}
+		{M_{u} = \bmqty{ i u_{1} & u_{2} + i u_{3} \\\\ - u_{2} + i u_{3} & - i u_{1} }}
+	
+	la condizione per cui $ R $ sia un omomorfismo è verificata.\\
 	Il nucleo\footnote{%
-		Ricordiamo che il nucleo dell'applicazione è dato dalle matrici del dominio che hanno come immagine l'elemento neutro del codominio.%
+		Per i gruppi, il nucleo di un'applicazione è dato dagli elementi del dominio che hanno come immagine l'elemento neutro del codominio.%
 	} dell'omomorfismo $ R $ è dato da
 	
 	\begin{equation}
@@ -5483,28 +5507,40 @@ nel seguente modo
 		\implies %
 		[M_{v},A] = 0 \qcomma \forall v \in \R^{3}
 	\end{equation}
-
-	Le uniche matrici di $ SU(2) $ che commutano con $ M_{v} $ sono $ \{ \pm I_{2} \} $.\\
+	
+	in quanto
+	
+	\begin{equation}
+		[M_{v},A] = M_{v} A - A M_{v} %
+		= A M_{v} A^{-1} A - A M_{v} %
+		= A M_{v} - A M_{v} %
+		= 0
+	\end{equation}
+	
+	Le uniche matrici di $ SU(2) $ che commutano con $ M_{v} $ sono $ \{ \pm I_{2} \} $ dunque $ \ker(R) = \{ \pm I_{2} \} $.\\
 	Per dimostrare che $ R_{*I_{2}} : \su(2) \to \so(3) $ è un isomorfismo di algebre di Lie, scriviamo il differenziale di una matrice $ M_{u} \in \su(2) $ con $ u \in \R^{3} $ tramite la curva $ \exp(t M_{u}) $
 	
 	\begin{equation}
-		R_{*I_{2}}(M_{u}) = \eval{ \dv{t} R( \exp(t M_{u}) ) }_{t=0}
+		R_{*I_{2}}(M_{u}) = \dot{(R \circ \exp(t M_{u}))}(0) %
+		= \eval{ \dv{t} }_{0} R( \exp(t M_{u}) )
 	\end{equation}
 	
 	Tramite la definizione di $ M_{R(A) \, v} $, otteniamo che
 	
 	\begin{equation}
-		M_{R(\exp(t M_{u})) \, v} = \exp(t M_{u}) \, M_{v} \, \exp(-t M_{u})
+		M_{R(\exp(t M_{u})) \, v} = \exp(t M_{u}) \, M_{v} \, \exp(-t M_{u}) %
+		\qcomma \forall t \in \R
 	\end{equation}
 	
-	facendone la derivata rispetto a $ t $ e ricordando che $ M_{v} $ non dipende da $ t $
+	facendone la derivata rispetto a $ t $, considerando che $ M_{v} $ è lineare e non dipende da $ t $
 	
 	\begin{align}
 		\begin{split}
-			\eval{ \dv{t} M_{R(\exp(t M_{u})) \, v} }_{t=0} &= M_{R_{*I_{2}}(M_{u}) (v)} \\
-			&= \eval{ \dv{t} \exp(t M_{u}) \, M_{v} \, \exp(-t M_{u}) }_{t=0} \\
-			&= \left( \eval{ \dv{t} \exp(t M_{u}) }_{t=0} \right) M_{v} \cancelto{1}{ \left( \eval{ \exp(-t M_{u}) }_{t=0} \right) } + \\
-			& \hal + \cancelto{-1}{ \left( \eval{ \exp(t M_{u}) }_{t=0} \right) } M_{v} \left( \eval{ \dv{t} \exp(-t M_{u}) }_{t=0} \right) \\
+			\eval{ \dv{t} }_{0} M_{R(\exp(t M_{u})) \, v} &= M_{\eval{ \dv{t} }_{0} R(\exp(t M_{u})) \, v} \\
+			&= M_{R_{*I_{2}}(M_{u}) (v)} \\
+			&= \eval{ \dv{t} }_{0} \exp(t M_{u}) \, M_{v} \, \exp(-t M_{u}) \\
+			&= \left( \eval{ \dv{t} }_{0} \exp(t M_{u}) \right) M_{v} \cancelto{I_{2}}{ \left( \eval{ \exp(-t M_{u}) }_{t=0} \right) } + \\
+			& \hal + \cancelto{-I_{2}}{ \left( \eval{ \exp(t M_{u}) }_{t=0} \right) } M_{v} \left( \eval{ \dv{t} \exp(-t M_{u}) }_{t=0} \right) \\
 			%
 			&= M_{u} M_{v} - M_{v} M_{u} \\
 			&= [M_{u},M_{v}] \\
