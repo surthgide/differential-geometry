@@ -5518,11 +5518,20 @@ nel seguente modo
 	\end{equation}
 	
 	Le uniche matrici di $ SU(2) $ che commutano con $ M_{v} $ sono $ \{ \pm I_{2} \} $ dunque $ \ker(R) = \{ \pm I_{2} \} $.\\
-	Per dimostrare che $ R_{*I_{2}} : \su(2) \to \so(3) $ è un isomorfismo di algebre di Lie, scriviamo il differenziale di una matrice $ M_{u} \in \su(2) $ con $ u \in \R^{3} $ tramite la curva $ \exp(t M_{u}) $
+	Per dimostrare che $ R_{*I_{2}} : \su(2) \to \so(3) $ è un isomorfismo di algebre di Lie, scriviamo il differenziale di una matrice $ M_{u} \in \su(2) $ con $ u \in \R^{3} $ tramite la curva\footnote{%
+		In questo caso, essendo il gruppo di Lie in questione un gruppo matriciale, l'applicazione esponenziale $ \exp $ coincide con l'esponenziale di matrici.%
+	} $ \exp(t M_{u}) $
 	
 	\begin{equation}
 		R_{*I_{2}}(M_{u}) = \dot{(R \circ \exp(t M_{u}))}(0) %
 		= \eval{ \dv{t} }_{0} R( \exp(t M_{u}) )
+	\end{equation}
+
+	Siccome $ M_{v} $ è lineare e non dipende da $ t $, possiamo scrivere
+
+	\begin{equation}
+		\eval{ \dv{t} }_{0} M_{R(\exp(t M_{u})) \, v} = M_{\eval{ \dv{t} }_{0} R(\exp(t M_{u})) \, v} %
+		= M_{R_{*I_{2}}(M_{u}) (v)}
 	\end{equation}
 	
 	Tramite la definizione di $ M_{R(A) \, v} $, otteniamo che
@@ -5532,15 +5541,13 @@ nel seguente modo
 		\qcomma \forall t \in \R
 	\end{equation}
 	
-	facendone la derivata rispetto a $ t $, considerando che $ M_{v} $ è lineare e non dipende da $ t $
+	Facendo la derivata rispetto a $ t $ in $ t = 0 $ di entrambi i membri dell'uguaglianza sopra, possiamo anche scrivere
 	
 	\begin{align}
 		\begin{split}
-			\eval{ \dv{t} }_{0} M_{R(\exp(t M_{u})) \, v} &= M_{\eval{ \dv{t} }_{0} R(\exp(t M_{u})) \, v} \\
-			&= M_{R_{*I_{2}}(M_{u}) (v)} \\
-			&= \eval{ \dv{t} }_{0} \exp(t M_{u}) \, M_{v} \, \exp(-t M_{u}) \\
+			\eval{ \dv{t} }_{0} M_{R(\exp(t M_{u})) \, v} &= \eval{ \dv{t} }_{0} \exp(t M_{u}) \, M_{v} \, \exp(-t M_{u}) \\
 			&= \left( \eval{ \dv{t} }_{0} \exp(t M_{u}) \right) M_{v} \cancelto{I_{2}}{ \left( \eval{ \exp(-t M_{u}) }_{t=0} \right) } + \\
-			& \hal + \cancelto{-I_{2}}{ \left( \eval{ \exp(t M_{u}) }_{t=0} \right) } M_{v} \left( \eval{ \dv{t} \exp(-t M_{u}) }_{t=0} \right) \\
+			& \hal + \cancelto{I_{2}}{ \left( \eval{ \exp(t M_{u}) }_{t=0} \right) } M_{v} \left( \eval{ \dv{t} \exp(-t M_{u}) }_{t=0} \right) \\
 			%
 			&= M_{u} M_{v} - M_{v} M_{u} \\
 			&= [M_{u},M_{v}] \\
@@ -5548,11 +5555,14 @@ nel seguente modo
 		\end{split}
 	\end{align}
 	
-	essendo $ M $ un isomorfismo, possiamo scrivere
+	A questo punto, essendo $ M $ un isomorfismo, otteniamo che
 	
-	\begin{equation}
-		R_{*I_{2}}(M_{u}) (v) = 2 \, u \times v
-	\end{equation}
+	\begin{gather}
+		\eval{ \dv{t} }_{0} M_{R(\exp(t M_{u})) \, v} = M_{R_{*I_{2}}(M_{u}) (v)} %
+		= 2 M_{u \times v} \nonumber \\
+		\Downarrow \\
+		R_{*I_{2}}(M_{u}) (v) = 2 \, u \times v \nonumber
+	\end{gather}
 	
 	Il prodotto vettoriale tra due vettori $ u,v \in \R^{3} $ può essere scritto come
 	
@@ -5589,10 +5599,19 @@ nel seguente modo
 	\begin{align}
 		\begin{split}
 			(R \circ L_{A})_{*I_{2}} &= (L_{R(A)} \circ R)_{*I_{2}} \\
-			R_{*A} \circ L_{A_{*I_{2}}} &= L_{R(A)_{*I_{2}}} \circ R_{*I_{2}} \\
-			R_{*A} &= L_{R(A)_{*I_{2}}} \circ R_{*I_{2}} \circ L_{A_{*I_{2}}}^{-1}
+			R_{*L_{A}(I_{2})} \circ (L_{A})_{*I_{2}} &= (L_{R(A)})_{*R(I_{2})} \circ R_{*I_{2}} \\
+			R_{*A} \circ (L_{A})_{*I_{2}} &= (L_{R(A)})_{*I_{3}} \circ R_{*I_{2}} \\
+			R_{*A} &= (L_{R(A)})_{*I_{3}} \circ R_{*I_{2}} \circ ((L_{A})_{*I_{2}})^{-1}
 		\end{split}
 	\end{align}
+
+	in quanto
+	
+	\begin{equation}
+		\ker(R) = \{\pm I_{2}\} \subset SU(2) %
+		\implies %
+		R(\pm I_{2}) = I_{3} \in SO(3)
+	\end{equation}
 	
 	Questo rende il differenziale in un punto qualsiasi $ A \in SU(2) $ un isomorfismo in quanto composizione di isomorfismi: a questo punto $ R $ è una sommersione (in quanto il suo differenziale, essendo un isomorfismo, è suriettivo) da cui, per il corollario del teorema di sommersione locale\footnote{%
 		Vedi Corollario \ref{cor:sub-open}.%
