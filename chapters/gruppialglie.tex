@@ -5106,7 +5106,7 @@ Tramite il seguente teorema, otteniamo le condizioni per cui questo sia possibil
 \end{theorem}
 
 \begin{remark}
-	In generale, se due gruppi di Lie sono isomorfi, le algebre di Lie relative sono isomorfe. I primi due punti di questo teorema provano l'implicazione opposta. Segue dunque da questi due punti che due gruppi di Lie $ G $ e $ H $ sono semplicemente connessi con le loro algebre di Lie $ Lie(G) $ e $ Lie(H) $ isomorfe se e solo se i due gruppi di Lie sono isomorfi.
+	In generale, se due gruppi di Lie sono isomorfi, le algebre di Lie relative sono isomorfe. I primi due punti di questo teorema provano l'implicazione opposta. Segue dunque da questi due punti che due gruppi di Lie $ G $ e $ H $ semplicemente connessi hanno le loro algebre di Lie $ Lie(G) $ e $ Lie(H) $ isomorfe se e solo se i due gruppi di Lie sono isomorfi.
 \end{remark}
 
 \begin{theorem}
@@ -5125,7 +5125,10 @@ Tramite il seguente teorema, otteniamo le condizioni per cui questo sia possibil
 	In termini di teoria delle categorie, si dimostra che la categoria dei gruppi di Lie semplicemente connessi è equivalente alla categoria delle algebre di Lie finito-dimensionali su $ \R $.
 \end{remark}
 
-Consideriamo un esempio in cui i gruppi di Lie non sono isomorfi ma le loro algebre di Lie lo sono.\\
+Consideriamo un esempio in cui i gruppi di Lie non sono isomorfi ma le loro algebre di Lie lo sono.
+
+\paragraph{\textit{Esempio}}
+
 Siano i gruppi di Lie
 
 \begin{equation}
@@ -5149,8 +5152,8 @@ Questo non è in contraddizione con il teorema di corrispondenza di Lie in quant
 
 \subsubsection{Connessione tra $ SU(2) $ e $ SO(3) $ e le loro algebre di Lie}
 
-Anche in questo caso, i gruppi di Lie $ SU(2) $ e $ SO(3) $ non sono isomorfi ma le loro algebre di Lie $ \su(2) $ e $ \so(3) $ lo sono e questo non contraddice il teorema di corrispondenza di Lie in quanto $ SO(3) $ non è semplicemente connesso.\\
-Entrambi sono compatti e connessi e hanno la stessa dimensione
+Anche in questo caso, i gruppi di Lie $ SU(2) $ e $ SO(3) $ non sono isomorfi ma le loro algebre di Lie $ \su(2) $ e $ \so(3) $ lo sono: questo non contraddice il teorema di corrispondenza di Lie in quanto $ SO(3) $ non è semplicemente connesso.\\
+Entrambi sono compatti e connessi, e hanno la stessa dimensione
 
 \begin{equation}
 	\begin{cases}
@@ -5217,7 +5220,7 @@ Lo spazio tangente di $ SU(2) $ è composto dalle matrici antihermitiane a tracc
 	T_{I}(SU(2)) = \{X \in M_{2}(\C) \mid X^{*} = - X \, \wedge \, \tr(X) = 0 \}
 \end{equation}
 
-Abbinandolo al commutatore otteniamo l'algebra di Lie associata
+Abbinandolo al commutatore matriciale standard otteniamo l'algebra di Lie associata
 
 \begin{equation}
 	\su(2) = Lie(SU(2)) = (T_{I}(SU(2)),[,])
@@ -5315,12 +5318,13 @@ Per quanto riguarda $ SO(3) $: l'insieme è definito come
 	SO(2) = \{ B \in GL_{3}(\R) \mid B^{T} B = I_{3} \, \wedge \, \det(B) = 1 \}
 \end{equation}
 
-La condizione di ortogonalità può essere scritta, considerando $ v_{1},v_{2} \in \R^{3} $, come
+La condizione di ortogonalità può essere scritta come
 
 \begin{equation}
 	B^{T} B = I_{3} %
 	\iff %
-	(B v_{1}) \cdot (B v_{2}) = v_{1} \cdot v_{2}
+	(B u) \cdot (B v) = u \cdot v %
+	\qcomma \forall B \in O(3), \, \forall u,v \in \R^{3}
 \end{equation}
 
 i.e. la moltiplicazione di due vettori per matrici ortogonali speciali rispetta il prodotto scalare tra i due vettori.
@@ -5350,10 +5354,10 @@ i.e. la moltiplicazione di due vettori per matrici ortogonali speciali rispetta 
 
 	e considerando che
 	
-	\begin{equation}
+	\begin{gather}
 		M_{v} \in \su(2) \implies \tr(M_{v}) = 0 \\
 		\tr(A B) = \tr(B A) \qcomma \forall A,B \in M_{n}(\K)
-	\end{equation}
+	\end{gather}
 	
 	abbiamo che
 	
@@ -5381,11 +5385,11 @@ Questo lemma implica che
 	A M_{v} A^{-1} = M_{w} = M_{R(A) \, v}
 \end{equation}
 
-dove la matrice $ R(A) $ indica una trasformazione lineare e, a priori, $ R(A) \in GL_{3}(\R) $.\\
-Dimostriamo ora che $ R(A) \in O(3) $, i.e.
+dove la matrice $ R(A) $ indica una trasformazione lineare; a priori, sappiamo solo che $ R(A) $ sia invertibile, i.e. $ R(A) \in GL_{3}(\R) $.\\
+Facendo un passo oltre, mostriamo che $ R(A) \in O(3) $, i.e.
 
 \begin{equation}
-	(R(A) \, v_{1}) \cdot (R(A) \, v_{2}) = v_{1} \cdot v_{2} \qcomma v_{1},v_{2} \in \R^{3}
+	(R(A) \, u) \cdot (R(A) \, v) = u \cdot v \qcomma u,v \in \R^{3}
 \end{equation}
 
 tramite l'isomorfismo
@@ -5398,11 +5402,12 @@ nel seguente modo
 
 \begin{align}
 	\begin{split}
-		(R(A) \, v_{1}) \cdot (R(A) \, v_{2}) &= - \dfrac{1}{2} \tr( (R(A) \, v_{1}) (R(A) \, v_{2}) ) \\
-		&= - \dfrac{1}{2} \tr( A M_{v_{1}} A^{-1} A M_{v_{2}} A^{-1} ) \\
-		&= - \dfrac{1}{2} \tr( A M_{v_{1}} M_{v_{2}} A^{-1} ) \\
-		&= - \dfrac{1}{2} \tr( M_{v_{1}} M_{v_{2}} ) \\
-		&= v_{1} \cdot v_{2}
+		(R(A) \, u) \cdot (R(A) \, v) &= - \dfrac{1}{2} \tr( M_{R(A) \, u} \, M_{R(A) \, v} ) \\
+		&= - \dfrac{1}{2} \tr( A M_{u} A^{-1} A M_{v} A^{-1} ) \\
+		&= - \dfrac{1}{2} \tr( A M_{u} M_{v} A^{-1} ) \\
+		&= - \dfrac{1}{2} \tr( M_{u} M_{v} A^{-1} A ) \\
+		&= - \dfrac{1}{2} \tr( M_{u} M_{v} ) \\
+		&= u \cdot v
 	\end{split}
 \end{align}
 
@@ -5410,23 +5415,17 @@ nel seguente modo
 	L'applicazione
 	
 	\map{R}
-		{SU(2)}{O(3)}
+		{SU(2)}{SO(3)}
 		{A}{R(A)}
-	
+	%
 	dove
 	
 	\begin{equation}
-		 M_{R(A) \, v} = A M_{v} A^{-1} %
+		 M_{R(A) \, v} = A M_{v} A^{-1} \in \su(2) %
 		 \qcomma v \in \R^{3}, \, A \in SU(2), \, M_{v} \in \su(2)
 	\end{equation}
 
-	è un omomorfismo di gruppi di Lie suriettivo
-	
-	\begin{equation}
-		R : SU(2) \to SO(3)
-	\end{equation}
-
-	tale che
+	è un omomorfismo di gruppi di Lie suriettivo tale che
 	
 	\begin{equation}
 		\ker(R) = \{ \pm I_{2} \}
@@ -5461,7 +5460,7 @@ nel seguente modo
 	in quanto $ SO(3) $ è la componente connessa di $ O(3) $ che contiene l'identità ed essendo $ R $ un omomorfismo
 	
 	\begin{equation}
-		R(\id_{SU(2)}) = \id_{O(3)}
+		R(\id_{SU(2)}) = \id_{O(3)} \in SO(3)
 	\end{equation}
 
 	Siccome un omomorfismo continuo è anche liscio\footnote{%
@@ -5619,7 +5618,7 @@ nel seguente modo
 		Alternativamente, per il teorema della funzione inversa (vedi Teorema \ref{ift}) $ R $ è un diffeomorfismo locale e dunque un'applicazione aperta.%
 	}. Questa applicazione però è anche chiusa per il lemma dell'applicazione chiusa\footnote{%
 		Vedi Lemma \ref{lemma-clos-app}.%
-	} in quanto $ SU(2) $ è compatto e $ SO(3) $ è di Hausdorff: l'immagine di $ SU(2) $ tramite un'applicazione sia aperta che chiusa è sia aperta che chiusa e, siccome $ SO(3) $ è connesso, l'immagine del dominio deve coincidere con il codominio, i.e.
+	}, in quanto bigezione continua, $ SU(2) $ compatto ed $ SO(3) $ di Hausdorff: l'immagine di $ SU(2) $ tramite un'applicazione sia aperta che chiusa è sia aperta che chiusa e, siccome $ SO(3) $ è connesso, l'immagine del dominio deve coincidere con il codominio, i.e.
 
 	\begin{equation}
 		R(SU(2)) = SO(3)
