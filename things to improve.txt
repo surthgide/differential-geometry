@@ -1,6 +1,4 @@
 aggiungi capitolo/sezione di spiegazione dei simboli e della notazione
 
-crea macro per il testo degli esercizi (\exer{titolo}{label}{testo}{soluzione})
-
 inserisci "thm:", "sec:", "cor:", ecc. nei label
 
