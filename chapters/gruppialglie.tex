@@ -4364,27 +4364,27 @@ Fin'ora sappiamo solo che $ \sigma_{t}^{\xi}(g) $ dipende in modo liscio da $ t 
 
 \subsection{Sottogruppi a un parametro di un gruppo di Lie}
 
-Sia $ G $ un gruppo di Lie, un'applicazione liscia $ \phi : \R \to G $ è chiamata \textit{sottogruppo a un parametro di} $ G $ se vale
+Sia $ G $ un gruppo di Lie, un'applicazione liscia $ \varphi : \R \to G $ è chiamata \textit{sottogruppo a un parametro di} $ G $ se vale
 
 \begin{equation}
-	\phi(t+s) = \phi(t) \cdot \phi(s) \qcomma \forall t,s \in \R
+	\varphi(t+s) = \varphi(t) \cdot \varphi(s) \qcomma \forall t,s \in \R
 \end{equation}
 
-cioè $ \phi $ è un omomorfismo di gruppi di Lie tra $ (\R,+) $ e $ G $. L'applicazione $ \phi $ è chiamata così poiché l'immagine $ \phi(\R) $ è un sottogruppo algebrico di $ G $ isomorfo al gruppo $ (\R,+) $.\\
+cioè $ \varphi $ è un omomorfismo di gruppi di Lie tra $ (\R,+) $ e $ G $. L'applicazione $ \varphi $ è chiamata così poiché l'immagine $ \varphi(\R) $ è un sottogruppo algebrico di $ G $ isomorfo al gruppo $ (\R,+) $.\\
 Ad esempio, $ \gamma^{\xi}(t) = \exp(t \xi) $ definisce un sottogruppo a un parametro di $ G $.
 
 \begin{definition}
-	Sia $ \phi : \R \to G $ un sottogruppo a un parametro di un gruppo di Lie $ G $ tale che
+	Sia $ \varphi : \R \to G $ un sottogruppo a un parametro di un gruppo di Lie $ G $ tale che
 	
 	\begin{equation}
-		\phi'(0) = \eval{ \dv{t} \phi(t) }_{t=0} %
+		\varphi'(0) = \eval{ \dv{t} \varphi(t) }_{t=0} %
 		= \xi \in T_{e}(G)
 	\end{equation}
 	
 	allora
 	
 	\begin{equation}
-		\phi(t) = \exp (t \xi) \qcomma \forall t \in \R
+		\varphi(t) = \exp (t \xi) \qcomma \forall t \in \R
 	\end{equation}
 \end{definition}
 
@@ -4397,21 +4397,21 @@ Ad esempio, $ \gamma^{\xi}(t) = \exp(t \xi) $ definisce un sottogruppo a un para
 	
 	\map{q}
 		{\R}{G}
-		{t}{\phi(t) \exp(-t \xi)}
+		{t}{\varphi(t) \exp(-t \xi)}
 		
-	Osserviamo che $ \phi(0) = e $ in quanto omomorfismo di gruppi di Lie (manda l'elemento neutro di $ \R $ in quello di $ G $) e dunque
+	Osserviamo che $ \varphi(0) = e $ in quanto omomorfismo di gruppi di Lie (manda l'elemento neutro di $ \R $ in quello di $ G $) e dunque
 	
 	\begin{equation}
-		q(0) \doteq \phi(0) \exp(0) = e
+		q(0) \doteq \varphi(0) \exp(0) = e
 	\end{equation}
 	
 	Calcoliamo il vettore tangente alla curva $ q(t) $
 	
 	\begin{align}
 		\begin{split}
-			\dv{t} q(t) &= \dv{t} \phi(t) \exp(-t \xi) \\
-			&= \eval{ \dv{s} \phi(t+s) \exp(- (t+s) \xi) }_{s=0} \\
-			&= \eval{ \dv{s} \phi(t) \phi(s) \exp(-s \xi) \exp(-t \xi) }_{s=0}
+			\dv{t} q(t) &= \dv{t} \varphi(t) \exp(-t \xi) \\
+			&= \eval{ \dv{s} \varphi(t+s) \exp(- (t+s) \xi) }_{s=0} \\
+			&= \eval{ \dv{s} \varphi(t) \varphi(s) \exp(-s \xi) \exp(-t \xi) }_{s=0}
 		\end{split}
 	\end{align}
 
@@ -4424,18 +4424,18 @@ Ad esempio, $ \gamma^{\xi}(t) = \exp(t \xi) $ definisce un sottogruppo a un para
 	dove
 	
 	\begin{equation}
-		Q^{\xi}_{t}(g) \doteq (L_{\phi(t)} \circ R_{\exp(-t \xi)})(g) = \phi(t) \, g \, \exp(-t \xi)
+		Q^{\xi}_{t}(g) \doteq (L_{\varphi(t)} \circ R_{\exp(-t \xi)})(g) = \varphi(t) \, g \, \exp(-t \xi)
 	\end{equation}
 	
 	possiamo scrivere, usando la definizione di differenziale e la moltiplicazione $ \mu $ di $ G $
 	
 	\begin{align}
 		\begin{split}
-			\dv{t} q(t) &= \eval{ \dv{s} \phi(t) \phi(s) \exp(-s \xi) \exp(-t \xi) }_{s=0} \\
-			&= \eval{ \dv{s} Q^{\xi}_{t} (\phi(s) \exp(-s \xi)) }_{s=0} \\
-			&= (Q^{\xi}_{t})_{*e} \left( \eval{ \dv{s} \phi(s) \exp(-s \xi) }_{s=0} \right) \\
-			&= (Q^{\xi}_{t})_{*e} \left( \eval{ \dv{s} \mu(\phi(s), \exp(-s \xi)) }_{s=0} \right) \\
-			&= (Q^{\xi}_{t})_{*e} \left( \mu_{*(e,e)} \left( \eval{ \dv{s} \phi(s) }_{s=0}, \eval{ \dv{s} \exp(-s \xi) }_{s=0} \right) \right)
+			\dv{t} q(t) &= \eval{ \dv{s} \varphi(t) \varphi(s) \exp(-s \xi) \exp(-t \xi) }_{s=0} \\
+			&= \eval{ \dv{s} Q^{\xi}_{t} (\varphi(s) \exp(-s \xi)) }_{s=0} \\
+			&= (Q^{\xi}_{t})_{*e} \left( \eval{ \dv{s} \varphi(s) \exp(-s \xi) }_{s=0} \right) \\
+			&= (Q^{\xi}_{t})_{*e} \left( \eval{ \dv{s} \mu(\varphi(s), \exp(-s \xi)) }_{s=0} \right) \\
+			&= (Q^{\xi}_{t})_{*e} \left( \mu_{*(e,e)} \left( \eval{ \dv{s} \varphi(s) }_{s=0}, \eval{ \dv{s} \exp(-s \xi) }_{s=0} \right) \right)
 		\end{split}
 	\end{align}
 
@@ -4449,7 +4449,7 @@ Ad esempio, $ \gamma^{\xi}(t) = \exp(t \xi) $ definisce un sottogruppo a un para
 	
 	\begin{align}
 		\begin{split}
-			\mu_{*(e,e)} \left( \eval{ \dv{s} \phi(s) }_{s=0}, \eval{ \dv{s} \exp(-s \xi) }_{s=0} \right) &= \left( \xi, \eval{ \dv{s} \gamma^{-\xi}(s) }_{s=0} \right) \\
+			\mu_{*(e,e)} \left( \eval{ \dv{s} \varphi(s) }_{s=0}, \eval{ \dv{s} \exp(-s \xi) }_{s=0} \right) &= \left( \xi, \eval{ \dv{s} \gamma^{-\xi}(s) }_{s=0} \right) \\
 			&= \mu_{*(e,e)} (\xi, -\xi) \\
 			&= \xi - \xi \\
 			&= 0
@@ -4465,7 +4465,7 @@ Ad esempio, $ \gamma^{\xi}(t) = \exp(t \xi) $ definisce un sottogruppo a un para
 	cioè la curva $ q(t) $ è costante (usiamo il suo valore in $ q(0) = e $), quindi
 	
 	\begin{equation}
-		\phi(t) \exp(-t \xi) = q(t) = e \qcomma \forall t \in \R \implies \phi(t) = \exp(t \xi)
+		\varphi(t) \exp(-t \xi) = q(t) = e \qcomma \forall t \in \R \implies \varphi(t) = \exp(t \xi)
 	\end{equation}
 
 	in quanto $ \exp(t \xi) = \exp(-t \xi)^{-1} $.
@@ -4557,15 +4557,15 @@ Ad esempio, $ \gamma^{\xi}(t) = \exp(t \xi) $ definisce un sottogruppo a un para
 		F(\exp_{G}(t \xi)) = \exp_{H}(F_{*e}(t \xi)) \qcomma \forall t \in \R, \, \forall \xi \in T_{e}(G)
 	\end{equation}
 
-	Chiamiamo l'applicazione nel primo membro $ \phi_{1} $ e quella nel secondo $ \phi_{2} $ e osserviamo che queste applicazioni
+	Chiamiamo l'applicazione nel primo membro $ \varphi_{1} $ e quella nel secondo $ \varphi_{2} $ e osserviamo che queste applicazioni
 	
 	\sbs{0.5}{%
-				\map{\phi_{1}}
+				\map{\varphi_{1}}
 					{\R}{H}
 					{t}{F(\exp_{G}(t \xi))}
 				}
 		{0.5}{%
-				\map{\phi_{2}}
+				\map{\varphi_{2}}
 					{\R}{H}
 					{t}{\exp_{H}(F_{*e}(t \xi))}
 				}
@@ -4573,13 +4573,13 @@ Ad esempio, $ \gamma^{\xi}(t) = \exp(t \xi) $ definisce un sottogruppo a un para
 	sono sottogruppi a un parametro di $ H $, i.e.
 	
 	\begin{equation}
-		\phi_{j}(t+s) = \phi_{j}(t) \, \phi_{j}(s) \qcomma \forall t,s \in \R, \, j = 1,2
+		\varphi_{j}(t+s) = \varphi_{j}(t) \, \varphi_{j}(s) \qcomma \forall t,s \in \R, \, j = 1,2
 	\end{equation}
 	
 	tali che il loro vettore tangente in $ 0 $ sia
 	
 	\begin{equation}
-		\phi'_{1}(0) = \phi'_{2}(0) = F_{*e}(\xi) \in T_{e}(H)
+		\varphi'_{1}(0) = \varphi'_{2}(0) = F_{*e}(\xi) \in T_{e}(H)
 	\end{equation}
 
 	Per verificarlo, utilizziamo il fatto che $ F $ sia un omomorfismo, i.e. preservi la moltiplicazione, dunque
@@ -4587,21 +4587,21 @@ Ad esempio, $ \gamma^{\xi}(t) = \exp(t \xi) $ definisce un sottogruppo a un para
 	\sbs{0.5}{%
 				\begin{align}
 					\begin{split}
-						\phi_{1}(t+s) &= F(\exp_{G}((t+s) \xi)) \\
+						\varphi_{1}(t+s) &= F(\exp_{G}((t+s) \xi)) \\
 						&= F(\exp_{G}(t \xi) \exp_{G}(s \xi)) \\
 						&= F(\exp_{G}(t \xi)) \, F(\exp_{G}(s \xi)) \\
-						&= \phi_{1}(t) \, \phi_{1}(s)
+						&= \varphi_{1}(t) \, \varphi_{1}(s)
 					\end{split}
 				\end{align}
 				}
 		{0.5}{%
 				\begin{align}
 					\begin{split}
-						\phi_{2}(t+s) &= \exp_{H}(F_{*e}((t+s) \xi)) \\
+						\varphi_{2}(t+s) &= \exp_{H}(F_{*e}((t+s) \xi)) \\
 						&= \exp_{H}((t+s) F_{*e}(\xi)) \\
 						&= \exp_{H}(t F_{*e}(\xi)) \exp_{H}(s F_{*e}(\xi)) \\
 						&= \exp_{H}(F_{*e}(t \xi)) \exp_{H}(F_{*e}(s \xi)) \\
-						&= \phi_{2}(t) \, \phi_{2}(s)
+						&= \varphi_{2}(t) \, \varphi_{2}(s)
 					\end{split}
 				\end{align}
 				}
@@ -4611,7 +4611,7 @@ Ad esempio, $ \gamma^{\xi}(t) = \exp(t \xi) $ definisce un sottogruppo a un para
 	\sbs{0.5}{%
 				\begin{align}
 					\begin{split}
-						\phi'_{1}(0) &= \eval{ \dv{t} }_{0} F(\exp_{G}(t \xi)) \\
+						\varphi'_{1}(0) &= \eval{ \dv{t} }_{0} F(\exp_{G}(t \xi)) \\
 						&= F_{*e} \left( \eval{ \dv{t} }_{0} \exp_{G}(t \xi) \right) \\
 						&= F_{*e}(\xi)
 					\end{split}
@@ -4620,7 +4620,7 @@ Ad esempio, $ \gamma^{\xi}(t) = \exp(t \xi) $ definisce un sottogruppo a un para
 		{0.5}{%
 				\begin{align}
 					\begin{split}
-						\phi'_{2}(0) &= \eval{ \dv{t} }_{0} \exp_{H}(F_{*e}(t \xi)) \\
+						\varphi'_{2}(0) &= \eval{ \dv{t} }_{0} \exp_{H}(F_{*e}(t \xi)) \\
 						&= \eval{ \dv{t} }_{0} \exp_{H}(t F_{*e}(\xi)) \\
 						&= F_{*e}(\xi)
 					\end{split}
@@ -4628,7 +4628,7 @@ Ad esempio, $ \gamma^{\xi}(t) = \exp(t \xi) $ definisce un sottogruppo a un para
 				}
 	
 	in quanto il vettore tangente in $ 0 \in T_{e}(G) $ dell'esponenziale $ \exp(t \xi) $ è pari a $ \xi $.\\
-	A questo punto $ \phi_{1} $ e $ \phi_{2} $ sono due sottogruppi a un parametro su $ G $ entrambi costruiti a partire da $ F_{*e}(\xi) $, perciò coincidono, il che prova
+	A questo punto $ \varphi_{1} $ e $ \varphi_{2} $ sono due sottogruppi a un parametro su $ G $ entrambi costruiti a partire da $ F_{*e}(\xi) $, perciò coincidono, il che prova
 	
 	\begin{equation}
 		F(\exp_{G}(t \xi)) = \exp_{H}(F_{*e}(t \xi)) %
@@ -4646,7 +4646,7 @@ Ad esempio, $ \gamma^{\xi}(t) = \exp(t \xi) $ definisce un sottogruppo a un para
 
 \begin{corollary}\label{om-cont-smooth}
 	Sia $ F : G \to H $ un omomorfismo (algebrico) di gruppi di Lie continuo, allora $ F $ è liscio.\\
-	In particolare, un sottogruppo a un parametro di $ G $ si può definire come un'applicazione continua $ \phi : \R \to G $, in quanto questa sarà automaticamente liscia.
+	In particolare, un sottogruppo a un parametro di $ G $ si può definire come un'applicazione continua $ \varphi : \R \to G $, in quanto questa sarà automaticamente liscia.
 \end{corollary}
 
 \begin{proof}
@@ -4753,27 +4753,27 @@ Possiamo identificare $ M_{n}(\R) = T_{I}(GL_{n}(\R)) $, quindi l'esponenziale d
 	
 	\begin{equation}
 		\begin{cases}
-			\phi_{1}(t) \doteq e^{t A} \\
-			\phi_{2}(t) \doteq \exp(t A)
+			\varphi_{1}(t) \doteq e^{t A} \\
+			\varphi_{2}(t) \doteq \exp(t A)
 		\end{cases}
 	\end{equation}
 
 	dove, tramite l'identificazione $ M_{n}(\R) = T_{I}(GL_{n}(\R)) $
 	
 	\begin{equation}
-		\phi_{j} : \R \times T_{I}(GL_{n}(\R)) \to GL_{n}(\R) \qcomma j=1,2
+		\varphi_{j} : \R \times T_{I}(GL_{n}(\R)) \to GL_{n}(\R) \qcomma j=1,2
 	\end{equation}
 
-	Fissando $ A \in M_{n}(\R) $, le applicazioni $ \phi_{1}(t) $ e $ \phi_{2}(t) $ sono sottogruppi di Lie a un parametro di $ GL_{n}(\R) $, i.e.
+	Fissando $ A \in M_{n}(\R) $, le applicazioni $ \varphi_{1}(t) $ e $ \varphi_{2}(t) $ sono sottogruppi di Lie a un parametro di $ GL_{n}(\R) $, i.e.
 	
 	\begin{equation}
-		\phi_{j} : \R \to GL_{n}(\R) \qcomma j=1,2
+		\varphi_{j} : \R \to GL_{n}(\R) \qcomma j=1,2
 	\end{equation}
 	
 	e il loro vettore tangente nell'origine è la matrice $ A $, i.e.
 	
 	\begin{equation}
-		\phi'_{1}(0) = \phi'_{2}(0) = A
+		\varphi'_{1}(0) = \varphi'_{2}(0) = A
 	\end{equation}
 
 	in quanto valgono
@@ -5099,7 +5099,7 @@ Tramite il seguente teorema, otteniamo le condizioni per cui questo sia possibil
 			Uno spazio topologico è semplicemente connesso se è connesso per archi e se ogni curva chiusa può essere deformata fino a ridursi a un singolo punto; dato un gruppo di Lie qualsiasi, è sempre possibile costruire un gruppo di Lie semplicemente connesso a partire dal primo.%
 		} $ G $ tale che l'algebra di Lie associata a $ G $ coincida con $ \g $, i.e. $ Lie(G) = \g $;
 		
-		\item Siano $ G $ e $ H $ due gruppi di Lie con $ G $ semplicemente connesso, e $ Lie(G) $ e $ Lie(H) $ le corrispondenti algebre di Lie, se esiste un omomorfismo di algebre di Lie $ \phi : Lie(G) \to Lie(H) $ allora esiste un unico omomorfismo di gruppi di Lie $ F : G \to H $ tale che il suo differenziale sia uguale all'omomorfismo di algebre di Lie, i.e. $ F_{*e} = \phi $;
+		\item Siano $ G $ e $ H $ due gruppi di Lie con $ G $ semplicemente connesso, e $ Lie(G) $ e $ Lie(H) $ le corrispondenti algebre di Lie, se esiste un omomorfismo di algebre di Lie $ \varphi : Lie(G) \to Lie(H) $ allora esiste un unico omomorfismo di gruppi di Lie $ F : G \to H $ tale che il suo differenziale sia uguale all'omomorfismo di algebre di Lie, i.e. $ F_{*e} = \varphi $;
 		
 		\item Siano $ G $ un gruppo di Lie connesso e $ \h $ una sottoalgebra dell'algebra di Lie $ Lie(G) $, allora esiste un unico sottogruppo di Lie connesso $ H $ di $ G $ tale che la sua algebra di Lie sia $ \h $, i.e. $ Lie(H) = \h $.
 	\end{enumerate}
@@ -5208,7 +5208,7 @@ Esiste un diffeomorfismo\footnote{%
 	Vedi Esercizio \ref{BONUS3-2}.%
 } tra $ SU(2) $ e $ \S^{3} \subset \R^{4} = \C^{2} $
 
-\map{\phi}
+\map{\varphi}
 	{SU(2)}{\S^{3}}
 	{\bmqty{ a & b \\ - \bar{b} & \bar{a} }}{(a,b) \in \C^{2}}
 

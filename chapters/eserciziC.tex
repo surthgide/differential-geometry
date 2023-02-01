@@ -483,11 +483,11 @@ Dalle definizioni degli spazi in esame, possiamo derivare le seguenti definizion
 
 Consideriamo ora l'applicazione
 
-\map{\phi}
+\map{\varphi}
 	{\S^{1}}{SO(2)}
 	{e^{i \theta}}{\bmqty{ \cos(\theta) & \sin(\theta) \\ -\sin(\theta) & \cos(\theta) }}
 
-la quale è liscia in quanto composizione delle applicazioni lisce $ \phi = h \circ g \circ f $ definite come:
+la quale è liscia in quanto composizione delle applicazioni lisce $ \varphi = h \circ g \circ f $ definite come:
 
 \map{f}
 	{\S^{1}}{\R^{2}}
@@ -532,21 +532,21 @@ le quali sono lisce perché rispettivamente $ \psi $ è lineare, e valgono le co
 
 Se componiamo le applicazioni appena definite, otteniamo
 
-\map{\phi^{-1} \doteq \psi \circ i = \eval{\psi}_{SO(2)}}
+\map{\varphi^{-1} \doteq \psi \circ i = \eval{\psi}_{SO(2)}}
 	{SO(2)}{\S^{1}}
 	{\bmqty{ \cos(\theta) & \sin(\theta) \\ -\sin(\theta) & \cos(\theta) }}
 	{\cos(\theta) + i \sin(\theta) = e^{i \theta}}
 
-la quale è liscia perché composizione di applicazioni lisce e inoltre è inversa di $ \phi $. Avendo trovato un'applicazione liscia, invertibile, e con inversa liscia tra i due spazi, abbiamo dimostrato che i due sono diffeomorfi, i.e.
+la quale è liscia perché composizione di applicazioni lisce e inoltre è inversa di $ \varphi $. Avendo trovato un'applicazione liscia, invertibile, e con inversa liscia tra i due spazi, abbiamo dimostrato che i due sono diffeomorfi, i.e.
 
 \begin{equation}
 	\begin{cases}
-		\phi \in C^{\infty}(\S^{1}) \\\\
+		\varphi \in C^{\infty}(\S^{1}) \\\\
 		\begin{cases}
-			\phi \circ \phi^{-1} = \id_{\S^{1}} \\
-			\phi^{-1} \circ \phi = \id_{SO(2)}
+			\varphi \circ \varphi^{-1} = \id_{\S^{1}} \\
+			\varphi^{-1} \circ \varphi = \id_{SO(2)}
 		\end{cases} \\\\
-		\phi^{-1} \in C^{\infty}(SO(2))
+		\varphi^{-1} \in C^{\infty}(SO(2))
 	\end{cases}
 	\implies %
 	SO(2) \simeq \S^{1}
@@ -592,7 +592,7 @@ dove, per legare la prima definizione di $ \S^{3} $ alla seconda, si può consid
 
 Analogamente all'esercizio precedente, possiamo considerare l'applicazione liscia, invertibile e con inversa liscia:
 
-\map{\phi}
+\map{\varphi}
 	{\S^{3}}{SU(2)}
 	{(\alpha, \beta)}{\bmqty{ \alpha & - \bar{\beta} \\ \beta & \bar{\alpha} }}
 
@@ -1006,7 +1006,7 @@ con le proiezioni e i loro differenziali
 
 Consideriamo ora l'applicazione
 
-\map{\phi}
+\map{\varphi}
 	{\mathfrak{X}(G) \oplus \mathfrak{X}(H)}{\mathfrak{X}(G \times H)}
 	{(X,Y)}{X \oplus Y}
 
@@ -1033,10 +1033,10 @@ Questa applicazione è un omomorfismo di algebre di Lie in quanto
 
 \begin{align}
 	\begin{split}
-		\phi \left( [(X_{1},Y_{1}),(X_{2},Y_{2})] \right) &\doteq \phi \left( [X_{1},X_{2}], [Y_{1},Y_{2}] \right) \\
+		\varphi \left( [(X_{1},Y_{1}),(X_{2},Y_{2})] \right) &\doteq \varphi \left( [X_{1},X_{2}], [Y_{1},Y_{2}] \right) \\
 		&= [X_{1},X_{2}] \oplus [Y_{1},Y_{2}] \\
 		&= [X_{1} \oplus Y_{1}, X_{2} \oplus Y_{2}] \\
-		&= \left[ \phi(X_{1}, Y_{1}), \phi(X_{2}, Y_{2}) \right]
+		&= \left[ \varphi(X_{1}, Y_{1}), \varphi(X_{2}, Y_{2}) \right]
 	\end{split}
 \end{align}
 
@@ -1057,13 +1057,13 @@ A questo punto, siccome
 	\end{cases}
 \end{equation}
 
-possiamo considerare la restrizione di $ \phi $ alle algebre di Lie di
+possiamo considerare la restrizione di $ \varphi $ alle algebre di Lie di
 
 \begin{equation}
-	\eval{\phi}_{Lie(G) \oplus Lie(H)} : Lie(G) \oplus Lie(H) \to \mathfrak{X}(G \times H)
+	\eval{\varphi}_{Lie(G) \oplus Lie(H)} : Lie(G) \oplus Lie(H) \to \mathfrak{X}(G \times H)
 \end{equation}
 
-Dal momento che $ \phi $ è una bigezione in quanto omomorfismo ed è invertibile poiché le dimensioni di dominio e codominio sono identiche, i.e.
+Dal momento che $ \varphi $ è una bigezione in quanto omomorfismo ed è invertibile poiché le dimensioni di dominio e codominio sono identiche, i.e.
 
 \begin{equation}
 	\dim(Lie(G) \oplus Lie(H)) = \dim(\mathfrak{X}(G) \oplus \mathfrak{X}(H)) %
@@ -1071,7 +1071,7 @@ Dal momento che $ \phi $ è una bigezione in quanto omomorfismo ed è invertibil
 	= \dim(Lie(G \times H))
 \end{equation}
 
-allora $ \psi $, essendo una restrizione di $ \phi $, deve essere solo definita perché sia un isomorfismo, i.e.
+allora $ \psi $, essendo una restrizione di $ \varphi $, deve essere solo definita perché sia un isomorfismo, i.e.
 
 \begin{equation}
 	\psi(Lie(G) \oplus Lie(H)) \subset Lie(G \times H)
@@ -1185,7 +1185,7 @@ questo permette di riscrivere la condizione di trivialità del fibrato tangente 
 
 Consideriamo quindi l'applicazione
 
-\map{\phi}
+\map{\varphi}
 	{G \times T_{e}(G)}{T(G)}
 	{(g, \xi)}{(L_{g})_{*}(\xi)}
 
@@ -1195,9 +1195,9 @@ dal momento che i campi di vettori dello spazio tangente a un gruppo di Lie sono
 	(L_{g})_{*}(\xi) = \xi \qcomma \forall \xi \in T_{e}(G) \stackrel{iso}{\simeq} L(G)
 \end{equation}
 
-possiamo scrivere $ \phi(g, \xi) = \xi $.\\
-Perché $ \phi $ sia un isomorfismo di spazi vettoriali è necessario che sia una bigezione e che sia $ \R $-lineare.\\
-Per dimostrare che sia una bigezione, è sufficiente dimostrare che possieda un'inversa destra (i.e. sia suriettiva, perciò $ \Im(\phi) = T(G) $) in quanto, per il teorema della dimensione e per il fatto che dominio e codominio hanno la stessa dimensione, i.e.
+possiamo scrivere $ \varphi(g, \xi) = \xi $.\\
+Perché $ \varphi $ sia un isomorfismo di spazi vettoriali è necessario che sia una bigezione e che sia $ \R $-lineare.\\
+Per dimostrare che sia una bigezione, è sufficiente dimostrare che possieda un'inversa destra (i.e. sia suriettiva, perciò $ \Im(\varphi) = T(G) $) in quanto, per il teorema della dimensione e per il fatto che dominio e codominio hanno la stessa dimensione, i.e.
 
 \begin{equation}
 	\dim(G \times T_{e}(G)) = \dim(T(G)) = 2 \dim(G)
@@ -1207,9 +1207,9 @@ da cui
 
 \begin{align}
 	\begin{split}
-		\dim(\Im(\phi)) + \dim(\ker(\phi)) &= \dim(G \times T_{e}(G))\\
-		\cancel{ \dim(T(G)) } + \dim(\ker(\phi)) &= \cancel{ \dim(G \times T_{e}(G)) }\\
-		\dim(\ker(\phi)) &= 0
+		\dim(\Im(\varphi)) + \dim(\ker(\varphi)) &= \dim(G \times T_{e}(G))\\
+		\cancel{ \dim(T(G)) } + \dim(\ker(\varphi)) &= \cancel{ \dim(G \times T_{e}(G)) }\\
+		\dim(\ker(\varphi)) &= 0
 	\end{split}
 \end{align}
 
@@ -1237,23 +1237,23 @@ questo mostra che la dimensione del nucleo sia nulla e dunque che sia anche inie
 			}
 
 \begin{gather}
-	(\phi \circ \psi)(\xi) = (\phi \circ ((\pi_{G} \times i^{-1}) \circ \Delta))(\xi) %
-	= \phi ((\pi_{G} \times i^{-1})(\xi,\xi)) %
-	= \phi(g,\xi) %
+	(\varphi \circ \psi)(\xi) = (\varphi \circ ((\pi_{G} \times i^{-1}) \circ \Delta))(\xi) %
+	= \varphi ((\pi_{G} \times i^{-1})(\xi,\xi)) %
+	= \varphi(g,\xi) %
 	= \xi %
 	\qcomma \forall \xi \in T(G) \nonumber \\
 	\Downarrow \\
-	\phi \circ \psi = \id_{T(G)} \nonumber
+	\varphi \circ \psi = \id_{T(G)} \nonumber
 \end{gather}
 
 Per la $ \R $-linearità:
 
 \begin{align}
 	\begin{split}
-		\phi(\alpha (g,\xi) + \beta (h,\eta)) &= \phi((\alpha g,\alpha \xi) + (\beta h,\beta \eta)) \\
-		&= \phi((\alpha g + \beta h,\alpha \xi + \beta \eta)) \\
+		\varphi(\alpha (g,\xi) + \beta (h,\eta)) &= \varphi((\alpha g,\alpha \xi) + (\beta h,\beta \eta)) \\
+		&= \varphi((\alpha g + \beta h,\alpha \xi + \beta \eta)) \\
 		&= \alpha \xi + \beta \eta \\
-		&= \alpha \phi(g,\xi) + \beta \phi(h,\eta)
+		&= \alpha \varphi(g,\xi) + \beta \varphi(h,\eta)
 	\end{split} %
 	\qquad %
 	\begin{cases}
@@ -1262,8 +1262,8 @@ Per la $ \R $-linearità:
 	\end{cases}
 \end{align}
 
-con la moltiplicazione per scalare e la somma standard del dominio e del codominio di $ \phi $.\\
-A questo punto, per il ragionamento precedente, l'applicazione $ \phi $ è una bigezione $ \R $-lineare, dunque un isomorfismo di spazi vettoriali, i.e. vale per qualsiasi gruppo di Lie $ G $ il seguente isomorfismo
+con la moltiplicazione per scalare e la somma standard del dominio e del codominio di $ \varphi $.\\
+A questo punto, per il ragionamento precedente, l'applicazione $ \varphi $ è una bigezione $ \R $-lineare, dunque un isomorfismo di spazi vettoriali, i.e. vale per qualsiasi gruppo di Lie $ G $ il seguente isomorfismo
 
 \begin{equation}
 	T(G) \stackrel{iso}{\simeq} G \times T_{e}(G)
