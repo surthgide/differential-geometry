@@ -139,6 +139,26 @@
 
 %
 
+% exercise macro
+
+% \exer{[title]}{[label]}{[exercise text]}{[solution]}
+
+\newcommand{\exer}[4]{
+	\section{#1}\label{#2}
+	
+	\begin{tcolorbox}
+		#3
+	\end{tcolorbox}
+	
+	#4
+	
+	%
+	
+	\newpage
+}
+
+%
+
 \renewcommand{\contentsname}{Indice}
 
 \makeatletter

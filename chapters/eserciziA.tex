@@ -1,40 +1,37 @@
-\section{Funzione $ C^{k}(\R) $ ma non $ C^{k+1}(\R) $}\label{es1-1}
-
-\begin{tcolorbox}
-	Per ogni numero naturale $ k \in \N $ costruire una funzione $ C^{k}(\R) $ ma non $ C^{k+1}(\R) $.
-\end{tcolorbox}
-
+\exer{Funzione $ C^{k}(\R) $ ma non $ C^{k+1}(\R) $}
+{es1-1}
+{%
+Per ogni numero naturale $ k \in \N $ costruire una funzione $ C^{k}(\R) $ ma non $ C^{k+1}(\R) $. %
+}
+{
 Per la funzione
 
 \map{f_{k}}
-	{\R}{\R}
-	{x}{\alpha x^{k(k+2)/(k+1)} + \beta}
+{\R}{\R}
+{x}{\alpha x^{k(k+2)/(k+1)} + \beta}
 
 per $ \forall \alpha,\beta \in \R $ e con $ k \in \N $, vale $ f_{k} \in C^{k}(\R) $ ma $ f_{k} \notin C^{k+1}(\R) $.
+}
 
-%
+%=======================================================================================
 
-\newpage
+\exer{Funzione liscia ma non reale analitica}
+{es1-2}
+{
+Dimostrare che la funzione
 
-%
+\map{f}
+{\R}{\R}
+{x}{%
+	\begin{cases}
+		e^{\sfrac{-1}{x^{2}}} & x \neq 0\\
+		0 & x = 0
+	\end{cases}
+}
 
-\section{Funzione liscia ma non reale analitica}\label{es1-2}
-
-\begin{tcolorbox}
-	Dimostrare che la funzione
-	
-	\map{f}
-		{\R}{\R}
-		{x}{%
-			\begin{cases}
-				e^{\sfrac{-1}{x^{2}}} & x \neq 0\\
-				0 & x = 0
-			\end{cases}
-			}
-	
-	risulta essere liscia ma non reale analitica.
-\end{tcolorbox}
-
+risulta essere liscia ma non reale analitica.
+}
+{
 La funzione $ f $ è liscia in quanto, perché lo sia, è necessario che
 
 \begin{equation}
@@ -54,27 +51,24 @@ La funzione non è però reale analitica perché, in un intervallo aperto qualsi
 \begin{equation}
 	\sum_{k=0}^{+\infty} \left( \pdv[k]{x} \left( e^{\sfrac{-1}{x^{2}}} \right) \right) \dfrac{x^{k}}{k!} \neq 0 \qcomma \forall x \in U \setminus \{0\}
 \end{equation}
+}
 
-%
+%=======================================================================================
 
-\newpage
+\exer{Intervalli diffeomorfi a $ \R $}
+{es1-3}
+{
+Siano $ a,b,c,d \in \R $ tale che $ a<b $. Dimostrare che i seguenti intervalli sono tutti diffeomorfi tra loro e diffeomorfi a $ \R $:
 
-%
-
-\section{Intervalli diffeomorfi a $ \R $}\label{es1-3}
-
-\begin{tcolorbox}
-	Siano $ a,b,c,d \in \R $ tale che $ a<b $. Dimostrare che i seguenti intervalli sono tutti diffeomorfi tra loro e diffeomorfi a $ \R $:
-	
-	\begin{equation}
-		\begin{cases}
-			(a,b)\\
-			(c,+\infty)\\
-			(-\infty,d)
-		\end{cases}
-	\end{equation}
-\end{tcolorbox}
-
+\begin{equation}
+	\begin{cases}
+		(a,b)\\
+		(c,+\infty)\\
+		(-\infty,d)
+	\end{cases}
+\end{equation}
+}
+{
 Consideriamo le applicazioni:
 
 \sbs{0.5}{%
@@ -90,7 +84,7 @@ Consideriamo le applicazioni:
 			\map{h}
 				{(0,1)}{(-\infty,d)}
 				{x}{\ln(x)-d}
-			
+	
 			\map{i}
 				{(c,+\infty)}{\R}
 				{x}{\ln(x-c)}
@@ -100,37 +94,35 @@ Queste sono diffeomorfismi in quanto bigezioni lisce con inversa liscia, dunque 
 
 \begin{equation}
 	\begin{cases}
-		g \circ f \implies (a,b) \simeq (c,+\infty)\\
-		h \circ f \implies (a,b) \simeq (-\infty,d)\\
-		i \circ g \circ f \implies (a,b) \simeq \R\\
-		h \circ g^{-1} \implies (c,+\infty) \simeq (-\infty,d)\\
-		i \implies (c,+\infty) \simeq \R\\
+		g \circ f \implies (a,b) \simeq (c,+\infty) \\
+		h \circ f \implies (a,b) \simeq (-\infty,d) \\
+		i \circ g \circ f \implies (a,b) \simeq \R \\
+		h \circ g^{-1} \implies (c,+\infty) \simeq (-\infty,d) \\
+		i \implies (c,+\infty) \simeq \R \\
 		i \circ g \circ h^{-1} \implies (-\infty,d) \simeq \R
 	\end{cases}
 \end{equation}
+}
 
-%
+%=======================================================================================
 
-\newpage
+\exer{Diffeomorfismo tra $ B_{r}(c) $ e $ \R^{n} $}
+{es1-4}
+{
+Dimostrare che l'applicazione
 
-%
+\map{h}
+	{B_{1}(0)}{\R^{n}}
+	{x}{\left( \dfrac{x^{1}}{\sqrt{1 - \norm{x}^{2}}}, \cdots, \dfrac{x^{n}}{\sqrt{1 - \norm{x}^{2}}} \right)}
 
-\section{Diffeomorfismo tra $ B_{r}(c) $ e $ \R^{n} $}\label{es1-4}
-
-\begin{tcolorbox}
-	Dimostrare che l'applicazione
-	
-	\map{h}
-		{B_{1}(0)}{\R^{n}}
-		{x}{\left( \dfrac{x^{1}}{\sqrt{1 - \norm{x}^{2}}}, \cdots, \dfrac{x^{n}}{\sqrt{1 - \norm{x}^{2}}} \right)}
-	
-	definisce un diffeomorfismo tra la palla aperta unitaria centrata nell'origine di $ \R^{n} $ e $ \R^{n} $. Dedurre che la palla aperta di centro $ c \in \R^{n} $ e raggio $ r > 0 $ in $ \R^{n} $ è diffeomorfa a $ \R^{n} $.
-\end{tcolorbox}
-
+definisce un diffeomorfismo tra la palla aperta unitaria centrata nell'origine di $ \R^{n} $ e $ \R^{n} $. Dedurre che la palla aperta di centro $ c \in \R^{n} $ e raggio $ r > 0 $ in $ \R^{n} $ è diffeomorfa a $ \R^{n} $.
+}
+{
 L'applicazione $ h $ è una bigezione liscia in quanto ogni sua componente è liscia poiché
 
 \begin{equation}
-	\pdv[k]{(x^{i})} \left( \dfrac{x^{i}}{\sqrt{ 1-\norm{x}^{2} }} \right) < \infty \qcomma \forall k \in \N, \, \forall x \in B_{1}(0), \, \forall i=1,\dots,n
+	\pdv[k]{(x^{i})} \left( \dfrac{x^{i}}{\sqrt{ 1-\norm{x}^{2} }} \right) < \infty %
+	\qcomma \forall k \in \N, \, \forall x \in B_{1}(0), \, \forall i=1,\dots,n
 \end{equation}
 
 La sua inversa
@@ -153,23 +145,20 @@ con $ c = (c^{1},\dots,c^{n}) $, e la componiamo con $ h $, otteniamo
 	{x}{\left( \dfrac{\dfrac{x^{1} - c^{1}}{r}}{\sqrt{1 + \norm{\dfrac{x-c}{r}}^{2}}}, \cdots, \dfrac{\dfrac{x^{n} - c^{n}}{r}}{\sqrt{1 + \norm{\dfrac{x-c}{r}}^{2}}} \right)}
 
 L'applicazione $ f $ è un diffeomorfismo in quanto composizione di diffeomorfismi, dunque $ f $ induce il diffeomorfismo $ B_{r}(c) \simeq \R^{n} $.
+}
 
-%
+%=======================================================================================
 
-\newpage
+\exer{Teorema di Taylor con resto per funzione a due variabili}
+{es1-5}
+{
+Sia $ f \in C^{\infty}(\R^{2}) $. Usando il teorema di Taylor con resto, dimostrare che esistono $ g_{11},g_{12},g_{22} \in C^{\infty}(\R^{2}) $ tali che
 
-%
-
-\section{Teorema di Taylor con resto per funzione a due variabili}\label{es1-5}
-
-\begin{tcolorbox}
-	Sia $ f \in C^{\infty}(\R^{2}) $. Usando il teorema di Taylor con resto, dimostrare che esistono $ g_{11},g_{12},g_{22} \in C^{\infty}(\R^{2}) $ tali che
-	
-	\begin{equation}
-		f(x,y) = f(0,0) + x \, \dfrac{\partial f}{\partial x} (0,0) + y \, \dfrac{\partial f}{\partial y} (0,0) + x^{2} \, g_{11}(x,y) + x y \, g_{12}(x,y) + y^{2} \, g_{22}(x,y)
-	\end{equation}
-\end{tcolorbox}
-
+\begin{equation}
+	f(x,y) = f(0,0) + x \, \dfrac{\partial f}{\partial x} (0,0) + y \, \dfrac{\partial f}{\partial y} (0,0) + x^{2} \, g_{11}(x,y) + x y \, g_{12}(x,y) + y^{2} \, g_{22}(x,y)
+\end{equation}
+}
+{
 Dal teorema di Taylor con resto, se $ f \in C^{\infty} (\R^{2}) $ ($ \R^{2} $ è stellato rispetto all'origine), abbiamo che
 
 \begin{equation}
@@ -185,64 +174,59 @@ definite come
 tali che
 
 \begin{equation}
-	f(x,y) = f(0,0) + \sum_{m=1}^{k} \sum_{\substack{i_{1},\dots,i_{k}=1 \\ {i_{k}} > \cdots > i_{1}}}^{m} g_{i_{1} \cdots i_{k}} (x,y) \prod_{j=1}^{k} x^{i_{j}} \qcomma \forall k \in \N
+	f(x,y) = f(0,0) + \sum_{m=1}^{k} \sum_{\substack{i_{1},\dots,i_{k}=1 \\ {i_{k}} > \cdots > i_{1}}}^{m} g_{i_{1} \cdots i_{k}} (x,y) \prod_{j=1}^{k} x^{i_{j}} %
+	\qcomma \forall k \in \N
 \end{equation}
 
 Espandendo quest'ultima forma per $ k=1 $ otteniamo
 
 \begin{align}
 	\begin{split}
-		f(x,y) &= f(0,0) + x \, g_{1} (x,y) + y \, g_{2} (x,y)\\
-		&= f(0,0) + x \, g_{1} (0,0) + y \, g_{2} (0,0) + x^{2} \, g_{11}(x,y) + x y \, g_{12}(x,y) + y^{2} \, g_{22}(x,y)\\
+		f(x,y) &= f(0,0) + x \, g_{1} (x,y) + y \, g_{2} (x,y) \\
+		&= f(0,0) + x \, g_{1} (0,0) + y \, g_{2} (0,0) + x^{2} \, g_{11}(x,y) + x y \, g_{12}(x,y) + y^{2} \, g_{22}(x,y) \\
 		&= f(0,0) + x \, \dfrac{\partial f}{\partial x} (0,0) + y \, \dfrac{\partial f}{\partial y} (0,0) + x^{2} \, g_{11}(x,y) + x y \, g_{12}(x,y) + y^{2} \, g_{22}(x,y)
 	\end{split}
 \end{align}
 
-dove gli ultimi 3 termini indicano il resto.
+dove gli ultimi tre termini indicano il resto.
+}
 
-%
+%=======================================================================================
 
-\newpage
+\exer{Funzione liscia tramite incollamento}
+{es1-6}
+{
+Sia $ f \in C^{\infty} (\R^{2}) $ tale che
 
-%
+\begin{equation}
+	f(0,0) = \pdv{f}{x} \, (0,0) = \pdv{f}{y} \, (0,0) = 0
+\end{equation}
 
-\section{Funzione liscia tramite incollamento}\label{es1-6}
+Sia l'applicazione
 
-\begin{tcolorbox}
-	Sia $ f \in C^{\infty} (\R^{2}) $ tale che
-	
-	\begin{equation}
-		f(0,0) = \pdv{f}{x} \, (0,0) = \pdv{f}{y} \, (0,0) = 0
-	\end{equation}
-	
-	Sia l'applicazione
-	
-	\map{g}
-		{\R^{2}}{\R}
-		{(t,u)}{%
-				\begin{cases}
-					\dfrac{f(t,tu)}{t} & t \neq 0\\\\
-					0 & t = 0
-				\end{cases}
-				}
-	
-	Dimostrare che $ g \in C^{\infty}(\R^{2}) $.
-\end{tcolorbox}
+\map{g}
+	{\R^{2}}{\R}
+	{(t,u)}{%
+			\begin{cases}
+				\dfrac{f(t,tu)}{t} & t \neq 0 \\\\
+				0 & t = 0
+			\end{cases}
+			}
 
+Dimostrare che $ g \in C^{\infty}(\R^{2}) $.
+}
+{
 qui
+}
 
-%
+%=======================================================================================
 
-\newpage
-
-%
-
-\section{$ C_{p}^{\infty}(\R^{n}) $ come algebra commutativa e unitaria}\label{es1-7}
-
-\begin{tcolorbox}
-	Dimostrare che l'insieme $ C_{p}^{\infty}(\R^{n}) $ dei germi delle funzioni lisce intorno a $ p \in \R^{n} $ con le operazioni di somma e di prodotto definite negli appunti è un'algebra commutativa e unitaria.
-\end{tcolorbox}
-
+\exer{$ C_{p}^{\infty}(\R^{n}) $ come algebra commutativa e unitaria}
+{es1-7}
+{
+Dimostrare che l'insieme $ C_{p}^{\infty}(\R^{n}) $ dei germi delle funzioni lisce intorno a $ p \in \R^{n} $ con le operazioni di somma e di prodotto definite negli appunti è un'algebra commutativa e unitaria.
+}
+{
 L'algebra $ A = (C_{p}^{\infty}(\R^{n}),+,\cdot) $ ha le operazioni definite come segue:
 
 \map{+}
@@ -258,10 +242,10 @@ Per la distributività sinistra:
 
 \begin{align}
 	\begin{split}
-		([(f,U)] + [(g,V)]) \cdot [(h,W)] &= [(f+g,U \cap V)] \cdot [(h,W)]\\
-		&= [((f+g) h,U \cap V \cap W)]\\
-		&= [(fh + gh,U \cap V \cap W)]\\
-		&= [(fh,U \cap W)] + [(gh,V \cap W)]\\
+		([(f,U)] + [(g,V)]) \cdot [(h,W)] &= [(f+g,U \cap V)] \cdot [(h,W)] \\
+		&= [((f+g) h,U \cap V \cap W)] \\
+		&= [(fh + gh,U \cap V \cap W)] \\
+		&= [(fh,U \cap W)] + [(gh,V \cap W)] \\
 		&= [(f,U)] \cdot [(h,W)] + [(g,V)] \cdot [(h,W)]
 	\end{split}
 \end{align}
@@ -269,83 +253,88 @@ Per la distributività sinistra:
 per $ \forall [(f,U)], [(g,V)], [(h,W)] \in C_{p}^{\infty}(\R^{n}) $.\\
 La distributività destra deriva immediatamente dalla distributività sinistra e dalla commutatività (condizione non necessaria per un'algebra): quest'ultima può essere verificata tramite i seguenti passaggi
 
-\begin{align}
-	\begin{split}
-		[(f,U)] + [(g,V)] &= [(f+g,U \cap V)]\\
-		&= [(g+f,V \cap U)]\\
-		&= [(g,V)] + [(f,U)]\\\\
-		%
-		[(f,U)] \cdot [(g,V)] &= [(fg,U \cap V)]\\
-		&= [(gf,V \cap U)]\\
-		&= [(g,V)] \cdot [(f,U)]
-	\end{split}
-\end{align}
+\sbs{0.5}{%
+			\begin{align}
+				\begin{split}
+					[(f,U)] + [(g,V)] &= [(f+g,U \cap V)] \\
+					&= [(g+f,V \cap U)] \\
+					&= [(g,V)] + [(f,U)]
+				\end{split}
+			\end{align}
+			}
+	{0.5}{%
+			\begin{align}
+				\begin{split}
+					[(f,U)] \cdot [(g,V)] &= [(fg,U \cap V)] \\
+					&= [(gf,V \cap U)] \\
+					&= [(g,V)] \cdot [(f,U)]
+				\end{split}
+			\end{align}
+			}
 
-per $ \forall [(f,U)], [(g,V)] \in C_{p}^{\infty}(\R^{n}) $.\\
+per qualsiasi $ [(f,U)], [(g,V)] \in C_{p}^{\infty}(\R^{n}) $.\\
 Per l'omogeneità:
 
 \begin{align}
 	\begin{split}
-		\lambda ([(f,U)] \cdot [(g,V)]) &= \lambda [(fg,U \cap V)]\\
-		&= [(\lambda fg,V \cap U)]\\
-		&= [(\lambda f,U)] \cdot [(g,V)]\\
+		\lambda ([(f,U)] \cdot [(g,V)]) &= \lambda [(fg,U \cap V)] \\
+		&= [(\lambda fg,V \cap U)] \\
+		&= [(\lambda f,U)] \cdot [(g,V)] \\
 		&= [(f,U)] \cdot [(\lambda g,V)]
 	\end{split}
 \end{align}
 
-per $ \forall [(f,U)], [(g,V)] \in C_{p}^{\infty}(\R^{n}) $ e $ \forall \lambda \in \R $.\\
+per qualsiasi $ [(f,U)], [(g,V)] \in C_{p}^{\infty}(\R^{n}) $ e qualsiasi $ \lambda \in \R $.\\
 Infine l'unitarietà, i.e.
 
 \begin{equation}
-	\E e = [(1,U)] \in C_{p}^{\infty}(\R^{n}) \mid [(f,U)] \cdot e = e \cdot [(f,U)] = [(f,U)] \qcomma \forall [(f,U)] \in C_{p}^{\infty}(\R^{n})
+	\E e = [(1,U)] \in C_{p}^{\infty}(\R^{n}) \mid [(f,U)] \cdot e = e \cdot [(f,U)] = [(f,U)] %
+	\qcomma \forall [(f,U)] \in C_{p}^{\infty}(\R^{n})
 \end{equation}
 
 può essere verificata tramite i seguenti passaggi:
 
 \begin{align}
 	\begin{split}
-		[(f,U)] \cdot [(1,U)] &= [(f \cdot 1,U \cap U)]\\
-		&= [(1 \cdot f,U \cap U)]\\
-		&= [(1,U)] \cdot [(f,U)]\\
+		[(f,U)] \cdot [(1,U)] &= [(f \cdot 1,U \cap U)] \\
+		&= [(1 \cdot f,U \cap U)] \\
+		&= [(1,U)] \cdot [(f,U)] \\
 		&= [(f,U)]
 	\end{split}
 \end{align}
+}
 
-%
+%=======================================================================================
 
-\newpage
-
-%
-
-\section{$ \der_{p}(C_{p}^{\infty}(\R^{n})) $ come spazio vettoriale su $ \R $}\label{es1-8}
-
-\begin{tcolorbox}
-	Dimostrare che l'insieme $ \der_{p}(C_{p}^{\infty}(\R^{n})) $ delle derivazioni puntuali con le operazioni definite negli appunti è uno spazio vettoriale su $ \R $.
-\end{tcolorbox}
-
+\exer{$ \der_{p}(C_{p}^{\infty}(\R^{n})) $ come spazio vettoriale su $ \R $}
+{es1-8}
+{
+Dimostrare che l'insieme $ \der_{p}(C_{p}^{\infty}(\R^{n})) $ delle derivazioni puntuali con le operazioni definite negli appunti è uno spazio vettoriale su $ \R $.
+}
+{
 Per dimostrare che $ \der_{p}(C_{p}^{\infty}(\R^{n})) $ sia uno spazio vettoriale su $ \R $ è necessario che le operazioni di somma tra derivazioni e moltiplicazione per scalari rispettino i seguenti 8 assiomi:
 
 \begin{equation}
 	\begin{cases}
-		D_{v} + (D_{w} + D_{x}) = (D_{v} + D_{w}) + D_{x} & \text{ 1. associatività (somma) }\\
+		D_{v} + (D_{w} + D_{x}) = (D_{v} + D_{w}) + D_{x} & \text{ 1. associatività (somma) } \\
 		%
-		D_{v} + D_{w} = D_{w} + D_{v} & \text{ 2. commutatività (somma) }\\
+		D_{v} + D_{w} = D_{w} + D_{v} & \text{ 2. commutatività (somma) } \\
 		%
-		\E 0 \in \der_{p}(C_{p}^{\infty}(\R^{n})) \, \mid \, D_{v} + 0 = D_{v} & \text{ 3. elemento neutro (somma) }\\
+		\E 0 \in \der_{p}(C_{p}^{\infty}(\R^{n})) \, \mid \, D_{v} + 0 = D_{v} & \text{ 3. elemento neutro (somma) } \\
 		%
-		\E - D_{v} \in \der_{p}(C_{p}^{\infty}(\R^{n})) \, \mid \, D_{v} + (- D_{v}) = 0 & \text{ 4. inverso (somma) }\\
+		\E - D_{v} \in \der_{p}(C_{p}^{\infty}(\R^{n})) \, \mid \, D_{v} + (- D_{v}) = 0 & \text{ 4. inverso (somma) } \\
 		%
-		\alpha (\beta D_{v}) = (\alpha \beta) D_{v} & \text{ 5. compatibilità (moltiplicazione) }\\
+		\alpha (\beta D_{v}) = (\alpha \beta) D_{v} & \text{ 5. compatibilità (moltiplicazione) } \\
 		%
-		\E 1 \in \R \, \mid \, 1 D_{v} = D_{v} & \text{ 6. elemento neutro (moltiplicazione) }\\
+		\E 1 \in \R \, \mid \, 1 D_{v} = D_{v} & \text{ 6. elemento neutro (moltiplicazione) } \\
 		%
-		(\alpha + \beta) D_{v} = \alpha D_{v} + \beta D_{v} & \text{ 7. distributività (somma vettoriale) }\\
+		(\alpha + \beta) D_{v} = \alpha D_{v} + \beta D_{v} & \text{ 7. distributività (somma vettoriale) } \\
 		%
 		\alpha (D_{v} + D_{w}) = \alpha D_{v} + \alpha D_{w} & \text{ 8. distributività (somma scalare) }
 	\end{cases}
 \end{equation}
 
-per $ \forall D_{v}, D_{w}, D_{x} \in \der_{p}(C_{p}^{\infty}(\R^{n})) $ e $ \forall \alpha, \beta \in \R $.\\
+per qualsiasi $ D_{v}, D_{w}, D_{x} \in \der_{p}(C_{p}^{\infty}(\R^{n})) $ e qualsiasi $ \alpha, \beta \in \R $.\\
 Per dimostrare queste proprietà consideriamo un qualunque $ [(f,U)] \in C_{p}^{\infty}(\R^{n}) $ e applichiamo a questo le derivazioni:
 
 \begin{enumerate}
@@ -353,9 +342,9 @@ Per dimostrare queste proprietà consideriamo un qualunque $ [(f,U)] \in C_{p}^{
 	
 	\begin{align}
 		\begin{split}
-			( D_{v} + (D_{w} + D_{x}) ) ([(f,U)]) &= D_{v} ([(f,U)]) + (D_{w} + D_{x}) ([(f,U)])\\
-			&= D_{v} ([(f,U)]) + D_{w} ([(f,U)]) + D_{x} ([(f,U)])\\
-			&= (D_{v} + D_{w}) ([(f,U)]) + D_{x} ([(f,U)])\\
+			( D_{v} + (D_{w} + D_{x}) ) ([(f,U)]) &= D_{v} ([(f,U)]) + (D_{w} + D_{x}) ([(f,U)]) \\
+			&= D_{v} ([(f,U)]) + D_{w} ([(f,U)]) + D_{x} ([(f,U)]) \\
+			&= (D_{v} + D_{w}) ([(f,U)]) + D_{x} ([(f,U)]) \\
 			&= ( (D_{v} + D_{w}) + D_{x} ) ([(f,U)])
 		\end{split}
 	\end{align}
@@ -364,8 +353,8 @@ Per dimostrare queste proprietà consideriamo un qualunque $ [(f,U)] \in C_{p}^{
 	
 	\begin{align}
 		\begin{split}
-			(D_{v} + D_{w}) ([(f,U)]) &= D_{v} ([(f,U)]) + D_{w} ([(f,U)])\\
-			&= D_{w} ([(f,U)]) + D_{v} ([(f,U)])\\
+			(D_{v} + D_{w}) ([(f,U)]) &= D_{v} ([(f,U)]) + D_{w} ([(f,U)]) \\
+			&= D_{w} ([(f,U)]) + D_{v} ([(f,U)]) \\
 			&= (D_{w} + D_{v}) ([(f,U)])
 		\end{split}
 	\end{align}
@@ -378,12 +367,12 @@ Per dimostrare queste proprietà consideriamo un qualunque $ [(f,U)] \in C_{p}^{
 		{C_{p}^{\infty}(\R^{n})}{\R}
 		{[(f,U)]}{0}
 	
-	per $ \forall [(f,U)] \in C_{p}^{\infty}(\R^{n}) $, dunque
+	per qualsiasi $ [(f,U)] \in C_{p}^{\infty}(\R^{n}) $, dunque
 	
 	\begin{align}
 		\begin{split}
-			(D_{v} + 0) ([(f,U)]) &= D_{v} ([(f,U)]) + 0 ([(f,U)])\\
-			&= D_{v} ([(f,U)]) + 0\\
+			(D_{v} + 0) ([(f,U)]) &= D_{v} ([(f,U)]) + 0 ([(f,U)]) \\
+			&= D_{v} ([(f,U)]) + 0 \\
 			&= D_{v} ([(f,U)])
 		\end{split}
 	\end{align}
@@ -398,8 +387,8 @@ Per dimostrare queste proprietà consideriamo un qualunque $ [(f,U)] \in C_{p}^{
 	
 	\begin{align}
 		\begin{split}
-			(D_{v} + (- D_{v})) ([(f,U)]) &= D_{v} ([(f,U)]) + (- D_{v}) ([(f,U)])\\
-			&= \sum_{i=1}^{n} \pdv{f}{x^{i}} \, (p) \, v^{i} + \left( - \sum_{i=1}^{n} \pdv{f}{x^{i}} \, (p) \, v^{i} \right)\\
+			(D_{v} + (- D_{v})) ([(f,U)]) &= D_{v} ([(f,U)]) + (- D_{v}) ([(f,U)]) \\
+			&= \sum_{i=1}^{n} \pdv{f}{x^{i}} \, (p) \, v^{i} + \left( - \sum_{i=1}^{n} \pdv{f}{x^{i}} \, (p) \, v^{i} \right) \\
 			&= 0
 		\end{split}
 	\end{align}
@@ -408,9 +397,9 @@ Per dimostrare queste proprietà consideriamo un qualunque $ [(f,U)] \in C_{p}^{
 	
 	\begin{align}
 		\begin{split}
-			(\alpha (\beta D_{v})) ([(f,U)]) &= \alpha (\beta D_{v}) ([(f,U)])\\
-			&= \alpha D_{v} ([(\beta f,U)])\\
-			&= \alpha \beta D_{v} ([(f,U)])\\
+			(\alpha (\beta D_{v})) ([(f,U)]) &= \alpha (\beta D_{v}) ([(f,U)]) \\
+			&= \alpha D_{v} ([(\beta f,U)]) \\
+			&= \alpha \beta D_{v} ([(f,U)]) \\
 			&= (\alpha \beta) D_{v} ([(f,U)])
 		\end{split}
 	\end{align}
@@ -419,7 +408,7 @@ Per dimostrare queste proprietà consideriamo un qualunque $ [(f,U)] \in C_{p}^{
 	
 	\begin{align}
 		\begin{split}
-			(1 D_{v}) ([(f,U)]) &= D_{v} ([(1 f,U)])\\
+			(1 D_{v}) ([(f,U)]) &= D_{v} ([(1 f,U)]) \\
 			&= D_{v} ([(f,U)])
 		\end{split}
 	\end{align}
@@ -428,9 +417,9 @@ Per dimostrare queste proprietà consideriamo un qualunque $ [(f,U)] \in C_{p}^{
 	
 	\begin{align}
 		\begin{split}
-			(\alpha + \beta) D_{v} ([(f,U)]) &= D_{v} ([((\alpha + \beta) f,U)])\\
-			&= D_{v} ([(\alpha f + \beta f,U)])\\
-			&= \alpha D_{v} ([(f,U)]) + \beta D_{v} ([(f,U)])\\
+			(\alpha + \beta) D_{v} ([(f,U)]) &= D_{v} ([((\alpha + \beta) f,U)]) \\
+			&= D_{v} ([(\alpha f + \beta f,U)]) \\
+			&= \alpha D_{v} ([(f,U)]) + \beta D_{v} ([(f,U)]) \\
 		\end{split}
 	\end{align}
 	
@@ -438,62 +427,57 @@ Per dimostrare queste proprietà consideriamo un qualunque $ [(f,U)] \in C_{p}^{
 	
 	\begin{align}
 		\begin{split}
-			\alpha (D_{v} + D_{w}) ([(f,U)]) &= (D_{v} + D_{w}) ([(\alpha f,U)])\\
-			&= D_{v} ([(\alpha f,U)]) + D_{w} ([(\alpha f,U)])\\
+			\alpha (D_{v} + D_{w}) ([(f,U)]) &= (D_{v} + D_{w}) ([(\alpha f,U)]) \\
+			&= D_{v} ([(\alpha f,U)]) + D_{w} ([(\alpha f,U)]) \\
 			&= \alpha D_{v} ([(f,U)]) + \alpha D_{w} ([(f,U)])
 		\end{split}
 	\end{align}
 \end{enumerate}
 
-Tutte queste proprietà sono valide per $ \forall D_{v}, D_{w}, D_{x} \in \der_{p}(C_{p}^{\infty}(\R^{n})) $ e $ \forall \alpha, \beta \in \R $.
+Tutte queste proprietà sono valide per qualsiasi $ D_{v}, D_{w}, D_{x} \in \der_{p}(C_{p}^{\infty}(\R^{n})) $ e qualsiasi $ \alpha, \beta \in \R $.
+}
 
-%
+%=======================================================================================
 
-\newpage
-
-%
-
-\section{$ \chi(U) $ come spazio vettoriale su $ \R $ e $ C^{\infty} $-modulo}\label{es1-9}
-
-\begin{tcolorbox}
-	Dimostrare che l'insieme dei campi di vettori lisci $ \chi(U) $ su un aperto $ U \subset \R^{n} $ con le operazioni definite negli appunti è uno spazio vettoriale su $ \R $ e un $ C^{\infty} $-modulo.
-\end{tcolorbox}
-
+\exer{$ \chi(U) $ come spazio vettoriale su $ \R $ e $ C^{\infty} $-modulo}
+{es1-9}
+{
+Dimostrare che l'insieme dei campi di vettori lisci $ \chi(U) $ su un aperto $ U \subset \R^{n} $ con le operazioni definite negli appunti è uno spazio vettoriale su $ \R $ e un $ C^{\infty} $-modulo.
+}
+{
 \paragraph{Spazio vettoriale su $ \R $}
 
 Per dimostrare che $ \chi(U) $ sia uno spazio vettoriale su $ \R $ è necessario che le operazioni di somma tra campi di vettori e moltiplicazione per scalari rispettino i seguenti 8 assiomi:
 
 \begin{equation}
 	\begin{cases}
-		X + (Y + Z) = (X + Y) + Z & \text{ 1. associatività (somma) }\\
+		X + (Y + Z) = (X + Y) + Z & \text{ 1. associatività (somma) } \\
 		%
-		X + Y = Y + X & \text{ 2. commutatività (somma) }\\
+		X + Y = Y + X & \text{ 2. commutatività (somma) } \\
 		%
-		\E 0 \in \chi(U) \, \mid \, X + 0 = X & \text{ 3. elemento neutro (somma) }\\
+		\E 0 \in \chi(U) \, \mid \, X + 0 = X & \text{ 3. elemento neutro (somma) } \\
 		%
-		\E - X \in \chi(U) \, \mid \, X + (- X) = 0 & \text{ 4. inverso (somma) }\\
+		\E - X \in \chi(U) \, \mid \, X + (- X) = 0 & \text{ 4. inverso (somma) } \\
 		%
-		\alpha (\beta X) = (\alpha \beta) X & \text{ 5. compatibilità (moltiplicazione) }\\
+		\alpha (\beta X) = (\alpha \beta) X & \text{ 5. compatibilità (moltiplicazione) } \\
 		%
-		\E 1 \in \R \, \mid \, 1 X = X & \text{ 6. elemento neutro (moltiplicazione) }\\
+		\E 1 \in \R \, \mid \, 1 X = X & \text{ 6. elemento neutro (moltiplicazione) } \\
 		%
-		(\alpha + \beta) X = \alpha X + \beta X & \text{ 7. distributività (somma vettoriale) }\\
+		(\alpha + \beta) X = \alpha X + \beta X & \text{ 7. distributività (somma vettoriale) } \\
 		%
 		\alpha (X + Y) = \alpha X + \alpha Y & \text{ 8. distributività (somma scalare) }
 	\end{cases}
 \end{equation}
 
-per $ \forall X, Y, Z \in \chi(U) $ e $ \forall \alpha, \beta \in \R $.\\
+per qualsiasi $ X, Y, Z \in \chi(U) $ e qualsiasi $ \alpha, \beta \in \R $.\\
 Ricordiamo che le operazioni sono definite come:
 
-\begin{align}
-	\begin{split}
-		(X + Y)_{p} &\doteq X_{p} + Y_{p}\\
-		(\alpha X)_{p} &\doteq \alpha X_{p}
-	\end{split}
-\end{align}
+\begin{gather}
+	(X + Y)_{p} \doteq X_{p} + Y_{p} \\
+	(\alpha X)_{p} \doteq \alpha X_{p}
+\end{gather}
 
-per $ \forall X, Y \in \chi(U) $, $ \forall \alpha \in \R $ e $ \forall p \in U \subset \R^{n} $, dove i campi di vettori saranno:
+per qualsiasi $ X, Y \in \chi(U) $, qualsiasi $ \alpha \in \R $ e qualsiasi $ p \in U \subset \R^{n} $, dove i campi di vettori saranno:
 
 \begin{equation}
 	X = \sum_{i=1}^{n} a^{i} \pdv{x^{i}} \qcomma Y = \sum_{i=1}^{n} b^{i} \pdv{x^{i}}
@@ -507,9 +491,9 @@ Per dimostrare dunque queste proprietà, valutiamo i campi di vettori in un qual
 	
 	\begin{align}
 		\begin{split}
-			(X + (Y + Z))_{p} &= (X + Y)_{p} + Z_{p}\\
-			&= X_{p} + Y_{p} + Z_{p}\\
-			&= X_{p} + (Y + Z)_{p}\\
+			(X + (Y + Z))_{p} &= (X + Y)_{p} + Z_{p} \\
+			&= X_{p} + Y_{p} + Z_{p} \\
+			&= X_{p} + (Y + Z)_{p} \\
 			&= (X + (Y + Z))_{p}
 		\end{split}
 	\end{align}
@@ -518,10 +502,10 @@ Per dimostrare dunque queste proprietà, valutiamo i campi di vettori in un qual
 	
 	\begin{align}
 		\begin{split}
-			(X + Y)_{p} &= X_{p} + Y_{p}\\
-			&= \sum_{i=1}^{n} a^{i} (p) \eval{ \pdv{x^{i}} }_{p} + \sum_{i=1}^{n} b^{i} (p) \eval{ \pdv{x^{i}} }_{p}\\
-			&= \sum_{i=1}^{n} b^{i} (p) \eval{ \pdv{x^{i}} }_{p} + \sum_{i=1}^{n} a^{i} (p) \eval{ \pdv{x^{i}} }_{p}\\
-			&= Y_{p} + X_{p}\\
+			(X + Y)_{p} &= X_{p} + Y_{p} \\
+			&= \sum_{i=1}^{n} a^{i} (p) \eval{ \pdv{x^{i}} }_{p} + \sum_{i=1}^{n} b^{i} (p) \eval{ \pdv{x^{i}} }_{p} \\
+			&= \sum_{i=1}^{n} b^{i} (p) \eval{ \pdv{x^{i}} }_{p} + \sum_{i=1}^{n} a^{i} (p) \eval{ \pdv{x^{i}} }_{p} \\
+			&= Y_{p} + X_{p} \\
 			&= (Y + X)_{p}
 		\end{split}
 	\end{align}
@@ -533,23 +517,23 @@ Per dimostrare dunque queste proprietà, valutiamo i campi di vettori in un qual
 		{p}{%
 			0_{p} = \sum_{i=1}^{n} 0 \eval{ \pdv{x^{i}} }_{p}\\
 			&\stackrel{\R^{n}}{\mapsto} (0, \dots, 0)%
-		}
+			}
 	
 	dunque
 	
 	\begin{align}
 		\begin{split}
-			(X + 0)_{p} &= X_{p} + 0_{p}\\
-			&= \sum_{i=1}^{n} a^{i} (p) \eval{ \pdv{x^{i}} }_{p} + \sum_{i=1}^{n} 0 \eval{ \pdv{x^{i}} }_{p}\\
-			&= \sum_{i=1}^{n} (a^{i} (p) + 0) \eval{ \pdv{x^{i}} }_{p}\\
-			&= \sum_{i=1}^{n} a^{i} (p) \eval{ \pdv{x^{i}} }_{p}\\
+			(X + 0)_{p} &= X_{p} + 0_{p} \\
+			&= \sum_{i=1}^{n} a^{i} (p) \eval{ \pdv{x^{i}} }_{p} + \sum_{i=1}^{n} 0 \eval{ \pdv{x^{i}} }_{p} \\
+			&= \sum_{i=1}^{n} (a^{i} (p) + 0) \eval{ \pdv{x^{i}} }_{p} \\
+			&= \sum_{i=1}^{n} a^{i} (p) \eval{ \pdv{x^{i}} }_{p} \\
 			&= X_{p}
 		\end{split}
 	\end{align}
 	
 	\item Inverso (somma)
 	
-	\map{- X}
+	\map{-X}
 		{U}{\bigsqcup_{p \in U} T_{p} (\R^{n})}
 		{p}{\sum_{i=1}^{n} (- a^{i} (p)) \eval{ \pdv{x^{i}} }_{p}}
 	
@@ -557,10 +541,10 @@ Per dimostrare dunque queste proprietà, valutiamo i campi di vettori in un qual
 	
 	\begin{align}
 		\begin{split}
-			(X + (- X))_{p} &= X_{p} + (- X)_{p}\\
-			&= \sum_{i=1}^{n} a^{i} (p) \eval{ \pdv{x^{i}} }_{p} + \sum_{i=1}^{n} (- a^{i} (p)) \eval{ \pdv{x^{i}} }_{p}\\
-			&= \sum_{i=1}^{n} (a^{i} (p) - a^{i} (p)) \eval{ \pdv{x^{i}} }_{p}\\
-			&= \sum_{i=1}^{n} 0 \eval{ \pdv{x^{i}} }_{p}\\
+			(X + (- X))_{p} &= X_{p} + (- X)_{p} \\
+			&= \sum_{i=1}^{n} a^{i} (p) \eval{ \pdv{x^{i}} }_{p} + \sum_{i=1}^{n} (- a^{i} (p)) \eval{ \pdv{x^{i}} }_{p} \\
+			&= \sum_{i=1}^{n} (a^{i} (p) - a^{i} (p)) \eval{ \pdv{x^{i}} }_{p} \\
+			&= \sum_{i=1}^{n} 0 \eval{ \pdv{x^{i}} }_{p} \\
 			&= 0_{p}
 		\end{split}
 	\end{align}
@@ -569,9 +553,9 @@ Per dimostrare dunque queste proprietà, valutiamo i campi di vettori in un qual
 	
 	\begin{align}
 		\begin{split}
-			(\alpha (\beta X))_{p} &= \alpha (\beta X)_{p}\\
-			&= \alpha \beta X_{p}\\
-			&= (\alpha \beta) X_{p}\\
+			(\alpha (\beta X))_{p} &= \alpha (\beta X)_{p} \\
+			&= \alpha \beta X_{p} \\
+			&= (\alpha \beta) X_{p} \\
 			&= ((\alpha \beta) X)_{p}
 		\end{split}
 	\end{align}
@@ -580,10 +564,10 @@ Per dimostrare dunque queste proprietà, valutiamo i campi di vettori in un qual
 	
 	\begin{align}
 		\begin{split}
-			(1 X_{p}) &= 1 X_{p}\\
-			&= 1 \sum_{i=1}^{n} a^{i} (p) \eval{ \pdv{x^{i}} }_{p}\\
-			&= \sum_{i=1}^{n} (1 a^{i} (p)) \eval{ \pdv{x^{i}} }_{p}\\
-			&= \sum_{i=1}^{n} a^{i} (p) \eval{ \pdv{x^{i}} }_{p}\\
+			(1 X_{p}) &= 1 X_{p} \\
+			&= 1 \sum_{i=1}^{n} a^{i} (p) \eval{ \pdv{x^{i}} }_{p} \\
+			&= \sum_{i=1}^{n} (1 a^{i} (p)) \eval{ \pdv{x^{i}} }_{p} \\
+			&= \sum_{i=1}^{n} a^{i} (p) \eval{ \pdv{x^{i}} }_{p} \\
 			&= X_{p}
 		\end{split}
 	\end{align}
@@ -592,12 +576,12 @@ Per dimostrare dunque queste proprietà, valutiamo i campi di vettori in un qual
 	
 	\begin{align}
 		\begin{split}
-			(\alpha (X + Y))_{p} &= \alpha (X + Y)_{p}\\
-			&= \alpha (X_{p} + Y_{p})\\
-			&= \alpha \left( \sum_{i=1}^{n} a^{i} (p) \eval{ \pdv{x^{i}} }_{p} + \sum_{i=1}^{n} b^{i} (p) \eval{ \pdv{x^{i}} }_{p} \right)\\
-			&= \alpha \sum_{i=1}^{n} a^{i} (p) \eval{ \pdv{x^{i}} }_{p} + \alpha \sum_{i=1}^{n} b^{i} (p) \eval{ \pdv{x^{i}} }_{p}\\
-			&= \alpha X_{p} + \alpha Y_{p}\\
-			&= (\alpha X)_{p} + (\alpha Y)_{p}\\
+			(\alpha (X + Y))_{p} &= \alpha (X + Y)_{p} \\
+			&= \alpha (X_{p} + Y_{p}) \\
+			&= \alpha \left( \sum_{i=1}^{n} a^{i} (p) \eval{ \pdv{x^{i}} }_{p} + \sum_{i=1}^{n} b^{i} (p) \eval{ \pdv{x^{i}} }_{p} \right) \\
+			&= \alpha \sum_{i=1}^{n} a^{i} (p) \eval{ \pdv{x^{i}} }_{p} + \alpha \sum_{i=1}^{n} b^{i} (p) \eval{ \pdv{x^{i}} }_{p} \\
+			&= \alpha X_{p} + \alpha Y_{p} \\
+			&= (\alpha X)_{p} + (\alpha Y)_{p} \\
 			&= (\alpha X + \alpha Y)_{p}
 		\end{split}
 	\end{align}
@@ -606,17 +590,17 @@ Per dimostrare dunque queste proprietà, valutiamo i campi di vettori in un qual
 	
 	\begin{align}
 		\begin{split}
-			((\alpha + \beta) X)_{p} &= (\alpha + \beta) X_{p}\\
-			&= (\alpha + \beta) \sum_{i=1}^{n} a^{i} (p) \eval{ \pdv{x^{i}} }_{p}\\
-			&= \alpha \sum_{i=1}^{n} a^{i} (p) \eval{ \pdv{x^{i}} }_{p} + \beta \sum_{i=1}^{n} a^{i} (p) \eval{ \pdv{x^{i}} }_{p}\\
-			&= \alpha X_{p} + \beta X_{p}\\
-			&= (\alpha X)_{p} + (\beta X)_{p}\\
+			((\alpha + \beta) X)_{p} &= (\alpha + \beta) X_{p} \\
+			&= (\alpha + \beta) \sum_{i=1}^{n} a^{i} (p) \eval{ \pdv{x^{i}} }_{p} \\
+			&= \alpha \sum_{i=1}^{n} a^{i} (p) \eval{ \pdv{x^{i}} }_{p} + \beta \sum_{i=1}^{n} a^{i} (p) \eval{ \pdv{x^{i}} }_{p} \\
+			&= \alpha X_{p} + \beta X_{p} \\
+			&= (\alpha X)_{p} + (\beta X)_{p} \\
 			&= (\alpha X + \beta X)_{p} 
 		\end{split}
 	\end{align}
 \end{enumerate}
 
-Tutte queste proprietà sono valide per $ \forall X, Y, Z \in \chi(U) $ e $ \forall \alpha, \beta \in \R $.
+Tutte queste proprietà sono valide per qualsiasi $ X, Y, Z \in \chi(U) $ e qualsiasi $ \alpha, \beta \in \R $.
 
 \paragraph{$ C^{\infty} $-modulo}
 
@@ -630,9 +614,9 @@ Per dimostrare che $ (\chi(U),+) $ sia un $ C^{\infty} $-modulo è necessario ch
 
 \begin{equation}
 	\begin{cases}
-		1_{C^{\infty}(U)} X = X & \text{ 1. elemento neutro (somma) }\\
-		f (g X) = (f g) X & \text{ 2. compatibilità (moltiplicazione) }\\
-		f (X+Y) = f X + f Y & \text{ 3. distributività (somma vettoriale) }\\
+		1_{C^{\infty}(U)} X = X & \text{ 1. elemento neutro (somma) } \\
+		f (g X) = (f g) X & \text{ 2. compatibilità (moltiplicazione) } \\
+		f (X+Y) = f X + f Y & \text{ 3. distributività (somma vettoriale) } \\
 		(f+g) X = f X + g X & \text{ 4. distributività (somma scalare) }
 	\end{cases}
 \end{equation}
@@ -651,10 +635,10 @@ Dimostriamo dunque le proprietà riportate sopra, ancora una volta valutando i c
 	
 	\begin{align}
 		\begin{split}
-			(1_{C^{\infty}(U)} X)_{p} &= 1_{C^{\infty}(U)} (p) X_{p}\\
-			&= 1 \sum_{i=1}^{n} a^{i} (p) \eval{ \pdv{x^{i}} }_{p}\\
-			&= \sum_{i=1}^{n} (1 a^{i} (p)) \eval{ \pdv{x^{i}} }_{p}\\
-			&= \sum_{i=1}^{n} a^{i} (p) \eval{ \pdv{x^{i}} }_{p}\\
+			(1_{C^{\infty}(U)} X)_{p} &= 1_{C^{\infty}(U)} (p) X_{p} \\
+			&= 1 \sum_{i=1}^{n} a^{i} (p) \eval{ \pdv{x^{i}} }_{p} \\
+			&= \sum_{i=1}^{n} (1 a^{i} (p)) \eval{ \pdv{x^{i}} }_{p} \\
+			&= \sum_{i=1}^{n} a^{i} (p) \eval{ \pdv{x^{i}} }_{p} \\
 			&= X_{p}
 		\end{split}
 	\end{align}
@@ -663,9 +647,9 @@ Dimostriamo dunque le proprietà riportate sopra, ancora una volta valutando i c
 	
 	\begin{align}
 		\begin{split}
-			(f (g X))_{p} &= f (p) (g X)_{p}\\
-			&= f (p) g (p) X_{p}\\
-			&= (f g) (p) X_{p}\\
+			(f (g X))_{p} &= f (p) (g X)_{p} \\
+			&= f (p) g (p) X_{p} \\
+			&= (f g) (p) X_{p} \\
 			&= ((f g) X)_{p}
 		\end{split}
 	\end{align}
@@ -674,10 +658,10 @@ Dimostriamo dunque le proprietà riportate sopra, ancora una volta valutando i c
 	
 	\begin{align}
 		\begin{split}
-			(f (X + Y))_{p} &= f (p) (X + Y)_{p}\\
-			&= f (p) (X_{p} + Y_{p})\\
-			&= f (p) X_{p} + f (p) Y_{p}\\
-			&= (f X)_{p} + (f Y)_{p}\\
+			(f (X + Y))_{p} &= f (p) (X + Y)_{p} \\
+			&= f (p) (X_{p} + Y_{p}) \\
+			&= f (p) X_{p} + f (p) Y_{p} \\
+			&= (f X)_{p} + (f Y)_{p} \\
 			&= (f X + f Y)_{p}
 		\end{split}
 	\end{align}
@@ -686,55 +670,52 @@ Dimostriamo dunque le proprietà riportate sopra, ancora una volta valutando i c
 	
 	\begin{align}
 		\begin{split}
-			((f + g) X)_{p} &= (f + g) (p) X_{p}\\
-			&= (f (p) + g (p)) X_{p}\\
-			&= f (p) X_{p} + g (p) X_{p}\\
-			&= (f X)_{p} + (g X)_{p}\\
+			((f + g) X)_{p} &= (f + g) (p) X_{p} \\
+			&= (f (p) + g (p)) X_{p} \\
+			&= f (p) X_{p} + g (p) X_{p} \\
+			&= (f X)_{p} + (g X)_{p} \\
 			&= (f X + g X)_{p}
 		\end{split}
 	\end{align}
 \end{enumerate}
 
-Tutte queste proprietà sono valide per $ \forall f,g \in C^{\infty}(U) $ e $ \forall X,Y \in \chi(U) $.
+Tutte queste proprietà sono valide per qualsiasi $ f,g \in C^{\infty}(U) $ e qualsiasi $ X,Y \in \chi(U) $.
+}
 
-%
+%=======================================================================================
 
-\newpage
+\exer{$ \der(A) $ come spazio vettoriale su $ \K $}
+{es1-10}
+{
+Sia $ A $ un'algebra su un campo $ \K $. Dimostrare che le operazioni
 
-%
+\begin{equation}
+	\begin{cases}
+		(D_{1}+D_{2})(a) = D_{1}(a) + D_{2}(a) \\
+		(\lambda D)(a) = \lambda D(a)
+	\end{cases}
+\end{equation}
 
-\section{$ \der(A) $ come spazio vettoriale su $ \K $}\label{es1-10}
-
-\begin{tcolorbox}
-	Sia $ A $ un'algebra su un campo $ \K $. Dimostrare che le operazioni
-	
-	\begin{equation}
-		\begin{cases}
-			(D_{1}+D_{2})(a) = D_{1}(a) + D_{2}(a)\\
-			(\lambda D)(a) = \lambda D(a)
-		\end{cases}
-	\end{equation}
-	
-	per $ \forall \lambda \in \K $ e $ \forall D_{1},D_{2},D \in \der(A) $ dotano $ \der(A) $ della struttura di spazio vettoriale su $ \K $.
-\end{tcolorbox}
-
+per qualsiasi $ \lambda \in \K $ e $ \forall D_{1},D_{2},D \in \der(A) $ dotano $ \der(A) $ della struttura di spazio vettoriale su $ \K $.
+}
+{
 Per dimostrare che $ \der(A) $ sia uno spazio vettoriale su un campo $ \K $ è necessario che le operazioni di somma tra derivazioni e moltiplicazione per scalari rispettino i seguenti 8 assiomi:
 
 \begin{equation}
 	\begin{cases}
-		D_{1} + (D_{2} + D_{3}) = (D_{1} + D_{2}) + D_{3} & \text{ 1. associatività (somma) }\\
+		D_{1} + (D_{2} + D_{3}) = (D_{1} + D_{2}) + D_{3} & \text{ 1. associatività (somma) } \\
 		%
-		D_{1} + D_{2} = D_{2} + D_{1} & \text{ 2. commutatività (somma) }\\
+		D_{1} + D_{2} = D_{2} + D_{1} & \text{ 2. commutatività (somma) } \\
 		%
-		\E 0 \in \der(A)) \, \mid \, D + 0 = D & \text{ 3. elemento neutro (somma) }\\
+		\E 0 \in \der(A)) \, \mid \, D + 0 = D & \text{ 3. elemento neutro (somma) } \\
 		%
-		\E - D \in \der(A) \, \mid \, D + (- D) = 0 & \text{ 4. inverso (somma) }\\
+		\E - D \in \der(A) \, \mid \, D + (- D) = 0 & \text{ 4. inverso (somma) } \\
 		%
-		\alpha (\beta D) = (\alpha \beta) D & \text{ 5. compatibilità (moltiplicazione) }\\
+		\alpha (\beta D) = (\alpha \beta) D & \text{ 5. compatibilità (moltiplicazione) } \\
 		%
-		\E \eta \in \K \, \mid \, \eta D = D & \text{ 6. elemento neutro (moltiplicazione) }\\
+		\E \eta \in \K \, \mid \, \eta D = D & \text{ 6. elemento neutro (moltiplicazione) } \\
 		%
-		(\alpha + \beta) D = \alpha D + \beta D & \text{ 7. distributività (somma vettoriale) }\\
+		(\alpha + \beta) D = \alpha D + \beta D & \text{ 7. distributività (somma vettoriale) } \\
 		%
 		\alpha (D_{1} + D_{2}) = \alpha D_{1} + \alpha D_{2} & \text{ 8. distributività (somma scalare) }
 	\end{cases}
@@ -748,9 +729,9 @@ Per dimostrare queste proprietà consideriamo un qualunque $ a \in A $ e applich
 	
 	\begin{align}
 		\begin{split}
-			( D_{1} + (D_{2} + D_{3}) ) (a) &= D_{1} (a) + (D_{2} + D_{3}) (a)\\
-			&= D_{1} (a) + D_{2} (a) + D_{3} (a)\\
-			&= (D_{1} + D_{2}) (a) + D_{3} (a)\\
+			( D_{1} + (D_{2} + D_{3}) ) (a) &= D_{1} (a) + (D_{2} + D_{3}) (a) \\
+			&= D_{1} (a) + D_{2} (a) + D_{3} (a) \\
+			&= (D_{1} + D_{2}) (a) + D_{3} (a) \\
 			&= ( (D_{1} + D_{2}) + D_{3} ) (a)
 		\end{split}
 	\end{align}
@@ -759,8 +740,8 @@ Per dimostrare queste proprietà consideriamo un qualunque $ a \in A $ e applich
 	
 	\begin{align}
 		\begin{split}
-			(D_{1} + D_{2}) (a) &= D_{1} (a) + D_{2} (a)\\
-			&= D_{2} (a) + D_{1} (a)\\
+			(D_{1} + D_{2}) (a) &= D_{1} (a) + D_{2} (a) \\
+			&= D_{2} (a) + D_{1} (a) \\
 			&= (D_{2} + D_{1}) (a)
 		\end{split}
 	\end{align}
@@ -783,8 +764,8 @@ Per dimostrare queste proprietà consideriamo un qualunque $ a \in A $ e applich
 	
 	\begin{align}
 		\begin{split}
-			(D + 0) (a) &= D (a) + 0 (a)\\
-			&= D (a) + 0\\
+			(D + 0) (a) &= D (a) + 0 (a) \\
+			&= D (a) + 0 \\
 			&= D (a)
 		\end{split}
 	\end{align}
@@ -799,8 +780,8 @@ Per dimostrare queste proprietà consideriamo un qualunque $ a \in A $ e applich
 	
 	\begin{align}
 		\begin{split}
-			(D + (- D)) (a) &= D (a) + (- D) (a)\\
-			&= D (a) + - D (a)\\
+			(D + (- D)) (a) &= D (a) + (- D) (a) \\
+			&= D (a) + - D (a) \\
 			&= 0
 		\end{split}
 	\end{align}
@@ -809,9 +790,9 @@ Per dimostrare queste proprietà consideriamo un qualunque $ a \in A $ e applich
 	
 	\begin{align}
 		\begin{split}
-			(\alpha (\beta D)) (a) &= \alpha (\beta D) (a)\\
-			&= \alpha \beta D (a)\\
-			&= (\alpha \beta) D (a)\\
+			(\alpha (\beta D)) (a) &= \alpha (\beta D) (a) \\
+			&= \alpha \beta D (a) \\
+			&= (\alpha \beta) D (a) \\
 			&= ((\alpha \beta) D) (a)
 		\end{split}
 	\end{align}
@@ -820,8 +801,8 @@ Per dimostrare queste proprietà consideriamo un qualunque $ a \in A $ e applich
 	
 	\begin{align}
 		\begin{split}
-			(\eta D) (a) &= \eta D (a)\\
-			&= D (\eta a)\\
+			(\eta D) (a) &= \eta D (a) \\
+			&= D (\eta a) \\
 			&= D (a)
 		\end{split}
 	\end{align}
@@ -832,9 +813,9 @@ Per dimostrare queste proprietà consideriamo un qualunque $ a \in A $ e applich
 	
 	\begin{align}
 		\begin{split}
-			((\alpha + \beta) D) (a) &= (\alpha + \beta) D (a)\\
-			&= \alpha D (a) + \beta D (a)\\
-			&= (\alpha D) (a) + (\beta D) (a)\\
+			((\alpha + \beta) D) (a) &= (\alpha + \beta) D (a) \\
+			&= \alpha D (a) + \beta D (a) \\
+			&= (\alpha D) (a) + (\beta D) (a) \\
 			&= (\alpha D + \beta D) (a)
 		\end{split}
 	\end{align}
@@ -843,33 +824,30 @@ Per dimostrare queste proprietà consideriamo un qualunque $ a \in A $ e applich
 	
 	\begin{align}
 		\begin{split}
-			(\alpha (D_{1} + D_{2})) (a) &= \alpha (D_{1} + D_{2}) (a)\\
-			&= \alpha (D_{1} (a) + D_{2} (a))\\
-			&= \alpha D_{1} (a) + \alpha D_{2} (a)\\
-			&= (\alpha D_{1}) (a) + (\alpha D_{2}) (a)\\
+			(\alpha (D_{1} + D_{2})) (a) &= \alpha (D_{1} + D_{2}) (a) \\
+			&= \alpha (D_{1} (a) + D_{2} (a)) \\
+			&= \alpha D_{1} (a) + \alpha D_{2} (a) \\
+			&= (\alpha D_{1}) (a) + (\alpha D_{2}) (a) \\
 			&= (\alpha D_{1} + \alpha D_{2}) (a)
 		\end{split}
 	\end{align}
 \end{enumerate}
 
-Tutte queste proprietà sono valide per $ \forall D_{1}, D_{2}, D_{3}, D \in \der(A) $ e $ \forall \alpha, \beta \in \K $.
+Tutte queste proprietà sono valide per qualsiasi $ D_{1}, D_{2}, D_{3}, D \in \der(A) $ e qualsiasi $ \alpha, \beta \in \K $.
+}
 
-%
+%=======================================================================================
 
-\newpage
+\exer{Commutatore come derivazione}
+{es1-11}
+{
+Siano $ D_{1} $ e $ D_{2} $ due derivazioni di un'algebra $ A $ su un campo $ \K $, i.e. $ D_{1},D_{2} \in \der(A) $. Mostrare che $ D_{1} \circ D_{2} $ non è necessariamente una derivazione di $ A $ mentre
 
-%
-
-\section{Commutatore come derivazione}\label{es1-11}
-
-\begin{tcolorbox}
-	Siano $ D_{1} $ e $ D_{2} $ due derivazioni di un'algebra $ A $ su un campo $ \K $, i.e. $ D_{1},D_{2} \in \der(A) $. Mostrare che $ D_{1} \circ D_{2} $ non è necessariamente una derivazione di $ A $ mentre
-	
-	\begin{equation}
-		D_{1} \circ D_{2} - D_{2} \circ D_{1} \in \der(A)
-	\end{equation}
-\end{tcolorbox}
-
+\begin{equation}
+	D_{1} \circ D_{2} - D_{2} \circ D_{1} \in \der(A)
+\end{equation}
+}
+{
 Perché $ D_{1} \circ D_{2} $ sia una derivazione deve, in particolare, soddisfare la regola di Leibniz, ma questo non è verificato:
 
 \begin{align}
@@ -886,16 +864,16 @@ Mentre per la combinazione $ D_{1} \circ D_{2} - D_{2} \circ D_{1} $ questa pres
 
 \begin{align}
 	\begin{split}
-		(D_{1} \circ D_{2} - D_{2} &\circ D_{1})(a \cdot b) = D_{1}(D_{2}(a \cdot b)) - D_{2}(D_{1}(a \cdot b))\\
-		&= (D_{1} \circ D_{2})(a) \cdot b + a \cdot (D_{1} \circ D_{2})(b) + D_{2}(a) \cdot D_{1}(b) + D_{1}(a) \cdot D_{2}(b) +\\
-		& \hal - ((D_{2} \circ D_{1})(a) \cdot b + a \cdot (D_{2} \circ D_{1})(b) + D_{1}(a) \cdot D_{2}(b) + D_{2}(a) \cdot D_{1}(b))\\
+		(D_{1} \circ D_{2} - D_{2} &\circ D_{1})(a \cdot b) = D_{1}(D_{2}(a \cdot b)) - D_{2}(D_{1}(a \cdot b)) \\
+		&= (D_{1} \circ D_{2})(a) \cdot b + a \cdot (D_{1} \circ D_{2})(b) + D_{2}(a) \cdot D_{1}(b) + D_{1}(a) \cdot D_{2}(b) + \\
+		& \hal - ((D_{2} \circ D_{1})(a) \cdot b + a \cdot (D_{2} \circ D_{1})(b) + D_{1}(a) \cdot D_{2}(b) + D_{2}(a) \cdot D_{1}(b)) \\
 		%
-		&= (D_{1} \circ D_{2})(a) \cdot b + a \cdot (D_{1} \circ D_{2})(b) + \cancel{ D_{2}(a) \cdot D_{1}(b) } + \cancel{ D_{1}(a) \cdot D_{2}(b) } +\\
-		& \hal - (D_{2} \circ D_{1})(a) \cdot b - a \cdot (D_{2} \circ D_{1})(b) - \cancel{ D_{1}(a) \cdot D_{2}(b) } - \cancel{ D_{2}(a) \cdot D_{1}(b) }\\
+		&= (D_{1} \circ D_{2})(a) \cdot b + a \cdot (D_{1} \circ D_{2})(b) + \cancel{ D_{2}(a) \cdot D_{1}(b) } + \cancel{ D_{1}(a) \cdot D_{2}(b) } + \\
+		& \hal - (D_{2} \circ D_{1})(a) \cdot b - a \cdot (D_{2} \circ D_{1})(b) - \cancel{ D_{1}(a) \cdot D_{2}(b) } - \cancel{ D_{2}(a) \cdot D_{1}(b) } \\
 		%
 		&= (D_{1} \circ D_{2} - D_{2} \circ D_{1})(a) \cdot b + a \cdot (D_{1} \circ D_{2} - D_{2} \circ D_{1})(b)
 	\end{split}
 \end{align}
 
 dove nell'ultimo passaggio abbiamo semplificato due coppie di fattori avvalendoci della commutatività dell'operazione $ \cdot : A \to A $ dell'algebra $ A $, dunque $ D_{1} \circ D_{2} - D_{2} \circ D_{1} \in \der(A) $.
-
+}
