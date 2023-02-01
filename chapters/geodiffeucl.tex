@@ -8,7 +8,7 @@ Consideriamo $ \R^{n} $ con $ n \geq 1 $ e $ U \subset \R^{n} $ aperto; prendiam
 	\pdv[k]{f}{x^{1} \cdots}{x^{k}} \qcomma k \in \N
 \end{equation}
 
-esistono e sono continue in $ p $.\\
+esistono e sono continue in $ p $. \\
 Prendendo $ k = 0 $, abbiamo che
 
 \begin{equation}
@@ -25,15 +25,15 @@ Diremo che:
 	\item $ f \in C^{\infty} $ o \textit{liscia} in $ U $ se $ f \in C^{\infty} $ per $ \forall p \in U $
 \end{itemize}
 
-perciò una funzione è liscia se esistono e sono finite le sue derivate di qualunque ordine.\\
-Per generalizzare, consideriamo le funzioni definite non in $ \R $ ma in $ \R^{n} $.\\
+perciò una funzione è liscia se esistono e sono finite le sue derivate di qualunque ordine. \\
+Per generalizzare, consideriamo le funzioni definite non in $ \R $ ma in $ \R^{n} $. \\
 Una funzione $ f : U \to \R^{n} $ con $ n \geq 1 $ e $ U \subset \R^{m} $ con $ m \geq 1 $ aperto è $ C^{k} $ in $ p $ se tutte le sue componenti $ f^{j} : U \to \R $ sono $ f^{j} \in C^{k} $ in $ p $ con $ k \geq 0 $. Nello specifico, $ f = (f^{1}, \dots, f^{m}) $ oppure $ f^{j} = \pi_{j} \circ f $ dove $ \pi_{j} $ è la proiezione
 
 \map{\pi_{j}}
 	{\R^{m}}{\R}
 	{(x^{1}, \dots, x^{m})}{x^{j}}
 	
-per $ j = 1, \dots, m $.\\
+per $ j = 1, \dots, m $. \\
 Una funzione $ f : U \to \R^{m} $ è:
 
 \begin{itemize}
@@ -78,11 +78,11 @@ Vedi Esercizio \ref{es1-1}.
 
 \subsection{Funzioni reali analitiche}
 
-Sia il punto $ p \in \R^{n} $, un intorno $ U $ di $ p $ è un aperto di $ \R^{n} $ che contiene $ p $.\\
+Sia il punto $ p \in \R^{n} $, un intorno $ U $ di $ p $ è un aperto di $ \R^{n} $ che contiene $ p $. \\
 Sia $ f : U \to \R $ con $ U \subset \R^{n} $ aperto, diremo che $ f $ è \textit{reale analitica} in $ p \in U $ se $ f $ coincide con il suo sviluppo di Taylor intorno a $ p $. Questo significa che se prendiamo una funzione $ f (x) $ con $ x = (x^{1}, \dots, x^{n}) $ e $ p = (p^{1}, \dots, p^{n}) $ abbiamo che
 \begin{align}
 	\begin{split}
-		f (x) &= f (p) + \sum_{i=1}^{n} \pdv{f}{x_{i}} (p) (x^{i} - p^{i}) + \cdots + \dfrac{1}{k!} \sum_{i_{1},\dots,i_{k}=1}^{n} \dfrac{\partial^{k} f}{\partial x^{i_{1}} \cdots \partial x^{i_{k}}} (p) ( (x^{i_{1}} - p^{i_{1}}) \cdots (x^{i_{k}} - p^{i_{k}}) ) + \cdots\\
+		f (x) &= f (p) + \sum_{i=1}^{n} \pdv{f}{x_{i}} (p) (x^{i} - p^{i}) + \cdots + \dfrac{1}{k!} \sum_{i_{1},\dots,i_{k}=1}^{n} \dfrac{\partial^{k} f}{\partial x^{i_{1}} \cdots \partial x^{i_{k}}} (p) ( (x^{i_{1}} - p^{i_{1}}) \cdots (x^{i_{k}} - p^{i_{k}}) ) + \cdots \\
 		&= f (p) + \sum_{k=1}^{\infty} \dfrac{1}{k!} \sum_{i_{1},\dots,i_{k}=1}^{n} \dfrac{\partial^{k} f}{\partial x^{i_{1}} \cdots \partial x^{i_{k}}} (p) \prod_{j=1}^{k} (x^{j} - p^{j})
 	\end{split}
 \end{align}
@@ -102,9 +102,9 @@ Per calcolare la derivata possiamo derivare termine a termine lo sviluppo di Tay
 
 \begin{align}
 	\begin{split}
-		\dv{x} \sin x &= \dv{x} \sum_{j=0}^{\infty} (-1)^{j} \dfrac{x^{2j+1}}{(2j+1)!}\\
-		&= \sum_{j=0}^{\infty} (-1)^{j} (2j+1) \dfrac{x^{2j}}{(2j+1)!}\\
-		&= \sum_{j=0}^{\infty} (-1)^{j} \dfrac{x^{2j}}{(2j)!}\\
+		\dv{x} \sin x &= \dv{x} \sum_{j=0}^{\infty} (-1)^{j} \dfrac{x^{2j+1}}{(2j+1)!} \\
+		&= \sum_{j=0}^{\infty} (-1)^{j} (2j+1) \dfrac{x^{2j}}{(2j+1)!} \\
+		&= \sum_{j=0}^{\infty} (-1)^{j} \dfrac{x^{2j}}{(2j)!} \\
 		&= \cos x
 	\end{split}
 \end{align}
@@ -115,11 +115,11 @@ Per trovare la derivata di $ f(x) = e^{x} $ ripetiamo lo stesso procedimento
 
 \begin{align}
 	\begin{split}
-		\dv{x} e^{x} &= \dv{x} \sum_{j=0}^{\infty}\dfrac{x^{j}}{j!}\\
-		&= \sum_{j=0}^{\infty} j \, \dfrac{x^{j-1}}{j!}\\
-		&= \sum_{j=0}^{\infty} \dfrac{x^{j-1}}{(j-1)!}\\
-		&= \sum_{n=-1}^{\infty} \dfrac{x^{n}}{n!}\\
-		&= \sum_{n=0}^{\infty} \dfrac{x^{n}}{n!}\\
+		\dv{x} e^{x} &= \dv{x} \sum_{j=0}^{\infty}\dfrac{x^{j}}{j!} \\
+		&= \sum_{j=0}^{\infty} j \, \dfrac{x^{j-1}}{j!} \\
+		&= \sum_{j=0}^{\infty} \dfrac{x^{j-1}}{(j-1)!} \\
+		&= \sum_{n=-1}^{\infty} \dfrac{x^{n}}{n!} \\
+		&= \sum_{n=0}^{\infty} \dfrac{x^{n}}{n!} \\
 		&= e^{x}
 	\end{split}
 \end{align}
@@ -132,7 +132,7 @@ Un esempio di funzione liscia ma non reale analitica è
 	{\R}{\R}
 	{x}{%
 		\begin{cases}
-			e^{-1/x^{2}},& \text{se } x > 0\\
+			e^{-1/x^{2}},& \text{se } x > 0 \\
 			0,& \text{se } x \leqslant 0
 		\end{cases}
 		}
@@ -158,7 +158,7 @@ Tutto questo ci dice che $ f \in C^{\infty}(\R) $. Se fosse anche reale analitic
 	\end{split}
 \end{align}
 
-ma $ f(x) $ nell'intorno di 0 è nulla solo per $ x \leqslant 0 $ mentre lo sviluppo di Taylor è sempre nullo: questa contraddizione porta a dire che, nonostante $ f \in C^{\infty}(\R) $, questa non è reale analitica, scritto anche come $ f \notin C^{\omega}(\R) $.\\
+ma $ f(x) $ nell'intorno di 0 è nulla solo per $ x \leqslant 0 $ mentre lo sviluppo di Taylor è sempre nullo: questa contraddizione porta a dire che, nonostante $ f \in C^{\infty}(\R) $, questa non è reale analitica, scritto anche come $ f \notin C^{\omega}(\R) $. \\
 Un altro motivo per il quale $ f \notin C^{\omega}(\R) $ segue dal fatto che se $ f : U \to \R $ con $ U \in \R $ aperto è reale analitica e $ f = 0 $ in un aperto, allora $ f \equiv 0 $ ovunque\footnote{%
 	Vale anche se è uguale per una costante diversa da 0.}.
 
@@ -166,14 +166,14 @@ Un altro motivo per il quale $ f \notin C^{\omega}(\R) $ segue dal fatto che se 
 
 Prendiamo $ U, V \in \R^{n} $ aperti, diremo che $ f : U \to V $ è un \textit{diffeomorfismo} se è una bigezione\footnote{%
 	Perciò è invertibile.%
-}, $ f \in C^{\infty} $ e la sua inversa $ g : V \to U $ è  $ g \in C^{\infty} $.\\
+}, $ f \in C^{\infty} $ e la sua inversa $ g : V \to U $ è  $ g \in C^{\infty} $. \\
 Ad esempio, la funzione
 
 \map{f}
 	{\R}{\R}
 	{x}{x^{3}}
-è una bigezione, è liscia ma la sua inversa non lo è, dunque $ f $ non è un diffeomorfismo.\\
-Quando esiste un diffeomorfismo tra due aperti, si dice che questi sono \textit{diffeomorfi}: $ U $ e $ V $ sono diffeomorfi se $ \E f : U \to V $ diffeomorfismo, i.e. $ U \simeq V $.\\
+è una bigezione, è liscia ma la sua inversa non lo è, dunque $ f $ non è un diffeomorfismo. \\
+Quando esiste un diffeomorfismo tra due aperti, si dice che questi sono \textit{diffeomorfi}: $ U $ e $ V $ sono diffeomorfi se $ \E f : U \to V $ diffeomorfismo, i.e. $ U \simeq V $. \\
 
 \begin{theorem}[Invarianza topologica della dimensione]
 	Se $ U \subset \R^{n} $ e $ V \subset \R^{m} $ sono aperti omeomorfi allora $ n = m $.
@@ -184,7 +184,7 @@ Quando esiste un diffeomorfismo tra due aperti, si dice che questi sono \textit{
 		Questo teorema implica quello di "Invarianza topologia della dimensione" in quanto la condizione di diffeomorfismo implica quella di omeomorfismo.}.
 \end{theorem}
 
-È naturale verificare se gli spazi legati da omeomorfismi siano legati anche da diffeomorfismi.\\
+È naturale verificare se gli spazi legati da omeomorfismi siano legati anche da diffeomorfismi. \\
 I seguenti sottoinsiemi aperti di $ \R $:
 
 \begin{itemize}
@@ -209,14 +209,14 @@ Indichiamo con $ B_{1} (0) $ la \textit{palla} di centro l'origine e raggio unit
 	B_{1} (0) = \left\{ x \in \R^{n} \st \norm{x} \doteq \sqrt{\sum_{i=1}^{n} (x^{i})^{2}} < 1 \right\}
 \end{equation}
 
-Per $ n=1 $, $ B_{1} (0) \equiv (-1,1) \simeq \R $.\\
+Per $ n=1 $, $ B_{1} (0) \equiv (-1,1) \simeq \R $. \\
 Definiamo
 
 \map{f}
 	{B_{1} (0)}{\R^{n}}
 	{x}{\left( \dfrac{x^{1}}{\sqrt{1 - \norm{x}^{2}}}, \cdots, \dfrac{x^{n}}{\sqrt{1 - \norm{x}^{2}}} \right)}
 
-questa applicazione è un diffeomorfismo. Per verificarlo, dobbiamo dimostrare che $ f $ sia un bigezione, $ f \in C^{\infty} $ e che $ f^{-1} \in C^{\infty} $.\\
+questa applicazione è un diffeomorfismo. Per verificarlo, dobbiamo dimostrare che $ f $ sia un bigezione, $ f \in C^{\infty} $ e che $ f^{-1} \in C^{\infty} $. \\
 L'inversa è
 
 \map{f}
@@ -348,8 +348,8 @@ da cui
 
 \begin{align}
 	\begin{split}
-		h (x^{1},\dots,x^{n+1}) &= (g \circ f) (x^{1},\dots,x^{n+1})\\
-		&= g \left( x^{1},\dots,x^{n},1-\sqrt{1-\norm{x}^{2}} \right)\\
+		h (x^{1},\dots,x^{n+1}) &= (g \circ f) (x^{1},\dots,x^{n+1}) \\
+		&= g \left( x^{1},\dots,x^{n},1-\sqrt{1-\norm{x}^{2}} \right) \\
 		&= \left( \dfrac{x^{1}}{\sqrt{1 - \norm{x}^{2}}}, \cdots, \dfrac{x^{n}}{\sqrt{1 - \norm{x}^{2}}}, 0 \right)
 	\end{split}
 \end{align}
@@ -360,7 +360,7 @@ A questo punto $ B_{1} (0) \simeq \R^{n} $: dal punto di vista della geometria d
 
 \subsection{Teorema di Taylor con resto}
 
-Una funzione reale analitica coincide con il suo sviluppo di Taylor. Per una funzione liscia questo non è detto: la coincidenza di una funzione liscia con il suo sviluppo di Taylor è data a meno di un \textit{resto}. Introduciamo ora il concetto di insieme stellato rispetto a un punto per definire il resto sopraccitato.\\
+Una funzione reale analitica coincide con il suo sviluppo di Taylor. Per una funzione liscia questo non è detto: la coincidenza di una funzione liscia con il suo sviluppo di Taylor è data a meno di un \textit{resto}. Introduciamo ora il concetto di insieme stellato rispetto a un punto per definire il resto sopraccitato. \\
 Un sottoinsieme aperto $ U \subset \R^{n} $ è \textit{stellato} rispetto a un punto $ p \in U $ se il segmento di retta che unisce $ p $ a $ \forall x \in U $ è interamente contenuto in $ U $.
 
 \begin{remark}
@@ -395,18 +395,18 @@ L'ipotesi che un sottoinsieme sia stellato è forte a livello globale ma sempre 
 	Essendo $ U $ stellato rispetto a $ p $, possiamo valutare $ f $ in questo segmento (tutti i punti di $ r $ sono definiti in $ U $). Considero fissi $ x $ e $ p $ e deriviamo $ f(r) $ rispetto a $ t $
 	\begin{align}
 		\begin{split}
-			\dv{t} f(r) &= \dv{t} f(p+t(x-p))\\
-			&= \sum_{i=1}^{n} \pdv{f}{x^{i}} \, (p+t(x-p)) \, \left( \dv{r}{t} \right)^{i}\\
+			\dv{t} f(r) &= \dv{t} f(p+t(x-p)) \\
+			&= \sum_{i=1}^{n} \pdv{f}{x^{i}} \, (p+t(x-p)) \, \left( \dv{r}{t} \right)^{i} \\
 			&= \sum_{i=1}^{n} \pdv{f}{x^{i}} \, (p+t(x-p)) \, (x^{i}-p^{i})
 		\end{split}
 	\end{align}
 	
-	per la \textit{regola della catena}.\\
+	per la \textit{regola della catena}. \\
 	
 	Integrando rispetto a $ t $ nell'intervallo $ [0,1] $ otteniamo
 	\begin{align}
 		\begin{split}
-			\int_{0}^{1} \dv{t} f(p+t(x-p)) \dd{t} &= \int_{0}^{1} \sum_{i=1}^{n} \pdv{f}{x^{i}} \, (p+t(x-p)) \, (x^{i}-p^{i}) \dd{t}\\
+			\int_{0}^{1} \dv{t} f(p+t(x-p)) \dd{t} &= \int_{0}^{1} \sum_{i=1}^{n} \pdv{f}{x^{i}} \, (p+t(x-p)) \, (x^{i}-p^{i}) \dd{t} \\
 			f(x) - f(p)&= \sum_{i=1}^{n} (x^{i}-p^{i}) \int_{0}^{1} \pdv{f}{x^{i}} \, (p+t(x-p)) \dd{t}
 		\end{split}
 	\end{align}
@@ -423,7 +423,7 @@ L'ipotesi che un sottoinsieme sia stellato è forte a livello globale ma sempre 
 		f(x)= f(p) + \sum_{i=1}^{n} (x^{i}-p^{i}) \, g_{i}(x)
 	\end{equation}
 	
-	dove $ g_{i}(x) \in C^{\infty}(U) $ perché derivata parziale di una funzione liscia.\\
+	dove $ g_{i}(x) \in C^{\infty}(U) $ perché derivata parziale di una funzione liscia. \\
 	Inoltre
 	
 	\begin{equation}
@@ -435,10 +435,10 @@ Prendiamo $ f : U \to \R $ con $ p $ corrispondente all'origine. Per il teorema 
 
 \begin{align}
 	\begin{split}
-			f(x) &= f(0) + x g_{1}(x)\\
-			&= f(0) + x g_{1}(0) + x^{2} g_{2}(x)\\
-			&= f(0) + x g_{1}(0) + x^{2} g_{2}(0) + x^{3} g_{3}(x)\\
-			& \;\, \vdots\\
+			f(x) &= f(0) + x g_{1}(x) \\
+			&= f(0) + x g_{1}(0) + x^{2} g_{2}(x) \\
+			&= f(0) + x g_{1}(0) + x^{2} g_{2}(0) + x^{3} g_{3}(x) \\
+			& \;\, \vdots \\
 			&= f(0) + x g_{1}(0) + \dots + x^{k} g_{k}(0) + x^{k+1} g_{k+1}(x)
 	\end{split}
 \end{align}
@@ -489,9 +489,9 @@ Definiamo la \textit{derivata direzionale} di $ f $ rispetto a $ v $ come
 
 \begin{align}
 	\begin{split}
-		D_{v} f &\doteq \lim_{t \to 0} \dfrac{f(c(t)) - f(p)}{t}\\
-		&= \left. \dv{t} f(c(t)) \right|_{t=0}\\
-		&= \sum_{i=1}^{n} \pdv{f}{x^{i}} \, (p) \left( \dv{t} c(t) \right)^{i}\\
+		D_{v} f &\doteq \lim_{t \to 0} \dfrac{f(c(t)) - f(p)}{t} \\
+		&= \left. \dv{t} f(c(t)) \right|_{t=0} \\
+		&= \sum_{i=1}^{n} \pdv{f}{x^{i}} \, (p) \left( \dv{t} c(t) \right)^{i} \\
 		&= \sum_{i=1}^{n} \pdv{f}{x^{i}} \, (p) \, v^{i}
 	\end{split}
 \end{align}
@@ -524,7 +524,7 @@ Diremo che\footnote{%
 	(f,U) \sim (g,V) \iff \E W \subseteq U \cap V, \, W \ni p \mid f(q) = g(q) \qcomma \forall q \in W
 \end{equation}
 
-Questa è effettivamente una relazione di equivalenza in quanto riflessiva, simmetrica e transitiva.\\
+Questa è effettivamente una relazione di equivalenza in quanto riflessiva, simmetrica e transitiva. \\
 Prendiamo dunque lo spazio quoziente
 
 \begin{equation}
@@ -554,7 +554,7 @@ Questa applicazione è ben definita in quanto l'associazione di un germe di funz
 Siano le applicazioni
 \begin{equation}
 	\begin{cases}
-		f(x) = \dfrac{1}{1-x}, & x \in \R \setminus \{1\}\\\\
+		f(x) = \dfrac{1}{1-x}, & x \in \R \setminus \{1\} \\ \\
 		g(x) = \displaystyle\sum_{j=1}^{+\infty} x^{j}, & x \in (-1,1)
 	\end{cases}
 \end{equation}
@@ -577,7 +577,7 @@ Un'algebra $ A $ su un campo $ \K $ è una coppia $ (V,\cdot) $ con $ V $ spazio
 	Dunque con operazioni
 	\begin{equation*}
 		\begin{cases}
-			a+b \in A, & \forall a,b \in A\\
+			a+b \in A, & \forall a,b \in A \\
 			\lambda a \in A, & \forall \lambda \in \K
 		\end{cases}
 	\end{equation*}%
@@ -591,17 +591,17 @@ tale che soddisfi le condizioni
 
 \begin{equation}
 	\begin{cases}
-		(a \cdot b) \cdot c = a \cdot (b \cdot c) & \text{associatività}\footnotemark\\
+		(a \cdot b) \cdot c = a \cdot (b \cdot c) & \text{associatività}\footnotemark \\
 		\begin{split}
-			(a + b) \cdot c = a \cdot c + b \cdot c\\
+			(a + b) \cdot c = a \cdot c + b \cdot c \\
 			c \cdot (a + b) = c \cdot a + c \cdot b
-		\end{split} & \text{distributività}\\
+		\end{split} & \text{distributività} \\
 	\lambda (a \cdot b) = (\lambda a) \cdot b = a \cdot (\lambda b) & \text{omogeneità}
 	\end{cases}
 \footnotetext{In generale, non è necessaria l'associatività per definire un'algebra.}
 \end{equation}
 
-per $ \forall a,b,c \in A $ e $ \forall \lambda \in \K $.\\
+per $ \forall a,b,c \in A $ e $ \forall \lambda \in \K $. \\
 Equivalentemente, un algebra su un campo $ \K $ può essere pensata come un anello\footnote{%
 	Le proprietà di associatività e distributività sono sufficienti per renderla un anello.%
 } $ (V,+,\cdot) $ il quale sia anche uno spazio vettoriale con aggiunta la proprietà di omogeneità.
@@ -614,7 +614,7 @@ Definiamo la somma
 	[(f,U)] + [(g,V)] = [(f + g,U \cap V)] \qcomma [(f,U)], [(g,V)] \in C_{p}^{\infty}(\R^{n})
 \end{equation}
 
-Questa somma è ben definita in quanto, prendendo due rappresentanti qualsiasi di $ [(f,U)] $ e $ [(g,V)] $, esiste sempre un intorno in cui questa somma sia definita.\\
+Questa somma è ben definita in quanto, prendendo due rappresentanti qualsiasi di $ [(f,U)] $ e $ [(g,V)] $, esiste sempre un intorno in cui questa somma sia definita. \\
 Allo stesso modo, definiamo il prodotto
 
 \begin{equation}
@@ -627,8 +627,8 @@ e la moltiplicazione per scalari
 	\lambda [(f,U)] = [(\lambda f,U)] \qcomma \lambda \in \R
 \end{equation}
 
-Tutte queste operazioni sono ben definite e soddisfano tutte le proprietà di un'algebra perché la somma, il prodotto e la moltiplicazione per uno scalare di funzioni liscia soddisfano queste stesse proprietà.\\
-A questo punto si può dire che $ C_{p}^{\infty}(\R^{n}) $ sia un'algebra su $ \R $.\\
+Tutte queste operazioni sono ben definite e soddisfano tutte le proprietà di un'algebra perché la somma, il prodotto e la moltiplicazione per uno scalare di funzioni liscia soddisfano queste stesse proprietà. \\
+A questo punto si può dire che $ C_{p}^{\infty}(\R^{n}) $ sia un'algebra su $ \R $. \\
 Nonostante non sia necessario per un'algebra, $ C_{p}^{\infty}(\R^{n}) $ è anche commutativa e unitaria\footnote{%
 	Vedi Esercizio \ref{es1-7}.%
 } su $ \R^{n} $.
@@ -641,7 +641,7 @@ A questo punto, possiamo definire l'applicazione chiamata \textit{derivazione pu
 	{C_{p}^{\infty}(\R^{n})}{\R}
 	{[(f,U)]}{D_{v} f = \sum_{i=1}^{n} \pdv{f}{x^{i}} \, (p) \, v^{i}}
 
-con $ p \in U \subset \R^{n} $ e $ v = [v^{1}, \dots, v^{n}] \in T_{p} (\R^{n}) $.\\
+con $ p \in U \subset \R^{n} $ e $ v = [v^{1}, \dots, v^{n}] \in T_{p} (\R^{n}) $. \\
 Questa applicazione possiede le seguenti proprietà:
 
 \begin{enumerate}
@@ -650,7 +650,7 @@ Questa applicazione possiede le seguenti proprietà:
 	}, i.e.
 		%
 		\begin{align}
-			D ([(f,U)] + [(g,V)]) &= D ([(f,U)]) + D ([(g,V)])\\
+			D ([(f,U)] + [(g,V)]) &= D ([(f,U)]) + D ([(g,V)]) \\
 			D (\lambda [(f,U)]) &= \lambda D ([(f,U)])
 		\end{align}
 	
@@ -665,11 +665,11 @@ Questa applicazione possiede le seguenti proprietà:
 	%
 	\begin{align}
 		\begin{split}
-			D ([(f,U)] + [(g,V)]) &= D ([(f+g,U \cap V)])\\
-			&= D_{v} (f+g)\\
-			&= \sum_{j=1}^{n} \pdv{(f+g)}{x^{j}} \, (p) \, v^{j}\\
-			&= \sum_{j=1}^{n} \pdv{f}{x^{j}} \, (p) \, v^{j} + \sum_{j=1}^{n} \pdv{g}{x^{j}} \, (p) \, v^{j}\\
-			&= D_{v} f + D_{v} g\\
+			D ([(f,U)] + [(g,V)]) &= D ([(f+g,U \cap V)]) \\
+			&= D_{v} (f+g) \\
+			&= \sum_{j=1}^{n} \pdv{(f+g)}{x^{j}} \, (p) \, v^{j} \\
+			&= \sum_{j=1}^{n} \pdv{f}{x^{j}} \, (p) \, v^{j} + \sum_{j=1}^{n} \pdv{g}{x^{j}} \, (p) \, v^{j} \\
+			&= D_{v} f + D_{v} g \\
 			&= D ([(f,U)]) + D ([(g,V)])
 		\end{split}
 	\end{align}
@@ -680,10 +680,10 @@ Questa applicazione possiede le seguenti proprietà:
 \begin{proof}[Dimostrazione ($ \R $-linearità (moltiplicazione per scalare))]
 	\begin{align}
 		\begin{split}
-			D (\lambda [(f,U)]) &= D ([(\lambda f,U)])\\
-			&= D_{v} (\lambda f)\\
-			&= \sum_{j=1}^{n} \pdv{(\lambda f)}{x^{j}} \, (p) \, v^{j}\\
-			&= \lambda \sum_{j=1}^{n} \pdv{f}{x^{j}} \, (p) \, v^{j}\\
+			D (\lambda [(f,U)]) &= D ([(\lambda f,U)]) \\
+			&= D_{v} (\lambda f) \\
+			&= \sum_{j=1}^{n} \pdv{(\lambda f)}{x^{j}} \, (p) \, v^{j} \\
+			&= \lambda \sum_{j=1}^{n} \pdv{f}{x^{j}} \, (p) \, v^{j} \\
 			&= \lambda D ([(f,U)])
 		\end{split}
 	\end{align}
@@ -694,11 +694,11 @@ Questa applicazione possiede le seguenti proprietà:
 \begin{proof}[Dimostrazione (Regola di Leibniz)]
 	\begin{align}
 		\begin{split}
-			D ([(f,U)] \cdot [(g,V)]) &= D ([(f g,U \cap V)])\\
-			&= D_{v} (f g)\\
-			&= \sum_{j=1}^{n} \pdv{(f g)}{x^{j}} \, (p) \, v^{j}\\
-			&= \left( \sum_{j=1}^{n} \pdv{f}{x^{j}} \, (p) \, v^{j} \right) \, g(p) + f(p) \left( \, \sum_{j=1}^{n} \pdv{g}{x^{j}} \, (p) \, v^{j} \right)\\
-			&= (D_{v} f) \, g(p) + f(p) \, (D_{v} g)\\
+			D ([(f,U)] \cdot [(g,V)]) &= D ([(f g,U \cap V)]) \\
+			&= D_{v} (f g) \\
+			&= \sum_{j=1}^{n} \pdv{(f g)}{x^{j}} \, (p) \, v^{j} \\
+			&= \left( \sum_{j=1}^{n} \pdv{f}{x^{j}} \, (p) \, v^{j} \right) \, g(p) + f(p) \left( \, \sum_{j=1}^{n} \pdv{g}{x^{j}} \, (p) \, v^{j} \right) \\
+			&= (D_{v} f) \, g(p) + f(p) \, (D_{v} g) \\
 			&= D ([(f,U)]) \, g(p) + f(p) \, D ([(g,V)])
 		\end{split}
 	\end{align}
@@ -706,7 +706,7 @@ Questa applicazione possiede le seguenti proprietà:
 	per $ \forall [(f,U)], [(g,V)] \in C_{p}^{\infty}(\R^{n}) $, $ \forall p \in U \cap V \subset \R^{n} $ e $ \forall v \in T_{p} (\R^{n}) $.
 \end{proof}
 
-La derivazione puntuale è quindi un modo per associare un numero reale a un germe di funzioni, soddisfacendo le proprietà definite sopra.\\
+La derivazione puntuale è quindi un modo per associare un numero reale a un germe di funzioni, soddisfacendo le proprietà definite sopra. \\
 Indichiamo dunque l'insieme delle derivazioni puntuali di $ C_{p}^{\infty}(\R^{n}) $ come $ \der_{p}(C_{p}^{\infty}(\R^{n})) $, i.e.
 
 \begin{equation}
@@ -727,7 +727,7 @@ questa associa il vettore $ v = [v^{1},\dots,v^{n}] \in T_{p}(\R^{n}) $ con $ p 
 	D_{v} f = \sum_{j=1}^{n} \pdv{f}{x^{j}} \, (p) \, v^{j} \in \R
 \end{align}
 
-Possiamo usare lo stesso simbolo, i.e. $ D_{v} ([(f,U)]) = D_{v} f $, perché questa relazione vale per qualsiasi rappresentante della classe.\\
+Possiamo usare lo stesso simbolo, i.e. $ D_{v} ([(f,U)]) = D_{v} f $, perché questa relazione vale per qualsiasi rappresentante della classe. \\
 L'applicazione $ \varphi $ permette di considerare equivalentemente l'insieme delle derivazioni puntuali dell'algebra dei germi delle funzioni $ C_{p}^{\infty}(\R^{n}) $ e lo spazio tangente a un punto, in quanto questi due insiemi sono isomorfi tra loro tramite $ \varphi $ stessa. Utilizzare le derivazioni è utile perché per le varietà differenziabili non esiste una visualizzazione dello spazio tangente.
 
 \begin{theorem}
@@ -755,8 +755,8 @@ Consideriamo ora la seguente preposizione:
 	Le operazioni dello spazio vettoriale $ \der_{p}(C_{p}^{\infty}(\R^{n})) $ su $ \R $ (definite sopra) sono $ \R $-lineari e la somma soddisfa la regola di Leibniz, i.e.
 	
 	\begin{align}
-		(D_{v} + D_{w}) ([(f,U)]) &= D_{v}([(f,U)]) + D_{w}([(f,U)])\\
-		D (\lambda [(f,U)]) &= \lambda D ([(f,U)]) = (\lambda D) ([(f,U)])\\
+		(D_{v} + D_{w}) ([(f,U)]) &= D_{v}([(f,U)]) + D_{w}([(f,U)]) \\
+		D (\lambda [(f,U)]) &= \lambda D ([(f,U)]) = (\lambda D) ([(f,U)]) \\
 		(D_{v} + D_{w}) ([(f,U)] \cdot [(g,V)]) &= (D_{v} + D_{w}) ([(f,U)]) \, g(p) + f(p) \, (D_{v} + D_{w}) ([(g,V)])
 	\end{align}
 	
@@ -768,22 +768,22 @@ Consideriamo ora la seguente preposizione:
 	
 	\begin{align}
 		\begin{split}
-			(D_{v} + D_{w}) (\alpha [(f,U)] + \beta [(g,V)]) &= D_{v} (\alpha [(f,U)] + \beta [(g,V)]) +\\
-			& \hspace{15px} + D_{w} (\alpha [(f,U)] + \beta [(g,V)])\\
-			&= \alpha D_{v} ([(f,U)]) + \beta D_{v} ([(g,V)]) +\\
-			& \hspace{15px} + \,\alpha D_{w} ([(f,U)]) + \beta D_{w} ([(g,V)])\\
+			(D_{v} + D_{w}) (\alpha [(f,U)] + \beta [(g,V)]) &= D_{v} (\alpha [(f,U)] + \beta [(g,V)]) + \\
+			& \hspace{15px} + D_{w} (\alpha [(f,U)] + \beta [(g,V)]) \\
+			&= \alpha D_{v} ([(f,U)]) + \beta D_{v} ([(g,V)]) + \\
+			& \hspace{15px} + \,\alpha D_{w} ([(f,U)]) + \beta D_{w} ([(g,V)]) \\
 			&= \alpha (D_{v} + D_{w}) ([(f,U)]) + \beta (D_{v} + D_{w}) ([(g,V)])
 		\end{split}
 	\end{align}
 
-	per $ \forall D_{v}, D_{w} \in \der_{p}(C_{p}^{\infty}(\R^{n})) $ e $ \alpha,\beta \in \R $.\\
+	per $ \forall D_{v}, D_{w} \in \der_{p}(C_{p}^{\infty}(\R^{n})) $ e $ \alpha,\beta \in \R $. \\
 	Per la regola di Leibniz:
 	
 	\begin{align}
 		\begin{split}
-			(D_{v} + D_{w}) ([(f,U)] \cdot [(g,V)]) &= D_{v} ([(f,U)] \cdot [(g,V)]) + D_{w} ([(f,U)] \cdot [(g,V)])\\
-			&= D_{v} ([(f,U)]) \, g(p) + f(p) \, D_{v} ([(g,V)]) +\\
-			& \hspace{15px} + D_{w} ([(f,U)]) \, g(p) + f(p) \, D_{w} ([(g,V)])\\
+			(D_{v} + D_{w}) ([(f,U)] \cdot [(g,V)]) &= D_{v} ([(f,U)] \cdot [(g,V)]) + D_{w} ([(f,U)] \cdot [(g,V)]) \\
+			&= D_{v} ([(f,U)]) \, g(p) + f(p) \, D_{v} ([(g,V)]) + \\
+			& \hspace{15px} + D_{w} ([(f,U)]) \, g(p) + f(p) \, D_{w} ([(g,V)]) \\
 			&= (D_{v} + D_{w}) ([(f,U)]) \, g(p) + f(p) \, (D_{v} + D_{w}) ([(g,V)])
 		\end{split}
 	\end{align}
@@ -804,31 +804,31 @@ Consideriamo ora la seguente preposizione:
 		\begin{equation*}
 			\forall b \in B, \, \E a \in A \mid f(a) = b
 		\end{equation*}%
-	}.\\
+	}. \\
 	Per l'$ \R $-linearità, sia $ [(f,U)] \in C_{p}^{\infty}(\R^{n}) $, possiamo scrivere
 	
 	\begin{align}
 		\begin{split}
-			D_{\alpha v + \beta w} ([(f,U)]) &= D_{\alpha v + \beta w} (f)\\
-			&= \sum_{j=1}^{n} \pdv{f}{x^{j}} \, (p) \, (\alpha v^{j} + \beta w^{j})\\
-			&= \alpha \sum_{j=1}^{n} \pdv{f}{x^{j}} \, (p) \, v^{j} + \beta \sum_{j=1}^{n} \pdv{f}{x^{j}} \, (p) \, w^{j}\\
-			&= \alpha D_{v} f + \beta D_{w} f\\
+			D_{\alpha v + \beta w} ([(f,U)]) &= D_{\alpha v + \beta w} (f) \\
+			&= \sum_{j=1}^{n} \pdv{f}{x^{j}} \, (p) \, (\alpha v^{j} + \beta w^{j}) \\
+			&= \alpha \sum_{j=1}^{n} \pdv{f}{x^{j}} \, (p) \, v^{j} + \beta \sum_{j=1}^{n} \pdv{f}{x^{j}} \, (p) \, w^{j} \\
+			&= \alpha D_{v} f + \beta D_{w} f \\
 			&= \alpha D_{v} ([(f,U)]) + \beta D_{w} ([(f,U)])
 		\end{split}
 	\end{align}
 
-	per $ \forall \alpha, \beta \in \R $ e $ v, w \in T_{p} (\R^{n}) $.\\
+	per $ \forall \alpha, \beta \in \R $ e $ v, w \in T_{p} (\R^{n}) $. \\
 	Da questo si ottiene che l'applicazione $ \varphi $ è $ \R $-lineare:
 	
 	\begin{align}
 		\begin{split}
-			\varphi (\alpha v + \beta w) &= D_{\alpha v + \beta w}\\
-			&= \alpha D_{v} + \beta D_{w}\\
+			\varphi (\alpha v + \beta w) &= D_{\alpha v + \beta w} \\
+			&= \alpha D_{v} + \beta D_{w} \\
 			&= \alpha \varphi (v) + \beta \varphi (w)
 		\end{split}
 	\end{align}
 
-	per $ \forall \alpha, \beta \in \R $ e $ v, w \in T_{p} (\R^{n}) $.\\
+	per $ \forall \alpha, \beta \in \R $ e $ v, w \in T_{p} (\R^{n}) $. \\
 	Per l'iniettività, consideriamo il \textit{kernel}\footnote{%
 		Il \textit{kernel} o nucleo di un'applicazione, indicato con $ \ker $, è l'insieme di tutti e soli gli elementi del dominio che hanno come immagine lo $ 0 $ del codominio. Nel caso considerato ora
 		
@@ -843,7 +843,7 @@ Consideriamo ora la seguente preposizione:
 
 	i.e. $ \ker \varphi = \{0\} $, allora $ \varphi $ è iniettiva\footnote{
 		Questo vale perché $ \varphi $ è lineare.%
-	}.\\
+	}. \\
 	Siccome $ 0 $ associa un qualunque germe liscio $ [(f,U)] $ sempre a $ 0 \in \R $, possiamo scegliere l'applicazione
 	
 	\map{x^{j}}
@@ -854,10 +854,10 @@ Consideriamo ora la seguente preposizione:
 	
 	\begin{align}
 		\begin{split}
-			0([(x^{j},\R)]) &= D_{v} ([(x^{j},\R)])\\
-			&= D_{v} (x^{j})\\
-			&= \sum_{i=1}^{n} \pdv{x^{j}}{x^{i}} \, (p) \, v^{i}\\
-			&= \sum_{i=1}^{n} \delta^{ij} \, v^{i}\\
+			0([(x^{j},\R)]) &= D_{v} ([(x^{j},\R)]) \\
+			&= D_{v} (x^{j}) \\
+			&= \sum_{i=1}^{n} \pdv{x^{j}}{x^{i}} \, (p) \, v^{i} \\
+			&= \sum_{i=1}^{n} \delta^{ij} \, v^{i} \\
 			&= v^{j}
 		\end{split}
 	\end{align}
@@ -866,7 +866,7 @@ Consideriamo ora la seguente preposizione:
 	
 	\begin{equation}
 		\begin{cases}
-			0([(f,U)]) = 0 \in \R, & \forall [(f,U)] \in C_{p}^{\infty}(\R^{n})\\\\
+			0([(f,U)]) = 0 \in \R, & \forall [(f,U)] \in C_{p}^{\infty}(\R^{n}) \\ \\
 			0([(x^{j},\R)]) = v^{j}
 		\end{cases}%
 		 \implies v^{j} = 0 \qcomma \forall j=1,\dots,n
@@ -884,7 +884,7 @@ Consideriamo ora la seguente preposizione:
 		\forall D \in \der_{p} (C_{p}^{\infty}(\R^{n})), \, \E v \in T_{p}(\R^{n}) \, \mid \, \varphi(v) = D
 	\end{equation}
 	
-	dove $ \varphi = D_{v} $, dunque dobbiamo trovare un $ v $ tale che faccia coincidere $ D = D_{v} $.\\
+	dove $ \varphi = D_{v} $, dunque dobbiamo trovare un $ v $ tale che faccia coincidere $ D = D_{v} $. \\
 	Prima di farlo, enunciamo il seguente lemma:
 
 	\begin{lemma}[Derivazione di costante]
@@ -900,11 +900,11 @@ Consideriamo ora la seguente preposizione:
 	\begin{proof}[Dimostrazione (lemma)]
 		\begin{align}
 			\begin{split}
-				D([(c,\R^{n})]) &= D([(1 c,\R^{n})])\\
-				&= c \, D([(1,\R^{n})])\\
-				&= c \, D([(1 \cdot 1,\R^{n})])\\
-				&= c \, ( D([(1,\R^{n})]) \, 1 + 1 \, D([(1,\R^{n})]) )\\
-				&= 2 c \, D([(1,\R^{n})])\\
+				D([(c,\R^{n})]) &= D([(1 c,\R^{n})]) \\
+				&= c \, D([(1,\R^{n})]) \\
+				&= c \, D([(1 \cdot 1,\R^{n})]) \\
+				&= c \, ( D([(1,\R^{n})]) \, 1 + 1 \, D([(1,\R^{n})]) ) \\
+				&= 2 c \, D([(1,\R^{n})]) \\
 				&= 0
 			\end{split}
 		\end{align}
@@ -928,18 +928,18 @@ Consideriamo ora la seguente preposizione:
 		\left. g_{i} \in C^{\infty}(U) \st g_{i}(p) = \dfrac{\partial f}{\partial x^{i}} (p) \right., \quad i=1,\dots,n
 	\end{equation}
 
-	Sia $ v = [v^{1},\dots,v^{n}] \in T_{p (\R^{n})} $ definito come $ v^{j} = D([(x^{j},\R)]) $ per $ j=1,\dots,n $.\\
+	Sia $ v = [v^{1},\dots,v^{n}] \in T_{p (\R^{n})} $ definito come $ v^{j} = D([(x^{j},\R)]) $ per $ j=1,\dots,n $. \\
 	Ora applichiamo $ D $ a un qualsiasi germe liscio $ [(f,U)] $
 	
 	\begin{align}
 		\begin{split}
-			D ([(f,U)]) &= \cancelto{0}{D ([(f(p),\R^{n})])} + D \left(\left[\left( \sum_{i=1}^{n} (x^{i}-p^{i}) \, g_{i}(x) , U \right)\right]\right)\\
-			&= \sum_{i=1}^{n} D ([( (x^{i}-p^{i}) \, g_{i}(x) , U )])\\
-			&= \sum_{i=1}^{n} ( D ([( (x^{i}-p^{i}), U )]) \, g_{i}(p) + \cancelto{0}{(p^{i}-p^{i})} \, D ([( g_{i}(x), U )]) )\\
-			&= \sum_{i=1}^{n} ( D ([( x^{i}, U )]) - \cancelto{0}{D ([( p^{i}, U )])} ) g_{i}(p)\\
-			&= \sum_{i=1}^{n} D ([( x^{i}, U )]) \, \pdv{f}{x^{i}} \, (p)\\
-			&= \sum_{i=1}^{n} \pdv{f}{x^{i}} \, (p) \, v^{i}\\
-			&= D_{v} (f)\\
+			D ([(f,U)]) &= \cancelto{0}{D ([(f(p),\R^{n})])} + D \left(\left[\left( \sum_{i=1}^{n} (x^{i}-p^{i}) \, g_{i}(x) , U \right)\right]\right) \\
+			&= \sum_{i=1}^{n} D ([( (x^{i}-p^{i}) \, g_{i}(x) , U )]) \\
+			&= \sum_{i=1}^{n} ( D ([( (x^{i}-p^{i}), U )]) \, g_{i}(p) + \cancelto{0}{(p^{i}-p^{i})} \, D ([( g_{i}(x), U )]) ) \\
+			&= \sum_{i=1}^{n} ( D ([( x^{i}, U )]) - \cancelto{0}{D ([( p^{i}, U )])} ) g_{i}(p) \\
+			&= \sum_{i=1}^{n} D ([( x^{i}, U )]) \, \pdv{f}{x^{i}} \, (p) \\
+			&= \sum_{i=1}^{n} \pdv{f}{x^{i}} \, (p) \, v^{i} \\
+			&= D_{v} (f) \\
 			&= D_{v} ([(f,U)])
 		\end{split}
 	\end{align}
@@ -989,7 +989,7 @@ forma una base per lo spazio $ \der_{p}(C_{p}^{\infty}(\R^{n})) $.
 		\varphi(e_{i}) = D_{e_{i}} \qcomma \forall i=1,\dots,n
 	\end{equation}
 
-	i.e. un isomorfismo porta elementi di base in altrettanti elementi di base.\\
+	i.e. un isomorfismo porta elementi di base in altrettanti elementi di base. \\
 	Applicando questo a una qualunque funzione $ f \in C^{\infty} (\R^{n}) $
 	
 	\begin{equation}
@@ -1007,14 +1007,14 @@ Sia un aperto $ U \subset \R^{n} $ con $ n \geqslant 1 $, un \textit{campo di ve
 
 dove il codominio è l'\textit{unione disgiunta}\footnote{%
 	L'unione disgiunta equivale a un'unione in cui ogni insieme ha un indice diverso, e.g. l'insieme non connesso $ (0,1) \sqcup (0,1) $ è diverso da $ (0,1) \cup (0,1) = (0,1) $.%
-} degli spazi di vettori tangenti in ogni punto di $ U $; inoltre $ T_{p}(\R^{n}) = T_{p}(U) $ in quanto le due algebre seguenti coincidono $ C_{p}^{\infty}(\R^{n}) = C_{p}^{\infty}(U) $ perché i germi delle funzioni sono definiti localmente, quindi non dipendono dall'aperto considerato.\\
+} degli spazi di vettori tangenti in ogni punto di $ U $; inoltre $ T_{p}(\R^{n}) = T_{p}(U) $ in quanto le due algebre seguenti coincidono $ C_{p}^{\infty}(\R^{n}) = C_{p}^{\infty}(U) $ perché i germi delle funzioni sono definiti localmente, quindi non dipendono dall'aperto considerato. \\
 Un elemento del campo di vettori può essere scritto in funzione della base canonica di $ T_{p}(\R^{n}) $
 
 \begin{equation}
 	X_{p} = \sum_{i=1}^{n} a^{i}(p) \eval{ \pdv{x^{i}} }_{p}
 \end{equation}
 
-dove $ a^{i}(p) \in \R $ con $ i=1,\dots,n $. In modo naturale, l'elemento $ X_{p} $ si identifica con l'$ n $-upla $ X_{p} = (a^{1}(p),\dots,a^{n}(p)) $ in quanto $ T_{p}(\R^{n}) \simeq \R^{n} $.\\
+dove $ a^{i}(p) \in \R $ con $ i=1,\dots,n $. In modo naturale, l'elemento $ X_{p} $ si identifica con l'$ n $-upla $ X_{p} = (a^{1}(p),\dots,a^{n}(p)) $ in quanto $ T_{p}(\R^{n}) \simeq \R^{n} $. \\
 La notazione che indica che un elemento di una base genera uno spazio è la seguente:
 
 \begin{equation}
@@ -1037,7 +1037,7 @@ Un campo di vettori
 	X = \sum_{i=1}^{n} a^{i} \pdv{x^{i}}
 \end{equation}
 
-è $ C^{\infty} (U) $ (liscio o differenziabile) se le funzioni $ a^{i} $ sono lisce, i.e. $ a^{i} \in C^{\infty}(U) $ per $ \forall i=1,\dots,n $.\\
+è $ C^{\infty} (U) $ (liscio o differenziabile) se le funzioni $ a^{i} $ sono lisce, i.e. $ a^{i} \in C^{\infty}(U) $ per $ \forall i=1,\dots,n $. \\
 L'insieme dei campi di vettori che rispettano questa prescrizione è chiamato $ \chi(U) $, i.e.
 
 \begin{equation}
@@ -1054,7 +1054,7 @@ Il campo di vettori seguente è liscio perché qualsiasi derivata delle sue comp
 			\map{X}
 			{\R^{2} \setminus \{(0,0)\}}{T_{(x,y)}(\R^{2})}
 			{(x,y)}{%
-					- \dfrac{x}{\sqrt{x^{2}+y^{2}}} \pdv{x} - \dfrac{y}{\sqrt{x^{2}+y^{2}}} \pdv{y}\\
+					- \dfrac{x}{\sqrt{x^{2}+y^{2}}} \pdv{x} - \dfrac{y}{\sqrt{x^{2}+y^{2}}} \pdv{y} \\
 					& \hspace{15px} = \left( - \dfrac{x}{\sqrt{x^{2}+y^{2}}}, - \dfrac{y}{\sqrt{x^{2}+y^{2}}} \right)%
 					}
 		}
@@ -1070,7 +1070,7 @@ Per lo stesso motivo dell'esempio precedente, il campo di vettori seguente è li
 			\map{X}
 				{\R^{2} \setminus \{(0,0)\}}{T_{(x,y)}(\R^{2})}
 				{(x,y)}{%
-						- \dfrac{y}{\sqrt{x^{2}+y^{2}}} \pdv{x} - \dfrac{x}{\sqrt{x^{2}+y^{2}}} \pdv{y}\\
+						- \dfrac{y}{\sqrt{x^{2}+y^{2}}} \pdv{x} - \dfrac{x}{\sqrt{x^{2}+y^{2}}} \pdv{y} \\
 						& \hspace{15px} = \left( - \dfrac{y}{\sqrt{x^{2}+y^{2}}}, - \dfrac{x}{\sqrt{x^{2}+y^{2}}} \right)%
 						}
 		}
@@ -1098,7 +1098,7 @@ dove $ a^{i},b^{i} \in C^{\infty}(U) $ per $ \forall i = 1, \dots, n $, allora
 	X + Y = \sum_{i=1}^{n} (a^{i}+b^{i}) \pdv{x^{i}}
 \end{equation}
 
-dove ancora $ a^{i}+b^{i} \in C^{\infty}(U) $.\\
+dove ancora $ a^{i}+b^{i} \in C^{\infty}(U) $. \\
 Si può definire anche la moltiplicazione per scalari come
 
 \begin{equation}
@@ -1117,7 +1117,7 @@ dove $ a^{i} \in C^{\infty}(U) $ per $ \forall i = 1, \dots, n $, allora
 	\lambda X = \sum_{i=1}^{n} (\lambda a^{i}) \pdv{x^{i}}
 \end{equation}
 
-dove ancora $ \lambda a^{i} \in C^{\infty}(U) $ per $ \forall i = 1, \dots, n $.\\
+dove ancora $ \lambda a^{i} \in C^{\infty}(U) $ per $ \forall i = 1, \dots, n $. \\
 L'ultima operazione è quella di moltiplicazione di un campo di vettori per un'altra funzione
 
 \begin{equation}
@@ -1130,7 +1130,7 @@ questo significa che
 	f X = \sum_{i=1}^{n} (f a^{i}) \pdv{x^{i}}
 \end{equation}
 
-dove ancora $ f a^{i} \in C^{\infty}(U) $ per $ \forall i=1,\dots,n $.\\
+dove ancora $ f a^{i} \in C^{\infty}(U) $ per $ \forall i=1,\dots,n $. \\
 Le prime due operazioni dotano l'insieme di $ \chi(U) $ della proprietà di spazio vettoriale; osserviamo inoltre che $ C^{\infty}(U) $ è un anello commutativo unitario.
 
 \subsection{$ \chi(U) $ come $ C^{\infty}(U) $-modulo}
@@ -1146,9 +1146,9 @@ tale che
 
 \begin{equation}
 	\begin{cases}
-		1_{R} \cdot a = a\\
-		r \cdot (s \cdot a) = (r s) \cdot a\\
-		(r+s) \cdot a = r \cdot a + s \cdot a\\
+		1_{R} \cdot a = a \\
+		r \cdot (s \cdot a) = (r s) \cdot a \\
+		(r+s) \cdot a = r \cdot a + s \cdot a \\
 		r \cdot (a+b) = r \cdot a + r \cdot b
 	\end{cases}
 \end{equation}
@@ -1167,14 +1167,14 @@ tale che
 
 \begin{equation}
 	\begin{cases}
-		a * 1_{R} = a\\
-		(a*r)*s = a*(r s)\\
-		a*(r+s) = a*r + a*s\\
+		a * 1_{R} = a \\
+		(a*r)*s = a*(r s) \\
+		a*(r+s) = a*r + a*s \\
 		(a+b)*r = a*r + b*r
 	\end{cases}
 \end{equation}
 
-per $ \forall r,s \in R $ e $ \forall a,b \in A $. Queste proprietà valgono solo da \textit{destra}, potrebbero non valere se calcolate da sinistra.\\\\
+per $ \forall r,s \in R $ e $ \forall a,b \in A $. Queste proprietà valgono solo da \textit{destra}, potrebbero non valere se calcolate da sinistra. \\ \\
 %
 Tramite queste definizioni, definiamo $ (A,+) $ un $ R $-modulo se è sia un $ R $-modulo sinistro che destro, i.e. $ \cdot \equiv * $.
 
@@ -1201,14 +1201,14 @@ Per l'insieme dei campi di vettori lisci vale il seguente teorema:
 
 	\begin{equation}
 		\begin{cases}
-			1_{C^{\infty}(U)} X = X\\
-			f (g X) = (f g) X\\
-			f (X+Y) = f X + f Y\\
+			1_{C^{\infty}(U)} X = X \\
+			f (g X) = (f g) X \\
+			f (X+Y) = f X + f Y \\
 			(f+g) X = f X + g X
 		\end{cases}
 	\end{equation}
 
-	per $ \forall f,g \in C^{\infty}(U) $ e $ \forall X,Y \in \chi(U) $.\\
+	per $ \forall f,g \in C^{\infty}(U) $ e $ \forall X,Y \in \chi(U) $. \\
 	Siccome la moltiplicazione per funzione è commutativa\footnote{%
 		Nonostante ciò, scriveremo la funzione sempre a sinistra dei campi, per notazione e per evitare di confonderla con la derivata di funzione rispetto a un campo di vettori (vedi sottosezione successiva).%
 	}, è sufficiente dimostrare che $ (\chi(U),+) $ sia un $ C^{\infty}(U) $-modulo sinistro (o destro) per dimostrare che sia $ C^{\infty}(U) $-modulo\footnote{%
@@ -1218,7 +1218,7 @@ Per l'insieme dei campi di vettori lisci vale il seguente teorema:
 
 \subsection{Derivata di funzione rispetto a un campo di vettori}
 
-I campi di vettori permettono di derivare funzioni: la loro azione è equivalente alla derivata direzionale di una funzione rispetto a un vettore.\\
+I campi di vettori permettono di derivare funzioni: la loro azione è equivalente alla derivata direzionale di una funzione rispetto a un vettore. \\
 Siano $ X \in \chi(U) $ con $ U \subset \R^{n} $ aperto e $ f \in C^{\infty}(U) $. Definiamo la derivata della funzione $ f $ rispetto al campo di vettori $ X $ come $ X f \in C^{\infty}(U) $. La derivata puntuale è definita come
 
 \begin{equation}
@@ -1243,7 +1243,7 @@ perciò
 	{U}{\R}
 	{p}{\sum_{i=1}^{n} a^{i} (p) \, \pdv{f}{x^{i}} \, (p)}
 
-Questa applicazione è $ C^{\infty}(U) $ perché lo è $ (X f) (p) $, la quale lo è a sua volta perché $ X \in \chi(U) $ in quanto $ a^{i} \in C^{\infty}(U) $ e $ f \in C^{\infty}(U) $.\\
+Questa applicazione è $ C^{\infty}(U) $ perché lo è $ (X f) (p) $, la quale lo è a sua volta perché $ X \in \chi(U) $ in quanto $ a^{i} \in C^{\infty}(U) $ e $ f \in C^{\infty}(U) $. \\
 Possiamo considerare l'applicazione
 
 
@@ -1277,9 +1277,9 @@ Sia $ A $ un'algebra su campo $ \K $
 		\begin{equation*}
 			\begin{cases}
 				\begin{split}
-					(a + b) \cdot c = a \cdot c + b \cdot c\\
+					(a + b) \cdot c = a \cdot c + b \cdot c \\
 					c \cdot (a + b) = c \cdot a + c \cdot b
-				\end{split} & \text{distributività}\\
+				\end{split} & \text{distributività} \\
 				\lambda (a \cdot b) = (\lambda a) \cdot b = a \cdot (\lambda b) & \text{omogeneità}
 			\end{cases}
 		\end{equation*}
@@ -1327,5 +1327,5 @@ Inoltre $ \varphi $ è anche $ C^{\infty}(U) $-lineare:
 	\varphi(f X + g Y) = f \, \varphi(X) + g \, \varphi(Y) \qcomma \forall f, g \in C^{\infty}(U), \, \forall X, Y \in \chi(U)
 \end{equation}
 
-Dimostreremo per le varietà differenziabili che $ \varphi $ è un isomorfismo di $ C^{\infty}(U) $-moduli, i.e. $ \chi(U) \simeq \der(C^{\infty}(U)) $.\\
+Dimostreremo per le varietà differenziabili che $ \varphi $ è un isomorfismo di $ C^{\infty}(U) $-moduli, i.e. $ \chi(U) \simeq \der(C^{\infty}(U)) $. \\
 Tramite questo isomorfismo, si possono identificare i campi di vettori lisci con le derivazioni dell'algebra delle funzioni lisce, analogamente a come lo spazio tangente a un punto di $ \R^{n} $ si può identificare con le derivazioni puntuali dell'algebra dei germi delle funzioni in quel punto, i.e. $ T_{p}(\R^{n}) \simeq \der_{p}(C_{p}^{\infty}(\R^{n})) $.

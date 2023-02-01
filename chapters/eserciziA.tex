@@ -24,7 +24,7 @@ Dimostrare che la funzione
 {\R}{\R}
 {x}{%
 	\begin{cases}
-		e^{\sfrac{-1}{x^{2}}} & x \neq 0\\
+		e^{\sfrac{-1}{x^{2}}} & x \neq 0 \\
 		0 & x = 0
 	\end{cases}
 }
@@ -62,8 +62,8 @@ Siano $ a,b,c,d \in \R $ tale che $ a<b $. Dimostrare che i seguenti intervalli 
 
 \begin{equation}
 	\begin{cases}
-		(a,b)\\
-		(c,+\infty)\\
+		(a,b) \\
+		(c,+\infty) \\
 		(-\infty,d)
 	\end{cases}
 \end{equation}
@@ -131,7 +131,7 @@ La sua inversa
 	{\R^{n}}{B_{1}(0)}
 	{x}{\left( \dfrac{x^{1}}{\sqrt{1 + \norm{x}^{2}}}, \cdots, \dfrac{x^{n}}{\sqrt{1 + \norm{x}^{2}}} \right)}
 
-è ancora liscia per lo stesso motivo, dunque $ h $ induce il diffeomorfismo $ B_{1}(0) \simeq \R^{n} $.\\
+è ancora liscia per lo stesso motivo, dunque $ h $ induce il diffeomorfismo $ B_{1}(0) \simeq \R^{n} $. \\
 Se consideriamo l'applicazione lineare (dunque liscia con inversa liscia e perciò diffeomorfismo)
 
 \map{g}
@@ -208,7 +208,7 @@ Sia l'applicazione
 	{\R^{2}}{\R}
 	{(t,u)}{%
 			\begin{cases}
-				\dfrac{f(t,tu)}{t} & t \neq 0 \\\\
+				\dfrac{f(t,tu)}{t} & t \neq 0 \\ \\
 				0 & t = 0
 			\end{cases}
 			}
@@ -237,7 +237,7 @@ L'algebra $ A = (C_{p}^{\infty}(\R^{n}),+,\cdot) $ ha le operazioni definite com
 	{A \times A}{A}
 	{([(f,U)],[(g,V)])}{[(f g,U \cap V)]}
 
-Perché sia effettivamente un'algebra, verifichiamo che sia distributiva e omogenea.\\
+Perché sia effettivamente un'algebra, verifichiamo che sia distributiva e omogenea. \\
 Per la distributività sinistra:
 
 \begin{align}
@@ -250,7 +250,7 @@ Per la distributività sinistra:
 	\end{split}
 \end{align}
 
-per $ \forall [(f,U)], [(g,V)], [(h,W)] \in C_{p}^{\infty}(\R^{n}) $.\\
+per $ \forall [(f,U)], [(g,V)], [(h,W)] \in C_{p}^{\infty}(\R^{n}) $. \\
 La distributività destra deriva immediatamente dalla distributività sinistra e dalla commutatività (condizione non necessaria per un'algebra): quest'ultima può essere verificata tramite i seguenti passaggi
 
 \sbs{0.5}{%
@@ -272,7 +272,7 @@ La distributività destra deriva immediatamente dalla distributività sinistra e
 			\end{align}
 			}
 
-per qualsiasi $ [(f,U)], [(g,V)] \in C_{p}^{\infty}(\R^{n}) $.\\
+per qualsiasi $ [(f,U)], [(g,V)] \in C_{p}^{\infty}(\R^{n}) $. \\
 Per l'omogeneità:
 
 \begin{align}
@@ -284,7 +284,7 @@ Per l'omogeneità:
 	\end{split}
 \end{align}
 
-per qualsiasi $ [(f,U)], [(g,V)] \in C_{p}^{\infty}(\R^{n}) $ e qualsiasi $ \lambda \in \R $.\\
+per qualsiasi $ [(f,U)], [(g,V)] \in C_{p}^{\infty}(\R^{n}) $ e qualsiasi $ \lambda \in \R $. \\
 Infine l'unitarietà, i.e.
 
 \begin{equation}
@@ -334,7 +334,7 @@ Per dimostrare che $ \der_{p}(C_{p}^{\infty}(\R^{n})) $ sia uno spazio vettorial
 	\end{cases}
 \end{equation}
 
-per qualsiasi $ D_{v}, D_{w}, D_{x} \in \der_{p}(C_{p}^{\infty}(\R^{n})) $ e qualsiasi $ \alpha, \beta \in \R $.\\
+per qualsiasi $ D_{v}, D_{w}, D_{x} \in \der_{p}(C_{p}^{\infty}(\R^{n})) $ e qualsiasi $ \alpha, \beta \in \R $. \\
 Per dimostrare queste proprietà consideriamo un qualunque $ [(f,U)] \in C_{p}^{\infty}(\R^{n}) $ e applichiamo a questo le derivazioni:
 
 \begin{enumerate}
@@ -469,7 +469,7 @@ Per dimostrare che $ \chi(U) $ sia uno spazio vettoriale su $ \R $ è necessario
 	\end{cases}
 \end{equation}
 
-per qualsiasi $ X, Y, Z \in \chi(U) $ e qualsiasi $ \alpha, \beta \in \R $.\\
+per qualsiasi $ X, Y, Z \in \chi(U) $ e qualsiasi $ \alpha, \beta \in \R $. \\
 Ricordiamo che le operazioni sono definite come:
 
 \begin{gather}
@@ -483,7 +483,7 @@ per qualsiasi $ X, Y \in \chi(U) $, qualsiasi $ \alpha \in \R $ e qualsiasi $ p 
 	X = \sum_{i=1}^{n} a^{i} \pdv{x^{i}} \qcomma Y = \sum_{i=1}^{n} b^{i} \pdv{x^{i}}
 \end{equation}
 
-con $ a_{i}, b_{i} \in C^{\infty}(U) $.\\
+con $ a_{i}, b_{i} \in C^{\infty}(U) $. \\
 Per dimostrare dunque queste proprietà, valutiamo i campi di vettori in un qualunque $ p \in U \subset \R^{n} $:
 
 \begin{enumerate}
@@ -515,7 +515,7 @@ Per dimostrare dunque queste proprietà, valutiamo i campi di vettori in un qual
 	\map{0}
 		{U}{\bigsqcup_{p \in U} T_{p} (\R^{n})}
 		{p}{%
-			0_{p} = \sum_{i=1}^{n} 0 \eval{ \pdv{x^{i}} }_{p}\\
+			0_{p} = \sum_{i=1}^{n} 0 \eval{ \pdv{x^{i}} }_{p} \\
 			&\stackrel{\R^{n}}{\mapsto} (0, \dots, 0)%
 			}
 	
@@ -621,7 +621,7 @@ Per dimostrare che $ (\chi(U),+) $ sia un $ C^{\infty} $-modulo è necessario ch
 	\end{cases}
 \end{equation}
 
-per $ \forall f,g \in C^{\infty}(U) $ e $ \forall X,Y \in \chi(U) $. Siccome la moltiplicazione per funzione è commutativa è sufficiente dimostrare che $ (\chi(U),+) $ sia un $ C^{\infty}(U) $-modulo sinistro (o destro) per dimostrare che sia $ C^{\infty}(U) $-modulo.\\
+per $ \forall f,g \in C^{\infty}(U) $ e $ \forall X,Y \in \chi(U) $. Siccome la moltiplicazione per funzione è commutativa è sufficiente dimostrare che $ (\chi(U),+) $ sia un $ C^{\infty}(U) $-modulo sinistro (o destro) per dimostrare che sia $ C^{\infty}(U) $-modulo. \\
 Dimostriamo dunque le proprietà riportate sopra, ancora una volta valutando i campi di vettori in un qualunque $ p \in U \subset \R^{n} $:
 
 \begin{enumerate}
@@ -721,7 +721,7 @@ Per dimostrare che $ \der(A) $ sia uno spazio vettoriale su un campo $ \K $ è n
 	\end{cases}
 \end{equation}
 
-per $ \forall D_{1}, D_{2}, D_{3}, D \in \der(A) $ e $ \forall \alpha, \beta \in \K $.\\
+per $ \forall D_{1}, D_{2}, D_{3}, D \in \der(A) $ e $ \forall \alpha, \beta \in \K $. \\
 Per dimostrare queste proprietà consideriamo un qualunque $ a \in A $ e applichiamo a questo le derivazioni:
 
 \begin{enumerate}
@@ -852,10 +852,10 @@ Perché $ D_{1} \circ D_{2} $ sia una derivazione deve, in particolare, soddisfa
 
 \begin{align}
 	\begin{split}
-		(D_{1} \circ D_{2})(a \cdot b) &= D_{1}(D_{2}(a \cdot b))\\
-		&= D_{1}( D_{2}(a) \cdot b + a \cdot D_{2}(b) )\\
-		&= D_{1}(D_{2}(a)) \cdot b + D_{2}(a) \cdot D_{1}(b) + D_{1}(a) \cdot D_{2}(b) + a \cdot D_{1}(D_{2}(b))\\
-		&= (D_{1} \circ D_{2})(a) \cdot b + a \cdot (D_{1} \circ D_{2})(b) + D_{2}(a) \cdot D_{1}(b) + D_{1}(a) \cdot D_{2}(b)\\
+		(D_{1} \circ D_{2})(a \cdot b) &= D_{1}(D_{2}(a \cdot b)) \\
+		&= D_{1}( D_{2}(a) \cdot b + a \cdot D_{2}(b) ) \\
+		&= D_{1}(D_{2}(a)) \cdot b + D_{2}(a) \cdot D_{1}(b) + D_{1}(a) \cdot D_{2}(b) + a \cdot D_{1}(D_{2}(b)) \\
+		&= (D_{1} \circ D_{2})(a) \cdot b + a \cdot (D_{1} \circ D_{2})(b) + D_{2}(a) \cdot D_{1}(b) + D_{1}(a) \cdot D_{2}(b) \\
 		&\neq (D_{1} \circ D_{2})(a) \cdot b + a \cdot (D_{1} \circ D_{2})(b)
 	\end{split}
 \end{align}
