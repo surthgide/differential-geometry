@@ -31,7 +31,6 @@
 \usepackage[toc]{appendix}
 \usepackage{parskip}
 \usepackage{tikz-cd}
-%\usepackage{namedef}
 
 % symbols definition
 
@@ -216,7 +215,6 @@
 \renewcommand{\footrulewidth}{0.4pt}
 \renewcommand{\footnoterule}{\vfill\kern -3pt \hrule width 0.4\columnwidth \kern 2.6pt}
 
-
 % bibliography
 
 \usepackage[backend=bibtex,style=nature,natbib=true,sorting=none,autocite=inline]{biblatex} % bibliography is sorted in the same order in which the articles are cited
@@ -227,7 +225,7 @@
 \setcounter{tocdepth}{3}
 %\setcounter{secnumdepth}{3}
 
-%
+% title page stuff
 
 \title{\textbf{Appunti di Geometria differenziale}}
 \author{Simone Iovine}
@@ -239,24 +237,23 @@
 
 %
 
-\pagenumbering{gobble}
-
-%
-
-\chapter*{Note}
-\input{chapters/note}
-
-%
-
-\newpage
-
-%
-
 \pagenumbering{roman}
 
 %
 
 \tableofcontents
+
+%
+
+\chapter*{Note}
+\addcontentsline{toc}{chapter}{Note}
+\input{chapters/note}
+
+%
+
+\chapter*{Notazione}
+\addcontentsline{toc}{chapter}{Notazione}
+\input{chapters/notation}
 
 %
 
