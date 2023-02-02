@@ -1,4 +1,2 @@
 aggiungi capitolo/sezione di spiegazione dei simboli e della notazione
 
-inserisci "thm:", "sec:", "cor:", ecc. nei label
-
