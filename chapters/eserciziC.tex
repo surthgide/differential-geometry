@@ -1,35 +1,35 @@
-\section{Prodotto diretto di gruppi di Lie}\label{es3-1}
-
-\begin{tcolorbox}
-	Dimostrare che il prodotto diretto di due gruppi di Lie è un gruppo di Lie.
-\end{tcolorbox}
-
+\exer{Prodotto diretto di gruppi di Lie}
+{es3-1}
+{
+Dimostrare che il prodotto diretto di due gruppi di Lie è un gruppo di Lie.
+}
+{
 Consideriamo i due seguenti gruppi di Lie:
 
 \begin{itemize}
 	\item $ (G, \mu, i) $ con operazioni definite come \\
-		\sbs{0.45}{%
-					\map{\mu}
-						{G \times G}{G}
-						{(g_{1},g_{2})}{g_{1} \cdot g_{2}}
-					}
-			{0.45}{%
-					\map{i}
-						{G}{G}
-						{g}{g^{-1}}
-					}
-		
+	\sbs{0.45}{%
+				\map{\mu}
+					{G \times G}{G}
+					{(g_{1},g_{2})}{g_{1} \cdot g_{2}}
+				}
+		{0.45}{%
+				\map{i}
+					{G}{G}
+					{g}{g^{-1}}
+				}
+	
 	\item $ (H, \nu, j) $ con operazioni definite come \\
-		\sbs{0.45}{%
-					\map{\nu}
+	\sbs{0.45}{%
+				\map{\nu}
 					{H \times H}{H}
 					{(h_{1},h_{2})}{h_{1} * h_{2}}
-					}
-			{0.45}{%
-					\map{j}
-						{H}{H}
-						{h}{h^{-1}}
-					}	
+				}
+		{0.45}{%
+				\map{j}
+					{H}{H}
+					{h}{h^{-1}}
+			}	
 \end{itemize}
 
 A questo punto definiamo $ (\Omega, \sigma, k) $ il prodotto diretto dei due gruppi di Lie appena definiti, i.e.
@@ -72,9 +72,8 @@ Il prodotto diretto conserva in $ \Omega $ le proprietà di gruppo algebrico di 
 			\map{\pi_{H}}
 				{\Omega}{H}
 				{s = (g,h)}{h}
-			
 			}
-		
+
 Da cui possiamo derivare i seguenti diagrammi:
 
 \sbs{0.5}{%
@@ -99,52 +98,49 @@ Da cui possiamo derivare i seguenti diagrammi:
 Mediante le proiezioni è possibile scrivere le operazioni del gruppo $ \Omega $ come
 
 \begin{gather}
-		\sigma = (\pi_{G})^{-1} \circ \mu \circ (\pi_{G} \times \pi_{G}) %
-		= (\pi_{H})^{-1} \circ \nu \circ (\pi_{H} \times \pi_{H}) \\
-		k = (\pi_{G})^{-1} \circ i \circ \pi_{G} %
-		= (\pi_{H})^{-1} \circ j \circ \pi_{H}
+	\sigma = (\pi_{G})^{-1} \circ \mu \circ (\pi_{G} \times \pi_{G}) %
+	= (\pi_{H})^{-1} \circ \nu \circ (\pi_{H} \times \pi_{H}) \\
+	k = (\pi_{G})^{-1} \circ i \circ \pi_{G} %
+	= (\pi_{H})^{-1} \circ j \circ \pi_{H}
 \end{gather}
 
 Siccome le proiezioni e le operazioni dei gruppi $ G $ e $ H $ sono lisce, anche le operazioni di $ \Omega $ sono lisce in quanto composizioni di applicazioni lisce; questo mostra che $ (\Omega, \sigma, k) $ è un gruppo di Lie.
-
-%
-
-\newpage
+}
 
 %=======================================================================================
 
-\section{Topologie sul toro}\label{es3-2}
+\exer{Topologie sul toro}
+{es3-2}
+{
+Siano la proiezione
 
-\begin{tcolorbox}
-	Siano la proiezione
-	
-	\map{\pi}
-		{\R^{2}}{\T^{2} = \S^{1} \times \S^{1}}
-		{(t,s)}{(e^{2 \pi i t},e^{2 \pi i s})}
-	
-	l'insieme
-	
-	\begin{equation}
-		L = \{ (t,\alpha t) \in \R^{2} \mid \alpha \in \R \setminus \Q \}
-	\end{equation}
-	
-	e la restrizione di $ \pi $ a $ L $, i.e.
-	
-	\begin{equation}
-		f = \eval{\pi}_{L} : L \to \S^{1} \times \S^{1}
-	\end{equation}
+\map{\pi}
+	{\R^{2}}{\T^{2} = \S^{1} \times \S^{1}}
+	{(t,s)}{(e^{2 \pi i t},e^{2 \pi i s})}
 
-	Siano
-	
-	\begin{itemize}
-		\item $ \tau_{f} $ la topologia indotta da $ f $ su $ H = \pi(L) $;
-		
-		\item $ \tau_{s} $ la topologia indotta dall'inclusione $ H \subset \S^{1} \times \S^{1} $
-	\end{itemize}
-	
-	Dimostrare che $ \tau_{s} \subset \tau_{f} $.
-\end{tcolorbox}
+l'insieme
 
+\begin{equation}
+	L = \{ (t,\alpha t) \in \R^{2} \mid \alpha \in \R \setminus \Q \}
+\end{equation}
+
+e la restrizione di $ \pi $ a $ L $, i.e.
+
+\begin{equation}
+	f = \eval{\pi}_{L} : L \to \S^{1} \times \S^{1}
+\end{equation}
+
+Siano
+
+\begin{itemize}
+	\item $ \tau_{f} $ la topologia indotta da $ f $ su $ H = \pi(L) $;
+	
+	\item $ \tau_{s} $ la topologia indotta dall'inclusione $ H \subset \S^{1} \times \S^{1} $
+\end{itemize}
+
+Dimostrare che $ \tau_{s} \subset \tau_{f} $.
+}
+{
 Definiamo le due topologie:
 
 \begin{itemize}
@@ -156,35 +152,32 @@ Definiamo le due topologie:
 Sappiamo che $ f $ è un'immersione iniettiva\footnote{%
 	Vedi Esempio \ref{ex:embed-torus}.%
 } (non un embedding).
-
-%
-
-\newpage
+}
 
 %=======================================================================================
 
-\section{Esponenziale di matrice}\label{es3-3}
+\exer{Esponenziale di matrice}
+{es3-3}
+{
+Sia la matrice
 
-\begin{tcolorbox}
-	Sia la matrice
-	
-	\begin{equation}
-		X = \bmqty{ %
-					0 & 1 \\
-					1 & 0 %
+\begin{equation}
+	X = \bmqty{ %
+				0 & 1 \\
+				1 & 0 %
+				}
+\end{equation}
+
+Dimostrare che
+
+\begin{equation}
+	e^{X} = \bmqty{ %
+					\cosh(1) & \sinh(1) \\ \\
+					\sinh(1) & \cosh(1) %
 					}
-	\end{equation}
-	
-	Dimostrare che
-	
-	\begin{equation}
-		e^{X} = \bmqty{ %
-						\cosh(1) & \sinh(1) \\ \\
-						\sinh(1) & \cosh(1) %
-						}
-	\end{equation}
-\end{tcolorbox}
-
+\end{equation}
+}
+{
 Possiamo vedere che la matrice $ X $ è idempotente, i.e.
 
 \begin{equation}
@@ -192,10 +185,10 @@ Possiamo vedere che la matrice $ X $ è idempotente, i.e.
 					0 & 1 \\
 					1 & 0 %
 					} %
-			\bmqty{ %
-					0 & 1 \\
-					1 & 0 %
-					} %
+	\bmqty{ %
+			0 & 1 \\
+			1 & 0 %
+			} %
 	= \bmqty{ %
 				1 & 0 \\
 				0 & 1 %
@@ -249,23 +242,20 @@ dove nel quarto passaggio abbiamo usato la proprietà delle serie convergenti
 \end{equation}
 
 in quanto $ M_{n}(\R) $ è uno spazio di Banach, quindi completo.
-
-%
-
-\newpage
+}
 
 %=======================================================================================
 
-\section{Esponenziale di somma di matrici}\label{es3-4}
+\exer{Esponenziale di somma di matrici}
+{es3-4}
+{
+Trovare due matrici $ A $ e $ B $ tali che
 
-\begin{tcolorbox}
-	Trovare due matrici $ A $ e $ B $ tali che
-	
-	\begin{equation}
-		e^{A+B} \neq e^{A} e^{B}
-	\end{equation}
-\end{tcolorbox}
-
+\begin{equation}
+	e^{A+B} \neq e^{A} e^{B}
+\end{equation}
+}
+{
 Prese due matrici $ A,B \in M_{n}(\K) $ con $ \K = \R, \C $, vale la proprietà
 
 \begin{equation}
@@ -299,19 +289,16 @@ in quanto
 	= \bmqty{ -1 & 0 \\ 0 & 1 } %
 	\neq 0
 \end{equation}
-
-%
-
-\newpage
+}
 
 %=======================================================================================
 
-\section{Matrici unitarie come insieme compatto}\label{es3-5}
-
-\begin{tcolorbox}
-	Dimostrare che il gruppo unitario $ U(n) $ è compatto per ogni $ n \geqslant 1 $.
-\end{tcolorbox}
-
+\exer{Matrici unitarie come insieme compatto}
+{es3-5}
+{
+Dimostrare che il gruppo unitario $ U(n) $ è compatto per ogni $ n \geqslant 1 $.
+}
+{
 Per dimostrare che $ U(n) \subset GL_{n}(\C) $ sia compatto, è necessario dimostrare che sia chiuso e limitato in $ GL_{n}(\C) $. \\
 È chiuso perché preimmagine di $ I \in GL_{n}(\C) $ tramite l'applicazione continua
 
@@ -319,24 +306,23 @@ Per dimostrare che $ U(n) \subset GL_{n}(\C) $ sia compatto, è necessario dimos
 	{GL_{n}(\C)}{GL_{n}(\C)}
 	{A}{A^{*} A}
 
-
 Mentre è limitato in quanto le colonne delle matrici di $ U(n) $ hanno norma unitaria e quindi la somma delle colonne è limitata dalla dimensione n delle matrici. \\
 Svolgendo il prodotto matriciale nella definizione di $ U(n) $
 
 \begin{equation}
 	A^{*} A = %
 	\bmqty{ %
-		\bar{a}_{11} & \bar{a}_{21} & \cdots & \bar{a}_{n1} \\ %
-		\bar{a}_{12} & \bar{a}_{22} & \cdots & \bar{a}_{n2} \\ %
-		\vdots & \vdots & \ddots & \vdots \\ %
-		\bar{a}_{1n} & \bar{a}_{2n} & \cdots & \bar{a}_{nn}
-	}
+			\bar{a}_{11} & \bar{a}_{21} & \cdots & \bar{a}_{n1} \\ %
+			\bar{a}_{12} & \bar{a}_{22} & \cdots & \bar{a}_{n2} \\ %
+			\vdots & \vdots & \ddots & \vdots \\ %
+			\bar{a}_{1n} & \bar{a}_{2n} & \cdots & \bar{a}_{nn}
+			}
 	\bmqty{ %
-		a_{11} & a_{12} & \cdots & a_{1n} \\ %
-		a_{21} & a_{22} & \cdots& a_{2n} \\ %
-		\vdots & \vdots & \ddots & \vdots \\ %
-		a_{n1} & a_{n2} & \cdots & a_{nn}
-	}
+			a_{11} & a_{12} & \cdots & a_{1n} \\ %
+			a_{21} & a_{22} & \cdots& a_{2n} \\ %
+			\vdots & \vdots & \ddots & \vdots \\ %
+			a_{n1} & a_{n2} & \cdots & a_{nn}
+			}
 \end{equation}
 
 se consideriamo solo la prima entrata della matrice prodotto, otteniamo
@@ -357,29 +343,26 @@ vale per le matrici unitarie
 \begin{equation}
 	\norm{A} \leqslant n \qcomma \forall A \in U(n)
 \end{equation}
-
-%
-
-\newpage
+}
 
 %=======================================================================================
 
-\section{Proprietà componente connessa $ G_{0} $ di un gruppo di Lie}\label{es3-6}
+\exer{Proprietà componente connessa $ G_{0} $ di un gruppo di Lie}
+{es3-6}
+{
+Siano $ G $ un gruppo di Lie e $ G_{0} $ la componente connessa di $ G $ che contiene $ e $ (elemento neutro di $ G $). Se $ \mu $ e $ i $ denotano rispettivamente la moltiplicazione e l'inversione in $ G $, provare che:
 
-\begin{tcolorbox}
-	Siano $ G $ un gruppo di Lie e $ G_{0} $ la componente connessa di $ G $ che contiene $ e $ (elemento neutro di $ G $). Se $ \mu $ e $ i $ denotano rispettivamente la moltiplicazione e l'inversione in $ G $, provare che:
+\begin{enumerate}
+	\item $ \mu(\{g\} \times G_{0}) \subset G_{0} $ per qualsiasi $ g \in G_{0} $;
 	
-	\begin{enumerate}
-		\item $ \mu(\{g\} \times G_{0}) \subset G_{0} $ per qualsiasi $ g \in G_{0} $;
-		
-		\item $ i(G_{0}) \subset G_{0} $;
-		
-		\item $ G_{0} $ è un sottoinsieme aperto di $ G $;
-		
-		\item $ G_{0} $ è un sottogruppo di Lie di $ G $.
-	\end{enumerate}
-\end{tcolorbox}
-
+	\item $ i(G_{0}) \subset G_{0} $;
+	
+	\item $ G_{0} $ è un sottoinsieme aperto di $ G $;
+	
+	\item $ G_{0} $ è un sottogruppo di Lie di $ G $.
+\end{enumerate}
+}
+{
 \paragraph{1)}
 
 Considerando un elemento $ g \in G $ e la traslazione a sinistra
@@ -450,19 +433,16 @@ dove moltiplicazione e inversione di $ G $ inducono le operazioni su $ G_{0} $:
 				{G_{0}}{G_{0}}
 				{g}{g^{-1}}
 			}
-
-%
-
-\newpage
+}
 
 %=======================================================================================
 
-\section{Diffeomorfismo $ SO(2) \simeq \S^{1} $}\label{BONUS3-1}
-
-\begin{tcolorbox}
-	Verificare che $ SO(2) $ sia diffeomorfo a $ \S^{1} $.
-\end{tcolorbox}
-
+\exer{Diffeomorfismo $ SO(2) \simeq \S^{1} $}
+{BONUS3-1}
+{
+Verificare che $ SO(2) $ sia diffeomorfo a $ \S^{1} $.
+}
+{
 Dalle definizioni degli spazi in esame, possiamo derivare le seguenti definizioni alternative:
 
 \begin{align}
@@ -551,19 +531,16 @@ la quale è liscia perché composizione di applicazioni lisce e inoltre è inver
 	\implies %
 	SO(2) \simeq \S^{1}
 \end{equation}
-
-%
-
-\newpage
+}
 
 %=======================================================================================
 
-\section{Diffeomorfismo $ SU(2) \simeq \S^{3} $}\label{BONUS3-2}
-
-\begin{tcolorbox}
-	Verificare che $ SU(2) $ sia diffeomorfo a $ \S^{3} $.
-\end{tcolorbox}
-
+\exer{Diffeomorfismo $ SU(2) \simeq \S^{3} $}
+{BONUS3-2}
+{
+Verificare che $ SU(2) $ sia diffeomorfo a $ \S^{3} $.
+}
+{
 Dalle definizioni degli spazi in esame, possiamo derivare le seguenti definizioni alternative:
 
 \begin{align}
@@ -597,26 +574,23 @@ Analogamente all'esercizio precedente, possiamo considerare l'applicazione lisci
 	{(\alpha, \beta)}{\bmqty{ \alpha & - \bar{\beta} \\ \beta & \bar{\alpha} }}
 
 Questa rende dunque i due spazi diffeomorfi, i.e. $ SU(2) \simeq \S^{3} $.
-
-%
-
-\newpage
+}
 
 %=======================================================================================
 
-\section{Differenziale moltiplicazione gruppo di Lie}\label{es3-7}
+\exer{Differenziale moltiplicazione gruppo di Lie}
+{es3-7}
+{
+Sia $ G $ un gruppo di Lie con moltiplicazione $ \mu : G \times G \to G $. Dimostrare che
 
-\begin{tcolorbox}
-	Sia $ G $ un gruppo di Lie con moltiplicazione $ \mu : G \times G \to G $. Dimostrare che
-	
-	\begin{equation}
-		\mu_{*(a,b)}(X_{a},Y_{b}) = (R_{b})_{*a}(X_{a}) + (L_{a})_{*b}(Y_{b}) %
-		\qcomma \forall (a,b) \in G \times G, \, \forall X_{a} \in T_{a}(G), \, \forall Y_{b} \in T_{b}(G)
-	\end{equation}
-	
-	dove $ L_{a} $ (risp. $ R_{b} $) denota la traslazione a sinistra (risp. a destra) associata ad $ a $ (risp. $ b $).
-\end{tcolorbox}
+\begin{equation}
+	\mu_{*(a,b)}(X_{a},Y_{b}) = (R_{b})_{*a}(X_{a}) + (L_{a})_{*b}(Y_{b}) %
+	\qcomma \forall (a,b) \in G \times G, \, \forall X_{a} \in T_{a}(G), \, \forall Y_{b} \in T_{b}(G)
+\end{equation}
 
+dove $ L_{a} $ (risp. $ R_{b} $) denota la traslazione a sinistra (risp. a destra) associata ad $ a $ (risp. $ b $).
+}
+{
 Siccome il differenziale è un'applicazione lineare, possiamo scrivere\footnote{%
 	Vedi Paragrafo \ref{par:differ-prod-inv-lie}.%
 }
@@ -644,7 +618,7 @@ Consideriamo ora le seguenti curve lisce:
 					d'(0) = Y_{b}
 				\end{cases}
 			\end{equation}
-			}
+	}
 
 \sbs{0.5}{%
 			\begin{equation}
@@ -699,24 +673,21 @@ dunque
 	\mu_{*(a,b)}(X_{a},Y_{b}) = (R_{b})_{*a}(X_{a}) + (L_{a})_{*b}(Y_{b}) %
 	= X_{a} \, b + a \, Y_{b}
 \end{equation}
-
-%
-
-\newpage
+}
 
 %=======================================================================================
 
-\section{Differenziale inversione gruppo di Lie}\label{es3-8}
+\exer{Differenziale inversione gruppo di Lie}
+{es3-8}
+{
+Sia $ G $ un gruppo di Lie con inversione $ i : G \to G $. Dimostrare che
 
-\begin{tcolorbox}
-	Sia $ G $ un gruppo di Lie con inversione $ i : G \to G $. Dimostrare che
-	
-	\begin{equation}
-		i_{*a}(Y_{a}) = -(R_{a^{-1}})_{*e}(L_{a^{-1}})_{*a} (Y_{a}) %
-		\qcomma \forall a \in G, \, \forall Y_{a} \in T_{a}(G)
-	\end{equation}
-\end{tcolorbox}
-
+\begin{equation}
+	i_{*a}(Y_{a}) = -(R_{a^{-1}})_{*e}(L_{a^{-1}})_{*a} (Y_{a}) %
+	\qcomma \forall a \in G, \, \forall Y_{a} \in T_{a}(G)
+\end{equation}
+}
+{
 Per l'inversione, vale la seguente proprietà:
 
 \begin{equation}
@@ -767,25 +738,22 @@ possiamo dunque applicare il differenziale a un qualsiasi vettore dello spazio t
 		&= - (R_{a^{-1}})_{*e} (L_{a^{-1}})_{*a} (Y_{a})
 	\end{split}
 \end{align}
-
-%
-
-\newpage
+}
 
 %=======================================================================================
 
-\section{Commutatore matriciale per algebre di Lie}\label{es3-9}
+\exer{Commutatore matriciale per algebre di Lie}
+{es3-9}
+{
+Verificare che il commutatore tra matrici
 
-\begin{tcolorbox}
-	Verificare che il commutatore tra matrici
-	
-	\begin{equation}
-		[A,B] = AB - BA
-	\end{equation}
-	
-	definisce un'algebra di Lie sullo spazio tangente all'identità dei gruppi: $ O(n) $, $ SO(n) $, $ U(n) $, $ SU(n) $, $ SL_{n}(\R) $, $ SL_{n}(\C) $.
-\end{tcolorbox}
+\begin{equation}
+	[A,B] = AB - BA
+\end{equation}
 
+definisce un'algebra di Lie sullo spazio tangente all'identità dei gruppi: $ O(n) $, $ SO(n) $, $ U(n) $, $ SU(n) $, $ SL_{n}(\R) $, $ SL_{n}(\C) $.
+}
+{
 Dal Corollario \ref{cor:incl-alg-lie-subg}, sappiamo che il commutatore dei sottogruppi matriciali di $ GL_{n}(\K) $ è dato dal commutatore standard
 
 \begin{equation}
@@ -833,25 +801,22 @@ dove abbiamo usato la proprietà
 \end{equation}
 
 A questo punto i commutatori delle algebre in esame appartengono ai rispettivi spazi tangenti all'unità dei gruppi.
-
-%
-
-\newpage
+}
 
 %=======================================================================================
 
-\section{Esponenziale per gruppi di Lie}\label{es3-10}
+\exer{Esponenziale per gruppi di Lie}
+{es3-10}
+{
+Verificare che l'esponenziale di una matrice definisce un'applicazione
 
-\begin{tcolorbox}
-	Verificare che l'esponenziale di una matrice definisce un'applicazione
-	
-	\map{e}
-		{T_{I}(G)}{G}
-		{A}{e^{A}}
-	
-	per i gruppi di Lie: $ GL_{n}(\R) $, $ GL_{n}(\C) $, $ SL_{n}(\R) $, $ SL_{n}(\C) $, $ O(n) $, $ SO(n) $, $ U(n) $, $ SU(n) $
-\end{tcolorbox}
+\map{e}
+	{T_{I}(G)}{G}
+	{A}{e^{A}}
 
+per i gruppi di Lie: $ GL_{n}(\R) $, $ GL_{n}(\C) $, $ SL_{n}(\R) $, $ SL_{n}(\C) $, $ O(n) $, $ SO(n) $, $ U(n) $, $ SU(n) $
+}
+{
 Consideriamo i seguenti insiemi
 
 \begin{equation}
@@ -930,19 +895,16 @@ A questo punto, possiamo usare questi ragionamenti per verificare che l'esponenz
 	A \in T_{I}(SU(n)) = H^{-}_{n} \cap T^{0}_{n}(\C) %
 	\implies e^{A} \in U(n) \cap SL_{n}(\C) = SU(n)
 \end{gather}
-
-%
-
-\newpage
+}
 
 %=======================================================================================
 
-\section{Algebra di Lie di prodotto diretto di gruppi di Lie}\label{es3-11}
-
-\begin{tcolorbox}
-	Sia $ G = G_{1} \times \cdots \times G_{s} $ il prodotto diretto di gruppi di Lie. Dimostrare che l'algebra di Lie di $ G $ è isomorfa alla somma diretta delle algebre di Lie dei $ G_{i} $ con $ i=1,\dots,s $.
-\end{tcolorbox}
-
+\exer{Algebra di Lie di prodotto diretto di gruppi di Lie}
+{es3-11}
+{
+Sia $ G = G_{1} \times \cdots \times G_{s} $ il prodotto diretto di gruppi di Lie. Dimostrare che l'algebra di Lie di $ G $ è isomorfa alla somma diretta delle algebre di Lie dei $ G_{i} $ con $ i=1,\dots,s $.
+}
+{
 % https://math.stackexchange.com/questions/3724626/lieg-times-h-cong-lieg-oplus-lieh
 
 In notazione, dobbiamo dimostrare la seguente implicazione per gruppi di Lie $ G_{i} $
@@ -989,7 +951,7 @@ con le proiezioni e i loro differenziali
 			\map{\pi_{G}}
 				{G \times H}{G}
 				{(g,h)}{g}
-				
+			
 			\map{(\pi_{G})_{*g}}
 				{T_{(g,h)}(G \times H)}{T_{g}(G)}
 				{(\xi \oplus \eta)_{(g,h)}}{\xi_{g}}
@@ -998,7 +960,7 @@ con le proiezioni e i loro differenziali
 			\map{\pi_{H}}
 				{G \times H}{H}
 				{(g,h)}{h}
-				
+			
 			\map{(\pi_{H})_{*h}}
 				{T_{(g,h)}(G \times H)}{T_{h}(H)}
 				{(\xi \oplus \eta)_{(g,h)}}{\eta_{h}}
@@ -1139,19 +1101,16 @@ Il ragionamento vale iterativamente per $ H = \displaystyle\bigoplus_{i=1}^{s-1}
 	\bigoplus_{i=1}^{s} Lie(G_{i}) \stackrel{iso}{\simeq} Lie \left( \prod_{i=1}^{s} G_{i} \right) %
 	\qcomma \forall s \in \N
 \end{equation}
-
-%
-
-\newpage
+}
 
 %=======================================================================================
 
-\section{Parallelizzabilità dei gruppi di Lie}\label{es3-12}
-
-\begin{tcolorbox}
-	Dimostrare che ogni gruppo di Lie è parallelizzabile.
-\end{tcolorbox}
-
+\exer{Parallelizzabilità dei gruppi di Lie}
+{es3-12}
+{
+Dimostrare che ogni gruppo di Lie è parallelizzabile.
+}
+{
 % https://math.stackexchange.com/questions/308691/let-g-be-a-lie-group-show-that-there-is-a-diffeomorphism-tg-cong-g-times-t
 
 Una varietà differenziabile di dimensione $ n $ è parallelizzabile se esistono $ n $ vettori lisci linearmente indipendenti che formino una base per lo spazio tangente in ogni punto, i.e. per un gruppo di Lie $ G $
@@ -1223,7 +1182,7 @@ questo mostra che la dimensione del nucleo sia nulla e dunque che sia anche inie
 			\map{\pi_{G}}
 				{T(G)}{G}
 				{\xi}{g}
-		
+			
 			\centering dove $ (g,\xi) \equiv \xi \in T_{g}(G) $
 			}
 	{0.5}{%
@@ -1271,3 +1230,4 @@ A questo punto, per il ragionamento precedente, l'applicazione $ \varphi $ è un
 
 il che rende triviale il fibrato tangente di un gruppo di Lie, equivalente a dimostrare che ogni gruppo di Lie è parallelizzabile. \\
 Incidentalmente, come implicazione inversa, otteniamo che ogni spazio non parallelizzabile non può essere dotato della struttura di gruppo di Lie.
+}
