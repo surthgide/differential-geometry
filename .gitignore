@@ -6,5 +6,5 @@
 *.run.xml
 *.gz
 *.toc
-*.bib
 *.synctex(busy)
+*-blx.bib

@@ -190,7 +190,10 @@
 
 % blue links for footsnotes and stuff
 
-\usepackage[bookmarksnumbered=true,linktocpage=true]{hyperref} 
+\usepackage[
+	bookmarksnumbered = true,
+	linktocpage = true]{hyperref}
+
 \hypersetup{
 	colorlinks = true,
 	linkcolor = blue,
@@ -217,8 +220,15 @@
 
 % bibliography
 
-\usepackage[backend=bibtex,style=nature,natbib=true,sorting=none,autocite=inline]{biblatex} % bibliography is sorted in the same order in which the articles are cited
-\addbibresource{chapters/references}
+\usepackage[
+	backend = bibtex,
+	style = nature,
+	natbib = true,
+	sorting = none,
+	autocite = inline]{biblatex}
+% bibliography is sorted in the same order in which the articles are cited
+
+\addbibresource{chapters/biblio} % imports bibliography file
 
 % table of contents
 
@@ -303,6 +313,10 @@
 
 %
 
-%\printbibliography
+\addcontentsline{toc}{chapter}{Bibliografia}
+
+\printbibliography[
+	title={Bibliografia}
+]
 
 \end{document}
