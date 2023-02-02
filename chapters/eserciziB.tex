@@ -37,7 +37,7 @@ possiamo dire che $ V \cap A_{j} $ è aperto in $ A_{j} $ per $ \forall j \in J 
 %=======================================================================================
 
 \exer{Atlante differenziabile per $ \S^{n} $ con $ 2(n+1) $ carte}
-{es2-1}
+{exer2-1}
 {
 Sia $ \S^{n} $ la sfera unitaria in $ \R^{n+1} $. Trovare un atlante differenziabile di $ \S^{n} $ con $ 2(n+1) $ carte.
 }
@@ -80,13 +80,13 @@ con inverse
 	{D_{\ceil*{\frac{i}{2}}}}{U_{i}}
 	{(x^{1},\dots,x^{i-1},x^{i},\dots,x^{n})}{\left( x^{1},\dots,x^{i-1},(-1)^{i} \sqrt{1-\norm{x}^{2}},x^{i},\dots,x^{n} \right)}
 
-La famiglia di coppie $ \mathfrak{U} = \{ (U_{i},\varphi_{i}) \}_{i=1,\dots,2(n+1)} $ definisce un atlante differenziabile per $ \S^{n} $ in quanto i cambi di carte sono lisci: la dimostrazione è analoga a quella fatta nell'Esempio \ref{unit-sph} per $ \S^{2} $.
+La famiglia di coppie $ \mathfrak{U} = \{ (U_{i},\varphi_{i}) \}_{i=1,\dots,2(n+1)} $ definisce un atlante differenziabile per $ \S^{n} $ in quanto i cambi di carte sono lisci: la dimostrazione è analoga a quella fatta nell'Esempio \ref{example:diff-man-unit-sph} per $ \S^{2} $.
 }
 
 %=======================================================================================
 
 \exer{Equivalenza tra strutture differenziabili su $ \S^{n} $}
-{es2-2}
+{exer2-2}
 {
 Dimostrare che la struttura differenziabile su $ \S^{n} $ definita nell’esercizio precedente e quella definita dalle proiezioni stereografiche coincidono.
 }
@@ -142,7 +142,7 @@ e analogamente per $ \pi_{S} $: i cambi di carta sono lisci dunque le strutture 
 %=======================================================================================
 
 \exer{Grassmanniana come spazio topologico connesso e compatto}
-{es2-5}
+{exer2-5}
 {
 Dimostrare che la Grassmanniana $ G(k,n) $ è uno spazio topologico connesso e compatto.
 }
@@ -238,7 +238,7 @@ qui
 %=======================================================================================
 
 \exer{Restrizione di funzione liscia su varietà}
-{es2-7}
+{exer2-7}
 {
 Sia $ \S^{1} $ il cerchio unitario di $ \R^{2} $. Dimostrare che una funzione liscia $ f : \R^{2} \to \R $ si restringe a una funzione liscia $ \eval{f}_{\S^{1}} : \S^{1} \to \R $.
 }
@@ -257,7 +257,7 @@ Siccome la definizione non dipende dalla carta scelta e dal fatto che un diffeom
 \end{equation}
 
 definisce una carta della struttura differenziale $ (U,g) $\footnote{%
-	Vedi Proposizione \ref{diffeo-map}.%
+	Vedi Proposizione \ref{prop:diffeo-map}.%
 }, possiamo prendere il diffeomorfismo
 
 \map{g}
@@ -280,7 +280,7 @@ la quale può essere riscritta come
 %=======================================================================================
 
 \exer{Inclusione come funzione liscia tra varietà}
-{es2-6}
+{exer2-6}
 {
 Siano $ M $ e $ N $ due varietà differenziabili e $ q_{0} \in N $. Dimostrare che
 
@@ -297,7 +297,7 @@ Prendiamo gli atlanti differenziabili $ \{(U,\varphi)\} \in M $ e $ \{(U \times 
 	{\varphi( i_{q_{0}}^{-1}(U \times V) \cap U )}{\R^{m+n}}
 	{\varphi(p)}{(\varphi^{1}(p),\dots,\varphi^{m}(p),\psi^{1}(q_{0}),\dots,\psi^{n}(q_{0}))}
 
-deve essere liscia. Per dimostrare che lo sia, dalla Proposizione \ref{map-comp}, basta mostrare che le sue componenti siano lisce: presa la proiezione sulla $ k $-esima componente
+deve essere liscia. Per dimostrare che lo sia, dalla Proposizione \ref{prop:map-comp}, basta mostrare che le sue componenti siano lisce: presa la proiezione sulla $ k $-esima componente
 
 \map{r^{k}}
 	{\R^{n}}{\R}
@@ -320,7 +320,7 @@ le quali sono tutte lisce, dunque anche l'inclusione è liscia tra varietà.
 %=======================================================================================
 
 \exer{Coefficienti campo di vettori}
-{es2-8}
+{exer2-8}
 {
 Siano un punto $ p = (x,y) \in \R^{2} $ e un'applicazione
 
@@ -398,7 +398,7 @@ i.e. $ (a,b,c) = (1,0,y) $.
 %=======================================================================================
 
 \exer{Coefficienti cambio di base}
-{es2-9}
+{exer2-9}
 {
 Siano $ x $ e $ y $ le coordinate standard su $ \R^{2} $ e $ U = \R^{2} \setminus \{(0,0)\} $. In $ U $ le coordinate polari $ (\rho, \theta) $ con $ \rho > 0 $ e $ \theta \in (0,2\pi) $ sono definite come
 
@@ -462,7 +462,7 @@ dunque
 %=======================================================================================
 
 \exer{Vettore tangente a una curva}
-{es2-10}
+{exer2-10}
 {
 Sia $ p = (x,y) $ un punto di $ \R^{2} $. Allora
 
@@ -482,7 +482,7 @@ La curva considerata è la seguente:
 		= \bmqty{ \cos(2t) x - \sin(2t) y \\ \\ \sin(2t) x + \cos(2t) y }%
 		}
 
-Dalla Proposizione \ref{loc-exp-tan-cur} considerando $ \R^{2} $ come varietà immagine, abbiamo che il vettore tangente alla curva in un punto $ c(t_{0}) $ con $ t_{0} = 0 $ è dato da
+Dalla Proposizione \ref{prop:loc-exp-tan-cur} considerando $ \R^{2} $ come varietà immagine, abbiamo che il vettore tangente alla curva in un punto $ c(t_{0}) $ con $ t_{0} = 0 $ è dato da
 
 \begin{equation}
 	c'(0) = \sum_{i=1}^{n} \dot{c}_{i}(0) \eval{ \pdv{r^{i}} }_{c(0)} %
@@ -512,7 +512,7 @@ da cui
 %=======================================================================================
 
 \exer{Isomorfismo prodotto spazi tangenti}
-{es2-11}
+{exer2-11}
 {
 Siano $ N $ e $ M $ varietà differenziabili e $ \pi_{N} : N \times M \to N $ e $ \pi_{M} : N \times M \to M $ le proiezioni naturali. Dimostrare che per $ (p,q) \in N \times M $ l'applicazione
 
@@ -633,7 +633,7 @@ perciò la funzione $ f = (\pi_{N_{*p}},\pi_{M_{*q}}) $ è anche iniettiva dunqu
 %=======================================================================================
 
 \exer{Prodotto di sottovarietà}
-{es2-12}
+{exer2-12}
 {
 Siano $ S $ e $ P $ due sottovarietà di due varietà differenziabili $ N $ e $ M $ rispettivamente. Dimostrare che $ S \times P $ è una sottovarietà di $ N \times M $.
 }
@@ -701,7 +701,7 @@ La dimensione e codimensione della sottovarietà prodotto sono dunque pari a
 %=======================================================================================
 
 \exer{Preimmagine di applicazione come sottovarietà}
-{es2-13}
+{exer2-13}
 {
 Sia l'applicazione
 
@@ -751,7 +751,7 @@ Il grafico di $ F $ è un paraboloide iperbolico e le controimmagini dei valori 
 %=======================================================================================
 
 \exer{Sottovarietà tramite condizioni}
-{es2-14}
+{exer2-14}
 {
 Dire se le soluzioni del sistema
 
@@ -765,7 +765,7 @@ Dire se le soluzioni del sistema
 costituiscono una sottovarietà di $ \R^{3} $.
 }
 {
-La soluzione di questo esercizio segue l'Esempio \ref{ex:subvar-cond}. \\
+La soluzione di questo esercizio segue l'Esempio \ref{example:subvar-cond}. \\
 Il sistema in esame può essere riscritto come l'insieme seguente
 
 \begin{equation}
@@ -911,7 +911,7 @@ da cui lo spazio tangente
 %=======================================================================================
 
 \exer{Sottovarietà e spazio dei polinomi omogenei}
-{es2-15}
+{exer2-15}
 {
 Un polinomio $ F(x_{1},\dots,x_{n}) \in \R[x_{1},\dots,x_{n}] $ è omogeneo di grado $ k $ se è combinazione lineare di monomi $ x_{1}^{i_{1}} \cdots x_{n}^{i_{m}} $ di grado $ k $ tale che $ \sum_{j=1}^{m} i_{j} = k $. Dimostrare che
 
@@ -988,7 +988,7 @@ qui
 %=======================================================================================
 
 \exer{Gruppo lineare speciale complesso come sottovarietà}
-{es2-16}
+{exer2-16}
 {
 Dimostrare che
 
@@ -999,7 +999,7 @@ Dimostrare che
 è una sottovarietà di $ M_{n}(\C) $ con $ \dim(SL_{n}(\C)) = 2 n^{2} - 2 $.
 }
 {
-Il procedimento è analogo a quello presentato nell'Esempio \ref{es:sl-subman} con le differenze introdotte dal campo dei numeri complessi. \\
+Il procedimento è analogo a quello presentato nell'Esempio \ref{example:sl-subman} con le differenze introdotte dal campo dei numeri complessi. \\
 In particolare, la funzione usata per considerare la preimmagine del valore $ 1 = 1 + 0 i \in \C $ è la seguente
 
 \map{f}
@@ -1022,7 +1022,7 @@ Siccome la dimensione del gruppo lineare speciale in campo complesso è doppia r
 %=======================================================================================
 
 \exer{Punti regolari come aperto del dominio}
-{es2-17}
+{exer2-17}
 {
 Sia $ F : N \to M $ un'applicazione liscia tra varietà differenziabili. Dimostrare che l'insieme $ \PR_{F} $ dei punti regolari di $ F $ è un aperto di $ N $.
 }
@@ -1124,12 +1124,12 @@ questo è un intorno aperto di $ p $ in cui $ G(\varphi(p)) $ è suriettiva: pre
 %=======================================================================================
 
 \exer{Valori regolari come aperto del codominio}
-{es2-18}
+{exer2-18}
 {
 Sia $ F : N \to M $ un'applicazione liscia tra varietà differenziabili. Dimostrare che se $ F $ è chiusa allora l'insieme $ \mathcal{VR}_{F} $ dei valori regolari di $ F $ è un aperto in $ M $.
 }
 {
-Tramite l'Esercizio \ref{es2-17}, sappiamo che l'insieme dei punti regolari di $ F $ è aperto in $ N $: questo implica che l'insieme dei punti critici sia chiuso, i.e.
+Tramite l'Esercizio \ref{exer2-17}, sappiamo che l'insieme dei punti regolari di $ F $ è aperto in $ N $: questo implica che l'insieme dei punti critici sia chiuso, i.e.
 
 \begin{equation}
 	\begin{cases}
@@ -1162,7 +1162,7 @@ Sappiamo ora che l'insieme dei valori regolari è il complementare dell'insieme 
 %=======================================================================================
 
 \exer{Embedding liscio (1)}
-{es2-19}
+{exer2-19}
 {
 Dimostrare che l'applicazione
 
@@ -1253,7 +1253,7 @@ i.e. $ F(\R) = G^{-1}(0,0) $.
 %=======================================================================================
 
 \exer{Embedding liscio (2)}
-{es2-20}
+{exer2-20}
 {
 Dimostrare che l'applicazione
 
@@ -1412,7 +1412,7 @@ Essendo un embedding topologico e un'immersione, l'applicazione $ F $ è un embe
 %=======================================================================================
 
 \exer{Composizione e prodotto cartesiano di immersioni}
-{es2-21}
+{exer2-21}
 {
 Dimostrare che la composizione di immersioni è un’immersione e che il prodotto cartesiano di due immersioni è un’immersione.
 }
@@ -1546,7 +1546,7 @@ perciò il differenziale $ (F \times G)_{*(p,q)} $ è iniettivo per qualsiasi $ 
 %=======================================================================================
 
 \exer{Dominio di immersione ristretto a sottovarietà}
-{es2-22}
+{exer2-22}
 {
 Dimostrare che se $ F : N \to M $ è un'immersione e $ Z \subset N $ è una sottovarietà di $ N $ allora $ \eval{F}_{Z} : Z \to M $ è un'immersione.
 }
@@ -1572,13 +1572,13 @@ Consideriamo dunque l'eguaglianza
 	\eval{F}_{Z} = F \circ i
 \end{equation}
 
-Nell'Esercizio \ref{es2-21} abbiamo dimostrato che la composizione di immersioni è ancora un'immersione, dunque $ \eval{F}_{Z} $ è un'immersione.
+Nell'Esercizio \ref{exer2-21} abbiamo dimostrato che la composizione di immersioni è ancora un'immersione, dunque $ \eval{F}_{Z} $ è un'immersione.
 }
 
 %=======================================================================================
 
 \exer{Embedding liscio (proiettivo reale)}
-{es2-23}
+{exer2-23}
 {
 Dimostrare che l'applicazione
 
@@ -1740,7 +1740,7 @@ Essendo un embedding topologico e un'immersione, l'applicazione $ H $ è un embe
 %=======================================================================================
 
 \exer{Immersione iniettiva propria come embedding liscio}
-{es2-24}
+{exer2-24}
 {
 Dimostrare che un'immersione iniettiva e propria è un embedding liscio. Mostrare che esistono embedding lisci che non sono applicazione proprie. \\ \\
 Ricordare che un'applicazione continua $ f : X \to Y $ tra spazi topologici è propria se $ f^{-1}(K) $ è compatto in $ X $ per ogni compatto $ K $ di $ Y $.
@@ -1752,7 +1752,7 @@ qui
 %=======================================================================================
 
 \exer{Fibrato tangente di sottovarietà come sottovarietà}
-{es2-25}
+{exer2-25}
 {
 Sia $ N $ una sottovarietà di una varietà differenziabile $ M $. Dimostrare che $ T(N) $ è una sottovarietà di $ T(M) $.
 }
@@ -1799,7 +1799,7 @@ A questo punto, possiamo mostrare che la sfera $ \S^{1} $ sia parallelizzabile, 
 %=======================================================================================
 
 \exer{Varietà orientabili}
-{es2-26}
+{exer2-26}
 {
 Una varietà differenziabile $ M $ è detta \textit{orientabile} se esiste un atlante di $ M $ rispetto al quale il determinante jacobiano dei cambi di carte è positivo. Dimostrare che:
 
@@ -1974,7 +1974,7 @@ Essendo positivo, il fibrato tangente $ T(M) $ è orientabile.
 %=======================================================================================
 
 \exer{Funtore differenziale su varietà differenziabili}
-{es2-27}
+{exer2-27}
 {
 Dimostrare che l'applicazione $ \mathcal{F}_{*} $ che associa a ogni varietà differenziabile il suo fibrato tangente e a ogni applicazione $ F : M \to N $ tra varietà differenziabili l'applicazione $ F_{*} : T(M) \to T(N) $ definita come
 
@@ -2162,7 +2162,7 @@ dunque
 %=======================================================================================
 
 \exer{Commutatore e derivazione di algebra di Lie}
-{es2-28}
+{exer2-28}
 {
 Una \textit{derivazione} di un'algebra di Lie $ (V,[\cdot,\cdot]) $ su un campo $ \K $ è un'applicazione lineare $ D : V \to V $ tale che
 
@@ -2207,7 +2207,7 @@ dove nel quarto passaggio abbiamo usato l'identità di Jacobi, quindi $ D_{X} $ 
 %=======================================================================================
 
 \exer{Curva integrale}
-{es2-29}
+{exer2-29}
 {
 Siano $ M = \R \setminus \{0\} $ e $ X = \pdv*{x} \in \chi(M) $. Trovare la curva integrale di $ X $ massimale che inizia in un generico punto $ p \in \R $.
 }
@@ -2249,7 +2249,7 @@ Dunque la curva integrale massimale è la seguente:
 %=======================================================================================
 
 \exer{Flusso locale e gruppo di diffeomorfismi a un parametro}
-{es2-30}
+{exer2-30}
 {
 Trovare il flusso (locale) dei seguenti campi di vettori in $ \chi(\R^{2}) $:
 
@@ -2398,7 +2398,7 @@ I gruppi di diffeomorfismi a un parametro dei campi di vettori sono dunque
 %=======================================================================================
 
 \exer{Campo di vettori non completo}
-{es2-31}
+{exer2-31}
 {
 Dimostrare che il campo di vettori $ X = \pdv*{x} \in \chi(\R^{2} \setminus \{(0,0)\}) $ non è completo.
 }
@@ -2468,7 +2468,7 @@ perciò il campo non è completo.
 %=======================================================================================
 
 \exer{Curva integrale costante}
-{es2-32}
+{exer2-32}
 {
 Sia $ M $ una varietà differenziabile e $ X \in \chi(M) $ tale che $ X(p) = 0 $ in un punto $ p \in M $. Dimostrare che la curva integrale di $ X $ che inizia in $ p $ è la curva costante $ c(t) = p $.
 }
@@ -2503,7 +2503,7 @@ con $ c'(t) = X_{c(t)} $, il suo vettore tangente al punto $ c(t) $ sarà dato d
 %=======================================================================================
 
 \exer{Gruppo di diffeomorfismi a un parametro per campo di vettori nullo}
-{es2-33}
+{exer2-33}
 {
 Sia $ M $ una varietà differenziabile e $ X \in \chi(M) $ il campo di vettori nullo, i.e. $ X = 0 $. Descrivere il gruppo dei diffeomorfismi a un parametro associato a $ X $.
 }
@@ -2558,7 +2558,7 @@ Siccome il dominio di $ (t,p) $ può essere esteso a $ \R \times M $, possiamo s
 %=======================================================================================
 
 \exer{Pushforward di prodotto tra funzione e campo}
-{es2-34}
+{exer2-34}
 {
 Siano $ F : N \to M $ un diffeomorfismo tra varietà differenziabili, $ X \in \chi(N) $ e $ f \in C^{\infty}(N) $. Dimostrare che
 

@@ -432,7 +432,7 @@ Con la topologia indotta da $ \R^{n^{2}} $, lo spazio $ GL_{n}(\R) $ è $ N_{2}+
 
 in quanto il determinante è un'applicazione continua dunque la controimmagine del punto $ 0 $ è un chiuso. Essendo quindi un aperto di una varietà, $ GL_{n}(\R) $ è una varietà differenziabile con l'unica carta $ (GL_{n}(\R),\id_{GL_{n}(\R)}) $; questa varietà ha $ \dim(GL_{n}(\R)) = n^{2} $.
 
-\paragraph{7) Cerchio unitario $ \S^{1} $}\label{ex-s1}
+\paragraph{7) Cerchio unitario $ \S^{1} $}\label{example:diff-man-s1}
 
 Il cerchio unitario $ \S^{1} $
 
@@ -532,7 +532,7 @@ L'azione delle composizioni è la seguente
 Queste applicazioni sono lisce in quanto le loro derivate non divergono mai perché i denominatori non si annullano mai negli intervalli dei domini. \\
 Il ragionamento è analogo per tutte le altre composizioni, dunque $ \{(U_{i},\varphi_{i})\}_{i=1,\dots,4} $ è un atlante differenziabile per $ \S^{1} $.
 
-\paragraph{8) Sfera unitaria $ \S^{2} $}\label{unit-sph}
+\paragraph{8) Sfera unitaria $ \S^{2} $}\label{example:diff-man-unit-sph}
 
 La sfera unitaria $ \S^{2} $ è una varietà topologica inclusa in $ \R^{3} $ (che induce la topologia e le proprietà di $ N_{2}+T_{2} $). \\
 Gli aperti che ricoprono lo spazio sono i seguenti
@@ -635,7 +635,7 @@ dunque
 
 e analogamente per le altre composizioni. Tutte queste applicazioni e le loro inverse sono lisce per lo stesso motivo dato per il cerchio unitario. \\
 Tutto ciò dota lo spazio di un atlante differenziabile e dunque la sfera unitaria $ \S^{2} $ di una struttura differenziabile\footnote{%
-	Vedi Esercizio \ref{es2-1}.%
+	Vedi Esercizio \ref{exer2-1}.%
 }.
 
 \paragraph{9) Sfera unitaria $ \S^{n} $ con proiezione stereografica}
@@ -722,7 +722,7 @@ e analogamente per $ \pi_{S} \circ \pi_{N}^{-1} $. A questo punto
 \end{equation}
 
 Queste composizioni sono lisce dunque le carte $ (U_{N},\pi_{N}) $ e $ (U_{S},\pi_{S}) $ sono $ C^{\infty} $-compatibili perciò $ \{(U_{N},\pi_{N}),(U_{S},\pi_{S})\} $ è un atlante differenziabile su $ \S^{n} $, la quale diventa una varietà differenziabile\footnote{%
-	Vedi Esercizio \ref{es2-2}.%
+	Vedi Esercizio \ref{exer2-2}.%
 }.
 
 \paragraph{10) Prodotto di varietà differenziabili}
@@ -901,7 +901,7 @@ questa è costante sulle classi di equivalenza di $ \sfrac{I}{\{0,1\}} $. Tramit
 
 il quale implica l'esistenza della funzione $ \tilde{f} $, la quale è continua perché $ f $ è continua. Questa applicazione è anche iniettiva e suriettiva: perché sia identificata come un omeomorfismo, si utilizza il seguente lemma
 
-\begin{lemma}[dell'applicazione chiusa]\label{lemma-clos-app}
+\begin{lemma}[dell'applicazione chiusa]\label{lemma:clos-app}
 	Se si ha una bigezione continua da uno spazio compatto a uno spazio $ T_{2} $ o di Hausdorff, allora questa è un omeomorfismo.
 \end{lemma}
 
@@ -946,11 +946,11 @@ in quanto i punti $ \{-1,1\} $ sono equivalenti, ma questo insieme non è aperto
 
 \subsubsection{Proprietà $ N_{2} $ e $ T_{2} $ dei quozienti}
 
-\begin{definition}\label{prop-n2}
+\begin{definition}\label{prop:n2-open-quot}
 	Se lo spazio topologico $ S $ è $ N_{2} $ e la relazione di equivalenza $ \sim $ è aperta allora il quoziente $ \sfrac{S}{\sim} $ è $ N_{2} $.
 \end{definition}
 
-\begin{proof}\label{solved-es2-4}
+\begin{proof}
 	Per dimostrare questa proposizione è necessario costruire una base numerabile per $ \sfrac{S}{\sim} $ sapendo che ne esiste una in $ S $. \\
 	Sia $ \{B_{n}\}_{n \in \N} $ una base numerabile per $ S $. Consideriamo l'immagine $ \pi(B_{n}) $ per $ \forall n \in \N $: questa è aperta in $ \sfrac{S}{\sim} $ in quanto $ \sim $ è aperta (e dunque anche $ \pi $ è aperta); inoltre è parte di una famiglia numerabile. A questo punto, $ \{\pi(B_{n})\}_{n \in \N} $ è una base numerabile per il quoziente $ \sfrac{S}{\sim} $: sia $ U $ aperto in $ \sfrac{S}{\sim} $, allora $ \pi^{-1}(U) $ è aperta in $ S $ e questo implica che
 	
@@ -963,7 +963,7 @@ in quanto i punti $ \{-1,1\} $ sono equivalenti, ma questo insieme non è aperto
 	\end{align}
 \end{proof}
 
-\begin{definition}\label{prop-t2}
+\begin{definition}\label{prop:diag-t2}
 	Sia $ S $ uno spazio topologico. Lo spazio
 	
 	\begin{equation}
@@ -973,7 +973,7 @@ in quanto i punti $ \{-1,1\} $ sono equivalenti, ma questo insieme non è aperto
 	è chiuso rispetto alla topologia prodotto in $ S \times S $ se e solo se il quoziente $ \sfrac{S}{\sim} $ è $ T_{2} $.
 \end{definition}
 
-\begin{proof}\label{solved-es2-3}
+\begin{proof}
 	Supponiamo che il quoziente $ \sfrac{S}{\sim} $ sia $ T_{2} $ e dimostriamo che $ R $ è chiuso in $ S \times S $. \\
 	Siano $ S \times S \setminus R $ il complementare dello spazio $ R $ e il punto $ (x,y) \in (S \times S) \setminus R $, per il quale $ x \nsim y $ dunque $ [x] \neq [y] $ o alternativamente $ \pi(x) \neq \pi(y) $. Essendo $ \sfrac{S}{\sim} $ di Hausdorff, abbiamo che
 	
@@ -1191,7 +1191,7 @@ A questo punto, dimostrando che l'immagine di $ R $ tramite $ \varphi $ è un ch
 
 La condizione per cui il rango delle matrici di questo insieme è unitario è dovuta al fatto che queste matrici hanno le due colonne proporzionali tra loro, in quanto $ y= \lambda x $ con $ \lambda \in \R $.
 
-\begin{lemma}\label{lemma-clos-matrix}
+\begin{lemma}\label{lemma:clos-matrix}
 	Sia l'insieme delle matrici reali di rango minore o uguale a $ r $
 	
 	\begin{equation}
@@ -1371,18 +1371,18 @@ L'intento è di dimostrare che $ G(k,n) $ sia una varietà differenziabile di di
 \end{equation}
 
 Come primo passo, associamo la topologia quoziente\footnote{%
-	Vedi Esercizio \ref{es2-5}.%
+	Vedi Esercizio \ref{exer2-5}.%
 } a $ G(k,n) $: l'insieme $ F(k,n) $ è un aperto in quanto il suo complementare
 
 \begin{equation}
 	M_{n,k}(\R) \setminus F(k,n) = \left\{ A \in M_{n,k}(\R) \st \rank(A) \leqslant k - 1 \right\} = X_{k-1} (n,k)
 \end{equation}
 
-è chiuso per il Lemma \ref{lemma-clos-matrix}.
+è chiuso per il Lemma \ref{lemma:clos-matrix}.
 
 \paragraph{Proprietà $ N_{2} $}
 
-Per dimostrare che lo spazio $ G(k,n) $ sia $ N_{2} $, usiamo la Proposizione \ref{prop-n2}: $ F(k,n) $ è $ N_{2} $ in quanto sottospazio di $ M_{n,k}(\R) $ e la proiezione $ \pi : F(k,n) \to G(k,n) $ è aperta (equivalentemente $ \sim $ è aperta).
+Per dimostrare che lo spazio $ G(k,n) $ sia $ N_{2} $, usiamo la Proposizione \ref{prop:n2-open-quot}: $ F(k,n) $ è $ N_{2} $ in quanto sottospazio di $ M_{n,k}(\R) $ e la proiezione $ \pi : F(k,n) \to G(k,n) $ è aperta (equivalentemente $ \sim $ è aperta).
 La dimostrazione che $ \pi $ sia aperta è analoga a quella per il proiettivo: preso un aperto, la sua immagine deve essere aperta, il quale si dimostra facendo vedere che la controimmagine di quest'ultima sia aperta. \\
 Sia $ V $ un aperto di $ F(k,n) $, possiamo scrivere
 
@@ -1406,7 +1406,7 @@ questo è un omeomorfismo dunque $ \varphi_{g}(V) = V g $ è aperto perché $ V 
 
 \paragraph{Proprietà $ T_{2} $}
 
-Per dimostrare che lo spazio $ G(k,n) $ sia $ T_{2} $, usiamo la Proposizione \ref{prop-t2}: sia l'insieme
+Per dimostrare che lo spazio $ G(k,n) $ sia $ T_{2} $, usiamo la Proposizione \ref{prop:diag-t2}: sia l'insieme
 
 \begin{equation}
 	R = \{ (A,B) \in F(k,n) \times F(k,n) \mid B = A g, \, g \in GL_{k}(\R) \} \subset F(k,n) \times F(k,n)
@@ -1427,7 +1427,7 @@ cioè $ \varphi $ "affianca" due matrici rendendole un'unica matrice con il dopp
 			\img{0.9}{img17}
 			}
 
-Dal Lemma \ref{lemma-clos-matrix} prendiamo la definizione del seguente insieme
+Dal Lemma \ref{lemma:clos-matrix} prendiamo la definizione del seguente insieme
 
 \begin{equation}
 	X_{r}(n,m) = \left\{ A \in M_{n,m}(\R) \st \rank(A) \leqslant r \right\} %
@@ -1639,7 +1639,7 @@ Riassumendo, presa una varietà differenziabile $ M $ e un atlante differenziabi
 
 \begin{remark}
 	La restrizione di una funzione liscia su varietà è ancora una funzione liscia\footnote{%
-		Vedi Esercizio \ref{es2-7}.%
+		Vedi Esercizio \ref{exer2-7}.%
 	}.
 \end{remark}
 
@@ -1684,7 +1684,7 @@ Una funzione $ F : N \to M $ è liscia se lo è in ogni punto $ p \in N $.
 		{p}{(p,q_{0})}
 	
 	sono funzioni lisce tra varietà\footnote{%
-		Vedi Esercizio \ref{es2-6}.%
+		Vedi Esercizio \ref{exer2-6}.%
 	}.
 \end{remark}
 
@@ -1728,7 +1728,7 @@ Riassumendo, prese due varietà differenziabili $ N $ ed $ M $ e due atlanti dif
 	la quale è liscia, in quanto composizione di applicazioni lisce (i.e. $ \sigma \circ G \circ \psi $ e $ \psi^{-1} \circ F \circ \varphi^{-1} $), in $ \varphi(F^{-1}(G^{-1}(W) \cap V) \cap U) \ni \varphi(p) $.
 \end{proof}
 
-\begin{definition}[Componenti]\label{map-comp}
+\begin{definition}[Componenti]\label{prop:map-comp}
 	Siano un'applicazione $ F : N \to \R^{n} $ e le proiezioni
 	
 	\map{r^{i}}
@@ -1763,7 +1763,7 @@ Consideriamo l'applicazione continua
 
 dove con $ \R $ e $ \S^{1} $ si intendono gli spazi con le loro strutture differenziabili fissate, i.e. le relative varietà differenziabili. \\
 Fissiamo gli atlanti $ (\R,\id_{\R}) $ e $ \{(U_{i},\varphi_{i})\}_{i=1,\dots,4} $ dove gli aperti $ U_{i} $ sono semicirconferenze di $ \S^{1} $ e le $ \varphi_{i} $ sono le proiezioni di queste sugli assi\footnote{%
-	Vedi Esempio \ref{ex-s1}.%
+	Vedi Esempio \ref{example:diff-man-s1}.%
 }, i.e.
 
 \begin{gather}
@@ -1955,7 +1955,7 @@ Solitamente consideriamo $ \S^{n} $ all'interno di $ \R^{n+1} $ e dunque con la 
 	Questo dimostra che $ \varphi $ è un diffeomorfismo, dunque $ U \simeq \varphi(U) $.
 \end{proof}
 
-\begin{definition}\label{diffeo-map}
+\begin{definition}\label{prop:diffeo-map}
 	Siano $ U \subset N $ un aperto di una varietà differenziabile $ N $ di dimensione $ n $ e $ F : U \to F(U) \subset \R^{n} $ (aperto) un diffeomorfismo, allora $ (U,F) $ è una carta di $ N $, i.e. appartiene alla struttura differenziabile $ \mathfrak{N} $ di $ N $.
 \end{definition}
 
@@ -2122,7 +2122,7 @@ sono lisce.
 \paragraph{4) Prodotto diretto}
 
 Il prodotto diretto di gruppi di Lie è ancora un gruppo di Lie, con il prodotto tra varietà differenziabili e con l'operazione componente per componente\footnote{%
-	Vedi Esercizio \ref{es3-1}.%
+	Vedi Esercizio \ref{exer3-1}.%
 }.
 
 \paragraph{5) Gruppo lineare generale}
@@ -2338,7 +2338,7 @@ Sia $ F : N \to M $ un'applicazione liscia, diremo che $ F $ è un \textit{diffe
 Possiamo quindi individuare un intorno $ U \subset W $ di un punto $ p \in W $ il quale sia diffeomorfo alla sua immagine tramite $ F $ controllando semplicemente un numero, il quale dipende esclusivamente dal punto e non dal suo intorno. \\
 Questo teorema implica un altro teorema analogo in geometria differenziale:
 
-\begin{theorem}[IFT in geometria differenziale]\label{ift}
+\begin{theorem}[IFT in geometria differenziale]\label{thm:ift}
 	Sia $ F : N \to M $ un'applicazione liscia dove $ \dim(N) = \dim(M) $ e sia un punto $ p \in N $, allora $ F $ è un diffeomorfismo locale in $ p $ se e solo se la matrice jacobiana per varietà è invertibile, i.e.
 	
 	\begin{equation}
@@ -2392,7 +2392,7 @@ Questa estensione alle varietà è naturale in quanto possiamo scrivere l'applic
 	sia un diffeomorfismo, in cui sia $ W $ che $ \psi(F(\varphi^{-1}(W))) $ sono aperti di $ \R^{n} $. Se questo è un diffeomorfismo, allora lo è anche $ \psi^{-1} \circ \psi \circ F \circ \varphi^{-1} \circ \varphi = F $ in un intorno di $ p $, i.e. $ \varphi^{-1}(W) $.
 \end{proof}
 
-\begin{corollary}[IFT]\label{ift-cor}
+\begin{corollary}[IFT]\label{cor:ift}
 	Siano $ N $ una varietà differenziabile di dimensione $ n $ e $ F^{1},\dots,F^{n} = F $ delle funzioni lisce definite in un aperto $ U \subset N $ facente parte di una carta $ (U,\varphi) \in N $ dove $ \varphi = (x^{1},\dots,x^{n}) $, allora le $ F^{1},\dots,F^{n} $ definiscono coordinate intorno a un punto $ p \in U $ se e solo se il loro jacobiano è invertibile, i.e.
 	
 	\begin{equation}
@@ -2445,7 +2445,7 @@ dove $ C_{p}^{\infty}(N) $ è l'insieme dei germi di funzioni lisce in un intorn
 
 i.e. due germi di funzioni appartengono alla stessa classe equivalenza se e solo se le funzioni coincidono in un intorno di $ W \ni p $. \\
 Come nel caso euclideo, $ C_{p}^{\infty}(N) $ è ancora un'algebra\footnote{%
-	Vedi Esercizio \ref{es1-7}.%
+	Vedi Esercizio \ref{exer1-7}.%
 } su $ \R $ con operazioni di somma e prodotto per scalare (per far sì che sia uno spazio vettoriale) e tra funzioni
 
 \begin{gather}
@@ -2467,7 +2467,7 @@ che siano $ \R $-lineari rispetto alla struttura di spazio vettoriale in $ C_{p}
 \end{equation}
 
 L'insieme $ \der_{p}(C_{p}^{\infty}(N)) $ è uno spazio vettoriale\footnote{%
-	Vedi Esercizio \ref{es1-8}.%
+	Vedi Esercizio \ref{exer1-8}.%
 } su $ \R $ rispetto alle operazioni
 
 \begin{align}
@@ -2877,7 +2877,7 @@ In generale, sia un'applicazione lineare
 	{v}{A v}
 
 dove $ v = [r^{1},\dots,r^{n}]^{T} $ e $ A = [A_{ij}] \in M_{m,n}(\R) $, allora il suo jacobiano coincide proprio con la matrice della rappresentazione della funzione, i.e. $ J(L)(v) \equiv A $. Dato questo, possiamo scrivere che se un'applicazione è lineare allora $ L_{*v} \equiv L $. \\
-Per un esempio, vedi Esercizio \ref{es2-8}.
+Per un esempio, vedi Esercizio \ref{exer2-8}.
 
 \paragraph{7. Cambio di base}
 
@@ -2918,7 +2918,7 @@ Siano $ N $ una varietà differenziabile, un suo punto $ p \in N $, e $ (U,\varp
 	\end{equation}
 \end{proof}
 
-Per un esempio, vedi Esercizio \ref{es2-9}.
+Per un esempio, vedi Esercizio \ref{exer2-9}.
 
 \paragraph{8. Matrice dell'applicazione differenziale (varietà differenziabili)}
 
@@ -3372,7 +3372,7 @@ perciò
 
 nel caso in cui il codominio sia $ \R $.
 
-\begin{definition}[Espressione locale del vettore tangente a una curva liscia]\label{loc-exp-tan-cur}
+\begin{definition}[Espressione locale del vettore tangente a una curva liscia]\label{prop:loc-exp-tan-cur}
 	Siano $ c : (a,b) \to N $ una curva liscia e $ (U,\varphi) \in N $ una carta con $ \varphi = (x^{1},\dots,x^{n}) $ tale che $ c((a,b)) \in U $.
 	
 	\img{0.5}{img25}
@@ -3405,7 +3405,7 @@ Un esempio potrebbe essere la curva
 	{t}{(t,t^{3})}
 
 da cui $ c'(t_{0}) = (1, 3 t_{0}^{2}) $, nella quale espressione si identifica il vettore tangente con il punto di $ \R^{2} $ al secondo membro. \\
-Per un altro esempio, vedi Esercizio \ref{es2-10}.
+Per un altro esempio, vedi Esercizio \ref{exer2-10}.
 
 \begin{proof}
 	Per definizione $ c'(t_{0}) \in T_{c(t_{0})}(N) $, dunque
@@ -3518,7 +3518,7 @@ Questo insieme è più intuitivo, nonostante equivalente, dell'insieme delle der
 		= \sum_{i=1}^{n} a^{i} \eval{ \pdv{r^{i}} }_{0}
 	\end{equation}
 
-	per la Proposizione \ref{loc-exp-tan-cur} in quanto $ \alpha $ è anch'essa una curva liscia e possiamo portare $ \varphi_{*0} $ dentro la sommatoria in quanto applicazione lineare.
+	per la Proposizione \ref{prop:loc-exp-tan-cur} in quanto $ \alpha $ è anch'essa una curva liscia e possiamo portare $ \varphi_{*0} $ dentro la sommatoria in quanto applicazione lineare.
 \end{proof}
 
 \subsection{Differenziale tramite curve}
@@ -3593,7 +3593,7 @@ dove $ f \circ c : (-\varepsilon,\varepsilon) \to \R $, perciò
 
 \subsubsection{\textit{Esempi}}
 
-\paragraph{1) Differenziale della moltiplicazione per una matrice}\label{trasl-diff}
+\paragraph{1) Differenziale della moltiplicazione per una matrice}\label{example:trasl-diff}
 
 Consideriamo l'insieme delle matrici invertibili
 
@@ -3691,7 +3691,7 @@ Il differenziale di $ L_{g} $ valutato nella matrice identità $ I $ corrisponde
 	$ L_{g_{*I}} $ e $ L_{g} $ hanno però dei domini differenti: la prima agisce sui vettori tangenti di $ T_{I}(GL_{n}(\R)) $ mentre la seconda sulle matrici invertibili $ GL_{n}(\R) $.%
 }.
 
-\paragraph{2) Differenziale della moltiplicazione e dell'inversione in un gruppo di Lie}\label{par:differ-prod-inv-lie}
+\paragraph{2) Differenziale della moltiplicazione e dell'inversione in un gruppo di Lie}\label{example:differ-prod-inv-lie}
 
 Sia $ G $ un gruppo di Lie\footnote{%
 	Se $ G $ è un gruppo di Lie, allora è una varietà differenziale e un gruppo algebrico con operazioni lisce
@@ -3714,7 +3714,7 @@ Sia $ G $ un gruppo di Lie\footnote{%
 \end{gather}
 
 Sappiamo che\footnote{%
-	Vedi Esercizio \ref{es2-11}.%
+	Vedi Esercizio \ref{exer2-11}.%
 }, prese $ N $ e $ M $ due varietà differenziali con $ p \in N $ e $ q \in M $, si ha che lo spazio tangente al prodotto delle varietà differenziali è isomorfo al prodotto degli spazi tangenti alle singole varietà, i.e.
 
 \begin{equation}
@@ -3920,7 +3920,7 @@ Un'applicazione liscia è un'immersione (risp. una sommersione) se lo è in ogni
 
 \begin{remark}
 	Se $ F : N \to M $ è un'immersione e una sommersione in $ p $, i.e. $ \dim(N) = \dim(M) $, allora, per il teorema della funzione inversa\footnote{%
-		Vedi Teorema \ref{ift}.%
+		Vedi Teorema \ref{thm:ift}.%
 	}, avremo che il differenziale è invertibile, dunque $ F $ è un diffeomorfismo locale intorno a $ p $.
 \end{remark}
 
@@ -3930,7 +3930,7 @@ Un'applicazione liscia è un'immersione (risp. una sommersione) se lo è in ogni
 
 \begin{remark}
 	La composizione e il prodotto cartesiano di immersioni sono immersioni\footnote{%
-		Vedi Esercizio \ref{es2-21}.%
+		Vedi Esercizio \ref{exer2-21}.%
 	}.
 \end{remark}
 
@@ -4039,7 +4039,7 @@ dove valgono le relazioni
 
 \begin{remark}
 	L'insieme dei punti regolari di $ F $ è un aperto del dominio di $ F $.\footnote{%
-		Vedi Esempio \ref{es2-17}.%
+		Vedi Esempio \ref{exer2-17}.%
 	}
 \end{remark}
 
@@ -4109,7 +4109,7 @@ Analogamente ai punti regolari e critici, valgono le seguenti relazioni
 
 \begin{remark}
 	L'insieme dei valori regolari di $ F $ è un aperto del codominio di $ F $.\footnote{%
-		Vedi Esempio \ref{es2-18}.%
+		Vedi Esempio \ref{exer2-18}.%
 	}
 \end{remark}
 
@@ -4422,7 +4422,7 @@ mentre per $ N = \R^{3} $ con carta $ (\R^{3};x,y,z) $ e $ S = \R \times \{(0,0)
 	\R^{3} \cap S = S = \{ (x,y,z) \in \R^{3} \mid y = 0 \wedge z = 0 \}
 \end{equation}
 
-\begin{remark}\label{subvar-open}
+\begin{remark}\label{rem:subvar-open}
 	Sia $ S \subset N $ un aperto di una varietà $ N $ con $ \dim(N)=n $, allora $ S $ è una sottovarietà di $ N $ con $ \dim(S)=n $. \\
 	Questo è vero in quanto, presa una carta $ (U,\varphi) \in N $, la condizione
 	
@@ -4622,7 +4622,7 @@ Chiameremo la struttura differenziabile costruita nella proposizione \textit{str
 
 \begin{remark}
 	Se $ F : N \to M $ è un'immersione e $ Z \subset N $ è una sottovarietà di $ N $ allora $ \eval{F}_{Z} : Z \to M $ è un'immersione\footnote{%
-		Vedi Esercizio \ref{es2-22}.%
+		Vedi Esercizio \ref{exer2-22}.%
 	}.
 \end{remark}
 
@@ -4820,7 +4820,7 @@ Il determinante dello jacobiano non si annulla in quanto la coordinata $ x(p) $ 
 \end{equation}
 
 Per il corollario del teorema della funzione inversa\footnote{%
-	Vedi Corollario \ref{ift-cor}.%
+	Vedi Corollario \ref{cor:ift}.%
 }, esiste un intorno aperto $ U \subset \R^{3} $ di $ p $ tale che $ \eval{g}_{U} : U \to g(U) $ sia un diffeomorfismo e dunque $ (U,\eval{g}_{U}) $ è una carta di $ \R^{3} $. In questo caso, $ (U,\eval{g}_{U}) $ con $ \eval{g}_{U} = (f(x,y,z),y,z) $ è una carta adatta di $ \R^{3} $ intorno a $ p $ relativamente a $ \S^{2} $. Per verificare quest'ultima proposizione, è necessario che $ U \cap \S^{2} $ sia un'insieme dato dall'annullarsi di alcune coordinate:
 
 \begin{equation}
@@ -5144,7 +5144,7 @@ Abbiamo perciò derivato la forma del differenziale:
 	
 A questo punto, il suo $ \ker $, e dunque lo spazio tangente alla sfera $ \S^{n} $, è costituito da tutti i vettori $ X_{p} $ di $ \R^{n+1} $ che sono ortogonali al punto $ p $, i.e. $ p \cdot X_{p} = 0 $. In altre parole, presa la sfera e un piano tangente a essa in un punto, tutti i vettori complanari al piano tangente sono tangenti alla sfera in quel punto.
 
-\paragraph{3)}\label{ex:subvar-cond}
+\paragraph{3)}\label{example:subvar-cond}
 
 Sia l'insieme
 
@@ -5334,7 +5334,7 @@ Di seguito i tre casi per le tre carte:
 	\end{equation}
 \end{itemize}
 
-\paragraph{6) Gruppo delle matrici con determinante unitario}\label{es:sl-subman}
+\paragraph{6) Gruppo delle matrici con determinante unitario}\label{example:sl-subman}
 
 Sia l'insieme
 
@@ -5377,13 +5377,13 @@ ma
 
 Siccome quindi $ 1 \notin \VC_{f} $ allora $ 1 \in \VR_{f} $, in quanto $ \VC_{f} \cap \VR_{f} = \emptyset $: questo prova che $ f^{-1}(1) = SL_{n}(\R) $ è una sottovarietà di $ GL_{n}(\R) $ di dimensione $ n^{2}-1 $. \\
 Dimostreremo che\footnote{%
-	Vedi Sottosezione \ref{SL-sublie}.}
+	Vedi Sottosezione \ref{s-sec:slng-sublie}.}
 
 \begin{equation}
 	T_{I}(SL_{n}(\R)) = \{ A \in M_{n}(\R) \mid \tr(A)=0 \} \subset T_{I}(GL_{n}(\R)) = M_{n}(\R)
 \end{equation}
 
-Per il caso complesso, vedi Esercizio \ref{es2-16}.
+Per il caso complesso, vedi Esercizio \ref{exer2-16}.
 
 \subsubsection{Teorema del rango costante}
 
@@ -5851,7 +5851,7 @@ Combinando questo corollario con il teorema del rango costante si ottengono i te
 	Se per assurdo $ \PC_{F} = \emptyset $ allora $ N = \PR_{F} $ e quindi $ F $ è una sommersione: per il Corollario \ref{cor:sub-comp-conn-surj}, $ F(N) = \R^{m} $ ($ F $ suriettiva) ma questo è assurdo in quanto $ N $ è compatta e dunque la sua immagine è compatta mentre $ \R^{m} $ non lo è (un'applicazione suriettiva porta compatti in compatti).
 \end{proof}
 
-\begin{corollary}\label{imm_sph}
+\begin{corollary}\label{cor:imm-sph}
 	Non esiste un'immersione dalla sfera $ \S^{n} $ a $ \R^{n} $.
 \end{corollary}
 
@@ -5952,7 +5952,7 @@ il che implica che un embedding è iniettivo. Ad esempio, come visto sopra, l'in
 	Come l'embedding topologico induce un omeomorfismo tra il dominio e l'immagine del dominio tramite l'applicazione, l'embedding differenziale induce un diffeomorfismo tra il dominio e l'immagine del dominio tramite l'applicazione.
 \end{remark}
 
-\begin{theorem}\label{emb-subv}
+\begin{theorem}\label{thm:emb-subvar}
 	Sia $ F : N \to M $ un embedding differenziabile, allora $ F(N) $ è una sottovarietà di $ M $ con $ \dim(F(N)) = \dim(N) $, dove $ F(N) \stackrel{diff.}{\simeq} N $.
 \end{theorem}
 
@@ -6029,16 +6029,16 @@ il che implica che un embedding è iniettivo. Ad esempio, come visto sopra, l'in
 \end{theorem}
 
 Nel caso in cui $ n=1 $, non esiste un'immersione iniettiva tra $ N $ e $ \R $, e.g.\footnote{%
-	Vedi Corollario \ref{imm_sph}.%
+	Vedi Corollario \ref{cor:imm-sph}.%
 } tra $ \S^{1} $ e $ \R $.
 
 \subsubsection{\textit{Esempi}}
 
-Per altri esempi, vedi Esercizi \ref{es2-19}, \ref{es2-20}, \ref{es2-23}, \ref{es2-24}.
+Per altri esempi, vedi Esercizi \ref{exer2-19}, \ref{exer2-20}, \ref{exer2-23}, \ref{exer2-24}.
 
 \paragraph{1)}
 
-Nell'esempio della dimostrazione del Teorema \ref{emb-subv}, $ F(N) $ non può essere una sottovarietà di $ \R^{2} $ perché non è localmente euclideo. Questo perché possiede la topologia indotta da $ \R^{2} $ in quanto $ F $ è un embedding topologico: un qualunque intorno di $ F(p) $ non è omeomorfo a $ \R^{n} $ in quanto il primo, togliendo il punto $ F(p) $, è formato da tre componenti connesse mentre il secondo può essere o formato da due componenti connesse (per $ \R $) oppure connesso (per $ n > 1 $).
+Nell'esempio della dimostrazione del Teorema \ref{thm:emb-subvar}, $ F(N) $ non può essere una sottovarietà di $ \R^{2} $ perché non è localmente euclideo. Questo perché possiede la topologia indotta da $ \R^{2} $ in quanto $ F $ è un embedding topologico: un qualunque intorno di $ F(p) $ non è omeomorfo a $ \R^{n} $ in quanto il primo, togliendo il punto $ F(p) $, è formato da tre componenti connesse mentre il secondo può essere o formato da due componenti connesse (per $ \R $) oppure connesso (per $ n > 1 $).
 
 \paragraph{2) Cuspide cubica}
 
@@ -6168,7 +6168,7 @@ Questa applicazione è un'immersione in quanto
 e dunque non sono presenti punti critici, i.e. $ \PC_{F} = \emptyset $. \\
 Nonostante sia un'immersione iniettiva, non è un embedding (né topologico né differenziabile) in quanto $ F((-\pi,\pi)) $ non è localmente euclidea nell'origine.
 
-\paragraph{5) Toro}\label{ex:embed-torus}
+\paragraph{5) Toro}\label{example:embed-torus}
 
 Sia l'applicazione
 
@@ -6417,7 +6417,7 @@ Il fatto che immagine e preimmagine non siano entrambe aperte rende $ H $ non co
 
 Questo esempio mostra come, presa una funzione liscia tra varietà differenziabili, la restrizione del codominio da una varietà a un sottoinsieme (varietà) di questa varietà non è ancora una funzione liscia, a meno che il sottoinsieme della varietà non sia una sottovarietà di questa (quindi con la relativa struttura differenziale ereditata): in questo caso, restringere il codominio $ \R^{2} $ della funzione $ G $ alla varietà $ \mathfrak{8}_{F} \subset \R^{2} $ (la quale non è una sottovarietà di $ \R^{2} $) non rende la funzione $ H $ nemmeno continua. Quest'ultimo risultato può essere derivato anche dal fatto che la lemniscata di Bernoulli non sia un sottospazio topologico di $ \R^{2} $.
 
-\paragraph{2) Gruppo lineare speciale}\label{ex-slnr}
+\paragraph{2) Gruppo lineare speciale}\label{example:slnr-smooth}
 
 Sia l'insieme
 
@@ -6447,7 +6447,7 @@ se restringiamo il dominio a $ SL_{n}(\R) \times SL_{n}(\R) $, otteniamo l'appli
 	{(A,B)}{A B}
 
 definita come $ G \doteq F \circ (i \times i) $ dove $ i : SL_{n}(\R) \to GL_{n}(\R) $ indica l'inclusione naturale: essendo $ F $ e $ i $ lisce (e dunque\footnote{%
-	Vedi Esercizio \ref{es2-12}.%
+	Vedi Esercizio \ref{exer2-12}.%
 } anche $ i \times i $), allora anche $ G $ è liscia. \\
 Siccome la moltiplicazione di due matrici con determinante unitario è ancora una matrice con determinante unitario, abbiamo che $ G(SL_{n}(\R) \times SL_{n}(\R)) \subset SL_{n}(\R) $ e quindi possiamo restringere il codominio, ottenendo la funzione
 
@@ -7130,7 +7130,7 @@ Si può spostare il centro della funzione in un punto $ q \in \R^{n} $ tramite l
 
 Per la generalizzazione di questo procedimento a funzioni a campana su varietà, consideriamo il seguente teorema:
 
-\begin{theorem}\label{bump-fun}
+\begin{theorem}\label{thm:bump-fun}
 	Siano $ M $ una varietà differenziabile di dimensione $ n $, $ U \subset M $ un aperto della varietà e $ q \in U $ un suo punto, allora esiste una funzione a campana liscia $ \rho : M \to \R $ in $ q $ con supporto contenuto in $ U $.
 \end{theorem}
 
@@ -7237,7 +7237,7 @@ Per la generalizzazione di questo procedimento a funzioni a campana su varietà,
 	Questo prova dunque che esiste una funzione a campana liscia per ogni punto di una varietà con supporto contenuto in un intorno del punto.
 \end{proof}
 
-\begin{corollary}[Estensione di funzioni lisce]\label{cor-est-smooth}
+\begin{corollary}[Estensione di funzioni lisce]\label{cor:ext-smooth}
 	Siano una varietà differenziabile $ M $, un punto $ p \in M $, un aperto $ U \subset M $ che sia intorno di $ p $ e una funzione $ f : M \to \R $ liscia solo su $ U $, i.e. $ f \in C^{\infty}(U) $, allora esistono un aperto $ V \subseteq U $ intorno di $ q $ e una funzione $ \tilde{f} : M \to \R $ liscia in tutta la varietà, i.e. $ \tilde{f} \in C^{\infty}(M) $, tale che $ \tilde{f} \equiv f $ in $ V $.
 \end{corollary}
 
@@ -7622,7 +7622,7 @@ La derivata può anche essere definita su germi delle funzioni in quanto tutte l
 
 	con $ a^{j} : U \to \R $ per $ j=1,\dots,n $. Perché $ X \in \chi(M) $ dobbiamo dimostrare che $ a^{j} \in C^{\infty}(U) $. \\
 	Per il corollario di estensione di funzioni\footnote{%
-		Vedi Corollario \ref{cor-est-smooth}.%
+		Vedi Corollario \ref{cor:ext-smooth}.%
 	}, esistono un aperto $ V \subset U $ tale che $ V \ni p $ e delle funzioni $ \tilde{x}^{k} \in C^{\infty}(M) $ tali che $ \eval{\tilde{x}^{k}}_{V} \equiv x^{k} $ per $ k=1,\dots,n $ (dalla carta, $ x^{k} \in C^{\infty}(U) $ per $ k=1,\dots,n $). Applichiamo ora la derivata a queste estensioni
 	
 	\begin{align}
@@ -7756,7 +7756,7 @@ in quanto $ f \in [f] \in C_{p}^{\infty}(M) $ e la derivata non dipende dal rapp
 	
 	dove $ g \in [g] $ e $ p \in U \subset M $. \\
 	L'ipotesi però comprende funzioni qualsiasi $ f \in C^{\infty}(M) $ dunque, tramite il corollario di estensione di funzioni lisce\footnote{%
-		Vedi Corollario \ref{cor-est-smooth}.%
+		Vedi Corollario \ref{cor:ext-smooth}.%
 	}, consideriamo un aperto $ V \subset U $ che contenga $ p $ e una funzione $ \tilde{g} \in C^{\infty}(M) $ tale che $ \eval{\tilde{g}}_{V} \equiv g $. \\
 	Applichiamo l'ipotesi a questa funzione ottenendo
 	
@@ -7848,7 +7848,7 @@ il quale è uno spazio vettoriale su $ \R $ con operazioni
 \end{equation}
 
 La dimostrazione\footnote{%
-	Vedi Esercizio \ref{es1-8}.%
+	Vedi Esercizio \ref{exer1-8}.%
 } è la stessa fatta per aperti di $ \R^{n} $. \\
 Le derivazioni $ \der(C^{\infty}(M)) $ sono anche un $ C^{\infty}(M) $-modulo: il primo requisito è che siano uno spazio vettoriale e il secondo è che si possa moltiplicare una derivazione per una funzione liscia, come dalla seguente applicazione
 
@@ -7875,7 +7875,7 @@ in modo tale che $ K $ rispetti le seguenti proprietà
 
 per $ \forall f,g \in C^{\infty}(M) $ e $ \forall D,D_{1},D_{2} \in \der(C^{\infty}(M)) $. \\
 La dimostrazione\footnote{%
-	Essendo $ \chi(M) $ un $ C^{\infty} $-modulo e tramite l'isomorfismo $ \chi(M) \simeq \der(C^{\infty}(M)) $ dimostrato nella sezione successiva, è sufficiente vedere la dimostrazione che $ \chi(U) $ sia un $ C^{\infty} $-modulo nell'Esercizio \ref{es1-9}.%
+	Essendo $ \chi(M) $ un $ C^{\infty} $-modulo e tramite l'isomorfismo $ \chi(M) \simeq \der(C^{\infty}(M)) $ dimostrato nella sezione successiva, è sufficiente vedere la dimostrazione che $ \chi(U) $ sia un $ C^{\infty} $-modulo nell'Esercizio \ref{exer1-9}.%
 } è la stessa fatta per aperti di $ \R^{n} $.
 
 \subsubsection{Isomorfismo $ \chi(M) \simeq \der(C^{\infty}(M)) $}
@@ -7907,7 +7907,7 @@ Per la dimostrazione, è necessario il seguente lemma:
 \end{lemma}
 
 \begin{proof}[Dimostrazione (lemma)]
-	Siano $ p \in U $ un punto e $ \rho \in C^{\infty}(M) $ una funzione a campana liscia in $ p $ con supporto in $ U $, i.e. $ \supp(\rho) \subset U $, (esiste per il Teorema \ref{bump-fun}). Consideriamo la funzione $ f = \rho \tilde{f} \in C^{\infty}(M) $ (le funzioni sono moltiplicate tra loro) la quale è nulla dappertutto perché in $ U $ abbiamo che $ \eval{\tilde{f}}_{U} = 0 $ mentre in $ M \setminus U $ abbiamo che $ \eval{\rho}_{M \setminus U} = 0 $. Applichiamo ora $ D $ a $ f $, il cui risultato sarà nullo in quanto $ f \equiv 0 $ e $ D $ è lineare
+	Siano $ p \in U $ un punto e $ \rho \in C^{\infty}(M) $ una funzione a campana liscia in $ p $ con supporto in $ U $, i.e. $ \supp(\rho) \subset U $, (esiste per il Teorema \ref{thm:bump-fun}). Consideriamo la funzione $ f = \rho \tilde{f} \in C^{\infty}(M) $ (le funzioni sono moltiplicate tra loro) la quale è nulla dappertutto perché in $ U $ abbiamo che $ \eval{\tilde{f}}_{U} = 0 $ mentre in $ M \setminus U $ abbiamo che $ \eval{\rho}_{M \setminus U} = 0 $. Applichiamo ora $ D $ a $ f $, il cui risultato sarà nullo in quanto $ f \equiv 0 $ e $ D $ è lineare
 	
 	\begin{equation}
 		0 = D f %
@@ -8087,7 +8087,7 @@ Abbiamo dunque che $ \varphi $ è un isomorfismo.
 	
 	dunque $ \eval{X}_{N} $ è un campo di vettori in $ N $, dobbiamo ora dimostrare che questo sia liscio in $ N $. \\
 	Per verificarlo, consideriamo il fatto che $ N $ sia una sottovarietà di $ M $, la quale implica che $ T(N) $ sia una sottovarietà di $ T(M) $\footnote{%
-		Vedi Esercizio \ref{es2-25}.%
+		Vedi Esercizio \ref{exer2-25}.%
 	} con $ T(N) \subset T(M) $. La composizione $ F $ tra l'inclusione $ i : N \to M $ (la quale è un'immersione) e il campo di vettori $ X $
 
 	\begin{equation}
@@ -8856,7 +8856,7 @@ Data una distribuzione $ D $, un campo di vettori $ X \in \chi(M) $ appartiene a
 \end{remark}
 
 Se $ X_{p} = 0 $ allora la curva integrale per $ X $ che inizia in $ p $ è costante\footnote{%
-	Vedi Esercizio \ref{es2-32}.%
+	Vedi Esercizio \ref{exer2-32}.%
 }. A questo punto, supponiamo che $ X_{p} \neq 0 $ e consideriamo un intorno $ U $ di $ p $ dove $ X_{q} \neq 0 $ per qualsiasi $ q \in U $ e la distribuzione liscia $ 1 $-dimensionale
 
 \begin{equation}
@@ -9054,7 +9054,7 @@ In sostanza, questo teorema asserisce che il commutatore tra due campi viene pre
 	\end{align}
 \end{proof}
 
-\begin{corollary}\label{frel-brack}
+\begin{corollary}\label{cor:f-rel-brack}
 	Siano $ F : N \to M $ un diffeomorfismo e $ X_{1},X_{2} \in \chi(N) $ due campi di vettori lisci, allora il pushforward del commutatore è uguale al commutatore dei pushforward, i.e.
 	
 	\begin{equation}
