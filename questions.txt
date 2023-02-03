@@ -19,6 +19,10 @@ diffeomorfismi tra varietà: non sono sicuro di aver capito al 100% come S^1 pos
 esercizio C.1: non sono sicuro sia necessario utilizzare la composizione delle operazioni tramite le proiezioni, forse basta dire che le operazioni di \Omega sono composizioni di 
 operazioni lisce
 
+dimostrazione spazio proiettivo reale omeomorfo alla sfera n-dimensionale quozientata alla relazione 
+di equivalenza: non capisco perché la bigettività è dimostrata tramite l'essere continua con 
+inversa continua
+
 esercizio B.15: non so come dimostrare la prima formula, non capisco bene come orientarmi con lo spazio dei polinomi, non so se la dimostrazione della sottovarietà vada fatta effettivamente così, non so come dimostrare la dimensione della sottovarietà (non so cosa usare per trovarla--nel senso di carte, condizioni o altro), non so come dimostrare i diffeomorfismi perché non ho nemmeno ben capito come siano fatte le sottovarietà
 
 esercizio B.16: nelle condizioni di SL_n(C) intendeva scrivere det(A) = 1 ?
@@ -39,4 +43,3 @@ esercizio C.2: non so come dimostrare che una topologia sia inclusa in un'altra 
 sezione 3.5.8 (teorema): nel secondo punto del teorema, la condizione è "compatto e abeliano" o "connesso e abeliano"? perché \R non è compatto e quindi G ~= \R x \T non è compatto
 
 esercizio C.14: non sono sicuro che l'esercizio debba procedere in questo modo, non mi convince come ho dimostrato l'isomorficità dell'applicazione
-

@@ -376,19 +376,20 @@ Per le curve differenziabili, $ \dim (M) = 1 $. Sia $ M $ una varietà differenz
 		M \text{ curva connessa } \implies M = \R \, \lor \, M = \S^{1}
 	\end{equation}
 
-	cioè, se $ M $ è una curva connessa, allora è la retta reale $ \R $ oppure il cerchio unitario $ \S^{1} $.
+	cioè, se $ M $ è una curva connessa, allora\footnote{%
+		Con l'uguaglianza introdotta in questa implicazione, si intende che la varietà differenziabile è \textit{diffeomorfa}: il concetto di diffeomorfismo viene introdotto nella Sottosezione \ref{s-sec:diff}.%
+	} è la retta reale $ \R $ oppure il cerchio unitario $ \S^{1} $.
 \end{theorem}
 
 \paragraph{4) Superfici}
 
-Per le superfici differenziabili, $ \dim (M) = 2 $. Le \textit{parametrizzazioni} $ X $ di curve e superfici sono l'inverso delle carte $ \varphi = X^{-1} $, i.e per la parametrizzazione di una superficie
-
-\map{X}%
-	{U \subset \R^{2}}{\R^{3}}%
+Per le superfici differenziabili, $ \dim (M) = 2 $. Le \textit{parametrizzazioni} $ X $ di curve e superfici (compatte e connesse) sono l'inverso delle carte $ \varphi = X^{-1} $, i.e per la parametrizzazione di una superficie
+%
+\map{X}
+	{U \subset \R^{2}}{\R^{3}}
 	{(u,v)}{(x(u,v),y(u,v),z(u,v))}
 
 e per la carta $ (X(u,v),\varphi) $.
-% Poniamo $ M $ compatta e connessa.
 
 \paragraph{5) Grafico di una funzione}
 
@@ -1815,7 +1816,7 @@ Per far vedere che $ F $ sia un'applicazione liscia tra varietà, dobbiamo verif
 
 le quali sono tutte lisce perciò lo è anche $ F $.
 
-\subsection{Diffeomorfismi tra varietà}
+\subsection{Diffeomorfismi tra varietà}\label{s-sec:diff}
 
 Siano $ N $ e $ M $ due varietà differenziabili, un'applicazione $ F : N \to M $ è un \textit{diffeomorfismo} se
 
