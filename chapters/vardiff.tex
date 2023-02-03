@@ -210,7 +210,7 @@ Sia $ M $ uno spazio topologico, un \textit{atlante topologico su} $ M $ è una 
 	\bigcup_{\alpha \in A} U_{\alpha} = M
 \end{equation}
 
-i.e. la famiglia delle carte è un \textit{ricoprimento} dello spazio topologico. Se il codominio di ogni carta è uno spazio euclideo $ \R^{n} $ allora $ M $ è una varietà topologica, per cui vale $ \dim M = n $.
+i.e. la famiglia delle carte è un \textit{ricoprimento} dello spazio topologico. Essendo il codominio di ogni carta uno spazio euclideo $ \R^{n} $, $ M $ è una varietà topologica, per cui vale $ \dim M = n $.
 
 \subsubsection{Compatibilità tra carte}
 
@@ -229,7 +229,7 @@ i.e. la famiglia delle carte è un \textit{ricoprimento} dello spazio topologico
 		}
 	
 	\footnotetext{%
-		Talvolta queste applicazioni sono chiamate \textit{applicazioni di transizione}, dal fatto che collegano due carte, oppure \textit{cambi di carte}.
+		Queste composizioni sono chiamate \textit{applicazioni di transizione}, dal fatto che collegano due carte, oppure \textit{cambi di carte}.
 	}
 
 \begin{remark}
@@ -283,7 +283,7 @@ Scrivendo
 
 l'applicazione $ \varphi_{3} \circ \varphi_{2}^{-1} $ è $ C^{\infty}(\varphi_{2}(U_{23})) $ e $ \varphi_{2} \circ \varphi_{1}^{-1} $ è $ C^{\infty}(\varphi_{1}(U_{12})) $ dunque $ \varphi_{3} \circ \varphi_{1}^{-1} $ è sicuramente $ C^{\infty}(\varphi_{1}(U_{123})) $ ma non sappiamo a priori il suo comportamento in $ \varphi_{1}(U_{13} \setminus U_{123}) $, dunque non possiamo dire che $ \varphi_{3} \circ \varphi_{1}^{-1} $ sia $ C^{\infty}(\varphi_{1}(U_{13})) $ e perciò la $ C^{\infty} $-compatibilità non è transitiva. \\ \\
 %
-Sia $ \mathfrak{U} = \{(U_{\alpha},\varphi_{\alpha})\} $ un atlante topologico di uno spazio $ M $, diremo che $ (V,\psi) $ carta di $ M $ è $ C^{\infty} $-compatibile con $ \mathfrak{U} $ se $ (V,\psi) $ è $ C^{\infty} $-compatibile con $ (U_{\alpha},\varphi_{\alpha}) $ per $ \forall \alpha \in A $.
+Sia $ \mathfrak{U} = \{(U_{\alpha},\varphi_{\alpha})\} $ un atlante topologico di uno spazio $ M $, diremo che $ (V,\psi) $ carta di $ M $ è $ C^{\infty} $-compatibile con $ \mathfrak{U} $ se $ (V,\psi) $ è $ C^{\infty} $-compatibile con $ (U_{\alpha},\varphi_{\alpha}) $ per qualsiasi $ \alpha \in A $.
 
 \begin{definition}
 	Sia $ \mathfrak{U} $ un atlante topologico su $ M $, se due carte $ (V,\psi) $ e $ (W,\sigma) $ sono $ C^{\infty} $-compatibili con $ \mathfrak{U} $ allora lo sono tra loro, i.e. $ (V,\psi) $ è $ C^{\infty} $-compatibile con $ (W,\sigma) $.
@@ -298,7 +298,7 @@ Sia $ \mathfrak{U} = \{(U_{\alpha},\varphi_{\alpha})\} $ un atlante topologico d
 	\end{gather}
 
 	siano lisce. \\
-	Prendiamo $ \sigma \circ \psi^{-1} $: questa è liscia se lo è in $ \psi(p) \in \psi(V \cap W) $ per $ \forall p \in V \cap W $. \\
+	Prendiamo $ \sigma \circ \psi^{-1} $: questa è liscia se lo è in $ \psi(p) \in \psi(V \cap W) $ per qualsiasi $ p \in V \cap W $. \\
 	Essendo l'atlante $ \mathfrak{U} $ un ricoprimento di $ M $, esisterà una carta $ (U_{\alpha},\varphi_{\alpha}) \ni p $ perciò con $ p \in U_{\alpha} \cap V \cap W $: potendo scrivere $ \sigma \circ \psi^{-1} = (\sigma \circ \varphi_{\alpha}^{-1}) \circ (\varphi_{\alpha} \circ \psi^{-1}) $, questa è automaticamente liscia in $ \psi(U_{\alpha} \cap V \cap W) $ in quanto, per ipotesi, lo sono i cambi di carte che la compongono. \\
 	Questo conclude la dimostrazione perché abbiamo trovato un aperto che contiene il punto, i.e. $ U_{\alpha} \cap V \cap W \ni p $ per $ p $ arbitrario, in cui l'applicazione sia liscia\footnote{%
 		La proprietà di un'applicazione di essere liscia ha carattere locale.%
@@ -1747,13 +1747,17 @@ Riassumendo, prese due varietà differenziabili $ N $ ed $ M $ e due atlanti dif
 \end{proof}
 
 \begin{proof}[Dimostrazione ($ \impliedby $)]
-	Supponiamo che $ r^{i} \circ F \doteq F^{i} : N \to \R $ sia liscia per $ \forall i=1,\dots,n $. Per $ \forall p \in N $ abbiamo che $ F^{i} \circ \varphi^{-1} : \varphi(U) \to \R $ è liscia se scegliamo una carta $ (U,\varphi) \ni p $, dove $ \varphi(p) \subset \R^{n} $. A questo punto, la funzione
+	Supponiamo che $ r^{i} \circ F \doteq F^{i} : N \to \R $ sia liscia per $ i=1,\dots,n $. Per qualsiasi $ p \in N $ abbiamo che $ F^{i} \circ \varphi^{-1} : \varphi(U) \to \R $ è liscia se scegliamo una carta $ (U,\varphi) \ni p $, dove $ \varphi(p) \subset \R^{n} $. A questo punto, la funzione
 	
 	\map{F \circ \varphi^{-1}}
 		{\varphi(U)}{\R^{n}}
 		{q}{(F^{1} \circ \varphi^{-1}, \dots, F^{n} \circ \varphi^{-1})(q)}
 
-	è liscia in $ \varphi(p) $, dunque $ F $ è liscia in $ p $ per definizione, perché $ F \circ \varphi^{-1} \equiv \id_{\R^{n}} \circ F \circ \varphi^{-1} $.
+	è liscia in $ \varphi(p) $, dunque $ F $ è liscia in $ p $ per definizione, poiché
+	
+	\begin{equation}
+		F \circ \varphi^{-1} \equiv \id_{\R^{n}} \circ F \circ \varphi^{-1}
+	\end{equation}
 \end{proof}
 
 \subsubsection{\textit{Esempio}}
