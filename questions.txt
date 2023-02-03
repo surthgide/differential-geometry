@@ -2,7 +2,7 @@ DOMANDE GEOMETRIA DIFFERENZIALE
 
 esercizio A.6: penso che per dimostrare che g sia liscia dovrei usare il teorema di Taylor con resto ma non riesco a capire come; non riesco a utilizzare le condizione del teorema per la dimostrazione
 
-(\chi(U),+) come C^{\infty}-modulo: non capisco perché la moltiplicazione di un campo di vettori per una funzione debba essere liscia al fine di rendere (\chi(U),+) un C^{\infty}-modulo; teoricamente dovrei solo dimostrare che le 4 proprietà del C^{\infty}-modulo siano soddisfatte sia da sinistra che a destra per la moltiplicazione per funzione
+(\chi(U),+) come C^{\infty}-modulo: non capisco perché la moltiplicazione di un campo di vettori per una funzione debba essere liscia al fine di rendere (\chi(U),+) un C^{\infty}-modulo; teoricamente dovrei solo dimostrare che le 4 proprietà del C^{\infty}-modulo siano soddisfatte sia da sinistra che da destra per la moltiplicazione per funzione
 
 CURIOSITÀ: le quattro proprietà che rendono un gruppo un R-modulo sono parte delle proprietà che rendono uno spazio uno spazio vettoriale? (da qui l'osservazione negli appunti)
 
