@@ -9,8 +9,6 @@ DOMANDE ESERCIZI:
 
 - A.6: penso che per dimostrare che g sia liscia dovrei usare il teorema di Taylor con resto ma non riesco a capire come; non riesco a utilizzare le condizione del teorema per la dimostrazione
 
-- A.11: penso di essere praticamente arrivato alla soluzione, ma non sono sicuro di aver usato una proprietà che posso usare; ho scritto che ho usato la commutatività della moltiplicazione dell'algebra ma quest'ultima non è detto che ce l'abbia
-
 - B.4: non sono totalmente sicuro della veridicità della dimostrazione della connessione; dimostrare la compattezza tramite le varietà di Stiefel mi sembra inutile ma non sono riuscito a farlo tramite F(k,n); usando la varietà di Stiefel devo dimostrare anche che questa è chiusa e limitata o è sufficiente nominarlo al fine dell'esercizio?
 
 - B.5: la dimostrazione che ho scritto negli esercizi non mi convince; se provo a ridimostrarlo da zero, non so come fare perché S^1 è chiuso in R^2 dunque non posso né usare S^1 né intersezioni di aperti con S^1 per creare una carta valida per verificare la definizione di funzione liscia su varietà; è necessario che usi l'inclusione e la condizione di sottovarietà? online ho trovato che f|_S^1 \circ \phi^{-1} = f \circ \phi^{-1} ma non capisco perché
