@@ -7,9 +7,9 @@ Una topologia $ \tau $ su un insieme non vuoto $ X $ è una classe non vuota di 
 \begin{enumerate}
 	\item $ \emptyset, X \in \tau $
 	
-	\item L'unione di un numero qualsiasi di insiemi di $ \tau $ appartiene a $ \tau $
+	\item L'unione di un numero qualunque di insiemi di $ \tau $ appartiene a $ \tau $
 	
-	\item L'intersezione di due insiemi qualsiasi di $ \tau $ appartiene a $ \tau $
+	\item L'intersezione di due insiemi qualunque di $ \tau $ appartiene a $ \tau $
 \end{enumerate}
 
 La coppia $ (X, \tau) $ è detta \textit{spazio topologico}; in queste note, indicheremo con $ X $ lo spazio topologico $ (X, \tau) $, sottintendendo la topologia $ \tau $ quando questa è chiara dal contesto.
@@ -79,7 +79,7 @@ Sia $ \{A_{j}\}_{j \in J} $ una famiglia di spazi topologici e sia
 
 Definiamo la topologia dell'unione disgiunta\footnote{%
 	Vedi Esercizio \ref{BONUS2-1}.%
-} su $ A $ dichiarando $ U $ aperto in $ A $ se e solo se $ U \cap A_{j} $ è aperto in $ A_{j} $ per $ \forall j \in J $.
+} su $ A $ dichiarando $ U $ aperto in $ A $ se e solo se $ U \cap A_{j} $ è aperto in $ A_{j} $ per qualsiasi $ j \in J $.
 
 \subsubsection{\textit{Esempi}}
 
@@ -198,7 +198,7 @@ Per mostrare che $ S $ sia localmente euclideo costruiamo l'applicazione
 la quale è un omeomorfismo, perché è una bigezione continua. Per la continuità, prendiamo un intervallo $ (e,f) \subset (-c,d) $ con $ 0 \notin (e,f) $ la cui controimmagine è sé stesso, i.e. $ \varphi^{-1}((e,f)) = (e,f) \in \tau_{\mathfrak{B}} $; se invece consideriamo $ (-e,f) $ con $ e,f>0 $, la sua controimmagine sarà $ \varphi^{-1}((-e,f)) = I_{K}(e,f) \in \tau_{\mathfrak{B}} $ il quale è un aperto. Per mostrare che $ \varphi $ sia effettivamente continua dobbiamo verificare che la sua inversa $ \varphi^{-1} $ sia anch'essa continua, ma questo è equivalente a mostrare che $ \varphi $ sia aperta\footnote{%
 	Un'applicazione aperta associa aperti ad aperti.%
 }: sia che si prenda un intervallo $ (e,f) $ oppure $ I_{K}(e,f) $, si ottiene comunque come immagine un aperto, perciò è continua e lo spazio è localmente euclideo. \\
-Infine, troviamo che $ S $ non è $ T_{2} $ perché due aperti di questo spazio che contengono $ A $ e $ B $ rispettivamente si devono necessariamente intersecare, i.e. vale sempre $ I_{A}(c,d) \cap I_{B}(e,f) \neq \emptyset $ per $ \forall c, d, e, f \in \R $.
+Infine, troviamo che $ S $ non è $ T_{2} $ perché due aperti di questo spazio che contengono $ A $ e $ B $ rispettivamente si devono necessariamente intersecare, i.e. vale sempre $ I_{A}(c,d) \cap I_{B}(e,f) \neq \emptyset $ per qualsiasi $ c, d, e, f \in \R $.
 
 \subsection{Atlanti}
 
@@ -861,7 +861,7 @@ la quale è ben definita in quanto il rappresentante della classe $ [s] $ preso 
 
 \paragraph{1) Spazi ottenuti tramite quozienti di insiemi}
 
-Sia $ S $ uno spazio topologico e $ A $ un suo qualsiasi sottoinsieme. Definiamo la relazione di equivalenza $ \sim $ su $ S $ come
+Sia $ S $ uno spazio topologico e $ A $ un suo qualunque sottoinsieme. Definiamo la relazione di equivalenza $ \sim $ su $ S $ come
 
 \begin{equation}
 	\begin{cases}
@@ -917,7 +917,7 @@ Lo spazio quoziente $ \sfrac{I}{\{0,1\}} $ è uno spazio compatto perché quozie
 \paragraph{3) Quoziente non $ T_{2} $}
 
 Siano $ S = \R $ e $ A = (0,+\infty) $ e consideriamo il quoziente $ \sfrac{S}{A} = \sfrac{\R}{A} $. Lo spazio quoziente non è di Hausdorff perché, se lo fosse, ogni suo punto sarebbe un chiuso cioè $ \sfrac{\R}{A} $ sarebbe\footnote{%
-	Per un qualsiasi spazio, se questo è $ T_{2} $ o di Hausdorff allora è $ T_{1} $ e anche $ T_{0} $, i.e. $ T_{2} \implies T_{1} \implies T_{0} $.%
+	Per un qualunque spazio, se questo è $ T_{2} $ o di Hausdorff allora è $ T_{1} $ e anche $ T_{0} $, i.e. $ T_{2} \implies T_{1} \implies T_{0} $.%
 } $ T_{1} $. \\
 Considerando la classe di equivalenza $ [A] \in \sfrac{\R}{A} $, questa è chiusa se la sua controimmagine è chiusa ma
 
@@ -953,7 +953,7 @@ in quanto i punti $ \{-1,1\} $ sono equivalenti, ma questo insieme non è aperto
 
 \begin{proof}
 	Per dimostrare questa proposizione è necessario costruire una base numerabile per $ \sfrac{S}{\sim} $ sapendo che ne esiste una in $ S $. \\
-	Sia $ \{B_{n}\}_{n \in \N} $ una base numerabile per $ S $. Consideriamo l'immagine $ \pi(B_{n}) $ per $ \forall n \in \N $: questa è aperta in $ \sfrac{S}{\sim} $ in quanto $ \sim $ è aperta (e dunque anche $ \pi $ è aperta); inoltre è parte di una famiglia numerabile. A questo punto, $ \{\pi(B_{n})\}_{n \in \N} $ è una base numerabile per il quoziente $ \sfrac{S}{\sim} $: sia $ U $ aperto in $ \sfrac{S}{\sim} $, allora $ \pi^{-1}(U) $ è aperta in $ S $ e questo implica che
+	Sia $ \{B_{n}\}_{n \in \N} $ una base numerabile per $ S $. Consideriamo l'immagine $ \pi(B_{n}) $ per qualsiasi $ n \in \N $: questa è aperta in $ \sfrac{S}{\sim} $ in quanto $ \sim $ è aperta (e dunque anche $ \pi $ è aperta); inoltre è parte di una famiglia numerabile. A questo punto, $ \{\pi(B_{n})\}_{n \in \N} $ è una base numerabile per il quoziente $ \sfrac{S}{\sim} $: sia $ U $ aperto in $ \sfrac{S}{\sim} $, allora $ \pi^{-1}(U) $ è aperta in $ S $ e questo implica che
 	
 	\begin{align}
 		\begin{split}
@@ -1709,7 +1709,7 @@ Una funzione $ F : N \to M $ è liscia se lo è in ogni punto $ p \in N $.
 	La dimostrazione dell'implicazione inversa è immediata in quanto le carte degli atlanti sono un ricoprimento degli spazi.
 \end{proof}
 
-Riassumendo, prese due varietà differenziabili $ N $ ed $ M $ e due atlanti differenziabili arbitrari $ \mathfrak{U} \subset \mathfrak{N} $ e $ \mathfrak{V} \subset \mathfrak{M} $ contenuti nelle rispettive strutture differenziabili, abbiamo che un'applicazione $ F : N \to M $ è liscia se e solo se è continua e $ \psi \circ F \circ \varphi^{-1} : \varphi(F^{-1}(V) \cap U) \to \R^{m} $ è liscia per $ \forall (U,\varphi) \in \mathfrak{U} $ e $ \forall (V,\psi) \in \mathfrak{V} $.
+Riassumendo, prese due varietà differenziabili $ N $ ed $ M $ e due atlanti differenziabili arbitrari $ \mathfrak{U} \subset \mathfrak{N} $ e $ \mathfrak{V} \subset \mathfrak{M} $ contenuti nelle rispettive strutture differenziabili, abbiamo che un'applicazione $ F : N \to M $ è liscia se e solo se è continua e $ \psi \circ F \circ \varphi^{-1} : \varphi(F^{-1}(V) \cap U) \to \R^{m} $ è liscia per qualsiasi $ (U,\varphi) \in \mathfrak{U} $ e qualsiasi $ (V,\psi) \in \mathfrak{V} $.
 
 \begin{definition}[Composizione di funzioni lisce tra varietà]
 	Siano $ M $, $ N $ e $ P $ varietà differenziabili, ed $ F : N \to M $ e $ G : M \to P $ due funzioni continue e lisce, allora la composizione continua $ G \circ F $ è liscia.
@@ -1799,7 +1799,7 @@ Fissiamo gli atlanti $ (\R,\id_{\R}) $ e $ \{(U_{i},\varphi_{i})\}_{i=1,\dots,4}
 				{(x,y)}{y}
 			}
 
-Per far vedere che $ F $ sia un'applicazione liscia tra varietà, dobbiamo verificare che le composizioni $ \varphi_{i} \circ F \circ \id_{\R} = \varphi_{i} \circ F $ siano lisce per $ \forall i=1,\dots,4 $: possiamo scrivere che l'insieme $ \varphi(F^{-1}(V) \cap U) $ della definizione corrisponde a $ \id_{\R}(F^{-1}(U_{i}) \cap \R) = F^{-1}(U_{i}) \subset \R $ per questo caso, da cui le composizioni
+Per far vedere che $ F $ sia un'applicazione liscia tra varietà, dobbiamo verificare che le composizioni $ \varphi_{i} \circ F \circ \id_{\R} = \varphi_{i} \circ F $ siano lisce per qualsiasi $ i=1,\dots,4 $: possiamo scrivere che l'insieme $ \varphi(F^{-1}(V) \cap U) $ della definizione corrisponde a $ \id_{\R}(F^{-1}(U_{i}) \cap \R) = F^{-1}(U_{i}) \subset \R $ per questo caso, da cui le composizioni
 
 \sbs{0.5}{%
 			\map{\varphi_{1} \circ F}
@@ -2460,7 +2460,7 @@ Come nel caso euclideo, $ C_{p}^{\infty}(N) $ è ancora un'algebra\footnote{%
 	[(f,U)] \cdot [(g,V)] = [(f g , U \cap V)]
 \end{gather}
 
-per $ \forall [(f,U)], [(g,V)] \in C_{p}^{\infty}(N) $ e $ \forall \lambda, \mu \in \R $. \\
+per qualsiasi $ [(f,U)], [(g,V)] \in C_{p}^{\infty}(N) $ e qualsiasi $ \lambda, \mu \in \R $. \\
 Le derivazioni puntuali $ \der_{p}(C_{p}^{\infty}(N)) $, per definizione, sono l'insieme di applicazioni del tipo
 
 \begin{equation}
@@ -2484,7 +2484,7 @@ L'insieme $ \der_{p}(C_{p}^{\infty}(N)) $ è uno spazio vettoriale\footnote{%
 	\end{split}
 \end{align}
 
-per $ \forall D,D_{u},D_{v} \in \der_{p}(C_{p}^{\infty}(\R^{n})) $ e $ \forall \lambda \in \R $.
+per qualsiasi $ D,D_{u},D_{v} \in \der_{p}(C_{p}^{\infty}(\R^{n})) $ e qualsiasi $ \lambda \in \R $.
 
 \subsection{Derivazioni e derivate parziali}
 
@@ -2540,7 +2540,7 @@ Siano due classi $ [(f,U)],[(g,V)] \in C_{p}^{\infty}(N) $, consideriamo la deri
 	\end{split}
 \end{align}
 
-per $ \forall \lambda,\mu \in \R $, questo prova la $ \R $-linearità della derivata parziale. \\
+per qualsiasi $ \lambda,\mu \in \R $, questo prova la $ \R $-linearità della derivata parziale. \\
 Per la regola di Leibniz:
 
 \begin{align}
@@ -2634,7 +2634,7 @@ L'applicazione $ F_{*p}(X_{p}) : C_{F(p)}^{\infty}(M) \to \R $ può essere vista
 	\end{split}
 \end{align}
 
-per $ \forall f, g \in [(f,V)] \in C_{F(p)}^{\infty}(M) $ e $ \forall \lambda, \mu \in \R $. \\
+per qualsiasi $ f, g \in [(f,V)] \in C_{F(p)}^{\infty}(M) $ e qualsiasi $ \lambda, \mu \in \R $. \\
 Queste proprietà mostrano dunque che $ F_{*p}(X_{p}) \in \der_{F(p)}(C_{F(p)}^{\infty}(M)) $.
 
 \subsubsection{Proprietà del differenziale di un'applicazione}
@@ -2787,7 +2787,7 @@ conseguentemente
 	\end{equation}
 
 	è un isomorfismo tra spazi vettoriali. \\
-	Calcoliamo ora l'azione di $ \varphi_{*p} $ su un vettore generico dell'insieme $ \mathcal{B}_{T_{p}(N)} $ applicato a una qualsiasi funzione $ f \in [(f,U)] \in C_{p}^{\infty}(N) $:
+	Calcoliamo ora l'azione di $ \varphi_{*p} $ su un vettore generico dell'insieme $ \mathcal{B}_{T_{p}(N)} $ applicato a una qualunque funzione $ f \in [(f,U)] \in C_{p}^{\infty}(N) $:
 	
 	\begin{align}
 		\begin{split}
@@ -3116,7 +3116,7 @@ Due oggetti nella categoria delle varietà differenziabili puntate sono isomorfi
 
 \subsection{Funtori}
 
-Siano due categorie $ \mathfrak{C} $ e $ \mathfrak{D} $, un \textit{funtore} $ \mathcal{F} : \mathfrak{C} \to \mathfrak{D} $ è una coppia di applicazioni che agisce nel seguente modo: una delle applicazioni mappa la collezione di oggetti $ \ob(\mathfrak{C}) $ in $ \ob(\mathfrak{D}) $; l'altra applicazione mappa i morfismi $ \mor(C_{1}, C_{2}) $ in $ \mor(D_{1} ,D_{2}) $, dove $ C_{1}, C_{2} \in \ob(\mathfrak{C}) $ e $ D_{1}, D_{2} \in \ob(\mathfrak{D}) $ sono due coppie qualsiasi di oggetti delle rispettive categorie. I funtori si dividono in \textit{covarianti} e \textit{controvarianti}.
+Siano due categorie $ \mathfrak{C} $ e $ \mathfrak{D} $, un \textit{funtore} $ \mathcal{F} : \mathfrak{C} \to \mathfrak{D} $ è una coppia di applicazioni che agisce nel seguente modo: una delle applicazioni mappa la collezione di oggetti $ \ob(\mathfrak{C}) $ in $ \ob(\mathfrak{D}) $; l'altra applicazione mappa i morfismi $ \mor(C_{1}, C_{2}) $ in $ \mor(D_{1} ,D_{2}) $, dove $ C_{1}, C_{2} \in \ob(\mathfrak{C}) $ e $ D_{1}, D_{2} \in \ob(\mathfrak{D}) $ sono due coppie qualunque di oggetti delle rispettive categorie. I funtori si dividono in \textit{covarianti} e \textit{controvarianti}.
 
 \paragraph{Funtori covarianti}
 
@@ -3163,7 +3163,7 @@ e la composizione
 	= \mathcal{F}(G) \circ \mathcal{F}(F)
 \end{align}
 
-per qualsiasi varietà $ N $, $ M $ e $ P $ con $ p \in N $ e qualsiasi coppia di applicazioni lisce tra varietà che rispettino le seguenti condizioni
+per qualunque varietà $ N $, $ M $ e $ P $ con $ p \in N $ e qualunque coppia di applicazioni lisce tra varietà che rispettino le seguenti condizioni
 
 \begin{gather}
 	F : (N,p) \to (M,F(p)) \\
@@ -4111,7 +4111,7 @@ Analogamente ai punti regolari e critici, valgono le seguenti relazioni
 		\end{cases}
 	\end{equation}
 
-	La prima relazione è relativa al fatto che possono esserci dei punti regolari che, tramite $ F $, vengono mappati in valori critici; la seconda viene dai punti del codominio che non sono immagine del dominio tramite $ F $, i.e. per qualunque $ q \in M \setminus F(N) $ abbiamo che $ q \in \mathcal{VR}_{F} $ per definizione ma $ q \notin F(\mathcal{PR}_{F}) $ in quanto $ q \notin F(N) $.
+	La prima relazione è relativa al fatto che possono esserci dei punti regolari che, tramite $ F $, vengono mappati in valori critici; la seconda viene dai punti del codominio che non sono immagine del dominio tramite $ F $, i.e. per qualsiasi $ q \in M \setminus F(N) $ abbiamo che $ q \in \mathcal{VR}_{F} $ per definizione ma $ q \notin F(\mathcal{PR}_{F}) $ in quanto $ q \notin F(N) $.
 \end{remark}
 
 \begin{remark}
@@ -4221,14 +4221,14 @@ Sappiamo inoltre che $ f(\PR_{f}) \not\subset \VR_{f} $ in quanto, ad esempio, $
 
 \subsubsection{Massimi e minimi relativi}
 
-In analisi, per una funzione $ f : \R \to \R $ il punto $ x_{0} \in \R $ è un massimo (risp. minimo) locale per $ f $ se esiste un intorno $ I $ contenente $ x_{0} $ tale che $ f(x) \leqslant f(x_{0}) $ (risp. $ f(x) \geqslant f(x_{0}) $) per $ \forall x \in I $. Se $ x_{0} $ è un punto di massimo o minimo relativo allora la derivata della funzione nel punto è nulla\footnote{%
+In analisi, per una funzione $ f : \R \to \R $ il punto $ x_{0} \in \R $ è un massimo (risp. minimo) locale per $ f $ se esiste un intorno $ I $ contenente $ x_{0} $ tale che $ f(x) \leqslant f(x_{0}) $ (risp. $ f(x) \geqslant f(x_{0}) $) per qualsiasi $ x \in I $. Se $ x_{0} $ è un punto di massimo o minimo relativo allora la derivata della funzione nel punto è nulla\footnote{%
 	La derivata della funzione $ f $ nel punto $ x_{0} $ è definita come
 	
 	\begin{equation*}
 		\dot{f}(x_{0}) = \lim_{x \to x_{0}} \dfrac{f(x) - f(x_{0})}{x - x_{0}}
 	\end{equation*}
 
-	Per un massimo locale $ f(x) \leqslant f(x_{0}) $ per $ \forall x \in I $ dunque $ f(x) - f(x_{0}) \leqslant 0 $; considerando i limiti da destra e da sinistra e sfruttando la permanenza del segno
+	Per un massimo locale $ f(x) \leqslant f(x_{0}) $ per qualsiasi $ x \in I $ dunque $ f(x) - f(x_{0}) \leqslant 0 $; considerando i limiti da destra e da sinistra e sfruttando la permanenza del segno
 	
 	\begin{align*}
 		\begin{split}
@@ -4239,7 +4239,7 @@ In analisi, per una funzione $ f : \R \to \R $ il punto $ x_{0} \in \R $ è un m
 
 	perciò $ \dot{f}(x_{0}) = 0 $.%
 }, i.e. $ \dot{f}(x_{0}) = 0 $, dunque $ x_{0} \in \PC_{f} $. \\
-Siano una varietà differenziabile $ N $ e una funzione $ f \in C^{\infty}(N) $, un punto $ p \in N $ è un \textit{massimo locale} (risp. \textit{minimo locale}) per $ f $ se esiste un intorno $ U \subset N $ di $ p $ tale che $ f(q) \leqslant f(p) $ (risp. $ f(q) \geqslant f(p) $ ) per $ \forall q \in U $.
+Siano una varietà differenziabile $ N $ e una funzione $ f \in C^{\infty}(N) $, un punto $ p \in N $ è un \textit{massimo locale} (risp. \textit{minimo locale}) per $ f $ se esiste un intorno $ U \subset N $ di $ p $ tale che $ f(q) \leqslant f(p) $ (risp. $ f(q) \geqslant f(p) $ ) per qualsiasi $ q \in U $.
 
 \begin{definition}
 	Se $ p $ è un punto di massimo locale (risp. minimo locale) per $ f : N \to \R $ allora $ p \in \PC_{f} $.
@@ -4287,7 +4287,7 @@ Siano una varietà differenziabile $ N $ e una funzione $ f \in C^{\infty}(N) $,
 		f_{*p}(X_{p}) = \dot{(f \circ c)}(0) \eval{ \dv{r} }_{f(p)}
 	\end{equation}
 	
-	Sappiamo che, preso $ U $ intorno di $ p $, per un massimo locale in $ p $ abbiamo che $ f(q) \leqslant f(p) $ per $ \forall q \in U $, quindi prendiamo $ \varepsilon $ in modo tale che $ c((-\varepsilon,\varepsilon)) \subset U $. Se $ p $ è un massimo locale per $ f $ allora 0 è un massimo locale per $ f \circ c $ cioè
+	Sappiamo che, preso $ U $ intorno di $ p $, per un massimo locale in $ p $ abbiamo che $ f(q) \leqslant f(p) $ per qualsiasi $ q \in U $, quindi prendiamo $ \varepsilon $ in modo tale che $ c((-\varepsilon,\varepsilon)) \subset U $. Se $ p $ è un massimo locale per $ f $ allora 0 è un massimo locale per $ f \circ c $ cioè
 	
 	\begin{equation}
 		(f \circ c)(t) \leqslant (f \circ c)(0) = f(p) \qcomma \forall t \in (-\varepsilon,\varepsilon)
@@ -4317,7 +4317,7 @@ Analogamente all'analisi, si possono classificare i punti critici non degeneri i
 	\item $ \mathcal{H}(f)(p) \gtreqqless 0 \text{ semidefinita} \implies p \text{ punto di sella} $
 \end{itemize}
 \footnotetext{%
-	Siano una matrice $ A \in M_{n,n}(\R) $ e un vettore riga $ v \in M_{1,n}(\R) $, la matrice $ A $ è \textit{definita positiva} se il prodotto $ v A v^{T} \in \R $ è positivo per qualsiasi vettore $ v $ diverso dal vettore nullo i.e.
+	Siano una matrice $ A \in M_{n,n}(\R) $ e un vettore riga $ v \in M_{1,n}(\R) $, la matrice $ A $ è \textit{definita positiva} se il prodotto $ v A v^{T} \in \R $ è positivo per qualunque vettore $ v $ diverso dal vettore nullo i.e.
 	
 	\begin{equation*}
 		v A v^{T} > 0 \qcomma \forall v \in M_{1,n}(\R) \, \wedge \, v \neq 0
@@ -4501,7 +4501,7 @@ Deduciamo dunque che $ S $ è una varietà topologica con $ \dim(S) = k $:
 \begin{itemize}
 	\item $ S $ è $ N_{2}+T_{2} $ in quanto $ S \subset N $ è un sottospazio topologico
 	
-	\item per un qualunque $ p \in S $ si può definire una carta $ (U \cap S,\varphi_{S}) $ intorno a $ p $ dal quale si ottiene un atlante topologico per $ S $
+	\item per un qualsiasi $ p \in S $ si può definire una carta $ (U \cap S,\varphi_{S}) $ intorno a $ p $ dal quale si ottiene un atlante topologico per $ S $
 \end{itemize}
 
 \begin{definition}
@@ -4511,7 +4511,7 @@ Deduciamo dunque che $ S $ è una varietà topologica con $ \dim(S) = k $:
 Chiameremo la struttura differenziabile costruita nella proposizione \textit{struttura differenziale indotta da} $ N $.
 
 \begin{proof}
-	Per dimostrare che $ S $ sia una varietà differenziabile, dobbiamo far vedere che per qualsiasi punto $ p \in S $ e qualsiasi coppia di carte $ (U \cap S,\varphi_{S}) $ e $ (V \cap S,\psi_{S}) $ indotte da carte adattate $ (U,\varphi) $ e $ (V,\psi) $ si abbia che $ (U \cap S,\varphi_{S}) $ sia $ C^{\infty} $-compatibile con $ (V \cap S,\psi_{S}) $. \\
+	Per dimostrare che $ S $ sia una varietà differenziabile, dobbiamo far vedere che per qualunque punto $ p \in S $ e qualunque coppia di carte $ (U \cap S,\varphi_{S}) $ e $ (V \cap S,\psi_{S}) $ indotte da carte adattate $ (U,\varphi) $ e $ (V,\psi) $ si abbia che $ (U \cap S,\varphi_{S}) $ sia $ C^{\infty} $-compatibile con $ (V \cap S,\psi_{S}) $. \\
 	Essendo $ (U,\varphi) $ e $ (V,\psi) $ carte di $ N $, queste sono $ C^{\infty} $-compatibili, i.e. sono lisci i seguenti cambi di carta
 	
 	\begin{gather}
@@ -4535,7 +4535,7 @@ Chiameremo la struttura differenziabile costruita nella proposizione \textit{str
 		\end{split}
 	\end{align}
 
-	otteniamo che le funzioni $ x^{i} $ e $ y^{i} $ per $ \forall i=1,\dots,n $ sono lisce rispetto a $ (y^{1},\dots,y^{n}) $ e $ (x^{1},\dots,x^{n}) $ rispettivamente\footnote{%
+	otteniamo che le funzioni $ x^{i} $ e $ y^{i} $ per qualsiasi $ i=1,\dots,n $ sono lisce rispetto a $ (y^{1},\dots,y^{n}) $ e $ (x^{1},\dots,x^{n}) $ rispettivamente\footnote{%
 		Le funzioni $ x^{i} $ e $ y^{i} $ dipendono da $ (y^{1},\dots,y^{n}) $ e $ (x^{1},\dots,x^{n}) $ rispettivamente tramite i cambi di carta ($ f(x) = y $ dunque $ y $ dipende da $ x $ tramite $ f $).%
 	}, in quanto immagini dei cambi di carte, i quali sono lisci per definizione di varietà differenziabile. \\
 	Siano le carte adattate $ (U,\varphi) $ con $ \varphi = (x^{1},\dots,x^{n}) $ tale che
@@ -4684,7 +4684,7 @@ Possiamo definire l'applicazione che proietta i punti di $ S $ lungo l'asse vert
 	{(x,y)}{y}
 
 la quale individua un'unica carta $ (S,\psi) $ per $ S $ che definisce una struttura differenziabile (è compatibile con sé stessa). \\
-Mostriamo ora che $ S $ non è una sottovarietà di $ \R^{2} $ attraverso il fatto che l'inclusione $ i : S \to \R^{2} $ non è un'immersione nel punto 0 e dunque non può esserlo per $ \forall p \in S $. \\
+Mostriamo ora che $ S $ non è una sottovarietà di $ \R^{2} $ attraverso il fatto che l'inclusione $ i : S \to \R^{2} $ non è un'immersione nel punto 0 e dunque non può esserlo per qualsiasi $ p \in S $. \\
 
 \sbs{0.4}{%
 			Supponiamo per assurdo che questa inclusione sia un'immersione e sia $ (U,\varphi) $ una carta di $ S $ intorno a 0 con $ \varphi : U \to (a,b) \subset \R $ tale che $ \varphi^{-1}(0) = (0,0) $ e $ \varphi $ sia un diffeomorfismo.
@@ -4861,7 +4861,7 @@ In conclusione, per definizione, $ \S^{2}$ è una sottovarietà di $\R^{3} $ con
 		
 		abbiamo che $ h^{-1}(0) = f^{-1}(c) $ e $ c \in \VR_{f} \iff 0 \in \VR_{h} $, perché $ \pdv*{f}{x} = \pdv*{h}{x} $; questo ci permette di considerare l'applicazione $ h $ al posto di $ f $ ottenendo gli stessi risultati.%
 	} $ c = 0 \in \R $. \\
-	Sia dunque un punto $ p \in f^{-1}(0) $, vogliamo trovare una carta adattata di $ N $ intorno a $ p $ relativamente a $ f^{-1}(0) $. Il fatto che $ 0 \in \VR_{f} $ implica che almeno una delle derivate parziali di $ f $ non si annulli se consideriamo una qualsiasi carta $ (U,\varphi) $ con $ \varphi = (x^{1},\dots,x^{n}) $ intorno a $ p $. \\
+	Sia dunque un punto $ p \in f^{-1}(0) $, vogliamo trovare una carta adattata di $ N $ intorno a $ p $ relativamente a $ f^{-1}(0) $. Il fatto che $ 0 \in \VR_{f} $ implica che almeno una delle derivate parziali di $ f $ non si annulli se consideriamo una qualunque carta $ (U,\varphi) $ con $ \varphi = (x^{1},\dots,x^{n}) $ intorno a $ p $. \\
 	Supponiamo ora che non si annulli la prima derivata\footnote{%
 		Nel caso in cui la prima derivata fosse nulla, possiamo permutare le coordinate della carta ottenendo una carta identica per cui la prima derivata è diversa da zero.%
 	} e consideriamo l'applicazione liscia
@@ -5227,7 +5227,7 @@ la cui inversa è liscia
 	{\R^{n+1}}{\R^{n+1}}
 	{(a^{1},\dots,a^{n},b)}{(a^{1},\dots,a^{n},b + F(a^{1},\dots,a^{n}))}
 
-dunque $ \varphi $ è un diffeomorfismo: questo significa che $ (\R^{n+1},\varphi) $ è una carta di $ \R^{n+1} $ con la struttura euclidea standard. Questa carta può anche essere pensata come carta adattata di $ \R^{n+1} $ relativamente a $ \Gamma(F) $ per qualsiasi punto $ p \in \Gamma(F) $: questo è vero in quanto l'insieme
+dunque $ \varphi $ è un diffeomorfismo: questo significa che $ (\R^{n+1},\varphi) $ è una carta di $ \R^{n+1} $ con la struttura euclidea standard. Questa carta può anche essere pensata come carta adattata di $ \R^{n+1} $ relativamente a $ \Gamma(F) $ per qualunque punto $ p \in \Gamma(F) $: questo è vero in quanto l'insieme
 
 \begin{equation}
 	\R^{n+1} \cap \Gamma(F) = \{ q \in \R^{n+1} \mid y - F(x^{1},\dots,x^{n}) = 0 \} = \Gamma(F)
@@ -6165,7 +6165,7 @@ perciò
 	t_{1} = t_{2}
 \end{equation}
 
-in quanto qualsiasi valore di $ k $ diverso da 0 esce dall'intervallo del dominio. \\
+in quanto qualunque valore di $ k $ diverso da 0 esce dall'intervallo del dominio. \\
 Questa applicazione è un'immersione in quanto
 
 \begin{equation}
@@ -6675,7 +6675,7 @@ Dobbiamo far vedere ora che $ T(M) $ è una varietà topologica e per farlo dobb
 
 \paragraph{$ T_{2} $ o di Hausdorff}
 
-Per definizione, un insieme è di Hausdorff se, dati due punti qualsiasi dell'insieme, esistono sempre due intorni disgiunti che contengono questi due punti. \\
+Per definizione, un insieme è di Hausdorff se, dati due punti qualunque dell'insieme, esistono sempre due intorni disgiunti che contengono questi due punti. \\
 Siano due punti distinti di $ T(M) $
 
 \begin{equation}
@@ -6996,7 +6996,7 @@ Siano $ M $ una varietà differenziabile, $ U \subset M $ un aperto della variet
 	\item $ \supp(f) \subset U $
 \end{itemize}
 
-Il primo esempio descritto sopra è una funzione a campana in un qualsiasi punto appartenente a $ (-1/2,1/2) $ con supporto in qualunque aperto $ U \supset [-1,1] $.
+Il primo esempio descritto sopra è una funzione a campana in un qualunque punto appartenente a $ (-1/2,1/2) $ con supporto in qualunque aperto $ U \supset [-1,1] $.
 
 \paragraph{Funzione a campana liscia da $ \R^{n} $ a $ \R $}
 
@@ -7114,7 +7114,7 @@ Considerando il disco centrato in $ q $ di raggio $ r $
 	D_{r}(q) = \{ x \in \R^{n} \mid \norm{x - q} < r \}
 \end{equation}
 
-abbiamo che $ \rho $ è una funzione a campana liscia in qualsiasi punto in $ D_{a}(0) $ con supporto $ U $, dove $ U $ è un qualunque aperto tale che contenga il supporto di $ \rho $, i.e.
+abbiamo che $ \rho $ è una funzione a campana liscia in qualunque punto in $ D_{a}(0) $ con supporto $ U $, dove $ U $ è un qualunque aperto tale che contenga il supporto di $ \rho $, i.e.
 
 \begin{equation}
 	U \supset \supp(\rho) = \overline{D_{b}(0)} = \{ x \in \R^{n} \mid \norm{x} \leqslant b \}
@@ -7209,7 +7209,7 @@ Per la generalizzazione di questo procedimento a funzioni a campana su varietà,
 			V_{r} \cap \left( M \setminus \overline{V_{b}} \right) = V_{r} \setminus \overline{V_{b}}
 		\end{equation}
 		
-		essendo $ \sigma(x) = 0 $ per qualunque $ x \in \R^{n} \setminus D_{b}(0) $, possiamo dunque scrivere
+		essendo $ \sigma(x) = 0 $ per qualsiasi $ x \in \R^{n} \setminus D_{b}(0) $, possiamo dunque scrivere
 		
 		\begin{equation}
 			(\sigma \circ \varphi)(p) = 0 \qcomma \forall p \in V_{r} \setminus \overline{V_{b}}
@@ -7326,7 +7326,7 @@ e dunque l'inverso della proiezione, i.e.
 	\end{cases}
 \end{equation}
 
-Un campo di vettori $ X $ su una varietà $ M $ è \textit{liscio} se per qualsiasi punto $ p \in M $ esiste una carta
+Un campo di vettori $ X $ su una varietà $ M $ è \textit{liscio} se per qualunque punto $ p \in M $ esiste una carta
 
 \begin{equation}
 	\begin{cases}
@@ -7597,7 +7597,7 @@ La derivata può anche essere definita su germi delle funzioni in quanto tutte l
 \end{proof}
 
 \begin{definition}
-	Un campo di vettori $ X $ è liscio se e solo se la derivata $ X f $ è liscia per qualsiasi funzione liscia $ f $, i.e.
+	Un campo di vettori $ X $ è liscio se e solo se la derivata $ X f $ è liscia per qualunque funzione liscia $ f $, i.e.
 	
 	\begin{equation}
 		X \in \chi(M) \iff X f \in C^{\infty}(M), \, \forall f \in C^{\infty}(M)
@@ -7880,7 +7880,7 @@ in modo tale che $ K $ rispetti le seguenti proprietà
 	\end{cases}
 \end{equation}
 
-per $ \forall f,g \in C^{\infty}(M) $ e $ \forall D,D_{1},D_{2} \in \der(C^{\infty}(M)) $. \\
+per qualsiasi $ f,g \in C^{\infty}(M) $ e qualsiasi $ D,D_{1},D_{2} \in \der(C^{\infty}(M)) $. \\
 La dimostrazione\footnote{%
 	Essendo $ \chi(M) $ un $ C^{\infty} $-modulo e tramite l'isomorfismo $ \chi(M) \simeq \der(C^{\infty}(M)) $ dimostrato nella sezione successiva, è sufficiente vedere la dimostrazione che $ \chi(U) $ sia un $ C^{\infty} $-modulo nell'Esercizio \ref{exer1-9}.%
 } è la stessa fatta per aperti di $ \R^{n} $.
@@ -8282,7 +8282,7 @@ L'esistenza e l'unicità di una curva integrale per il campo $ X $ deriva dalla 
 		\end{cases}
 	\end{equation}
 
-	 La condizione di soluzione "massimale" indica che qualsiasi soluzione è definita all'interno dell'intervallo $ (a(p),b(p)) $.
+	 La condizione di soluzione "massimale" indica che qualunque soluzione è definita all'interno dell'intervallo $ (a(p),b(p)) $.
 \end{theorem}
 
 Applichiamo ora questo teorema al sistema seguente
@@ -8313,7 +8313,7 @@ Prendendo diverse carte della varietà, possiamo trovare una curva integrale per
 La curva integrale per un campo dipende dal punto $ p $ della varietà scelto: il seguente teorema asserisce che questa dipendenza è liscia
 
 \begin{theorem}
-	Siano un aperto $ V \in \R^{n} $ e una funzione liscia $ f : V \to \R^{n} $, allora per qualsiasi punto $ p \in V $ esistono un intorno aperto $ W \subset V $ di $ p $, $ \varepsilon > 0 $ e una funzione liscia
+	Siano un aperto $ V \in \R^{n} $ e una funzione liscia $ f : V \to \R^{n} $, allora per qualunque punto $ p \in V $ esistono un intorno aperto $ W \subset V $ di $ p $, $ \varepsilon > 0 $ e una funzione liscia
 	
 	\begin{equation}
 		F : (-\varepsilon,\varepsilon) \times W \to V
@@ -8811,13 +8811,13 @@ Il commutatore $ [X,Y]_{p}(f) $ è ancora una funzione liscia in quanto:
 		\end{split}
 	\end{align}
 
-	dove il commutatore nel secondo passaggio è nullo in quanto le derivate parziali (applicate a una qualsiasi funzione) commutano e, sempre nello stesso passaggio, nell'ultima sommatoria possiamo scambiare gli indici $ j $ e $ k $ in quanto muti.
+	dove il commutatore nel secondo passaggio è nullo in quanto le derivate parziali (applicate a una qualunque funzione) commutano e, sempre nello stesso passaggio, nell'ultima sommatoria possiamo scambiare gli indici $ j $ e $ k $ in quanto muti.
 \end{proof}
 
 \subsection{Distribuzioni e teorema di Frobenius}
 
 Sia $ M $ una varietà differenziabile di dimensione $ n $, una \textit{distribuzione} $ r $\textit{-dimensionale} ($ r \leqslant n $) è un'assegnazione di ogni punto $ p \in M $ a un sottospazio $ D_{p} \subseteq T_{p}(M) $ tale che $ \dim(D_{p}) = r $, i.e. l'immagine di una distribuzione è una famiglia di sottospazi dello spazio tangente punto per punto. \\
-Una distribuzione $ r $-dimensionale è \textit{liscia} se per qualsiasi punto $ p \in M $ esistono un intorno aperto $ U \subset M $ di $ p $ e un'insieme di $ r $ campi di vettori lisci $ X_{1},\dots,X_{r} \in \chi(M) $ tali che
+Una distribuzione $ r $-dimensionale è \textit{liscia} se per qualunque punto $ p \in M $ esistono un intorno aperto $ U \subset M $ di $ p $ e un'insieme di $ r $ campi di vettori lisci $ X_{1},\dots,X_{r} \in \chi(M) $ tali che
 
 \begin{equation}
 	D_{p} = \ev{ (X_{1})_{p}, \dots, (X_{r})_{p} }_{\R}

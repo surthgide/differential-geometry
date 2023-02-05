@@ -18,11 +18,11 @@ Prendendo $ k = 0 $, abbiamo che
 Diremo che:
 
 \begin{itemize}
-	\item $ f \in C^{k} $ in $ U $ se $ f \in C^{k} $ in $ p $ per $ \forall p \in U $
+	\item $ f \in C^{k} $ in $ U $ se $ f \in C^{k} $ in $ p $ per qualsiasi $ p \in U $
 	
-	\item $ f \in C^{\infty} $ o \textit{liscia} in $ p $ se $ f \in C^{k} $ in $ p $ per $ \forall k \in \N $
+	\item $ f \in C^{\infty} $ o \textit{liscia} in $ p $ se $ f \in C^{k} $ in $ p $ per qualsiasi $ k \in \N $
 	
-	\item $ f \in C^{\infty} $ o \textit{liscia} in $ U $ se $ f \in C^{\infty} $ per $ \forall p \in U $
+	\item $ f \in C^{\infty} $ o \textit{liscia} in $ U $ se $ f \in C^{\infty} $ per qualsiasi $ p \in U $
 \end{itemize}
 
 perciò una funzione è liscia se esistono e sono finite le sue derivate di qualunque ordine. \\
@@ -39,9 +39,9 @@ Una funzione $ f : U \to \R^{m} $ è:
 \begin{itemize}
 	\item $ C^{k} $ in $ U $ se $ f^{j} \in C^{k} $ in $ U $
 	
-	\item liscia in $ p \in U $ se $ f^{j} \in C^{\infty} $ in $ p $ per $ \forall j = 1, \dots, m $
+	\item liscia in $ p \in U $ se $ f^{j} \in C^{\infty} $ in $ p $ per qualsiasi $ j = 1, \dots, m $
 	
-	\item liscia in $ U $ se $ f^{j} \in C^{\infty} $ in $ U $ per $ \forall j = 1, \dots, m $
+	\item liscia in $ U $ se $ f^{j} \in C^{\infty} $ in $ U $ per qualsiasi $ j = 1, \dots, m $
 \end{itemize}
 
 \subsubsection{\textit{Esempi}}
@@ -199,7 +199,7 @@ I seguenti sottoinsiemi aperti di $ \R $:
 
 sono diffeomorfi tra loro\footnote{%
 	Vedi Esercizio \ref{exer1-3}.%
-} per $ \forall a,b,c,d \in \R $.
+} per qualsiasi $ a,b,c,d \in \R $.
 
 \subsection{Diffeomorfismo tra $ B_{\delta} (c) $ e $ \R^{n} $}
 
@@ -361,7 +361,7 @@ A questo punto $ B_{1} (0) \simeq \R^{n} $: dal punto di vista della geometria d
 \subsection{Teorema di Taylor con resto}
 
 Una funzione reale analitica coincide con il suo sviluppo di Taylor. Per una funzione liscia questo non è detto: la coincidenza di una funzione liscia con il suo sviluppo di Taylor è data a meno di un \textit{resto}. Introduciamo ora il concetto di insieme stellato rispetto a un punto per definire il resto sopraccitato. \\
-Un sottoinsieme aperto $ U \subset \R^{n} $ è \textit{stellato} rispetto a un punto $ p \in U $ se il segmento di retta che unisce $ p $ a $ \forall x \in U $ è interamente contenuto in $ U $.
+Un sottoinsieme aperto $ U \subset \R^{n} $ è \textit{stellato} rispetto a un punto $ p \in U $ se il segmento di retta che unisce $ p $ a qualsiasi $ x \in U $ è interamente contenuto in $ U $.
 
 \begin{remark}
 	Un insieme convesso è stellato rispetto a ogni suo punto.
@@ -431,7 +431,7 @@ L'ipotesi che un sottoinsieme sia stellato è forte a livello globale ma sempre 
 	\end{equation}
 \end{proof}
 
-Prendiamo $ f : U \to \R $ con $ p $ corrispondente all'origine. Per il teorema di Taylor con resto, sappiamo che esiste una funzione $ g_{1} \in C^{\infty}(U) $ tale che $ f(x) = f(0) + x \, g_{1}(x) $ con $ g_{1}(0) = f'(0) $. Riapplicando il teorema a $ g_{1} $ (siccome è liscia), si ottiene che $ g_{1}(x) = g_{1}(0) + x g_{2}(x) $ con $ g_{2} \in C^{\infty}(U) $ e $ g_{2}(0) = g_{1}'(0) $. Per induzione $ g_{i}(x) = g_{i}(0) + x g_{i+1}(x) $ dove $ g_{i+1} \in C^{\infty} (U) $ e $ g_{i+1}(0) = g_{i}'(0) $ per $ \forall i \geqslant 1 $. Sostituendo in $ f $ tutte queste funzioni, si ottiene
+Prendiamo $ f : U \to \R $ con $ p $ corrispondente all'origine. Per il teorema di Taylor con resto, sappiamo che esiste una funzione $ g_{1} \in C^{\infty}(U) $ tale che $ f(x) = f(0) + x \, g_{1}(x) $ con $ g_{1}(0) = f'(0) $. Riapplicando il teorema a $ g_{1} $ (siccome è liscia), si ottiene che $ g_{1}(x) = g_{1}(0) + x g_{2}(x) $ con $ g_{2} \in C^{\infty}(U) $ e $ g_{2}(0) = g_{1}'(0) $. Per induzione $ g_{i}(x) = g_{i}(0) + x g_{i+1}(x) $ dove $ g_{i+1} \in C^{\infty} (U) $ e $ g_{i+1}(0) = g_{i}'(0) $ per qualsiasi $ i \geqslant 1 $. Sostituendo in $ f $ tutte queste funzioni, si ottiene
 
 \begin{align}
 	\begin{split}
@@ -601,7 +601,7 @@ tale che soddisfi le condizioni
 \footnotetext{In generale, non è necessaria l'associatività per definire un'algebra.}
 \end{equation}
 
-per $ \forall a,b,c \in A $ e $ \forall \lambda \in \K $. \\
+per qualsiasi $ a,b,c \in A $ e qualsiasi $ \lambda \in \K $. \\
 Equivalentemente, un algebra su un campo $ \K $ può essere pensata come un anello\footnote{%
 	Le proprietà di associatività e distributività sono sufficienti per renderla un anello.%
 } $ (V,+,\cdot) $ il quale sia anche uno spazio vettoriale con aggiunta la proprietà di omogeneità.
@@ -614,7 +614,7 @@ Definiamo la somma
 	[(f,U)] + [(g,V)] = [(f + g,U \cap V)] \qcomma [(f,U)], [(g,V)] \in C_{p}^{\infty}(\R^{n})
 \end{equation}
 
-Questa somma è ben definita in quanto, prendendo due rappresentanti qualsiasi di $ [(f,U)] $ e $ [(g,V)] $, esiste sempre un intorno in cui questa somma sia definita. \\
+Questa somma è ben definita in quanto, prendendo due rappresentanti qualunque di $ [(f,U)] $ e $ [(g,V)] $, esiste sempre un intorno in cui questa somma sia definita. \\
 Allo stesso modo, definiamo il prodotto
 
 \begin{equation}
@@ -674,7 +674,7 @@ Questa applicazione possiede le seguenti proprietà:
 		\end{split}
 	\end{align}
 
-	per $ \forall [(f,U)], [(g,V)] \in C_{p}^{\infty}(\R^{n}) $, $ \forall p \in U \cap V \subset \R^{n} $ e $ \forall v \in T_{p} (\R^{n}) $.
+	per qualsiasi $ [(f,U)], [(g,V)] \in C_{p}^{\infty}(\R^{n}) $, qualsiasi $ p \in U \cap V \subset \R^{n} $ e qualsiasi $ v \in T_{p} (\R^{n}) $.
 \end{proof}
 
 \begin{proof}[Dimostrazione ($ \R $-linearità (moltiplicazione per scalare))]
@@ -688,7 +688,7 @@ Questa applicazione possiede le seguenti proprietà:
 		\end{split}
 	\end{align}
 
-	per $ \forall [(f,U)], [(g,V)] \in C_{p}^{\infty}(\R^{n}) $, $ \forall \lambda \in \R $, $ \forall p \in U \subset \R^{n} $ e $ \forall v \in T_{p} (\R^{n}) $.
+	per qualsiasi $ [(f,U)], [(g,V)] \in C_{p}^{\infty}(\R^{n}) $, qualsiasi $ \lambda \in \R $, qualsiasi $ p \in U \subset \R^{n} $ e qualsiasi $ v \in T_{p} (\R^{n}) $.
 \end{proof}
 
 \begin{proof}[Dimostrazione (Regola di Leibniz)]
@@ -703,7 +703,7 @@ Questa applicazione possiede le seguenti proprietà:
 		\end{split}
 	\end{align}
 
-	per $ \forall [(f,U)], [(g,V)] \in C_{p}^{\infty}(\R^{n}) $, $ \forall p \in U \cap V \subset \R^{n} $ e $ \forall v \in T_{p} (\R^{n}) $.
+	per qualsiasi $ [(f,U)], [(g,V)] \in C_{p}^{\infty}(\R^{n}) $, qualsiasi $ p \in U \cap V \subset \R^{n} $ e qualsiasi $ v \in T_{p} (\R^{n}) $.
 \end{proof}
 
 La derivazione puntuale è quindi un modo per associare un numero reale a un germe di funzioni, soddisfacendo le proprietà definite sopra. \\
@@ -727,7 +727,7 @@ questa associa il vettore $ v = [v^{1},\dots,v^{n}] \in T_{p}(\R^{n}) $ con $ p 
 	D_{v} f = \sum_{j=1}^{n} \pdv{f}{x^{j}} \, (p) \, v^{j} \in \R
 \end{align}
 
-Possiamo usare lo stesso simbolo, i.e. $ D_{v} ([(f,U)]) = D_{v} f $, perché questa relazione vale per qualsiasi rappresentante della classe. \\
+Possiamo usare lo stesso simbolo, i.e. $ D_{v} ([(f,U)]) = D_{v} f $, perché questa relazione vale per qualunque rappresentante della classe. \\
 L'applicazione $ \varphi $ permette di considerare equivalentemente l'insieme delle derivazioni puntuali dell'algebra dei germi delle funzioni $ C_{p}^{\infty}(\R^{n}) $ e lo spazio tangente a un punto, in quanto questi due insiemi sono isomorfi tra loro tramite $ \varphi $ stessa. Utilizzare le derivazioni è utile perché per le varietà differenziabili non esiste una visualizzazione dello spazio tangente.
 
 \begin{theorem}
@@ -760,7 +760,7 @@ Consideriamo ora la seguente preposizione:
 		(D_{v} + D_{w}) ([(f,U)] \cdot [(g,V)]) &= (D_{v} + D_{w}) ([(f,U)]) \, g(p) + f(p) \, (D_{v} + D_{w}) ([(g,V)])
 	\end{align}
 	
-	per $ \forall D, D_{v}, D_{w} \in \der_{p}(C_{p}^{\infty}(\R^{n})) $ e $ \forall \lambda \in \R $.
+	per qualsiasi $ D, D_{v}, D_{w} \in \der_{p}(C_{p}^{\infty}(\R^{n})) $ e qualsiasi $ \lambda \in \R $.
 \end{definition}
 
 \begin{proof}[Dimostrazione (Proposizione)]
@@ -776,7 +776,7 @@ Consideriamo ora la seguente preposizione:
 		\end{split}
 	\end{align}
 
-	per $ \forall D_{v}, D_{w} \in \der_{p}(C_{p}^{\infty}(\R^{n})) $ e $ \alpha,\beta \in \R $. \\
+	per qualsiasi $ D_{v}, D_{w} \in \der_{p}(C_{p}^{\infty}(\R^{n})) $ e $ \alpha,\beta \in \R $. \\
 	Per la regola di Leibniz:
 	
 	\begin{align}
@@ -788,7 +788,7 @@ Consideriamo ora la seguente preposizione:
 		\end{split}
 	\end{align}
 
-	per $ \forall D_{v}, D_{w} \in \der_{p}(C_{p}^{\infty}(\R^{n})) $.
+	per qualsiasi $ D_{v}, D_{w} \in \der_{p}(C_{p}^{\infty}(\R^{n})) $.
 \end{proof}
 
 \begin{proof}
@@ -817,7 +817,7 @@ Consideriamo ora la seguente preposizione:
 		\end{split}
 	\end{align}
 
-	per $ \forall \alpha, \beta \in \R $ e $ v, w \in T_{p} (\R^{n}) $. \\
+	per qualsiasi $ \alpha, \beta \in \R $ e $ v, w \in T_{p} (\R^{n}) $. \\
 	Da questo si ottiene che l'applicazione $ \varphi $ è $ \R $-lineare:
 	
 	\begin{align}
@@ -828,7 +828,7 @@ Consideriamo ora la seguente preposizione:
 		\end{split}
 	\end{align}
 
-	per $ \forall \alpha, \beta \in \R $ e $ v, w \in T_{p} (\R^{n}) $. \\
+	per qualsiasi $ \alpha, \beta \in \R $ e $ v, w \in T_{p} (\R^{n}) $. \\
 	Per l'iniettività, consideriamo il \textit{kernel}\footnote{%
 		Il \textit{kernel} o nucleo di un'applicazione, indicato con $ \ker $, è l'insieme di tutti e soli gli elementi del dominio che hanno come immagine lo $ 0 $ del codominio. Nel caso considerato ora
 		
@@ -850,7 +850,7 @@ Consideriamo ora la seguente preposizione:
 		{\R^{n}}{\R}
 		{(x^{1}, \dots, x^{n})}{x^{j}}
 
-	per $ \forall j=1,\dots,n $, la quale è una proiezione liscia dunque il germe che la contiene è liscio, i.e. $ [(x^{j},\R)] \in C_{p}^{\infty}(\R^{n}) $. A questo punto
+	per qualsiasi $ j=1,\dots,n $, la quale è una proiezione liscia dunque il germe che la contiene è liscio, i.e. $ [(x^{j},\R)] \in C_{p}^{\infty}(\R^{n}) $. A questo punto
 	
 	\begin{align}
 		\begin{split}
@@ -929,7 +929,7 @@ Consideriamo ora la seguente preposizione:
 	\end{equation}
 
 	Sia $ v = [v^{1},\dots,v^{n}] \in T_{p (\R^{n})} $ definito come $ v^{j} = D([(x^{j},\R)]) $ per $ j=1,\dots,n $. \\
-	Ora applichiamo $ D $ a un qualsiasi germe liscio $ [(f,U)] $
+	Ora applichiamo $ D $ a un qualunque germe liscio $ [(f,U)] $
 	
 	\begin{align}
 		\begin{split}
@@ -1037,7 +1037,7 @@ Un campo di vettori
 	X = \sum_{i=1}^{n} a^{i} \pdv{x^{i}}
 \end{equation}
 
-è $ C^{\infty} (U) $ (liscio o differenziabile) se le funzioni $ a^{i} $ sono lisce, i.e. $ a^{i} \in C^{\infty}(U) $ per $ \forall i=1,\dots,n $. \\
+è $ C^{\infty} (U) $ (liscio o differenziabile) se le funzioni $ a^{i} $ sono lisce, i.e. $ a^{i} \in C^{\infty}(U) $ per qualsiasi $ i=1,\dots,n $. \\
 L'insieme dei campi di vettori che rispettano questa prescrizione è chiamato $ \chi(U) $, i.e.
 
 \begin{equation}
@@ -1048,7 +1048,7 @@ L'insieme dei campi di vettori che rispettano questa prescrizione è chiamato $ 
 
 \paragraph{1)}
 
-Il campo di vettori seguente è liscio perché qualsiasi derivata delle sue componenti non annulla mai il denominatore in quanto l'origine non è compresa
+Il campo di vettori seguente è liscio perché qualunque derivata delle sue componenti non annulla mai il denominatore in quanto l'origine non è compresa
 
 \sbs{0.5}{%
 			\map{X}
@@ -1092,7 +1092,7 @@ questo significa che, presi due campi di vettori
 	X = \sum_{i=1}^{n} a^{i} \pdv{x^{i}} \qcomma Y = \sum_{i=1}^{n} b^{i} \pdv{x^{i}}
 \end{equation}
 
-dove $ a^{i},b^{i} \in C^{\infty}(U) $ per $ \forall i = 1, \dots, n $, allora
+dove $ a^{i},b^{i} \in C^{\infty}(U) $ per qualsiasi $ i = 1, \dots, n $, allora
 
 \begin{equation}
 	X + Y = \sum_{i=1}^{n} (a^{i}+b^{i}) \pdv{x^{i}}
@@ -1111,13 +1111,13 @@ questo significa che, preso
 	X = \sum_{i=1}^{n} a^{i} \pdv{x^{i}}
 \end{equation}
 
-dove $ a^{i} \in C^{\infty}(U) $ per $ \forall i = 1, \dots, n $, allora
+dove $ a^{i} \in C^{\infty}(U) $ per qualsiasi $ i = 1, \dots, n $, allora
 
 \begin{equation}
 	\lambda X = \sum_{i=1}^{n} (\lambda a^{i}) \pdv{x^{i}}
 \end{equation}
 
-dove ancora $ \lambda a^{i} \in C^{\infty}(U) $ per $ \forall i = 1, \dots, n $. \\
+dove ancora $ \lambda a^{i} \in C^{\infty}(U) $ per qualsiasi $ i = 1, \dots, n $. \\
 L'ultima operazione è quella di moltiplicazione di un campo di vettori per un'altra funzione
 
 \begin{equation}
@@ -1130,7 +1130,7 @@ questo significa che
 	f X = \sum_{i=1}^{n} (f a^{i}) \pdv{x^{i}}
 \end{equation}
 
-dove ancora $ f a^{i} \in C^{\infty}(U) $ per $ \forall i=1,\dots,n $. \\
+dove ancora $ f a^{i} \in C^{\infty}(U) $ per qualsiasi $ i=1,\dots,n $. \\
 Le prime due operazioni dotano l'insieme di $ \chi(U) $ della proprietà di spazio vettoriale; osserviamo inoltre che $ C^{\infty}(U) $ è un anello commutativo unitario.
 
 \subsection{$ \chi(U) $ come $ C^{\infty}(U) $-modulo}
@@ -1153,7 +1153,7 @@ tale che
 	\end{cases}
 \end{equation}
 
-per $ \forall r, s \in R $ e $ \forall a, b \in A $. Queste proprietà valgono solo da \textit{sinistra}, potrebbero non valere se calcolate da destra.
+per qualsiasi $ r, s \in R $ e qualsiasi $ a, b \in A $. Queste proprietà valgono solo da \textit{sinistra}, potrebbero non valere se calcolate da destra.
 
 \subsubsection{$ \R $-modulo destro}
 
@@ -1174,7 +1174,7 @@ tale che
 	\end{cases}
 \end{equation}
 
-per $ \forall r,s \in R $ e $ \forall a,b \in A $. Queste proprietà valgono solo da \textit{destra}, potrebbero non valere se calcolate da sinistra. \\ \\
+per qualsiasi $ r,s \in R $ e qualsiasi $ a,b \in A $. Queste proprietà valgono solo da \textit{destra}, potrebbero non valere se calcolate da sinistra. \\ \\
 %
 Tramite queste definizioni, definiamo $ (A,+) $ un $ R $-modulo se è sia un $ R $-modulo sinistro che destro, i.e. $ \cdot \equiv * $.
 
@@ -1208,7 +1208,7 @@ Per l'insieme dei campi di vettori lisci vale il seguente teorema:
 		\end{cases}
 	\end{equation}
 
-	per $ \forall f,g \in C^{\infty}(U) $ e $ \forall X,Y \in \chi(U) $. \\
+	per qualsiasi $ f,g \in C^{\infty}(U) $ e qualsiasi $ X,Y \in \chi(U) $. \\
 	Siccome la moltiplicazione per funzione è commutativa\footnote{%
 		Nonostante ciò, scriveremo la funzione sempre a sinistra dei campi, per notazione e per evitare di confonderla con la derivata di funzione rispetto a un campo di vettori (vedi sottosezione successiva).%
 	}, è sufficiente dimostrare che $ (\chi(U),+) $ sia un $ C^{\infty}(U) $-modulo sinistro (o destro) per dimostrare che sia $ C^{\infty}(U) $-modulo\footnote{%
@@ -1283,7 +1283,7 @@ Sia $ A $ un'algebra su campo $ \K $
 				\lambda (a \cdot b) = (\lambda a) \cdot b = a \cdot (\lambda b) & \text{omogeneità}
 			\end{cases}
 		\end{equation*}
-		per $ \forall a,b,c \in A $ e $ \forall \lambda \in \K $.%
+		per qualsiasi $ a,b,c \in A $ e qualsiasi $ \lambda \in \K $.%
 }, un'applicazione $ D : A \to A $ che sia $ \K $-lineare e tale che soddisfi la regola di Leibniz
 
 \begin{equation}
