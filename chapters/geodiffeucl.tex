@@ -373,7 +373,7 @@ L'ipotesi che un sottoinsieme sia stellato è forte a livello globale ma sempre 
 	Sia $ f : U \to \R $ con $ U \subset \R^{n} $ stellato rispetto a un punto $ p \in U $ e supponiamo $ f \in C^{\infty}(U) $, allora esistono $ n $ funzioni $ g_{i} \in C^{\infty}(U) $ per $ i = 1,\dots,n $ definite come
 	
 	\begin{equation}
-		g_{i}(p) \doteq \pdv{f}{x^{i}} \, (p) \qcomma \forall i=1,\dots,n
+		g_{i}(p) \doteq \pdv{f}{x^{i}} \, (p) \qcomma i=1,\dots,n
 	\end{equation}
 
 	tali che
@@ -402,12 +402,11 @@ L'ipotesi che un sottoinsieme sia stellato è forte a livello globale ma sempre 
 	\end{align}
 	
 	per la \textit{regola della catena}. \\
-	
 	Integrando rispetto a $ t $ nell'intervallo $ [0,1] $ otteniamo
 	\begin{align}
 		\begin{split}
 			\int_{0}^{1} \dv{t} f(p+t(x-p)) \dd{t} &= \int_{0}^{1} \sum_{i=1}^{n} \pdv{f}{x^{i}} \, (p+t(x-p)) \, (x^{i}-p^{i}) \dd{t} \\
-			f(x) - f(p)&= \sum_{i=1}^{n} (x^{i}-p^{i}) \int_{0}^{1} \pdv{f}{x^{i}} \, (p+t(x-p)) \dd{t}
+			f(x) - f(p) &= \sum_{i=1}^{n} (x^{i}-p^{i}) \int_{0}^{1} \pdv{f}{x^{i}} \, (p+t(x-p)) \dd{t}
 		\end{split}
 	\end{align}
 	
@@ -427,7 +426,7 @@ L'ipotesi che un sottoinsieme sia stellato è forte a livello globale ma sempre 
 	Inoltre
 	
 	\begin{equation}
-		g_{i}(p) = \int_{0}^{1} \pdv{f}{x^{i}} \, (p) \dd{t} = \pdv{f}{x^{i}} \, (p) \qcomma \forall i=1,\dots,n
+		g_{i}(p) = \int_{0}^{1} \pdv{f}{x^{i}} \, (p) \dd{t} = \pdv{f}{x^{i}} \, (p) \qcomma i=1,\dots,n
 	\end{equation}
 \end{proof}
 
@@ -443,7 +442,7 @@ Prendiamo $ f : U \to \R $ con $ p $ corrispondente all'origine. Per il teorema 
 	\end{split}
 \end{align}
 
-A questo punto si può identificare\footnote{%
+A questo punto si può definire\footnote{%
 	Vedi Esercizio \ref{exer1-5}.}
 
 \begin{equation}
