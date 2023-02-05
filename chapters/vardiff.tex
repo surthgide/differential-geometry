@@ -5846,7 +5846,7 @@ Combinando questo corollario con il teorema del rango costante si ottengono i te
 
 \begin{proof}
 	Per il Corollario \ref{cor:sub-open}, $ F $ è aperta in quanto sommersione mentre, per il lemma dell'applicazione chiusa\footnote{%
-		Vedi Lemma \ref{lemma-clos-app}.%
+		Vedi Lemma \ref{lemma:clos-app}.%
 	}, $ F $ è anche chiusa. A questo punto, l'immagine di $ N $ attraverso $ F $ è sia aperta che chiusa ma è sottoinsieme di $ M $ che è compatto ($ F(N) \subseteq M $): l'unico sottoinsieme di un compatto che è sia aperto che chiuso è il compatto stesso, dunque $ F(N) = M $ e perciò $ F $ è suriettiva.
 \end{proof}
 
@@ -5934,15 +5934,17 @@ Combinando questo corollario con il teorema del rango costante si ottengono i te
 
 \subsection{Immagini di applicazioni lisce}
 
-Sia un'applicazione liscia $ F : N \to M $: ci chiediamo sotto quali ipotesi l'immagine $ F(N) $ della varietà differenziabile $ N $ attraverso $ F $ sia una sottovarietà di $ M $. \\
+Sia un'applicazione liscia tra varietà $ F : N \to M $: ci chiediamo sotto quali ipotesi l'immagine $ F(N) $ della varietà differenziabile $ N $ attraverso $ F $ sia una sottovarietà di $ M $. \\
 Definiamo innanzitutto l'\textit{embedding topologico} come un'applicazione $ f : N \to M $ che individua un omeomorfismo tra $ N $ e $ f(N) $, dove quest'ultimo ha la topologia ereditata da $ M $. \\
-Supponiamo che $ N \subset M $ sia una sottovarietà, allora l'inclusione canonica
+Supponiamo che $ N \subset M $ sia una sottovarietà di $ M $, allora l'inclusione canonica
 
 \map{i}
 	{N}{M}
 	{q}{q}
 
-è un'immersione iniettiva e un embedding topologico (la condizione di embedding topologico implica l'iniettività). \\
+è un'immersione iniettiva e un embedding topologico\footnote{%
+	Un omeomorfismo è un'applicazione tra spazi topologici che sia una bigezione continua, invertibile e con inversa continua, questo implica che l'inclusione $ i : N \to M $ è iniettiva.%
+}. \\
 Da questa inclusione, possiamo definire l'\textit{embedding differenziale}\footnote{%
 	L'\textit{embedding differenziale} verrà indicato semplicemente come \textit{embedding} o \textit{embedding liscio}, altrimenti verrà esplicitato \textit{embedding topologico} nel caso in cui saremo interessati solo agli aspetti topologici.%
 } come un'applicazione liscia $ F : N \to M $ che soddisfa le seguenti due condizioni:

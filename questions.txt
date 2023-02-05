@@ -2,8 +2,6 @@ D O M A N D E   G E O M E T R I A   D I F F E R E N Z I A L E
 
 DOMANDE TESTO:
 
-- 2.4.5: perché un embedding topologico (e quindi anche differenziale) è iniettivo?
-
 - 3.5.8 (teorema): nel secondo punto del teorema, la condizione è "compatto e abeliano" o "connesso e abeliano"? perché \R non è compatto e quindi G ~= \R x \T non è compatto
 
 
