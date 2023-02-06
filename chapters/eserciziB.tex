@@ -913,7 +913,7 @@ da cui lo spazio tangente
 Un polinomio $ F(x_{1},\dots,x_{n}) \in \R[x_{1},\dots,x_{n}] $ è omogeneo di grado $ k $ se è combinazione lineare di monomi $ x_{1}^{i_{1}} \cdots x_{n}^{i_{m}} $ di grado $ k $ tale che $ \sum_{j=1}^{m} i_{j} = k $. Dimostrare che
 
 \begin{equation}
-	\sum_{i=1}^{n} x^{i} \, \pdv{F}{x_{i}} = k F
+	\sum_{i=1}^{n} x_{i} \, \pdv{F}{x_{i}} = k F
 \end{equation}
 
 Dedurre che $ F^{-1}(c) $ con $ c \neq 0 $ è una sottovarietà di $ \R^{n} $ di dimensione $ n-1 $. Dimostrare inoltre che per $ c,d>0 $ si ha che $ F^{-1}(c) \simeq F^{-1}(d) $ diffeomorfe e lo stesso vale per $ c,d<0 $. \\
@@ -927,7 +927,38 @@ Dedurre che $ F^{-1}(c) $ con $ c \neq 0 $ è una sottovarietà di $ \R^{n} $ di
 {
 \paragraph{Dimostrazione formula}
 
-qui
+Scriviamo un polinomio omogeneo di grado $ k $ nel seguente modo
+
+\begin{equation}
+	F(x_{1},\dots,x_{n}) = \sum_{j=1}^{p} b_{j} \prod_{i=1}^{n} (x_{i})^{a_{ij}} %
+	\qquad %
+	\begin{cases}
+		p \in \N \\
+		b = [b_{j}] \in \R^{p} \\
+		A = [a_{ij}] \in M_{n,p}(\R) \\
+		\displaystyle\sum_{i=1}^{m} a_{ij} = k, & \forall j \in [0,p]
+	\end{cases}
+\end{equation}
+
+Usando l'uguaglianza
+
+\begin{equation}
+	F(\lambda x_{1},\dots,\lambda x_{n}) = \lambda^{k} F(x_{1},\dots,x_{n}) %
+	\qcomma \forall \lambda \in \R
+\end{equation}
+
+possiamo scrivere
+
+\begin{align}
+	\begin{split}
+		\sum_{q=1}^{n} x_{q} \, \pdv{F}{x_{q}} &= \sum_{q=1}^{n} x_{q} \, \pdv{x_{q}} \left( \sum_{j=1}^{p} b_{j} \prod_{i=1}^{n} (x_{i})^{a_{ij}} \right) \\
+		&= \sum_{q=1}^{n} \sum_{j=1}^{p} b_{j} x_{q} \, \pdv{x_{q}} \prod_{i=1}^{n} (x_{i})^{a_{ij}} \\
+		&= \sum_{q=1}^{n} \sum_{j=1}^{p} b_{j} x_{q} a_{qj} \left( (x_{1})^{a_{1j}} \cdots (x_{q})^{a_{qj} - 1} \cdots (x_{n})^{a_{nj}} \right) \\
+		&= \sum_{q=1}^{n} \sum_{j=1}^{p} b_{j} a_{qj} \prod_{i=1}^{n} (x_{i})^{a_{ij}} \\
+		&= \left( \sum_{q=1}^{n} a_{qj} \right) \left( \sum_{j=1}^{p} b_{j} \prod_{i=1}^{n} (x_{i})^{a_{ij}} \right) \\
+		&= k F
+	\end{split}
+\end{align}
 
 \paragraph{Sottovarietà}
 
