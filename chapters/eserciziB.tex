@@ -916,7 +916,7 @@ Un polinomio $ F(x_{1},\dots,x_{n}) \in \R[x_{1},\dots,x_{n}] $ è omogeneo di g
 	\sum_{i=1}^{n} x_{i} \, \pdv{F}{x_{i}} = k F
 \end{equation}
 
-Dedurre che $ F^{-1}(c) $ con $ c \neq 0 $ è una sottovarietà di $ \R^{n} $ di dimensione $ n-1 $. Dimostrare inoltre che per $ c,d>0 $ si ha che $ F^{-1}(c) \simeq F^{-1}(d) $ diffeomorfe e lo stesso vale per $ c,d<0 $. \\
+Dedurre che $ F^{-1}(c) $ con $ c \neq 0 $ è una sottovarietà di $ \R^{n} $ di dimensione $ n-1 $. Dimostrare inoltre che per $ c,d>0 $ si ha che $ F^{-1}(c) \stackrel{diff}{\simeq} F^{-1}(d) $ e lo stesso vale per $ c,d<0 $. \\
 \textit{Suggerimento per la prima parte: usare l'uguaglianza}
 
 \begin{equation}
@@ -962,13 +962,13 @@ possiamo scrivere
 
 \paragraph{Sottovarietà}
 
-Perché $ F^{-1}(c) $ con $ c \neq 0 $ sia una sottovarietà, è necessario che l'applicazione $ F $ sia liscia e che $ c \in \VR_{F} \cap \Im(F) $: l'applicazione
+Dal Teorema \ref{thm:preimg}, perché $ F^{-1}(c) $ con $ c \neq 0 $ sia una sottovarietà di $ \R^{n} $, è necessario che l'applicazione $ F $ sia liscia e che $ c \in \VR_{F} \cap \Im(F) $: l'applicazione
 
 \map{F}
-	{\R^{n}}{\R[x_{1},\dots,x^{n}]}
-	{(x_{1},\dots,x^{n})}{F(x_{1},\dots,x^{n})}
+	{\R^{n}}{\R}
+	{(x_{1},\dots,x_{n})}{F(x_{1},\dots,x_{n}) \in \R[x_{1},\dots,x_{n}]}
 
-dove $ \R[x_{1},\dots,x^{n}] $ indica lo spazio dei polinomi in $ n $ variabili con coefficienti reali, è liscia in quanto l'immagine è un polinomio; per la seconda condizione, consideriamo le seguenti condizioni equivalenti
+dove $ \R[x_{1},\dots,x_{n}] $ indica lo spazio dei polinomi in $ n $ variabili con coefficienti reali, è liscia in quanto l'immagine è un polinomio; per la seconda condizione, consideriamo le seguenti condizioni equivalenti
 
 \begin{gather}
 	c \in \VR_{F} \nonumber \\
@@ -981,7 +981,7 @@ dove $ \R[x_{1},\dots,x^{n}] $ indica lo spazio dei polinomi in $ n $ variabili 
 Siccome vale la relazione
 
 \begin{equation}
-	\sum_{i=1}^{n} x^{i} \, \pdv{F}{x_{i}} = k F
+	\sum_{i=1}^{n} x_{i} \, \pdv{F}{x_{i}} = k F
 \end{equation}
 
 esisterà una derivata di $ F $ non nulla per qualunque punto che sia controimmagine di un polinomio non nullo: considerando le condizioni
@@ -999,14 +999,18 @@ dunque
 
 \begin{equation}
 	\begin{cases}
-		\displaystyle \sum_{i=1}^{n} x^{i} \, \pdv{F}{x_{i}} \, (p) \neq 0 \\ \\
+		\displaystyle \sum_{i=1}^{n} x_{i} \, \pdv{F}{x_{i}} \, (p) \neq 0 \\ \\
 		p = (x^{1},\dots,x^{n}) \neq (0,\dots,0)
 	\end{cases} %
 	\implies %
 	\E \pdv{F}{x^{i}} \, (p) \neq 0 \qcomma i=1,\dots,n
 \end{equation}
 
-e perciò $ F^{-1}(c) $ è una sottovarietà di $ \R^{n} $ con $ \dim(F^{-1}(c)) = ??? $
+e perciò $ F^{-1}(c) $ è una sottovarietà di $ \R^{n} $ di dimensione
+
+\begin{equation}
+	\dim(F^{-1}(c)) = \dim(\R^{n}) - \dim(\R) = n - 1
+\end{equation}
 
 \paragraph{Diffeomorfismi}
 
