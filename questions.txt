@@ -19,7 +19,7 @@ DOMANDE ESERCIZI:
 
 - B.27: non riesco a dimostrare che \rp{3} sia orientabile tramite lo jacobiano dei cambi di carta perché mi esce che il determinante è positivo solo per la metà delle trasformazioni
 
-- C.2: non so come dimostrare che una topologia sia inclusa in un'altra topologia e non sono sicuro che le definizioni che ho scritto delle topologie in esame siano corrette; forse posso trovare una base per ognuna delle due topologie e mostrare che la base per uno sia inclusa nella base dell'altra
+- C.2: non so come dimostrare che una topologia sia inclusa in un'altra topologia e non sono sicuro che le definizioni che ho scritto delle topologie in esame siano corrette; forse posso trovare una base per ognuna delle due topologie e mostrare che la base per uno sia inclusa nella base dell'altra; ho trovato che potrei usare il fatto che per la topologia meno fine (\tau_{s} in questo caso), ogni aperto contiene un aperto della topologia più fine
 
 - C.14: non sono sicuro che l'esercizio debba procedere in questo modo, non mi convince come ho dimostrato l'isomorficità dell'applicazione
 
