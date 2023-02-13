@@ -149,6 +149,8 @@ Dimostrare che la Grassmanniana $ G(k,n) $ è uno spazio topologico connesso e c
 {
 \paragraph{Connessione}
 
+% https://math.stackexchange.com/questions/2862992/connected-components-of-real-matrices-in-m-n-mathbb-r-with-constant-rank-k?noredirect=1&lq=1
+
 Siccome il quoziente preserva la proprietà di connessione, è sufficiente mostrare che lo spazio delle matrici di rango $ k $, i.e. $ F(k,n) $, sia connesso per dimostrare che lo sia $ G(k,n) $. \\
 Uno spazio topologico connesso per archi è anche connesso, dunque dimostriamo che per qualunque coppia di matrici di $ F(k,n) $ sia possibile costruire una funzione continua che le colleghi, i.e. preso $ I = [0,1] \subset \R $
 
@@ -165,33 +167,32 @@ Siano due matrici invertibili $ P \in GL_{n}(\R) $ e $ Q \in GL_{k}(\R) $, una q
 	A = P J Q \qcomma J \doteq \bmqty{I_{k} \\ 0_{n-k,k}}
 \end{equation}
 
-Consideriamo ora le due applicazioni continue seguenti:
+Consideriamo ora le seguenti applicazioni continue:
 
-\map{P_{t}}
-	{I}{GL_{n}(\R)}
-	{t}{P_{t}}
-
-dove
-
-\begin{equation}
-	\begin{cases}
-		P_{t}(0) = P_{0} = P \\
-		P_{t}(1) = P_{1} = \diag(1,\dots,1,\det(P))
-	\end{cases}
-\end{equation}
-
-\map{Q_{t}}
-	{I}{GL_{n}(\R)}
-	{t}{Q_{t}}
-
-dove
-
-\begin{equation}
-	\begin{cases}
-		Q_{t}(0) = Q_{0} = Q \\
-		Q_{t}(1) = Q_{1} = \diag(1,\dots,1,\det(Q))
-	\end{cases}
-\end{equation}
+\sbs{0.5}{%
+			\map{P_{t}}
+				{I}{GL_{n}(\R)}
+				{t}{P_{t}}
+			
+			\begin{equation}
+				\begin{cases}
+					P_{t}(0) = P_{0} = P \\
+					P_{t}(1) = P_{1} = \diag(1,\dots,1,\det(P))
+				\end{cases}
+			\end{equation}
+			}
+	{0.5}{%
+			\map{Q_{t}}
+				{I}{GL_{n}(\R)}
+				{t}{Q_{t}}
+			
+			\begin{equation}
+				\begin{cases}
+					Q_{t}(0) = Q_{0} = Q \\
+					Q_{t}(1) = Q_{1} = \diag(1,\dots,1,\det(Q))
+				\end{cases}
+			\end{equation}
+			}
 
 Queste sono continue perché ognuna risiede in una delle componenti connesse dell'insieme delle matrici invertibili, i.e. in una delle seguenti due parti
 
@@ -219,16 +220,14 @@ Collegando ogni matrice di $ F(k,n) $ alla matrice $ J $ (anch'essa in $ F(k,n) 
 
 \paragraph{Compattezza}
 
-Possiamo pensare alla Grassmanniana anche come quoziente di una \textit{varietà differenziale di Stiefel}\footnote{%
-	Una varietà differenziale di Stiefel $ V_{k}(\R^{n}) $ è l'insieme di tutte le basi ortonormali di dimensione $ k $, i.e. le $ k $-uple di vettori linearmente indipendenti e normalizzati; questa varietà è un sottoinsieme di $ \R^{n} $.%
-}
+Consideriamo una \textit{varietà differenziale di Stiefel} $ V_{k}(\R^{n}) $: questa varietà è l'insieme di tutte le basi ortonormali di dimensione $ k $, i.e. le $ k $-uple di vettori linearmente indipendenti e normalizzati; questa varietà è un sottoinsieme di $ \R^{n} $. Possiamo pensare alla Grassmanniana come quoziente di una varietà differenziale di Stiefel
 
 \begin{equation}
 	G(k,n) = \dfrac{V_{k}(\R^{n})}{\sim}
 \end{equation}
 
 dove due basi di $ V_{k}(\R^{n}) $ sono equivalenti se generano lo stesso $ k $-spazio. \\
-Siccome il quoziente preserva anche la proprietà di compattezza, è sufficiente mostrare che la varietà di Stiefel sia connessa per dimostrare che lo sia la Grassmanniana. \\
+Siccome il quoziente preserva anche la proprietà di compattezza, è sufficiente mostrare che la varietà di Stiefel sia compatta per dimostrare che lo sia la Grassmanniana. \\
 Sappiamo che se un sottoinsieme di $ \R^{n} $ è chiuso e limitato allora è compatto: dato che una varietà di Stiefel $ V_{k}(\R^{n}) \subset \R^{n} $ è chiusa e limitata, allora è compatta e dunque lo è anche la Grassmanniana.
 }
 
