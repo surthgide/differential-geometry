@@ -149,6 +149,52 @@ Dimostrare che la Grassmanniana $ G(k,n) $ è uno spazio topologico connesso e c
 {
 \paragraph{Connessione}
 
+Siccome il quoziente preserva la proprietà di connessione, è sufficiente mostrare che lo spazio delle matrici di rango $ k $, i.e. $ F(k,n) $, sia connesso per dimostrare che lo sia $ G(k,n) $. \\
+Per semplificare il calcolo, consideriamo il caso per $ k = 2 $ e $ n = 4 $: possiamo riscrivere lo spazio in esame come
+
+\begin{equation}
+	F(2,4) = \left\{ A = \bmqty{ a_{11} & a_{12} \\ a_{21} & a_{22} \\ a_{31} & a_{32} \\ a_{41} & a_{42} } \in M_{4,2}(\R) \st \rank(A) = 2 \right\}
+\end{equation}
+
+Possiamo associare a questo spazio un atlante $ \{(V_{ij},\psi_{ij})\}_{\{i,j\} = \{1,2,3,4\}} $ dove
+
+\begin{equation}
+	V_{ij} = \left\{ A \in F(2,4) \st A_{ij} \in GL_{2}(\R) \right\} %
+	\qcomma \{i,j\} = \{1,2,3,4\}
+\end{equation}
+
+\sbs{0.5}{%
+			\maps{\psi_{ij}}
+				{V_{ij}}{M_{2}(\R) = \R^{4}}
+				{A}{A_{lm} (A_{ij})^{-1}}
+			}
+	{0.5}{%
+			$ \{i,j,l,m\} = \{1,2,3,4\} $
+			}
+
+Essendo $ \psi_{ij} $ un omeomorfismo, i.e.
+
+\begin{equation}
+	V_{ij} \stackrel{omeo}{\simeq} \R^{4} \qcomma \forall i,j \in \{1,2,3,4\}
+\end{equation}
+
+ogni carta $ V_{ij} $ è connessa in quanto $ \R^{4} $ è connesso e l'omeomorfismo preserva la connessione. \\
+Siccome le carte dell'atlante formano un ricoprimento per $ F(2,4) $ e queste carte hanno sempre almeno un punto in comune, possiamo scrivere
+
+\begin{equation}
+	\begin{cases}
+		V_{ij} \stackrel{omeo}{\simeq} \R^{4}, & \forall i,j \in \{1,2,3,4\} \\
+		V_{ij} \cap V_{lm} \neq \emptyset, & \forall i,j,l,m \in \{1,2,3,4\}
+	\end{cases} %
+	\implies %
+	F(2,4) \text{ connesso}
+\end{equation}
+
+in quanto l'unione di due aperti connessi che hanno almeno un punto in comune è ancora un insieme connesso. \\
+Il ragionamento è analogo per qualsiasi valore di $ k $ ed $ n $.
+
+\paragraph{Connessione (dimostrazione alternativa)}
+
 % https://math.stackexchange.com/questions/2862992/connected-components-of-real-matrices-in-m-n-mathbb-r-with-constant-rank-k?noredirect=1&lq=1
 
 Siccome il quoziente preserva la proprietà di connessione, è sufficiente mostrare che lo spazio delle matrici di rango $ k $, i.e. $ F(k,n) $, sia connesso per dimostrare che lo sia $ G(k,n) $. \\
