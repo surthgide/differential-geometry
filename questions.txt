@@ -1,9 +1,5 @@
 D O M A N D E   G E O M E T R I A   D I F F E R E N Z I A L E
 
-DOMANDE TESTO:
-
-- 3.5.8 (teorema): nel secondo punto del teorema, la condizione è "compatto e abeliano" o "connesso e abeliano"? perché \R non è compatto e quindi G ~= \R x \T non è compatto
-
 
 DOMANDE ESERCIZI:
 
@@ -22,10 +18,3 @@ DOMANDE ESERCIZI:
 - C.2: non so come dimostrare che una topologia sia inclusa in un'altra topologia e non sono sicuro che le definizioni che ho scritto delle topologie in esame siano corrette; forse posso trovare una base per ognuna delle due topologie e mostrare che la base per uno sia inclusa nella base dell'altra; ho trovato che potrei usare il fatto che per la topologia meno fine (\tau_{s} in questo caso), ogni aperto contiene un aperto della topologia più fine
 
 - C.14: non sono sicuro che l'esercizio debba procedere in questo modo, non mi convince come ho dimostrato l'isomorficità dell'applicazione
-
-
-CURIOSITÀ:
-
-- pagina 23: le quattro proprietà che rendono un gruppo un R-modulo sono parte delle proprietà che rendono uno spazio uno spazio vettoriale? (da qui l'osservazione negli appunti)
-
-- B.19: scrivere la sottovarietà come zero di funzioni è equivalente a cercare un'applicazione la cui controimmagine dell'origine del codominio sia la sottovarietà?
