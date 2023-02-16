@@ -409,38 +409,78 @@ Sappiamo che se un sottoinsieme di $ \R^{n} $ è chiuso e limitato allora è com
 Sia $ \S^{1} $ il cerchio unitario di $ \R^{2} $. Dimostrare che una funzione liscia $ f : \R^{2} \to \R $ si restringe a una funzione liscia $ \eval{f}_{\S^{1}} : \S^{1} \to \R $.
 }
 {
-Presa una carta $ (U,\varphi) $ della struttura differenziabile di $ \R^{2} $, perché $ f $ sia liscia è necessario che sia liscia la composizione
+Dalla Sottosezione \ref{s-sec:smooth-app-on-man}, una funzione su una varietà è liscia se è liscia in ogni punto della varietà la sua composizione con l'inverso della carta che contiene il punto, i.e.
 
 \begin{equation}
-	f \circ \varphi^{-1} : \varphi(U) \to \R
+	\begin{cases}
+		\eval{f}_{\S^{1}} : \S^{1} \to \R \\
+		\eval{f}_{\S^{1}} \in C^{\infty}(\S^{1})
+	\end{cases} %
+	\iff %
+	\begin{cases}
+		\eval{f}_{\S^{1}} \circ \varphi_{i}^{-1} : U_{i} \to \R \\
+		\eval{f}_{\S^{1}} \circ \varphi_{i}^{-1} \in C^{\infty}(U_{i}), & \forall i=1,\dots,4
+	\end{cases}
 \end{equation}
 
-con $ U \subset \R^{2} $ aperto. \\
-Siccome la definizione non dipende dalla carta scelta e dal fatto che un diffeomorfismo
+dove l'atlante $ \{(U_{i},\varphi_{i})\}_{i=1,\dots,4} $ è preso dall'Esempio \ref{example:diff-man-s1}. \\
+Calcoliamo esplicitamente queste composizioni:
 
-\begin{equation}
-	g : U \to g(U) \subset \R^{2}
-\end{equation}
+\sbs{0.5}{%
+			\map{\eval{f}_{\S^{1}} \circ \varphi_{1}^{-1}}
+				{(-1,1)_{x}}{\R}
+				{x}{f (x,\sqrt{1-x^{2}})}
+			
+			\map{\eval{f}_{\S^{1}} \circ \varphi_{2}^{-1}}
+				{(-1,1)_{x}}{\R}
+				{x}{f (x,-\sqrt{1-x^{2}})}
+			}
+	{0.5}{%
+			\map{\eval{f}_{\S^{1}} \circ \varphi_{3}^{-1}}
+				{(-1,1)_{y}}{\R}
+				{y}{f (\sqrt{1-y^{2}},y)}
+			
+			\map{\eval{f}_{\S^{1}} \circ \varphi_{4}^{-1}}
+				{(-1,1)_{y}}{\R}
+				{y}{f (-\sqrt{1-y^{2}},y)}
+			}
 
-definisce una carta della struttura differenziale $ (U,g) $\footnote{%
-	Vedi Proposizione \ref{prop:diffeo-map}.%
-}, possiamo prendere il diffeomorfismo
+Possiamo dunque vedere che sono tutte lisce in quanto composizioni di $ f \in C^{\infty}(\R^{2}) $ e applicazioni lisce, poiché le derivate degli argomenti di $ f $ nelle immagini delle composizioni hanno delle radici quadrate al denominatore che però non si annullano nei punti del dominio. A questo punto, la restrizione $ \eval{f}_{\S^{1}} $ è liscia in qualsiasi punto del cerchio $ \S^{1} $, perciò $ \eval{f}_{\S^{1}} \in C^{\infty}(\S^{1}) $.
 
-\map{g}
-	{\R^{2}}{\S^{1}}
-	{(x,y)}{\left( \dfrac{x}{\sqrt{x^{2} + y^{2}}},\dfrac{y}{\sqrt{x^{2} + y^{2}}} \right)}
+% SOLUZIONE ALTERNATIVA (NON SICURA)
 
-e dunque la carta $ (\S^{1},g) $ della struttura differenziale di $ \R^{2} $ per riscrivere la definizione di funzione liscia, dunque
-
-\begin{equation}
-	f \circ g^{-1} : g(\R^{2}) = \S^{1} \to \R
-\end{equation}
-
-la quale può essere riscritta come
-
-\begin{equation}
-	\eval{f}_{\S^{1}} : \S^{1} \to \R
-\end{equation}
+%Presa una carta $ (U,\varphi) $ della struttura differenziabile di $ \R^{2} $, perché $ f $ sia liscia è necessario che sia liscia la composizione
+%
+%\begin{equation}
+%	f \circ \varphi^{-1} : \varphi(U) \to \R
+%\end{equation}
+%
+%con $ U \subset \R^{2} $ aperto. \\
+%Siccome la definizione non dipende dalla carta scelta e dal fatto che un diffeomorfismo
+%
+%\begin{equation}
+%	g : U \to g(U) \subset \R^{2}
+%\end{equation}
+%
+%definisce una carta della struttura differenziale $ (U,g) $\footnote{%
+%	Vedi Proposizione \ref{prop:diffeo-map}.%
+%}, possiamo prendere il diffeomorfismo
+%
+%\map{g}
+%	{\R^{2}}{\S^{1}}
+%	{(x,y)}{\left( \dfrac{x}{\sqrt{x^{2} + y^{2}}},\dfrac{y}{\sqrt{x^{2} + y^{2}}} \right)}
+%
+%e dunque la carta $ (\S^{1},g) $ della struttura differenziale di $ \R^{2} $ per riscrivere la definizione di funzione liscia, dunque
+%
+%\begin{equation}
+%	f \circ g^{-1} : g(\R^{2}) = \S^{1} \to \R
+%\end{equation}
+%
+%la quale può essere riscritta come
+%
+%\begin{equation}
+%	\eval{f}_{\S^{1}} : \S^{1} \to \R
+%\end{equation}
 }
 
 %=======================================================================================
