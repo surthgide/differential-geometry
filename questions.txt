@@ -3,8 +3,6 @@ D O M A N D E   G E O M E T R I A   D I F F E R E N Z I A L E
 
 DOMANDE ESERCIZI:
 
-- A.6: penso che per dimostrare che g sia liscia dovrei usare il teorema di Taylor con resto ma non riesco a capire come; non riesco a utilizzare le condizione del teorema per la dimostrazione
-
 - B.5: la dimostrazione che ho scritto negli esercizi non mi convince; se provo a ridimostrarlo da zero, non so come fare perché S^1 è chiuso in R^2 dunque non posso né usare S^1 né intersezioni di aperti con S^1 per creare una carta valida per verificare la definizione di funzione liscia su varietà; è necessario che usi l'inclusione e la condizione di sottovarietà? online ho trovato che f|_S^1 \circ \phi^{-1} = f \circ \phi^{-1} ma non capisco perché
 
 - B.24: sono riuscito a capire che un'immersione iniettiva propria è un'applicazione chiusa e un embedding liscio, ma non so come dimostrarlo; per la seconda parte basta dire che se l'embedding liscio non è chiuso, allora non è proprio; la dimostrazione dovrebbe passare per un concetto che non è presente negli appunti (il concetto di bordo--boundary in inglese--per una varietà), quindi non sono sicuro che sia la via giusta; vedi preposizione 4.22 di introduction to smooth manifolds di Lee

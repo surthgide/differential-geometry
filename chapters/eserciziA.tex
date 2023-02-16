@@ -216,7 +216,61 @@ Sia l'applicazione
 Dimostrare che $ g \in C^{\infty}(\R^{2}) $.
 }
 {
-qui
+Per il Teorema \ref{thm:taylor}, esistono due applicazioni $ h_{1},h_{2} \in C^{\infty}(\R^{2}) $ tali che
+
+\begin{equation}
+	\begin{cases}
+		f(x,y) = f(0,0) + h_{1}(x,y) + h_{2}(x,y) \\\\
+		h_{1}(0,0) = \dpdv{f}{x} \, (0,0) \\\\
+		h_{2}(0,0) = \dpdv{f}{y} \, (0,0)
+	\end{cases}
+\end{equation}
+
+Dalle ipotesi, possiamo scrivere
+
+\begin{gather}
+	f(x,y) = h_{1}(x,y) + h_{2}(x,y) \\
+	 h_{1}(0,0) = h_{2}(0,0) = 0
+\end{gather}
+
+Considerando l'applicazione $ g $, possiamo dividere la trattazione in due casi:
+
+\begin{itemize}
+	\item $ t \neq 0 $:
+	%
+	\begin{align}
+		\begin{split}
+			g(t,u) &= \dfrac{1}{t} f(t,tu) \\
+			&= \dfrac{1}{t} ( t h_{1}(t,tu) + t u \, h_{2}(t,tu) ) \\
+			&= h_{1}(t,tu) + u \, h_{2}(t,tu)
+		\end{split}
+	\end{align}
+
+	\item $ t = 0 $:
+	%
+	\begin{equation}
+		g(0,u) = \cancelto{0}{h_{1}(0,0)} + u \, \cancelto{0}{h_{2}(0,0)} = 0
+	\end{equation}
+\end{itemize}
+
+dunque
+
+\begin{equation}
+	g(t,u) = h_{1}(t,tu) + u \, h_{2}(t,tu) \qcomma \forall (t,u) \in \R^{2}
+\end{equation}
+
+Questo dimostra che $ g \in C^{0}(\R^{2}) $. Per dimostrare che sia liscia, consideriamo la derivata di $ g(t,u) $ rispetto a $ t $:
+
+\begin{align}
+	\begin{split}
+		\dv{g(t,u)}{t} &= \pdv{g(t,u)}{x} \pdv{x}{t} + \pdv{g(t,u)}{y} \pdv{y}{t} \\
+		&= \pdv{h_{1}(t,tu)}{x} \pdv{t}{t} + \pdv{h_{1}(t,tu)}{y} \pdv{(tu)}{t} + u \left( \pdv{h_{2}(t,tu)}{x} \pdv{t}{t} + \pdv{h_{2}(t,tu)}{y} \pdv{(tu)}{t} \right) \\
+		&= \pdv{h_{1}(t,tu)}{x} + u \, \pdv{h_{1}(t,tu)}{y} + u \left( \pdv{h_{2}(t,tu)}{x} + u \, \pdv{h_{2}(t,tu)}{y} \right)\\
+		&= \pdv{h_{1}(t,tu)}{x} + u \, \pdv{h_{1}(t,tu)}{y} + u \, \pdv{h_{2}(t,tu)}{x} + u^{2} \, \pdv{h_{2}(t,tu)}{y}
+	\end{split}
+\end{align}
+
+Questa applicazione è liscia in quanto composizione liscia di applicazioni lisce (questo ragionamento si estende alle derivate di grado maggiore), dunque $ g \in C^{\infty}(\R^{2}) $.
 }
 
 %=======================================================================================
