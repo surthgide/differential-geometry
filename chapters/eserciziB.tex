@@ -266,6 +266,130 @@ Collegando ogni matrice di $ F(k,n) $ alla matrice $ J $ (anch'essa in $ F(k,n) 
 
 \paragraph{Compattezza}
 
+Per Gram-Schmidt, possiamo considerare una base ortonormale di vettori di $ \R^{n} $ per uno spazio vettoriale di dimensione $ k $, i.e. $ \{ w_{1}, \dots, w_{k} \} $. Consideriamo ora l'insieme di matrici che abbiano come colonne i vettori ortonormali descritti sopra:
+
+\begin{equation}
+	H(k,n) = \{ W = \bmqty{ w_{1} & \cdots & w_{k} } \in M_{n,k}(\R) \mid w_{i} \cdot w_{j} = \delta_{ij}, \, i,j = 1, \dots, k \}
+\end{equation}
+
+Se pensiamo a questi vettori come a una matrice di $ M_{n,k}(\R) $, questa appartiene a $ F(k,n) $ in quanto avrà sempre rango $ k $, i.e.
+
+\begin{gather}
+	W = \bmqty{ w_{1} & \cdots & w_{k} } \in F(k,n) %
+	\; \because \; %
+	\rank(W) = k \nonumber \\
+	\Downarrow \\
+	H(k,n) \subseteq F(k,n) \nonumber
+\end{gather}
+
+Prendendo la seguente applicazione continua
+
+\map{f_{ij}}
+	{M_{n,k}(\R)}{\R}
+	{A = \bmqty{ a_{1} & \cdots & a_{k} }}{a_{i} \cdot a_{j}}
+
+possiamo notare che $ H(k,n) $ è chiuso in quanto intersezione di chiusi (controimmagini di chiusi mediante applicazione continua):
+
+\begin{equation}
+	H(k,n) = \left( \bigcap_{\substack{ i,j = 1 \\ i \neq j }}^{k} f_{ij}^{-1}(0) \right) \cap \left( \bigcap_{i = 1}^{k} f_{ii}^{-1}(1) \right)
+\end{equation}
+
+L'insieme $ H(k,n) $ è anche limitato in quanto, se prendiamo la norma per matrici definita tramite l'applicazione
+
+\map{\norm{}}
+	{M_{n,k}(\R)}{\R}
+	{A = [a_{ij}]_{\substack{ i = 1, \dots, n \\ j = 1, \dots, k }}}{\left( \sum_{i=1}^{n} \sum_{j=1}^{k} \abs{a_{ij}}^{2} \right)^{1/2}}
+
+otteniamo che
+
+\begin{equation}
+	\norm{A} = \sqrt{k} < + \infty \qcomma \forall A \in H(k,n)
+\end{equation}
+
+Essendo chiuso e limitato in $ M_{n,k}(\R) = \R^{nk} $, $ H(k,n) $ è compatto. \\
+Due matrici di $ H(k,n) $ generano lo stesso spazio vettoriale se e solo se esiste una matrice ortogonale\footnote{%
+	In generale, è sufficiente che la matrice sia invertibile, ma se la base è ortonormale allora la matrice deve essere ortogonale.%
+} che le lega
+
+\begin{equation}
+	W' = W O \in H(k,n) \qcomma \forall W \in H(k,n), \, O \in O(k)
+\end{equation}
+
+dunque è naturale considerare la seguente relazione di equivalenza:
+
+\begin{equation}
+	A \sim_{O} B \iff \E O \in O(n) \mid A = B O \qcomma \forall A, B \in H(k,n)
+\end{equation}
+
+da cui possiamo ricavare il quoziente
+
+\begin{equation}
+	J(k,n) \doteq \dfrac{H(k,n)}{\sim_{O}}
+\end{equation}
+
+il quale è ancora compatto in quanto il quoziente preserva la compattezza. \\
+Consideriamo ora il seguente diagramma:
+
+\sbs{0.5}{%
+			\diagr{%
+					{H(k,n)} \arrow[rrdd, "\varphi"] \arrow[dd, "\pi_{O}"] \arrow[rr, "i"] \&  \& {F(k,n)} \arrow[dd, "\pi_{g}"] \\
+					\&  \&                                \\
+					{J(k,n)} \arrow[rr, "\psi"]                                            \&  \& {G(k,n)}                      
+					}
+			}
+	{0.5}{%
+			\diagr{%
+					A \arrow[rrdd, "\varphi", maps to] \arrow[dd, "\pi_{O}", maps to] \arrow[rr, "i", maps to] \&  \& A \arrow[dd, "\pi_{g}", maps to] \\
+					\&  \&                                  \\
+					{[A]_{O}} \arrow[rr, "\psi", maps to]                                                      \&  \& {[A]_{g}}                       
+					}
+			}
+
+L'applicazione $ \psi $ è ben definita in quanto
+
+\begin{equation}
+	A \sim_{O} B \implies A \sim_{g} B %
+	\; \because \; %
+	O \in GL_{k}(\R) \qcomma \forall O \in O(k)
+\end{equation}
+
+Questa applicazione è anche continua in quanto composizione di funzioni continue:
+
+\begin{equation}
+	\psi = \varphi \circ \pi_{O}^{-1} = \pi_{g} \circ i \circ \pi_{O}^{-1}
+\end{equation}
+
+Consideriamo ora una classe della Grassmanniana
+
+\begin{equation}
+	[B]_{g} \in G(k,n) \qq{dove} B = \bmqty{ b_{1} & \cdots & b_{k} } \in F(k,n) \qcomma b_{i} \in \R^{n}
+\end{equation}
+
+Tramite Gram-Schmidt, possiamo trovare un'altra matrice che generi lo stesso spazio vettoriale ma che abbia le colonne ortonormali tra loro, i.e.
+
+\begin{equation}
+	A = \bmqty{ a_{1} & \cdots & a_{k} } \in H(k,n) \qcomma a_{i} \cdot a_{j} = \delta_{ij}
+\end{equation}
+
+Siccome generano lo stesso spazio, sono legate da una matrice invertibile, i.e.
+
+\begin{equation}
+	A = B g \qcomma g \in GL_{k}(\R) %
+	\implies %
+	[A]_{g} = [B]_{g}
+\end{equation}
+
+Questo mostra che $ \psi $ è suriettiva, in quanto
+
+\begin{equation}
+	\psi([A]_{O}) = [A]_{g} = [B]_{g}
+\end{equation}
+
+i.e. per qualsiasi classe di $ G(k,n) $ esiste una classe di $ J(k,n) $ la cui immagine coincida con la prima perché tutte le immagini di classi di $ J(k,n) $ generano lo stesso spazio. \\
+A questo punto $ \Im(\psi) = G(k,n) $ e dunque la Grassmanniana è compatta in quanto immagine di un compatto tramite un'applicazione continua.
+
+\paragraph{Compattezza (soluzione alternativa)}
+
 Consideriamo una \textit{varietà differenziale di Stiefel} $ V_{k}(\R^{n}) $: questa varietà è l'insieme di tutte le basi ortonormali di dimensione $ k $, i.e. le $ k $-uple di vettori linearmente indipendenti e normalizzati; questa varietà è un sottoinsieme di $ \R^{n} $. Possiamo pensare alla Grassmanniana come quoziente di una varietà differenziale di Stiefel
 
 \begin{equation}
