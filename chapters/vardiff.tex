@@ -903,16 +903,35 @@ questa è costante sulle classi di equivalenza di $ \sfrac{I}{\{0,1\}} $. Tramit
 il quale implica l'esistenza della funzione $ \tilde{f} $, la quale è continua perché $ f $ è continua. Questa applicazione è anche iniettiva e suriettiva: perché sia identificata come un omeomorfismo, si utilizza il seguente lemma
 
 \begin{lemma}[dell'applicazione chiusa]\label{lemma:clos-app}
-	Se si ha una bigezione continua da uno spazio compatto a uno spazio $ T_{2} $ o di Hausdorff, allora questa è un omeomorfismo.
+	
+	Sia $ f : X \to Y $ un'applicazione continua da uno spazio compatto $ X $ a uno spazio $ T_{2} $ o di Hausdorff $ Y $, allora valgono i seguenti fatti:
+	
+	\begin{enumerate}
+		\item l'applicazione $ f $ è chiusa;
+		
+		\item se $ f $ è una bigezione allora è un omeomorfismo;
+		
+		\item se $ f $ è iniettiva allora è un embedding topologico\footnote{%
+			L'embedding topologico verrà affrontato nella Sottosezione \ref{s-sec:img-smooth-app}.%
+		}.
+	\end{enumerate}
 \end{lemma}
 
-Lo spazio quoziente $ \sfrac{I}{\{0,1\}} $ è uno spazio compatto perché quoziente dello spazio compatto $ I $ (quindi immagine di un compatto tramite un'applicazione continua, i.e. $ \pi $) ed $ \S^{1} $ è $ T_{2} $ o di Hausdorff perché incluso in $ \R^{2} $.
+Per la dimostrazione dei fatti usati nelle dimostrazioni successive, vedi \cite{Loi}.
 
-\begin{proof}[Dimostrazione (Lemma dell'applicazione chiusa)]
-	È sufficiente far vedere che l'applicazione sia chiusa\footnote{%
-		Una bigezione continua tra due spazi topologici è un omeomorfismo se e solo se è aperta (risp. chiusa).%
-	}: lo è perché un chiuso in un compatto è compatto, l'immagine di un compatto tramite un'applicazione continua è un compatto e un sottoinsieme compatto di uno spazio di Hausdorff è chiuso.
+\begin{proof}[Dimostrazione (1)]
+	Sia un sottoinsieme chiuso $ C \subset X $, siccome è un sottoinsieme dello spazio compatto $ X $, $ C $ è compatto. L'immagine di un compatto tramite un'applicazione continua, i.e. $ f(C) $, è compatto. Essendo $ f(C) \subset Y $ un sottoinsieme compatto dello spazio di Hausdorff $ Y $, questo è chiuso, dunque $ f $ è chiusa.
 \end{proof}
+
+\begin{proof}[Dimostrazione (2)]
+	Una bigezione continua tra due spazi topologici è un omeomorfismo se e solo se è aperta (risp. chiusa) dunque, per la dimostrazione precedente, $ f $ è un omeomorfismo in quanto chiusa.
+\end{proof}
+
+\begin{proof}[Dimostrazione (3)]
+	Se l'applicazione $ f $ è iniettiva, allora $ f : X \to f(X) $ è una bigezione continua, dunque un omeomorfismo per la dimostrazione precedente: siccome $ X \stackrel{omeo}{\simeq} f(X) \subset Y $, l'applicazione $ f $ è un embedding topologico.
+\end{proof}
+
+Lo spazio quoziente $ \sfrac{I}{\{0,1\}} $ è uno spazio compatto perché quoziente dello spazio compatto $ I $ (quindi immagine di un compatto tramite un'applicazione continua, i.e. $ \pi $) ed $ \S^{1} $ è $ T_{2} $ o di Hausdorff perché incluso in $ \R^{2} $.
 
 \paragraph{3) Quoziente non $ T_{2} $}
 
@@ -5932,7 +5951,7 @@ Combinando questo corollario con il teorema del rango costante si ottengono i te
 	Questo dimostra l'implicazione poiché abbiamo mostrato che il teorema della preimmagine di un valore regolare segue dal teorema della preimmagine di un'applicazione di rango costante, in quanto abbiamo usato il secondo teorema per dimostrare il primo.
 \end{proof}
 
-\subsection{Immagini di applicazioni lisce}
+\subsection{Immagini di applicazioni lisce}\label{s-sec:img-smooth-app}
 
 Sia un'applicazione liscia tra varietà $ F : N \to M $: ci chiediamo sotto quali ipotesi l'immagine $ F(N) $ della varietà differenziabile $ N $ attraverso $ F $ sia una sottovarietà di $ M $. \\
 Definiamo innanzitutto l'\textit{embedding topologico} come un'applicazione $ f : N \to M $ che individua un omeomorfismo tra $ N $ e $ f(N) $, dove quest'ultimo ha la topologia ereditata da $ M $. \\
