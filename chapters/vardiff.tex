@@ -1192,36 +1192,36 @@ Per dimostrare che $ R $ sia chiuso, consideriamo l'applicazione
 
 \map{\varphi}
 	{\R^{n+1} \setminus \{0\} \times \R^{n+1} \setminus \{0\}}{M_{n+1,2}(\R) = \R^{2(n+1)}}
-	{(x,y)}{\pmqty{x & y}}
+	{(x,y)}{\bmqty{x & y}}
 
 che associa alle coppie di vettori\footnote{%
 	Possiamo parlare di vettori invece che di punti perché $ T_{p}(\R^{n}) = \R^{n} $.%
 } $ (x,y) $ le matrici con $ (n+1) $ righe e $ 2 $ colonne costituite dai vettori $ x $ e $ y $ posti in colonne affiancate, i.e.
 
 \begin{equation}
-	x = \pmqty{x^{1} \\ \vdots \\ x^{n+1}} , \, y = \pmqty{y^{1} \\ \vdots \\ y^{n+1}} %
-	\quad \longmapsto \quad%
-	\pmqty{x & y} = \pmqty{x^{1} & y^{1} \\ \vdots & \vdots \\ x^{n+1} & y^{n+1}}
+	x = \bmqty{x^{1} \\ \vdots \\ x^{n+1}} , \, y = \bmqty{y^{1} \\ \vdots \\ y^{n+1}} %
+	\quad \longmapsto \quad %
+	\bmqty{x & y} = \bmqty{x^{1} & y^{1} \\ \vdots & \vdots \\ x^{n+1} & y^{n+1}}
 \end{equation}
 
 L'applicazione $ \varphi $ è un omeomorfismo perché la topologia prodotto di spazi euclidei coincide con la topologia euclidea, i.e. $ \R^{n} \times \R^{m} \simeq \R^{n+m} $ e quindi sono topologicamente equivalenti (ogni aperto di uno è aperto dell'altro). \\
 A questo punto, dimostrando che l'immagine di $ R $ tramite $ \varphi $ è un chiuso in $ M_{n+1,2}(\R) $, otterremo che il proiettivo reale è di Hausdorff. L'insieme in questione è il seguente
 
 \begin{equation}
-	\varphi(R) = \left\{ \pmqty{x & y} \in M_{n+1,2}(\R) \st \rank \left( \pmqty{x & y} \right) = 1 \right\}
+	\varphi(R) = \left\{ \bmqty{x & y} \in M_{n+1,2}(\R) \st \rank \left( \bmqty{x & y} \right) = 1 \right\}
 \end{equation}
 
 La condizione per cui il rango delle matrici di questo insieme è unitario è dovuta al fatto che queste matrici hanno le due colonne proporzionali tra loro, in quanto $ y= \lambda x $ con $ \lambda \in \R $.
 
 \begin{lemma}\label{lemma:clos-matrix}
-	Sia l'insieme delle matrici reali di rango minore o uguale a $ r $
+	L'insieme delle matrici reali di rango minore o uguale a $ r $
 	
 	\begin{equation}
 		X_{r}(n,m) = \left\{ A \in M_{n,m}(\R) \st \rank(A) \leqslant r \right\} %
 		\qcomma r \leqslant \min\{n,m\}
 	\end{equation}
 
-	questo è chiuso in $ M_{n,m}(\R) = \R^{n m} $.
+	è chiuso in $ M_{n,m}(\R) = \R^{n m} $.
 \end{lemma}
 
 \begin{proof}
@@ -1438,7 +1438,7 @@ per dimostrare che sia chiuso, consideriamo l'applicazione
 
 \map{\varphi}
 	{M_{n,k}(\R) \times M_{n,k}(\R)}{M_{n,2k}(\R)}
-	{(A,B)}{\pmqty{A & B}}
+	{(A,B)}{\bmqty{A & B}}
 
 cioè $ \varphi $ "affianca" due matrici rendendole un'unica matrice con il doppio delle colonne.
 
@@ -1476,13 +1476,13 @@ Siano gli aperti di $ G(2,4) $
 i.e. $ A_{ij} $ è invertibile, dove $ A_{ij} $ è la matrice quadrata $ 2 \times 2 $ che si ottiene considerando le righe $ i $ e $ j $ di $ A $, i.e.
 
 \begin{equation}
-	[A] = \left[ \pmqty{ a_{11} & a_{12} \\ a_{21} & a_{22} \\ a_{31} & a_{32} \\ a_{41} & a_{42} } \right] \quad \longrightarrow \quad %
+	[A] = \left[ \bmqty{ a_{11} & a_{12} \\ a_{21} & a_{22} \\ a_{31} & a_{32} \\ a_{41} & a_{42} } \right] \quad \longrightarrow \quad %
 	\begin{cases}
-		A_{12} = \pmqty{ a_{11} & a_{12} \\ a_{21} & a_{22} } & A_{23} = \pmqty{ a_{21} & a_{22} \\ a_{31} & a_{32} } \\ \\
+		A_{12} = \bmqty{ a_{11} & a_{12} \\ a_{21} & a_{22} } & A_{23} = \bmqty{ a_{21} & a_{22} \\ a_{31} & a_{32} } \\ \\
 		%
-		A_{13} = \pmqty{ a_{11} & a_{12} \\ a_{31} & a_{32} } & A_{24} = \pmqty{ a_{21} & a_{22} \\ a_{41} & a_{42} } \\ \\
+		A_{13} = \bmqty{ a_{11} & a_{12} \\ a_{31} & a_{32} } & A_{24} = \bmqty{ a_{21} & a_{22} \\ a_{41} & a_{42} } \\ \\
 		%
-		A_{14} = \pmqty{ a_{11} & a_{12} \\ a_{41} & a_{42} } & A_{34} = \pmqty{ a_{31} & a_{32} \\ a_{41} & a_{42} }
+		A_{14} = \bmqty{ a_{11} & a_{12} \\ a_{41} & a_{42} } & A_{34} = \bmqty{ a_{31} & a_{32} \\ a_{41} & a_{42} }
 	\end{cases}
 \end{equation}
 
@@ -1491,8 +1491,8 @@ Considerando $ B = A g $ (i.e. $ A \sim B $), abbiamo che $ A_{ij} $ è invertib
 \begin{align}
 	\begin{split}
 		A g &= B \\
-		\pmqty{ a_{11} & a_{12} \\ a_{21} & a_{22} \\ a_{31} & a_{32} \\ a_{41} & a_{42} } \pmqty{ g_{11} & g_{12} \\ g_{21} & g_{22} } &= \pmqty{ b_{11} & b_{12} \\ b_{21} & b_{22} \\ b_{31} & b_{32} \\ b_{41} & b_{42} } \\
-		\pmqty{ a_{11} g_{11} + a_{12} g_{21} & a_{11} g_{12} + a_{12} g_{22} \\ a_{21} g_{11} + a_{22} g_{21} & a_{21} g_{12} + a_{22} g_{22} \\ a_{31} g_{11} + a_{32} g_{21} & a_{31} g_{12} + a_{32} g_{22} \\ a_{41} g_{11} + a_{42} g_{21} & a_{41} g_{12} + a_{42} g_{22} } &= \pmqty{ b_{11} & b_{12} \\ b_{21} & b_{22} \\ b_{31} & b_{32} \\ b_{41} & b_{42} }
+		\bmqty{ a_{11} & a_{12} \\ a_{21} & a_{22} \\ a_{31} & a_{32} \\ a_{41} & a_{42} } \bmqty{ g_{11} & g_{12} \\ g_{21} & g_{22} } &= \bmqty{ b_{11} & b_{12} \\ b_{21} & b_{22} \\ b_{31} & b_{32} \\ b_{41} & b_{42} } \\
+		\bmqty{ a_{11} g_{11} + a_{12} g_{21} & a_{11} g_{12} + a_{12} g_{22} \\ a_{21} g_{11} + a_{22} g_{21} & a_{21} g_{12} + a_{22} g_{22} \\ a_{31} g_{11} + a_{32} g_{21} & a_{31} g_{12} + a_{32} g_{22} \\ a_{41} g_{11} + a_{42} g_{21} & a_{41} g_{12} + a_{42} g_{22} } &= \bmqty{ b_{11} & b_{12} \\ b_{21} & b_{22} \\ b_{31} & b_{32} \\ b_{41} & b_{42} }
 	\end{split}
 \end{align}
 
@@ -1559,7 +1559,7 @@ L'inversa di $ \varphi_{12} $ è
 
 \map{(\varphi_{12})^{-1}}
 	{M_{2}(\R) = \R^{4}}{U_{12}}
-	{\pmqty{ c_{11} & c_{12} \\ c_{21} & c_{22} }}{\left[ \pmqty{ 1 & 0 \\ 0 & 1 \\ c_{11} & c_{12} \\ c_{21} & c_{22} } \right]}
+	{\bmqty{ c_{11} & c_{12} \\ c_{21} & c_{22} }}{\left[ \bmqty{ 1 & 0 \\ 0 & 1 \\ c_{11} & c_{12} \\ c_{21} & c_{22} } \right]}
 
 poiché
 
@@ -1573,9 +1573,9 @@ in quanto\footnote{%
 }
 
 \begin{gather}
-	(\varphi_{12} \circ (\varphi_{12})^{-1})(A) = \varphi_{12} \left( \pmqty{ \bigone_{2 \times 2} \\ A } \right) = A (\bigone_{2 \times 2})^{-1} = A \\ \\
+	(\varphi_{12} \circ (\varphi_{12})^{-1})(A) = \varphi_{12} \left( \bmqty{ \bigone_{2 \times 2} \\ A } \right) = A (\bigone_{2 \times 2})^{-1} = A \\ \\
 	%
-	((\varphi_{12})^{-1} \circ \varphi_{12})([A]) = (\varphi_{12})^{-1}(A_{34} (A_{12})^{-1}) = \left[ \pmqty{ \bigone_{2 \times 2} \\ A_{34} (A_{12})^{-1} } \right] = \left[ \pmqty{ A_{12} \\ A_{34} } \right] = [A]
+	((\varphi_{12})^{-1} \circ \varphi_{12})([A]) = (\varphi_{12})^{-1}(A_{34} (A_{12})^{-1}) = \left[ \bmqty{ \bigone_{2 \times 2} \\ A_{34} (A_{12})^{-1} } \right] = \left[ \bmqty{ A_{12} \\ A_{34} } \right] = [A]
 \end{gather}
 
 L'inversa è continua perché composizione di funzioni continue
@@ -1588,7 +1588,7 @@ dove
 
 \map{(\psi_{12})^{-1}}
 	{\R^{4}}{\R^{8}}
-	{\pmqty{ c_{11} & c_{12} \\ c_{21} & c_{22} }}{\pmqty{ 1 & 0 \\ 0 & 1 \\ c_{11} & c_{12} \\ c_{21} & c_{22} }}
+	{\bmqty{ c_{11} & c_{12} \\ c_{21} & c_{22} }}{\bmqty{ 1 & 0 \\ 0 & 1 \\ c_{11} & c_{12} \\ c_{21} & c_{22} }}
 
 Questo mostra l'esistenza di un atlante topologico $ \mathfrak{M} = \{(U_{ij},\varphi_{ij})\}_{i,j=1,\dots,4} $ per $ G(2,4) $: affinché questo atlante sia differenziabile, prendiamo ad esempio i cambi di carte relativi a $ \varphi_{12} $ e $ \varphi_{13} $
 
@@ -1601,12 +1601,12 @@ e mostriamo che siano lisci:
 
 \begin{align}
 	\begin{split}
-		(\varphi_{13} \circ (\varphi_{12})^{-1}) (C) &= (\varphi_{13} \circ (\varphi_{12})^{-1}) \left( \pmqty{ c_{11} & c_{12} \\ c_{21} & c_{22} } \right) \\ \\
-		&= \varphi_{13} \left( \left[ \pmqty{ 1 & 0 \\ 0 & 1 \\ c_{11} & c_{12} \\ c_{21} & c_{22} } \right] \right) \\ \\
-		&= \pmqty{ 0 & 1 \\ c_{21} & c_{22} } \pmqty{ 1 & 0 \\ c_{11} & c_{12} }^{-1} \\ \\
-		&= \pmqty{ 0 & 1 \\ c_{21} & c_{22} } \dfrac{1}{c_{12}} \pmqty{ c_{12} & 0 \\ -c_{11} & 1 } \\ \\
-		&= \dfrac{1}{c_{12}} \pmqty{ -c_{11} & 1 \\ c_{12} c_{21} - c_{11} c_{22} & c_{22} } \\ \\
-		&= \dfrac{1}{c_{12}} \pmqty{ -c_{11} & 1 \\ -\det(C) & c_{22} }
+		(\varphi_{13} \circ (\varphi_{12})^{-1}) (C) &= (\varphi_{13} \circ (\varphi_{12})^{-1}) \left( \bmqty{ c_{11} & c_{12} \\ c_{21} & c_{22} } \right) \\ \\
+		&= \varphi_{13} \left( \left[ \bmqty{ 1 & 0 \\ 0 & 1 \\ c_{11} & c_{12} \\ c_{21} & c_{22} } \right] \right) \\ \\
+		&= \bmqty{ 0 & 1 \\ c_{21} & c_{22} } \bmqty{ 1 & 0 \\ c_{11} & c_{12} }^{-1} \\ \\
+		&= \bmqty{ 0 & 1 \\ c_{21} & c_{22} } \dfrac{1}{c_{12}} \bmqty{ c_{12} & 0 \\ -c_{11} & 1 } \\ \\
+		&= \dfrac{1}{c_{12}} \bmqty{ -c_{11} & 1 \\ c_{12} c_{21} - c_{11} c_{22} & c_{22} } \\ \\
+		&= \dfrac{1}{c_{12}} \bmqty{ -c_{11} & 1 \\ -\det(C) & c_{22} }
 	\end{split}
 \end{align}
 
