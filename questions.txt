@@ -3,8 +3,6 @@ D O M A N D E   G E O M E T R I A   D I F F E R E N Z I A L E
 
 DOMANDE ESERCIZI:
 
-- B.25: devo dimostrare in qualche modo che sia iniettivo il differenziale del differenziale (differenziale secondo?) dell'inclusione tra la sottovarietà e la sua varietà; non riesco a capire come dimostrare che esista l'inversa sinistra del differenziale secondo dell'inclusione né so bene come usare la condizione f(x)=f(y) => x=y in quanto non riesco a definire le gli elementi e le mappe di TT(M); è possibile che debba usare il teorema della dimensione in quanto il differenziale secondo (come il differenziale normale) è lineare; sono sicuro di dover passare per il fatto che l'inclusione i:T(N)->T(M) è un'immersione
-
 - B.27: non riesco a dimostrare che \rp{3} sia orientabile tramite lo jacobiano dei cambi di carta perché mi esce che il determinante è positivo solo per la metà delle trasformazioni
 
 - C.2: non so come dimostrare che una topologia sia inclusa in un'altra topologia e non sono sicuro che le definizioni che ho scritto delle topologie in esame siano corrette; forse posso trovare una base per ognuna delle due topologie e mostrare che la base per uno sia inclusa nella base dell'altra; ho trovato che potrei usare il fatto che per la topologia meno fine (\tau_{s} in questo caso), ogni aperto contiene un aperto della topologia più fine

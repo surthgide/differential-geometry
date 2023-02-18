@@ -2028,7 +2028,53 @@ il quale non è compatto poiché un omeomorfismo porta compatti in compatti (per
 Sia $ N $ una sottovarietà di una varietà differenziabile $ M $. Dimostrare che $ T(N) $ è una sottovarietà di $ T(M) $.
 }
 {
-qui \ref{prop:subman-incl-immersion}.
+Consideriamo la definizione di sottovarietà per il caso in esame:
+
+\begin{gather}
+	N \text{ sottovarietà di } M \nonumber \\
+	\Downarrow \\
+	\forall p \in N, \, \E (U,\varphi) = (U; x^{1}, \dots, x^{n}) \in M \mid \nonumber \\
+	\mid (U,\varphi) \ni p \wedge U \cap N = \{ q \in U \mid x^{k+1}(q) = \dots = x^{n}(q) = 0 \} \nonumber
+\end{gather}
+
+Perché $ T(N) $ sia sottovarietà di $ T(M) $ è dunque necessario che
+
+\begin{gather}
+	T(N) \text{ sottovarietà di } T(M) \nonumber \\
+	\Downarrow \\
+	\forall v \in T(N), \, \E (T(U),\tilde{\varphi}) \in T(M) \mid \nonumber \\
+	\mid (T(U),\tilde{\varphi}) \ni v \wedge T(U) \cap T(N) = \{ w \in T(U) \mid \tilde{\varphi}^{2k+1}(w) = \dots = \tilde{\varphi}^{2n}(w) = 0 \} \nonumber
+\end{gather}
+
+Questo è verificato dal fatto che, considerando
+
+\begin{equation}
+	\begin{cases}
+		\pi(v) = p \\
+		v = \displaystyle\sum_{i=1}^{n} c^{i}(v) \eval{\pdv{x^{i}}}_{p}
+	\end{cases}
+\end{equation}
+
+abbiamo che
+
+\begin{align}
+	\begin{split}
+		\tilde{\varphi}(v) &= (\varphi \circ \pi, \varphi_{*})(v) \\
+		&= \left( \varphi(p), \sum_{i=1}^{n} c^{i}(v) \eval{\pdv{r^{i}}}_{\varphi(p)} \right) \\
+		&\equiv \left( \varphi(p), c(v) \right) \\
+		&= ( x^{1}(p), \dots, x^{k}(p), 0, \dots, 0, c^{1}(v), \dots, c^{k}(v), 0, \dots, 0 )
+	\end{split}
+\end{align}
+
+in quanto
+
+\begin{equation}
+	T_{p}(N) = \ev{ \pdv{x^{i}} }_{i=1,\dots,k} %
+	\implies %
+	v = \sum_{i=1}^{k} c^{i}(v) \eval{\pdv{x^{i}}}_{p} \in T_{p}(N)
+\end{equation}
+
+Questo prova che $ T(N) $ sia una sottovarietà di $ T(M) $ con $ \operatorname{cod}_{T(M)} = 2(n-k) $.
 }
 
 %=======================================================================================

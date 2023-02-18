@@ -4431,9 +4431,9 @@ Siano $ N $ una varietà differenziabile con $ \dim(N) = n $ e $ S \subset N $ s
 }, i.e.
 
 \begin{gather}
-	S \text{ sottovarietà}\nonumber \\
+	S \text{ sottovarietà} \nonumber \\
 	\Downarrow \\
-	\forall p \in S, \, \E (U,\varphi) \in N \mid (U,\varphi) \ni p \wedge U \cap S = \{ q \in U \mid x^{k+1}(q) = \dots = x^{n}(q) = 0 \}\nonumber
+	\forall p \in S, \, \E (U,\varphi) \in N \mid (U,\varphi) \ni p \wedge U \cap S = \{ q \in U \mid x^{k+1}(q) = \dots = x^{n}(q) = 0 \} \nonumber
 \end{gather}
 
 Ad esempio, se consideriamo $ N = \R^{2} $ con carta $ (\R^{2};x,y) $ e $ S = \R \times \{0\} $ allora
@@ -6550,14 +6550,14 @@ dove $ \varphi(U) \subset \R^{n} $. Per poter scrivere l'immagine in funzione di
 
 \map{\varphi_{*} = \varphi_{*p}}
 	{T_{p}(U)}{T_{\varphi(p)}(\varphi(U)) =  T_{\varphi(p)}(\R^{n})}
-	{\eval{ \pdv{x^{i}} }_{p}}{\eval{ \pdv{r^{i}} }_{p}}
+	{\eval{ \pdv{x^{i}} }_{p}}{\eval{ \pdv{r^{i}} }_{\varphi(p)}}
 
 che applicato a $ v $
 
 \begin{equation}
 	\varphi_{*}(v) = \varphi_{*} \left( \sum_{i=1}^{n} c^{i}(v) \eval{ \pdv{x^{i}} }_{p} \right) %
 	= \sum_{i=1}^{n} c^{i}(v) \, \varphi_{*} \left( \eval{ \pdv{x^{i}} }_{p} \right) %
-	= \sum_{i=1}^{n} c^{i}(v) \eval{ \pdv{r^{i}} }_{p}
+	= \sum_{i=1}^{n} c^{i}(v) \eval{ \pdv{r^{i}} }_{\varphi(p)}
 \end{equation}
 
 il quale risultato può essere identificato con $ c(v) = (c^{1}(v),\dots,c^{n}(v)) \in \R^{n} $, i.e. $ \varphi_{*}(v) = c(v) $. \\
@@ -6797,7 +6797,7 @@ dove\footnote{%
 		(U_{\alpha},\varphi_{\alpha}) = (U_{\alpha}; x^{1},\dots,x^{n}) \in M \\ \\
 		v = \displaystyle \sum_{i=1}^{n} a^{i}(v) \eval{ \pdv{x^{i}} }_{p} \\ \\
 		\pi(v) = p \\ \\
-		\varphi_{*}(v) = \displaystyle \sum_{i=1}^{n} a^{i}(v) \eval{ \pdv{r^{i}} }_{p} \longleftrightarrow a(v) = (a^{1}(v),\dots,a^{n}(v)) \in \R^{n}
+		\varphi_{*}(v) = \displaystyle \sum_{i=1}^{n} a^{i}(v) \eval{ \pdv{r^{i}} }_{\varphi(p)} \longleftrightarrow a(v) = (a^{1}(v),\dots,a^{n}(v)) \in \R^{n}
 	\end{cases}	
 \end{equation}
 
@@ -6821,7 +6821,7 @@ Per la funzione $ \tilde{\varphi}_{\beta} $ abbiamo invece
 		(U_{\beta},\varphi_{\beta}) = (U_{\beta}; y^{1},\dots,y^{n}) \in M \\ \\
 		v = \displaystyle \sum_{i=1}^{n} b^{i}(v) \eval{ \pdv{y^{i}} }_{p} \\ \\
 		\pi(v) = p \\ \\
-		\varphi_{*}(v) = \displaystyle \sum_{i=1}^{n} b^{i}(v) \eval{ \pdv{r^{i}} }_{p} \longleftrightarrow b(v) = (b^{1}(v),\dots,b^{n}(v)) \in \R^{n}
+		\varphi_{*}(v) = \displaystyle \sum_{i=1}^{n} b^{i}(v) \eval{ \pdv{r^{i}} }_{\varphi(p)} \longleftrightarrow b(v) = (b^{1}(v),\dots,b^{n}(v)) \in \R^{n}
 	\end{cases}	
 \end{equation}
 
