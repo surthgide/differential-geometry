@@ -2006,7 +2006,18 @@ Dimostrare che un'immersione iniettiva e propria è un embedding liscio. Mostrar
 Ricordare che un'applicazione continua $ f : X \to Y $ tra spazi topologici è propria se $ f^{-1}(K) $ è compatto in $ X $ per ogni compatto $ K $ di $ Y $.
 }
 {
-qui
+Un'immersione, essendo liscia, è continua. Dal Teorema 4.95 da \cite{Lee-top} (pg. 121), possiamo derivare che un'applicazione continua e propria tra varietà differenziabili è chiusa. Dal lemma dell'applicazione chiusa\footnote{%
+	Vedi Lemma \ref{lemma:clos-app}.%
+}, un'applicazione chiusa e iniettiva tra due spazi localmente compatti e di Hausdorff\footnote{%
+	Il lemma dell'applicazione chiusa può essere riformulato sostituendo le condizioni di compattezza e Hausdorff rispettivamente di dominio e codominio dell'applicazione con la condizione che entrambi gli spazi siano localmente compatti e di Hausdorff; quest'ultima condizione è valida per qualsiasi varietà differenziabile.%
+} è un embedding topologico. Essendo $ f $ anche un'immersione, è anche un embedding liscio. \\
+Se $ f : X \to Y $ è un embedding liscio ma l'immagine $ f(X) \subset Y $ non è chiusa in $ Y $ (i.e. l'applicazione non è chiusa in quanto $ X $ è sia chiuso che aperto in sé stesso), allora $ f $ non è propria. Sia un compatto $ K \subset Y $, l'intersezione $ K \cap f(X) $ non è compatta in $ Y $ in quanto $ f(X) $ non è chiuso in $ Y $: considerando la preimmagine di questa intersezione tramite l'omeomorfismo $ f : X \to f(X) $ (in quanto $ f $ è un embedding liscio) otteniamo
+
+\begin{equation}
+	f^{-1}(K \cap f(X)) = f^{-1}(K) \cap X = f^{-1}(K)
+\end{equation}
+
+il quale non è compatto poiché un omeomorfismo porta compatti in compatti (per il teorema di Heine-Borel), quindi $ f $ non è propria.
 }
 
 %=======================================================================================
