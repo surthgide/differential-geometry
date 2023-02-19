@@ -1118,8 +1118,6 @@ Il ragionamento vale iterativamente per $ H = \displaystyle\bigoplus_{i=1}^{s-1}
 Dimostrare che ogni gruppo di Lie è parallelizzabile.
 }
 {
-% https://math.stackexchange.com/questions/308691/let-g-be-a-lie-group-show-that-there-is-a-diffeomorphism-tg-cong-g-times-t
-
 Una varietà differenziabile di dimensione $ n $ è parallelizzabile se esistono $ n $ vettori lisci linearmente indipendenti che formino una base per lo spazio tangente in ogni punto, i.e. per un gruppo di Lie $ G $
 
 \begin{equation}
@@ -1129,7 +1127,44 @@ Una varietà differenziabile di dimensione $ n $ è parallelizzabile se esistono
 	\qcomma \forall g \in G
 \end{equation}
 
-Questa condizione è equivalente a dire che il fibrato tangente è triviale, i.e. sono isomorfi come spazi vettoriali i seguenti spazi
+Consideriamo dunque una base per lo spazio tangente all'unità
+
+\begin{equation}
+	\B_{T_{e}(G)} = \{(\xi_{i})_{e}\}_{i=1,\dots,n}
+\end{equation}
+
+Questa è formata da vettori lisci in quanto
+
+\begin{equation}
+	T_{e}(G) \stackrel{iso}{\simeq} L(G) \subset \chi(G)
+\end{equation}
+
+Essendo legato da un isomorfismo allo spazio tangente all'unità, l'insieme dei campi di vettori invarianti a sinistra possiede anch'esso una base di $ n $ vettori linearmente indipendenti, i.e.
+
+\begin{equation}
+	\B_{L(G)} = \{(\hat{\xi}_{i})_{e}\}_{i=1,\dots,n} %
+	= \{\xi_{i}\}_{i=1,\dots,n}
+\end{equation}
+
+A questo punto, applichiamo il differenziale nell'unità della traslazione a sinistra agli elementi della base di $ L(G) $
+
+\begin{equation}
+	(L_{g})_{*e} ((\xi_{i})_{e}) = (\xi_{i})_{g} \in T_{g}(G) \qcomma \forall g \in G, \, i=1,\dots,n
+\end{equation}
+
+Siccome la traslazione a sinistra è un diffeomorfismo, il suo differenziale è un isomorfismo, dunque porta basi in basi: da questo otteniamo che
+
+\begin{equation}
+	\B_{T_{g}(G)} = \{(\xi_{i})_{g}\}_{i=1,\dots,n} \qcomma \forall g \in G
+\end{equation}
+
+è una base di $ n $ vettori lisci linearmente indipendenti per lo spazio tangente a ogni punto del gruppo di Lie e dunque che qualsiasi gruppo di Lie è parallelizzabile.
+
+\paragraph{Fibrato tangente triviale (dimostrazione alternativa)}
+
+% https://math.stackexchange.com/questions/308691/let-g-be-a-lie-group-show-that-there-is-a-diffeomorphism-tg-cong-g-times-t
+
+La condizione di parallelizzabilità è equivalente a dire che il fibrato tangente è triviale, i.e. sono isomorfi come spazi vettoriali i seguenti spazi
 
 \begin{equation}
 	T(G) \stackrel{iso}{\simeq} G \times T_{g}(G) \qcomma \forall g \in G
