@@ -145,14 +145,20 @@ Dimostrare che $ \tau_{s} \subset \tau_{f} $.
 Definiamo le due topologie:
 
 \begin{itemize}
-	\item $ \tau_{s} $: $ W $ è aperto in $ H $ se $ W = U \cap H $ con $ U \subset \S^{1} \times \S^{1} $ aperto;
+	\item $ \tau_{s} $: $ V $ è aperto in $ H $ se $ V = H \cap U $ con $ U \subset \S^{1} \times \S^{1} $ aperto;
 	
 	\item $ \tau_{f} $: $ W $ è aperto in $ H $ se $ f^{-1}(W) \subset L $ è aperto in $ L $.
 \end{itemize}
 
-Sappiamo che $ f $ è un'immersione iniettiva\footnote{%
-	Vedi Esempio \ref{example:embed-torus}.%
-} (non un embedding).
+Sia un aperto $ f^{-1}(W) \subset L $, la sua immagine $ W \subset \T^{2} $ è aperta per la topologia $ \tau_{f} $ indotta da $ f $ ma non lo è per la topologia $ \tau_{s} $ indotta dall'inclusione. Questo perché un aperto $ V \subset \T^{2} $ della topologia $ \tau_{s} $ è l'intersezione tra $ H $ e una palla aperta $ U = B \subset \R^{2} $ attraverso la proiezione $ \pi $, i.e. $ V = H \cap \pi(B) $, la quale è un'unione infinita di aperti della topologia $ \tau_{f} $. A questo punto, una topologia è inclusa in un'altra se ogni aperto della prima è contenuto in un aperto della seconda: nel caso in esame, abbiamo che
+%
+\begin{gather}
+	\forall \, W \subset \tau_{f}, \, \E V = H \cap \pi(B) \subset \tau_{s} \mid W \subset V %
+	\implies %
+	\tau_{s} \subset \tau_{f}
+\end{gather}
+
+%\img{img57}{1}
 }
 
 %=======================================================================================
