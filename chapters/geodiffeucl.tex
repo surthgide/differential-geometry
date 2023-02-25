@@ -2,10 +2,10 @@
 
 \subsection{Funzioni lisce}
 
-Consideriamo $ \R^{n} $ con $ n \geq 1 $ e $ U \subset \R^{n} $ aperto; prendiamo una funzione $ f : U \to \R $ e $ p \in U $: diremo che $ f \in C^{k} $in $ p $ con $ k \in \N $ se le derivate $ k $-esime di $ f $, definite come
+Consideriamo $ \R^{n} $ con $ n \geq 1 $ e $ U \subset \R^{n} $ aperto; prendiamo una funzione $ f : U \to \R $ e $ p \in U $: diremo che $ f \in C^{k} $ in $ p $ con $ k \in \N $ se le derivate $ k $-esime di $ f $, definite come
 
 \begin{equation}
-	\pdv[k]{f}{x^{1} \cdots}{x^{k}} \qcomma k \in \N
+	\dfrac{\partial^{k} f}{\partial (x^{1})^{i_{1}} \cdots \partial (x^{k})^{i_{k}}} \qq{con} \sum_{j=1}^{k} i_{j} = k \in \N
 \end{equation}
 
 esistono e sono continue in $ p $. \\
@@ -65,7 +65,8 @@ la quale non è definita nell'origine e dunque $ f \notin C^{1} (\R) $.
 
 \paragraph{2) Funzione $ C^{1} $ ma non $ C^{2} $}
 
-Se volessimo costruire una funzione che sia $ C^{1} $ ma non $ C^{2} $, potrei integrare la $ f $ del punto precedente. Sia $ g : \R \to \R $ con
+Integrando la funzione $ f $ dell'esempio precedente, si ottiene una funzione che sia $ C^{1} $ ma non $ C^{2} $. Sia $ g : \R \to \R $ con
+
 \begin{equation}
 	g (x) = \int_{0}^{x} f (t) \dd{t} = \dfrac{3 x^{2/3}}{4}
 \end{equation}
@@ -78,8 +79,8 @@ Vedi Esercizio \ref{exer1-1}.
 
 \subsection{Funzioni reali analitiche}
 
-Sia il punto $ p \in \R^{n} $, un intorno $ U $ di $ p $ è un aperto di $ \R^{n} $ che contiene $ p $. \\
-Sia $ f : U \to \R $ con $ U \subset \R^{n} $ aperto, diremo che $ f $ è \textit{reale analitica} in $ p \in U $ se $ f $ coincide con il suo sviluppo di Taylor intorno a $ p $. Questo significa che se prendiamo una funzione $ f (x) $ con $ x = (x^{1}, \dots, x^{n}) $ e $ p = (p^{1}, \dots, p^{n}) $ abbiamo che
+Sia il punto $ p \in \R^{n} $, un \textit{intorno} $ U $ di $ p $ è un aperto di $ \R^{n} $ che contiene $ p $. \\
+Sia una funzione $ f : U \to \R $ con $ U \subset \R^{n} $ aperto, diremo che $ f $ è \textit{reale analitica} in $ p \in U $ se $ f $ coincide con il suo sviluppo di Taylor intorno a $ p $. Questo significa che se prendiamo una funzione $ f (x) $ con $ x = (x^{1}, \dots, x^{n}) $ e $ p = (p^{1}, \dots, p^{n}) $ abbiamo che
 \begin{align}
 	\begin{split}
 		f (x) &= f (p) + \sum_{i=1}^{n} \pdv{f}{x_{i}} (p) (x^{i} - p^{i}) + \cdots + \dfrac{1}{k!} \sum_{i_{1},\dots,i_{k}=1}^{n} \dfrac{\partial^{k} f}{\partial x^{i_{1}} \cdots \partial x^{i_{k}}} (p) ( (x^{i_{1}} - p^{i_{1}}) \cdots (x^{i_{k}} - p^{i_{k}}) ) + \cdots \\
@@ -93,19 +94,21 @@ Se abbiamo una serie di potenze, possiamo derivarla termine a termine dunque, si
 
 \paragraph{1) Seno}
 
-La funzione $ f (x) = \sin x $ è liscia reale analitica e ha sviluppo di Taylor
-%
+La funzione $ f (x) = \sin(x) $ è liscia reale analitica e ha sviluppo di Taylor
+
 \begin{equation}
-	\sin x = x - \dfrac{x^{3}}{3!} + \dfrac{x^{5}}{5!} - \dots = \sum_{j=0}^{\infty} (-1)^{j} \dfrac{x^{2j+1}}{(2j+1)!}
+	\sin(x) = x - \dfrac{x^{3}}{3!} + \dfrac{x^{5}}{5!} - \dots %
+	= \sum_{j=0}^{\infty} (-1)^{j} \dfrac{x^{2j+1}}{(2j+1)!}
 \end{equation}
+
 Per calcolare la derivata possiamo derivare termine a termine lo sviluppo di Taylor
 
 \begin{align}
 	\begin{split}
-		\dv{x} \sin x &= \dv{x} \sum_{j=0}^{\infty} (-1)^{j} \dfrac{x^{2j+1}}{(2j+1)!} \\
+		\dv{x} \sin(x) &= \dv{x} \sum_{j=0}^{\infty} (-1)^{j} \dfrac{x^{2j+1}}{(2j+1)!} \\
 		&= \sum_{j=0}^{\infty} (-1)^{j} (2j+1) \dfrac{x^{2j}}{(2j+1)!} \\
 		&= \sum_{j=0}^{\infty} (-1)^{j} \dfrac{x^{2j}}{(2j)!} \\
-		&= \cos x
+		&= \cos(x)
 	\end{split}
 \end{align}
 
@@ -113,16 +116,14 @@ Per calcolare la derivata possiamo derivare termine a termine lo sviluppo di Tay
 
 Per trovare la derivata di $ f(x) = e^{x} $ ripetiamo lo stesso procedimento
 
-\begin{align}
-	\begin{split}
-		\dv{x} e^{x} &= \dv{x} \sum_{j=0}^{\infty}\dfrac{x^{j}}{j!} \\
-		&= \sum_{j=0}^{\infty} j \, \dfrac{x^{j-1}}{j!} \\
-		&= \sum_{j=0}^{\infty} \dfrac{x^{j-1}}{(j-1)!} \\
-		&= \sum_{n=-1}^{\infty} \dfrac{x^{n}}{n!} \\
-		&= \sum_{n=0}^{\infty} \dfrac{x^{n}}{n!} \\
-		&= e^{x}
-	\end{split}
-\end{align}
+\begin{equation}
+	\dv{x} e^{x} = \dv{x} \sum_{j=0}^{\infty}\dfrac{x^{j}}{j!} %
+	= \sum_{j=0}^{\infty} j \, \dfrac{x^{j-1}}{j!} %
+	= \sum_{j=0}^{\infty} \dfrac{x^{j-1}}{(j-1)!} %
+	= \sum_{n=-1}^{\infty} \dfrac{x^{n}}{n!} %
+	= \sum_{n=0}^{\infty} \dfrac{x^{n}}{n!} %
+	= e^{x}
+\end{equation}
 
 \paragraph{3) Funzione liscia non reale analitica}
 
@@ -132,18 +133,18 @@ Un esempio di funzione liscia ma non reale analitica è
 	{\R}{\R}
 	{x}{%
 		\begin{cases}
-			e^{-1/x^{2}},& \text{se } x > 0 \\
-			0,& \text{se } x \leqslant 0
+			e^{-1/x^{2}}, & \text{se } x > 0 \\
+			0, & \text{se } x \leqslant 0
 		\end{cases}
 		}
 
-Per controllare che sia $ C^{0} $ dobbiamo verificare che
+Per dimostrare che sia $ C^{0} $ dobbiamo verificare che
 
 \begin{equation}
 	\lim_{x \to 0} e^{-1/x^{2}} = 0
 \end{equation}
 
-Per controllare che sia liscia\footnote{%
+Per dimostrare che sia liscia\footnote{%
 	Vedi Esercizio \ref{exer1-2}.}
 
 \begin{equation}
@@ -160,20 +161,22 @@ Tutto questo ci dice che $ f \in C^{\infty}(\R) $. Se fosse anche reale analitic
 
 ma $ f(x) $ nell'intorno di 0 è nulla solo per $ x \leqslant 0 $ mentre lo sviluppo di Taylor è sempre nullo: questa contraddizione porta a dire che, nonostante $ f \in C^{\infty}(\R) $, questa non è reale analitica, scritto anche come $ f \notin C^{\omega}(\R) $. \\
 Un altro motivo per il quale $ f \notin C^{\omega}(\R) $ segue dal fatto che se $ f : U \to \R $ con $ U \in \R $ aperto è reale analitica e $ f = 0 $ in un aperto, allora $ f \equiv 0 $ ovunque\footnote{%
-	Vale anche se è uguale per una costante diversa da 0.}.
+	Questa proprietà è valida anche se si considera una costante diversa da 0.%
+}.
 
 \section{Diffeomorfismi tra aperti di $ \R^{n} $}
 
-Prendiamo $ U, V \in \R^{n} $ aperti, diremo che $ f : U \to V $ è un \textit{diffeomorfismo} se è una bigezione\footnote{%
+Siano $ U, V \in \R^{n} $ aperti, diremo che $ f : U \to V $ è un \textit{diffeomorfismo} se è una bigezione\footnote{%
 	Perciò è invertibile.%
-}, $ f \in C^{\infty} $ e la sua inversa $ g : V \to U $ è  $ g \in C^{\infty} $. \\
+}, $ f \in C^{\infty}(U) $ e la sua inversa $ g : V \to U $ è  $ g \in C^{\infty}(V) $. \\
 Ad esempio, la funzione
-
+%
 \map{f}
 	{\R}{\R}
 	{x}{x^{3}}
-è una bigezione, è liscia ma la sua inversa non lo è, dunque $ f $ non è un diffeomorfismo. \\
-Quando esiste un diffeomorfismo tra due aperti, si dice che questi sono \textit{diffeomorfi}: $ U $ e $ V $ sono diffeomorfi se $ \E f : U \to V $ diffeomorfismo, i.e. $ U \simeq V $. \\
+
+è una bigezione liscia ma la sua inversa non è liscia, dunque $ f $ non è un diffeomorfismo. \\
+Quando esiste un diffeomorfismo tra due aperti, si dice che questi sono \textit{diffeomorfi}, i.e. $ U $ e $ V $ sono diffeomorfi se esiste $ f : U \to V $ diffeomorfismo, in notazione $ U \simeq V $. \\
 
 \begin{theorem}[Invarianza topologica della dimensione]
 	Se $ U \subset \R^{n} $ e $ V \subset \R^{m} $ sono aperti omeomorfi allora $ n = m $.
@@ -181,25 +184,18 @@ Quando esiste un diffeomorfismo tra due aperti, si dice che questi sono \textit{
 
 \begin{theorem}[Invarianza differenziabile della dimensione]
 	Se $ U \subset \R^{n} $ e $ V \subset \R^{m} $ sono aperti diffeomorfi allora $ n = m $\footnote{%
-		Questo teorema implica quello di "Invarianza topologia della dimensione" in quanto la condizione di diffeomorfismo implica quella di omeomorfismo.}.
+		Questo teorema implica quello di "Invarianza topologia della dimensione" in quanto la condizione di diffeomorfismo implica quella di omeomorfismo: una bigezione liscia con inversa liscia è una bigezione continua con inversa continua, poiché $ C^{\infty} \implies C^{0} $.%
+	}.
 \end{theorem}
 
-È naturale verificare se gli spazi legati da omeomorfismi siano legati anche da diffeomorfismi. \\
-I seguenti sottoinsiemi aperti di $ \R $:
-
-\begin{itemize}
-	\item $ (a,b) $ con $ a < b $
-	
-	\item $ \R $
-	
-	\item $ (c, + \infty) $
-	
-	\item $ (- \infty, d) $
-\end{itemize}
-
-sono diffeomorfi tra loro\footnote{%
+È naturale verificare se gli spazi legati da omeomorfismi siano legati anche da diffeomorfismi. Ad esempio, abbiamo che i seguenti sottoinsiemi aperti di $ \R $ sono diffeomorfi tra loro\footnote{%
 	Vedi Esercizio \ref{exer1-3}.%
-} per qualsiasi $ a,b,c,d \in \R $.
+}:
+
+\begin{equation}
+	(a,b) \simeq (c, + \infty) \simeq (- \infty, d) \simeq \R %
+	\qcomma \forall a,b,c,d \in \R, \, a < b
+\end{equation}
 
 \subsection{Diffeomorfismo tra $ B_{\delta} (c) $ e $ \R^{n} $}
 
@@ -216,10 +212,10 @@ Definiamo
 	{B_{1} (0)}{\R^{n}}
 	{x}{\left( \dfrac{x^{1}}{\sqrt{1 - \norm{x}^{2}}}, \cdots, \dfrac{x^{n}}{\sqrt{1 - \norm{x}^{2}}} \right)}
 
-questa applicazione è un diffeomorfismo. Per verificarlo, dobbiamo dimostrare che $ f $ sia un bigezione, $ f \in C^{\infty} $ e che $ f^{-1} \in C^{\infty} $. \\
+questa applicazione è un diffeomorfismo. Per verificarlo, dobbiamo dimostrare che $ f $ sia un bigezione, $ f \in C^{\infty}(B_{1}(0)) $ e che $ f^{-1} \in C^{\infty}(\R^{n}) $. \\
 L'inversa è
 
-\map{f}
+\map{f^{-1}}
 	{\R^{n}}{B_{1} (0)}
 	{x}{\left( \dfrac{x^{1}}{\sqrt{1 + \norm{x}^{2}}}, \cdots, \dfrac{x^{n}}{\sqrt{1 + \norm{x}^{2}}} \right)}
 
@@ -229,19 +225,28 @@ in quanto
 	f \circ g = \id_{\R^{n}} \; \wedge \; g \circ f = \id_{B_{1} (0)}
 \end{equation}
 
-Perché sia $ f $ che $ f^{-1} $ siano lisce, dobbiamo verificare che ogni loro componente lo sia, il quale è verificato perché la derivata di una delle componenti di $ f $ ha al denominatore sempre $ \sqrt{1 - \norm{x}^{2}} \in B_{1} (0) $ e lo stesso vale per la sua inversa $ \sqrt{1 + \norm{x}^{2}} \in \R^{n} $.
+Perché sia $ f $ che $ f^{-1} $ siano lisce, dobbiamo verificare che ogni loro componente lo sia, il quale è verificato perché la derivata di una delle componenti di $ f $ ha al denominatore sempre
+
+\begin{equation}
+	\sqrt{1 - \norm{x}^{2}} \neq 0 \qcomma \forall x \in B_{1} (0)
+\end{equation}
+
+e lo stesso vale per la sua inversa
+
+\begin{equation}
+	\sqrt{1 + \norm{x}^{2}} \neq 0 \qcomma \forall x \in \R^{n}
+\end{equation}
 
 \begin{corollary}
-	La palla di centro $ c $ e raggio $ \delta $ con $ c \in \R^{n} $ e $ \delta \geqslant 0 $ è diffeomorfa a $ \R^{n} $, i.e. $ B_{\delta} (c) \simeq \R^{n} $.
+	La palla di centro $ c $ e raggio $ \delta $ con $ c \in \R^{n} $ e $ \delta \geqslant 0 $ è diffeomorfa a $ \R^{n} $, i.e. $ B_{\delta} (c) \simeq B_{1} (0) \simeq \R^{n} $.
 \end{corollary}
 
-Per dimostrare questo è necessario dimostrare che siano diffeomorfismi le traslazioni (le quali sono lineari e affini) e le omotetie (scala di un fattore $ \delta $); questa dimostrazione mostra anche che\footnote{%
-	Vedi Esercizio \ref{exer1-4}.%
-} $ B_{1} (0) \simeq B_{\delta} (c) $.
-
+\begin{proof}
+	Vedi Esercizio \ref{exer1-4}; la dimostrazione passa per il mostrare che le traslazioni (le quali sono lineari e affini) e le omotetie (scala di un fattore $ \delta $) siano diffeomorfismi.
+\end{proof}
 
 \sbs{0.3}{%
-			Per praticità di notazione, chiamiamo $ h $ il diffeomorfismo $ B_{\delta} (c) \to \R^{n} $ definito sopra. Per far vedere come nasce questo diffeomorfismo, si può usare la seguente costruzione geometrica
+			Per praticità di notazione, chiamiamo $ h $ il diffeomorfismo $ B_{\delta} (c) \to \R^{n} $ definito sopra. Per far vedere come nasce questo diffeomorfismo, si può usare la costruzione geometrica a lato.
 			}
 	{0.8}{%
 			\begin{figure}[H]
@@ -390,9 +395,8 @@ L'ipotesi che un sottoinsieme sia stellato è forte a livello globale ma sempre 
 		r=p+t(x-p) \qcomma t \in [0,1]
 	\end{equation}
 	
-	Essendo $ U $ stellato rispetto a $ p $, possiamo valutare $ f $ in questo segmento (tutti i punti di $ r $ sono definiti in $ U $). Considero fissi $ x $ e $ p $ e derivo $ f(r) $ rispetto a $ t $
+	Essendo $ U $ stellato rispetto a $ p $, possiamo valutare $ f $ in questo segmento (tutti i punti di $ r $ sono definiti in $ U $). Consideriamo fissi $ x $ e $ p $ e derivo $ f(r) $ rispetto a $ t $
 	
-	Essendo $ U $ stellato rispetto a $ p $, possiamo valutare $ f $ in questo segmento (tutti i punti di $ r $ sono definiti in $ U $). Considero fissi $ x $ e $ p $ e deriviamo $ f(r) $ rispetto a $ t $
 	\begin{align}
 		\begin{split}
 			\dv{t} f(r) &= \dv{t} f(p+t(x-p)) \\
@@ -403,6 +407,7 @@ L'ipotesi che un sottoinsieme sia stellato è forte a livello globale ma sempre 
 	
 	per la \textit{regola della catena}. \\
 	Integrando rispetto a $ t $ nell'intervallo $ [0,1] $ otteniamo
+	
 	\begin{align}
 		\begin{split}
 			\int_{0}^{1} \dv{t} f(p+t(x-p)) \dd{t} &= \int_{0}^{1} \sum_{i=1}^{n} \pdv{f}{x^{i}} \, (p+t(x-p)) \, (x^{i}-p^{i}) \dd{t} \\
@@ -430,7 +435,37 @@ L'ipotesi che un sottoinsieme sia stellato è forte a livello globale ma sempre 
 	\end{equation}
 \end{proof}
 
-Prendiamo $ f : U \to \R $ con $ p $ corrispondente all'origine. Per il teorema di Taylor con resto, sappiamo che esiste una funzione $ g_{1} \in C^{\infty}(U) $ tale che $ f(x) = f(0) + x \, g_{1}(x) $ con $ g_{1}(0) = f'(0) $. Riapplicando il teorema a $ g_{1} $ (siccome è liscia), si ottiene che $ g_{1}(x) = g_{1}(0) + x g_{2}(x) $ con $ g_{2} \in C^{\infty}(U) $ e $ g_{2}(0) = g_{1}'(0) $. Per induzione $ g_{i}(x) = g_{i}(0) + x g_{i+1}(x) $ dove $ g_{i+1} \in C^{\infty} (U) $ e $ g_{i+1}(0) = g_{i}'(0) $ per qualsiasi $ i \geqslant 1 $. Sostituendo in $ f $ tutte queste funzioni, si ottiene
+Sia $ f : U \to \R $ con $ p $ corrispondente all'origine: per il teorema di Taylor con resto, sappiamo che esiste una funzione $ g_{1} \in C^{\infty}(U) $ tale che
+
+\begin{equation}
+	f(x) = f(0) + x \, g_{1}(x) \qq{con} g_{1}(0) = f'(0)
+\end{equation}
+
+Riapplicando il teorema a $ g_{1} $ (in quanto liscia), otteniamo
+
+\begin{equation}
+	g_{1}(x) = g_{1}(0) + x g_{2}(x) %
+	\qquad %
+	\begin{cases}
+		g_{2} \in C^{\infty}(U) \\
+		g_{2}(0) = g_{1}'(0)
+	\end{cases}
+\end{equation}
+
+Per induzione
+
+\begin{equation}
+	g_{i}(x) = g_{i}(0) + x g_{i+1}(x) %
+	\qquad %
+	\begin{cases}
+		g_{i+1} \in C^{\infty} (U) \\
+		g_{i+1}(0) = g_{i}'(0)
+	\end{cases} %
+	\qquad %
+	\forall i \geqslant 1
+\end{equation}
+
+Sostituendo in $ f $ tutte queste funzioni, si ottiene
 
 \begin{align}
 	\begin{split}
@@ -442,8 +477,7 @@ Prendiamo $ f : U \to \R $ con $ p $ corrispondente all'origine. Per il teorema 
 	\end{split}
 \end{align}
 
-A questo punto si può definire\footnote{%
-	Vedi Esercizio \ref{exer1-5}.}
+A questo punto si può definire
 
 \begin{equation}
 	g_{k}(0) = \dfrac{1}{k!} \pdv[k]{f}{x} \, (0) \doteq \dfrac{f^{(k)}(0)}{k!}
@@ -455,8 +489,8 @@ da cui
 	f(x) = f(0) + \sum_{k=1}^{i} \dfrac{x^{k}}{k!} f^{(k)} (0) + x^{i+1} g_{i+1}(x) \qcomma \forall i \in \N
 \end{equation}
 
-dove la prima parte coincide con lo sviluppo in serie di Taylor mentre l'ultimo termine indica il \textit{resto}\footnote{%
-	Vedi Esercizio \ref{exer1-6}.}.
+dove la prima parte coincide con lo sviluppo in serie di Taylor mentre l'ultimo termine indica il \textit{resto}. \\
+Per esercizi sul resto, vedi Esercizi \ref{exer1-5} e \ref{exer1-6}.
 
 \section{Vettori tangenti in $ \R^{n} $}
 
@@ -912,7 +946,7 @@ Consideriamo ora la seguente preposizione:
 	A questo punto, due applicazioni sono uguali se e solo se coincidono per ogni punto del dominio, i.e.
 	
 	\begin{equation}
-		D_{v} = D \iff D_{v}([(f,U)]) = D([(f,U)]), \quad \forall ([(f,U)]) \in (C_{p}^{\infty}(\R^{n}))
+		D_{v} = D \iff D_{v}([(f,U)]) = D([(f,U)]) \qcomma \forall ([(f,U)]) \in (C_{p}^{\infty}(\R^{n}))
 	\end{equation}
 
 	Prendendo un dominio $ U $ stellato rispetto al punto $ p $, per il teorema di Taylor con resto
@@ -924,7 +958,7 @@ Consideriamo ora la seguente preposizione:
 	con
 	
 	\begin{equation}
-		\left. g_{i} \in C^{\infty}(U) \st g_{i}(p) = \dfrac{\partial f}{\partial x^{i}} (p) \right., \quad i=1,\dots,n
+		\left. g_{i} \in C^{\infty}(U) \st g_{i}(p) = \dfrac{\partial f}{\partial x^{i}} (p) \right. \qcomma i=1,\dots,n
 	\end{equation}
 
 	Sia $ v = [v^{1},\dots,v^{n}] \in T_{p (\R^{n})} $ definito come $ v^{j} = D([(x^{j},\R)]) $ per $ j=1,\dots,n $. \\

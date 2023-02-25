@@ -10,7 +10,11 @@ Per la funzione
 	{\R}{\R}
 	{x}{\alpha x^{k(k+2)/(k+1)} + \beta}
 
-per qualsiasi $ \alpha,\beta \in \R $ e con $ k \in \N $, vale $ f_{k} \in C^{k}(\R) $ ma $ f_{k} \notin C^{k+1}(\R) $.
+per qualsiasi $ \alpha,\beta \in \R $ e con $ k \in \N $, valgono
+
+\begin{equation}
+	f_{k} \in C^{k}(\R) \; \wedge \; f_{k} \notin C^{k+1}(\R)
+\end{equation}
 }
 
 %=======================================================================================
@@ -35,14 +39,15 @@ risulta essere liscia ma non reale analitica.
 La funzione $ f $ è liscia in quanto, perché lo sia, è necessario che
 
 \begin{equation}
-	\pdv[k]{f}{x} \, (0) = \pdv[k]{x} e^{\sfrac{-1}{x^{2}}} \, (0) = 0 \qcomma \forall k \in \N
+	\pdv[k]{f}{x} \, (0) = \pdv[k]{x} e^{\sfrac{-1}{x^{2}}} \, (0) = 0 %
+	\qcomma \forall k \in \N
 \end{equation}
 
 e questo è vero poiché
 
 \begin{equation}
 	\lim_{x \to 0} \left( \dfrac{e^{\sfrac{-1}{x^{2}}}}{x^{p}} \right) = 0 \qcomma \forall p \in \N %
-	\implies%
+	\implies %
 	\lim_{x \to 0} \left( \pdv[k]{x} \left( e^{\sfrac{-1}{x^{2}}} \right) \right) = 0 \qcomma \forall k \in \N
 \end{equation}
 
@@ -92,16 +97,16 @@ Consideriamo le applicazioni:
 
 Queste sono diffeomorfismi in quanto bigezioni lisce con inversa liscia, dunque le loro composizioni sono ancora diffeomorfismi. Le seguenti composizioni delle applicazioni sopraccitate inducono i seguenti diffeomorfismi:
 
-\begin{equation}
-	\begin{cases}
-		g \circ f \implies (a,b) \simeq (c,+\infty) \\
-		h \circ f \implies (a,b) \simeq (-\infty,d) \\
-		i \circ g \circ f \implies (a,b) \simeq \R \\
-		h \circ g^{-1} \implies (c,+\infty) \simeq (-\infty,d) \\
-		i \implies (c,+\infty) \simeq \R \\
-		i \circ g \circ h^{-1} \implies (-\infty,d) \simeq \R
-	\end{cases}
-\end{equation}
+\begin{align}
+	\begin{split}
+		g \circ f &\implies (a,b) \simeq (c,+\infty) \\
+		h \circ f &\implies (a,b) \simeq (-\infty,d) \\
+		i \circ g \circ f &\implies (a,b) \simeq \R \\
+		h \circ g^{-1} &\implies (c,+\infty) \simeq (-\infty,d) \\
+		i &\implies (c,+\infty) \simeq \R \\
+		i \circ g \circ h^{-1} &\implies (-\infty,d) \simeq \R
+	\end{split}
+\end{align}
 }
 
 %=======================================================================================
@@ -115,7 +120,7 @@ Dimostrare che l'applicazione
 	{B_{1}(0)}{\R^{n}}
 	{x}{\left( \dfrac{x^{1}}{\sqrt{1 - \norm{x}^{2}}}, \cdots, \dfrac{x^{n}}{\sqrt{1 - \norm{x}^{2}}} \right)}
 
-definisce un diffeomorfismo tra la palla aperta unitaria centrata nell'origine di $ \R^{n} $ e $ \R^{n} $. Dedurre che la palla aperta di centro $ c \in \R^{n} $ e raggio $ r > 0 $ in $ \R^{n} $ è diffeomorfa a $ \R^{n} $.
+definisce un diffeomorfismo tra la palla aperta unitaria centrata nell'origine di $ \R^{n} $ ed $ \R^{n} $. Dedurre che la palla aperta di centro $ c \in \R^{n} $ e raggio $ r > 0 $ in $ \R^{n} $ è diffeomorfa a $ \R^{n} $.
 }
 {
 L'applicazione $ h $ è una bigezione liscia in quanto ogni sua componente è liscia poiché
