@@ -494,12 +494,12 @@ Per esercizi sul resto, vedi Esercizi \ref{exer1-5} e \ref{exer1-6}.
 
 \section{Vettori tangenti in $ \R^{n} $}
 
-Preso un punto $ p \in \R^{n} $, lo \textit{spazio tangente} in quel punto viene scritto $ T_{p}(\R^{n}) $. Lo spazio tangente a un punto $ p $ è l'insieme\footnote{%
+Preso un punto $ p \in \R^{n} $, lo \textit{spazio tangente} in quel punto viene chiamato $ T_{p}(\R^{n}) $. Lo spazio tangente a un punto $ p $ è l'insieme\footnote{%
 	Formalmente, è uno spazio vettoriale con origine il punto $ p $.%
-} di tutti i vettori che escono dal punto stesso. Essendo $ T_{p}(\R^{n}) \simeq \R^{n} $, un elemento $ v \in T_{p}(\R^{n}) $ è dunque un \textit{vettore riga o colonna}
+} di tutti i vettori che escono dal punto stesso. Essendo $ T_{p}(\R^{n}) \stackrel{iso}{\simeq} \R^{n} $, un elemento $ v \in T_{p}(\R^{n}) $ può dunque essere rappresentato come un \textit{vettore riga o colonna}
 
 \begin{equation}
-	\bmqty{ v^{1} \\ \vdots \\ v^{n} } \qquad \lor \qquad [v^{1}, \cdots, v^{n}]
+	\bmqty{ v^{1} & \cdots & v^{n} } \qquad \lor \qquad \bmqty{ v^{1} \\ \vdots \\ v^{n} }
 \end{equation}
 
 dove le $ v^{i} $ sono le componenti del vettore nella base canonica, i.e.
@@ -508,11 +508,11 @@ dove le $ v^{i} $ sono le componenti del vettore nella base canonica, i.e.
 	v = \sum_{i=1}^{n} v^{i} e_{i}
 \end{equation}
 
-Per generalizzare questo concetto, consideriamo gli elementi degli spazi tangenti non più come oggetti geometrici vettori ma come \textit{derivazioni}.
+Per generalizzare questo concetto, considereremo gli elementi degli spazi tangenti non più come oggetti geometrici vettori ma come \textit{derivazioni}.
 
 \subsection{Derivate direzionali}
 
-Siano $ f : U \to \R $ con $ f \in C^{\infty}(\R^{n}) $, $ p\in U \subset \R^{n} $ e $ v \in T_{p}(\R^{n}) $. Consideriamo la retta $ c(t) $ che passa per $ p $ con direzione $ v $, parametrizzata come
+Siano un'applicazione $ f : U \to \R $ con $ f \in C^{\infty}(\R^{n}) $, un punto $ p\in U \subset \R^{n} $ e un vettore $ v \in T_{p}(\R^{n}) $. Consideriamo la retta $ c(t) $ che passa per $ p $ con direzione $ v $, parametrizzata come
 
 \begin{equation}
 	c(t) = p + t v \qcomma t \in \R
@@ -529,11 +529,15 @@ Definiamo la \textit{derivata direzionale} di $ f $ rispetto a $ v $ come
 	\end{split}
 \end{align}
 
-dove $ D_{v} f \in \R $ e $ v = [v^{1},\dots,v^{n}] $.
+dove $ D_{v} f \in \R $ e $ v = \bmqty{ v^{1} & \cdots & v^{n} } $.
 
 \sbs{0.4}{%
 			\begin{remark}
-				Sia $ g \in C^{\infty} (\R^{n}) $ tale che $ g : V \to \R $ con $ V \subset \R $ e $ V \cap U \neq \emptyset $. Se $ g \equiv f $ in un intorno del punto $ p \in U \cap V $, allora la loro derivata direzionale è la stessa\footnotemark, i.e. $ D_{v} g = D_{v} f $.
+				Sia un'applicazione $ g \in C^{\infty} (\R^{n}) $ tale che $ g : V \to \R $ con $ V \subset \R $ e $ V \cap U \neq \emptyset $. Se $ g \equiv f $ in un intorno $ W $ del punto $ p \in W \subset U \cap V $, allora la loro derivata direzionale è la stessa\footnotemark, i.e.
+				
+				\begin{equation}
+					D_{v} g = D_{v} f \qcomma \forall p \in W
+				\end{equation}
 			\end{remark}
 			}
 	{0.6}{%
@@ -567,16 +571,16 @@ Prendiamo dunque lo spazio quoziente
 dove un elemento $ [(f,U)] $ di questo spazio è chiamato \textit{germe} intorno al punto $ p $ ed è una \textit{classe di equivalenza} di coppie $ (f,U) $. A questo punto, $ C_{p}^{\infty}(\R^{n}) $ è l'insieme dei germi di funzioni lisce intorno a $ p $, i.e.
 
 \begin{equation}
-	C_{p}^{\infty}(\R^{n}) = \left\{ [(f,U)] \right\}
+	C_{p}^{\infty}(\R^{n}) = \{ [(f,U)] \mid f : U \to \R, \, f \in C^{\infty}(\R^{n}), \, U \subset \R^{n} \}
 \end{equation} 
 
 Possiamo definire un'applicazione
 
-\map{D_{v}}%
-	{C_{p}^{\infty}(\R^{n})}{\R}%
+\map{D_{v}}
+	{C_{p}^{\infty}(\R^{n})}{\R}
 	{[(f,U)]}{D_{v} f}
 
-Questa applicazione è ben definita in quanto l'associazione di un germe di funzioni a un numero reale non dipende dal rappresentante scelto perché
+Questa applicazione è ben definita in quanto l'associazione di un germe di funzioni a un numero reale non dipende dal rappresentante scelto poiché
 
 \begin{equation}
 	(f,U) \sim (g,V) \implies D_{v} g = D_{v} f
@@ -592,7 +596,7 @@ Siano le applicazioni
 	\end{cases}
 \end{equation}
 
-Nonostante $ f\neq g $, nell'intorno $ (-1,1) $ di $ p=0 $ vale l'equivalenza per i germi
+Nonostante in generale $ f \neq g $, nell'intorno $ (-1,1) $ di $ p=0 $ vale l'equivalenza per i germi
 
 \begin{equation}
 	(f,\R \setminus \{1\}) \sim (g,(-1,1))
@@ -606,7 +610,7 @@ in altre parole, le classi di equivalenza
 
 \subsubsection{Algebra su campo $ \K $}
 
-Un'algebra $ A $ su un campo $ \K $ è una coppia $ (V,\cdot) $ con $ V $ spazio vettoriale su un campo $ \K $\footnote{%
+Un'algebra $ A $ su un campo $ \K $ è una coppia $ (V,\cdot) $ con $ V $ spazio vettoriale su un campo\footnote{%
 	Dunque con operazioni
 	\begin{equation*}
 		\begin{cases}
@@ -614,7 +618,7 @@ Un'algebra $ A $ su un campo $ \K $ è una coppia $ (V,\cdot) $ con $ V $ spazio
 			\lambda a \in A, & \forall \lambda \in \K
 		\end{cases}
 	\end{equation*}%
-} e un'operazione binaria
+} $ \K $ e un'operazione binaria
 
 \map{\cdot}
 	{A \times A}{A}
