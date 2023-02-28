@@ -1090,7 +1090,7 @@ L'insieme dei campi di vettori che rispettano questa prescrizione è chiamato $ 
 
 \paragraph{1)}
 
-Il campo di vettori seguente è liscio perché qualunque derivata delle sue componenti non annulla mai il denominatore in quanto l'origine non è compresa
+Il campo di vettori seguente è liscio perché qualunque derivata delle sue componenti non annulla mai il denominatore in quanto l'origine non è compresa nel dominio
 
 \sbs{0.5}{%
 			\map{X}
@@ -1100,8 +1100,8 @@ Il campo di vettori seguente è liscio perché qualunque derivata delle sue comp
 					& \hspace{15px} = \left( - \dfrac{x}{\sqrt{x^{2}+y^{2}}}, - \dfrac{y}{\sqrt{x^{2}+y^{2}}} \right)%
 					}
 		}
-	{0.45}{%
-			\img{0.6}{img2}
+	{0.5}{%
+			\img{0.75}{img2}
 		}
 
 \paragraph{2)}
@@ -1116,8 +1116,8 @@ Per lo stesso motivo dell'esempio precedente, il campo di vettori seguente è li
 						& \hspace{15px} = \left( - \dfrac{y}{\sqrt{x^{2}+y^{2}}}, - \dfrac{x}{\sqrt{x^{2}+y^{2}}} \right)%
 						}
 		}
-	{0.45}{%
-		\img{0.6}{img3}
+	{0.5}{%
+		\img{0.75}{img3}
 	}
 
 \subsection{Operazioni in $ \chi(U) $}
@@ -1125,22 +1125,25 @@ Per lo stesso motivo dell'esempio precedente, il campo di vettori seguente è li
 Si può definire la somma in $ \chi(U) $ come
 
 \begin{equation}
-	(X+Y)_{p} \doteq X_{p} + Y_{p} \qcomma \forall X,Y \in \chi(U), \, \forall p \in U
+	(X+Y)_{p} \doteq X_{p} + Y_{p} %
+	\qcomma X,Y \in \chi(U), \, p \in U
 \end{equation}
 
-questo significa che, presi due campi di vettori
+questo significa che, presi due campi di vettori su $ U $
 
 \begin{equation}
-	X = \sum_{i=1}^{n} a^{i} \pdv{x^{i}} \qcomma Y = \sum_{i=1}^{n} b^{i} \pdv{x^{i}}
+	X = \sum_{i=1}^{n} a^{i} \pdv{x^{i}} %
+	\qcomma Y = \sum_{i=1}^{n} b^{i} \pdv{x^{i}} %
+	\qcomma a^{i},b^{i} \in C^{\infty}(U), \, \forall i = 1, \dots, n
 \end{equation}
 
-dove $ a^{i},b^{i} \in C^{\infty}(U) $ per qualsiasi $ i = 1, \dots, n $, allora
+allora
 
 \begin{equation}
-	X + Y = \sum_{i=1}^{n} (a^{i}+b^{i}) \pdv{x^{i}}
+	X + Y = \sum_{i=1}^{n} (a^{i}+b^{i}) \pdv{x^{i}} %
+	\qcomma a^{i} + b^{i} \in C^{\infty}(U), \, \forall i = 1, \dots, n
 \end{equation}
 
-dove ancora $ a^{i}+b^{i} \in C^{\infty}(U) $. \\
 Si può definire anche la moltiplicazione per scalari come
 
 \begin{equation}
@@ -1150,30 +1153,32 @@ Si può definire anche la moltiplicazione per scalari come
 questo significa che, preso
 
 \begin{equation}
-	X = \sum_{i=1}^{n} a^{i} \pdv{x^{i}}
+	X = \sum_{i=1}^{n} a^{i} \pdv{x^{i}} %
+	\qcomma a^{i} \in C^{\infty}(U), \, \forall i = 1, \dots, n
 \end{equation}
 
-dove $ a^{i} \in C^{\infty}(U) $ per qualsiasi $ i = 1, \dots, n $, allora
+allora
 
 \begin{equation}
-	\lambda X = \sum_{i=1}^{n} (\lambda a^{i}) \pdv{x^{i}}
+	\lambda X = \sum_{i=1}^{n} (\lambda a^{i}) \pdv{x^{i}} %
+	\qcomma \lambda a^{i} \in C^{\infty}(U), \, \forall i = 1, \dots, n
 \end{equation}
 
-dove ancora $ \lambda a^{i} \in C^{\infty}(U) $ per qualsiasi $ i = 1, \dots, n $. \\
 L'ultima operazione è quella di moltiplicazione di un campo di vettori per un'altra funzione
 
 \begin{equation}
-	(f X)_{p} \doteq f(p) X_{p} \qcomma \forall X \in \chi(U), \, \forall f \in C^{\infty}(U)
+	(f X)_{p} \doteq f(p) X_{p} %
+	\qcomma X \in \chi(U), \, f \in C^{\infty}(U)
 \end{equation}
 
 questo significa che
 
 \begin{equation}
-	f X = \sum_{i=1}^{n} (f a^{i}) \pdv{x^{i}}
+	f X = \sum_{i=1}^{n} (f a^{i}) \pdv{x^{i}} %
+	\qcomma f a^{i} \in C^{\infty}(U), \, \forall i = 1, \dots, n
 \end{equation}
 
-dove ancora $ f a^{i} \in C^{\infty}(U) $ per qualsiasi $ i=1,\dots,n $. \\
-Le prime due operazioni dotano l'insieme di $ \chi(U) $ della proprietà di spazio vettoriale; osserviamo inoltre che $ C^{\infty}(U) $ è un anello commutativo unitario.
+Le prime due operazioni dotano l'insieme di $ \chi(U) $ della proprietà di spazio vettoriale.
 
 \subsection{$ \chi(U) $ come $ C^{\infty}(U) $-modulo}
 
@@ -1184,6 +1189,7 @@ Sia $ R $ un anello commutativo unitario, un gruppo abeliano $ (A,+) $ è detto 
 \map{\cdot}
 	{R \times A}{A}
 	{(r,a)}{r \cdot a}
+%
 tale che
 
 \begin{equation}
@@ -1192,19 +1198,20 @@ tale che
 		r \cdot (s \cdot a) = (r s) \cdot a \\
 		(r+s) \cdot a = r \cdot a + s \cdot a \\
 		r \cdot (a+b) = r \cdot a + r \cdot b
-	\end{cases}
+	\end{cases} %
+	\qquad \forall r, s \in R, \, \forall a, b \in A
 \end{equation}
 
-per qualsiasi $ r, s \in R $ e qualsiasi $ a, b \in A $. Queste proprietà valgono solo da \textit{sinistra}, potrebbero non valere se calcolate da destra.
+Queste proprietà valgono solo da \textit{sinistra}, potrebbero non valere se calcolate da destra.
 
 \subsubsection{$ \R $-modulo destro}
 
 Sia $ R $ un anello commutativo unitario, un gruppo abeliano $ (A,+) $ è detto $ R $\textit{-modulo destro} se esiste un'applicazione
-
 %
 \map{*}
 	{A \times R}{A}
 	{(a,r)}{a * r}
+%	
 tale che
 
 \begin{equation}
@@ -1213,10 +1220,11 @@ tale che
 		(a*r)*s = a*(r s) \\
 		a*(r+s) = a*r + a*s \\
 		(a+b)*r = a*r + b*r
-	\end{cases}
+	\end{cases} %
+	\qquad \forall r, s \in R, \, \forall a, b \in A
 \end{equation}
 
-per qualsiasi $ r,s \in R $ e qualsiasi $ a,b \in A $. Queste proprietà valgono solo da \textit{destra}, potrebbero non valere se calcolate da sinistra. \\ \\
+Queste proprietà valgono solo da \textit{destra}, potrebbero non valere se calcolate da sinistra. \\ \\
 %
 Tramite queste definizioni, definiamo $ (A,+) $ un $ R $-modulo se è sia un $ R $-modulo sinistro che destro, i.e. $ \cdot \equiv * $.
 
@@ -1226,7 +1234,7 @@ Tramite queste definizioni, definiamo $ (A,+) $ un $ R $-modulo se è sia un $ R
 
 \subsubsection{Caso di $ \chi(U) $}
 
-Per l'insieme dei campi di vettori lisci vale il seguente teorema:
+Essendo $ C^{\infty}(U) $ un anello commutativo unitario, per l'insieme dei campi di vettori lisci su $ U $ vale il seguente teorema:
 
 \begin{theorem}\label{thm:chi-mod}
 	$ (\chi(U),+) $ è un $ C^{\infty}(U) $-modulo.
@@ -1238,8 +1246,8 @@ Per l'insieme dei campi di vettori lisci vale il seguente teorema:
 	\map{\cdot}
 		{C^{\infty}(U) \times \chi(U)}{\chi(U)}
 		{(f,X)}{f X}
-
-	Devono dunque essere verificate queste proprietà sia a sinistra che a destra:
+	
+	Devono dunque essere verificate le seguenti proprietà sia a sinistra che a destra:
 
 	\begin{equation}
 		\begin{cases}
@@ -1247,10 +1255,10 @@ Per l'insieme dei campi di vettori lisci vale il seguente teorema:
 			f (g X) = (f g) X \\
 			f (X+Y) = f X + f Y \\
 			(f+g) X = f X + g X
-		\end{cases}
+		\end{cases} %
+		\qquad \forall f,g \in C^{\infty}(U), \, \forall X,Y \in \chi(U)
 	\end{equation}
 
-	per qualsiasi $ f,g \in C^{\infty}(U) $ e qualsiasi $ X,Y \in \chi(U) $. \\
 	Siccome la moltiplicazione per funzione è commutativa\footnote{%
 		Nonostante ciò, scriveremo la funzione sempre a sinistra dei campi, per notazione e per evitare di confonderla con la derivata di funzione rispetto a un campo di vettori (vedi sottosezione successiva).%
 	}, è sufficiente dimostrare che $ (\chi(U),+) $ sia un $ C^{\infty}(U) $-modulo sinistro (o destro) per dimostrare che sia $ C^{\infty}(U) $-modulo\footnote{%
@@ -1261,7 +1269,7 @@ Per l'insieme dei campi di vettori lisci vale il seguente teorema:
 \subsection{Derivata di funzione rispetto a un campo di vettori}
 
 I campi di vettori permettono di derivare funzioni: la loro azione è equivalente alla derivata direzionale di una funzione rispetto a un vettore. \\
-Siano $ X \in \chi(U) $ con $ U \subset \R^{n} $ aperto e $ f \in C^{\infty}(U) $. Definiamo la derivata della funzione $ f $ rispetto al campo di vettori $ X $ come $ X f \in C^{\infty}(U) $. La derivata puntuale è definita come
+Siano un campo di vettori liscio $ X \in \chi(U) $ con $ U \subset \R^{n} $ aperto e una funzione liscia $ f \in C^{\infty}(U) $. Definiamo la derivata della funzione $ f $ rispetto al campo di vettori $ X $ come $ X f \in C^{\infty}(U) $. La derivata puntuale è definita come
 
 \begin{equation}
 	(X f) (p) = X_{p} f \qcomma \forall p \in U \subset \R^{n}

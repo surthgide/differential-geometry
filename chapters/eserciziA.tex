@@ -539,11 +539,12 @@ Ricordiamo che le operazioni sono definite come:
 per qualsiasi $ X, Y \in \chi(U) $, qualsiasi $ \alpha \in \R $ e qualsiasi $ p \in U \subset \R^{n} $, dove i campi di vettori saranno:
 
 \begin{equation}
-	X = \sum_{i=1}^{n} a^{i} \pdv{x^{i}} \qcomma Y = \sum_{i=1}^{n} b^{i} \pdv{x^{i}}
+	X = \sum_{i=1}^{n} a^{i} \pdv{x^{i}} %
+	\qcomma Y = \sum_{i=1}^{n} b^{i} \pdv{x^{i}} %
+	\qcomma a_{i}, b_{i} \in C^{\infty}(U), \, \forall i = 1, \dots, n
 \end{equation}
 
-con $ a_{i}, b_{i} \in C^{\infty}(U) $. \\
-Per dimostrare dunque queste proprietà, valutiamo i campi di vettori in un qualsiasi $ p \in U \subset \R^{n} $:
+Per dimostrare queste proprietà, valutiamo i campi di vettori in un qualsiasi $ p \in U \subset \R^{n} $:
 
 \begin{enumerate}
 	\item Associatività (somma)
@@ -623,7 +624,7 @@ Per dimostrare dunque queste proprietà, valutiamo i campi di vettori in un qual
 	
 	\begin{align}
 		\begin{split}
-			(1 X_{p}) &= 1 X_{p} \\
+			(1 X)_{p} &= 1 X_{p} \\
 			&= 1 \sum_{i=1}^{n} a^{i} (p) \eval{ \pdv{x^{i}} }_{p} \\
 			&= \sum_{i=1}^{n} (1 a^{i} (p)) \eval{ \pdv{x^{i}} }_{p} \\
 			&= \sum_{i=1}^{n} a^{i} (p) \eval{ \pdv{x^{i}} }_{p} \\
@@ -680,7 +681,7 @@ Per dimostrare che $ (\chi(U),+) $ sia un $ C^{\infty} $-modulo è necessario ch
 	\end{cases}
 \end{equation}
 
-per qualsiasi $ f,g \in C^{\infty}(U) $ e qualsiasi $ X,Y \in \chi(U) $. Siccome la moltiplicazione per funzione è commutativa è sufficiente dimostrare che $ (\chi(U),+) $ sia un $ C^{\infty}(U) $-modulo sinistro (o destro) per dimostrare che sia $ C^{\infty}(U) $-modulo. \\
+per qualsiasi $ f,g \in C^{\infty}(U) $ e qualsiasi $ X,Y \in \chi(U) $. Siccome la moltiplicazione per funzione è commutativa, è sufficiente dimostrare che $ (\chi(U),+) $ sia un $ C^{\infty}(U) $-modulo sinistro (o destro) per dimostrare che sia $ C^{\infty}(U) $-modulo. \\
 Dimostriamo dunque le proprietà riportate sopra, ancora una volta valutando i campi di vettori in un qualsiasi $ p \in U \subset \R^{n} $:
 
 \begin{enumerate}
