@@ -635,7 +635,9 @@ tale che soddisfi le condizioni
 		\end{split} & \text{distributività} \\
 	\lambda (a \cdot b) = (\lambda a) \cdot b = a \cdot (\lambda b) & \text{omogeneità}
 	\end{cases}
-\footnotetext{In generale, non è necessaria l'associatività per definire un'algebra.}
+\footnotetext{%
+	In generale, non è necessaria l'associatività per definire un'algebra.%
+}
 \end{equation}
 
 per qualsiasi $ a,b,c \in A $ e qualsiasi $ \lambda \in \K $. \\
@@ -661,10 +663,10 @@ Allo stesso modo, definiamo il prodotto
 e la moltiplicazione per scalari
 
 \begin{equation}
-	\lambda [(f,U)] = [(\lambda f,U)] \qcomma \lambda \in \R
+	\lambda [(f,U)] = [(\lambda f,U)] \qcomma \lambda \in \R, \, [(f,U)] \in C_{p}^{\infty}(\R^{n})
 \end{equation}
 
-Tutte queste operazioni sono ben definite e soddisfano tutte le proprietà di un'algebra perché la somma, il prodotto e la moltiplicazione per uno scalare di funzioni liscia soddisfano queste stesse proprietà. \\
+Tutte queste operazioni sono ben definite e soddisfano tutte le proprietà di un'algebra perché, per funzioni lisce, la somma, il prodotto e la moltiplicazione soddisfano queste stesse proprietà. \\
 A questo punto si può dire che $ C_{p}^{\infty}(\R^{n}) $ sia un'algebra su $ \R $. \\
 Nonostante non sia necessario per un'algebra, $ C_{p}^{\infty}(\R^{n}) $ è anche commutativa e unitaria\footnote{%
 	Vedi Esercizio \ref{exer1-7}.%
@@ -678,7 +680,7 @@ A questo punto, possiamo definire l'applicazione chiamata \textit{derivazione pu
 	{C_{p}^{\infty}(\R^{n})}{\R}
 	{[(f,U)]}{D_{v} f = \sum_{i=1}^{n} \pdv{f}{x^{i}} \, (p) \, v^{i}}
 
-con $ p \in U \subset \R^{n} $ e $ v = [v^{1}, \dots, v^{n}] \in T_{p} (\R^{n}) $. \\
+con $ p \in U \subset \R^{n} $ e $ v = (v^{1}, \dots, v^{n}) \in T_{p} (\R^{n}) $. \\
 Questa applicazione possiede le seguenti proprietà:
 
 \begin{enumerate}
@@ -758,14 +760,14 @@ Definiamo l'applicazione
 	{T_{p}(\R^{n})}{\der_{p}(C_{p}^{\infty}(\R^{n}))}
 	{v}{D_{v}}
 
-questa associa il vettore $ v = [v^{1},\dots,v^{n}] \in T_{p}(\R^{n}) $ con $ p \in \R^{n} $ alla derivazione puntuale $ D_{v} $, la quale è a sua volta un'applicazione che associa la classe di equivalenza di germi di funzioni $ [(f,U)] $ alla derivata direzionale di $ f $ rispetto a $ v $, i.e.
+questa associa il vettore $ v = (v^{1},\dots,v^{n}) \in T_{p}(\R^{n}) $ con $ p \in \R^{n} $ alla derivazione puntuale $ D_{v} $, la quale è a sua volta un'applicazione che associa la classe di equivalenza di germi di funzioni $ [(f,U)] $ alla derivata direzionale di $ f $ rispetto a $ v $, i.e.
 
 \begin{align}
 	D_{v} f = \sum_{j=1}^{n} \pdv{f}{x^{j}} \, (p) \, v^{j} \in \R
 \end{align}
 
 Possiamo usare lo stesso simbolo, i.e. $ D_{v} ([(f,U)]) = D_{v} f $, perché questa relazione vale per qualunque rappresentante della classe. \\
-L'applicazione $ \varphi $ permette di considerare equivalentemente l'insieme delle derivazioni puntuali dell'algebra dei germi delle funzioni $ C_{p}^{\infty}(\R^{n}) $ e lo spazio tangente a un punto, in quanto questi due insiemi sono isomorfi tra loro tramite $ \varphi $ stessa. Utilizzare le derivazioni è utile perché per le varietà differenziabili non esiste una visualizzazione dello spazio tangente.
+L'applicazione $ \varphi $ permette di considerare equivalentemente l'insieme delle derivazioni puntuali dell'algebra dei germi delle funzioni $ C_{p}^{\infty}(\R^{n}) $ e lo spazio tangente a un punto, in quanto questi due insiemi sono isomorfi tra loro tramite $ \varphi $ stessa. Utilizzare le derivazioni è utile perché per alcune varietà differenziabili non esiste una visualizzazione dello spazio tangente.
 
 \begin{theorem}
 	L'applicazione $ \varphi $ è un isomorfismo degli spazi vettoriali $ T_{p}(\R^{n}) $ e $ \der_{p}(C_{p}^{\infty}(\R^{n})) $, i.e. tramite $ \varphi $ si ha che
@@ -782,6 +784,7 @@ Per dimostrare questo teorema è necessario notare che gli elementi $ D_{i} \in 
 \map{+}
 	{\der_{p}(C_{p}^{\infty}(\R^{n})) \times \der_{p}(C_{p}^{\infty}(\R^{n}))}{\der_{p}(C_{p}^{\infty}(\R^{n}))}
 	{(D_{v}, D_{w})}{D_{v} + D_{w}}
+%
 \map{\cdot}
 	{\R \times \der_{p}(C_{p}^{\infty}(\R^{n}))}{\der_{p}(C_{p}^{\infty}(\R^{n}))}
 	{(\lambda, D_{v})}{\lambda D_{v}}
@@ -870,7 +873,7 @@ Consideriamo ora la seguente preposizione:
 		Il \textit{kernel} o nucleo di un'applicazione, indicato con $ \ker $, è l'insieme di tutti e soli gli elementi del dominio che hanno come immagine lo $ 0 $ del codominio. Nel caso considerato ora
 		
 		\begin{equation*}
-			\ker \varphi = \left\{ v \in T_{p}(\R^{n}) \st \varphi(v) \equiv D_{v} = 0 \in \der_{p}(C_{p}^{\infty}(\R^{n})) \right\}
+			\ker(\varphi) = \left\{ v \in T_{p}(\R^{n}) \st \varphi(v) \equiv D_{v} = 0 \in \der_{p}(C_{p}^{\infty}(\R^{n})) \right\}
 		\end{equation*}%
 	} di $ \varphi $: se questo contiene solo l'elemento $ 0 $, inteso come
 	
@@ -878,8 +881,8 @@ Consideriamo ora la seguente preposizione:
 		{C_{p}^{\infty}(\R^{n})}{\R}
 		{[(f,U)]}{0}
 
-	i.e. $ \ker \varphi = \{0\} $, allora $ \varphi $ è iniettiva\footnote{
-		Questo vale perché $ \varphi $ è lineare.%
+	i.e. $ \ker(\varphi) = \{0\} $, allora $ \varphi $ è iniettiva\footnote{
+		Questo vale perché $ \varphi $ è lineare (vedi Teorema della dimensione).%
 	}. \\
 	Siccome $ 0 $ associa un qualunque germe liscio $ [(f,U)] $ sempre a $ 0 \in \R $, possiamo scegliere l'applicazione
 	
@@ -887,11 +890,11 @@ Consideriamo ora la seguente preposizione:
 		{\R^{n}}{\R}
 		{(x^{1}, \dots, x^{n})}{x^{j}}
 
-	per qualsiasi $ j=1,\dots,n $, la quale è una proiezione liscia dunque il germe che la contiene è liscio, i.e. $ [(x^{j},\R)] \in C_{p}^{\infty}(\R^{n}) $. A questo punto
+	per qualsiasi $ j=1,\dots,n $, la quale è una proiezione liscia dunque il germe che la contiene è liscio, i.e. $ [(x^{j},\R^{n})] \in C_{p}^{\infty}(\R^{n}) $. A questo punto
 	
 	\begin{align}
 		\begin{split}
-			0([(x^{j},\R)]) &= D_{v} ([(x^{j},\R)]) \\
+			0([(x^{j},\R^{n})]) &= D_{v} ([(x^{j},\R^{n})]) \\
 			&= D_{v} (x^{j}) \\
 			&= \sum_{i=1}^{n} \pdv{x^{j}}{x^{i}} \, (p) \, v^{i} \\
 			&= \sum_{i=1}^{n} \delta^{ij} \, v^{i} \\
@@ -905,23 +908,24 @@ Consideriamo ora la seguente preposizione:
 		\begin{cases}
 			0([(f,U)]) = 0 \in \R, & \forall [(f,U)] \in C_{p}^{\infty}(\R^{n}) \\ \\
 			0([(x^{j},\R)]) = v^{j}
-		\end{cases}%
+		\end{cases} %
 		 \implies v^{j} = 0 \qcomma \forall j=1,\dots,n
 	\end{equation}
 	
 	da cui
 	
 	\begin{equation}
-		v \in \ker \varphi \iff v = 0 \in T_{p}(\R^{n})
+		v \in \ker(\varphi) \iff v = 0 \in T_{p}(\R^{n})
 	\end{equation}
-
-	La suriettività implica che se si fissa una qualunque derivazione puntuale esiste un vettore nello spazio tangente che mandato tramite $ \varphi $ dà quella derivazione. In simboli
+	
+	perciò $ \varphi $ è iniettiva. \\
+	La suriettività implica che se si fissa una qualunque derivazione puntuale esiste un vettore nello spazio tangente che mandato tramite $ \varphi $ dà quella derivazione: in simboli
 
 	\begin{equation}
 		\forall D \in \der_{p} (C_{p}^{\infty}(\R^{n})), \, \E v \in T_{p}(\R^{n}) \, \mid \, \varphi(v) = D
 	\end{equation}
 	
-	dove $ \varphi = D_{v} $, dunque dobbiamo trovare un $ v $ tale che faccia coincidere $ D = D_{v} $. \\
+	dove in generale $ \varphi(v) = D_{v} $, dunque dobbiamo trovare un $ v $ tale che faccia coincidere $ D = D_{v} $. \\
 	Prima di farlo, enunciamo il seguente lemma:
 
 	\begin{lemma}[Derivazione di costante]
@@ -965,7 +969,7 @@ Consideriamo ora la seguente preposizione:
 		\left. g_{i} \in C^{\infty}(U) \st g_{i}(p) = \dfrac{\partial f}{\partial x^{i}} (p) \right. \qcomma i=1,\dots,n
 	\end{equation}
 
-	Sia $ v = [v^{1},\dots,v^{n}] \in T_{p (\R^{n})} $ definito come $ v^{j} = D([(x^{j},\R)]) $ per $ j=1,\dots,n $. \\
+	Sia $ v = (v^{1},\dots,v^{n}) \in T_{p (\R^{n})} $ definito come $ v^{j} = D([(x^{j},\R^{n})]) $ per $ j=1,\dots,n $. \\
 	Ora applichiamo $ D $ a un qualunque germe liscio $ [(f,U)] $
 	
 	\begin{align}
@@ -976,12 +980,12 @@ Consideriamo ora la seguente preposizione:
 			&= \sum_{i=1}^{n} ( D ([( x^{i}, U )]) - \cancelto{0}{D ([( p^{i}, U )])} ) g_{i}(p) \\
 			&= \sum_{i=1}^{n} D ([( x^{i}, U )]) \, \pdv{f}{x^{i}} \, (p) \\
 			&= \sum_{i=1}^{n} \pdv{f}{x^{i}} \, (p) \, v^{i} \\
-			&= D_{v} (f) \\
+			&= D_{v} f \\
 			&= D_{v} ([(f,U)])
 		\end{split}
 	\end{align}
 
-	dunque $ D = D_{f} $.
+	dunque $ D = D_{f} $ e perciò $ \varphi $ è anche suriettiva.
 \end{proof}
 
 Date queste proprietà di $ \varphi $, questa applicazione è un isomorfismo tra $ T_{p}(\R^{n}) $ e $ \der_{p}(C_{p}^{\infty}(\R^{n})) $, i.e.
@@ -1018,8 +1022,9 @@ forma una base per lo spazio $ \der_{p}(C_{p}^{\infty}(\R^{n})) $.
 	\begin{equation}
 		\dim ( \der_{p}(C_{p}^{\infty}(\R^{n})) ) = n
 	\end{equation}
+	
 	se $ (e_{1},\dots,e_{n}) $ è la base canonica\footnote{%
-		Con $ (e_{j})_{k} = \delta_{jk} $, e.g. $ e_{3} = [0,0,1,0,\dots,0] $.%
+		Con $ (e_{j})_{k} = \delta_{jk} $, e.g. $ e_{3} = (0,0,1,0,\dots,0) $.%
 	} di $ T_{p}(\R^{n}) $, si ha che
 
 	\begin{equation}
