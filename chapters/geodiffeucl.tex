@@ -1272,7 +1272,7 @@ I campi di vettori permettono di derivare funzioni: la loro azione è equivalent
 Siano un campo di vettori liscio $ X \in \chi(U) $ con $ U \subset \R^{n} $ aperto e una funzione liscia $ f \in C^{\infty}(U) $. Definiamo la derivata della funzione $ f $ rispetto al campo di vettori $ X $ come $ X f \in C^{\infty}(U) $. La derivata puntuale è definita come
 
 \begin{equation}
-	(X f) (p) = X_{p} f \qcomma \forall p \in U \subset \R^{n}
+	(X f) (p) = X_{p} f \qcomma p \in U \subset \R^{n}
 \end{equation}
 
 Preso un campo
@@ -1284,7 +1284,8 @@ Preso un campo
 allora
 
 \begin{equation}
-	(X f) (p) = \left( \left( \sum_{i=1}^{n} a^{i} \pdv{x^{i}} \right) f \right)_{p} = \sum_{i=1}^{n} a^{i} (p) \, \pdv{f}{x^{i}} \, (p)
+	(X f) (p) = \left( \left( \sum_{i=1}^{n} a^{i} \pdv{x^{i}} \right) f \right)_{p} %
+	= \sum_{i=1}^{n} a^{i} (p) \, \pdv{f}{x^{i}} \, (p)
 \end{equation}
 
 perciò
@@ -1293,9 +1294,8 @@ perciò
 	{U}{\R}
 	{p}{\sum_{i=1}^{n} a^{i} (p) \, \pdv{f}{x^{i}} \, (p)}
 
-Questa applicazione è $ C^{\infty}(U) $ perché lo è $ (X f) (p) $, la quale lo è a sua volta perché $ X \in \chi(U) $ in quanto $ a^{i} \in C^{\infty}(U) $ e $ f \in C^{\infty}(U) $. \\
+Questa applicazione è $ C^{\infty}(U) $ perché lo è $ (X f) (p) $, la quale lo è a sua volta perché $ f \in C^{\infty}(U) $ e $ X \in \chi(U) $ in quanto $ a^{i} \in C^{\infty}(U) $. \\
 Possiamo considerare l'applicazione
-
 
 \map{X}
 	{C^{\infty}(U)}{C^{\infty}(U)}
@@ -1315,15 +1315,16 @@ perciò anche l'applicazione $ X $ soddisfa la regola di Leibniz:
 
 \subsubsection{Derivazione di un'algebra}
 
-Sia $ A $ un'algebra su campo $ \K $
+Sia $ A $ un'algebra su campo
 	\footnote{%
 		Ricordiamo che un'algebra $ A $ su campo $ \K $ è una coppia $ (V, \cdot) $ dove $ V $ è uno spazio vettoriale e l'operazione
-		
+		%
 		\maps{\cdot}
 			{A \times A}{A}
 			{(a,b)}{a \cdot b}
+		%
 		soddisfa le proprietà
-		
+		%
 		\begin{equation*}
 			\begin{cases}
 				\begin{split}
@@ -1331,10 +1332,10 @@ Sia $ A $ un'algebra su campo $ \K $
 					c \cdot (a + b) = c \cdot a + c \cdot b
 				\end{split} & \text{distributività} \\
 				\lambda (a \cdot b) = (\lambda a) \cdot b = a \cdot (\lambda b) & \text{omogeneità}
-			\end{cases}
-		\end{equation*}
-		per qualsiasi $ a,b,c \in A $ e qualsiasi $ \lambda \in \K $.%
-}, un'applicazione $ D : A \to A $ che sia $ \K $-lineare e tale che soddisfi la regola di Leibniz
+			\end{cases} %
+			\qquad \forall a,b,c \in A, \, \forall \lambda \in \K
+		\end{equation*} %
+} $ \K $, un'applicazione $ D : A \to A $ che sia $ \K $-lineare e tale che soddisfi la regola di Leibniz
 
 \begin{equation}
 	D (a \cdot b) = (D a) \cdot b + a \cdot (D b) \qcomma \forall a, b \in A
@@ -1356,7 +1357,7 @@ Possiamo vedere un campo di vettori come una derivazione di un'algebra, quindi d
 da cui
 
 \begin{equation}
-	\varphi(X) (f) \doteq X f \qcomma \forall f \in C^{\infty}(U)
+	\varphi(X) (f) \doteq X f \qcomma f \in C^{\infty}(U)
 \end{equation}
 
 Sia $ \chi(U) $ che $ \der(C^{\infty}(U)) $ sono $ C^{\infty}(U) $-moduli tramite l'applicazione
@@ -1368,7 +1369,7 @@ Sia $ \chi(U) $ che $ \der(C^{\infty}(U)) $ sono $ C^{\infty}(U) $-moduli tramit
 per la quale vale
 
 \begin{equation}
-	(f D) (g) = f (D g)
+	(f D) (g) = f (D g) \qcomma \forall g \in C^{\infty}(U)
 \end{equation}
 
 Inoltre $ \varphi $ è anche $ C^{\infty}(U) $-lineare:
@@ -1377,5 +1378,7 @@ Inoltre $ \varphi $ è anche $ C^{\infty}(U) $-lineare:
 	\varphi(f X + g Y) = f \, \varphi(X) + g \, \varphi(Y) \qcomma \forall f, g \in C^{\infty}(U), \, \forall X, Y \in \chi(U)
 \end{equation}
 
-Dimostreremo per le varietà differenziabili che $ \varphi $ è un isomorfismo di $ C^{\infty}(U) $-moduli, i.e. $ \chi(U) \simeq \der(C^{\infty}(U)) $. \\
+Dimostreremo per le varietà differenziabili\footnote{%
+	Vedi Sotto-sottosezione \ref{ss-sec:iso-chi-der-man}.%
+} che $ \varphi $ è un isomorfismo di $ C^{\infty}(U) $-moduli, i.e. $ \chi(U) \simeq \der(C^{\infty}(U)) $. \\
 Tramite questo isomorfismo, si possono identificare i campi di vettori lisci con le derivazioni dell'algebra delle funzioni lisce, analogamente a come lo spazio tangente a un punto di $ \R^{n} $ si può identificare con le derivazioni puntuali dell'algebra dei germi delle funzioni in quel punto, i.e. $ T_{p}(\R^{n}) \simeq \der_{p}(C_{p}^{\infty}(\R^{n})) $.

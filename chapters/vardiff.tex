@@ -12,23 +12,24 @@ Una topologia $ \tau $ su un insieme non vuoto $ X $ è una classe non vuota di 
 	\item L'intersezione di due insiemi qualunque di $ \tau $ appartiene a $ \tau $
 \end{enumerate}
 
-La coppia $ (X, \tau) $ è detta \textit{spazio topologico}; in queste note, indicheremo con $ X $ lo spazio topologico $ (X, \tau) $, sottintendendo la topologia $ \tau $ quando questa è chiara dal contesto.
+La coppia $ (X, \tau) $ è detta \textit{spazio topologico}; in questo testo, indicheremo con $ X $ lo spazio topologico $ (X, \tau) $, sottintendendo la topologia $ \tau $ quando questa è chiara dal contesto.
 
 \subsection{Varietà topologiche}
 
 Sia $ X $ uno spazio topologico, diremo che $ X $ è una \textit{varietà topologica} se sono soddisfatte le seguenti condizioni:
 
 \begin{itemize}
-	\item $ X $ è $ T_{2} $ o \textit{di Hausdorff}, i.e. dati due punti distinti di $ X $ è sempre possibile trovare due intorni disgiunti che contengano i due punti
+	\item $ X $ è $ T_{2} $ o \textit{di Hausdorff}, i.e. dati due punti distinti di $ X $ è sempre possibile trovare due intorni disgiunti che contengano i due punti;
 	
 	\item $ X $ è $ N_{2} $ o \textit{a base numerabile}, i.e. esiste una base per la topologia di $ X $ che sia numerabile\footnote{%
-		Un insieme è numerabile se possiede la stessa cardinalità dell'insieme dei numeri naturali $ \N $; in notazione, $ \# \mathfrak{B} = \# \N = \aleph_{0} $.}
+		Un insieme è numerabile se possiede la stessa cardinalità dell'insieme dei numeri naturali $ \N $; in notazione per una base $ \B $, $ \# \B = \# \N = \aleph_{0} $.%
+	};
 	
 	\item $ X $ è \textit{localmente euclideo}, i.e. 
 		\begin{equation}
 			\forall p \in X, \, \E \text{aperto } U \ni p \wedge \E \varphi : U \to \R^{n} \, \mid \, \varphi : U \to \varphi(U) \subset \R^{n} \text{ omeomorfismo}
 		\end{equation}
-		dunque localmente ogni aperto di $ X $ è omeomorfo a un aperto di $ \R^{n} $
+		dunque localmente ogni aperto di $ X $ è omeomorfo a un aperto di $ \R^{n} $.
 \end{itemize}
 
 La coppia $ (U,\varphi) $ è chiamata \textit{carta intorno a} $ p $; se $ \varphi(p) = 0 $, la carta è detta \textit{centrata} in $ p $. \\
@@ -7907,7 +7908,7 @@ La dimostrazione\footnote{%
 	Essendo $ \chi(M) $ un $ C^{\infty} $-modulo e tramite l'isomorfismo $ \chi(M) \simeq \der(C^{\infty}(M)) $ dimostrato nella sezione successiva, è sufficiente vedere la dimostrazione che $ \chi(U) $ sia un $ C^{\infty} $-modulo nell'Esercizio \ref{exer1-9}.%
 } è la stessa fatta per aperti di $ \R^{n} $.
 
-\subsubsection{Isomorfismo $ \chi(M) \simeq \der(C^{\infty}(M)) $}
+\subsubsection{Isomorfismo $ \chi(M) \simeq \der(C^{\infty}(M)) $}\label{ss-sec:iso-chi-der-man}
 
 \begin{theorem}
 	Sia l'applicazione
