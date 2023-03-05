@@ -72,7 +72,7 @@ Il vantaggio di avere una carta su uno spazio topologico è quello di poterlo ri
 
 \subsubsection{Unione disgiunta di spazi topologici}
 
-Sia $ \{A_{j}\}_{j \in J} $ una famiglia di spazi topologici e sia
+Siano una famiglia di spazi topologici $ \{A_{j}\}_{j \in J} $ e l'unione disgiunta
 
 \begin{equation}
 		A = \bigsqcup_{j \in J} A_{j} \equiv \bigcup_{j \in J} A_{j} \times \{j\}
@@ -89,7 +89,7 @@ Definiamo la topologia dell'unione disgiunta\footnote{%
 Sia l'insieme degli assi coordinati
 
 \begin{equation}
-	X = \{ (x,y) \in \R^{2} \mid x,y = 0 \}
+	X = \{ (x,y) \in \R^{2} \mid x = 0 \lor y = 0 \} \cup \{ (0,0) \}
 \end{equation}
 
 questo spazio è $ N_{2} + T_{2} $ in quanto sottospazio di $ \R^{2} $ il quale ha queste proprietà\footnote{%
@@ -100,9 +100,9 @@ questo spazio è $ N_{2} + T_{2} $ in quanto sottospazio di $ \R^{2} $ il quale 
 			\begin{itemize}
 				\setlength\itemsep{2em}
 				
-				\item se $ n=1 $, lo spazio $ \R^{n} \setminus \{0\} $ è composto da due componenti connesse
+				\item per $ n=1 $, lo spazio $ \R^{n} \setminus \{0\} $ è composto da due componenti connesse
 				
-				\item se $ n \geqslant 2 $, $ \R^{n} \setminus \{0\} $ è connesso
+				\item per $ n \geqslant 2 $, $ \R^{n} \setminus \{0\} $ è connesso
 			\end{itemize}
 		}
 	{0.45}{%
@@ -126,49 +126,54 @@ Lo spazio $ X $ è localmente euclideo perché un suo punto $ p $ sarà contenut
 
 \paragraph{3) Spazio $ N_{2} $ e localmente euclideo ma non $ T_{2} $ (retta con due origini)}
 
-Sia $ S = \R \setminus \{0\} \cup \{A\} \cup \{B\} $ dove $ A,B \notin \R $. \\ 
+Sia l'insieme
+
+\begin{equation}
+	S = \R \setminus \{0\} \cup \{A\} \cup \{B\} \qcomma A,B \notin \R
+\end{equation}
+
 Per associare a questo spazio una topologia, possiamo trovare una famiglia di sottoinsiemi che faccia da base per la topologia (generata da questa famiglia). Siano $ c,d \in \R^{+} $ e l'insieme
 
 \begin{equation}
-	\mathfrak{B} = \left\{ (a,b) \st a<b, \, 0 \notin (a,b) \right\} \cup \left\{ I_{A}(c,d) \right\} \cup \left\{ I_{B}(c,d) \right\}
+	\B = \left\{ (a,b) \subset S \st a<b, \, 0 \notin (a,b) \right\} \cup \left\{ I_{A}(c,d) \right\} \cup \left\{ I_{B}(c,d) \right\} \subset \ps(S)
 \end{equation}
 
-con $ \mathfrak{B} \subset \ps(S) $, dove
+dove
 
 \begin{gather}
 	I_{A}(c,d) = (-c,0) \cup \{A\} \cup (0,d) \\
 	I_{B}(c,d) = (-c,0) \cup \{B\} \cup (0,d)
 \end{gather}
 
-Se l'intersezione di elementi di $ \mathfrak{B} $ può essere scritta come unioni di elementi di $ \mathfrak{B} $, allora esiste un'unica topologia $ \tau_{\mathfrak{B}} $ generata da $ \mathfrak{B} $ che ha questa come base. \\
+Se l'intersezione di elementi di $ \B $ può essere scritta come unioni di elementi di $ \B $, allora esiste un'unica topologia $ \tau_{\B} $ generata da $ \B $ che ha questa come base. \\
 L'intersezione tra intervalli di tipo $ (a,b) $ produce intervalli dello stesso tipo; quella tra intervalli $ (a,b) $ e $ I_{A}(c,d) $ produce ancora un intervallo euclideo che appartiene alla famiglia; per i casi
 
 \begin{equation}
-	I_{K}(c,d) \cap I_{K}(c',d') =%
+	I_{K}(c,d) \cap I_{K}(c',d') = %
 		\begin{cases}
-			I_{K}(c',d), & c' > c \wedge d > d \\
+			I_{K}(c',d), & c' > c \wedge d > d' \\
 			I_{K}(c,d'), & c > c \wedge d' > d \\
 			I_{K}(c',d'), & c' > c \wedge d' > d \\
-			I_{K}(c,d), & c > c \wedge d > d
-		\end{cases}%
+			I_{K}(c,d), & c > c \wedge d > d'
+		\end{cases} %
 	\qq{per} K = A, B
 \end{equation}
 
 \begin{equation}
 	I_{A}(c,d) \cap I_{B}(c',d') = %
 	\begin{cases}
-		(c',0) \cup (0,d), & c' > c \wedge d > d \\
+		(- c',0) \cup (0,d), & c' > c \wedge d > d' \\
 		(- c,0) \cup (0,d'), & c > c \wedge d' > d \\
 		(- c',0) \cup (0,d'), & c' > c \wedge d' > d \\
-		(- c,0) \cup (0,d), & c > c \wedge d > d
+		(- c,0) \cup (0,d), & c > c \wedge d > d'
 	\end{cases}
 \end{equation}
 
-il risultato è l'unione di elementi di $ \mathfrak{B} $. \\
-Vogliamo dunque mostrare che lo spazio topologico $ (S,\tau_{\mathfrak{B}}) $ sia $ N_{2} $ e localmente euclideo ma non $ T_{2} $. \\
+il risultato è l'unione di elementi di $ \B $. \\
+Vogliamo dunque mostrare che lo spazio topologico $ (S,\tau_{\B}) $ sia $ N_{2} $ e localmente euclideo ma non $ T_{2} $. \\
 Se consideriamo la topologia di $ S $ ristretta\footnote{%
-	$ \R \setminus \{0\} \subset S $ perché una base per $ \tau_{eucl.} $ è $ \mathfrak{B}_{\R \setminus \{0\}} = \left\{ (a,b) \st a<b, \, 0 \notin (a,b) \right\} \subset \mathfrak{B} $.%
-} a $ \R \setminus \{0\} \subset S $, otteniamo che $ \tau_{\eval{\mathfrak{B}}_{\R \setminus \{0\}}} = \tau_{eucl.} $. Possiamo quindi trovare una famiglia numerabile tale che ogni intervallo della forma $ (a,b) $ possa essere scritto come unione di questa famiglia numerabile proprio perché $ \R \setminus \{0\} $ è $ N_{2} $, i.e.
+	$ \R \setminus \{0\} \subset S $ perché una base per $ \tau_{eucl.} $ è $ \B_{\R \setminus \{0\}} = \left\{ (a,b) \st a<b, \, 0 \notin (a,b) \right\} \subset \B $.%
+} a $ \R \setminus \{0\} \subset S $, otteniamo che $ \tau_{\eval{\B}_{\R \setminus \{0\}}} = \tau_{eucl.} $. Possiamo quindi trovare una famiglia numerabile tale che ogni intervallo della forma $ (a,b) $ possa essere scritto come unione di questa famiglia numerabile proprio perché $ \R \setminus \{0\} $ è $ N_{2} $, i.e.
 
 \begin{equation}
 	(a,b) = \bigcup_{r,s \in \Q} (r,s)
@@ -185,7 +190,7 @@ dove $ \Q $ indica i numeri razionali\footnote{%
 A questo punto, prendendo $ r, s \in \Q^{+} $, possiamo considerare la famiglia
 
 \begin{equation}
-	\mathfrak{C} = \left\{ (t,u) \st t,u \in \Q \, \wedge \, t < u \, \wedge \, 0 \notin (r,s) \right\} \cup \left\{ I_{A}(r,s) \right\} \cup \left\{ I_{B}(r,s) \right\}
+	\mathcal{C} = \left\{ (t,u) \st t,u \in \Q \, \wedge \, t < u \, \wedge \, 0 \notin (r,s) \right\} \cup \left\{ I_{A}(r,s) \right\} \cup \left\{ I_{B}(r,s) \right\}
 \end{equation}
 
 la quale è una base numerabile per $ S $ e dunque $ S $ è $ N_{2} $. \\
@@ -196,7 +201,7 @@ Per mostrare che $ S $ sia localmente euclideo costruiamo l'applicazione
 	{x}{x \\
 	K &\mapsto 0}
 
-la quale è un omeomorfismo, perché è una bigezione continua. Per la continuità, prendiamo un intervallo $ (e,f) \subset (-c,d) $ con $ 0 \notin (e,f) $ la cui controimmagine è sé stesso, i.e. $ \varphi^{-1}((e,f)) = (e,f) \in \tau_{\mathfrak{B}} $; se invece consideriamo $ (-e,f) $ con $ e,f>0 $, la sua controimmagine sarà $ \varphi^{-1}((-e,f)) = I_{K}(e,f) \in \tau_{\mathfrak{B}} $ il quale è un aperto. Per mostrare che $ \varphi $ sia effettivamente continua dobbiamo verificare che la sua inversa $ \varphi^{-1} $ sia anch'essa continua, ma questo è equivalente a mostrare che $ \varphi $ sia aperta\footnote{%
+la quale è un omeomorfismo, perché è una bigezione continua. Per la continuità, prendiamo un intervallo $ (e,f) \subset (-c,d) $ con $ 0 \notin (e,f) $ la cui controimmagine è sé stesso, i.e. $ \varphi^{-1}((e,f)) = (e,f) \in \tau_{\B} $; se invece consideriamo $ (-e,f) $ con $ e,f>0 $, la sua controimmagine sarà $ \varphi^{-1}((-e,f)) = I_{K}(e,f) \in \tau_{\B} $ il quale è un aperto. Per mostrare che $ \varphi $ sia effettivamente continua dobbiamo verificare che la sua inversa $ \varphi^{-1} $ sia anch'essa continua, ma questo è equivalente a mostrare che $ \varphi $ sia aperta\footnote{%
 	Un'applicazione aperta associa aperti ad aperti.%
 }: sia che si prenda un intervallo $ (e,f) $ oppure $ I_{K}(e,f) $, si ottiene comunque come immagine un aperto, perciò è continua e lo spazio è localmente euclideo. \\
 Infine, troviamo che $ S $ non è $ T_{2} $ perché due aperti di questo spazio che contengono $ A $ e $ B $ rispettivamente si devono necessariamente intersecare, i.e. vale sempre $ I_{A}(c,d) \cap I_{B}(e,f) \neq \emptyset $ per qualsiasi $ c, d, e, f \in \R $.
@@ -6742,8 +6747,8 @@ Al fine di dimostrare il secondo criterio di numerabilità $ N_{2} $ per $ T(M) 
 
 \begin{proof}
 	Siano $ \{(U_{\alpha},\varphi_{\alpha})\} $ l'atlante massimale di $ M $ che definisce la struttura differenziabile di $ M $ e $ \mathfrak{U} = \{U_{i}\}_{i \in I} $ una base numerabile per la topologia di $ M $ (questa esiste in quanto $ M $ è $ N_{2} $). \\
-	Presi un punto $ p \in M $ e un aperto $ U_{\alpha} $ di una carta dell'atlante, esiste sempre $ B_{p,\alpha} \in \mathfrak{U} $ tale che $ p \in B_{p,\alpha} \subset U_{\alpha} $, in quanto $ \mathfrak{U} $ è una base. Consideriamo ora la famiglia di aperti $ \mathfrak{B} = \{B_{p,\alpha}\} $ senza duplicati, la quale sarà una sottofamiglia di $ \mathfrak{U} $ e, in quanto tale, sarà numerabile perché $ \mathfrak{U} $ è numerabile. Inoltre $ \left( B_{p,\alpha}, \eval{\varphi}_{B_{p,\alpha}} \right) $ è una carta di $ M $ e dunque $ \left\{ \left( B_{p,\alpha}, \eval{\varphi}_{B_{p,\alpha}} \right) \right\} $ è un atlante differenziabile numerabile per $ M $. \\
-	Resta da dimostrare che $ \mathfrak{B} $ sia una base (già numerabile) per $ M $: siano $ p \in M $ e $ U \ni p $ aperto di $ M $, siccome esiste sempre un aperto di una carta che sia contenuto in un aperto della varietà, possiamo scrivere $ p \in U_{\alpha} \subset U $, dove la carta considerata dell'atlante è $ \left( U \cap U_{\alpha}, \eval{\varphi}_{U \cap U_{\alpha}} \right) $; sappiamo anche che esiste $ B_{p,\alpha} $ tale che $ p \in B_{p,\alpha} \subset U_{\alpha} $, dunque $ p \in B_{p,\alpha} \subset U $. Questo significa che esiste sempre un aperto $ B_{p,\alpha} \in \mathfrak{B} $ che si interponga tra ogni punto della varietà e ogni aperto che contiene il punto stesso, i.e. $ \mathfrak{B} $ è una base per $ M $.
+	Presi un punto $ p \in M $ e un aperto $ U_{\alpha} $ di una carta dell'atlante, esiste sempre $ B_{p,\alpha} \in \mathfrak{U} $ tale che $ p \in B_{p,\alpha} \subset U_{\alpha} $, in quanto $ \mathfrak{U} $ è una base. Consideriamo ora la famiglia di aperti $ \B = \{B_{p,\alpha}\} $ senza duplicati, la quale sarà una sottofamiglia di $ \mathfrak{U} $ e, in quanto tale, sarà numerabile perché $ \mathfrak{U} $ è numerabile. Inoltre $ \left( B_{p,\alpha}, \eval{\varphi}_{B_{p,\alpha}} \right) $ è una carta di $ M $ e dunque $ \left\{ \left( B_{p,\alpha}, \eval{\varphi}_{B_{p,\alpha}} \right) \right\} $ è un atlante differenziabile numerabile per $ M $. \\
+	Resta da dimostrare che $ \B $ sia una base (già numerabile) per $ M $: siano $ p \in M $ e $ U \ni p $ aperto di $ M $, siccome esiste sempre un aperto di una carta che sia contenuto in un aperto della varietà, possiamo scrivere $ p \in U_{\alpha} \subset U $, dove la carta considerata dell'atlante è $ \left( U \cap U_{\alpha}, \eval{\varphi}_{U \cap U_{\alpha}} \right) $; sappiamo anche che esiste $ B_{p,\alpha} $ tale che $ p \in B_{p,\alpha} \subset U_{\alpha} $, dunque $ p \in B_{p,\alpha} \subset U $. Questo significa che esiste sempre un aperto $ B_{p,\alpha} \in \B $ che si interponga tra ogni punto della varietà e ogni aperto che contiene il punto stesso, i.e. $ \B $ è una base per $ M $.
 \end{proof}
 
 Sia $ \{(U_{i},\varphi_{i})\}_{i \in I} $ un atlante differenziabile numerabile di $ M $ (la sua esistenza segue dal lemma dimostrato sopra), allora gli omeomorfismi
@@ -6756,7 +6761,7 @@ permettono di dire che $ T(U_{i}) $ sia $ N_{2} $, in quanto $ T(U_{i}) \simeq \
 Fissato $ i \in I $, sia $ \{B_{ij}\}_{j \in J} $ una base numerabile per $ T(U_{i}) $ (con $ I $ e $ J $ numerabili), allora l'unione
 
 \begin{equation}
-	\mathfrak{B}_{T(M)} = \bigcup_{\substack{ i \in I \\ j \in J }} \{B_{ij}\}
+	\B_{T(M)} = \bigcup_{\substack{ i \in I \\ j \in J }} \{B_{ij}\}
 \end{equation}
 
 è una base numerabile per $ T(M) $ e dunque $ T(M) $ è $ N_{2} $.
@@ -8191,7 +8196,7 @@ sia una base per $ T_{p}(M) $ per qualsiasi $ p \in M $, i.e.
 	T_{p}(M) = \ev{ (X_{i})_{p} }
 \end{equation}
 
-Siccome è necessario che tutti i vettori di $ \mathfrak{B}_{T_{p}(M)} $ siano linearmente indipendenti (in particolare nessuno di questi deve essere nullo), le sfere di dimensione pari non sono parallelizzabili. \\
+Siccome è necessario che tutti i vettori di $ \B_{T_{p}(M)} $ siano linearmente indipendenti (in particolare nessuno di questi deve essere nullo), le sfere di dimensione pari non sono parallelizzabili. \\
 Le sfere di dimensione dispari che sono parallelizzabili sono solo tre\footnote{%
 	Per la sfera $ \S^{1} $, vedi Esercizio \ref{BONUS2-4}.%
 }: $ \S^{1} $, $ \S^{3} $ ed $ \S^{7} $. Le altre sfere di dimensione dispari hanno un numero di campi di vettori linearmente indipendenti diverso dalla dimensione della sfera considerata.
