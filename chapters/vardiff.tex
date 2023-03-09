@@ -246,11 +246,11 @@ i.e. la famiglia delle carte è un \textit{ricoprimento} dello spazio topologico
 	La proprietà di $ C^{\infty} $-compatibilità è riflessiva e simmetrica ma non transitiva:
 	
 	\begin{itemize}
-		\item Se $ (U,\varphi) $ è $ C^{\infty} $-compatibile con $ (V,\psi) $ allora $ (V,\psi) $ è $ C^{\infty} $-compatibile con $ (U,\varphi) $
+		\item Se $ (U,\varphi) $ è $ C^{\infty} $-compatibile con $ (V,\psi) $ allora $ (V,\psi) $ è $ C^{\infty} $-compatibile con $ (U,\varphi) $;
 		
-		\item $ (U,\varphi) $ è $ C^{\infty} $-compatibile con $ (U,\varphi) $
+		\item $ (U,\varphi) $ è $ C^{\infty} $-compatibile con $ (U,\varphi) $;
 		
-		\item Se $ (U_{1},\varphi_{1}) $ è $ C^{\infty} $-compatibile con $ (U_{2},\varphi_{2}) $ e se $ (U_{2},\varphi_{2}) $ è $ C^{\infty} $-compatibile con $ (U_{3},\varphi_{3}) $, non è detto che $ (U_{1},\varphi_{1}) $ e $ (U_{3},\varphi_{3}) $ siano $ C^{\infty} $-compatibili
+		\item Se $ (U_{1},\varphi_{1}) $ è $ C^{\infty} $-compatibile con $ (U_{2},\varphi_{2}) $ e se $ (U_{2},\varphi_{2}) $ è $ C^{\infty} $-compatibile con $ (U_{3},\varphi_{3}) $, non è detto che $ (U_{1},\varphi_{1}) $ e $ (U_{3},\varphi_{3}) $ siano $ C^{\infty} $-compatibili.
 	\end{itemize}
 \end{remark}
 
@@ -289,13 +289,13 @@ Scrivendo
 
 l'applicazione $ \varphi_{3} \circ \varphi_{2}^{-1} $ è $ C^{\infty}(\varphi_{2}(U_{23})) $ e $ \varphi_{2} \circ \varphi_{1}^{-1} $ è $ C^{\infty}(\varphi_{1}(U_{12})) $ dunque $ \varphi_{3} \circ \varphi_{1}^{-1} $ è sicuramente $ C^{\infty}(\varphi_{1}(U_{123})) $ ma non sappiamo a priori il suo comportamento in $ \varphi_{1}(U_{13} \setminus U_{123}) $, dunque non possiamo dire che $ \varphi_{3} \circ \varphi_{1}^{-1} $ sia $ C^{\infty}(\varphi_{1}(U_{13})) $ e perciò la $ C^{\infty} $-compatibilità non è transitiva. \\ \\
 %
-Sia $ \mathfrak{U} = \{(U_{\alpha},\varphi_{\alpha})\} $ un atlante topologico di uno spazio $ M $, diremo che $ (V,\psi) $ carta di $ M $ è $ C^{\infty} $-compatibile con $ \mathfrak{U} $ se $ (V,\psi) $ è $ C^{\infty} $-compatibile con $ (U_{\alpha},\varphi_{\alpha}) $ per qualsiasi $ \alpha \in A $.
+Sia $ \mathfrak{U} = \{(U_{\alpha},\varphi_{\alpha})\}_{\alpha \in A} $ un atlante topologico di uno spazio $ M $, diremo che $ (V,\psi) $ carta di $ M $ è $ C^{\infty} $-compatibile con $ \mathfrak{U} $ se $ (V,\psi) $ è $ C^{\infty} $-compatibile con $ (U_{\alpha},\varphi_{\alpha}) $ per qualsiasi $ \alpha \in A $.
 
 \begin{definition}
-	Sia $ \mathfrak{U} $ un atlante topologico su $ M $, se due carte $ (V,\psi) $ e $ (W,\sigma) $ sono $ C^{\infty} $-compatibili con $ \mathfrak{U} $ allora lo sono tra loro, i.e. $ (V,\psi) $ è $ C^{\infty} $-compatibile con $ (W,\sigma) $.
+	Sia $ \mathfrak{U} $ un atlante topologico su $ M $, se due carte $ (V,\psi) $ e $ (W,\sigma) $ di $ M $ sono $ C^{\infty} $-compatibili con $ \mathfrak{U} $ allora lo sono tra loro, i.e. $ (V,\psi) $ è $ C^{\infty} $-compatibile con $ (W,\sigma) $.
 \end{definition}
 
-\begin{proof}[Dimostrazione (transitività tramite atlante)]
+\begin{proof}
 	Vogliamo dimostrare che le due applicazioni
 	
 	\begin{gather}
@@ -304,7 +304,7 @@ Sia $ \mathfrak{U} = \{(U_{\alpha},\varphi_{\alpha})\} $ un atlante topologico d
 	\end{gather}
 
 	siano lisce. \\
-	Prendiamo $ \sigma \circ \psi^{-1} $: questa è liscia se lo è in $ \psi(p) \in \psi(V \cap W) $ per qualsiasi $ p \in V \cap W $. \\
+	Prendiamo $ \sigma \circ \psi^{-1} $: questa è liscia se lo è in $ \psi(p) \in \psi(V \cap W) $ per qualsiasi $ p \in V \cap W \subset M $. \\
 	Essendo l'atlante $ \mathfrak{U} $ un ricoprimento di $ M $, esisterà una carta $ (U_{\alpha},\varphi_{\alpha}) \ni p $ perciò con $ p \in U_{\alpha} \cap V \cap W $: potendo scrivere $ \sigma \circ \psi^{-1} = (\sigma \circ \varphi_{\alpha}^{-1}) \circ (\varphi_{\alpha} \circ \psi^{-1}) $, questa è automaticamente liscia in $ \psi(U_{\alpha} \cap V \cap W) $ in quanto, per ipotesi, lo sono i cambi di carte che la compongono. \\
 	Questo conclude la dimostrazione perché abbiamo trovato un aperto che contiene il punto, i.e. $ U_{\alpha} \cap V \cap W \ni p $ per $ p $ arbitrario, in cui l'applicazione sia liscia\footnote{%
 		La proprietà di un'applicazione di essere liscia ha carattere locale.%
@@ -313,8 +313,8 @@ Sia $ \mathfrak{U} = \{(U_{\alpha},\varphi_{\alpha})\} $ un atlante topologico d
 
 \subsection{Varietà differenziabili}
 
-Un atlante topologico $ \mathfrak{U} = \{(U_{\alpha},\varphi_{\alpha})\} $ è detto \textit{differenziabile} (liscio o $ C^{\infty} $) se ogni sua carta è $ C^{\infty} $-compatibile con ogni altra carta al suo interno. \\
-Diremo che un atlante differenziabile $ \mathfrak{M} = \{(U_{\alpha},\varphi_{\alpha})\} $ è \textit{massimale} se per qualunque altro atlante differenziabile $ \mathfrak{M}' $ di $ M $ si ha che
+Un atlante topologico $ \mathfrak{M} = \{(U_{\alpha},\varphi_{\alpha})\}_{\alpha \in A} $ è detto \textit{differenziabile} (liscio o $ C^{\infty} $) se ogni sua carta è $ C^{\infty} $-compatibile con ogni altra carta al suo interno. \\
+Diremo che un atlante differenziabile $ \mathfrak{M} $ è \textit{massimale} se per qualunque altro atlante differenziabile $ \mathfrak{M}' $ di $ M $ si ha che
 
 \begin{equation}
 	\mathfrak{M} \subset \mathfrak{M}' \implies \mathfrak{M} = \mathfrak{M}'
@@ -329,20 +329,20 @@ Diciamo che una varietà differenziabile ha dimensione $ n $ se questa è la dim
 Qualunque sia l'atlante differenziabile su una varietà topologica è sempre possibile trovare un atlante massimale unico che lo contiene, i.e.
 
 \begin{definition}
-	Sia $ \mathfrak{U} $ un atlante differenziabile su uno spazio topologico $ M $, allora esiste ed è unica la struttura differenziale (o atlante massimale) $ \mathfrak{M} $ su $ M $ tale che $ \mathfrak{U} \subset \mathfrak{U} $.
+	Sia $ \mathfrak{U} $ un atlante differenziabile su uno spazio topologico $ M $, allora esiste ed è unica la struttura differenziale (o atlante massimale) $ \mathfrak{M} $ su $ M $ tale che $ \mathfrak{U} \subset \mathfrak{M} $.
 \end{definition}
 
 \begin{proof}
 	Consideriamo la famiglia $ \mathfrak{M} = \mathfrak{U} \cup \{(V_{i},\psi_{i})\}_{i \in I} $ dove $ \mathfrak{U} $ è un atlante differenziabile e $ \{(V_{i},\psi_{i})\}_{i \in I} $ è un insieme di carte $ C^{\infty} $-compatibili con l'atlante. Per la proposizione precedente, $ \mathfrak{M} $ è un atlante differenziabile di $ M $ perché, se tutte le carte $ \{(V_{i},\psi_{i})\}_{i \in I} $ sono compatibili con l'atlante allora sono compatibili tra di loro, dunque $ \mathfrak{M} \supset \mathfrak{U} $. \\
 	Per dimostrare che $ \mathfrak{M} $ sia un atlante massimale, prendiamo $ \mathfrak{M}' $ atlante differenziabile di $ M $ tale che $ \mathfrak{M} \subset \mathfrak{M}' $: se $ \mathfrak{M}' \supset \mathfrak{M} $ allora $ \mathfrak{M}' \supset \mathfrak{U} $, quindi tutte le carte di $ \mathfrak{M}' $ sono $ C^{\infty} $-compatibili con $ \mathfrak{U} $, perciò per definizione $ \mathfrak{M} \supset \mathfrak{M}' $, dimostrando che $ \mathfrak{M}' = \mathfrak{M} $ e quindi che $ \mathfrak{M} $ sia massimale. \\
-	Per dimostrare che $ \mathfrak{M} $ sia l'unico atlante massimale tale che $ \mathfrak{M} \supset \mathfrak{U} $, prendiamo $ \mathfrak{M}' $ un altro atlante differenziabile massimale di $ M $ tale che $ \mathfrak{M} \supset \mathfrak{U} $, allora tutte le carte di $ \mathfrak{M}' $ sono $ C^{\infty} $-compatibili con $ \mathfrak{U} $ e quindi, per definizione, $ \mathfrak{M}' \supset \mathfrak{M} $ ma, siccome $ \mathfrak{M}' $ è massimale, questo implica che $ \mathfrak{M} = \mathfrak{M}' $.
+	Per dimostrare che $ \mathfrak{M} $ sia l'unico atlante massimale tale che $ \mathfrak{M} \supset \mathfrak{U} $, prendiamo $ \mathfrak{M}' $ un altro atlante differenziabile massimale di $ M $ tale che $ \mathfrak{M}' \supset \mathfrak{U} $, allora tutte le carte di $ \mathfrak{M}' $ sono $ C^{\infty} $-compatibili con $ \mathfrak{U} $ e quindi, per definizione, $ \mathfrak{M}' \supset \mathfrak{M} $ ma, siccome $ \mathfrak{M}' $ è massimale, questo implica che $ \mathfrak{M} = \mathfrak{M}' $.
 \end{proof}
 
 \begin{remark}
-	Siano $ M $ una varietà differenziabile, $ (U_{\beta},\varphi_{\beta}) $ una carta della struttura differenziabile e $ V \subset U_{\beta} $ un aperto di $ M $, allora $ (V,\varphi) $ (dove $ \varphi $ è la restrizione della funzione $ \varphi_{\beta} $ all'aperto $ V $, i.e. $ \varphi = \eval{\varphi_{\beta}}_{V} $) è una carta per $ M $ per la struttura differenziabile fissata.
+	Siano $ M $ una varietà differenziabile, $ (U_{\beta},\varphi_{\beta}) $ una carta della struttura differenziabile e $ V \subset U_{\beta} $ un aperto di $ M $. Allora $ (V,\varphi) $, dove $ \varphi $ è la restrizione della funzione $ \varphi_{\beta} $ all'aperto $ V $, i.e. $ \varphi = \eval{\varphi_{\beta}}_{V} $, è una carta per $ M $ per la struttura differenziabile fissata.
 \end{remark}
 
-Infatti, se prendiamo l'atlante massimale differenziabile $ \mathfrak{M} = \{(U_{\alpha},\varphi_{\alpha})\} $ e consideriamo $ \varphi \circ \varphi_{\alpha}^{-1} $
+Infatti, se prendiamo l'atlante massimale differenziabile $ \mathfrak{M} = \{(U_{\alpha},\varphi_{\alpha})\} $ e consideriamo i cambi di carte
 
 \begin{gather}
 	\varphi \circ \varphi_{\alpha}^{-1} : \varphi_{\alpha}(U_{\alpha} \cap V) \to \varphi(U_{\alpha} \cap V) \\
@@ -356,8 +356,8 @@ vediamo che queste sono $ C^{\infty} $-compatibili con l'atlante perché
 	\varphi_{\alpha} \circ \varphi^{-1} = \eval{\varphi_{\alpha} \circ \varphi_{\beta}^{-1}}_{\varphi_{\beta}(U_{\alpha} \cap V)}
 \end{align}
 
-sono le restrizioni a un aperto di funzioni $ C^{\infty} $-compatibili e dunque appartengono all'atlante massimale. \\
-In particolare, se $ U $ è un aperto qualunque di $ M $ e $ (U_{\beta},\varphi_{\beta}) $ è una carta della struttura differenziabile, allora $ (U \cap U_{\beta}, \eval{\varphi_{\beta}}_{U \cap U_{\beta}}) $ è una carta nella struttura differenziabile.
+sono restrizioni a un aperto di funzioni lisce, perciò rendono $ C^{\infty} $-compatibili le carte, che dunque appartengono all'atlante massimale. \\
+In particolare, se $ U $ è un aperto qualunque di $ M $ e $ (U_{\beta},\varphi_{\beta}) $ è una carta della struttura differenziabile, allora $ \left( U \cap U_{\beta}, \eval{\varphi_{\beta}}_{U \cap U_{\beta}} \right) $ è una carta nella struttura differenziabile.
 
 \subsubsection{\textit{Esempi}}
 
@@ -375,16 +375,16 @@ Essendo $ \R^{0} = \{0\} $, siccome deve esistere un omeomorfismo dall'intorno d
 
 \paragraph{3) Curve}
 
-Per le curve differenziabili, $ \dim (M) = 1 $. Sia $ M $ una varietà differenziabile connessa, sapendo che
+Per le curve differenziabili, $ \dim (M) = 1 $. Vale il seguente teorema
 
 \begin{theorem}
 	\begin{equation}
-		M \text{ curva connessa } \implies M = \R \, \lor \, M = \S^{1}
+		M \text{ curva connessa } \implies M \stackrel{diff}{\simeq} \R \, \lor \, M \stackrel{diff}{\simeq} \S^{1}
 	\end{equation}
 
-	cioè, se $ M $ è una curva connessa, allora\footnote{%
-		Con l'uguaglianza introdotta in questa implicazione, si intende che la varietà differenziabile è \textit{diffeomorfa}: il concetto di diffeomorfismo viene introdotto nella Sottosezione \ref{s-sec:diff}.%
-	} è la retta reale $ \R $ oppure il cerchio unitario $ \S^{1} $.
+	cioè, se $ M $ è una curva connessa, allora è diffeomorfa\footnote{%
+		Il concetto di diffeomorfismo tra varietà differenziabili viene introdotto nella Sottosezione \ref{s-sec:diff}.%
+	} alla retta reale $ \R $ oppure al cerchio unitario $ \S^{1} $.
 \end{theorem}
 
 \paragraph{4) Superfici}
@@ -431,30 +431,30 @@ Sia l'insieme delle matrici con determinante non nullo
 	GL_{n}(\R) = \{ A \in M_{n}(\R) \mid \det(A) \neq 0 \} \subset M_{n}(\R)
 \end{equation}
 
-Con la topologia indotta da $ \R^{n^{2}} $, lo spazio $ GL_{n}(\R) $ è $ N_{2}+T_{2} $. Inoltre, $ GL_{n}(\R) $ è un aperto di $ M_{n}(\R) $ perché complementare dell'insieme chiuso
+Con la topologia indotta da $ \R^{n^{2}} $, lo spazio $ GL_{n}(\R) $ è $ N_{2} + T_{2} $. Inoltre, $ GL_{n}(\R) $ è un aperto di $ M_{n}(\R) $ perché complementare dell'insieme chiuso
 
 \begin{equation}
 	 M_{n}(\R) \setminus GL_{n}(\R) = \{ A \in M_{n}(\R) \mid \det(A) = 0 \}
 \end{equation}
 
-in quanto il determinante è un'applicazione continua dunque la controimmagine del punto $ 0 $ è un chiuso. Essendo quindi un aperto di una varietà, $ GL_{n}(\R) $ è una varietà differenziabile con l'unica carta $ (GL_{n}(\R),\id_{GL_{n}(\R)}) $; questa varietà ha $ \dim(GL_{n}(\R)) = n^{2} $.
+in quanto il determinante è un'applicazione continua dunque la controimmagine del punto $ 0 $ (il quale è chiuso in $ \R $) è un chiuso. Essendo quindi un aperto di una varietà, $ GL_{n}(\R) $ è una varietà differenziabile con l'unica carta $ (GL_{n}(\R),\id_{GL_{n}(\R)}) $; questa varietà ha $ \dim(GL_{n}(\R)) = n^{2} $.
 
 \paragraph{7) Cerchio unitario $ \S^{1} $}\label{example:diff-man-s1}
 
 Il cerchio unitario $ \S^{1} $
 
 \begin{equation}
-	\S^{1} = \left\{ (x,y) \in \R^{2} \st x^{2} + y^{2} = 1 \right\}
+	\S^{1} = \left\{ (x,y) \in \R^{2} \st x^{2} + y^{2} = 1 \right\} \subset \R^{2}
 \end{equation}
 
-con la topologia indotta da $ \R^{2} $ (quindi $ N_{2}+T_{2} $) può essere dotato di una struttura differenziabile costituita da quattro carte prendendo gli aperti\footnote{%
-	Questi insiemi sono aperti perché intersezioni di $ \S^{1} $ aperto con aperti di $ \R^{n} $, e.g. il semipiano superiore o quello inferiore.}
+con la topologia indotta da $ \R^{2} $ (quindi $ N_{2} + T_{2} $) può essere dotato di una struttura differenziabile costituita da quattro carte prendendo gli aperti\footnote{%
+	Questi insiemi sono aperti in $ \S^{1} $ perché intersezioni di $ \S^{1} $ (aperto in sé stesso) con aperti di $ \R^{n} $, e.g. il semipiano superiore o quello inferiore.}
 
 \begin{gather}
-	U_{1} = \left\{ (x,y) \in \S^{1} \st y>0 \right\} \\
-	U_{2} = \left\{ (x,y) \in \S^{1} \st y<0 \right\} \\
-	U_{3} = \left\{ (x,y) \in \S^{1} \st x>0 \right\} \\
-	U_{4} = \left\{ (x,y) \in \S^{1} \st x<0 \right\}
+	U_{1} = \left\{ (x,y) \in \S^{1} \st y > 0 \right\} \\
+	U_{2} = \left\{ (x,y) \in \S^{1} \st y < 0 \right\} \\
+	U_{3} = \left\{ (x,y) \in \S^{1} \st x > 0 \right\} \\
+	U_{4} = \left\{ (x,y) \in \S^{1} \st x < 0 \right\}
 \end{gather}
 
 i quali sono un ricoprimento del cerchio unitario, i.e.
@@ -467,19 +467,19 @@ Definiamo ora quattro funzioni che costituiranno, insieme agli aperti sopra defi
 
 \sbs{0.45}{%
 			\map{\varphi_{1}}
-				{U_{1}}{(-1,1)_{x} \subset \R^{2}}
+				{U_{1}}{(-1,1)_{x} \subset \R}
 				{(x,y)}{x}
 			
 			\map{\varphi_{2}}
-				{U_{2}}{(-1,1)_{x} \subset \R^{2}}
+				{U_{2}}{(-1,1)_{x} \subset \R}
 				{(x,y)}{x}
 			
 			\map{\varphi_{3}}
-				{U_{3}}{(-1,1)_{y} \subset \R^{2}}
+				{U_{3}}{(-1,1)_{y} \subset \R}
 				{(x,y)}{y}
 			
 			\map{\varphi_{4}}
-				{U_{4}}{(-1,1)_{y} \subset \R^{2}}
+				{U_{4}}{(-1,1)_{y} \subset \R}
 				{(x,y)}{y}
 		}
 	{0.52}{%
@@ -487,7 +487,7 @@ Definiamo ora quattro funzioni che costituiranno, insieme agli aperti sopra defi
 		}
 
 Vogliamo mostrare che $ \{(U_{i},\varphi_{i})\}_{i=1,\dots,4} $ sia un atlante differenziabile in modo tale da dotare $ \S^{1} $ di un atlante massimale e quindi renderlo una varietà differenziabile. \\
-Dimostriamo prima che le $ \varphi_{i} $ siano omeomorfismi: sono continue e lisce perché sono restrizioni a una delle componenti e le inverse
+Dimostriamo prima che le $ \varphi_{i} $ siano omeomorfismi: sono continue (e anche lisce) perché sono restrizioni a una delle componenti e le inverse
 
 \sbs{0.5}{%
 			\map{\varphi_{1}^{-1}}
@@ -508,7 +508,7 @@ Dimostriamo prima che le $ \varphi_{i} $ siano omeomorfismi: sono continue e lis
 				{y}{(-\sqrt{1-y^{2}},y)}
 			}
 
-sono anch'esse continue e lisce; questo dimostra che lo spazio è una varietà topologica. \\
+sono anch'esse continue (e lisce); questo dimostra che lo spazio è una varietà topologica. \\
 Per dimostrare che sia una struttura differenziabile, prendiamo due carte arbitrarie e ne facciamo la composizione per controllare la loro $ C^{\infty} $-compatibilità:
 
 \begin{gather}
@@ -587,7 +587,7 @@ definiamo dunque le seguenti applicazioni per formare le carte $ \{(U_{i},\varph
 				{(x,y,z)}{(y,z)}
 		}
 		{0.52}{%
-			Ad esempio, l'applicazione $ \varphi_{1} $ è rappresentata di seguente:
+			Ad esempio, l'applicazione $ \varphi_{1} $ è rappresentata di seguito:
 			\img{1}{img9}
 		}
 
@@ -640,7 +640,7 @@ dunque
 	(\varphi_{4} \circ \varphi_{1}^{-1})(x,y) = \varphi_{4} \left( x,y,\sqrt{1-x^{2}-y^{2}} \right) = \left( x,\sqrt{1-x^{2}-y^{2}} \right)
 \end{gather}
 
-e analogamente per le altre composizioni. Tutte queste applicazioni e le loro inverse sono lisce per lo stesso motivo dato per il cerchio unitario. \\
+e analogamente per le altre composizioni. Tutte queste applicazioni e le loro inverse sono lisce e dunque continue per lo stesso motivo dato per il cerchio unitario. \\
 Tutto ciò dota lo spazio di un atlante differenziabile e dunque la sfera unitaria $ \S^{2} $ di una struttura differenziabile\footnote{%
 	Vedi Esercizio \ref{exer2-1}.%
 }.

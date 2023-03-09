@@ -42,15 +42,16 @@ possiamo dire che $ V \cap A_{j} $ è aperto in $ A_{j} $ per qualsiasi $ j \in 
 Sia $ \S^{n} $ la sfera unitaria in $ \R^{n+1} $. Trovare un atlante differenziabile di $ \S^{n} $ con $ 2(n+1) $ carte.
 }
 {
-Prendendo un parametro $ k = 1,\dots,n+1 $, definiamo\footnote{%
+Definiamo\footnote{%
 	La funzione $ \ceil*{x} $ \textit{ceiling} (soffitto) mappa un numero reale nel successivo numero naturale più vicino (i.e. arrotonda per eccesso), e.g. $ \ceil*{\frac{3}{2}} = 2 $.%
 } i $ 2(n+1) $ aperti
 
 \begin{equation}
-	U_{i} = \left\{ (x^{1},\dots,x^{n+1}) \in \R^{n+1} \st (-1)^{i} x^{\ceil*{\frac{i}{2}}} > 0 \right\} \qcomma k = 1, \dots, 2(n+1)
+	U_{i} = \left\{ (x^{1},\dots,x^{n+1}) \in \R^{n+1} \st (-1)^{i} x^{\ceil*{\frac{i}{2}}} > 0 \right\} \subset \R^{n+1} %
+	\qcomma k = 1, \dots, 2(n+1)
 \end{equation}
 
-per i quali vale $ U_{i} \subset \R^{n+1} $ e che formano un ricoprimento per $ \S^{n} $, i.e.
+i quali formano un ricoprimento per $ \S^{n} $, i.e.
 
 \begin{equation}
 	\S^{n} = \bigcup_{i=1}^{2(n+1)} U_{i}
@@ -62,10 +63,10 @@ Definiamo anche gli aperti per $ j = 1,\dots,n+1 $
 	D_{j} = \{ (x^{1},\dots,x^{j-1},x^{j+1},\dots,x^{n+1}) \in \R^{n} \times \{0\} = \R^{n} \, \mid \, \norm{x} < 1 \} = B_{1}(0) \simeq \R^{n}
 \end{equation}
 
-i quali, in sostanza, sono palle di raggio unitario centrate nell'origine nel piano $ \R^{n} \times \{0\} $, dove
+i quali, in sostanza, sono palle di raggio unitario centrate nell'origine nel piano $ \R^{n} \times \{0\} $, dove la \textit{norma} è definita come
 
 \begin{equation}
-	\norm{x} = \sqrt{ \sum_{i=1}^{n} (x^{i})^{2} }
+	\norm{x} \doteq \sqrt{ \sum_{i=1}^{n} (x^{i})^{2} }
 \end{equation}
 
 Infine definiamo le applicazioni lisce
