@@ -703,7 +703,7 @@ dove $ U_{S} \cap U_{N} = \S^{n} \setminus \{N,S\} $ e quindi
 \end{equation}
 
 A questo punto i cambi di carte si riducono all'applicazione identità e sono dunque lisce. \\
-Considerando l'eguaglianza
+Considerando l'uguaglianza
 
 \begin{equation}
 	\dfrac{ 2 \left( \dfrac{x^{k}}{1 + \norm{x}^{2}} \right) }{ 1 - \dfrac{\norm{x}^{2} - 1}{1 + \norm{x}^{2}} } = \dfrac{2 x^{k}}{1 + \norm{x}^{2}} \left( \dfrac{ 1 + \norm{x}^{2} - \norm{x}^{2} + 1 }{ 1 + \norm{x}^{2} } \right)^{-1} %
@@ -725,7 +725,8 @@ otteniamo
 e analogamente per $ \pi_{S} \circ \pi_{N}^{-1} $. A questo punto
 
 \begin{equation}
-	\pi_{N} \circ \pi_{S}^{-1} \equiv \pi_{S} \circ \pi_{N}^{-1} = \id_{\R^{n} \setminus \{0\}}
+	\pi_{N} \circ \pi_{S}^{-1} = \pi_{S} \circ \pi_{N}^{-1} %
+	= \id_{\R^{n} \setminus \{0\}}
 \end{equation}
 
 Queste composizioni sono lisce dunque le carte $ (U_{N},\pi_{N}) $ e $ (U_{S},\pi_{S}) $ sono $ C^{\infty} $-compatibili perciò $ \{(U_{N},\pi_{N}),(U_{S},\pi_{S})\} $ è un atlante differenziabile su $ \S^{n} $, la quale diventa una varietà differenziabile\footnote{%
@@ -746,7 +747,7 @@ Siano $ \mathfrak{U} = \{(U_{\alpha},\varphi_{\alpha})\}_{\alpha \in A} $ un atl
 	\mathfrak{W} = \{(U_{\alpha} \times V_{\beta},\varphi_{\alpha} \times \psi_{\beta})\}_{\alpha \in A, \, \beta \in B}
 \end{equation}
 
-dove al variare di $ \alpha $ e $ \beta $ per l'aperto $ U_{\alpha} \times V_{\beta} \in M \times N $ si ottiene un ricoprimento per lo spazio prodotto, i.e.
+dove al variare di $ \alpha $ e $ \beta $ per l'aperto $ U_{\alpha} \times V_{\beta} \subset M \times N $ si ottiene un ricoprimento per lo spazio prodotto, i.e.
 
 \begin{equation}
 	M \times N = \bigcup_{\substack{ \alpha \in A \\ \beta \in B }} (U_{\alpha} \times V_{\beta})
@@ -778,7 +779,7 @@ alternativamente possiamo scriverli come
 \end{equation}
 
 Le composizioni $ \varphi_{\alpha} \circ \varphi_{\rho}^{-1} $ e $ \psi_{\beta} \circ \psi_{\sigma} $ sono lisce perché ognuna di queste prova la compatibilità delle carte in $ M $ e in $ N $ rispettivamente e dunque il loro prodotto è ancora liscio. Questi ragionamenti portano all'esistenza di una struttura differenziale per $ M \times N $, la quale diventa dunque una varietà differenziabile. \\
-Esempi di superfici differenziabili risultato di prodotti tra varietà differenziabili sono il toro bidimensionale $ \T^{2} = \S^{1} \times \S^{1} $ e il cilindro infinito $ \mathcal{C} = \S^{1} \times \R $; anche il toro $ n $-dimensionale è una varietà differenziabile
+Esempi di superfici differenziabili risultato di prodotti tra varietà differenziabili sono il toro bidimensionale $ \T^{2} = \S^{1} \times \S^{1} $ e il cilindro infinito $ \mathcal{C} = \S^{1} \times \R $. Più in generale, anche il toro $ n $-dimensionale è una varietà differenziabile
 
 \begin{align}
 	\T^{n} = \prod^{n} \S^{1}
@@ -786,7 +787,7 @@ Esempi di superfici differenziabili risultato di prodotti tra varietà differenz
 
 dove la produttoria implica, in questo caso, la topologia prodotto $ \times $.
 
-\subsection{Spazi quoziente dal punto di vista topologico}
+\subsection{Spazi quoziente dal punto di vista topologico}\label{s-sec:quot}
 
 Sia $ S $ uno spazio topologico e $ \sim $ una relazione di equivalenza su $ S $: lo \textit{spazio quoziente} $ \sfrac{S}{\sim} $ è l'insieme delle classi di equivalenza degli elementi di $ S $. Dalla relazione di equivalenza deriva una proiezione sullo spazio quoziente, la quale mappa un elemento $ x \in S $ nella classe di equivalenza $ [x] $, i.e.
 
@@ -794,10 +795,12 @@ Sia $ S $ uno spazio topologico e $ \sim $ una relazione di equivalenza su $ S $
 	{S}{\sfrac{S}{\sim}}
 	{x}{[x]}
 	
-Definiamo una topologia su $ \sfrac{S}{\sim} $ definendo un insieme $ U $ tale che
+Definiamo una topologia su $ \sfrac{S}{\sim} $ definendo gli aperti nel quoziente:
 
 \begin{equation}
-	U \text{ aperto in } \sfrac{S}{\sim} \iff U = \emptyset \, \wedge \, U = \sfrac{S}{\sim} \, \wedge \, \pi^{-1}(U) \text{ aperto in } S
+	U \text{ aperto in } \sfrac{S}{\sim} %
+	\iff %
+	U = \emptyset \, \wedge \, U = \sfrac{S}{\sim} \, \wedge \, \pi^{-1}(U) \text{ aperto in } S
 \end{equation}
 
 i.e. $ U $ è aperto se e solo se la sua controimmagine è aperta in $ S $. \\
@@ -886,13 +889,13 @@ Scriviamo lo spazio quoziente rispetto a questa relazione di equivalenza come $ 
 Siano gli insiemi $ I = [0,1] \subset \R $ e $ A = \{0,1\} $. 
 
 \sbs{0.49}{%
-			Consideriamo il quoziente $ \sfrac{I}{\{0,1\}} $: utilizzando la stessa relazione di equivalenza $ \sim $ dell'esempio precedente, si può identificare lo spazio quoziente $ \sfrac{I}{\{0,1\}} $ con un cerchio, in quanto tutti i punti di $ I $ vengono identificati con sé stessi mentre gli estremi $ \{0,1\} $ si identificano uno con l'altro..
+			Consideriamo il quoziente $ \sfrac{I}{\{0,1\}} $: utilizzando la stessa relazione di equivalenza $ \sim $ dell'esempio precedente, si può identificare lo spazio quoziente $ \sfrac{I}{\{0,1\}} $ con un cerchio, in quanto tutti i punti di $ I $ vengono identificati con sé stessi mentre gli estremi $ \{0,1\} $ si identificano uno con l'altro.
 			}
 	{0.5}{%
 			\img{1}{img12}
 			}
 		
-Dimostriamo ora l'omeomorfismo $ \sfrac{I}{\{0,1\}} \simeq \S^{1} $. Sia l'applicazione continua
+Dimostriamo ora che i due spazi menzionati sopra siano omeomorfi, i.e. $ \sfrac{I}{\{0,1\}} \simeq \S^{1} $. Sia l'applicazione continua
 
 \map{f}%
 	{I}{\S^{1} \subset \R^{2}}%
@@ -903,7 +906,7 @@ questa è costante sulle classi di equivalenza di $ \sfrac{I}{\{0,1\}} $. Tramit
 \diagr{%
 		I \arrow[rr, "f"] \arrow[dd, "\pi"']        \&  \& \S^{1} \\
 		\&  \&        \\
-		{\sfrac{I}{0,1}} \arrow[rruu, "\tilde{f}"'] \&  \&       
+		{\sfrac{I}{\{0,1\}}} \arrow[rruu, "\tilde{f}"'] \&  \&       
 		}
 
 il quale implica l'esistenza della funzione $ \tilde{f} $, la quale è continua perché $ f $ è continua. Questa applicazione è anche iniettiva e suriettiva: perché sia identificata come un omeomorfismo, si utilizza il seguente lemma
@@ -5724,7 +5727,7 @@ Se $ k = m \leqslant n $ allora $ F $ è una sommersione in $ p $ ($ F_{*p} $ su
 
 	Per ipotesi $ p \in W $ e dunque $ W \neq \emptyset $. \\
 	Per mostrare che $ W $ sia aperto in $ N $, mostriamo prima che sia aperto in $ U $: siccome $ U $ è aperto in $ N $, allora anche $ W $ sarà aperto in $ N $. \\
-	Possiamo riscrivere la condizione che definisce l'insieme $ W $ inserendo una diseguaglianza per il rango dello jacobiano:
+	Possiamo riscrivere la condizione che definisce l'insieme $ W $ inserendo una disuguaglianza per il rango dello jacobiano:
 	
 	\begin{equation}
 		\rank(J(F)(q)) = k %
@@ -6314,7 +6317,7 @@ Dimostriamo questo fatto mediante il seguente lemma:
 		\left| e^{2 \pi i \alpha n_{2}} - 1 \right| < \dfrac{\varepsilon}{2}
 	\end{equation}
 
-	ponendo dunque $ k = n_{1} - n_{2} \neq 0 $ e sfruttando la diseguaglianza triangolare
+	ponendo dunque $ k = n_{1} - n_{2} \neq 0 $ e sfruttando la disuguaglianza triangolare
 	
 	\begin{align}
 		\begin{split}
