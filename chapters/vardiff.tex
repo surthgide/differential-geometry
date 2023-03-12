@@ -800,22 +800,22 @@ Definiamo una topologia su $ \sfrac{S}{\sim} $ definendo gli aperti nel quozient
 \begin{equation}
 	U \text{ aperto in } \sfrac{S}{\sim} %
 	\iff %
-	U = \emptyset \, \wedge \, U = \sfrac{S}{\sim} \, \wedge \, \pi^{-1}(U) \text{ aperto in } S
+	U = \emptyset \, \lor \, U = \sfrac{S}{\sim} \, \lor \, \pi^{-1}(U) \text{ aperto in } S
 \end{equation}
 
-i.e. $ U $ è aperto se e solo se la sua controimmagine è aperta in $ S $. \\
+i.e. $ U $ è aperto se e solo se la sua controimmagine tramite la proiezione è aperta in $ S $. \\
 Per verificare che questa sia una topologia è necessario che l'intersezione di due aperti e l'unione arbitraria di aperti siano ancora aperti nello spazio: queste proprietà sono soddisfatte perché rispettate da $ \pi^{-1} $
 
 \begin{gather}
-	\pi^{-1}(U \cap V) = \pi^{-1}(U) \cap \pi^{-1}(V) \\
-	\pi^{-1}\left( \bigcup_{j \in J} V_{j} \right) = \bigcup_{j \in J} \pi^{-1}(V_{j})
+	\pi^{-1}(U \cap V) = \pi^{-1}(U) \cap \pi^{-1}(V) \qcomma \forall U, V \subset S \text{ aperti} \\
+	\pi^{-1}\left( \bigcup_{j \in J} V_{j} \right) = \bigcup_{j \in J} \pi^{-1}(V_{j}) \qcomma \forall V_{j} \subset S \text{ aperti}
 \end{gather}
 
 Questa topologia è chiamata \textit{topologia quoziente} su $ \sfrac{S}{\sim} $.
 
 \begin{remark}
 	Una volta fissata la topologia quoziente, la proiezione $ \pi : S \to \sfrac{S}{\sim} $ è continua, perché la controimmagine di un aperto è aperta\footnote{%
-		Un insieme è aperto se e solo se la sua controimmagine è aperta.%
+		Questo perché nella definizione della topologie del quoziente, un insieme è aperto se e solo se la sua controimmagine tramite la proiezione è aperta.%
 	}.
 \end{remark}
 
@@ -831,7 +831,7 @@ Questa proprietà permette di considerare una seconda applicazione
 	{\sfrac{S}{\sim}}{Y}
 	{[x]}{f(x)}
 
-la quale è ben definita in quanto il rappresentante della classe $ [s] $ preso non influisce al fine del calcolo di $ f(x) $.
+la quale è ben definita in quanto il rappresentante della classe $ [x] $ che si prende per calcolare $ f(x) $ non influisce al fine del calcolo.
 
 \sbs{0.5}{%
 			Il diagramma a lato permette di derivare la seguente proprietà:
@@ -947,7 +947,7 @@ Lo spazio quoziente $ \sfrac{I}{\{0,1\}} $ è uno spazio compatto perché quozie
 Siano $ S = \R $ e $ A = (0,+\infty) $ e consideriamo il quoziente $ \sfrac{S}{A} = \sfrac{\R}{A} $. Lo spazio quoziente non è di Hausdorff perché, se lo fosse, ogni suo punto sarebbe un chiuso cioè $ \sfrac{\R}{A} $ sarebbe\footnote{%
 	Per un qualunque spazio, se questo è $ T_{2} $ o di Hausdorff allora è $ T_{1} $ e anche $ T_{0} $, i.e. $ T_{2} \implies T_{1} \implies T_{0} $.%
 } $ T_{1} $. \\
-Considerando la classe di equivalenza $ [A] \in \sfrac{\R}{A} $, questa è chiusa se la sua controimmagine è chiusa ma
+Considerando la classe di equivalenza $ [A] \in \sfrac{\R}{A} $, questa è chiusa se la sua controimmagine tramite la proiezione è chiusa ma
 
 \begin{equation}
 	\pi^{-1} ([A]) = (0,+\infty)
@@ -1037,7 +1037,7 @@ Presi due punti $ x, y \in \R^{n+1} \setminus \{0\} $, possiamo  quindi individu
 \end{equation}
 
 ciò significa che due punti sono equivalenti se e solo se sono proporzionali (e dunque appartengono alla stessa retta). \\
-Sia dunque il \textit{proiettivo reale} lo spazio quoziente
+Il \textit{proiettivo reale} è dunque definito tramite il quoziente
 
 \begin{equation}
 	\rp{n} = \dfrac{\R^{n+1} \setminus \{0\}}{\sim}
@@ -1093,7 +1093,7 @@ Iniziamo col dimostrare la compattezza e la connessione di $ \rp{n} $ mediante i
 		\tilde{f}([x]) = [g(x)]_{a} \qq{in quanto} \tilde{f} \circ \pi = \pi_{a} \circ g
 	\end{equation}
 
-	Per asserire che $ \tilde{f} $ sia continua, possiamo dimostrare che $ f $ lo sia: valendo la relazione $ f = \pi_{a} \circ g $, $ f $ è dunque continua, perché le componenti di $ g $ sono continue e la proiezione sul quoziente è continua. \\
+	Per mostrare che $ \tilde{f} $ sia continua, dimostriamo che $ f $ lo sia: siccome vale la relazione $ f = \pi_{a} \circ g $, $ f $ è dunque continua, poiché le componenti di $ g $ sono continue e la proiezione sul quoziente è continua. \\
 	L'ultimo passo è mostrare che $ \tilde{f} $ sia una bigezione\footnote{%
 		Non possiamo utilizzare il lemma dell'applicazione chiusa perché altrimenti dovremmo utilizzare come assunzione che $ \rp{n} $ sia compatto, ma questa è la tesi della dimostrazione.%
 	}: per fare ciò prendiamo la sua inversa
@@ -1115,13 +1115,13 @@ Iniziamo col dimostrare la compattezza e la connessione di $ \rp{n} $ mediante i
 	\end{equation}
 
 	Avendo dimostrato che $ \tilde{f} $ è una bigezione\footnote{%
-		Essendo $ f^{-1} $ inversa sinistra e inversa destra, $ f $ è rispettivamente iniettiva e suriettiva, dunque una bigezione.%
+		Essendo $ f^{-1} $ inversa sinistra e inversa destra di $ f $, quest'ultima è rispettivamente iniettiva e suriettiva, dunque una bigezione.%
 	} continua, otteniamo che $ \rp{n} \simeq \sfrac{\S^{n}}{\sim_{a}} $.
 \end{proof}
 
 \begin{corollary}
 	$ \rp{n} $ è compatto e connesso, in quanto lo è la sfera\footnote{%
-		La sfera $ \S^{n} $ è connessa perché la sfera è densa nella sfera meno un punto (tramite proiezione stereografica in $ \R^{n} $) e la chiusura di uno spazio connesso è ancora connessa; per quanto riguarda la compattezza, il \textit{teorema di Heine-Borel} afferma che un sottoinsieme di $ \R^{n} $ è compatto se e solo se è chiuso e limitato.%
+		La sfera $ \S^{n} $ è connessa perché la sfera è densa nella sfera meno un punto (tramite proiezione stereografica in $ \R^{n} $) e la chiusura di uno spazio connesso è ancora connessa; per quanto riguarda la compattezza, il \textit{teorema di Heine-Borel} afferma che un sottoinsieme di $ \R^{n} $ è compatto se e solo se è chiuso e limitato, e.g. la sfera.%
 	} $ \S^{n} $ e la topologia quoziente preserva queste proprietà.
 \end{corollary}
 
