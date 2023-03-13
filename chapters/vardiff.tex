@@ -1149,9 +1149,11 @@ La dimostrazione che il proiettivo reale sia $ N_{2} $ passa per la proiezione
 	\pi : \R^{n+1} \setminus \{0\} \to \dfrac{\R^{n+1} \setminus \{0\}}{\sim} = \rp{n}
 \end{equation}
 
-in quanto questa applicazione preserva la proprietà di numerabilità $ N_{2} $: se lo spazio di partenza $ \R^{n+1} \setminus \{0\} $ è $ N_{2} $ (lo è perché sottoinsieme di $ \R^{n+1} $ il quale è a sua volta $ N_{2} $) allora, se l'applicazione $ \pi $ è aperta (equivalentemente, se $ \sim $ è aperta), lo è anche il proiettivo reale. \\
-Perché $ \pi $ sia aperta, questa deve mandare aperti in aperti: sia l'aperto $ V \subset \R^{n+1} \setminus \{0\} $ e consideriamo l'insieme $ \pi(V) $. Nella topologia quoziente, l'immagine $ \pi(V) $ è aperta se la sua controimmagine $ \pi^{-1}(\pi(V)) $ è aperta: $ \pi(x) $ con $ x \in V $ è l'identificazione di tutti i punti che appartengono alla stessa retta di $ x $; prendendo $ \pi^{-1}(\pi(x)) $ otteniamo non solo il punto $ x $ ma tutti i punti che appartengono alla retta identificata da $ x $ stesso, dunque considerando tutti i punti dell'aperto $ V $ otteniamo
-
+in quanto questa applicazione preserva la proprietà di numerabilità $ N_{2} $: se lo spazio di partenza $ \R^{n+1} \setminus \{0\} $ è $ N_{2} $ (lo è perché sottoinsieme di $ \R^{n+1} $, il quale è $ N_{2} $) allora, se l'applicazione $ \pi $ è aperta\footnote{%
+	Equivalentemente, se la relazione di equivalenza $ \sim $ è aperta.%
+}, lo è anche il proiettivo reale. \\
+Perché $ \pi $ sia aperta, questa deve mandare aperti in aperti: sia l'aperto $ V \subset \R^{n+1} \setminus \{0\} $ e consideriamo l'insieme $ \pi(V) $. Nella topologia quoziente, l'immagine $ \pi(V) $ è aperta se la sua controimmagine $ \pi^{-1}(\pi(V)) $ è aperta: $ \pi(x) $ con $ x \in V $ è l'identificazione di tutti i punti che appartengono alla stessa retta di $ x $; prendendo $ \pi^{-1}(\pi(x)) $ otteniamo non solo il punto $ x $ ma tutti i punti che appartengono alla retta identificata da $ x $ stesso, dunque considerando tutti i punti dell'aperto $ V $ otteniamo \\
+%
 \sbs{0.5}{%
 			\begin{equation}
 				\pi^{-1}(\pi(V)) = \bigcup_{\lambda \in \R \setminus \{0\}} \{\lambda V\}
@@ -1162,9 +1164,6 @@ Perché $ \pi $ sia aperta, questa deve mandare aperti in aperti: sia l'aperto $
 	{0.5}{%
 			\img{0.8}{img15}
 			}
-
-
-
 
 Fissando $ \lambda $, l'insieme
 
@@ -1208,8 +1207,8 @@ che associa alle coppie di vettori\footnote{%
 } $ (x,y) $ le matrici con $ (n+1) $ righe e $ 2 $ colonne costituite dai vettori $ x $ e $ y $ posti in colonne affiancate, i.e.
 
 \begin{equation}
-	x = \bmqty{x^{1} \\ \vdots \\ x^{n+1}} , \, y = \bmqty{y^{1} \\ \vdots \\ y^{n+1}} %
-	\quad \longmapsto \quad %
+	(x,y) = \left( \bmqty{x^{1} \\ \vdots \\ x^{n+1}} , \, \bmqty{y^{1} \\ \vdots \\ y^{n+1}} \right) %
+	\quad \stackrel{\varphi}{\longmapsto} \quad %
 	\bmqty{x & y} = \bmqty{x^{1} & y^{1} \\ \vdots & \vdots \\ x^{n+1} & y^{n+1}}
 \end{equation}
 
@@ -1220,7 +1219,7 @@ A questo punto, dimostrando che l'immagine di $ R $ tramite $ \varphi $ è un ch
 	\varphi(R) = \left\{ \bmqty{x & y} \in M_{n+1,2}(\R) \st \rank \left( \bmqty{x & y} \right) = 1 \right\}
 \end{equation}
 
-La condizione per cui il rango delle matrici di questo insieme è unitario è dovuta al fatto che queste matrici hanno le due colonne proporzionali tra loro, in quanto $ y= \lambda x $ con $ \lambda \in \R $.
+La condizione per cui il rango delle matrici di questo insieme sia unitario è dovuta al fatto che queste matrici hanno le due colonne proporzionali tra loro, in quanto $ y= \lambda x $ con $ \lambda \in \R $.
 
 \begin{lemma}\label{lemma:clos-matrix}
 	L'insieme delle matrici reali di rango minore o uguale a $ r $
@@ -1242,7 +1241,7 @@ La condizione per cui il rango delle matrici di questo insieme è unitario è do
 
 	che mappa le matrici $ A \in M_{n,m}(\R) $ in $ d $-uple\footnote{%
 		Il numero totale di minori di ordine $ r $ per una matrice $ A \in M_{n,m}(\R) $ è $ d = \binom{n}{r+1} \binom{m}{r+1} $.%
-	} di minori $ m_{ij} \doteq \det(A_{ij}) $ di $ A $ di ordine $ r + 1 $, dove le $ A_{ij} $ sono le sottomatrici ricavate da $ A $ rimuovendo la $ i $-esima riga e la $ j $-esima colonna. Questa applicazione è continua perché è composizione di due applicazioni continue: l'applicazione che rimuove righe e colonne alla matrice $ A $ e il determinante di questa stessa matrice. \\
+	} di minori $ m_{ij} \doteq \det(A_{ij}) $ di $ A $ di ordine $ r + 1 $, dove le $ A_{ij} $ sono le sottomatrici ricavate da $ A $ rimuovendo la $ i $-esima riga e la $ j $-esima colonna. Questa applicazione è continua perché composizione di due applicazioni continue: l'applicazione che rimuove righe e colonne alla matrice $ A $ e il determinante di questa stessa matrice. \\
 	Una matrice $ A $ ha rango $ \rank(A) \leqslant r $ se e solo se tutti i minori di ordine $ r+1 $ sono nulli, dunque l'insieme $ X_{r}(n,m) $ è la controimmagine di $ 0 \in \R^{d} $ tramite l'applicazione continua $ f $: essendo $ 0 $ chiuso in $ \R^{d} $ poiché $ \R^{d} $ è di Hausdorff, allora anche la sua controimmagine tramite l'applicazione continua $ f $, i.e. $ f^{-1}(0) = X_{r}(n,m) $, è chiusa in $ M_{n,m}(\R) $.
 \end{proof}
 
@@ -1252,7 +1251,7 @@ Seguendo questo ragionamento, possiamo pensare a $ \varphi(R) $ come l'intersezi
 	\varphi(R) = X_{1}(n+1,2) \cap \varphi(\R^{n+1} \setminus \{0\} \times \R^{n+1} \setminus \{0\})
 \end{equation}
 
-Essendo dunque $ \varphi(R) $ intersezione di un chiuso con lo spazio d'interesse, questo rende $ \varphi(R) $ chiuso in $ \varphi(\R^{n+1} \setminus \{0\} \times \R^{n+1} \setminus \{0\}) $, dunque $ R $ è chiuso in $ \R^{n+1} \setminus \{0\} \times \R^{n+1} \setminus \{0\} $ in quanto $ \varphi $ è un omeomorfismo: questo prova che $ \rp{n} $ sia $ T_{2} $. \\
+Essendo dunque $ \varphi(R) $ intersezione di un chiuso con lo spazio d'interesse, questo rende $ \varphi(R) $ chiuso in $ \varphi(\R^{n+1} \setminus \{0\} \times \R^{n+1} \setminus \{0\}) $, dunque $ R $ è chiuso in $ \R^{n+1} \setminus \{0\} \times \R^{n+1} \setminus \{0\} $ in quanto $ \varphi $ è un omeomorfismo: questo prova che $ \rp{n} $ sia $ T_{2} $.
 
 \paragraph{Altante per $ \rp{n} $}
 
@@ -1276,7 +1275,7 @@ Gli insiemi $ U_{i} $ sono aperti in $ \rp{n} $ perché la proiezione $ \pi $ è
 \end{equation}
 
 in quanto
-
+%
 \begin{equation}
 	\bigcup_{i=0}^{n} V_{i} = \R^{n+1} \setminus \{0\}
 \end{equation}
@@ -1288,7 +1287,7 @@ Siano le applicazioni
 	{U_{i}}{\R^{n}}
 	{[(a^{0},\dots,a^{n})]}{\left( \dfrac{a^{0}}{a^{i}}, \dfrac{a^{1}}{a^{i}}, \dots, \dfrac{a^{i-1}}{a^{i}}, \dfrac{a^{i+1}}{a^{i}}, \dots, \dfrac{a^{n}}{a^{i}} \right)}
 
-con $ i=0,\dots,n $, cioè eliminiamo l'$ i $-esima componente dal vettore nell'immagine e dividiamo tutte le altre per $ a^{i} $. Queste applicazioni sono ben definite in quanto la proporzionalità tra gli elementi della classe di equivalenza $ [(a^{0},\dots,a^{n})] $ viene assorbita nei rapporti in immagine\footnote{%
+con $ i=0,\dots,n $, cioè eliminiamo l'$ i $-esima componente dal vettore nell'immagine e dividiamo tutte le altre per $ a^{i} $. Queste applicazioni sono ben definite in quanto la proporzionalità tra gli elementi della classe di equivalenza $ [(a^{0},\dots,a^{n})] $ viene assorbita nei rapporti tra le componenti nell'immagine\footnote{%
 	Gli elementi all'interno di una stessa classe appartengono tutti allo stesso spazio vettoriale di dimensione unitaria quindi sono proporzionali gli uni agli altri.%
 }. \\
 Essendo l'unione degli insiemi $ U_{i} $ un ricoprimento per $ \rp{n} $, mostrando che le $ \varphi_{i} $ sono degli omeomorfismi, dimostriamo che $ \mathfrak{M} = \{(U_{i},\varphi_{i})\} $ è un atlante topologico per $ \rp{n} $. \\
@@ -1360,8 +1359,8 @@ entrambi i cambi di carta sono lisci quindi $ \mathfrak{M} $ è un atlante diffe
 \subsection{Grassmanniana come varietà differenziabile}
 
 Siano $ k,n \in \N $ con $ k \leqslant n $, definiamo la \textit{grassmanniana} $ G(k,n) $ come l'insieme di tutti i sottospazi vettoriali di $ \R^{n} $ di dimensione $ k $. \\
-Essendo $ \rp{n} $ l'insieme di tutti i sottospazi vettoriali di dimensione unitaria (i.e. rette) di $ \R^{n+1} $, si ha che
-
+Essendo $ \rp{n} $ l'insieme di tutti i sottospazi vettoriali di dimensione unitaria (i.e. rette) di $ \R^{n+1} $, abbiamo la seguente uguaglianza
+%
 \begin{equation}
 	G(1,n) = \rp{n-1}
 \end{equation}
@@ -1372,7 +1371,7 @@ Vogliamo ora dotare la grassmanniana di una struttura di varietà differenziabil
 \begin{remark}
 	Un $ k $-spazio vettoriale\footnote{%
 		Cioè uno spazio vettoriale di dimensione $ k $.%
-	} $ S $ di $ \R^{n} $ è determinato da $ a_{1},\dots,a_{k} $ vettori linearmente indipendenti di $ \R^{n} $, quindi da una matrice $ A = \bmqty{ a_{1} & \cdots & a_{k} } \in M_{n,k}(\R^{n}) $ di rango $ k $.
+	} $ S $ di $ \R^{n} $ è determinato da $ k $ vettori $ \{a_{1},\dots,a_{k}\} $ linearmente indipendenti di $ \R^{n} $ o, alternativamente, da una matrice $ A = \bmqty{ a_{1} & \cdots & a_{k} } \in M_{n,k}(\R^{n}) $ di rango $ k $.
 \end{remark}
 
 Due matrici $ A $ e $ B $ rappresentano lo stesso $ k $-spazio vettoriale se e solo se le colonne di una sono linearmente dipendenti dalle colonne dell'altra, i.e. $ B = A g $ dove $ g \in GL_{k}(\R) $ ($ g $ è invertibile), perciò le matrici $ A $ e $ B $ sono legate da una trasformazione lineare (detta anche \textit{cambio di base}) nello spazio generato dai vettori colonna che compongono le matrici. \\
@@ -1401,15 +1400,14 @@ L'intento è di dimostrare che $ G(k,n) $ sia una varietà differenziabile di di
 	\dim (G(k,n)) = k (n-k)
 \end{equation}
 
-Come primo passo, associamo la topologia quoziente\footnote{%
-	Vedi Esercizio \ref{exer2-5}.%
-} a $ G(k,n) $: l'insieme $ F(k,n) $ è un aperto in quanto il suo complementare
+Come primo passo, associamo la topologia quoziente a $ G(k,n) $: l'insieme $ F(k,n) $ è un aperto in quanto il suo complementare
 
 \begin{equation}
 	M_{n,k}(\R) \setminus F(k,n) = \left\{ A \in M_{n,k}(\R) \st \rank(A) \leqslant k - 1 \right\} = X_{k-1} (n,k)
 \end{equation}
 
-è chiuso per il Lemma \ref{lemma:clos-matrix}.
+è chiuso per il Lemma \ref{lemma:clos-matrix}. \\
+La grassmanniana è uno spazio topologico connesso e compatto, per la dimostrazione vedi Esercizio \ref{exer2-5}.
 
 \paragraph{Proprietà $ N_{2} $}
 
