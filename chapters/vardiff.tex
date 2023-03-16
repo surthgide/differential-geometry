@@ -1189,13 +1189,13 @@ Se lo spazio di partenza $ \R^{n+1} \setminus \{0\} $ è $ N_{2} $ e la relazion
 
 \paragraph{Proprietà $ T_{2} $}
 
-Sapendo che la proiezione $ \pi $ è aperta, possiamo usare il fatto che l'insieme
+Sapendo che la proiezione $ \pi $ è aperta, possiamo usare la Proposizione \ref{prop:diag-t2}, i.e. l'insieme
 
 \begin{equation}
 	R = \left\{ (x,y) \in \R^{n+1} \setminus \{0\} \times \R^{n+1} \setminus \{0\} \st y=\lambda x, \, \lambda \in \R \setminus \{0\} \right\} \subset \R^{n+1} \setminus \{0\} \times \R^{n+1} \setminus \{0\}
 \end{equation}
 
-sia chiuso in $ \R^{n+1} \setminus \{0\} \times \R^{n+1} \setminus \{0\} $ per dimostrare che il proiettivo reale sia anche $ T_{2} $. \\
+è chiuso in $ \R^{n+1} \setminus \{0\} \times \R^{n+1} \setminus \{0\} $ se e solo se il proiettivo reale è $ T_{2} $. \\
 Per dimostrare che $ R $ sia chiuso, consideriamo l'applicazione
 
 \map{\varphi}
@@ -1362,7 +1362,7 @@ Siano $ k,n \in \N $ con $ k \leqslant n $, definiamo la \textit{grassmanniana} 
 Essendo $ \rp{n} $ l'insieme di tutti i sottospazi vettoriali di dimensione unitaria (i.e. rette) di $ \R^{n+1} $, abbiamo la seguente uguaglianza
 %
 \begin{equation}
-	G(1,n) = \rp{n-1}
+	G(1,n+1) = \rp{n}
 \end{equation}
 
 dunque la grassmanniana può essere pensata come la generalizzazione del proiettivo reale. \\
@@ -1371,7 +1371,7 @@ Vogliamo ora dotare la grassmanniana di una struttura di varietà differenziabil
 \begin{remark}
 	Un $ k $-spazio vettoriale\footnote{%
 		Cioè uno spazio vettoriale di dimensione $ k $.%
-	} $ S $ di $ \R^{n} $ è determinato da $ k $ vettori $ \{a_{1},\dots,a_{k}\} $ linearmente indipendenti di $ \R^{n} $ o, alternativamente, da una matrice $ A = \bmqty{ a_{1} & \cdots & a_{k} } \in M_{n,k}(\R^{n}) $ di rango $ k $.
+	} $ S $ di $ \R^{n} $ è determinato da $ k $ vettori $ \{a_{1},\dots,a_{k}\} $ linearmente indipendenti di $ \R^{n} $ o, alternativamente, da una matrice $ A = \bmqty{ a_{1} & \cdots & a_{k} } \in M_{n,k}(\R^{n}) $ di rango $ k $, con colonne i $ k $ vettori linearmente indipendenti citati sopra.
 \end{remark}
 
 Due matrici $ A $ e $ B $ rappresentano lo stesso $ k $-spazio vettoriale se e solo se le colonne di una sono linearmente dipendenti dalle colonne dell'altra, i.e. $ B = A g $ dove $ g \in GL_{k}(\R) $ ($ g $ è invertibile), perciò le matrici $ A $ e $ B $ sono legate da una trasformazione lineare (detta anche \textit{cambio di base}) nello spazio generato dai vettori colonna che compongono le matrici. \\
@@ -1496,13 +1496,12 @@ i.e. $ A_{ij} $ è invertibile, dove $ A_{ij} $ è la matrice quadrata $ 2 \time
 
 Considerando $ B = A g $ (i.e. $ A \sim B $), abbiamo che $ A_{ij} $ è invertibile se e solo se $ B_{ij} $ è invertibile
 
-\begin{align}
-	\begin{split}
-		A g &= B \\
-		\bmqty{ a_{11} & a_{12} \\ a_{21} & a_{22} \\ a_{31} & a_{32} \\ a_{41} & a_{42} } \bmqty{ g_{11} & g_{12} \\ g_{21} & g_{22} } &= \bmqty{ b_{11} & b_{12} \\ b_{21} & b_{22} \\ b_{31} & b_{32} \\ b_{41} & b_{42} } \\
-		\bmqty{ a_{11} g_{11} + a_{12} g_{21} & a_{11} g_{12} + a_{12} g_{22} \\ a_{21} g_{11} + a_{22} g_{21} & a_{21} g_{12} + a_{22} g_{22} \\ a_{31} g_{11} + a_{32} g_{21} & a_{31} g_{12} + a_{32} g_{22} \\ a_{41} g_{11} + a_{42} g_{21} & a_{41} g_{12} + a_{42} g_{22} } &= \bmqty{ b_{11} & b_{12} \\ b_{21} & b_{22} \\ b_{31} & b_{32} \\ b_{41} & b_{42} }
-	\end{split}
-\end{align}
+\begin{gather}
+	A g = B \nonumber \\
+	\bmqty{ a_{11} & a_{12} \\ a_{21} & a_{22} \\ a_{31} & a_{32} \\ a_{41} & a_{42} } \bmqty{ g_{11} & g_{12} \\ g_{21} & g_{22} } %
+	= \bmqty{ a_{11} g_{11} + a_{12} g_{21} & a_{11} g_{12} + a_{12} g_{22} \\ a_{21} g_{11} + a_{22} g_{21} & a_{21} g_{12} + a_{22} g_{22} \\ a_{31} g_{11} + a_{32} g_{21} & a_{31} g_{12} + a_{32} g_{22} \\ a_{41} g_{11} + a_{42} g_{21} & a_{41} g_{12} + a_{42} g_{22} } %
+	= \bmqty{ b_{11} & b_{12} \\ b_{21} & b_{22} \\ b_{31} & b_{32} \\ b_{41} & b_{42} }
+\end{gather}
 
 perciò $ A_{ij} g = B_{ij} $ e dunque la scelta del rappresentante di $ [A] $ è irrilevante. \\
 Gli insiemi $ U_{ij} $ sono aperti in quanto immagini di aperti $ V_{ij} $ tramite la proiezione $ U_{ij} = \pi(V_{ij}) $, dove 
@@ -1515,16 +1514,16 @@ Gli insiemi $ U_{ij} $ sono aperti in quanto immagini di aperti $ V_{ij} $ trami
 Inoltre abbiamo che l'unione degli $ U_{ij} $ è un ricoprimento di $ G(2,4) $
 
 \begin{equation}
-	G(2,4) = \bigcup_{i,j=1}^{4} U_{ij}
+	G(2,4) = \bigcup_{\substack{ i,j = 1 \\ i < j }}^{4} U_{ij}
 \end{equation}
 
 in quanto l'unione degli $ V_{ij} $ è un ricoprimento di $ F(2,4) $
 
 \begin{equation}
-	F(2,4) = \bigcup_{i,j=1}^{4} V_{ij}
+	F(2,4) = \bigcup_{\substack{ i,j = 1 \\ i < j }}^{4} V_{ij}
 \end{equation}
 
-perché una matrice, per essere di rango $ k=2 $ e quindi appartenere a $ F(2,4) $, deve avere i suoi minori $ m_{ij} = \det(V_{ij}) $ di ordine 2 diversi da zero. \\
+perché una matrice, per essere di rango $ k = 2 $ e quindi appartenere a $ F(2,4) $, deve avere i suoi minori $ m_{ij} = \det(V_{ij}) $ di ordine 2 diversi da zero. \\
 Per costruire le carte dell'atlante, consideriamo l'applicazione
 
 \map{\varphi_{12}}
@@ -1624,7 +1623,7 @@ dove $ c_{12} \neq 0 $ in quanto $ \det(C_{13}) = c_{12} $ e questa deve essere 
 	{\R^{4}}{\R^{4}}
 	{(c_{11}, c_{12}, c_{21}, c_{22})}{\dfrac{1}{c_{12}} (-c_{11}, 1, -\det(C), c_{22})}
 
-la quale ha ogni componente liscia, proprio perché $ c_{12} \neq 0 $; il cambio di carte inverso $ \varphi_{12} \circ (\varphi_{13})^{-1} $ produce lo stesso risultata. Il ragionamento è analogo per gli altri cambi di carte: questo dimostra che $ \mathfrak{M} = \{(U_{ij},\varphi_{ij})\}_{i,j=1,\dots,4} $ è un atlante differenziabile per $ G(2,4) $ e dunque esiste un atlante massimale che lo contiene il quale dota $ G(2,4) $ di struttura di varietà differenziabile.
+la quale ha ogni componente liscia, proprio perché $ c_{12} \neq 0 $; il cambio di carte inverso $ \varphi_{12} \circ (\varphi_{13})^{-1} $ produce lo stesso risultato. Il ragionamento è analogo per gli altri cambi di carte: questo dimostra che $ \mathfrak{M} = \{(U_{ij},\varphi_{ij})\}_{i,j=1,\dots,4} $ è un atlante differenziabile per $ G(2,4) $ e dunque esiste un atlante massimale che lo contiene, il quale dota $ G(2,4) $ di struttura di varietà differenziabile.
 
 \section{Funzioni lisce su e tra varietà differenziabili}
 
