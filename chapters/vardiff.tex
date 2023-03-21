@@ -1680,29 +1680,28 @@ Sia $ F : N \to M $ una funzione tra varietà differenziabili $ N $ e $ M $ di d
 	\psi \circ \eval{F}_{U} \circ \varphi^{-1} : \varphi(F^{-1}(V) \cap U) \to \R^{m}
 \end{equation}
 
-con $ \varphi(F^{-1}(V) \cap U) \subset \R^{n} $, sia liscia in $ \varphi(p) $. Possiamo scrivere $ \eval{F}_{U} \equiv F $ in quanto agisce prima $ \varphi^{-1} $ che restringe il dominio all'aperto $ U $. \\
-Siccome non possiamo sapere se $ F(U) \subset V $, consideriamo l'aperto (in quanto $ F $ è continua) $ F^{-1}(V) \cap U \subset U $
+con $ \varphi(F^{-1}(V) \cap U) \subset \R^{n} $, sia liscia in $ \varphi(p) $. Possiamo scrivere $ \eval{F}_{U} \equiv F $ in quanto agisce prima $ \varphi^{-1} $ che restringe il dominio all'aperto $ U $; consideriamo l'aperto (in quanto $ F $ è continua) $ F^{-1}(V) \cap U \subset U $ in quanto non possiamo sapere se $ F(U) \subset V $.
 
 \img{0.85}{img20}
 
 La definizione non dipende dalle carte scelte, infatti se $ (U',\varphi') $ è una carta di $ N $ intorno a $ p $ e $ (V',\psi') $ è una carta di $ M $ intorno a $ F(p) $, allora
 
 \begin{equation}
-	\psi' \circ F \circ (\varphi')^{-1} = \eval{ [(\psi' \circ \psi^{-1}) \circ (\psi \circ F \circ \varphi^{-1}) \circ (\varphi \circ (\varphi')^{-1})] }_{ \varphi'(F^{-1}(V \cap V') \cap U \cap U') }
+	\psi' \circ F \circ (\varphi')^{-1} = %
+	\eval{ \left( (\psi' \circ \psi^{-1}) \circ (\psi \circ F \circ \varphi^{-1}) \circ (\varphi \circ (\varphi')^{-1}) \right) }_{ \varphi'(F^{-1}(V \cap V') \cap U \cap U') }
 \end{equation}
 
-dove $ \varphi'(F^{-1}(V \cap V') \cap U \cap U') \ni \varphi'(p) $, è liscia perché lo è $ \psi \circ F \circ \varphi^{-1} $ per ipotesi e lo sono $ \psi' \circ \psi^{-1} $ e $ \varphi \circ (\varphi')^{-1} $ perché sono cambi di carte di una struttura differenziabile. \\
+dove $ \varphi'(F^{-1}(V \cap V') \cap U \cap U') \ni \varphi'(p) $, è liscia perché lo è $ \psi \circ F \circ \varphi^{-1} $ per ipotesi e lo sono $ \psi' \circ \psi^{-1} $ e $ \varphi \circ (\varphi')^{-1} $ perché cambi di carte di una struttura differenziabile. \\
 Una funzione $ F : N \to M $ è liscia se lo è in ogni punto $ p \in N $.
 
 \begin{remark}
-	Nel caso in cui lo spazio ambiente sia tutto $ \R^{n} $, i.e. $ F : N \to \R^{n} $, dove la struttura differenziale dello spazio euclideo $ \R^{n} $ è data dall'atlante massimale che contiene $ (\R^{n},\id_{\R^{n}}) $, la funzione $ F $ è liscia in $ p $ se e solo se l'applicazione
+	Nel caso in cui lo spazio ambiente sia tutto $ \R^{n} $, i.e. $ F : N \to \R^{n} $, dove la struttura differenziale dello spazio euclideo $ \R^{n} $ è data dall'atlante massimale che contiene $ (\R^{n},\id_{\R^{n}}) $, la funzione $ F $ è liscia in $ p $ se e solo se è liscia l'applicazione
 	
 	\begin{equation}
 		\id_{\R^{n}} \circ F \circ \varphi^{-1} = F \circ \varphi^{-1} : \varphi(U) \to \R^{n}
 	\end{equation}
 
-	è liscia. \\
-	Per $ n=1 $, questa è la definizione di funzione $ C^{\infty}(N) $.
+	Per $ n = 1 $, questa è la definizione di funzione $ C^{\infty}(N) $.
 \end{remark}
 
 \begin{remark}
@@ -1773,7 +1772,7 @@ Riassumendo, prese due varietà differenziabili $ N $ ed $ M $ e due atlanti dif
 \end{proof}
 
 \begin{proof}[Dimostrazione ($ \impliedby $)]
-	Supponiamo che $ r^{i} \circ F \doteq F^{i} : N \to \R $ sia liscia per $ i=1,\dots,n $. Per qualsiasi $ p \in N $ abbiamo che $ F^{i} \circ \varphi^{-1} : \varphi(U) \to \R $ è liscia se scegliamo una carta $ (U,\varphi) \ni p $, dove $ \varphi(p) \subset \R^{n} $. A questo punto, la funzione
+	Supponiamo che le $ r^{i} \circ F \doteq F^{i} : N \to \R $ siano lisce per $ i=1,\dots,n $. Per qualsiasi $ p \in N $ abbiamo che $ F^{i} \circ \varphi^{-1} : \varphi(U) \to \R $ è liscia se scegliamo una carta $ (U,\varphi) \ni p $, dove $ \varphi(p) \subset \R^{n} $. A questo punto, la funzione
 	
 	\map{F \circ \varphi^{-1}}
 		{\varphi(U)}{\R^{n}}
@@ -1916,7 +1915,7 @@ Sia $ \R $ la varietà differenziabile con atlante $ (\R,\id_{\R}) $ e $ \R' $ l
 
 Queste due strutture differenziali sono diverse: le loro carte non sono $ C^{\infty} $-compatibili, in quanto il seguente cambio di carte è liscio
 
-\map{\id_{\R} \circ \psi^{-1} = \psi^{-1}}
+\map{\id_{\R} \circ \, \psi^{-1} = \psi^{-1}}
 	{\R}{\R}
 	{x}{x^{3}}
 
@@ -1993,8 +1992,7 @@ Solitamente consideriamo $ \S^{n} $ all'interno di $ \R^{n+1} $ e dunque con la 
 \end{definition}
 
 \begin{proof}
-	È sufficiente verificare che $ (U,F) $ sia compatibile con ogni carta $ (U_{\alpha},\varphi_{\alpha}) $ dell'atlante massimale $ \mathfrak{N} $ di $ N $ che definisce la sua struttura differenziabile, cioè appartiene all'atlante stesso. \\
-	Consideriamo dunque i cambi di carte
+	È sufficiente verificare che $ (U,F) $ sia compatibile con ogni carta $ (U_{\alpha},\varphi_{\alpha}) $ dell'atlante massimale $ \mathfrak{N} $ di $ N $ che definisce la sua struttura differenziabile, cioè appartiene all'atlante stesso. Consideriamo dunque i cambi di carte
 	
 	\begin{gather}
 		F \circ (\varphi_{\alpha})^{-1} : \varphi_{\alpha}(U_{\alpha} \cap U) \to F(U_{\alpha} \cap U) \\
@@ -2046,11 +2044,11 @@ Solitamente consideriamo $ \S^{n} $ all'interno di $ \R^{n+1} $ e dunque con la 
 	\map{\varphi_{\alpha} \circ \pi_{N} \circ (\varphi_{\alpha} \times \psi_{\beta})^{-1}}
 	{\varphi_{\alpha}(U_{\alpha}) \times \psi_{\beta}(V_{\beta})}{\R^{n}}
 	{(a^{1},\dots,a^{n},b^{1},\dots,b^{m})}{%
-		\varphi_{\alpha} (\pi_{N} ((\varphi_{\alpha}^{-1} \times \psi_{\beta}^{-1}) ((a^{1},\dots,a^{n},b^{1},\dots,b^{m})))) \\
-		&\mapsto \varphi_{\alpha} (\pi_{N} ((\varphi_{\alpha}^{-1}((a^{1},\dots,a^{n})),\psi_{\beta}^{-1}((b^{1},\dots,b^{m})))) \\
-		&\mapsto \varphi_{\alpha} (\varphi_{\alpha}^{-1}((a^{1},\dots,a^{n}))) \\
+		(\varphi_{\alpha} \circ \pi_{N}) \left( (\varphi_{\alpha}^{-1} \times \psi_{\beta}^{-1}) (a^{1},\dots,a^{n},b^{1},\dots,b^{m}) \right) \\
+		&\mapsto (\varphi_{\alpha} \circ \pi_{N}) \left( \varphi_{\alpha}^{-1}(a^{1},\dots,a^{n}),\psi_{\beta}^{-1}(b^{1},\dots,b^{m}) \right) \\
+		&\mapsto \varphi_{\alpha} \left( \varphi_{\alpha}^{-1}(a^{1},\dots,a^{n}) \right) \\
 		&\mapsto (a^{1},\dots,a^{n})
-	}
+		}
 \end{proof}
 
 \begin{remark}
@@ -2064,7 +2062,7 @@ Solitamente consideriamo $ \S^{n} $ all'interno di $ \R^{n+1} $ e dunque con la 
 \end{remark}
 
 \begin{proof}[Dimostrazione ($ \implies $)]
-	Se $ F $ è liscia allora le sue componenti $ F_{i} = \pi_{i} \circ F $ (con $ \pi_{i} : M_{1} \times M_{2} \to M_{i} $) devono essere lisce: questo è verificato perché $ \pi_{i} \in C^{\infty} $ per $ i=1,2 $, dunque la composizione che risulta in $ F_{i} $ è liscia.
+	Se $ F $ è liscia allora le sue componenti $ F_{i} = \pi_{i} \circ F $ (con $ \pi_{i} : M_{1} \times M_{2} \to M_{i} $) devono essere lisce: questo è verificato perché $ \pi_{i} \in C^{\infty}(M_{1} \times M_{2}) $ per $ i=1,2 $, dunque la composizione che risulta in $ F_{i} $ è liscia.
 \end{proof}
 
 \begin{proof}[Dimostrazione ($ \impliedby $)]
