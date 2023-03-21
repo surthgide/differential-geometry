@@ -157,7 +157,7 @@ Per semplificare il calcolo, consideriamo il caso per $ k = 2 $ e $ n = 4 $: pos
 	F(2,4) = \left\{ A = \bmqty{ a_{11} & a_{12} \\ a_{21} & a_{22} \\ a_{31} & a_{32} \\ a_{41} & a_{42} } \in M_{4,2}(\R) \st \rank(A) = 2 \right\}
 \end{equation}
 
-Possiamo associare a questo spazio un atlante $ \{(V_{ij},\psi_{ij})\}_{\{i,j\} = \{1,2,3,4\}} $ dove
+Possiamo associare a questo spazio un atlante $ \{(V_{ij},\psi_{ij})\} $ dove
 
 \begin{equation}
 	V_{ij} = \left\{ A \in F(2,4) \st A_{ij} \in GL_{2}(\R) \right\} %
@@ -176,7 +176,7 @@ Possiamo associare a questo spazio un atlante $ \{(V_{ij},\psi_{ij})\}_{\{i,j\} 
 Essendo $ \psi_{ij} $ un omeomorfismo, i.e.
 
 \begin{equation}
-	V_{ij} \stackrel{omeo}{\simeq} \R^{4} \qcomma \forall i,j \in \{1,2,3,4\}
+	V_{ij} \stackrel{omeo}{\simeq} \R^{4} \qcomma \forall \{i,j\} \in \{1,2,3,4\}
 \end{equation}
 
 ogni carta $ V_{ij} $ è connessa in quanto $ \R^{4} $ è connesso e l'omeomorfismo preserva la connessione. \\
@@ -184,8 +184,8 @@ Siccome le carte dell'atlante formano un ricoprimento per $ F(2,4) $ e queste ca
 
 \begin{equation}
 	\begin{cases}
-		V_{ij} \stackrel{omeo}{\simeq} \R^{4}, & \forall i,j \in \{1,2,3,4\} \\
-		V_{ij} \cap V_{lm} \neq \emptyset, & \forall i,j,l,m \in \{1,2,3,4\}
+		V_{ij} \stackrel{omeo}{\simeq} \R^{4}, & \forall \{i,j\} \in \{1,2,3,4\} \\
+		V_{ij} \cap V_{lm} \neq \emptyset, & \forall \{i,j,l,m\} \in \{1,2,3,4\}
 	\end{cases} %
 	\implies %
 	F(2,4) \text{ connesso}
@@ -307,7 +307,7 @@ otteniamo che
 	\norm{A} = \sqrt{k} < + \infty \qcomma \forall A \in H(k,n)
 \end{equation}
 
-Essendo chiuso e limitato in $ M_{n,k}(\R) = \R^{nk} $, $ H(k,n) $ è compatto. \\
+Essendo chiuso e limitato in $ M_{n,k}(\R) = \R^{nk} $, $ H(k,n) $ è compatto per il teorema di Heine-Borel. \\
 Due matrici di $ H(k,n) $ generano lo stesso spazio vettoriale se e solo se esiste una matrice ortogonale\footnote{%
 	In generale, è sufficiente che la matrice sia invertibile, ma se la base è ortonormale allora la matrice deve essere ortogonale.%
 } che le lega
@@ -430,20 +430,20 @@ Calcoliamo esplicitamente queste composizioni:
 \sbs{0.5}{%
 			\map{\eval{f}_{\S^{1}} \circ \varphi_{1}^{-1}}
 				{(-1,1)_{x}}{\R}
-				{x}{f (x,\sqrt{1-x^{2}})}
+				{x}{f \left( x,\sqrt{1-x^{2}} \right)}
 			
 			\map{\eval{f}_{\S^{1}} \circ \varphi_{2}^{-1}}
 				{(-1,1)_{x}}{\R}
-				{x}{f (x,-\sqrt{1-x^{2}})}
+				{x}{f \left(x,-\sqrt{1-x^{2}} \right)}
 			}
 	{0.5}{%
 			\map{\eval{f}_{\S^{1}} \circ \varphi_{3}^{-1}}
 				{(-1,1)_{y}}{\R}
-				{y}{f (\sqrt{1-y^{2}},y)}
+				{y}{f \left(\sqrt{1-y^{2}},y \right)}
 			
 			\map{\eval{f}_{\S^{1}} \circ \varphi_{4}^{-1}}
 				{(-1,1)_{y}}{\R}
-				{y}{f (-\sqrt{1-y^{2}},y)}
+				{y}{f \left(-\sqrt{1-y^{2}},y \right)}
 			}
 
 Possiamo dunque vedere che sono tutte lisce in quanto composizioni di $ f \in C^{\infty}(\R^{2}) $ e applicazioni lisce, poiché le derivate degli argomenti di $ f $ nelle immagini delle composizioni hanno delle radici quadrate al denominatore che però non si annullano nei punti del dominio. A questo punto, la restrizione $ \eval{f}_{\S^{1}} $ è liscia in qualsiasi punto del cerchio $ \S^{1} $, perciò $ \eval{f}_{\S^{1}} \in C^{\infty}(\S^{1}) $.
