@@ -2112,7 +2112,7 @@ sono lisce dunque è un gruppo di Lie.
 
 \paragraph{2) $ \R \setminus \{0\} $ e prodotto}
 
-Il gruppo $ (\R \setminus \{0\},\cdot) $ è una varietà differenziabile e dunque gruppo di Lie in quanto
+Il gruppo $ (\R \setminus \{0\},\cdot) $ è una varietà differenziabile e dunque gruppo di Lie in quanto le seguenti operazioni sono lisce
 
 \sbs{0.5}{%
 			\map{\cdot}
@@ -2125,8 +2125,6 @@ Il gruppo $ (\R \setminus \{0\},\cdot) $ è una varietà differenziabile e dunqu
 				{x}{x^{-1}}
 			}
 
-sono lisce.
-
 \paragraph{3) Cerchio unitario}
 
 Il cerchio unitario
@@ -2135,7 +2133,7 @@ Il cerchio unitario
 	\S^{1} = \{ z \in \C \, \mid \, \norm{z} = 1 \} \subset \C = \R^{2}
 \end{equation}
 
-dove $ \C $ indica l'insieme dei numeri complessi, è un gruppo di Lie in quanto
+dove $ \C $ indica l'insieme dei numeri complessi, è un gruppo di Lie in quanto le seguenti operazioni sono lisce
 
 \sbs{0.5}{%
 			\map{\cdot}
@@ -2147,8 +2145,6 @@ dove $ \C $ indica l'insieme dei numeri complessi, è un gruppo di Lie in quanto
 				{\S^{1}}{\S^{1}}
 				{z}{z^{-1}}
 			}
-
-sono lisce.
 
 \paragraph{4) Prodotto diretto}
 
@@ -2177,7 +2173,7 @@ Se $ A = (a_{ij}) $ e $ B = (b_{jk}) $ allora
 	(A B)_{ik} = \sum_{j=1}^{n} a_{ij} b_{jk}
 \end{equation}
 
-dunque $ \mu \in C^{\infty} $ in quanto somma e prodotto di funzioni lisce. \\
+dunque $ \mu \in C^{\infty}(GL_{n}(\R) \times GL_{n}(\R)) $ in quanto somma e prodotto di applicazioni lisce. \\
 L'inversione è definita come
 
 \map{i}
@@ -2196,7 +2192,7 @@ dove le $ A_{ij} $ sono le sottomatrici di $ A $ (le matrici a cui sono state to
 	A^{-1} = \dfrac{1}{\det(A)} \, \mathcal{C}^{T}
 \end{equation}
 
-dunque l'inversione è liscia in quanto composizione di funzioni lisce.
+dunque l'inversione è liscia in quanto composizione di applicazioni lisce.
 
 \subsection{Derivate parziali su varietà differenziabili}
 
@@ -2236,13 +2232,12 @@ Tramite questa, possiamo quindi esprimere la derivata parziale come:
 La dipendenza dalle carte scelte per la varietà è analoga alla scelta delle coordinate per $ \R^{n} $ (e.g. standard vs. polari).
 
 \begin{definition}
-	Presa una funzione $ f \in C^{\infty} $ su una varietà, la sua derivata parziale
+	Presa una funzione $ f $ liscia su una varietà, la sua derivata parziale è ancora liscia
 	
 	\begin{equation}
-		\pdv{f}{x^{i}} \, (p) \doteq \eval{ \pdv{r^{i}} }_{\varphi(p)} (f \circ \varphi^{-1}) : U \to \R
+		\pdv{f}{x^{i}} \doteq \pdv{r^{i}} (f \circ \varphi^{-1}) : U \to \R %
+		\qq{dove} \pdv{f}{x^{i}} \in C^{\infty}(U)
 	\end{equation}
-
-	è ancora liscia.
 \end{definition}
 
 \begin{proof}
@@ -2258,8 +2253,8 @@ La dipendenza dalle carte scelte per la varietà è analoga alla scelta delle co
 	\begin{equation}
 		\pdv{f}{x^{i}} \circ \varphi^{-1} = \pdv{(f \circ \varphi^{-1})}{r^{i}} \qcomma \forall i=1,\dots,n
 	\end{equation}
-
-	la quale è la derivata di una composizione di funzioni lisce, i.e. $ f \circ \varphi^{-1} $. Deduciamo dunque che la derivata è liscia in quanto l'equazione sopra corrisponde alla definizione di funzione liscia su varietà.
+	
+	Per ipotesi, $ f $ è liscia e dunque, per definizione, lo è anche la composizione $ f \circ \varphi^{-1} $: l'equazione sopra è la derivata in uno spazio euclideo di una funzione liscia quindi è ancora liscia.
 \end{proof}
 
 \subsubsection{\textit{Esempio}}
@@ -2276,7 +2271,7 @@ Infatti, usando la definizione
 	\pdv{x^{i}}{x^{j}} \, (p) = \pdv{(x^{i} \circ \varphi^{-1})}{r^{j}} \, (\varphi(p))
 \end{equation}
 
-con $ p \in U $ e $ r^{j} $ le coordinate standard di $ \R^{n} $. A questo punto, siccome $ x^{i} = \varphi \circ r^{i} $, abbiamo che
+con $ p \in U $ e $ r^{j} $ le coordinate standard di $ \R^{n} $. A questo punto, siccome $ x^{i} = r^{i} \circ \varphi $, abbiamo che
 
 \begin{equation}
 	\pdv{x^{i}}{x^{j}} \, (p) = \pdv{r^{i}}{r^{j}} \, (\varphi(p)) = \delta^{ij}
@@ -2285,15 +2280,15 @@ con $ p \in U $ e $ r^{j} $ le coordinate standard di $ \R^{n} $. A questo punto
 \subsection{Jacobiano per applicazioni tra varietà}
 
 Sia un'applicazione liscia $ F : N \to M $ con $ N $ e $ M $ varietà differenziabili di dimensione $ n $ e $ m $ rispettivamente; fissiamo due carte $ (U,\varphi) \in N $ e $ (V,\psi) \in M $, dove $ F(U) \subset V $: è sempre possibile fare in modo che quest'ultima relazione sia valida e inoltre non restrittivo in quanto è possibile prendere l'aperto $ U $ arbitrariamente piccolo affinché si verifichi questa condizione\footnote{%
-	Qualunque aperto contenuto in una carta definisce ancora una carta nella struttura differenziabile: se $ U \subset U_{\alpha} $ dove $ (U_{\alpha},\varphi_{\alpha}) $ è una carta della varietà differenziabile, allora $ (U, \eval{\varphi_{\alpha}}_{U}) $ è ancora una carta della stessa varietà.%
+	Qualunque aperto contenuto in una carta definisce ancora una carta nella struttura differenziabile: se $ U \subset U_{\alpha} $ dove $ (U_{\alpha},\varphi_{\alpha}) $ è una carta della varietà differenziabile, allora $ \left( U, \eval{\varphi_{\alpha}}_{U} \right) $ è ancora una carta della stessa varietà.%
 }. \\
-Sia la componente $ i $-esima di $ F $ rispetto alle coordinate $ (y^{1},\dots,y^{m}) $
+Sia la componente $ i $-esima di $ F $ rispetto alle coordinate $ \psi = (y^{1},\dots,y^{m}) $
 
 \begin{equation}
 	F^{i} = y^{i} \circ F = r^{i} \circ \psi \circ F \qcomma i=1,\dots,m
 \end{equation}
 
-dove $ \psi = (y^{1},\dots,y^{m}) $. L'applicazione $ F^{i} : U \to \R $ è $ C^{\infty}(U) $, quindi possiamo definire le sue derivate parziali
+L'applicazione $ F^{i} : U \to \R $ appartiene a $ C^{\infty}(U) $, quindi possiamo definire le sue derivate parziali
 
 \begin{equation}
 	\pdv{F^{i}}{x^{j}} : U \to \R
@@ -2324,7 +2319,7 @@ Nel caso in cui $ N = \R^{n} $ e $ M = \R^{m} $
 \end{equation}
 
 in quanto le carte hanno come applicazioni delle identità. \\
-Se la dimensione della varietà di partenza è uguale alla dimensione della varietà di arrivo $ n=m $, allora $ J \in M_{n}(\R) $ e il suo determinante $ \det(J) $ si chiama \textit{determinante jacobiano}.
+Se la dimensione della varietà di partenza è uguale alla dimensione della varietà di arrivo, i.e. $ n = m $, allora $ J \in M_{n}(\R) $ e il suo determinante $ \det(J) $ si chiama \textit{determinante jacobiano}.
 
 \subsubsection{Matrice jacobiana del cambio di coordinate}
 
@@ -2440,7 +2435,7 @@ Questa estensione alle varietà è naturale in quanto possiamo scrivere l'applic
 \end{proof}
 
 \begin{proof}[Dimostrazione ($ \impliedby $)]
-	Se il determinante dello jacobiano è diverso da zero, tramite IFT, abbiamo che $ F $ è un diffeomorfismo locale in $ p $, i.e. $ F : W \to F(W) \subset \R^{n} $ con $ p \in W \subset U $ è un diffeomorfismo. \\
+	Se il determinante dello jacobiano è diverso da zero, tramite IFT, abbiamo che $ F $ è un diffeomorfismo locale in $ p $, i.e. $ F : W \to F(W) \subset \R^{n} $ è un diffeomorfismo, dove $ p \in W \subset U $. \\
 	La funzione $ F $ è compatibile con tutte le carte $ (U_{\alpha},\varphi_{\alpha}) $ della varietà differenziabile, in quanto i cambi di carte
 				
 	\begin{gather}
@@ -2755,7 +2750,7 @@ i.e.
 	(F_{*p})^{-1} = G_{*F(p)}
 \end{equation}
 
-perciò $  $ (inversa destra e sinistra), dunque esiste un'applicazione $ \R $-lineare invertibile che lega i due spazi vettoriali, i.e. $ T_{p}(N) \simeq T_{F(p)}(M) $ attraverso il differenziale $ F_{*p} $.
+dunque esiste un'applicazione $ \R $-lineare invertibile che lega i due spazi vettoriali, i.e. $ T_{p}(N) \simeq T_{F(p)}(M) $ attraverso il differenziale $ F_{*p} $.
 
 \paragraph{4. Invarianza differenziabile della dimensione}
 
@@ -2766,15 +2761,15 @@ perciò $  $ (inversa destra e sinistra), dunque esiste un'applicazione $ \R $-l
 Conseguentemente a questo teorema, la definizione di varietà differenziabile è ben posta in quanto un diffeomorfismo non può legare due aperti di dimensione diversa.
 
 \begin{proof}
-	Essendo $ F : U \to V $ un diffeomorfismo, sappiamo che
+	Essendo $ F : U \to V $ un diffeomorfismo, sappiamo che\footnote{%
+		Si possono identificare gli spazi tangenti in $ U $ e $ V $ con i rispettivi in $ \R^{n} $ e $ \R^{m} $ in quanto l'algebra considerata non dipende dall'aperto scelto intorno al punto, e.g. $ C_{p}^{\infty}(U) = C_{p}^{\infty}(\R^{n}) $.%
+	}
 	
 	\begin{equation}
 		F_{*p} : T_{p}(U) = T_{p}(\R^{n}) \to T_{F(p)}(V) = T_{F(p)}(\R^{m})
 	\end{equation}
 
-	è un isomorfismo\footnote{%
-		Si possono identificare gli spazi tangenti in $ U $ e $ V $ con i rispettivi in $ \R^{n} $ e $ \R^{m} $ in quanto l'algebra considerata non dipende dall'aperto scelto intorno al punto, e.g. $ C_{p}^{\infty}(U) = C_{p}^{\infty}(\R^{n}) $.%
-	}, ma un isomorfismo tra due spazi di dimensione finita può esistere solo se i due spazi hanno la stessa dimensione, il che implica
+	è un isomorfismo, ma un isomorfismo tra due spazi di dimensione finita può esistere solo se i due spazi hanno la stessa dimensione, il che implica
 	
 	\begin{equation}
 		\dim(T_{p}(\R^{n})) = \dim(T_{F(p)}(\R^{m})) \implies n = m
