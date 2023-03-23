@@ -2902,12 +2902,12 @@ In generale, sia un'applicazione lineare
 	{\R^{n}}{\R^{m}}
 	{v}{A v}
 
-dove $ v = [r^{1},\dots,r^{n}]^{T} $ e $ A = [A_{ij}] \in M_{m,n}(\R) $, allora il suo jacobiano coincide proprio con la matrice della rappresentazione della funzione, i.e. $ J(L)(v) \equiv A $. Dato questo, possiamo scrivere che se un'applicazione è lineare allora $ L_{*v} \equiv L $. \\
+dove $ v = \bmqty{ r^{1} & \cdots & r^{n} }^{T} $ e $ A = [A_{ij}] \in M_{m,n}(\R) $, allora il suo jacobiano coincide proprio con la matrice della rappresentazione della funzione, i.e. $ J(L) \equiv A $. Dato questo, possiamo scrivere che se un'applicazione è lineare allora $ L_{*v} \equiv L $. \\
 Per un esempio, vedi Esercizio \ref{exer2-8}.
 
 \paragraph{7. Cambio di base}
 
-Siano $ N $ una varietà differenziabile, un suo punto $ p \in N $, e $ (U,\varphi) $ e $ (U,\psi) $ due sue carte con $ \varphi = (x^{1},\dots,x^{n}) $ e $ \psi = (y^{1},\dots,y^{n}) $. Le basi per $ T_{p}(N) $ date da queste due funzioni sono legate da
+Siano una varietà differenziabile $ N $, un suo punto $ p \in N $, e due sue carte $ (U,\varphi) $ e $ (U,\psi) $ con $ \varphi = (x^{1},\dots,x^{n}) $ e $ \psi = (y^{1},\dots,y^{n}) $. Le basi per $ T_{p}(N) $ date da queste due funzioni sono legate da
 
 \begin{equation}
 	\eval{ \pdv{x^{j}} }_{p} = \sum_{k=1}^{n} \pdv{y^{k}}{x^{j}} \, (p) \left( \eval{ \pdv{y^{k}} }_{p} \right)
@@ -2948,12 +2948,22 @@ Per un esempio, vedi Esercizio \ref{exer2-9}.
 
 \paragraph{8. Matrice dell'applicazione differenziale (varietà differenziabili)}
 
-Siano un'applicazione liscia $ F : N \to M $, un punto $ p \in N $, e due carte $ (U,\varphi) \in N $ e $ (V,\psi) \in M $ con $ \varphi = (x^{1},\dots,x^{n}) $ e $ \psi = (y^{1},\dots,y^{n}) $ tali che $ F(U) \subset V $. Siano inoltre le basi per gli spazi tangenti
+Siano un'applicazione liscia $ F : N \to M $, un punto $ p \in N $, e due carte
 
-\begin{align}
+\begin{equation}
+	\begin{cases}
+		(U,\varphi) = (U; x^{1},\dots,x^{n}) \in N \\
+		(V,\psi) = (V; y^{1},\dots,y^{m}) \in M \\
+		F(U) \subset V
+	\end{cases}
+\end{equation}
+
+Siano inoltre le basi per gli spazi tangenti
+
+\begin{gather}
 	\B_{T_{p}(N)} = \left\{ \eval{ \pdv{x^{1}} }_{p}, \dots, \eval{ \pdv{x^{n}} }_{p} \right\} \\
 	\B_{T_{F(p)}(M)} = \left\{ \eval{ \pdv{y^{1}} }_{F(p)}, \dots, \eval{ \pdv{y^{m}} }_{F(p)} \right\}
-\end{align}
+\end{gather}
 
 La matrice associata al differenziale $ F_{*p} : T_{p}(N) \to T_{F(p)}(M) $ rispetto alla base $ \B_{T_{p}(N)} $ è la matrice jacobiana
 
@@ -2978,7 +2988,7 @@ perciò
 	
 	\begin{align}
 		\begin{split}
-			\sum_{k=1}^{n} a_{kj} \left( \eval{ \pdv{y^{k}} }_{F(p)} \right) &= \sum_{k=1}^{n} a_{kj} \pdv{y^{i}}{y^{k}} \, (F(p)) \\
+			\sum_{k=1}^{n} a_{kj} \left( \eval{ \pdv{y^{k}} }_{F(p)} \right) (y^{i}) &= \sum_{k=1}^{n} a_{kj} \pdv{y^{i}}{y^{k}} \, (F(p)) \\
 			&= \sum_{k=1}^{n} a_{kj} \pdv{y^{i}}{y^{k}} \\
 			&= \sum_{k=1}^{n} a_{kj} \delta_{ik} \\
 			&= a_{ij}
@@ -2998,7 +3008,7 @@ perciò
 	perciò
 	
 	\begin{equation}
-	a_{ij} = \pdv{y^{i}}{x^{j}} \, (p)
+	a_{ij} = \pdv{F^{i}}{x^{j}} \, (p)
 	\end{equation}
 \end{proof}
 
@@ -3033,7 +3043,7 @@ Il simbolo $ \circ $ indica la composizione ma, nella teoria delle categorie, no
 
 \subsubsection{\textit{Esempi}}
 
-In tutti gli esempi che seguono tutte le proprietà delle categorie sono soddisfatte e la composizione $ \circ $ corrisponde a quella usuale per ogni caso considerato.
+In tutti gli esempi che seguono tutte le proprietà delle categorie sono soddisfatte e la composizione $ \circ $ corrisponde a quella usuale.
 
 \paragraph{0) Insiemi}
 
@@ -3239,8 +3249,8 @@ rispettando l'identità e la composizione, i.e.
 		{0.5}{%
 				\begin{align}
 					\begin{split}
-						\mathcal{F}(f \circ g) = \mathcal{F}(\bigone_{B}) \\
-						\mathcal{F}(f) \circ \mathcal{F}(g) = \bigone_{\mathcal{F}(B)}
+						\mathcal{F}(f \circ g) &= \mathcal{F}(\bigone_{B}) \\
+						\mathcal{F}(f) \circ \mathcal{F}(g) &= \bigone_{\mathcal{F}(B)}
 					\end{split}
 				\end{align}
 				}
@@ -3399,7 +3409,7 @@ perciò
 nel caso in cui il codominio sia $ \R $.
 
 \begin{definition}[Espressione locale del vettore tangente a una curva liscia]\label{prop:loc-exp-tan-cur}
-	Siano $ c : (a,b) \to N $ una curva liscia e $ (U,\varphi) \in N $ una carta con $ \varphi = (x^{1},\dots,x^{n}) $ tale che $ c((a,b)) \in U $.
+	Siano $ c : (a,b) \to N $ una curva liscia e $ (U,\varphi) \in N $ una carta con $ \varphi = (x^{1},\dots,x^{n}) $ tale che $ c((a,b)) \subset U $.
 	
 	\img{0.5}{img25}
 	

@@ -558,22 +558,22 @@ vale
 \end{equation}
 
 dove $ F^{k} = y^{k} \circ F $. \\
-Essendo il differenziale un'applicazione lineare, considerando $ X_{p} \in T_{p}(N) $ possiamo anche scrivere
+Essendo il differenziale un'applicazione lineare, considerando $ X_{p} \in T_{p}(N) $, possiamo scrivere
 
 \begin{equation}
-	F_{*p} (X_{p}) = A(p) X_{p} = Y_{F(p)} \in T_{F(p)}(M)
+	F_{*p} (X_{p}) = J(F)(p) X_{p} = Y_{F(p)} \in T_{F(p)}(M)
 \end{equation}
 
 dove
 
 \begin{equation}
-	A(p) = \left[ \pdv{F^{k}}{x^{j}} \, (p) \right]
+	J(F)(p) \doteq \left[ \pdv{F^{k}}{x^{j}} \, (p) \right]
 \end{equation}
 
 Per la funzione considerata, abbiamo che
 
 \begin{equation}
-	A(x,y) = \bmqty{ 1 & 0 \\ 0 & 1 \\ y & x }
+	J(F)(x,y) = \bmqty{ 1 & 0 \\ 0 & 1 \\ y & x }
 \end{equation}
 
 Siccome possiamo identificare $ T_{p}(\R^{k}) = \R^{k} $, è possibile scrivere
@@ -674,7 +674,7 @@ dunque
 Sia $ p = (x,y) $ un punto di $ \R^{2} $. Allora
 
 \begin{equation}
-	c_{p}(t) = \mqty( \cos(2t) & -\sin(2t) \\ \\ \sin(2t) & \cos(2t) ) \mqty(x \\ y)
+	c_{p}(t) = \bmqty{ \cos(2t) & - \sin(2t) \\ \\ \sin(2t) & \cos(2t) } \bmqty{ x \\ y }
 \end{equation}
 
 è una curva liscia in $ \R^{2} $ che inizia in $ p $. Calcolare $ c'(0) $.
@@ -696,7 +696,7 @@ Dalla Proposizione \ref{prop:loc-exp-tan-cur} considerando $ \R^{2} $ come varie
 	= \dot{c}_{1}(0) \eval{ \pdv{x} }_{p} + \dot{c}_{2}(0) \eval{ \pdv{y} }_{p}
 \end{equation}
 
-in quanto la curva inizia in $ p $, i.e. $ p = c(0) $.
+in quanto la curva inizia in $ p $, i.e. $ c(0) = p $.
 
 Calcoliamo dunque le componenti del vettore tangente:
 
