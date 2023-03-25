@@ -3713,10 +3713,10 @@ abbiamo che $ \dot{c}(0) = X = [X_{ij}] $ perciò
 	= \sum_{i,j=1}^{n} (g \, X)_{ij} \eval{ \pdv{r_{ij}} }_{g}
 \end{equation}
 
-che può essere identificato naturalmente con la matrice $ g \, X $ quindi, tramite le identificazioni $ X_{I} \equiv X $ e $ L_{g_{*I}}(X_{I}) \equiv g \, X $ derivate dall'identificazione tra gli spazi $ T_{I}(GL_{n}(\R)) = T_{g}(GL_{n}(\R)) = M_{n}(\R) $, possiamo scrivere
+che può essere identificato naturalmente con la matrice $ g \, X $ quindi, tramite le identificazioni $ X_{I} \equiv X $ e $ (L_{g})_{*I}(X_{I}) \equiv g \, X $ derivate dall'identificazione tra gli spazi $ T_{I}(GL_{n}(\R)) = T_{g}(GL_{n}(\R)) = M_{n}(\R) $, possiamo scrivere
 
 \begin{equation}
-	L_{g_{*I}}(X) = g \, X
+	(L_{g})_{*I}(X) = g \, X
 \end{equation}
 
 Il differenziale di $ L_{g} $ valutato nella matrice identità $ I $ corrisponde dunque alla moltiplicazione a sinistra per $ g $, i.e. $ (L_{g})_{*I} \equiv L_{g} $ in quanto la moltiplicazione a sinistra per $ g $ è un'applicazione lineare\footnote{%
@@ -3725,7 +3725,7 @@ Il differenziale di $ L_{g} $ valutato nella matrice identità $ I $ corrisponde
 
 \paragraph{2) Differenziale della moltiplicazione e dell'inversione in un gruppo di Lie}\label{example:differ-prod-inv-lie}
 
-Sia $ G $ un gruppo di Lie\footnote{%
+Siano $ G $ un gruppo di Lie\footnote{%
 	Se $ G $ è un gruppo di Lie, allora è una varietà differenziale e un gruppo algebrico con operazioni lisce
 	
 	\sbs{0.45}{%
@@ -3745,9 +3745,9 @@ Sia $ G $ un gruppo di Lie\footnote{%
 	i_{*e} : T_{e}(G) \to T_{e}(G)
 \end{gather}
 
-Sappiamo che\footnote{%
+Sappiamo che, prese $ N $ e $ M $ due varietà differenziali con $ p \in N $ e $ q \in M $, si ha che lo spazio tangente al prodotto delle varietà differenziali è isomorfo al prodotto degli spazi tangenti alle singole varietà\footnote{%
 	Vedi Esercizio \ref{exer2-11}.%
-}, prese $ N $ e $ M $ due varietà differenziali con $ p \in N $ e $ q \in M $, si ha che lo spazio tangente al prodotto delle varietà differenziali è isomorfo al prodotto degli spazi tangenti alle singole varietà, i.e.
+}, i.e.
 
 \begin{equation}
 	T_{(p,q)}(N \times M) \simeq T_{p}(N) \times T_{q}(M)
@@ -3787,10 +3787,10 @@ da cui per il primo addendo
 
 in quanto $ \gamma \doteq (c(t),e) $ è una curva per il quale valgono
 
-\begin{equation}
+\begin{gather}
 	\gamma(0) = (e,e) \\
 	\gamma'(0) = (c'(0),0) = (X_{e},0)
-\end{equation}
+\end{gather}
 
 Siccome  $ \mu $ è la moltiplicazione abbiamo che
 
