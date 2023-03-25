@@ -2881,13 +2881,11 @@ allora
 
 A questo punto possiamo calcolare il primo membro applicato a $ r^{i} $
 
-\begin{align}
-	\begin{split}
-		F_{*p} \left( \eval{ \pdv{r^{j}} }_{p} \right) (r^{i}) &= \eval{ \pdv{r^{j}} }_{p} (r^{i} \circ F) \\
-		&= \eval{ \pdv{r^{j}} }_{p} F^{i} \\
-		&= \pdv{F^{i}}{r^{j}} \, (p)
-	\end{split}
-\end{align}
+\begin{equation}
+	F_{*p} \left( \eval{ \pdv{r^{j}} }_{p} \right) (r^{i}) = \eval{ \pdv{r^{j}} }_{p} (r^{i} \circ F) %
+	= \eval{ \pdv{r^{j}} }_{p} F^{i} %
+	= \pdv{F^{i}}{r^{j}} \, (p)
+\end{equation}
 
 perciò
 
@@ -2922,14 +2920,12 @@ Siano una varietà differenziabile $ N $, un suo punto $ p \in N $, e due sue ca
 
 	Per trovare le $ a_{kj} $ applico entrambi i membri dell'equazione precedente alla funzione $ y^{i} : U \to \R $. Per il secondo membro
 	
-	\begin{align}
-		\begin{split}
-			\sum_{k=1}^{n} a_{kj} \left( \eval{ \pdv{y^{k}} }_{p} y^{i} \right) &= \sum_{k=1}^{n} a_{kj} \pdv{y^{i}}{y^{k}} \, (p) \\
-			&= \sum_{k=1}^{n} a_{kj} \pdv{y^{i}}{y^{k}} \\
-			&= \sum_{k=1}^{n} a_{kj} \delta_{ik} \\
-			&= a_{ij}
-		\end{split}
-	\end{align}
+	\begin{equation}
+		\sum_{k=1}^{n} a_{kj} \left( \eval{ \pdv{y^{k}} }_{p} y^{i} \right) = \sum_{k=1}^{n} a_{kj} \pdv{y^{i}}{y^{k}} \, (p) %
+		= \sum_{k=1}^{n} a_{kj} \pdv{y^{i}}{y^{k}} %
+		= \sum_{k=1}^{n} a_{kj} \delta_{ik} %
+		= a_{ij}
+	\end{equation}
 
 	per il primo membro
 	
@@ -2986,24 +2982,20 @@ perciò
 	
 	Se applichiamo il secondo membro alla funzione $ y^{i} $
 	
-	\begin{align}
-		\begin{split}
-			\sum_{k=1}^{n} a_{kj} \left( \eval{ \pdv{y^{k}} }_{F(p)} \right) (y^{i}) &= \sum_{k=1}^{n} a_{kj} \pdv{y^{i}}{y^{k}} \, (F(p)) \\
-			&= \sum_{k=1}^{n} a_{kj} \pdv{y^{i}}{y^{k}} \\
-			&= \sum_{k=1}^{n} a_{kj} \delta_{ik} \\
-			&= a_{ij}
-		\end{split}
-	\end{align}
+	\begin{equation}
+		\sum_{k=1}^{n} a_{kj} \left( \eval{ \pdv{y^{k}} }_{F(p)} \right) (y^{i}) = \sum_{k=1}^{n} a_{kj} \pdv{y^{i}}{y^{k}} \, (F(p)) %
+		= \sum_{k=1}^{n} a_{kj} \pdv{y^{i}}{y^{k}} %
+		= \sum_{k=1}^{n} a_{kj} \delta_{ik} %
+		= a_{ij}
+	\end{equation}
 	
 	mentre per il primo membro
 	
-	\begin{align}
-		\begin{split}
-			F_{*p} \left( \eval{ \pdv{x^{j}} }_{p} \right) (y^{i}) &= \eval{ \pdv{x^{j}} }_{p} (y^{i} \circ F) \\
-			&= \eval{ \pdv{x^{j}} }_{p} F^{i} \\
-			&= \pdv{F^{i}}{x^{j}} \, (p)
-		\end{split}
-	\end{align}
+	\begin{equation}
+		F_{*p} \left( \eval{ \pdv{x^{j}} }_{p} \right) (y^{i}) = \eval{ \pdv{x^{j}} }_{p} (y^{i} \circ F) %
+		= \eval{ \pdv{x^{j}} }_{p} F^{i} %
+		= \pdv{F^{i}}{x^{j}} \, (p)
+	\end{equation}
 
 	perciò
 	
@@ -3456,7 +3448,7 @@ Per un altro esempio, vedi Esercizio \ref{exer2-10}.
 	\map{x^{j}}
 		{U}{\R}
 		{(x^{1},\dots,x^{n})}{x^{j}}
-
+	
 	per $ j=1,\dots,n $. \\
 	Per il secondo membro
 	
@@ -3477,7 +3469,7 @@ Per un altro esempio, vedi Esercizio \ref{exer2-10}.
 	\end{equation}
 
 	dunque
-	
+	%
 	\begin{equation}
 		a_{j} = \dot{c}_{j}(t_{0})
 	\end{equation}
@@ -3485,23 +3477,23 @@ Per un altro esempio, vedi Esercizio \ref{exer2-10}.
 
 \subsubsection{Spazio tangente e curve}
 
-Sia una curva liscia $ c : (a,b) \to N $ che inizi in $ p = c(0) \in N $, allora $ c'(0) \in T_{p}(N) $. Ogni vettore in $ T_{p}(N) $ è il vettore velocità di una curva liscia in $ N $ che inizia in $ p $.
+Sia una curva liscia $ c : (a,b) \to N $ che inizi in $ p = c(0) \in N $, allora $ c'(0) \in T_{p}(N) $. Di seguito dimostriamo come ogni vettore in $ T_{p}(N) $ sia il vettore velocità di una curva liscia in $ N $ che inizia in $ p $.
 
 \begin{definition}
-	Siano una varietà differenziabile $ N $, un suo punto $ p \in N $ e un vettore $ X_{p} \in T_{p}(N) $, allora
+	Siano una varietà differenziabile $ N $, un suo punto $ p \in N $, un vettore $ X_{p} \in T_{p}(N) $ e $ \varepsilon \in \R^{+} $, allora
 	
 	\begin{equation}
-		\E c : (-\varepsilon,\varepsilon) \ni 0 \to N \text{ curva liscia}, \, c(0) = p \mid c'(0) = X_{p}
+		\E c : (-\varepsilon,\varepsilon) \to N \text{ curva liscia}, \, c(0) = p \mid c'(0) = X_{p}
 	\end{equation}
 
 	Questo mostra che
 	
 	\begin{equation}
-		T_{p}(N) = \{ c'(0) \mid c : (-\varepsilon,\varepsilon) \ni 0 \to N \text{ curva liscia}, \, c(0) = p \}
+		T_{p}(N) = \{ c'(0) \mid c : (-\varepsilon,\varepsilon) \to N \text{ curva liscia}, \, c(0) = p \}
 	\end{equation}
 \end{definition}
 
-Questo insieme è più intuitivo, nonostante equivalente, dell'insieme delle derivazioni puntali dell'algebra dei germi delle funzioni lisce in un punto $ p $, i.e. $ T_{p}(N) = \der_{p}(C_{p}^{\infty}(N)) $.
+Questo insieme, nonostante equivalente, è più intuitivo dell'insieme delle derivazioni puntali dell'algebra dei germi delle funzioni lisce in un punto $ p $, i.e. $ T_{p}(N) = \der_{p}(C_{p}^{\infty}(N)) $.
 
 \begin{proof}
 	Consideriamo il seguente schema:
@@ -3515,7 +3507,7 @@ Questo insieme è più intuitivo, nonostante equivalente, dell'insieme delle der
 	\end{equation}
 
 	in quanto abbiamo dimostrato che\footnote{%
-		L'applicazione $ \varphi $ è un omeomorfismo quindi porta basi in basi.%
+		L'applicazione $ \varphi : U \to \varphi(U) $ è un diffeomorfismo quindi il suo differenziale è un isomorfismo che dunque porta basi in basi.%
 	}
 	
 	\begin{equation}
@@ -3651,31 +3643,35 @@ L'obbiettivo è calcolare il differenziale di questa applicazione sulla matrice 
 
 \map{L_{g_{*I}}}
 	{T_{I}(GL_{n}(\R))}{T_{g}(GL_{n}(\R))}
-	{X_{I}}{L_{g_{*I}}(X_{I})}
+	{X_{I}}{(L_{g})_{*I}(X_{I})}
 
-Innanzitutto, lo spazio di partenza è dato da
+Innanzitutto, il dominio del differenziale è dato da
 
 \begin{equation}
 	T_{I}(GL_{n}(\R)) = \left\{ \sum_{i,j=1}^{n} X_{ij} \eval{ \pdv{r_{ij}} }_{I} \st X=[X_{ij}] \in M_{n}(\R) \right\}
 \end{equation}
 
-dove $ \ev{ \eval{ \pdv*{r_{ij}} }_{I} } = T_{I}(GL_{n}(\R)) $; a ogni vettore $ X_{I} \in T_{I}(GL_{n}(\R)) $ si può associare il vettore $ X \in M_{n}(\R) $ prendendo semplicemente $ X=[X_{ij}] $ dalla definizione dello spazio $ T_{I}(GL_{n}(\R)) $. Per quanto riguarda lo spazio di arrivo
+dove $ \ev{ \eval{ \pdv*{r_{ij}} }_{I} } = T_{I}(GL_{n}(\R)) $; a ogni vettore $ X_{I} \in T_{I}(GL_{n}(\R)) $ si può associare il vettore $ X \in M_{n}(\R) $ prendendo semplicemente $ X=[X_{ij}] $ dalla definizione dello spazio $ T_{I}(GL_{n}(\R)) $. Per quanto riguarda il codominio
 
 \begin{equation}
 	T_{g}(GL_{n}(\R)) = \left\{ \sum_{i,j=1}^{n} X_{ij} \eval{ \pdv{r_{ij}} }_{g} \st X=[X_{ij}] \in M_{n}(\R) \right\}
 \end{equation}
 
 esattamente come per lo spazio di partenza, anche questo si identifica con $ M_{n}(\R) $. \\
-Per calcolare il differenziale di $ L_{g} $, consideriamo una curva di matrici in $ GL_{n}(\R) $ il cui vettore tangente sia $ X_{I} $, i.e. $ c : (-\varepsilon,\varepsilon) \to GL_{n}(\R) $ con $ c(0)=I $ e 
+Per calcolare il differenziale di $ L_{g} $, consideriamo una curva di matrici in $ GL_{n}(\R) $ il cui vettore tangente sia $ X_{I} $, i.e.
 
 \begin{equation}
-	c'(0) = X_{I} = \sum_{i,j=1}^{n} X_{ij} \eval{ \pdv{r_{ij}} }_{I}
+	\begin{cases}
+		c : (-\varepsilon,\varepsilon) \to GL_{n}(\R) \\
+		c(0) = I \\
+		c'(0) = X_{I} = \displaystyle\sum_{i,j=1}^{n} X_{ij} \eval{ \pdv{r_{ij}} }_{I}
+	\end{cases}
 \end{equation}
 
 perciò
 
 \begin{equation}
-	L_{g_{*I}}(X_{I}) = (L_{g} \circ c)'(0) %
+	(L_{g})_{*I}(X_{I}) = (L_{g} \circ c)'(0) %
 	= (g \, c(t))'(0) %
 	= \sum_{i,j=1}^{n} \dot{(g \, c(t))}_{ij}(0) \eval{ \pdv{r_{ij}} }_{g}
 \end{equation}
@@ -3696,7 +3692,7 @@ Sappiamo che vale la regola di Leibniz per le matrici, i.e.
 e che $ g $ non dipende da $ t $, dunque
 
 \begin{equation}
-	L_{g_{*I}}(X_{I}) = \sum_{i,j=1}^{n} \dot{(g \, c(t))}_{ij}(0) \eval{ \pdv{r_{ij}} }_{g} %
+	(L_{g})_{*I}(X_{I}) = \sum_{i,j=1}^{n} \dot{(g \, c(t))}_{ij}(0) \eval{ \pdv{r_{ij}} }_{g} %
 	= \sum_{i,j=1}^{n} (g \, \dot{c}(0))_{ij} \eval{ \pdv{r_{ij}} }_{g}
 \end{equation}
 
@@ -3713,7 +3709,7 @@ Siccome
 abbiamo che $ \dot{c}(0) = X = [X_{ij}] $ perciò
 
 \begin{equation}
-	L_{g_{*I}}(X_{I}) = \sum_{i,j=1}^{n} (g \, \dot{c}(0))_{ij} \eval{ \pdv{r_{ij}} }_{g} %
+	(L_{g})_{*I}(X_{I}) = \sum_{i,j=1}^{n} (g \, \dot{c}(0))_{ij} \eval{ \pdv{r_{ij}} }_{g} %
 	= \sum_{i,j=1}^{n} (g \, X)_{ij} \eval{ \pdv{r_{ij}} }_{g}
 \end{equation}
 
@@ -3723,8 +3719,8 @@ che può essere identificato naturalmente con la matrice $ g \, X $ quindi, tram
 	L_{g_{*I}}(X) = g \, X
 \end{equation}
 
-Il differenziale di $ L_{g} $ valutato nella matrice identità $ I $ corrisponde dunque alla moltiplicazione a sinistra per $ g $, i.e. $ L_{g_{*I}} \equiv L_{g} $ in quanto la moltiplicazione a sinistra per $ g $ è un'applicazione lineare\footnote{%
-	$ L_{g_{*I}} $ e $ L_{g} $ hanno però dei domini differenti: la prima agisce sui vettori tangenti di $ T_{I}(GL_{n}(\R)) $ mentre la seconda sulle matrici invertibili $ GL_{n}(\R) $.%
+Il differenziale di $ L_{g} $ valutato nella matrice identità $ I $ corrisponde dunque alla moltiplicazione a sinistra per $ g $, i.e. $ (L_{g})_{*I} \equiv L_{g} $ in quanto la moltiplicazione a sinistra per $ g $ è un'applicazione lineare\footnote{%
+	$ (L_{g})_{*I} $ e $ L_{g} $ hanno però dei domini differenti: la prima agisce sui vettori tangenti di $ T_{I}(GL_{n}(\R)) $ mentre la seconda sulle matrici invertibili $ GL_{n}(\R) $.%
 }.
 
 \paragraph{2) Differenziale della moltiplicazione e dell'inversione in un gruppo di Lie}\label{example:differ-prod-inv-lie}
