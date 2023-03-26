@@ -3735,8 +3735,8 @@ Siano $ G $ un gruppo di Lie\footnote{%
 				}
 		{0.45}{%
 				\maps{i}
-				{G}{G}
-				{g}{g^{-1}}
+					{G}{G}
+					{g}{g^{-1}}
 				}%
 } ed $ e \in G $ l'identità. L'obbiettivo è calcolare i differenziali:
 
@@ -3923,10 +3923,10 @@ Un'applicazione liscia è un'immersione (risp. una sommersione) se lo è in ogni
 	
 	\begin{align}
 		\begin{split}
-			\dim(\Im(F_{*p})) + \cancelto{0}{ \dim(\ker(F_{*p})) } &= \dim(T_{F(p)}(M)) \\
-			\dim(\Im(F_{*p})) &= \dim(M) \\
-			\dim(T_{p}(N)) &\leqslant \dim(M) \\
-			\dim(N) &\leqslant \dim(M)
+			\dim(\Im(F_{*p})) + \cancelto{0}{ \dim(\ker(F_{*p})) } &= \dim(T_{p}(N)) \\
+			\dim(\Im(F_{*p})) &= \dim(N) \\
+			\dim(T_{p}(M)) &\geqslant \dim(N) \\
+			\dim(M) &\geqslant \dim(N)
 		\end{split}
 	\end{align}
 
@@ -3942,10 +3942,10 @@ Un'applicazione liscia è un'immersione (risp. una sommersione) se lo è in ogni
 	
 	\begin{align}
 		\begin{split}
-			\dim(\Im(F_{*p})) + \dim(\ker(F_{*p})) &= \dim(T_{F(p)}(M)) \\
-			\dim(T_{F(p)}(M)) + \dim(\ker(F_{*p})) &= \dim(M) \\
-			\dim(T_{F(p)}(M)) &\geqslant \dim(M) \\
-			\dim(N) &\geqslant \dim(M)
+			\dim(\Im(F_{*p})) + \dim(\ker(F_{*p})) &= \dim(T_{p}(N)) \\
+			\dim(T_{F(p)}(M)) + \dim(\ker(F_{*p})) &= \dim(N) \\
+			\dim(T_{F(p)}(M)) &\leqslant \dim(N) \\
+			\dim(M) &\leqslant \dim(N)
 		\end{split}
 	\end{align}
 \end{proof}
