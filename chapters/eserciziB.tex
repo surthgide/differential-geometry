@@ -1316,7 +1316,7 @@ Consideriamo le seguenti carte e condizioni:
 \end{equation}
 
 Consideriamo inoltre l'applicazione continua\footnote{%
-	Siano due spazi vettoriali topologici $ V $ e $ W $, una funzione lineare $ L : V \to W $ è continua se $ V $ è finito dimensionale e di Hausdorff; in questo caso, $ G $ è lineare perché un differenziale e dominio e codominio rispettano le condizioni in quanto varietà differenziabili.%
+	Siano due spazi vettoriali topologici $ V $ e $ W $, una funzione lineare $ L : V \to W $ è continua se $ V $ è finito dimensionale e di Hausdorff; in questo caso, $ G $ è lineare perché un differenziale, e dominio e codominio rispettano le condizioni in quanto varietà differenziabili.%
 }
 
 \map{G}
@@ -1368,13 +1368,13 @@ Consideriamo ora l'applicazione continua $ H $ e lo schema riassuntivo delle app
 A questo punto, considerando l'insieme
 
 \begin{equation}
-	(H \circ G \circ \varphi^{-1}) (\R \setminus \{0\}) \subset N
+	(H \circ G \circ \varphi)^{-1} (\R \setminus \{0\}) \subset N
 \end{equation}
 
 questo è un intorno aperto di $ p $ in cui $ G(\varphi(p)) $ è suriettiva: prendendo l'unione degli intorni aperti di tutti i punti regolari, otteniamo un aperto che coincide con l'insieme dei punti regolari di $ F $, i.e.
 
 \begin{equation}
-	\sum_{p \in \PR_{F}} (H \circ G \circ \varphi^{-1}) (\R \setminus \{0\}) = \PR_{F}
+	\sum_{p \in \PR_{F}} (H \circ G \circ \varphi)^{-1} (\R \setminus \{0\}) = \PR_{F}
 \end{equation}
 }
 
@@ -1695,31 +1695,25 @@ le quali valgono per qualsiasi $ p \in N $.
 
 Siano le immersioni
 
-\begin{equation}
-	\begin{cases}
-		F : N \to M \\
-		G : M \to P
-	\end{cases}
-\end{equation}
+\begin{gather}
+	F : N \to M \\
+	G : M \to P
+\end{gather}
 
 I loro differenziali sono iniettivi
 
-\begin{equation}
-	\begin{cases}
-		F_{*p} : T_{p}(N) \to T_{F(p)}(M) \\
-		G_{*q} : T_{q}(M) \to T_{G(q)}(P)
-	\end{cases}
-\end{equation}
+\begin{gather}
+	F_{*p} : T_{p}(N) \to T_{F(p)}(M) \\
+	G_{*q} : T_{q}(M) \to T_{G(q)}(P)
+\end{gather}
 
 rispettivamente per qualsiasi $ p \in N $ e $ q \in M $. \\
 Considerando la prima affermazione per esprimere l'iniettività, abbiamo che
 
-\begin{equation}
-	\begin{cases}
-		\E (F_{*p})^{-1} \mid (F_{*p})^{-1} \circ F_{*p} = \bigone_{T_{p}(N)} \\
-		\E (G_{*q})^{-1} \mid (G_{*q})^{-1} \circ G_{*q} = \bigone_{T_{q}(M)}
-	\end{cases}
-\end{equation}
+\begin{gather}
+	\E (F_{*p})^{-1} \mid (F_{*p})^{-1} \circ F_{*p} = \bigone_{T_{p}(N)} \\
+	\E (G_{*q})^{-1} \mid (G_{*q})^{-1} \circ G_{*q} = \bigone_{T_{q}(M)}
+\end{gather}
 
 Sia la composizione
 
@@ -1750,36 +1744,30 @@ da cui otteniamo che il differenziale $ (G \circ F)_{*p} $ è iniettivo per qual
 
 Siano le immersioni
 
-\begin{equation}
-	\begin{cases}
-		F : N_{1} \to M_{1} \\
-		G : N_{2} \to M_{2}
-	\end{cases}
-\end{equation}
+\begin{gather}
+	F : N_{1} \to M_{1} \\
+	G : N_{2} \to M_{2}
+\end{gather}
 
 I loro differenziali sono iniettivi
 
-\begin{equation}
-	\begin{cases}
-		F_{*p} : T_{p}(N_{1}) \to T_{F(p)}(M_{1}) \\
-		G_{*q} : T_{q}(N_{2}) \to T_{G(q)}(M_{2})
-	\end{cases}
-\end{equation}
+\begin{gather}
+	F_{*p} : T_{p}(N_{1}) \to T_{F(p)}(M_{1}) \\
+	G_{*q} : T_{q}(N_{2}) \to T_{G(q)}(M_{2})
+\end{gather}
 
-rispettivamente per qualsiasi $ p \in N_{1} $ e $ q \in N_{1} $. \\
+rispettivamente per qualsiasi $ p \in N_{1} $ e $ q \in N_{2} $. \\
 Considerando la seconda affermazione per esprimere l'iniettività, abbiamo che
 
-\begin{equation}
-	\begin{cases}
-		F_{*p}(X_{p}) = F_{*p}(W_{p}) \implies X_{p} = W_{p}, & \forall p \in N_{1} \\
-		G_{*q}(Y_{q}) = G_{*q}(Z_{q}) \implies Y_{q} = Z_{q}, & \forall q \in N_{2}
-	\end{cases}
-\end{equation}
+\begin{gather}
+	F_{*p}(X_{p}) = F_{*p}(W_{p}) \implies X_{p} = W_{p} \qcomma \forall p \in N_{1} \\
+	G_{*q}(Y_{q}) = G_{*q}(Z_{q}) \implies Y_{q} = Z_{q} \qcomma \forall q \in N_{2}
+\end{gather}
 
 Sia il prodotto cartesiano
 
 \map{F \times G}
-	{(N_{1} \times N_{2}}{M_{1} \times M_{2}}
+	{N_{1} \times N_{2}}{M_{1} \times M_{2}}
 	{(p,q)}{(F(p), G(q))}
 
 e il suo differenziale in $ (p,q) \in N_{1} \times N_{2} $

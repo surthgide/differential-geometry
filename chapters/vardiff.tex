@@ -4009,7 +4009,17 @@ Dunque l'inclusione considerata non è suriettiva ma è un'immersione e una somm
 
 \subsubsection{Rango di un'applicazione liscia}
 
-Siano un'applicazione liscia $ F : N \to M $, un punto $ p \in N $ e due carte $ (U,\varphi) \in N $ con $ \varphi = (x^{1},\dots,x^{n}) $ e $ (V,\psi) \in M $ con $ \psi = (y^{1},\dots,y^{m}) $ rispettivamente intorno a $ p $ e $ F(p) $, tali che $ F(U) \subseteq V $. Definiamo il \textit{rango} di $ F $ nel punto $ p $ come
+Siano un'applicazione liscia $ F : N \to M $, un punto $ p \in N $ e due carte
+
+\begin{equation}
+	\begin{cases}
+		(U,\varphi) = (U; x^{1},\dots,x^{n}) \in N, & \varphi(p) = 0 \\
+		(V,\psi) = (V; y^{1},\dots,y^{m}) \in M, & \psi(F(p)) = 0 \\
+		F(U) \subseteq V
+	\end{cases}
+\end{equation}
+
+Definiamo il \textit{rango} di $ F $ nel punto $ p $ come
 
 \begin{equation}
 	\rank(F(p)) \doteq \rank\left( \left[ \pdv{F^{i}}{x^{j}} \, (p) \right] \right) %
@@ -4071,7 +4081,7 @@ dove valgono le relazioni
 
 \begin{remark}
 	L'insieme dei punti regolari di $ F $ è un aperto del dominio di $ F $.\footnote{%
-		Vedi Esempio \ref{exer2-17}.%
+		Vedi Esercizio \ref{exer2-17}.%
 	}
 \end{remark}
 
