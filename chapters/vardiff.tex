@@ -4151,23 +4151,22 @@ Analogamente ai punti regolari e critici, valgono le seguenti relazioni
 
 \begin{remark}
 	L'insieme dei valori regolari di $ F $ è un aperto del codominio di $ F $.\footnote{%
-		Vedi Esempio \ref{exer2-18}.%
+		Vedi Esercizio \ref{exer2-18}.%
 	}
 \end{remark}
 
 \subsubsection{Codominio $ \R $}
 
-Siano l'applicazione liscia $ f : N \to \R $ e un punto $ p \in N $, se $ p \in \PC_{f} $ allora il differenziale $ f_{*p} : T_{p}(N) \to T_{f(p)}(\R) $ non è suriettivo. \\
-Essendo il differenziale un'applicazione lineare, possiamo considerare il teorema della dimensione
+Siano l'applicazione liscia $ f : N \to \R $ e un punto $ p \in N $, se $ p \in \PC_{f} $ allora il differenziale $ f_{*p} : T_{p}(N) \to T_{f(p)}(\R) $ non è suriettivo. In generale, a seconda della dimensione dell'immagine dell'applicazione, si presentano due casi:
 
 \begin{gather}
-	\dim(\Im(f_{*p})) + \dim(\ker(f_{*p})) = \dim(T_{f(p)}(\R)) = \dim(\R) = 1 \\%
-	\Downarrow \nonumber \\%
+	\dim(\Im(f_{*p})) \leqslant \dim(T_{f(p)}(\R)) = \dim(\R) = 1 \\
+	\Downarrow \nonumber \\
 	\begin{cases}
 		\dim(\Im(f_{*p})) = 1 \\
 		\dim(\ker(f_{*p})) = 0
 	\end{cases} %
-	\wedge \quad
+	\lor \quad
 	\begin{cases}
 		\dim(\Im(f_{*p})) = 0 \\
 		\dim(\ker(f_{*p})) = 1
@@ -4177,7 +4176,7 @@ Essendo il differenziale un'applicazione lineare, possiamo considerare il teorem
 Il primo caso non può verificarsi in quanto imporrebbe la suriettività del differenziale, contraddicendo l'ipotesi, dunque abbiamo che $ f_{*p} = 0 $ o, equivalentemente, che l'immagine di $ f_{*p} $ sia l'insieme nullo, i.e.
 
 \begin{equation}
-	f_{*p}(T_{p}(N)) = \{0 \in T_{f(p)}(\R)\}
+	\Im(f_{*p}) = f_{*p}(T_{p}(N)) = \{0 \in T_{f(p)}(\R)\}
 \end{equation}
 
 perciò
@@ -4192,7 +4191,7 @@ Sappiamo che
 	f_{*p}(X_{p}) = (X_{p} f) \eval{ \dv{r} }_{f(p)}
 \end{equation}
 
-dove $ X_{p} f \in \R $ e $ \ev{ \eval{ \dv*{r} }_{f(p)} } = T_{f(p)}(\R) $, sia dunque la carta $ (U,\varphi) \in N $ con $ \varphi = (x^{1},\dots,x^{n}) $ intorno a $ p $, allora
+dove $ X_{p} f \in \R $ e $ \ev{ \eval{ \dv*{r} }_{f(p)} } = T_{f(p)}(\R) $. Sia dunque la carta $ (U,\varphi) \in N $ con $ \varphi = (x^{1},\dots,x^{n}) $ intorno a $ p $, allora
 
 \begin{equation}
 	X_{p} = \sum_{i=1}^{n} a^{i} \eval{ \pdv{x^{i}} }_{p}
@@ -4210,6 +4209,7 @@ Affinché $ f_{*p}(X_{p}) = 0 $, è necessario che $ X_{p} f = 0 $, il che impli
 	\pdv{f}{x^{i}} \, (p) = 0 \qcomma \forall i=1,\dots,n
 \end{equation}
 
+in quanto abbiamo considerato un vettore $ X_{p} \in T_{p}(N) $ arbitrario. \\
 A questo punto possiamo scrivere la condizione per cui un punto $ p \in N $ sia un punto critico per un'applicazione $ f : N \to \R $
 
 \begin{equation}
@@ -4218,11 +4218,11 @@ A questo punto possiamo scrivere la condizione per cui un punto $ p \in N $ sia 
 	\dpdv{f}{x^{i}} \, (p) = 0 \qcomma %
 	\begin{cases}
 		\forall i=1,\dots,n \\
-		\forall (U,\varphi) \in N \mid \varphi = (x^{1},\dots,x^{n}) \, \wedge \, p \in (U,\varphi)
+		\forall (U,\varphi) = (U; x^{1},\dots,x^{n}) \in N \, \wedge \, p \in (U,\varphi)
 	\end{cases}
 \end{equation}
 
-In particolare, se $ N = (a,b) $, la condizione per cui un punto $ t_{0} \in (a,b) $ sia un punto critico è
+In particolare, se $ N = (a,b) \subset \R $, la condizione per cui un punto $ t_{0} \in (a,b) $ sia un punto critico diventa
 
 \begin{equation}
 	t_{0} \in \PC_{f} \iff \dot{f}(t_{0}) = 0
@@ -4263,7 +4263,7 @@ In analisi, per una funzione $ f : \R \to \R $ il punto $ x_{0} \in \R $ è un m
 		\dot{f}(x_{0}) = \lim_{x \to x_{0}} \dfrac{f(x) - f(x_{0})}{x - x_{0}}
 	\end{equation*}
 
-	Per un massimo locale $ f(x) \leqslant f(x_{0}) $ per qualsiasi $ x \in I $ dunque $ f(x) - f(x_{0}) \leqslant 0 $; considerando i limiti da destra e da sinistra e sfruttando la permanenza del segno
+	Per un massimo locale vale $ f(x) \leqslant f(x_{0}) $ per qualsiasi $ x \in I $ dunque $ f(x) - f(x_{0}) \leqslant 0 $; considerando i limiti da destra e da sinistra e sfruttando la permanenza del segno
 	
 	\begin{align*}
 		\begin{split}
@@ -4303,8 +4303,8 @@ Siano una varietà differenziabile $ N $ e una funzione $ f \in C^{\infty}(N) $,
 	La derivata direzionale si può calcolare usando le curve su varietà, dunque presa la curva liscia
 				
 	\begin{equation}
-		c : (-\varepsilon,\varepsilon) \to N \qcomma %
 		\begin{cases}
+			c : (-\varepsilon,\varepsilon) \to N \\
 			c(0) = p \\
 			c'(0) = X_{p}
 		\end{cases}
@@ -4322,7 +4322,7 @@ Siano una varietà differenziabile $ N $ e una funzione $ f \in C^{\infty}(N) $,
 		f_{*p}(X_{p}) = \dot{(f \circ c)}(0) \eval{ \dv{r} }_{f(p)}
 	\end{equation}
 	
-	Sappiamo che, preso $ U $ intorno di $ p $, per un massimo locale in $ p $ abbiamo che $ f(q) \leqslant f(p) $ per qualsiasi $ q \in U $, quindi prendiamo $ \varepsilon $ in modo tale che $ c((-\varepsilon,\varepsilon)) \subset U $. Se $ p $ è un massimo locale per $ f $ allora 0 è un massimo locale per $ f \circ c $ cioè
+	Sappiamo che, preso $ U $ intorno di $ p $, per un massimo locale in $ p $ abbiamo che $ f(q) \leqslant f(p) $ per qualsiasi $ q \in U $, quindi prendiamo $ \varepsilon $ in modo tale che $ c((-\varepsilon,\varepsilon)) \subset U $. Se $ p $ è un massimo locale per $ f $ allora 0 è un massimo locale per $ f \circ c $, i.e.
 	
 	\begin{equation}
 		(f \circ c)(t) \leqslant (f \circ c)(0) = f(p) \qcomma \forall t \in (-\varepsilon,\varepsilon)
@@ -4345,9 +4345,9 @@ La maggior parte delle funzioni possiedono punti critici non degeneri. \\
 Analogamente all'analisi, si possono classificare i punti critici non degeneri in base alla loro matrice hessiana:
 
 \begin{itemize}
-	\item $ \mathcal{H}(f)(p) < 0 \text{ definita negativa\footnotemark} \implies p \text{ massimo locale} $
+	\item $ \mathcal{H}(f)(p) > 0 \text{ definita positiva\footnotemark} \implies p \text{ massimo locale} $
 	
-	\item $ \mathcal{H}(f)(p) > 0 \text{ definita positiva} \implies p \text{ minimo locale} $
+	\item $ \mathcal{H}(f)(p) < 0 \text{ definita negativa} \implies p \text{ minimo locale} $
 	
 	\item $ \mathcal{H}(f)(p) \gtreqqless 0 \text{ semidefinita} \implies p \text{ punto di sella} $
 \end{itemize}
@@ -4367,7 +4367,7 @@ Analogamente all'analisi, si possono classificare i punti critici non degeneri i
 	Per determinare la definitezza di una matrice si possono usare, ad esempio, il criterio di Sylvester o la regola di Cartesio.%
 }
 
-Ad esempio, il paraboloide $ z^{2} = - x^{2} - y^{2} $ ha come massimo locale il punto $ (0,0) $, per la funzione
+Ad esempio, il paraboloide ellittico $ z = - x^{2} - y^{2} $ ha come massimo locale il punto $ (0,0) $, per la funzione
 
 \map{f}
 	{\R^{2}}{\R}
@@ -4379,14 +4379,14 @@ dove
 	\mathcal{H}(f)(p) = \bmqty{ -2 & 0 \\ 0 & -2 } < 0
 \end{equation}
 
-Il paraboloide $ z^{2} = x^{2} + y^{2} $ ha $ (0,0) $ come minimo locale mentre il paraboloide iperbolico $ z^{2} = x^{2} - y^{2} $ ha $ (0,0) $ come punto di sella.
+Il paraboloide ellittico $ z = x^{2} + y^{2} $ (riflessione tramite il piano $ xy $ del paraboloide precedente) ha $ (0,0) $ come minimo locale mentre il paraboloide iperbolico $ z = x^{2} - y^{2} $ ha $ (0,0) $ come punto di sella.
 
 \subsubsection{Teoria di Morse}
 
 La teoria di Morse lega lo studio dei punti critici di una varietà alla sua topologia.
 
 \begin{theorem}[Morse per superfici]
-	Siano $ N $ una varietà compatta e connessa con $ \dim(N)=2 $ e $ f $ una funzione liscia che ha tutti i punti critici non degeneri. Siano
+	Siano $ N $ una varietà compatta e connessa con $ \dim(N)=2 $ ed $ f $ una funzione liscia che ha tutti i punti critici non degeneri. Siano
 	
 	\begin{itemize}
 		\item $ M = \# \text{ punti di massimo per } f $
