@@ -4479,7 +4479,7 @@ mentre per $ N = \R^{3} $ con carta $ (\R^{3};x,y,z) $ e $ S = \R \times \{(0,0)
 		U \cap S = \{ q \in U \mid x^{i}(q) = 0 \}
 	\end{equation}
 
-	in quanto $ U \simeq \R^{n} $ tramite $ \varphi $, $ U \cap S \simeq \R^{n-1} $ e $ U \cap S \simeq U $ ma i diffeomorfismi conservano la dimensione.
+	in quanto $ U \simeq \R^{n} $ tramite il diffeomorfismo $ \varphi $, $ U \cap S \simeq \R^{n-1} $ e $ U \cap S \simeq U $ ma i diffeomorfismi conservano la dimensione.
 \end{remark}
 
 Siano $ N $ una varietà differenziabile con $ \dim(N)=n $, $ S \subset N $ una sottovarietà con $ \dim(S)=k $ e $ p \in S $ un punto della sottovarietà, allora una carta $ (U,\varphi) \in N $ con $ \varphi = (x^{1},\dots,x^{n}) $ tale che $ (U,\varphi) \ni p $ è chiamata \textit{carta adattata di} $ N $ \textit{intorno a} $ p $ \textit{relativamente a} $ S $ se vale la condizione per la sottovarietà, i.e.
@@ -4573,18 +4573,19 @@ Chiameremo la struttura differenziabile costruita nella proposizione \textit{str
 	otteniamo che le funzioni $ x^{i} $ e $ y^{i} $ per qualsiasi $ i=1,\dots,n $ sono lisce rispetto a $ (y^{1},\dots,y^{n}) $ e $ (x^{1},\dots,x^{n}) $ rispettivamente\footnote{%
 		Le funzioni $ x^{i} $ e $ y^{i} $ dipendono da $ (y^{1},\dots,y^{n}) $ e $ (x^{1},\dots,x^{n}) $ rispettivamente tramite i cambi di carta ($ f(x) = y $ dunque $ y $ dipende da $ x $ tramite $ f $).%
 	}, in quanto immagini dei cambi di carte, i quali sono lisci per definizione di varietà differenziabile. \\
-	Siano le carte adattate $ (U,\varphi) $ con $ \varphi = (x^{1},\dots,x^{n}) $ tale che
+	Siano le carte adattate intorno a $ p $
 	
-	\begin{equation}
-		U \cap S = \{ q \in U \mid x^{k+1}(q) = \dots = x^{n}(q) = 0 \}
-	\end{equation}
+	\begin{gather}
+		\begin{cases}
+			(U,\varphi) = (U; x^{1},\dots,x^{n}) \in N \\
+			U \cap S = \{ q \in U \mid x^{k+1}(q) = \dots = x^{n}(q) = 0 \}
+		\end{cases} \\
+		\begin{cases}
+			(V,\psi) = (V; y^{1},\dots,y^{n}) \in N \\
+			V \cap S = \{ q \in V \mid y^{k+1}(q) = \dots = y^{n}(q) = 0 \}
+		\end{cases}
+	\end{gather}
 	
-	e $ (V,\psi) $ con $ \psi = (y^{1},\dots,y^{n}) $ tale che
-	
-	\begin{equation}
-		V \cap S = \{ q \in V \mid y^{k+1}(q) = \dots = y^{n}(q) = 0 \}
-	\end{equation}
-
 	Prendiamo ora le applicazioni
 	
 	\map{\varphi_{S}}
@@ -4595,7 +4596,7 @@ Chiameremo la struttura differenziabile costruita nella proposizione \textit{str
 		{V \cap S}{\R^{k}}
 		{q}{(y^{1}(q),\dots,y^{k}(q))}
 
-	i loro cambi di carte
+	i quali cambi di carte
 	
 	\map{\psi_{S} \circ \varphi_{S}^{-1}}
 		{\varphi_{S}(U \cap V \cap S)}{\psi_{S}(U \cap V \cap S)}
@@ -4658,12 +4659,12 @@ Chiameremo la struttura differenziabile costruita nella proposizione \textit{str
 	\begin{equation}
 		(\varphi \circ i \circ \varphi_{S}^{-1})_{*\varphi_{S}(p)} = \varphi_{*p} \circ i_{*p} \circ (\varphi_{S}^{-1})_{*\varphi_{S}(p)}
 	\end{equation}
-
-	siccome il differenziale porta isomorfismi in isomorfismi (lo sono $ \varphi \circ i \circ \varphi_{S}^{-1} $, $ \varphi_{*p} $ e $ (\varphi_{S}^{-1})_{*\varphi_{S}(p)} $ in quanto applicazioni appartenenti a carte) e $ \varphi \circ i \circ \varphi_{S}^{-1} $ è iniettiva in quanto immersione, allora $ i_{*p} $ è iniettiva in $ p $. Essendo $ p $ arbitrario, l'inclusione $ i $ è un'immersione.
+	
+	A questo punto, siccome $ (\varphi \circ i \circ \varphi_{S}^{-1})_{*\varphi_{S}(p)} $ è iniettiva in quanto $ \varphi \circ i \circ \varphi_{S}^{-1} $ è un'immersione, e $ \varphi_{*p} $ e $ (\varphi_{S}^{-1})_{*\varphi_{S}(p)} $ sono isomorfismi in quanto differenziali di diffeomorfismi (in quanto sono le applicazioni delle carte), allora $ i_{*p} $ è iniettiva in $ p $. Essendo $ p $ arbitrario, l'inclusione $ i $ è un'immersione.
 \end{proof}
 
 \begin{remark}
-	Se $ F : N \to M $ è un'immersione e $ Z \subset N $ è una sottovarietà di $ N $ allora $ \eval{F}_{Z} : Z \to M $ è un'immersione\footnote{%
+	Se $ F : N \to M $ è un'immersione e $ S \subset N $ è una sottovarietà di $ N $ allora $ \eval{F}_{S} : S \to M $ è un'immersione\footnote{%
 		Vedi Esercizio \ref{exer2-22}.%
 	}.
 \end{remark}
@@ -4680,7 +4681,7 @@ Siano un'applicazione $ f $ e il suo grafico $ \Gamma(f) $ definiti come:
 			{x}{\sin(\dfrac{1}{x})}
 			
 			\begin{equation}
-				\Gamma(f) = \{ (x,f(x)) \mid x \in (0,1) \}
+				\Gamma(f) = \{ (x,f(x)) \in \R^{2} \mid x \in (0,1) \}
 			\end{equation}
 			}
 	{0.5}{%
