@@ -4864,7 +4864,7 @@ Il determinante dello jacobiano non si annulla in quanto la coordinata $ x(p) $ 
 
 Per il corollario del teorema della funzione inversa\footnote{%
 	Vedi Corollario \ref{cor:ift}.%
-}, esiste un intorno aperto $ U \subset \R^{3} $ di $ p $ tale che $ \eval{g}_{U} : U \to g(U) $ sia un diffeomorfismo e dunque $ (U,\eval{g}_{U}) $ è una carta di $ \R^{3} $. In questo caso, $ (U,\eval{g}_{U}) $ con $ \eval{g}_{U} = (f(x,y,z),y,z) $ è una carta adatta di $ \R^{3} $ intorno a $ p $ relativamente a $ \S^{2} $. Per verificare quest'ultima proposizione, è necessario che $ U \cap \S^{2} $ sia un'insieme dato dall'annullarsi di alcune coordinate:
+}, esiste un intorno aperto $ U \subset \R^{3} $ di $ p $ tale che $ \eval{g}_{U} : U \to g(U) $ sia un diffeomorfismo e dunque $ \left( U,\eval{g}_{U} \right) $ è una carta di $ \R^{3} $. In questo caso, $ \left( U,\eval{g}_{U} \right) $ con $ \eval{g}_{U} = (f(x,y,z),y,z) $ è una carta adatta di $ \R^{3} $ intorno a $ p $ relativamente a $ \S^{2} $. Per verificare quest'ultima proposizione, è necessario che $ U \cap \S^{2} $ sia un'insieme dato dall'annullarsi di alcune coordinate:
 
 \begin{equation}
 	U \cap \S^{2} = \{ q \in U \mid g^{1}(q) = f(q) = 0 \} \equiv \S^{2}
@@ -4918,13 +4918,13 @@ In conclusione, per definizione, $ \S^{2}$ è una sottovarietà di $\R^{3} $ con
 		= \dpdv{f}{x^{1}} \, (p) \neq 0
 	\end{equation}
 
-	dunque, dal corollario del teorema della funzione inversa, esiste un aperto $ U_{p} \subset U \subset N $ tale che $ (U_{p},\eval{g}_{U_{p}}) $ è una carta di $ N $ intorno a $ p $. Prendendo l'intersezione
+	dunque, dal corollario del teorema della funzione inversa, esiste un aperto $ U_{p} \subset U \subset N $ tale che $ \left( U_{p},\eval{g}_{U_{p}} \right) $ sia una carta di $ N $ intorno a $ p $. Prendendo l'intersezione
 	
 	\begin{equation}
 		U_{p} \cap f^{-1}(0) = \{ q \in U_{p} \mid f(q)=0 \} \equiv f^{-1}(0)
 	\end{equation}
 
-	otteniamo che $ (U_{p},\eval{g}_{U_{p}}) $ è una carta adattata e quindi, siccome il punto $ p \in f^{-1}(0) $ è arbitrario, ogni punto di $ f^{-1}(0) $ ammette una carta adattata: questo dimostra che $ f^{-1}(0) $ è una sottovarietà di $ N $ con $ \dim(f^{-1}(0)) = n-1 $, in quanto solo una delle coordinate in $ U_{p} \cap f^{-1}(0) $ si annulla.
+	otteniamo che $ \left( U_{p},\eval{g}_{U_{p}} \right) $ è una carta adattata e quindi, siccome il punto $ p \in f^{-1}(0) $ è arbitrario, ogni punto di $ f^{-1}(0) $ ammette una carta adattata: questo dimostra che $ f^{-1}(0) $ è una sottovarietà di $ N $ con $ \dim(f^{-1}(0)) = n-1 $, in quanto solo una delle coordinate in $ U_{p} \cap f^{-1}(0) $ si annulla.
 \end{proof}
 
 \begin{definition}
@@ -4976,10 +4976,11 @@ Possiamo dimostrare ora il teorema della preimmagine di un valore regolare nel c
 		\rank(J(F)(p)) = \rank \left( \left[ \pdv{F^{i}}{x^{j}} \, (p) \right] \right) = m
 	\end{equation}
 
-	dove $ F^{i} = y^{i} \circ F = r^{i} \circ \psi \circ F $, e quindi esiste un minore di ordine $ m $ il cui determinante è diverso da zero: possiamo sempre supporre che il minore in questione sia quello formato dalle prime $ m $ righe e $ m $ colonne, in quanto la permutazione di coordinate all'interno delle carte le lascia invariate, i.e.
+	dove $ F^{i} = y^{i} \circ F = r^{i} \circ \psi \circ F $, e quindi esiste un minore $ \tilde{J} $ di ordine $ m $ il cui determinante è diverso da zero: possiamo sempre supporre che il minore in questione sia quello formato dalle prime $ m $ righe ed $ m $ colonne, in quanto la permutazione di coordinate all'interno delle carte le lascia invariate, i.e.
 	
 	\begin{equation}
-		\det( \left[ \pdv{F^{i}}{x^{j}} \, (p) \right] ) = J(F)(p) \neq 0 \qcomma i,j=1,\dots,m
+		\det( \left[ \pdv{F^{i}}{x^{j}} \, (p) \right] ) = \det(\tilde{J}(F)(p)) \neq 0 %
+		\qcomma i,j=1,\dots,m
 	\end{equation}
 
 	Definiamo ora l'applicazione liscia
@@ -5001,8 +5002,8 @@ Possiamo dimostrare ora il teorema della preimmagine di un valore regolare nel c
 			0 & \cdots & 0 & 0 & \cdots & 1 %
 		 } %
 	 	= \bmqty{ %
-	 		J(F)(p) & \left[ \dpdv{F^{i}}{x^{k}} \, (p) \right] \\ \\ %
-	 		0_{n-(m+1),m} & \bigone_{n-(m+1),m} %
+	 		\tilde{J}(F)(p) & \left[ \dpdv{F^{i}}{x^{k}} \, (p) \right] \\ \\ %
+	 		0_{n-m,m} & \bigone_{n-m,n-m} %
 	 		}
 	\end{equation}
 
@@ -5014,19 +5015,19 @@ Possiamo dimostrare ora il teorema della preimmagine di un valore regolare nel c
 	\begin{equation}
 		\det(J(G)(p)) = %
 		\det ( \bmqty{ %
-			\det( J(F)(p) ) & \det( \left[ \dpdv{F^{i}}{x^{k}} \, (p) \right] ) \\ \\ %
+			\det( \tilde{J}(F)(p) ) & \det( \left[ \dpdv{F^{i}}{x^{k}} \, (p) \right] ) \\ \\ %
 			\det( 0 ) & \det( \bigone ) %
 			} ) %
-		= \det( J(F)(p) ) \neq 0
+		= \det( \tilde{J}(F)(p) ) \neq 0
 	\end{equation}
 
-	Per il corollario del teorema della funzione inversa, esiste un aperto $ U_{p} \in N $ tale che $ (U_{p},\eval{G}_{U_{p}}) $ sia una carta di $ N $ intorno a $ p $. Considerando la seguente intersezione
+	Per il corollario del teorema della funzione inversa, esiste un aperto $ U_{p} \in N $ tale che $ \left( U_{p},\eval{G}_{U_{p}} \right) $ sia una carta di $ N $ intorno a $ p $. Considerando la seguente intersezione
 	
 	\begin{equation}
 		U_{p} \cap F^{-1}(c) = \{ q \in U_{p} \mid F^{1}(q) = \dots = F^{m}(q) = 0 \} \equiv F^{-1}(c)
 	\end{equation}
 
-	abbiamo che $ (U_{p},\eval{G}_{U_{p}}) $ è una carta adattata di $ N $ intorno a $ p $ relativamente a $ F^{-1}(c) $, ma $ p $ è un punto arbitrario, quindi esiste una carta adattata intorno ad ogni punto. Siccome si annullano $ m $ coordinate, $ F^{-1}(c) $ è una sottovarietà di $ N $ con $ \dim(F^{-1}(c)) = n-m $ o equivalentemente $ \operatorname{cod}_{N}(F^{-1}(c)) = m $. \\
+	abbiamo che $ \left( U_{p},\eval{G}_{U_{p}} \right) $ è una carta adattata di $ N $ intorno a $ p $ relativamente a $ F^{-1}(c) $, ma $ p $ è un punto arbitrario, quindi esiste una carta adattata intorno ad ogni punto. Siccome si annullano $ m $ coordinate, $ F^{-1}(c) $ è una sottovarietà di $ N $ con $ \dim(F^{-1}(c)) = n-m $ o equivalentemente $ \operatorname{cod}_{N}(F^{-1}(c)) = m $. \\
 	Dobbiamo ora dimostrare che
 	
 	\begin{equation}
@@ -5172,9 +5173,9 @@ siccome $ \gamma(t) = (x^{1}(t),\dots,x^{n+1}(t)) $, abbiamo che
 		&= \dot{((x^{1}(t))^{2} + \cdots + (x^{n+1}(t))^{2} - 1)}(0) \eval{ \dv{r} }_{f(p)} \\
 		&= (2 x^{1}(t) \, \dot{x}^{1}(t) + \cdots + 2 x^{n+1}(t) \, \dot{x}^{n+1}(t))(0) \eval{ \dv{r} }_{f(p)} \\
 		&= (2 x^{1}(0) \, \dot{x}^{1}(0) + \cdots + 2 x^{n+1}(0) \, \dot{x}^{n+1}(0)) \eval{ \dv{r} }_{f(p)} \\
-		&= (2 (x^{1}(0), \dots, x^{n+1}(0)) \cdot (\dot{x}^{1}(0), \dots, \dot{x}^{n+1}(0))) \eval{ \dv{r} }_{f(p)} \\
-		&= (2 \, \gamma(0) \cdot X_{p}) \eval{ \dv{r} }_{f(p)} \\
-		&= (2 \, p \cdot X_{p}) \eval{ \dv{r} }_{f(p)}
+		&= \left( 2 (x^{1}(0), \dots, x^{n+1}(0)) \cdot (\dot{x}^{1}(0), \dots, \dot{x}^{n+1}(0)) \right) \eval{ \dv{r} }_{f(p)} \\
+		&= 2 (\gamma(0) \cdot X_{p}) \eval{ \dv{r} }_{f(p)} \\
+		&= 2 (p \cdot X_{p}) \eval{ \dv{r} }_{f(p)}
 	\end{split}
 \end{align}
 
@@ -5284,19 +5285,19 @@ Sia l'insieme $ S \subset \rp{2} $ definito come
 \end{equation}
 
 questo insieme è ben definito poiché un altro rappresentante della classe $ (y_{0},y_{1},y_{2}) \in [x_{0},x_{1},x_{2}] $ che sia proporzionale a quello della definizione per mezzo di $ \lambda \in \R \setminus \{0\} $, i.e. $ (y_{0},y_{1},y_{2}) = \lambda (x_{0},x_{1},x_{2}) $, rispetta ancora la condizione dell'insieme $ S $. \\
-Prendendo le tre carte $ \{(U_{i},\varphi_{1})\}_{i=0,1,2} $ di $ \rp{2} $, queste sono carte adattate relativamente a $ S $ e dunque la rendono una sottovarietà del proiettivo reale. \\
+Prendendo le tre carte $ \{(U_{i},\varphi_{1})\}_{i=0,1,2} $ di $ \rp{2} $, queste sono carte adattate relativamente a $ S $ e dunque lo rendono una sottovarietà del proiettivo reale. \\
 Di seguito i tre casi per le tre carte:
 
 \begin{itemize}
 	\item Prendiamo la carta $ (U_{0},\varphi_{0}) $ dove
 	
 	\begin{equation}
-		U_{0} = \{ [x_{0},x_{1},x_{2}] \in \rp{2} \mid x_{0} \neq 0 \}
+		U_{0} = \{ [(x_{0},x_{1},x_{2})] \in \rp{2} \mid x_{0} \neq 0 \}
 	\end{equation}
 	%	
 	\map{\varphi_{0}}
 		{U_{0}}{\R^{2}}
-		{[x_{0},x_{1},x_{2}]}{(x,y) = \left( \dfrac{x_{1}}{x_{0}}, \dfrac{x_{2}}{x_{0}} \right)}
+		{[(x_{0},x_{1},x_{2})]}{(x,y) = \left( \dfrac{x_{1}}{x_{0}}, \dfrac{x_{2}}{x_{0}} \right)}
 	
 	da cui otteniamo che la condizione diventa $ 1 - x^{2} + y^{2} = 0 $ e dunque
 	
@@ -5321,12 +5322,12 @@ Di seguito i tre casi per le tre carte:
 	\item Prendiamo la carta $ (U_{1},\varphi_{1}) $ dove
 	
 	\begin{equation}
-		U_{1} = \{ [x_{0},x_{1},x_{2}] \in \rp{2} \mid x_{1} \neq 0 \}
+		U_{1} = \{ [(x_{0},x_{1},x_{2})] \in \rp{2} \mid x_{1} \neq 0 \}
 	\end{equation}
 	%	
 	\map{\varphi_{1}}
 		{U_{1}}{\R^{2}}
-		{[x_{0},x_{1},x_{2}]}{(x,y) = \left( \dfrac{x_{0}}{x_{1}}, \dfrac{x_{2}}{x_{1}} \right)}
+		{[(x_{0},x_{1},x_{2})]}{(x,y) = \left( \dfrac{x_{0}}{x_{1}}, \dfrac{x_{2}}{x_{1}} \right)}
 	
 	da cui otteniamo che la condizione diventa $ x^{2} - 1 + y^{2} = 0 $ e dunque
 	
@@ -5351,12 +5352,12 @@ Di seguito i tre casi per le tre carte:
 	\item Prendiamo la carta $ (U_{2},\varphi_{2}) $ dove
 	
 	\begin{equation}
-		U_{2} = \{ [x_{0},x_{1},x_{2}] \in \rp{2} \mid x_{2} \neq 0 \}
+		U_{2} = \{ [(x_{0},x_{1},x_{2})] \in \rp{2} \mid x_{2} \neq 0 \}
 	\end{equation}
 	%	
 	\map{\varphi_{2}}
 		{U_{2}}{\R^{2}}
-		{[x_{0},x_{1},x_{2}]}{(x,y) = \left( \dfrac{x_{0}}{x_{2}}, \dfrac{x_{1}}{x_{2}} \right)}
+		{[(x_{0},x_{1},x_{2})]}{(x,y) = \left( \dfrac{x_{0}}{x_{2}}, \dfrac{x_{1}}{x_{2}} \right)}
 	
 	da cui otteniamo che la condizione diventa $ x^{2} - y^{2} + 1 = 0 $ e dunque
 	
@@ -5385,7 +5386,7 @@ Sia l'insieme
 	SL_{n}(\R) = \{ A \in GL_{n}(\R) \mid \det(A) = 1 \} \subset GL_{n}(\R) \subset M_{n}(\R) = \R^{n^{2}}
 \end{equation}
 
-il quale è una varietà differenziabile di dimensione $ n^{2} $. \\
+il quale è una varietà differenziabile di dimensione $ n^{2} - 1 $. \\
 Vogliamo dimostrare che $ SL_{n}(\R) $ sia una sottovarietà di $ GL_{n}(\R) $ di dimensione $ n^{2}-1 $ o equivalentemente $ \operatorname{cod}_{GL_{n}(\R)}(SL_{n}(\R)) = 1 $ e, per dimostrarlo, usiamo il teorema della preimmagine di un valore regolare. \\
 Sia l'applicazione liscia
 
@@ -5393,7 +5394,7 @@ Sia l'applicazione liscia
 	{GL_{n}(\R)}{\R}
 	{A}{\det(A)}
 
-Siccome $ f^{-1}(1) = SL_{n}(\R) $, dobbiamo mostrare che $ 1 \in \VR_{f} $ perché $ SL_{n}(\R) $ sia una sottovarietà di $ GL_{n}(\R) $: siccome il codominio di $ f $ è $ \R $, un punto è critico per $ f $ se e solo se le derivate parziali di $ f $ si annullano in quel punto. Usiamo come coordinate le componenti della matrice, i.e. $ A = (a_{ij}) $ con $ i,j=1,\dots,n $, e per scrivere il determinante lo sviluppo di Laplace:
+Siccome $ f^{-1}(1) = SL_{n}(\R) $, dobbiamo mostrare che $ 1 \in \VR_{f} $ perché $ SL_{n}(\R) $ sia una sottovarietà di $ GL_{n}(\R) $: siccome il codominio di $ f $ è $ \R $, un punto è critico per $ f $ se e solo se le derivate parziali di $ f $ si annullano in quel punto. Usiamo come coordinate le componenti della matrice, i.e. $ A = [a_{ij}] $ con $ i,j=1,\dots,n $, e per scrivere il determinante lo sviluppo di Laplace:
 
 \begin{equation}
 	\det(A) = \sum_{i=1}^{n} (-1)^{i+j} \, a_{ij} \, m_{ij}

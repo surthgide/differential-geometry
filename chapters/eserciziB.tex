@@ -1066,14 +1066,14 @@ Consideriamo una curva liscia $ \gamma (t) = (x(t), y(t), z(t)) $ che rispetta l
 	\end{cases}
 \end{equation}
 
-e le basi per $ T_{p}(\R^{3}) $ e $ T_{F(p)}(\R^{2}) $
+Consideriamo inoltre le basi per $ T_{p}(\R^{3}) $ e $ T_{F(p)}(\R^{2}) $
 
 \begin{gather}
 	\B_{T_{p}(\R^{3})} = \left\{ \eval{ \pdv{x} }_{p}, \eval{ \pdv{y} }_{p}, \eval{ \pdv{z} }_{p} \right\} \\
 	\B_{T_{F(p)}(\R^{2})} = \left\{ \eval{ \pdv{u} }_{F(p)}, \eval{ \pdv{v} }_{F(p)} \right\}
 \end{gather}
 
-Tramite questa, calcoliamo l'immagine del differenziale:
+A questo punto, calcoliamo l'immagine del differenziale:
 
 \begin{align}
 	\begin{split}
@@ -1082,7 +1082,7 @@ Tramite questa, calcoliamo l'immagine del differenziale:
 		&= \dot{ ((x(t))^{3} + (y(t))^{3} + (z(t))^{3} - 1) } (0) \eval{ \pdv{u} }_{F(p)} + \dot{ (x(t) + y(t) + z(t)) } (0) \eval{ \pdv{v} }_{F(p)} \\
 		&= (3 (x(0))^{2} \dot{x}(0) + 3 (y(0))^{2} \dot{y}(0) + 3 (z(0))^{2} \dot{z}(0)) \eval{ \pdv{u} }_{F(p)} + (\dot{x}(0) + \dot{y}(0) + \dot{z}(0)) \eval{ \pdv{v} }_{F(p)} \\
 		&= ( 3 (x(0), y(0), z(0))^{2} \cdot (\dot{x}(0), \dot{y}(0), \dot{z}(0)) \eval{ \pdv{u} }_{F(p)} + ( (1,1,1) \cdot (\dot{x}(0), \dot{y}(0), \dot{z}(0)) ) \eval{ \pdv{v} }_{F(p)} \\
-		&= ( 3 p^{2} \cdot X_{p} ) \eval{ \pdv{u} }_{F(p)} + ( (1,1,1) \cdot X_{p} ) \eval{ \pdv{v} }_{F(p)}
+		&= 3 ( p^{2} \cdot X_{p} ) \eval{ \pdv{u} }_{F(p)} + ( (1,1,1) \cdot X_{p} ) \eval{ \pdv{v} }_{F(p)}
 	\end{split}
 \end{align}
 
