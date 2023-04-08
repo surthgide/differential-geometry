@@ -5414,7 +5414,7 @@ La condizione che individua i punti critici è la seguente
 \end{align}
 
 ma
-
+%
 \begin{equation}
 	m_{ij} = 0, \, \forall i,j=1,\dots,n \implies \det(A) = 0
 \end{equation}
@@ -5517,14 +5517,14 @@ Questi teoremi derivano dal teorema della funzione inversa come caso particolare
 	 possiamo dunque scrivere la composizione
 	
 	\begin{equation}
-		f = \tilde{\psi} \circ F \circ \tilde{\varphi}^{-1} : \tilde{\varphi}(\tilde{U}) \to \tilde{\psi}(\tilde{V})
+		f \doteq \tilde{\psi} \circ F \circ \tilde{\varphi}^{-1} : \tilde{\varphi}(\tilde{U}) \to \tilde{\psi}(\tilde{V})
 	\end{equation}
 
 	con $ \tilde{\varphi}(\tilde{U}) \subset \R^{n} $ e $ \tilde{\psi}(\tilde{V}) \subset \R^{m} $; questa applicazione porta $ 0 \in \tilde{\varphi}(\tilde{U}) $ in $ 0 \in \tilde{\psi}(\tilde{V}) $, in quanto entrambe le carte sono centrare rispettivamente in $ p $ e $ F(p) $. \\
 	Essendo dominio e codominio di quest'applicazione due aperti di spazi euclidei, possiamo applicare il teorema del rango costante in analisi: sappiamo che
 	
 	\begin{equation}
-		\rank(f(q)) = \rank(\tilde{\psi} \circ F \circ \tilde{\varphi}^{-1})(\tilde{\varphi}(q)) = k \qcomma \forall q \in \tilde{U}
+		\rank(f(\tilde{\varphi}(q))) = \rank(\tilde{\psi} \circ F \circ \tilde{\varphi}^{-1})(\tilde{\varphi}(q)) = k \qcomma \forall q \in \tilde{U}
 	\end{equation}
 
 	perciò esistono due aperti $ I_{1} \subset \tilde{\varphi}(\tilde{U}) $ e $ I_{2} \subset \tilde{\psi}(\tilde{V}) $ entrambi centrati nella rispettiva origine e due diffeomorfismi
@@ -5563,7 +5563,7 @@ Questi teoremi derivano dal teorema della funzione inversa come caso particolare
 \end{proof}
 
 \begin{theorem}[Preimmagine di un'applicazione di rango costante]\label{thm:preimg-rank}
-	Siano un'applicazione liscia $ F : N \to M $ tra varietà differenziabili $ N $ e $ M $ di dimensione rispettivamente $ n $ ed $ m $, e un punto $ c \in M $ tale che $ F^{-1}(c) \neq \emptyset $ e supponiamo esista un aperto $ W \subset N $ tale che $ F^{-1}(c) \subset W $ nel quale il rango di $ F $ sia costante, i.e.
+	Siano un'applicazione liscia $ F : N \to M $ tra varietà differenziabili $ N $ e $ M $ di dimensione rispettivamente $ n $ ed $ m $, e un punto $ c \in M $ tale che $ F^{-1}(c) \neq \emptyset $. Supponiamo esista un aperto $ W \subset N $ tale che $ F^{-1}(c) \subset W $ nel quale il rango di $ F $ sia costante, i.e.
 	
 	\begin{equation}
 		\rank(F(q)) = k \qcomma \forall q \in W
@@ -5682,7 +5682,7 @@ Considerando $ A \in GL_{n}(\R) $, calcoliamo il differenziale dell'equazione
 \begin{align}
 	\begin{split}
 		(L_{C^{T}} \circ R_{C} \circ F)_{*A} &= (F \circ R_{C})_{*A} \\
-		(L_{C^{T}})_{*A^{T} A C} \circ (R_{C})_{*A^{T} A} \circ F_{*A} &= F_{*A C} \circ R_{C_{*A}}
+		(L_{C^{T}})_{*A^{T} A C} \circ (R_{C})_{*A^{T} A} \circ F_{*A} &= F_{*A C} \circ (R_{C})_{*A}
 	\end{split}
 \end{align}
 
