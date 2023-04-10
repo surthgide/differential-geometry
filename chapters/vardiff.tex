@@ -6071,7 +6071,7 @@ il che implica che un embedding è iniettivo. Ad esempio, come visto sopra, l'in
 \end{theorem}
 
 \begin{theorem}[Whitney (forma debole)]
-	Se $ N $ è una varietà differenziabile di dimensione $ n>1 $ allora esiste esiste $ F : N \to \R^{2n-1} $ immersione iniettiva.
+	Se $ N $ è una varietà differenziabile di dimensione $ n>1 $ allora esiste $ F : N \to \R^{2n-1} $ immersione iniettiva.
 \end{theorem}
 
 Nel caso in cui $ n=1 $, non esiste un'immersione iniettiva tra $ N $ e $ \R $, e.g.\footnote{%
@@ -6088,7 +6088,7 @@ Nell'esempio della dimostrazione del Teorema \ref{thm:emb-subvar}, $ F(N) $ non 
 
 \paragraph{2) Cuspide cubica}
 
-Sia l'applicazione della cuspide cubica $ y^{2} = x^{3} $ (cubica)
+Sia l'applicazione della cuspide cubica $ y^{2} = x^{3} $
 
 \map{F}
 	{\R}{\R^{2}}
@@ -6100,8 +6100,8 @@ Questa è iniettiva perché per due punti dell'immagine uguali otteniamo che
 	(t_{1}^{2},t_{1}^{3}) = (t_{2}^{2},t_{2}^{3}) %
 	\implies %
 	\begin{cases}
-		t_{1}^{2} = t_{2}^{2} \\
-		t_{1}^{3} = t_{2}^{3}
+		(t_{1})^{2} = (t_{2})^{2} \\
+		(t_{1})^{3} = (t_{2})^{3}
 	\end{cases} %
 	\implies %
 	\begin{cases}
@@ -6274,7 +6274,7 @@ Per verificare se sia un'immersione, consideriamo la derivata di $ F $ in $ \R^{
 	\dot{F}(t) = 2 \pi (- \sin(2 \pi t), \cos(2 \pi t), - \alpha \sin(2 \pi \alpha t), \alpha \cos(2 \pi \alpha t))
 \end{equation}
 
-la quale non si annulla per nessun $ t \in \R $, dunque $ F $ è un'immersione. \\
+la quale non si annulla per alcun $ t \in \R $, dunque $ F $ è un'immersione. \\
 Nonostante $ F $ sia un'immersione iniettiva, questa non è un embedding in quanto la sua immagine non è una sottovarietà di $ \R^{4} $. \\
 Dimostriamo questo fatto mediante il seguente lemma:
 
@@ -6389,13 +6389,13 @@ Supponiamo per assurdo che $ F $ sia un embedding: l'applicazione $ f : \R \to F
 	Consideriamo ora la composizione ristretta a $ U $
 	
 	\map{\psi \circ F}
-		{U}{V \subset \R^{m}}
+		{U}{\psi(V) \subset \R^{m}}
 		{p}{\left( y^{1}(F(p)), \dots, y^{s}(F(p)), 0,\dots,0 \right)}
 
 	in cui sono presenti $ m - s $ zeri in quanto $ F(U) \subseteq V \cap S $, e poi la restrizione di questa a $ S $
 	
 	\map{\psi_{S} \circ \tilde{F}}
-		{U}{\psi_{S}(V \cap S)}
+		{U}{\psi_{S}(V \cap S) \subset \R^{s}}
 		{p}{\left( y^{1}(F(p)), \dots, y^{s}(F(p)) \right)}
 
 	Siccome le $ y^{i} $, $ F $ e $ \psi_{S} $ sono tutte applicazioni lisce rispetto a $ p $, anche la composizione $ \psi_{S} \circ \tilde{F} $ sarà liscia, il che implica che la restrizione $ \tilde{F} $ è liscia.
@@ -6425,7 +6425,7 @@ e chiamiamo le loro immagini
 	G((-\pi,\pi)) \doteq \mathfrak{8}_{G}
 \end{gather}
 
-le quali sono varietà differenziabili la cui struttura è indotta rispettivamente da $ F $ o da $ G $ (bigezioni), ma non sono sottovarietà di $ \R^{2} $. Le funzioni che hanno lo stesso dominio e come codominio le immagini del dominio sono diffeomorfismi, i.e.
+le quali sono varietà differenziabili la cui struttura è indotta rispettivamente da $ F $ e da $ G $ (bigezioni), ma non sono sottovarietà di $ \R^{2} $. Le funzioni che hanno lo stesso dominio e come codominio le immagini tramite $ F $ e $ G $ del dominio sono diffeomorfismi, i.e.
 
 \sbs{0.5}{%
 			\map{\tilde{F}}
@@ -6446,7 +6446,7 @@ Consideriamo ora l'applicazione $ H $ che mappa i punti come $ G $ ma nell'immag
 	{(-\pi,\pi)}{\mathfrak{8}_{F}}
 	{t}{(\sin(2t), -\sin(t))}
 
-il cui codominio possiede la struttura differenziabile indotta da $ G $. Nonostante la funzione $ G $ sia liscia e l'immagine di $ H $ sia contenuta in $ \R^{2} $, $ \mathfrak{8}_{F} $ non è una sottovarietà di $ \R^{2} $ e $ H $ non è nemmeno continua (perciò non liscia): per dimostrarlo è necessario considerare un aperto nel codominio e dimostrare che la sua controimmagine non è aperta nel dominio. Consideriamo dunque il segmento aperto $ U = (a,b) \in \mathfrak{8}_{F} $: la sua controimmagine tramite $ F $ è aperta in $ (-\pi,\pi) $, mentre non è aperta se si prende la sua controimmagine tramite $ H $, i.e.
+il cui codominio possiede la struttura differenziabile indotta da $ G $. Nonostante la funzione $ G $ sia liscia e l'immagine di $ H $ sia contenuta in $ \R^{2} $, $ \mathfrak{8}_{F} $ non è una sottovarietà di $ \R^{2} $ e $ H $ non è nemmeno continua (perciò non liscia): per dimostrarlo possiamo considerare un aperto nel codominio e dimostrare che la sua controimmagine non è aperta nel dominio. Consideriamo dunque il segmento aperto $ U = (a,b) \in \mathfrak{8}_{F} $: la sua controimmagine tramite $ F $ è aperta in $ (-\pi,\pi) $, mentre non è aperta se si prende la sua controimmagine tramite $ H $, i.e.
 
 \begin{equation}
 	U = (a,b) \subset \mathfrak{8}_{F} %
@@ -6632,7 +6632,7 @@ cioè l'unione di tutti gli aperti $ A $ contenuti nei rispettivi $ T(U_{\alpha}
 	\begin{itemize}
 		\item $ \B_{T(M)} $ sia un ricoprimento di $ T(M) $;
 		
-		\item L'intersezione di due elementi di $ \B_{T(M)} $ si può scrivere come unione di elementi di $ \B_{T(M)} $.
+		\item l'intersezione di due elementi di $ \B_{T(M)} $ si possa scrivere come unione di elementi di $ \B_{T(M)} $.
 	\end{itemize}
 
 	Per definizione $ T(U_{\alpha}) \in \B_{T(M)} $ in quanto aperto; inoltre vale la seguente implicazione
@@ -6705,7 +6705,7 @@ Dobbiamo far vedere ora che $ T(M) $ è una varietà topologica e per farlo dobb
 		\tilde{\varphi}_{\alpha} : T(U_{\alpha}) \to \varphi_{\alpha}(U_{\alpha}) \times \R^{n}
 	\end{equation}
 	
-	sono omeomorfismi in aperti di $ \R^{2n} $, dunque
+	sono omeomorfismi verso aperti di $ \R^{2n} $, dunque
 	
 	\begin{equation}
 		\dim(T(M)) = 2 \dim(M) = 2 n
@@ -6758,7 +6758,7 @@ Al fine di dimostrare il secondo criterio di numerabilità $ N_{2} $ per $ T(M) 
 
 \begin{proof}
 	Siano $ \{(U_{\alpha},\varphi_{\alpha})\} $ l'atlante massimale di $ M $ che definisce la struttura differenziabile di $ M $ e $ \mathfrak{U} = \{U_{i}\}_{i \in I} $ una base numerabile per la topologia di $ M $ (questa esiste in quanto $ M $ è $ N_{2} $). \\
-	Presi un punto $ p \in M $ e un aperto $ U_{\alpha} $ di una carta dell'atlante, esiste sempre $ B_{p,\alpha} \in \mathfrak{U} $ tale che $ p \in B_{p,\alpha} \subset U_{\alpha} $, in quanto $ \mathfrak{U} $ è una base. Consideriamo ora la famiglia di aperti $ \B = \{B_{p,\alpha}\} $ senza duplicati, la quale sarà una sottofamiglia di $ \mathfrak{U} $ e, in quanto tale, sarà numerabile perché $ \mathfrak{U} $ è numerabile. Inoltre $ \left( B_{p,\alpha}, \eval{\varphi}_{B_{p,\alpha}} \right) $ è una carta di $ M $ e dunque $ \left\{ \left( B_{p,\alpha}, \eval{\varphi}_{B_{p,\alpha}} \right) \right\} $ è un atlante differenziabile numerabile per $ M $. \\
+	Presi un punto $ p \in M $ e un aperto $ U_{\alpha} $ di una carta dell'atlante, esiste sempre un aperto $ B_{p,\alpha} \in \mathfrak{U} $ tale che $ p \in B_{p,\alpha} \subset U_{\alpha} $, in quanto $ \mathfrak{U} $ è una base. Consideriamo ora la famiglia di aperti $ \B = \{B_{p,\alpha}\} $ senza duplicati, la quale sarà una sottofamiglia di $ \mathfrak{U} $ e, in quanto tale, sarà numerabile perché $ \mathfrak{U} $ è numerabile. Inoltre $ \left( B_{p,\alpha}, \eval{\varphi}_{B_{p,\alpha}} \right) $ è una carta di $ M $ e dunque $ \left\{ \left( B_{p,\alpha}, \eval{\varphi}_{B_{p,\alpha}} \right) \right\} $ è un atlante differenziabile numerabile per $ M $. \\
 	Resta da dimostrare che $ \B $ sia una base (già numerabile) per $ M $: siano $ p \in M $ e $ U \ni p $ aperto di $ M $, siccome esiste sempre un aperto di una carta che sia contenuto in un aperto della varietà, possiamo scrivere $ p \in U_{\alpha} \subset U $, dove la carta considerata dell'atlante è $ \left( U \cap U_{\alpha}, \eval{\varphi}_{U \cap U_{\alpha}} \right) $; sappiamo anche che esiste $ B_{p,\alpha} $ tale che $ p \in B_{p,\alpha} \subset U_{\alpha} $, dunque $ p \in B_{p,\alpha} \subset U $. Questo significa che esiste sempre un aperto $ B_{p,\alpha} \in \B $ che si interponga tra ogni punto della varietà e ogni aperto che contiene il punto stesso, i.e. $ \B $ è una base per $ M $.
 \end{proof}
 
