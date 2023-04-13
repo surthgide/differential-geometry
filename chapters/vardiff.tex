@@ -8132,9 +8132,9 @@ Abbiamo dunque che $ \varphi $ è un isomorfismo.
 		{p}{X_{p} \in T_{p}(N)}
 	
 	dunque $ \eval{X}_{N} $ è un campo di vettori in $ N $, dobbiamo ora dimostrare che questo sia liscio in $ N $. \\
-	Per verificarlo, consideriamo il fatto che $ N $ sia una sottovarietà di $ M $, la quale implica che $ T(N) $ sia una sottovarietà di $ T(M) $\footnote{%
+	Per verificarlo, consideriamo il fatto che $ N $ sia una sottovarietà di $ M $, la quale implica che $ T(N) $ sia una sottovarietà\footnote{%
 		Vedi Esercizio \ref{exer2-25}.%
-	} con $ T(N) \subset T(M) $. La composizione $ F $ tra l'inclusione $ i : N \to M $ (la quale è un'immersione) e il campo di vettori $ X $
+	} di $ T(M) $ con $ T(N) \subset T(M) $. La composizione $ F $ tra l'inclusione $ i : N \to M $ (la quale è un'immersione) e il campo di vettori $ X $
 
 	\begin{equation}
 		F \doteq X \circ i : N \to T(M)
@@ -8143,7 +8143,7 @@ Abbiamo dunque che $ \varphi $ è un isomorfismo.
 	è un'applicazione liscia perché composizione di applicazioni lisce e $ F(N) \subset T(N) $, in quanto ogni punto di $ N $ viene prima mandato nello stesso punto in $ M $ tramite l'inclusione e poi, tramite $ X $, nel vettore $ X_{p} \in T_{p}(N) $. \\
 	Sapendo che la restrizione del codominio di una funzione liscia a una sottovarietà del codominio originale produce ancora una funzione liscia\footnote{%
 		Vedi Teorema \ref{thm:smooth-restriction-subman}.%
-	}, consideriamo la restrizione $ \tilde{F} : N \to T(N) $ con $ \tilde{F}(p) = F(p) $, la quale coincide con $ \eval{X}_{N} \equiv \tilde{F} $ e rende dunque liscia la restrizione del campo. \\
+	}, consideriamo la restrizione $ \tilde{F} : N \to T(N) $ con $ \tilde{F}(p) = F(p) $, per la quale vale $ \tilde{F} \equiv \eval{X}_{N} $, rendendo dunque liscia la restrizione del campo. \\
 	Questo prova che $ \eval{X}_{N} \in \chi(N) $.
 \end{proof}
 
@@ -8153,13 +8153,13 @@ Tramite il lemma dimostrato sopra, è possibile trovare campi di vettori lisci s
 
 \paragraph{1) Sfera di dimensione dispari}
 
-Sia la sfera di dimensione dispari $ \S^{2n-1} \subset \R^{2n} $. Avendo le coordinate $ (x^{1},\dots,x^{n},y^{1},\dots,y^{n}) $ su $ \R^{2n} $, abbiamo che
+Sia la sfera di dimensione dispari $ \S^{2n-1} \subset \R^{2n} $ con $ n > 0 $. Avendo le coordinate $ (x^{1},\dots,x^{n},y^{1},\dots,y^{n}) $ su $ \R^{2n} $, abbiamo che
 
 \begin{equation}
 	\S^{2n-1} = \{ (x^{1},\dots,x^{n},y^{1},\dots,y^{n}) \in \R^{2n} \mid (x^{1})^{2} + \cdots + (x^{n})^{2} + (y^{1})^{2} + \cdots + (y^{n})^{2} = 1 \}
 \end{equation}
 
-Siano il campo di vettori su $ \R^{2n} $ e la sua forma dopo l'identificazione $ T(\R^{2n}) \equiv \R^{2n} $:
+Siano il campo di vettori $ T(\R^{2n}) $ su $ \R^{2n} $ e la sua forma dopo l'identificazione con $ \R^{2n} $:
 
 \begin{equation}
 	X = \sum_{j=1}^{n} - y^{j} \pdv{x^{j}} + x^{j} \pdv{y^{j}} %
