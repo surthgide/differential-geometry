@@ -2671,11 +2671,11 @@ I gruppi di diffeomorfismi a un parametro dei campi di vettori sono dunque
 				{\R}{\operatorname{Diff}(\R^{2})}
 				{t}{F_{X,t}}
 			
-			\map{G_{X}}
+			\map{G_{Y}}
 				{\R}{\operatorname{Diff}(\R^{2})}
 				{t}{F_{Y,t}}
 			
-			\map{G_{X}}
+			\map{G_{Z}}
 				{\R}{\operatorname{Diff}(\R^{2})}
 				{t}{F_{Z,t}}
 		}
@@ -2769,7 +2769,7 @@ perciò il campo non è completo.
 \exer{Curva integrale costante}
 {exer2-32}
 {
-Sia $ M $ una varietà differenziabile e $ X \in \chi(M) $ tale che $ X(p) = 0 $ in un punto $ p \in M $. Dimostrare che la curva integrale di $ X $ che inizia in $ p $ è la curva costante $ c(t) = p $.
+Siano $ M $ una varietà differenziabile e $ X \in \chi(M) $ un campo di vettori liscio tale che $ X(p) = 0 $ in un punto $ p \in M $. Dimostrare che la curva integrale di $ X $ che inizia in $ p $ è la curva costante $ c(t) = p $.
 }
 {
 Sia la carta
@@ -2877,11 +2877,11 @@ Per dimostrare questa relazione, usiamo la definizione di pushforward, di differ
 	\end{cases}
 \end{equation}
 
-Considerando $ f : N \to \R $ e un punto qualsiasi $ p \in M $, possiamo scrivere
+Considerando $ f : N \to \R $ e un punto qualsiasi $ q \in M $, possiamo scrivere
 
 \begin{align}
 	\begin{split}
-		F_{*}(f X)(p) &= (F_{*}(f X))_{q} \\
+		F_{*}(f X)(q) &= (F_{*}(f X))_{q} \\
 		&= F_{*F^{-1}(q)} ((f X)_{F^{-1}(q)}) \\
 		&= F_{*F^{-1}(q)} (f(F^{-1}(q)) \, X_{F^{-1}(q)}) \\
 		&= f(F^{-1}(q)) \, F_{*F^{-1}(q)} (X_{F^{-1}(q)}) \\

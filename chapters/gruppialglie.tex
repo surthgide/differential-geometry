@@ -8,18 +8,18 @@ Un gruppo $ (G,\mu) \equiv G $ è un \textit{gruppo di Lie} se:
 	\item $ (G,\mu) $ è un gruppo algebrico;
 	
 	\item sono lisce le sue operazioni di prodotto e inversione
-	
-	\sbs{0.5}{%
-				\map{\mu}
-					{G \times G}{G}
-					{(a,b)}{a b}
-				}
-		{0.5}{%
-				\map{i}
-					{G}{G}
-					{a}{a^{-1}}
-				}
 \end{itemize}
+
+\sbs{0.5}{%
+			\map{\mu}
+				{G \times G}{G}
+				{(a,b)}{a b}
+			}
+	{0.5}{%
+			\map{i}
+				{G}{G}
+				{a}{a^{-1}}
+			}
 		
 Preso un elemento $ a \in G $, possiamo considerare delle restrizioni della moltiplicazione, chiamate traslazione a sinistra $ L_{a} $ e traslazione a destra $ R_{a} $:
 
@@ -37,8 +37,8 @@ Preso un elemento $ a \in G $, possiamo considerare delle restrizioni della molt
 Queste sono lisce in quanto restrizioni di applicazioni lisce:
 
 \begin{gather}
-	L_{a} \doteq \mu(a,\cdot) \\
-	R_{a} \doteq \mu(\cdot,a) 
+	L_{a} \doteq \mu(a,\cdot) = \eval{\mu}_{\{a\} \times G} \\
+	R_{a} \doteq \mu(\cdot,a)  = \eval{\mu}_{G \times \{a\}}
 \end{gather}
 
 Sono inoltre diffeomorfismi, in quanto sono lisce le inverse:
@@ -177,7 +177,14 @@ e l'applicazione liscia
 	{GL_{n}(\R)}{S(n)}
 	{A}{A^{T} A}
 
-dove $ (A^{T} A)^{T} = A^{T} A $ dunque $ A^{T} A \in S(n) $. Dimostrando che $ I \in \VR_{f} $, per il teorema della preimmagine di un valore regolare, avremmo che $ O(n) $ è una sottovarietà di $ GL_{n}(\R) $ con dimensione
+dove
+
+\begin{equation}
+	(A^{T} A)^{T} = A^{T} A \implies %
+	A^{T} A \in S(n) \qcomma \forall A \in GL_{n}(\R)
+\end{equation}
+
+$  $. Dimostrando che $ I \in \VR_{f} $, per il teorema della preimmagine di un valore regolare, avremo che $ O(n) $ è una sottovarietà di $ GL_{n}(\R) $ con dimensione
 
 \begin{equation}
 	\dim(O(n)) = \dim(GL_{n}(\R)) - \dim(S(n))
@@ -261,16 +268,10 @@ Perché $ f_{*A} $ sia suriettiva
 	\end{split}
 \end{align}
 
-dunque $ I \in \VR_{f} $ e $ \dim(O(n)) = n(n-1)/2 $. Da questo ragionamento, otteniamo anche lo spazio tangente a $ O(n) $ in $ I $ poiché, per il teorema della preimmagine di un valore regolare, vale la seguente uguaglianza
+dunque $ I \in \VR_{f} $ e $ \dim(O(n)) = n(n-1)/2 $. Da questo ragionamento, otteniamo anche lo spazio tangente a $ O(n) $ in $ I $ poiché, sempre per il teorema della preimmagine di un valore regolare, vale la seguente uguaglianza
 
 \begin{equation}
 	T_{A}(f^{-1}(I)) = T_{A}(O(n)) = \ker(f_{*A}) \qcomma A \in f^{-1}(I)
-\end{equation}
-
-perciò
-
-\begin{equation}
-	T_{I}(O(n)) = \ker(f_{*I})
 \end{equation}
 
 Siccome
