@@ -430,7 +430,7 @@ La definizione dell'esponenziale di matrice segue la falsa riga delle serie di p
 	e^{x} = \sum_{i=0}^{+\infty} \dfrac{x^{i}}{i!} \qcomma x \in \R
 \end{equation}
 
-Non è però chiaro se la serie di matrici considerata sia convergente e dunque che $ e^{X} \in M_{n}(\R) $: questo è facilmente dimostrabile se la matrice all'esponente è
+Non è però chiaro se la serie di matrici considerata sia convergente e dunque se $ e^{X} \in M_{n}(\R) $: questo è facilmente dimostrabile se la matrice all'esponente è
 
 \begin{itemize}
 	\item la matrice nulla $ X = 0_{n} $ da cui $ e^{0_{n}} = I_{n} = I $;
@@ -446,7 +446,7 @@ Per dimostrarlo in generale, facciamo una digressione su concetti di analisi uti
 
 Uno spazio vettoriale $ V $ sui reali $ \R $ è detto \textit{normato} se esiste un'applicazione
 
-\map{\norm{\cdot}}
+\map{\norm{}}
 	{V}{\R}
 	{v}{\norm{v}}
 
@@ -463,7 +463,7 @@ chiamata \textit{norma} tale che siano soddisfatte le condizioni:
 	\end{cases}
 \end{equation}
 
-per qualsiasi $ \lambda \in \R $ e $ v,w \in V $. \\
+per qualsiasi $ \lambda \in \R $ e qualsiasi $ v,w \in V $. \\
 La condizione di subadditività deriva dalla \textit{disuguaglianza di Cauchy-Schwarz}:
 
 \begin{equation}
@@ -480,7 +480,7 @@ la quale corrisponde alla norma usuale in $ \R^{n^{2}} $: da ciò deriva che que
 
 \paragraph{Algebre normate}
 
-Una tripletta $ (V,\cdot,\norm{}) $ è un'\textit{algebra normata} se $ V $ è uno spazio vettoriale su $ \R $, $ (V,\cdot) $ è un'algebra su $ \R $ e $ (V,\norm{\cdot}) $ è uno spazio vettoriale normato tali che valga la proprietà di submoltiplicatività
+Una tripletta $ (V,\cdot,\norm{}) $ è un'\textit{algebra normata} se $ V $ è uno spazio vettoriale su $ \R $, $ (V,\cdot) $ è un'algebra su $ \R $ e $ (V,\norm{}) $ è uno spazio vettoriale normato tali che valga la proprietà di submoltiplicatività
 
 \begin{equation}
 	\norm{v \cdot w} \leqslant \norm{v} \norm{w} \qcomma v,w \in V
@@ -635,7 +635,7 @@ Come controesempio dell'implicazione inversa, la serie in $ \R $
 	\sum_{n=0}^{+\infty} \dfrac{(-1)^{n}}{n}
 \end{equation}
 
-è convergente ma non assolutamente convergente, se si prende la norma in $ \R $, i.e. il valore assoluto.
+è convergente ma non assolutamente convergente se si prende la norma in $ \R $ (valore assoluto).
 
 \begin{proof}
 	Consideriamo la successione di serie parziali $ \tilde{s}_{k} \in V $ e $ p,q \in \N $ con $ p > q $. Per ipotesi la serie è assolutamente convergente perciò
@@ -651,7 +651,7 @@ Come controesempio dell'implicazione inversa, la serie in $ \R $
 \subsection{Definizione di esponenziale di matrice}
 
 Mostriamo ora che la serie
-
+%
 \begin{equation}
 	e^{X} = \sum_{i=0}^{+\infty} \dfrac{X^{i}}{i!} \qcomma X \in M_{n}(\R)
 \end{equation}
@@ -774,7 +774,7 @@ Per vettori in campo complesso, i.e. nell'algebra $ (\C^{n},\cdot) $, definiamo 
 	v \cdot w \doteq \sum_{j=1}^{n} v^{j} \bar{w}^{j} = v^{T} \bar{w}
 \end{equation}
 
-con $ v,w \in \C^{n} $ e $ \bar{w} $ indica il coniugato di $ w $ (sia per la componente che per tutte le componenti dell'intero vettore colonna). Il prodotto hermitiano è definito positivo in quanto
+con $ v,w \in \C^{n} $ e $ \bar{w} $ indica il coniugato di $ w $ (sia per la componente che per tutte le componenti dell'intero vettore colonna). Per il prodotto hermitiano vale
 
 \begin{equation}
 	v \cdot v = \sum_{j=1}^{n} v^{j} \bar{v}^{j} = \sum_{j=1}^{n} \abs{v}^{j}
@@ -842,7 +842,7 @@ se consideriamo solo la prima entrata della matrice prodotto, otteniamo
 	\abs{a_{11}}^{2} + \abs{a_{21}}^{2} + \cdots + \abs{a_{n1}}^{2} = 1
 \end{equation}
 
-e così per il resto degli elementi nella diagonale, mentre tutti gli altri prodotti hermitiani tra il resto delle colonne è nullo, i.e. le colonne sono tra loro ortogonali.
+e così per il resto degli elementi nella diagonale, mentre tutti gli altri prodotti hermitiani tra il resto delle colonne è nullo, i.e. le colonne sono tra loro ortonormali.
 
 \begin{definition}
 	Le colonne di una matrice unitaria sono una base ortonormale per l'algebra $ (\C^{n},\cdot) $, i.e. prese due colonne $ v_{i} $ e $ v_{j} $ di una matrice unitaria, vale $ v_{i} \cdot v_{j} = \delta_{ij} $.
@@ -850,7 +850,7 @@ e così per il resto degli elementi nella diagonale, mentre tutti gli altri prod
 
 
 \begin{definition}
-	La dimensione di un sottospazio $ W \subset \C^{n} $ in $ \C^{n} $ è doppia rispetto alla dimensione che questo avrebbe sui numeri reali $ \R $, in quanto esiste l'identificazione $ \C^{n} = \R^{2n} $, i.e.
+	La dimensione di un sottospazio $ W \subset \C^{n} $ in $ \C^{n} $ è doppia rispetto alla dimensione che questo avrebbe sui numeri reali $ \R $, in quanto si identificano $ \C^{n} = \R^{2n} $, i.e.
 
 	\begin{equation}
 		\dim_{\C}(W) = 2 \dim_{\R}(W)
@@ -1349,7 +1349,7 @@ in quanto
 \begin{align}
 	\begin{split}
 		M_{a}(i,j) M_{-a}(i,j) &= (I + a E_{ij}) (I - a E_{ij}) \\
-		&= I + a E_{ij} - a E_{ij} - a^{2} \cancel{E_{ij} E_{ij}} \\
+		&= I + a E_{ij} - a E_{ij} - a^{2} \cancelto{0}{E_{ij} E_{ij}} \\
 		&= I
 	\end{split}
 \end{align}
@@ -1834,7 +1834,7 @@ La traccia di una matrice a entrare reali è un numero reale, i.e. $ \tr(X) \in 
 		= X
 	\end{equation}
 
-	più in generale
+	Più in generale
 	
 	\begin{equation}
 		c(0) = A e^{0 A B} = A e^{0_{n}} = A
