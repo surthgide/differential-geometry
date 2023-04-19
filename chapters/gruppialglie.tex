@@ -2072,14 +2072,14 @@ e limitato in quanto le colonne delle matrici di $ O(n) $ hanno norma unitaria e
 Non è connesso per $ n \geqslant 1 $, ma costituito da due componenti connesse
 
 \begin{equation}
-	O(n) = SO(n) \sqcup S^{-}(n)
+	O(n) = SO(n) \sqcup SO^{-}(n)
 \end{equation}
 
 dove
 
 \begin{gather}
 	SO(n) = \{ A \in O(n) \mid \det(A) = 1 \} \\
-	S^{-}(n) = \{ A \in O(n) \mid \det(A) = -1 \}
+	SO^{-}(n) = \{ A \in O(n) \mid \det(A) = -1 \}
 \end{gather}
 
 Questo perché, siccome
@@ -2261,10 +2261,10 @@ un elemento di $ SO(n) $ potrebbe essere unito a un elemento $ A \in M $ con $ \
 \end{equation}
 
 Questo è assurdo, per il teorema del valore medio, perché il determinante di $ \det(c(t)) \neq 0 $ ma $ c $ è un'applicazione continua che passerebbe da $ \det(c(0)) = 1 $ a $ \det(c(1)) = -1 $. \\
-Analogamente, l'insieme delle matrici con determinante pari a $ -1 $, i.e. $ S^{-}(n) $, è l'altra componente connessa di $ O(n) $, per cui vale
+Analogamente, l'insieme delle matrici con determinante pari a $ -1 $, i.e. $ SO^{-}(n) $, è l'altra componente connessa di $ O(n) $, per cui vale
 
 \begin{equation}
-	O(n) = SO(n) \sqcup S^{-}(n)
+	O(n) = SO(n) \sqcup SO^{-}(n)
 \end{equation}
 
 Consideriamo le due seguenti proposizioni:
@@ -2299,7 +2299,7 @@ Qualunque aperto di una varietà differenziabile è una sottovarietà\footnote{%
 \end{gather}
 
 Essendo chiuso e limitato (o, equivalentemente, chiuso nel compatto $ O(n) $), $ SO(n) $ è compatto. \\
-Gli stessi ragionamenti sono applicabili all'altra componente connessa $ S^{-}(n) $ di $ O(n) $. \\
+Gli stessi ragionamenti sono applicabili all'altra componente connessa $ SO^{-}(n) $ di $ O(n) $. \\
 Per piccoli valori di $ n $, abbiamo che:
 
 \begin{itemize}
