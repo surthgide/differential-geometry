@@ -2543,12 +2543,12 @@ A questo punto, dobbiamo studiare $ T_{1}(\S^{1}) $ con $ \S^{1} \subset \C $: p
 				\begin{cases}
 					a \in \R \\
 					c(0) = 1 \\
-					\dot{c} = i a
+					\dot{c}(0) = i a
 				\end{cases}
 			\end{equation}
 			}
 
-Dato che $ \dot{c} \in T_{1}(\S^{1}) $, possiamo asserire che
+Dato che $ \dot{c}(0) \in T_{1}(\S^{1}) $, possiamo asserire che
 
 \begin{equation}
 	T_{1}(\S^{1}) = \ev{i}_{\R}
@@ -2582,6 +2582,7 @@ Per soddisfare la condizione, prendiamo $ B = AX $ con $ X = (i a/n) I $, da cui
 \begin{equation}
 	\tr(A^{-1} B) = \tr(A^{-1} A \, \dfrac{ia}{n} \, I) %
 	= \dfrac{ia}{n} \tr(I) %
+	= \dfrac{ia}{n} \, n %
 	= i a
 \end{equation}
 
@@ -2705,9 +2706,9 @@ L'immagine è ben definita, i.e. il primo termine appartiene a $ SL_{n}(\R) $ in
 e il secondo appartiene a $ \R \setminus \{0\} $, poiché $ \det(A) \neq 0 $ per qualsiasi $ A \in GL_{n}(\R) $. \\
 L'applicazione $ f $ è liscia perché tutte le entrate sono lisce e perché, considerando l'applicazione liscia
 
-\begin{equation}
-	g : GL_{n}(\R) \to GL_{n}(\R) \times \R \setminus \{0\}
-\end{equation}
+\map{g}
+	{GL_{n}(\R)}{GL_{n}(\R) \times \R \setminus \{0\}}
+	{A}{(A M_{1/\det(A)},\det(A))}
  
 il codominio di $ f $ è una restrizione del codominio di $ g $ a una sua sottovarietà. \\
 L'inversa di $ f $ (ancora liscia anche perché restrizione di un'applicazione liscia) è
@@ -2748,7 +2749,7 @@ Perché sia un isomorfismo, oltre ad essere un diffeomorfismo, dovrebbe essere u
 	\end{split}
 \end{align}
 
-in quanto $ [B, M_{1/\det(A)}] \neq 0 $. \\
+in quanto, in generale, $ [B, M_{1/\det(A)}] \neq 0 $. \\
 Da questa analisi otteniamo che
 
 \begin{equation}
