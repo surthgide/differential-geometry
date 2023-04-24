@@ -3229,7 +3229,7 @@ I campi di vettori invarianti a sinistra sono importanti perché esiste un isomo
 
 \begin{corollary}
 	La coppia $ (L(G),[,]) $ è una sottoalgebra\footnote{%
-		Presi due spazi vettoriali $ V $ e $ W \subset V $ con $ (V,[,]) $ algebra di Lie, $ \left( W, \eval{[,]}_{W} \right) $ è una sottoalgebra di Lie se $ W $ è un sottospazio vettoriale e vale
+		Presi due spazi vettoriali $ V $ e $ W \subset V $ con $ (V,[,]) $ algebra di Lie, $ \left( W, \eval{[,]}_{W} \right) $ è una sottoalgebra di Lie se $ W $ è un sottospazio vettoriale e se vale
 		
 		\begin{equation*}
 			[w_{1}, w_{2}] \in W \qcomma \forall w_{1},w_{2} \in W
@@ -3282,7 +3282,7 @@ dove
 			}
 
 In questo modo, l'applicazione $ \hatapp $ è un isomorfismo di algebre di Lie tra $ (T_{e}(G),[,]) $ e $ (L(G),[,]) $ con i rispettivi commutatori; le proprietà di algebra di Lie sono rispettate da $ (T_{e}(G),[,]) $ in quanto isomorfo a $ (L(G),[,]) $, il quale le rispetta. \\
-L'algebra $ (T_{e}(G),[,]) $ è chiamata \textit{algebra di Lie del gruppo} $ G $ e viene indicata con
+L'algebra $ (T_{e}(G),[,]) $ è chiamata \textit{algebra di Lie del gruppo} $ G $ e viene solitamente indicata con
 
 \begin{equation}
 	\g \doteq (T_{e}(G),[,])
@@ -3295,7 +3295,7 @@ L'algebra $ (T_{e}(G),[,]) $ è chiamata \textit{algebra di Lie del gruppo} $ G 
 		\widehat{[A,B]} = \widehat{\comm{\hat{A}}{\hat{B}}}_{e} = \comm{\hat{A}}{\hat{B}}
 	\end{equation}
 
-	dove nel primo passaggio abbiamo usato la definizione di commutatore nello spazio tangente e nel secondo abbiamo usato il fatto che l'isomorfismo $ \hatapp $ e la valutazione nell'elemento neutro $ \mid_{e} $ siano i rispettivi inversi.
+	dove nel primo passaggio abbiamo usato la definizione di commutatore nello spazio tangente e nel secondo abbiamo usato il fatto che l'isomorfismo $ \hatapp $ e la valutazione nell'elemento neutro $ \mid_{e} $ siano inversi tra loro.
 \end{remark}
 
 \subsubsection{Esempi di algebre di Lie su spazi tangenti a gruppi di Lie}
@@ -3305,17 +3305,17 @@ L'algebra $ (T_{e}(G),[,]) $ è chiamata \textit{algebra di Lie del gruppo} $ G 
 La coppia $ (\R^{n},+) $ è un gruppo di Lie (abeliano) con elemento neutro $ 0 \in \R^{n} $. Lo spazio tangente all'elemento neutro $ T_{0}(\R^{n}) $ può essere identificato con $ \R^{n} $ stesso:
 
 \begin{equation}
-	T_{0}(\R^{n}) = \left\{ \sum_{j=1}^{n} a^{j} \eval{\pdv{x^{j}}}_{0} \right\} %
-	= (a^{1},\dots,a^{n}) \in \R^{n}
+	T_{0}(\R^{n}) = \left\{ \sum_{j=1}^{n} a^{j}(0) \eval{\pdv{x^{j}}}_{0} \right\} %
+	= (a^{1}(0),\dots,a^{n}(0)) \in \R^{n}
 \end{equation}
 
-dove le $ a^{j} : \R^{n} \to \R $ sono applicazioni e lo spazio tangente è generato dalle derivate parziali, i.e.
+dove le $ a^{j} : \R^{n} \to \R $ sono applicazioni e lo spazio tangente è generato dalle derivate parziali
 
 \begin{equation}
 	T_{0}(\R^{n}) = \ev{ \eval{ \pdv{x^{j}} }_{0} }
 \end{equation}
 
-Prendiamo ora l'isomorfismo $ \hatapp $, in modo da analizzare i campi di vettori invarianti a sinistra $ L(\R^{n}) $
+Consideriamo ora l'isomorfismo $ \hatapp $, in modo da analizzare i campi di vettori invarianti a sinistra
 
 \map{\hatapp}
 	{T_{0}(\R^{n})}{L(\R^{n})}
@@ -3361,7 +3361,7 @@ abbiamo che
 
 \begin{align}
 	\begin{split}
-		\left( \widehat{ \eval{ \pdv{x^{i}} }_{0} } \right)_{g} (x^{k}) &= L_{g_{*0}} \left( \eval{ \pdv{x^{i}} }_{0} \right) (x^{k}) \\
+		\left( \widehat{ \eval{ \pdv{x^{i}} }_{0} } \right)_{g} (x^{k}) &= (L_{g})_{*0} \left( \eval{ \pdv{x^{i}} }_{0} \right) (x^{k}) \\
 		&= \eval{ \pdv{x^{i}} }_{0} (x^{k} \circ L_{g}) \\
 		&= \eval{ \pdv{x^{i}} }_{0} (g^{k} + x^{k}) \\
 		&= \cancel{ \eval{ \pdv{g^{k}}{x^{i}} }_{0} } + \eval{ \pdv{x^{k}}{x^{i}} }_{0} \\
@@ -3527,13 +3527,13 @@ può dunque essere identificato dalla matrice
 	[A,B] \doteq C = [c_{ij}] \in M_{n}(\R)
 \end{equation}
 
-Definendo la funzione
+Definendo l'applicazione
 
 \map{x_{ij}}
 	{M_{n}(\R)}{\R}
 	{X = [x_{ij}]}{x_{ij}}
 
-e applicando entrambi i membri del commutatore a questa funzione, abbiamo che
+e applicando entrambi i membri del commutatore a questa applicazione, abbiamo che
 
 \begin{align}
 	\begin{split}
@@ -3687,13 +3687,13 @@ Analogamente, prendendo un elemento dello spazio tangente $ A \in T_{e}(G) $ e c
 	dove abbiamo usato le seguenti proprietà:
 	
 	\begin{itemize}
-		\item nel primo passaggio, la definizione del pushforward
+		\item nel primo passaggio, la definizione del pushforward;
 		
-		\item nel secondo, $ g = F^{-1}(h) $
+		\item nel secondo, $ g = F^{-1}(h) $ in quanto $ F $ è un diffeomorfismo;
 		
-		\item nel terzo passaggio, il campo di vettori è invariante a sinistra, i.e. $ X \in L(G) $
+		\item nel terzo passaggio, il campo di vettori è invariante a sinistra, i.e. $ X \in L(G) $;
 		
-		\item nel quarto e nel settimo passaggio, la regola della catena
+		\item nel quarto e nel settimo passaggio, la regola della catena;
 		
 		\item nel quinto passaggio, il fatto che $ F $ è un omomorfismo, i.e.
 		%
@@ -3701,7 +3701,7 @@ Analogamente, prendendo un elemento dello spazio tangente $ A \in T_{e}(G) $ e c
 			L_{F(g)} \circ F = F \circ L_{g} \qcomma \forall g \in G
 		\end{equation}		
 		
-		\item nel nono passaggio, la definizione dell'immagine dell'isomorfismo $ \hatapp $
+		\item nel nono passaggio, la definizione dell'immagine dell'isomorfismo $ \hatapp $.
 	\end{itemize}
 
 	A questo punto
@@ -3716,7 +3716,7 @@ Analogamente, prendendo un elemento dello spazio tangente $ A \in T_{e}(G) $ e c
 Anche nel contesto di omomorfismi, è possibile definire campi di vettori $ F $-related.
 
 \begin{definition}
-	Siano un omomorfismo di gruppi di Lie $ F : G \to H $ e un campo di vettori su $ H $ invariante a sinistra $ X \in L(G) $, allora $ X $ è $ F $-related \footnote{%
+	Siano un omomorfismo di gruppi di Lie $ F : G \to H $ e un campo di vettori su $ G $ invariante a sinistra $ X \in L(G) $, allora $ X $ è $ F $-related \footnote{%
 		Siano un'applicazione liscia $ F : N \to M $ e due campi di vettori lisci $ X \in \chi(N) $ e $ Y \in \chi(M) $, allora $ X $ è $ F $-related a $ Y $ se
 		
 		\begin{equation*}
@@ -3877,7 +3877,7 @@ Per la verifica che il commutatore standard definisca un'algebra di Lie nei grup
 
 \subsection{Applicazione esponenziale di un gruppo di Lie}
 
-Siano $ G $ un gruppo di Lie, $ e \in G $ il suo elemento neutro, $ \g = (T_{e}(G),[,]) $ la sua algebra di Lie e $ \xi,\eta \in \g $ due elementi di quest'algebra, vogliamo costruire un'applicazione
+Siano $ G $ un gruppo di Lie, $ e \in G $ il suo elemento neutro, $ \g = (T_{e}(G),[,]) $ la sua algebra di Lie e $ \xi,\eta \in \g $ due elementi di quest'algebra. Vogliamo costruire un'applicazione
 
 \begin{equation}
 	f : \g \to G
@@ -3911,7 +3911,7 @@ Dai teoremi sulle curve integrali e sui flussi di campi di vettori\footnote{%
 	\sigma_{t+s}^{\xi} = \sigma_{t}^{\xi} \circ \sigma_{s}^{\xi}
 \end{equation}
 
-dove sono definite entrambe le funzioni. \\
+dove sono definite entrambe le applicazioni. \\
 Prendendo l'elemento neutro dell'algebra di Lie $ 0 \in \g $, abbiamo che
 
 \begin{equation}
@@ -4444,10 +4444,10 @@ Ad esempio, $ \gamma^{\xi}(t) = \exp(t \xi) $ definisce un sottogruppo a un para
 	Ricordando che
 	
 	\begin{equation}
-		\mu_{*(e,e)} (X_{e},Y_{e}) = X_{e} + Y {e} \qcomma X_{e},Y_{e} \in T_{e}(G)
+		\mu_{*(e,e)} (X_{e},Y_{e}) = X_{e} + Y_{e} \qcomma X_{e},Y_{e} \in T_{e}(G)
 	\end{equation}
 
-	mostriamo che l'argomento di $ Q^{t}_{*e} $ è nullo:
+	mostriamo che l'argomento di $ (Q^{\xi}_{t})_{*e} $ è nullo:
 	
 	\begin{align}
 		\begin{split}
@@ -4461,7 +4461,7 @@ Ad esempio, $ \gamma^{\xi}(t) = \exp(t \xi) $ definisce un sottogruppo a un para
 	A questo punto, otteniamo che
 	
 	\begin{equation}
-		\dv{t} q(t) = Q^{t}_{*e} (0) = 0 \qcomma \forall t \in \R \implies q(t) = e \qcomma \forall t \in \R
+		\dv{t} q(t) = (Q^{\xi}_{t})_{*e} (0) = 0 \qcomma \forall t \in \R \implies q(t) = e \qcomma \forall t \in \R
 	\end{equation}
 
 	cioè la curva $ q(t) $ è costante (usiamo il suo valore in $ q(0) = e $), quindi
