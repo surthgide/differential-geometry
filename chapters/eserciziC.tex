@@ -381,12 +381,12 @@ Considerando un elemento $ g \in G $ e la traslazione a sinistra
 possiamo scrivere
 
 \begin{equation}
-	L_{g}(G_{0}) = \mu(\{g\} \times G_{0})
+	L_{g}(G_{0}) \doteq \mu(\{g\} \times G_{0})
 \end{equation}
 
 Sappiamo che la traslazione a sinistra è un diffeomorfismo\footnote{%
 	Vedi Sezione \ref{sec:lie-groups}.%
-}, dunque anche continua: prendendo un qualunque elemento $ g \in G_{0} $, questo è collegato all'identità tramite
+}, dunque è anche continua: prendendo un qualunque elemento $ g \in G_{0} $, questo è collegato all'identità tramite
 
 \begin{equation}
 	L_{g}(e) = e g = g \in G_{0} \qcomma \forall g \in G_{0}
@@ -403,7 +403,7 @@ L'ultima condizione può essere anche scritta come $ \mu(G_{0} \times G_{0}) \su
 
 \paragraph{2)}
 
-Essendo l'inversione $ i : G \to G $ un omeomorfismo (bigezione continua con inversa continua), abbiamo che $ i(G_{0}) $ è connesso. Inoltre, abbiamo che l'immagine di $ G_{0} $ tramite l'inversione contiene l'elemento neutro, i.e.
+Essendo l'inversione $ i : G \to G $ un omeomorfismo (bigezione continua con inversa continua), abbiamo che $ i(G_{0}) $ è connesso in quanto $ G_{0} $ è connesso. Inoltre, abbiamo che l'immagine di $ G_{0} $ tramite l'inversione contiene l'elemento neutro, i.e.
 
 \begin{equation}
 	i(G_{0}) \ni e \, \because \, i(e) = e
@@ -559,7 +559,7 @@ Dalle definizioni degli spazi in esame, possiamo derivare le seguenti definizion
 
 \begin{align}
 	\begin{split}
-		\S^{1} &= \{ (a,b,c,d) \in \R^{4} \mid a^{2} + b^{2} + c^{2} + d^{2} = 1 \} \subset \R^{4} \\
+		\S^{3} &= \{ (a,b,c,d) \in \R^{4} \mid a^{2} + b^{2} + c^{2} + d^{2} = 1 \} \subset \R^{4} \\
 		&= \{ (\alpha, \beta) \in \C^{2} \mid \abs{\alpha}^{2} + \abs{\beta}^{2} = 1 \} \subset \C^{2} = \R^{4}
 	\end{split}
 \end{align}
@@ -578,7 +578,7 @@ Analogamente all'esercizio precedente, possiamo considerare l'applicazione lisci
 
 \map{\varphi}
 	{\S^{3}}{SU(2)}
-	{(\alpha, \beta)}{\bmqty{ \alpha & - \bar{\beta} \\ \beta & \bar{\alpha} }}
+	{(\alpha, \beta)}{\bmqty{ \alpha & \beta \\ - \bar{\beta} & \bar{\alpha} }}
 
 Questa rende dunque i due spazi diffeomorfi, i.e. $ SU(2) \simeq \S^{3} $.
 }

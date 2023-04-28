@@ -4874,7 +4874,7 @@ non è suriettivo, i.e. esistono delle matrici in $ SL_{2}(\R) $ che non hanno c
 	{T_{I}(GL_{2}(\R))}{GL_{2}(\R)}
 	{X}{e^{X}}
 
-è suriettiva. \\
+è suriettivo. \\
 Prendendo una matrice con determinante unitario
 
 \begin{equation}
@@ -4956,7 +4956,7 @@ Introduciamo i due seguenti lemmi:
 \end{proof}
 
 \begin{lemma}\label{lemma:lie-gr-neut-int}
-	Siano $ G $ un gruppo di Lie ed $ e \in G $ il suo elemento neutro, allora $ G $ è generato da un qualunque intorno $ U \subset G $ dell'elemento neutro $ e \in G $, i.e.
+	Siano $ G $ un gruppo di Lie connesso ed $ e \in G $ il suo elemento neutro, allora $ G $ è generato da un qualunque intorno $ U \subset G $ dell'elemento neutro $ e \in G $, i.e.
 	
 	\begin{equation}
 		\forall \, U \subset G \mid U \ni e \implies g = \prod_{j=1}^{k} g_{j} %
@@ -5013,7 +5013,7 @@ Quest'ultimo lemma permette di dimostrare l'ultimo punto del teorema seguente:
 	\begin{enumerate}
 		\item se $ G $ è anche compatto, l'esponenziale è suriettivo;
 		
-		\item $ G $ è anche abeliano, l'esponenziale è suriettivo;
+		\item se $ G $ è anche abeliano, l'esponenziale è suriettivo;
 		
 		\item ogni elemento del gruppo può essere scritto come prodotto finito di esponenziali, i.e. 
 		%
@@ -5239,7 +5239,7 @@ Per lo spazio tangente, le matrici hanno la forma:
 \end{equation}
 
 La base standard\footnote{%
-	La base di $ \su(2) $ è legata alle \textit{matrici di Pauli} $ \sigma_{i} $ da $ \B_{\su(2)} = \{i \sigma_{i}\} $.%
+	La base di $ \su(2) $ è legata alle \textit{matrici di Pauli} $ \sigma_{j} $ da $ \B_{\su(2)} = \{i \sigma_{j}\}_{j = 1,2,3} $.%
 } di $ \su(2) $ è la seguente
 
 \begin{equation}
@@ -5400,7 +5400,7 @@ tramite l'isomorfismo
 	(\R^{3},\cdot) \stackrel{iso.}{\simeq} \left( T_{I}(SU(2)), -\dfrac{1}{2} \tr(\cdot \, \cdot) \right)
 \end{equation}
 
-nel seguente modo
+nel seguente modo:
 
 \begin{align}
 	\begin{split}
@@ -5656,7 +5656,7 @@ Consideriamo l'esponenziale
 	{\R^{2}}{\T^{2}}
 	{(t,s)}{(e^{i t}, e^{i s})}
 
-La retta identificata dai punti $ (0,s) \simeq \R $ viene mappata in $ (0,e^{i s}) \in \S^{1} \subset \T^{2} $: tutte le altre rette possono essere descritte dai punti $ (t,\alpha t) $ con $ \alpha \in \R $, la cui immagine
+La retta identificata dai punti $ (0,s) \simeq \R $ viene mappata in $ (1,e^{i s}) \in \S^{1} \subset \T^{2} $: tutte le altre rette possono essere descritte dai punti $ (t,\alpha t) $ con $ \alpha \in \R $, la cui immagine
 
 \begin{equation}
 	\exp(t,\alpha t) = (e^{i t}, e^{i \alpha t}) = S_{\alpha}
@@ -5682,8 +5682,8 @@ L'ultima parte della dimostrazione (non riportata in questo testo) del teorema d
 	Una qualunque algebra di Lie è isomorfa a una sottoalgebra delle matrici quadrate a entrate reali, i.e.
 	
 	\begin{equation}
-		\forall \g, \E  \g' \mid \g \simeq \g' \subset (M_{n}(\R),[,])
+		\forall \g, \E  \g' \mid \g \simeq \g' \leqslant (M_{n}(\R),[,])
 	\end{equation}
 \end{theorem}
 
-In linea teorica, studiare l'algebra di Lie delle matrici è dunque sufficiente per ottenere risultati su ogni algebra di Lie, a patto di conoscere l'isomorfismo tra l'algebra considerata e una sottoalgebra di $ M_{n}(\R) $, il quale potrebbe essere arbitrariamente complicato (il teorema di Ado non da alcuna indicazione su come trovare l'isomorfismo in questione).
+In linea teorica, studiare l'algebra di Lie delle matrici è dunque sufficiente per ottenere risultati su ogni algebra di Lie, a patto di conoscere l'isomorfismo tra l'algebra considerata e una sottoalgebra di $ M_{n}(\R) $, il quale potrebbe essere arbitrariamente complicato (il teorema di Ado non dà alcuna indicazione su come trovare l'isomorfismo in questione).
