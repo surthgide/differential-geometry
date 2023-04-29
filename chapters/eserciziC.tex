@@ -926,7 +926,7 @@ Semplifichiamo il problema al caso di due gruppi nel seguente modo:
 \begin{equation}
 	Lie(G) \oplus Lie(H) \stackrel{iso}{\simeq} Lie(G \times H) %
 	\qq{con} %
-	H = \bigoplus_{i=1}^{s-1} G_{i}
+	H = \prod_{i=1}^{s-1} G_{i}
 \end{equation}
 
 L'applicazione
@@ -935,7 +935,7 @@ L'applicazione
 	{Lie(G) \oplus Lie(H)}{Lie(G \times H)}
 	{(\xi, \eta)}{\xi \oplus \eta}
 
-è un isomorfismo di algebre di Lie se è un omomorfismo di algebre di Lie biunivoco e invertibile; l'immagine $ \xi \oplus \eta $ è data da
+è un isomorfismo di algebre di Lie se è un omomorfismo di algebre di Lie bigettivo; l'immagine $ \xi \oplus \eta $ è data da
 
 \map{\xi \oplus \eta}
 	{G \times H}{T(G \times H)}
@@ -949,7 +949,7 @@ definita a sua volta dall'isomorfismo\footnote{%
 	{T_{(g,h)}(G \times H)}{T_{g}(G) \times T_{h}(H)}
 	{(\xi \oplus \eta)_{(g,h)}}
 	{ %
-		\left( (\pi_{G})_{*g} ((\xi \oplus \eta)_{(g,h)}), (\pi_{H})_{*h} ((\xi \oplus \eta)_{(g,h)}) \right) = (\xi_{g}, \eta_{h})
+		\left( (\pi_{G})_{*(g,h)} ((\xi \oplus \eta)_{(g,h)}), (\pi_{H})_{*(g,h)} ((\xi \oplus \eta)_{(g,h)}) \right) = (\xi_{g}, \eta_{h})
 	}
 
 con le proiezioni e i loro differenziali
@@ -959,7 +959,7 @@ con le proiezioni e i loro differenziali
 				{G \times H}{G}
 				{(g,h)}{g}
 			
-			\map{(\pi_{G})_{*g}}
+			\map{(\pi_{G})_{*(g,h)}}
 				{T_{(g,h)}(G \times H)}{T_{g}(G)}
 				{(\xi \oplus \eta)_{(g,h)}}{\xi_{g}}
 			}
@@ -968,7 +968,7 @@ con le proiezioni e i loro differenziali
 				{G \times H}{H}
 				{(g,h)}{h}
 			
-			\map{(\pi_{H})_{*h}}
+			\map{(\pi_{H})_{*(g,h)}}
 				{T_{(g,h)}(G \times H)}{T_{h}(H)}
 				{(\xi \oplus \eta)_{(g,h)}}{\eta_{h}}
 			}
@@ -979,7 +979,7 @@ Consideriamo ora l'applicazione
 	{\mathfrak{X}(G) \oplus \mathfrak{X}(H)}{\mathfrak{X}(G \times H)}
 	{(X,Y)}{X \oplus Y}
 
-dove $ X \oplus Y $ è definita analogamente a $ \xi \oplus \eta $ e $ \mathfrak{X}(G) \doteq (\chi(G), [,]) $ è l'algebra di Lie dei campi di vettori lisci su $ G $ con il commutatore tra campi di vettori definito come
+dove $ X \oplus Y $ è definito analogamente a $ \xi \oplus \eta $ e $ \mathfrak{X}(G) \doteq (\chi(G), [,]) $ è l'algebra di Lie dei campi di vettori lisci su $ G $ con il commutatore tra campi di vettori definito come
 
 \begin{equation}
 	[X,Y] = X Y - Y X \qcomma X, Y \in \chi(G)
@@ -1009,7 +1009,7 @@ Questa applicazione è un omomorfismo di algebre di Lie in quanto
 	\end{split}
 \end{align}
 
-dunque
+dunque, essendo anche una bigezione, è un isomorfismo di algebre di Lie, i.e.
 
 \begin{equation}
 	\mathfrak{X}(G) \oplus \mathfrak{X}(H) \stackrel{iso}{\simeq} \mathfrak{X}(G \times H)
@@ -1026,27 +1026,25 @@ A questo punto, siccome
 	\end{cases}
 \end{equation}
 
-possiamo considerare la restrizione di $ \varphi $ alle algebre di Lie di
+possiamo considerare la restrizione di $ \varphi $ alle algebre di Lie
 
 \begin{equation}
-	\eval{\varphi}_{Lie(G) \oplus Lie(H)} : Lie(G) \oplus Lie(H) \to \mathfrak{X}(G \times H)
+	\psi \doteq \eval{\varphi}_{Lie(G) \oplus Lie(H)} : Lie(G) \oplus Lie(H) \to \mathfrak{X}(G \times H)
 \end{equation}
 
-Dal momento che $ \varphi $ è una bigezione in quanto omomorfismo ed è invertibile poiché le dimensioni di dominio e codominio sono identiche, i.e.
+Possiamo riscrivere quest'applicazione come
 
-\begin{equation}
-	\dim(Lie(G) \oplus Lie(H)) = \dim(\mathfrak{X}(G) \oplus \mathfrak{X}(H)) %
-	= \dim(\mathfrak{X}(G \times H)) %
-	= \dim(Lie(G \times H))
-\end{equation}
+\map{\psi}
+	{Lie(G) \oplus Lie(H)}{Lie(G \times H)}
+	{(\xi,\eta)}{\xi \oplus \eta}
 
-allora $ \psi $, essendo una restrizione di $ \varphi $, deve essere solo definita perché sia un isomorfismo, i.e.
+in quanto
 
 \begin{equation}
 	\psi(Lie(G) \oplus Lie(H)) \subset Lie(G \times H)
 \end{equation}
 
-in altre parole
+i.e. vale l'espressione
 
 \begin{gather}
 	\xi \oplus \eta \in (L(G \times H),[,]) %
@@ -1055,18 +1053,39 @@ in altre parole
 	\qcomma \forall (\xi,\eta) \in Lie(G) \oplus Lie(H)
 \end{gather}
 
-Per verificare questo, ricordiamo la seguente definizione di campi di vettori invarianti a sinistra:
+Per dimostrare questo, ricordiamo la seguente definizione di campi di vettori invarianti a sinistra
 
 \begin{equation}
 	(L_{g})_{*h}(X_{h}) = X_{L_{g}(h)} = X_{gh} \qcomma \forall X \in L(G)
 \end{equation}
 
-Applicando quindi il differenziale della traslazione a sinistra, possiamo scrivere
+e consideriamo il diagramma\footnote{%
+	In generale, i.e. per i campi di vettori non invarianti a sinistra, il differenziale della traslazione a sinistra non lascia i campi di vettori invariati, dunque l'immagine di questa applicazione è rappresentata da un campo di vettori diverso da quello del dominio:
+	%
+	\begin{equation*}
+		\xi'_{gh} \neq (L_{g})_{*h}(\xi_{h}) \qcomma \xi \in T(G)
+	\end{equation*}%
+}
+
+\diagr{%
+	{(\xi \oplus \eta)_{(g_{2}, h_{2})}} \arrow[rrrr, "{(L_{g_{1}} \times L_{h_{1}})_{*(g_{2},h_{2})}}", maps to] \arrow[ddd, "{f_{(g_{2},h_{2})}}"', maps to] \&  \&  \&  \& {(\xi' \oplus \eta')_{(g_{1} g_{2}, h_{1} h_{2})}} \arrow[ddd, "{f_{(g_{1} g_{2}, h_{1} h_{2})}}", maps to] \\
+	\&  \&  \&  \&                                                                                                             \\
+	\&  \&  \&  \&                                                                                                             \\
+	{(\xi_{g_{2}}, \eta_{h_{2}})} \arrow[rrrr, "(L_{g_{1}})_{*g_{2}} \times (L_{h_{1}})_{*h_{2}}"', maps to]                                                  \&  \&  \&  \& {(\xi'_{g_{1} g_{2}}, \eta'_{h_{1} h_{2}})}                                                                
+}
+
+la quale commutatività permette di ottenere la seguente uguaglianza
+
+\begin{equation}
+	f_{(g_{1} g_{2}, h_{1} h_{2})} \circ (L_{g_{1}} \times L_{h_{1}})_{*(g_{2},h_{2})} \circ (f_{(g,h)})^{-1} = (L_{g_{1}})_{*g_{2}} \times (L_{h_{1}})_{*h_{2}}
+\end{equation}
+
+Applicando il differenziale della traslazione a sinistra ai campi di vettori $ \xi \oplus \eta $, otteniamo dunque che questi sono invarianti a sinistra:
 
 \begin{align}
 	\begin{split}
-		(L_{g_{1}} \times L_{h_{1}})_{*(g_{2},h_{2})} \left( (\xi \oplus \eta)_{(g_{2},h_{2})} \right) &= \left( (L_{g_{1}} \times L_{h_{1}})_{*(g_{2},h_{2})} \circ (f_{(g,h)})^{-1} \right) \left( \xi_{g_{2}}, \eta_{h_{2}} \right) \\
-		&= \left( (f_{(g_{1} g_{2}, h_{1} h_{2})})^{-1} \circ f_{(g_{1} g_{2}, h_{1} h_{2})} \circ (L_{g_{1}} \times L_{h_{1}})_{*(g_{2},h_{2})} \circ (f_{(g,h)})^{-1} \right) \left( \xi_{g_{2}}, \eta_{h_{2}} \right) \\
+		(L_{g_{1}} \times L_{h_{1}})_{*(g_{2},h_{2})} &\left( (\xi \oplus \eta)_{(g_{2},h_{2})} \right) = \left( (L_{g_{1}} \times L_{h_{1}})_{*(g_{2},h_{2})} \circ (f_{(g_{2},h_{2})})^{-1} \right) \left( \xi_{g_{2}}, \eta_{h_{2}} \right) \\
+		&= \left( (f_{(g_{1} g_{2}, h_{1} h_{2})})^{-1} \circ f_{(g_{1} g_{2}, h_{1} h_{2})} \circ (L_{g_{1}} \times L_{h_{1}})_{*(g_{2},h_{2})} \circ (f_{(g_{2},h_{2})})^{-1} \right) \left( \xi_{g_{2}}, \eta_{h_{2}} \right) \\
 		&= \left( (f_{(g_{1} g_{2}, h_{1} h_{2})})^{-1} \circ \left( (L_{g_{1}})_{*g_{2}} \times (L_{h_{1}})_{*h_{2}} \right) \right) \left( \xi_{g_{2}}, \eta_{h_{2}} \right) \\
 		&= (f_{(g_{1} g_{2}, h_{1} h_{2})})^{-1} \left( \left( (L_{g_{1}})_{*g_{2}} \times (L_{h_{1}})_{*h_{2}} \right) \left( \xi_{g_{2}}, \eta_{h_{2}} \right) \right) \\
 		&= (f_{(g_{1} g_{2}, h_{1} h_{2})})^{-1} \left( (L_{g_{1}})_{*g_{2}} (\xi_{g_{2}}), (L_{h_{1}})_{*h_{2}} (\eta_{h_{2}}) \right) \\
@@ -1075,34 +1094,14 @@ Applicando quindi il differenziale della traslazione a sinistra, possiamo scrive
 	\end{split}
 \end{align}
 
-dove abbiamo usato il fatto che i campi di vettori $ \xi $ e $ \eta $ siano singolarmente invarianti a sinistra, i.e. $ \xi \in L(G) $ e $ \eta \in L(H) $, e la commutatività del seguente diagramma\footnote{%
-	In generale, il differenziale della traslazione a sinistra non lascia i campi di vettori invariati, dunque l'immagine di questa applicazione è rappresentata da un campo di vettori diverso da quello del dominio, i.e.
-	%
-	\begin{equation*}
-		\xi'_{h} \neq (L_{g})_{*h}(\xi_{h}) \qcomma \xi \in T(G)
-	\end{equation*}%
-}:
-
-\diagr{%
-		{(\xi \oplus \eta)_{(g_{2}, h_{2})}} \arrow[rrrr, "{(L_{g_{1}} \times L_{h_{1}})_{(g_{2},h_{2})}}", maps to]                                                \&  \&  \&  \& {(\xi' \oplus \eta')_{(g_{1} g_{2}, h_{1} h_{2})}} \arrow[ddd, "{f_{(g_{1} g_{2}, h_{1} h_{2})}}", maps to] \\
-		\&  \&  \&  \&                                                                                                             \\
-		\&  \&  \&  \&                                                                                                             \\
-		{(\xi_{g_{2}}, \eta_{h_{2}})} \arrow[rrrr, "(L_{g_{1}})_{*g_{2}} \times (L_{h_{1}})_{*h_{2}}"', maps to] \arrow[uuu, "{(f_{(g_{2},h_{2})})^{-1}}", maps to] \&  \&  \&  \& {(\xi'_{g_{1} g_{2}}, \eta'_{h_{1} h_{2}})} 
-		}
-
-da cui si ottiene la seguente uguaglianza
-
-\begin{equation}
-	f_{(g_{1} g_{2}, h_{1} h_{2})} \circ (L_{g_{1}} \times L_{h_{1}})_{*(g_{2},h_{2})} \circ (f_{(g,h)})^{-1} = (L_{g_{1}})_{*g_{2}} \times (L_{h_{1}})_{*h_{2}}
-\end{equation}
-
-A questo punto abbiamo che i campi di vettori $ \xi \oplus \eta $ sono invarianti a sinistra, il che implica che $ \psi $ sia un isomorfismo (per il ragionamento precedente), i.e.
+dove abbiamo usato il fatto che i campi di vettori $ \xi $ e $ \eta $ siano singolarmente invarianti a sinistra. \\
+A questo punto, l'applicazione $ \psi $ è definita ed è un omomorfismo di algebre di Lie bigettivo (in quanto restrizione dell'isomorfismo $ \phi $), il che implica che $ \psi $ sia un isomorfismo, i.e.
 
 \begin{equation}
 	Lie(G) \oplus Lie(H) \stackrel{iso}{\simeq} Lie(G \times H)
 \end{equation}
 
-Il ragionamento vale iterativamente per $ H = \displaystyle\bigoplus_{i=1}^{s-1} G_{i} $, da cui
+Il ragionamento vale iterativamente per $ H = \displaystyle\prod_{i=1}^{s-1} G_{i} $, da cui
 
 \begin{equation}
 	\bigoplus_{i=1}^{s} Lie(G_{i}) \stackrel{iso}{\simeq} Lie \left( \prod_{i=1}^{s} G_{i} \right) %
