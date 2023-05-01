@@ -8827,12 +8827,8 @@ Il commutatore $ [X,Y]_{p}(f) $ è ancora una funzione liscia in quanto:
 	\begin{align}
 		\begin{split}
 			[f X, g Y](h) &= f X(g \, Y(h)) - g Y(f \, X(h)) \\
-			&= f ( \, X(g) \, Y(h) + g \, XY(h) \, ) + \\
-			& \hal - g ( \, Y(f) \, X(h) + f \, YX(h) \, ) \\
-			%
-			&= f \, X(g) \, Y(h) + f g \, XY(h) + \\
-			& \hal - g \, Y(f) \, X(h) - g f \, YX(h) \\
-			%
+			&= f ( \, X(g) \, Y(h) + g \, XY(h) \, ) - g ( \, Y(f) \, X(h) + f \, YX(h) \, ) \\
+			&= f \, X(g) \, Y(h) + f g \, XY(h) - g \, Y(f) \, X(h) - g f \, YX(h) \\
 			&= f g (XY-YX)(h) + f \, X(g) \, Y(h) - g \, Y(f) \, X(h) \\
 			&= ( \, f g [X,Y] + (f \, X(g)) \, Y - (g \, Y(f)) \, X \, )(h)
 		\end{split}
