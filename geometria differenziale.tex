@@ -31,6 +31,7 @@
 \usepackage[toc]{appendix}
 \usepackage{parskip}
 \usepackage{tikz-cd}
+\usepackage{ifthen}
 
 % symbols definition
 
@@ -140,6 +141,9 @@
 
 % exercise macro
 
+\newcounter{solutions}
+\setcounter{solutions}{42} % change this number from 42 to whatever to hide solutions
+
 % \exer{[title]}{[label]}{[exercise text]}{[solution]}
 
 \newcommand{\exer}[4]{
@@ -149,7 +153,9 @@
 		#3
 	\end{tcolorbox}
 	
-	#4
+	\ifthenelse{\thesolutions = 42}
+	{#4}
+	{}
 	
 	%
 	
