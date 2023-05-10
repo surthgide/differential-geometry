@@ -18,14 +18,14 @@ Per dimostrare che l'unione disgiunta di spazi topologici $ A $ sia ancora uno s
 	\item L'unione di un numero qualunque di aperti in $ A $ sia ancora aperto in $ A $
 \end{itemize}
 
-Per la prima, prendiamo due aperti $ U $ e $ V $ in $ A $: questo significa che $ U \cap A_{j} $ e $ V \cap A_{j} $ saranno aperti in $ A_{j} $ per qualsiasi $ j \in J $ per la condizione imposta. Siccome gli $ A_{j} $ sono spazi topologici, l'intersezione di due aperti è ancora un aperto, dunque
+Per la prima, prendiamo due aperti $ U $ e $ V $ in $ A $: questo significa che, per ipotesi, $ U \cap A_{j} $ e $ V \cap A_{j} $ saranno aperti in $ A_{j} $ per qualsiasi $ j \in J $. Siccome gli $ A_{j} $ sono spazi topologici, l'intersezione di due aperti è ancora un aperto, dunque
 
 \begin{equation}
 	U \cap V \cap A_{j} \text{ aperto in } A_{j} \qcomma \forall j \in J
 \end{equation}
 
 A questo punto vale l'implicazione inversa, perciò $ U \cap V $ è aperto in $ A $. \\
-Analogamente, per la seconda, prendiamo una famiglia infinita di aperti $ \{V_{i}\}_{i \in \N} $ in $ A $: questo significa che $ V_{i} \cap A_{j} $ saranno aperti in $ A_{j} $ per qualsiasi $ j \in J $ e qualsiasi $ i \in \N $ per la condizione imposta. Siccome gli $ A_{j} $ sono spazi topologici, l'unione di un numero qualunque di aperti è ancora un aperto; definendo
+Analogamente, per la seconda, prendiamo una famiglia infinita di aperti $ \{V_{i}\}_{i \in \N} $ in $ A $: questo significa che, per ipotesi, $ V_{i} \cap A_{j} $ saranno aperti in $ A_{j} $ per qualsiasi $ j \in J $ e qualsiasi $ i \in \N $. Siccome gli $ A_{j} $ sono spazi topologici, l'unione di un numero qualunque di aperti è ancora un aperto; definendo
 %
 \begin{equation}
 	V \doteq \bigcup_{i=1}^{\infty} V_{i}
@@ -48,7 +48,7 @@ Definiamo\footnote{%
 
 \begin{equation}
 	U_{i} = \left\{ (x^{1},\dots,x^{n+1}) \in \R^{n+1} \st (-1)^{i} x^{\ceil*{\frac{i}{2}}} > 0 \right\} \subset \R^{n+1} %
-	\qcomma k = 1, \dots, 2(n+1)
+	\qcomma i = 1, \dots, 2(n+1)
 \end{equation}
 
 i quali formano un ricoprimento per $ \S^{n} $, i.e.
@@ -382,7 +382,7 @@ Questo mostra che $ \psi $ è suriettiva, in quanto
 	\psi([A]_{O}) = [A]_{g} = [B]_{g}
 \end{equation}
 
-i.e. per qualsiasi classe di $ G(k,n) $ esiste una classe di $ J(k,n) $ la cui immagine coincida con la prima perché tutte le immagini di classi di $ J(k,n) $ generano lo stesso spazio. \\
+i.e. per qualsiasi classe di $ G(k,n) $ esiste una classe di $ J(k,n) $ la cui immagine tramite $ \psi $ coincida con la prima perché tutte le immagini di classi di $ J(k,n) $ generano lo stesso spazio. \\
 A questo punto $ \Im(\psi) = G(k,n) $ e dunque la Grassmanniana è compatta in quanto immagine di un compatto tramite un'applicazione continua.
 
 \paragraph{Compattezza (soluzione alternativa)}
