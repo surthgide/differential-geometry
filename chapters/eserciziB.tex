@@ -512,8 +512,8 @@ le componenti della composizione sono date dalla seguente applicazione
 	{\varphi( i_{q_{0}}^{-1}(U \times V) \cap U )}{\R}
 	{\varphi(p)}{%
 					\begin{cases}
-						\varphi^{k}(p), & k \leqslant m \\
-						\psi^{k}(q_{0}), & k > m
+						\varphi^{k}(p), & k \in [1,m] \\
+						\psi^{k-m}(q_{0}), & k \in [m+1,m+n]
 					\end{cases}%
 					}
 
@@ -728,7 +728,7 @@ Siano $ N $ e $ M $ varietà differenziabili e $ \pi_{N} : N \times M \to N $ e 
 {
 % https://math.stackexchange.com/questions/413766/tangent-space-of-product-manifold
 
-Al fine di dimostrare questo isomorfismo, definiamo $ f \doteq (\pi_{N_{*p}},\pi_{M_{*p}}) $ e scriviamo la sua azione su un vettore del dominio
+Al fine di dimostrare questo isomorfismo, definiamo $ f \doteq \left( (\pi_{N})_{*p},(\pi_{M})_{*p} \right) $ e scriviamo la sua azione su un vettore del dominio
 
 \map{f}
 	{T_{(p,q)}(N \times M)}{T_{p}(N) \times T_{q}(M)}
@@ -761,7 +761,7 @@ Definiamo inoltre l'applicazione
 	{T_{p}(N) \times T_{q}(M)}{T_{(p,q)}(N \times M)}
 	{(X_{p}, Y_{q})}{(i_{N})_{*p} (X_{p}) + (i_{M})_{*q} (Y_{q})}
 
-Consideriamo le seguenti composizioni:
+Consideriamo inoltre le seguenti composizioni:
 
 \begin{gather}
 	(\pi_{N} \circ i_{N}) (p) = \pi_{N} (i_{N} (p)) = \pi_{N} (p,q) = p \\
@@ -785,7 +785,7 @@ Calcoliamo ora la seguente composizione delle funzioni $ f $ e $ g $:
 		&(f \circ g) (X_{p}, Y_{q}) = f ( (i_{N})_{*p} (X_{p}) + (i_{M})_{*q} (Y_{q}) ) \\
 		&= ( (\pi_{N})_{*(p,q)} ( (i_{N})_{*p} (X_{p}) + (i_{M})_{*q} (Y_{q}) ), (\pi_{M})_{*(p,q)} ( (i_{N})_{*p} (X_{p}) + (i_{M})_{*q} (Y_{q}) ) ) \\
 		&= ( (\pi_{N})_{*(p,q)} ( (i_{N})_{*p} (X_{p}) ) + (\pi_{N})_{*(p,q)} ( (i_{M})_{*q} (Y_{q}) ), (\pi_{M})_{*(p,q)} ( (i_{N})_{*p} (X_{p})) + (\pi_{M})_{*(p,q)} ( (i_{M})_{*q} (Y_{q}) ) ) \\
-		&= ((\pi_{N} \circ i_{N})_{*p} (X_{p}) + \cancelto{0}{ (\pi_{N} \circ i_{M})_{*q} (Y_{q}) }, \cancelto{0}{ (\pi_{M} \circ i_{N})_{*p} (X_{p}) } + (\pi_{M} \circ i_{M})_{*q} (Y_{q}) ) \\
+		&= \left( (\pi_{N} \circ i_{N})_{*p} (X_{p}) + \cancelto{0}{ (\pi_{N} \circ i_{M})_{*q} (Y_{q}) }, \cancelto{0}{ (\pi_{M} \circ i_{N})_{*p} (X_{p}) } + (\pi_{M} \circ i_{M})_{*q} (Y_{q}) \right) \\
 		&=(X_{p}, Y_{q})
 	\end{split}
 \end{align}
@@ -796,7 +796,7 @@ dove i due $ 0 $ appartengono rispettivamente a $ T_{p}(N) $ e $ T_{q}(M) $, dun
 	f \circ g = \id_{T_{p}(N) \times T_{q}(M)}
 \end{equation}
 
-questo significa che la funzione $ f $ ha un'inversa destra dunque è suriettiva: la suriettività comporta che l'immagine della funzione coincide con il codominio, da cui
+questo significa che la funzione $ f $ ha un'inversa destra dunque è suriettiva: la suriettività comporta che l'immagine della funzione coincida con il codominio, da cui
 
 \begin{equation}
 	\dim(\Im(f)) = \dim(T_{p}(N) \times T_{q}(M))
@@ -826,7 +826,7 @@ possiamo invocare il teorema della dimensione\footnote{%
 	\end{split}
 \end{align}
 
-perciò la funzione $ f = (\pi_{N_{*p}},\pi_{M_{*q}}) $ è anche iniettiva dunque è un isomorfismo, i.e.
+perciò la funzione $ f = \left( (\pi_{N})_{*p},(\pi_{M})_{*p} \right) $ è anche iniettiva dunque è un isomorfismo, i.e.
 
 \begin{equation}
 	T_{(p,q)}(N \times M) \simeq T_{p}(N) \times T_{q}(M)
