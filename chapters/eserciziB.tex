@@ -928,7 +928,7 @@ Tramite il teorema della preimmagine\footnote{%
 \end{gather}
 
 dove $ (x^{1},x^{2}) = (x,y) $. \\
-Siccome $ \PC_{F} \cap \PR_{F} = \emptyset $, escludendo i punti critici per $ F $ rimangono quelli regolari tra i quali individueremo la controimmagine di $ c $. Per trovare i punti critici, cerchiamo dunque i punti $ p = (x,y) $ che annulla contemporaneamente le derivate di $ F $:
+Siccome $ \PC_{F} \cap \PR_{F} = \emptyset $, escludendo i punti critici per $ F $ rimangono quelli regolari tra i quali individueremo la controimmagine di $ c $. Per trovare i punti critici, cerchiamo dunque i punti $ p = (x,y) $ che annullano contemporaneamente le derivate di $ F $:
 
 \begin{equation}
 	\begin{cases}
@@ -947,7 +947,7 @@ A questo punto possiamo derivare l'insieme dei punti regolari:
 	\PR_{F} = \R^{2} \setminus \{(0,0)\}
 \end{equation}
 
-L'unico punto che ha come controimmagine il punti $ (0,0) $ è $ 0 $, i.e. $ F^{-1}(0) = (0,0) $ dunque $ \VR_{F} = \R \setminus \{0\} $: questo permette di scegliere per $ c $ un qualunque numero reale non nullo. \\
+L'unico punto che ha come controimmagine il punto $ (0,0) $ è $ 0 $, i.e. $ F^{-1}(0) = (0,0) $ dunque $ \VR_{F} = \R \setminus \{0\} $: questo permette di scegliere per $ c $ un qualunque numero reale non nullo. \\
 Il grafico di $ F $ è un paraboloide iperbolico e le controimmagini dei valori regolari di $ F $ sono intersezioni di questo con piani perpendicolari all'asse $ z $ e dunque iperboli.
 }
 
@@ -1302,7 +1302,7 @@ Se un punto $ p \in N $ è un punto regolare per la funzione $ F $, le seguenti 
 	
 	\item $ F_{*p} $ è suriettiva
 	
-	\item  $ \rank(F_{*p}) = k $ con $ k = \min \{n,m\} $
+	\item  $ \rank(F_{*p}) = m = \min \{n,m\} $
 \end{itemize}
 
 Consideriamo le seguenti carte e condizioni:
@@ -1374,7 +1374,7 @@ A questo punto, considerando l'insieme
 questo è un intorno aperto di $ p $ in cui $ G(\varphi(p)) $ è suriettiva: prendendo l'unione degli intorni aperti di tutti i punti regolari, otteniamo un aperto che coincide con l'insieme dei punti regolari di $ F $, i.e.
 
 \begin{equation}
-	\sum_{p \in \PR_{F}} (H \circ G \circ \varphi)^{-1} (\R \setminus \{0\}) = \PR_{F}
+	\bigcup_{p \in \PR_{F}} (H \circ G \circ \varphi)^{-1} (\R \setminus \{0\}) = \PR_{F}
 \end{equation}
 }
 
@@ -1645,10 +1645,10 @@ Per dimostrare che $ F $ sia un'immersione, consideriamo la derivata rispetto a 
 in quanto
 
 \begin{equation}
-	\cosh(t) \geq 1 \qcomma \forall t \in \R
+	\cosh(t) \geqslant 1 \qcomma \forall t \in \R
 \end{equation}
 
-Non annullandosi mai la derivata, non esistono punti critici per l'applicaizone:
+Non annullandosi mai la derivata, non esistono punti critici per l'applicazione:
 
 \begin{equation}
 	\PC_{F} = \emptyset \implies \PR_{F} = \R
@@ -1682,7 +1682,7 @@ Un'applicazione è definita immersione se il suo differenziale è iniettivo in o
 	F_{*p} : T_{p}(N) \to T_{F(p)}(M) \text{ iniettivo} \qcomma \forall p \in N
 \end{equation}
 
-Useremo le due seguenti affermazioni per esprimere l'iniettività:
+Useremo le due seguenti proposizioni per esprimere l'iniettività:
 
 \begin{gather}
 	\E (F_{*p})^{-1} \mid (F_{*p})^{-1} \circ F_{*p} = \bigone_{T_{p}(N)} \\
@@ -1708,7 +1708,7 @@ I loro differenziali sono iniettivi
 \end{gather}
 
 rispettivamente per qualsiasi $ p \in N $ e $ q \in M $. \\
-Considerando la prima affermazione per esprimere l'iniettività, abbiamo che
+Considerando la prima proposizione per esprimere l'iniettività, abbiamo che
 
 \begin{gather}
 	\E (F_{*p})^{-1} \mid (F_{*p})^{-1} \circ F_{*p} = \bigone_{T_{p}(N)} \\
@@ -1757,7 +1757,7 @@ I loro differenziali sono iniettivi
 \end{gather}
 
 rispettivamente per qualsiasi $ p \in N_{1} $ e $ q \in N_{2} $. \\
-Considerando la seconda affermazione per esprimere l'iniettività, abbiamo che
+Considerando la seconda proposizione per esprimere l'iniettività, abbiamo che
 
 \begin{gather}
 	F_{*p}(X_{p}) = F_{*p}(W_{p}) \implies X_{p} = W_{p} \qcomma \forall p \in N_{1} \\
@@ -1935,7 +1935,7 @@ Consideriamo dunque dei punti di $ \rp{2} $, per il quale valgono
 \begin{equation}
 	\begin{cases}
 		z > 0 \\
-		x^{2} + y^{2} + z^{2} = 1, & \rp{2} \stackrel{omeo.}{\simeq} \sfrac{\S^{2}}{\sim_{a}}
+		x^{2} + y^{2} + z^{2} = 1, & \rp{2} \stackrel{omeo}{\simeq} \sfrac{\S^{2}}{\sim_{a}}
 	\end{cases}
 \end{equation}
 
@@ -1970,7 +1970,7 @@ perciò
 	\end{split}
 \end{gather}
 
-dunque $ \tilde{H} $ è una bigezione continua, il che la rende un omeomorfismo e $ H $ un embedding topologico
+dunque $ \tilde{H} $ è una bigezione continua, il che la rende un omeomorfismo e $ H $ un embedding topologico.
 
 \paragraph{Embedding liscio}
 
@@ -2054,7 +2054,7 @@ abbiamo che
 in quanto
 
 \begin{equation}
-	T_{p}(N) = \ev{ \pdv{x^{i}} }_{i=1,\dots,k} %
+	T_{p}(N) = \ev{ \eval{\pdv{x^{i}}}_{p} }_{i=1,\dots,k} %
 	\implies %
 	v = \sum_{i=1}^{k} c^{i}(v) \eval{\pdv{x^{i}}}_{p} \in T_{p}(N)
 \end{equation}
@@ -2124,13 +2124,13 @@ abbiamo che $ \S^{n} = f^{-1}(0) $, dunque $ S^{n} $ è una sottovarietà di $ R
 Sappiamo inoltre che il proiettivo reale può essere ricavato dal quoziente
 
 \begin{equation}
-	\rp{n} = \dfrac{\S^{n}}{\simeq_{a}}
+	\rp{n} = \dfrac{\S^{n}}{\sim_{a}}
 \end{equation}
 
-dove la relazione di equivalenza antipodale $ \simeq_{a} $ corrisponde alla condizione
+dove la relazione di equivalenza antipodale $ \sim_{a} $ corrisponde alla condizione
 
 \begin{equation}
-	x \simeq_{a} y \iff x = \pm y \qcomma x,y \in \S^{n}
+	x \sim_{a} y \iff x = \pm y \qcomma x,y \in \S^{n}
 \end{equation}
 
 Questa equivalenza può essere rappresentata tramite la riflessione antipodale
