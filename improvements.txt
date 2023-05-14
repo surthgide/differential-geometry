@@ -1,1 +1,3 @@
 switch N with M and vice versa to maintain alphabetical order (mainly for differential manifolds' names)
+
+decide a clear distinction between \id and \bigone
