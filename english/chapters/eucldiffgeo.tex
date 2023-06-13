@@ -1,47 +1,48 @@
-\section{Funzioni lisce e reali analitiche}
+\section{Smooth and real analytic functions}
 
-\subsection{Funzioni lisce}
+\subsection{Smooth functions}
 
-Consideriamo $ \R^{n} $ con $ n \geqslant 1 $ e $ U \subset \R^{n} $ aperto; prendiamo una funzione $ f : U \to \R $ e $ p \in U $: diremo che $ f \in C^{k} $ in $ p $ con $ k \in \N $ se le derivate $ k $-esime di $ f $, definite come
-
-\begin{equation}
-	\dfrac{\partial^{k} f}{\partial (x^{1})^{i_{1}} \cdots \partial (x^{k})^{i_{k}}} \qq{con} \sum_{j=1}^{k} i_{j} = k \in \N
-\end{equation}
-
-esistono e sono continue in $ p $. \\
-Prendendo $ k = 0 $, abbiamo che
+Let us consider $ \R^{n} $ with $ n \geqslant 1 $ and $ U \subset \R^{n} $ open, and let $ f : U \to \R $ be a function and $ p \in U $ a point: defining the $ k $th-order derivatives of $ f $ as
 
 \begin{equation}
-	f \in C^{0} \iff f \text{ continua}
+	\dfrac{\partial^{k} f}{\partial (x^{1})^{i_{1}} \cdots \partial (x^{k})^{i_{k}}} %
+	\qq{where} \sum_{j=1}^{k} i_{j} = k \in \N
 \end{equation}
 
-Diremo che:
+we say that $ f \in C^{k} $ in $ p $ with $ k \in \N $ if the $ k $th-order derivatives of $ f $ exist and are continuous in $ p $. \\
+Let $ k = 0 $, then
+
+\begin{equation}
+	f \in C^{0} \iff f \text{ continuous}
+\end{equation}
+
+Notation-wise:
 
 \begin{itemize}
-	\item $ f \in C^{k} $ in $ U $ se $ f \in C^{k} $ in $ p $ per qualsiasi $ p \in U $
+	\item $ f \in C^{k} $ in $ U $ if $ f \in C^{k} $ in $ p $ for all $ p \in U $
 	
-	\item $ f \in C^{\infty} $ o \textit{liscia} in $ p $ se $ f \in C^{k} $ in $ p $ per qualsiasi $ k \in \N $
+	\item $ f \in C^{\infty} $ or \textit{smooth} in $ p $ if $ f \in C^{k} $ in $ p $ for all $ k \in \N $
 	
-	\item $ f \in C^{\infty} $ o \textit{liscia} in $ U $ se $ f \in C^{\infty} $ per qualsiasi $ p \in U $
+	\item $ f \in C^{\infty} $ or \textit{smooth} in $ U $ if $ f \in C^{\infty} $ for all $ p \in U $
 \end{itemize}
 
-perciò una funzione è liscia se esistono e sono finite le sue derivate di qualunque ordine. \\
-Per generalizzare, consideriamo le funzioni definite non in $ \R $ ma in $ \R^{n} $. \\
-Una funzione $ f : U \to \R^{n} $ con $ n \geqslant 1 $ e $ U \subset \R^{m} $ con $ m \geqslant 1 $ aperto è $ C^{k} $ in $ p $ se tutte le sue componenti $ f^{j} : U \to \R $ sono $ f^{j} \in C^{k} $ in $ p $ con $ k \geqslant 0 $. Nello specifico, $ f = (f^{1}, \dots, f^{m}) $ oppure $ f^{j} = \pi_{j} \circ f $ dove $ \pi_{j} $ è la proiezione
+therefore a function is denoted smooth if all its derivatives of any order exist and are finite. \\
+In general, we consider functions defined not in $ \R $ but in $ \R^{n} $. \\
+A function $ f : U \to \R^{n} $ with $ n \geqslant 1 $ and $ U \subset \R^{m} $ with $ m \geqslant 1 $ open is $ C^{k} $ in $ p $ if all its components $ f^{j} : U \to \R $ are $ f^{j} \in C^{k} $ in $ p $ with $ k \geqslant 0 $. In particular, $ f = (f^{1}, \dots, f^{m}) $ or $ f^{j} = \pi_{j} \circ f $ where $ \pi_{j} $ is the \textit{projection}
 
 \map{\pi_{j}}
 	{\R^{m}}{\R}
 	{(x^{1}, \dots, x^{m})}{x^{j}}
-	
-per $ j = 1, \dots, m $. \\
-Una funzione $ f : U \to \R^{m} $ è:
+
+for $ j = 1, \dots, m $. \\
+A function $ f : U \to \R^{m} $ is:
 
 \begin{itemize}
-	\item $ C^{k} $ in $ U $ se $ f^{j} \in C^{k} $ in $ U $
+	\item $ C^{k} $ in $ U $ if $ f^{j} \in C^{k} $ in $ U $
 	
-	\item liscia in $ p \in U $ se $ f^{j} \in C^{\infty} $ in $ p $ per qualsiasi $ j = 1, \dots, m $
+	\item smooth in $ p \in U $ if $ f^{j} \in C^{\infty} $ in $ p $ for all $ j = 1, \dots, m $
 	
-	\item liscia in $ U $ se $ f^{j} \in C^{\infty} $ in $ U $ per qualsiasi $ j = 1, \dots, m $
+	\item smooth in $ U $ if $ f^{j} \in C^{\infty} $ in $ U $ for all $ j = 1, \dots, m $
 \end{itemize}
 
 \subsubsection{\textit{Esempi}}
