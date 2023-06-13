@@ -1,4 +1,4 @@
-% Appunti di Geometria differenziale di Simone Iovine
+% Simone Iovine's Differential Geometry Notes
 
 \documentclass[12pt]{report}
 
@@ -164,21 +164,21 @@
 
 %
 
-\renewcommand{\contentsname}{Indice}
+%\renewcommand{\contentsname}{Indice}
 
-\makeatletter
-\renewcommand{\@chapapp}{Capitolo}
-\makeatother
+%\makeatletter
+%\renewcommand{\@chapapp}{Capitolo}
+%\makeatother
 
 % environments names
 
-\newtheorem{theorem}{Teorema}
-\newtheorem{corollary}{Corollario}[theorem]
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}[theorem]
 \newtheorem{lemma}[theorem]{Lemma}
-\newtheorem*{remark}{Osservazione}
-\newtheorem{definition}{Proposizione}[theorem]
+\newtheorem*{remark}{Remark}
+\newtheorem{definition}{Proposition}[theorem]
 
-\renewcommand*{\proofname}{Dimostrazione}
+%\renewcommand*{\proofname}{Dimostrazione}
 \renewcommand\qedsymbol{$\square$}
 
 % \highlight[<colour>]{<stuff>}
@@ -216,7 +216,7 @@
 \renewcommand{\chaptermark}[1]{ \markboth{#1}{} }
 
 \fancyhead{}
-\fancyhead[R]{Appunti di Geometria differenziale}
+\fancyhead[R]{Differential Geometry Notes}
 \fancyhead[L]{\leftmark}
 \fancyfoot{}
 \fancyfoot[L]{Simone Iovine}
@@ -245,7 +245,7 @@
 
 % title page stuff
 
-\title{\textbf{Appunti di Geometria differenziale}}
+\title{\textbf{Differential Geometry Notes}}
 \author{Simone Iovine}
 \date{\today}
 
@@ -264,13 +264,13 @@
 %
 
 \chapter*{Note}
-\addcontentsline{toc}{chapter}{Note}
-\input{chapters/note}
+\addcontentsline{toc}{chapter}{Notes}
+\input{chapters/notes}
 
 %
 
-\chapter*{Notazione}
-\addcontentsline{toc}{chapter}{Notazione}
+\chapter*{Notation}
+\addcontentsline{toc}{chapter}{Notation}
 \input{chapters/notation}
 
 %
@@ -283,46 +283,46 @@
 
 %
 
-\chapter{Geometria differenziale negli spazi euclidei}
-\input{chapters/geodiffeucl}
+\chapter{Differential geometry in euclidean spaces}
+\input{chapters/eucldiffgeo}
 
 %
 
-\chapter{Varietà differenziabili}
-\input{chapters/vardiff}
+\chapter{Differential manifolds}
+%\input{chapters/diffman}
 
 %
 
-\chapter{Gruppi e algebre di Lie}
-\input{chapters/gruppialglie}
+\chapter{Lie groups and algebras}
+%\input{chapters/liegroupsalg}
 
 %
 
 \appendix
 
 \makeatletter
-\renewcommand{\@chapapp}{Esercizi}
+\renewcommand{\@chapapp}{Exercises}
 \makeatother
 
-\chapter{Esercizi: Geometria differenziale negli spazi euclidei}
-\input{chapters/eserciziA}
+\chapter{Exercises: Differential geometry in euclidean spaces}
+%\input{chapters/exercisesA}
 
 %
 
-\chapter{Esercizi: Varietà differenziabili}
-\input{chapters/eserciziB}
+\chapter{Exercises: Differential manifolds}
+%\input{chapters/exercisesB}
 
 %
 
-\chapter{Esercizi: Gruppi e algebre di Lie}
-\input{chapters/eserciziC}
+\chapter{Exercises: Lie groups and algebras}
+%\input{chapters/exercisesC}
 
 %
 
-\addcontentsline{toc}{chapter}{Bibliografia}
+\addcontentsline{toc}{chapter}{Bibliography}
 
 \printbibliography[
-	title={Bibliografia}
+	title={Bibliography}
 ]
 
 \end{document}
