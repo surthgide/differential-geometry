@@ -45,38 +45,39 @@ A function $ f : U \to \R^{m} $ is:
 	\item smooth in $ U $ if $ f^{j} \in C^{\infty} $ in $ U $ for all $ j = 1, \dots, m $
 \end{itemize}
 
-\subsubsection{\textit{Esempi}}
+\subsubsection{\textit{Examples}}
 
-\paragraph{1) Radice cubica}
+\paragraph{1) Cubic root}
 
-Sia
+Let
 
 \map{f}
 	{\R}{\R}
 	{x}{x^{1/3}}
-La funzione è continua ($ f \in C^{0} $) ed è un omeomorfismo\footnote{%
-	Sia la funzione che la sua inversa sono continue.%
-} ma $ f \notin C^{1} $ nell'origine $ p = 0 $ perché
+%	
+This function is continuous ($ f \in C^{0} $) and it is and homeomorphism\footnote{%
+	Both the function and its inverse are continuous.%
+} but $ f \notin C^{1} $ in the origin $ p = 0 $ because
 
 \begin{equation}
 	f' = \dfrac{x^{-2/3}}{3}
 \end{equation}
 
-la quale non è definita nell'origine e dunque $ f \notin C^{1} (\R) $.
+which is not defined in the origin and therefore $ f \notin C^{1} (\R) $.
 
-\paragraph{2) Funzione $ C^{1} $ ma non $ C^{2} $}
+\paragraph{2) $ C^{1} $ function which is not $ C^{2} $}
 
-Integrando la funzione $ f $ dell'esempio precedente, si ottiene una funzione che sia $ C^{1} $ ma non $ C^{2} $. Sia $ g : \R \to \R $ con
+Integrating $ f $ from the previous example, we obtain a $ C^{1} $ function which is not $ C^{2} $. Let $ g : \R \to \R $ with
 
 \begin{equation}
 	g (x) = \int_{0}^{x} f (t) \dd{t} = \dfrac{3 x^{2/3}}{4}
 \end{equation}
 
-da cui si ottiene che $ g \in C^{1} (\R) $ ma $ g \notin C^{2} (\R) $.
+from which $ g \in C^{1} (\R) $ but $ g \notin C^{2} (\R) $.
 
-\paragraph{3) Funzione $ C^{k} $ ma non $ C^{k+1} $}
+\paragraph{3) $ C^{k} $ function which is not $ C^{k+1} $}
 
-Vedi Esercizio \ref{exer1-1}.
+See Exercise \ref{exer1-1}.
 
 \subsection{Funzioni reali analitiche}
 
