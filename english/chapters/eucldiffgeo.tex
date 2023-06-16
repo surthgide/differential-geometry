@@ -9,7 +9,7 @@ Let us consider $ \R^{n} $ with $ n \geqslant 1 $ and $ U \subset \R^{n} $ open,
 	\qq{where} \sum_{j=1}^{k} i_{j} = k \in \N
 \end{equation}
 
-we say that $ f \in C^{k} $ in $ p $ with $ k \in \N $ if the $ k $th-order derivatives of $ f $ exist and are continuous in $ p $. \\
+then we say that $ f \in C^{k} $ in $ p $ with $ k \in \N $ if the $ k $th-order derivatives of $ f $ exist and are continuous in $ p $. \\
 Let $ k = 0 $, then
 
 \begin{equation}
@@ -79,10 +79,11 @@ from which $ g \in C^{1} (\R) $ but $ g \notin C^{2} (\R) $.
 
 See Exercise \ref{exer1-1}.
 
-\subsection{Funzioni reali analitiche}
+\subsection{Real analytic functions}
 
-Sia il punto $ p \in \R^{n} $, un \textit{intorno} $ U $ di $ p $ è un aperto di $ \R^{n} $ che contiene $ p $. \\
-Sia una funzione $ f : U \to \R $ con $ U \subset \R^{n} $ aperto, diremo che $ f $ è \textit{reale analitica} in $ p \in U $ se $ f $ coincide con il suo sviluppo di Taylor intorno a $ p $. Questo significa che se prendiamo una funzione $ f (x) $ con $ x = (x^{1}, \dots, x^{n}) $ e $ p = (p^{1}, \dots, p^{n}) $ abbiamo che
+Let $ p \in \R^{n} $ be a point, a \textit{neighborhood} $ U $ of $ p $ is an open set in $ \R^{n} $ that contains $ p $. \\
+Let $ f : U \to \R $ be a function with $ U \subset \R^{n} $ open, then we say that $ f $ is \textit{real analytic} in $ p \in U $ if $ f $ coincides with its own Taylor expansion around $ p $. This means that for a function $ f (x) $ with $ x = (x^{1}, \dots, x^{n}) $ and $ p = (p^{1}, \dots, p^{n}) $ we have that
+
 \begin{align}
 	\begin{split}
 		f (x) &= f (p) + \sum_{i=1}^{n} \pdv{f}{x_{i}} (p) (x^{i} - p^{i}) + \cdots + \dfrac{1}{k!} \sum_{i_{1},\dots,i_{k}=1}^{n} \dfrac{\partial^{k} f}{\partial x^{i_{1}} \cdots \partial x^{i_{k}}} (p) ( (x^{i_{1}} - p^{i_{1}}) \cdots (x^{i_{k}} - p^{i_{k}}) ) + \cdots \\
@@ -90,20 +91,20 @@ Sia una funzione $ f : U \to \R $ con $ U \subset \R^{n} $ aperto, diremo che $ 
 	\end{split}
 \end{align}
 
-Se abbiamo una serie di potenze, possiamo derivarla termine a termine dunque, siccome una funzione reale analitica coincide con il suo sviluppo in serie di Taylor, è possibile derivarla ottenendo sempre una funzione continua con derivata continua. A questo punto $ f \in C^{\infty} $: questo segue dall'analisi in quanto le serie di potenze possono essere derivate un numero arbitrario di volte.
+For example, a power series can be differentiated term by term resulting in a continuous function with continuous derivative, which coincides with its Taylor expansion, i.e. power series are always real analytic. This also means that $ f \in C^{\infty} $, because one can differentiate power series indefinitely always obtaining a continuous function.
 
-\subsubsection{\textit{Esempi}}
+\subsubsection{\textit{Examples}}
 
-\paragraph{1) Seno}
+\paragraph{1) Sine function}
 
-La funzione $ f (x) = \sin(x) $ è liscia reale analitica e ha sviluppo di Taylor
+The function $ f (x) = \sin(x) $ is smooth real analytic and its Taylor expansion is as follows
 
 \begin{equation}
 	\sin(x) = x - \dfrac{x^{3}}{3!} + \dfrac{x^{5}}{5!} - \dots %
 	= \sum_{j=0}^{\infty} (-1)^{j} \dfrac{x^{2j+1}}{(2j+1)!}
 \end{equation}
 
-Per calcolare la derivata possiamo derivare termine a termine lo sviluppo di Taylor
+In order to obtain its derivative, we can differentiate term by term its Taylor expansion
 
 \begin{align}
 	\begin{split}
@@ -114,9 +115,9 @@ Per calcolare la derivata possiamo derivare termine a termine lo sviluppo di Tay
 	\end{split}
 \end{align}
 
-\paragraph{2) Esponenziale}
+\paragraph{2) Exponential}
 
-Per trovare la derivata di $ f(x) = e^{x} $ ripetiamo lo stesso procedimento
+In order to derive the exponential $ f(x) = e^{x} $ derivative, we repeat the same procedure as the previous example
 
 \begin{equation}
 	\dv{x} e^{x} = \dv{x} \sum_{j=0}^{\infty}\dfrac{x^{j}}{j!} %
@@ -127,9 +128,9 @@ Per trovare la derivata di $ f(x) = e^{x} $ ripetiamo lo stesso procedimento
 	= e^{x}
 \end{equation}
 
-\paragraph{3) Funzione liscia non reale analitica}
+\paragraph{3) Smooth function which is not real analytic}
 
-Un esempio di funzione liscia ma non reale analitica è
+An example of a smooth function which is not real analytic is
 
 \map{f}
 	{\R}{\R}
@@ -140,20 +141,20 @@ Un esempio di funzione liscia ma non reale analitica è
 		\end{cases}
 		}
 
-Per dimostrare che sia $ C^{0} $ dobbiamo verificare che
+In order to demonstrate that $ f \in C^{0} $ we have to verify that
 
 \begin{equation}
 	\lim_{x \to 0} e^{-1/x^{2}} = 0
 \end{equation}
 
-Per dimostrare che sia liscia\footnote{%
-	Vedi Esercizio \ref{exer1-2}.}
+For its smoothness\footnote{%
+	See Exercise \ref{exer1-2}.}
 
 \begin{equation}
 	\lim_{x \to 0} f' (x) = \lim_{x \to 0} \left(\dfrac{2}{x^{3}}\right) e^{-1/x^{2}} = 0
 \end{equation}
 
-Tutto questo ci dice che $ f \in C^{\infty}(\R) $. Se fosse anche reale analitica, dovrebbe coincidere con il suo sviluppo in serie di Taylor anche nell'origine, dunque
+From this we have that $ f \in C^{\infty}(\R) $. If it were real analytic, it would have coincided with its Taylor expansion everywhere, in particular in the origin, i.e.
 
 \begin{align}
 	\begin{split}
@@ -161,9 +162,9 @@ Tutto questo ci dice che $ f \in C^{\infty}(\R) $. Se fosse anche reale analitic
 	\end{split}
 \end{align}
 
-ma $ f(x) $ nell'intorno di 0 è nulla solo per $ x \leqslant 0 $ mentre lo sviluppo di Taylor è sempre nullo: questa contraddizione porta a dire che, nonostante $ f \in C^{\infty}(\R) $, questa non è reale analitica, scritto anche come $ f \notin C^{\omega}(\R) $. \\
-Un altro motivo per il quale $ f \notin C^{\omega}(\R) $ segue dal fatto che se $ f : U \to \R $ con $ U \in \R $ aperto è reale analitica e $ f = 0 $ in un aperto, allora $ f \equiv 0 $ ovunque\footnote{%
-	Questa proprietà è valida anche se si considera una costante diversa da 0.%
+but $ f(x) $ is equal to 0 in the neighborhood of the origin only for $ x \leqslant 0 $ while the Taylor expansion is always zero: despite $ f \in C^{\infty}(\R) $, this contradiction means that the function is not real analytic, notation-wise $ f \notin C^{\omega}(\R) $. \\
+Another reason as to why $ f \notin C^{\omega}(\R) $ follows from the fact that if $ f : U \to \R $ with $ U \in \R $ open is real analytic and $ f = 0 $ in an open set, then $ f \equiv 0 $ everywhere\footnote{%
+	This property is valid for any constant.%
 }.
 
 \section{Diffeomorfismi tra aperti di $ \R^{n} $}
