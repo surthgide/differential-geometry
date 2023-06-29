@@ -1,3 +1,11 @@
 switch N with M and vice versa to maintain alphabetical order (mainly for differential manifolds' names)
 
 decide a clear distinction between \id and \bigone
+
+improve math environments with:
+\begin{subequations} \label{eq}
+	\begin{align}
+		a &= b \label{subeq1} \\
+		&= c \label{subeq2}
+	\end{align}
+\end{subequations}
